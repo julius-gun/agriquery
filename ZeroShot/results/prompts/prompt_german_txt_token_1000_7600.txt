@@ -1,0 +1,62 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    � Siehe »Wartungsintervalle« auf Seite 125.
+Die Gelenkwelle ist mit Schmiernippeln versehen
+ Schmieren Sie die Nippel.
+ Kontrollieren Sie auch den Zustand der Schutzrohre und der Sicherungsketten.
+ Ersetzen Sie diese, wenn diese beschädigt sind.
+Die Auslaufrohre sind gelagert an der Rührerwelle befestigt und mit 2 Schmiernippeln versehen.
+ Öffnen Sie die Auslaufrohre
+ Siehe die Bedienungsanleitung der Software
+ Drehen Sie die Streuscheibe mit der Hand, bis beide Schmiernippel sichtbar sind.
+ Schmieren Sie die 2 Nippel der Auslassdosen.
+Die Stellglieder sind mit 1 Schmiernippel versehen.
+ Schmieren Sie die Nippel aller vier Stellglieder.<|begin_of_text|>
+===Page 127===
+
+Fett anbringen/beifüllen
+Profilrohre Gelenkwellen
+[Image]
+Zentralgetriebe
+[Image]
+Getriebe Streuscheiben
+[Image]
+Wartung
+[Image]
+Die Profilrohre der Zapfwelle müssen Sie regelmäßig einfetten. Fetten Sie die Berührungsflächen der beiden Profilrohre ein, sobald Sie während des An- oder Abkoppelns feststellen, dass sich die Gelenkwellenhälften nicht mehr reibungslos rein- oder rausschieben lassen, mindestens jedoch einmal pro Saison.
+ Gelenkwelle an einer Seite lösen.
+ Die Wellenhälften auseinanderziehen.
+ Fett an der Lauffläche des inneren Profilrohrs anbringen.
+ Die Wellenhälften ineinander schieben.
+ Die Gelenkwelle anbauen.
+ Haken Sie die Kettensicherung an der Schlepperseite ein.
+Das Zentralgetriebe besteht aus 2 Kammern, die mit dem Getriebefett EP 00/000 gefüllt sind. Das Fett müssen Sie im Prinzip nicht austauschen.
+Der Inhalt einer Kammer beträgt 0,25 Liter.
+ Kontrollieren Sie regelmäßig den Stand.
+ Entfernen Sie Schmutz, Kunstdünger oder Fett aus dem Getriebe.
+ Nehmen Sie die Kappe von der Pegel- und Füllöffnung ab.
+ Füllen Sie in das Getriebe neues Fett hinzu, bis es fast aus der Pegel- und Füllöffnung herauskommt.
+Schließen Sie die Pegel- und Füllöffnung wieder.
+Im Getriebe unter den Streuscheiben befindet sich Schmierfett. Der Fettstand muss 35 mm unter der Füllöffnung liegen, gemessen nachdem die Maschine einige Zeit still steht.
+ Entfernen Sie Schmutz, Kunstdünger oder Fett aus dem Getriebe.
+ Öffnen Sie das Getriebe, indem Sie den Deckel der Füllöffnung entfernen.
+ Messen Sie das Fettniveau.
+ Füllen Sie ggf. neues Fett nach, bis der gewünschte Pegel erreicht ist.
+ Schließen Sie die Füllöffnung wieder.
+127
+</context>
+<question>
+    What is the required grease level in mm below the filler opening for spreading disc gearboxes after the machine has stood still?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

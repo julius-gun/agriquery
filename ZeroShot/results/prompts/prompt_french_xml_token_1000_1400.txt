@@ -1,0 +1,19 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    agitateur évite que les débris d'engrais ne viennent obstruer un ou plusieurs orifices de dosage.</text><text>23</text></page><|begin_of_text|><page number="24"><text>Apprendre à connaître la machine</text><text>Réglage de précision</text><text>Débit</text><image /><text>Dosage fin</text><text>Levier de dosage fin position de dosage normal</text><image caption="Levier de dosage fin position de dosage normal" /><text>Levier de dosage fin position de dosage fin</text><image caption="Levier de dosage fin position de dosage fin" /><text>24</text><text>L'épandeur dispose de deux vérins électriques par unité de dosage pour régler le débit et la largeur de travail indépendamment l'un de l'autre. En outre, il est possible de fermer 2 des 3 orifices de dosage de sorte à ce que le débit souhaité puisse être réglé de manière précise, même avec une faible vitesse d'écoulement tout en limitant au maximum le risque d'obstruction.</text><text>Pour le réglage du débit, la machine est équipée à l'arrière de deux vérins électriques qui commandent chacun un disque de dosage. Ce vérin permet d'ouvrir le disque de dosage dans chaque position souhaitée. Ainsi, il est possible d'effectuer un dosage précis indépendamment de la vitesse d'avancement. Il est également possible de piloter le réglage des ouvertures de dosage à l'aide de capteurs extérieurs, par exemple un détecteur d'azote.</text><text> Voir paragraphe »Débit« de la page 66.</text><text>Les vérins électriques sont commandés au niveau du logiciel de l'épandeur. Au moyen de capteurs de pesée, l'épandeur mesure en continu la quantité d'écoulement et la corrige si nécessaire au moyen du débit réglé.</text><text>Si vous souhaitez fermer le mécanisme de dosage sur un côté, vous pouvez sélectionner cette fonction sur le boîtier de commande ; l'un des deux disques de dosage se ferme immédiatement.</text><text>Dosage normal</text><text>Pour obtenir un dosage précis sur une grande plage de réglage, on ouvre les 3 orifices de dosage sur chaque disque.</text><text>Dosage fin</text><text>Pour l'épandage de fumier souterrain, l'épandeur est équipé de façon standard d'un système de dosage fin. Ce dosage fin doit être réglé, par unité de dosage, à l'aide d'un levier. Un faible débit requiert un petit orifice de dosage. Afin pour cela</text><text>· obtenir un réglage fin</text><text>· et éviter tout risque d'obstruction,</text><text>un passage vers un orifice plus grand est souhaitable.</text><text>En position de dosage fin, 2 des 3 orifices de dosage sont fermés. L'engrais s'écoule désormais par l'orifice restant qui est ouvert plus grand, ce qui donne un écoulement précis et sûr, même à faible débit.</text></page>
+</context>
+<question>
+    How many dosing openings are closed during fine application?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

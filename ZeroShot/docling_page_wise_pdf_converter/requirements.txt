@@ -1,0 +1,20 @@
+# Core dependencies
+docling
+docling-core
+
+# Data processing and conversion
+pandas
+pyyaml
+beautifulsoup4
+
+# Image processing
+Pillow
+
+# XML processing
+lxml # for better XML/HTML handling
+
+# Type hints
+typing-extensions
+
+# Select files in explorer view
+tkinter

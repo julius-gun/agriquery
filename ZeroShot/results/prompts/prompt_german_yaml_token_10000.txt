@@ -1,0 +1,780 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    : ListItem
+  text: · Bandmaß oder Messlatte,
+- type: ListItem
+  text: · Wasserwaage, um Auffangbehälter horizontal zu setzen,
+- type: ListItem
+  text: · 7 Auffangbehälter,
+- type: ListItem
+  text: · 7 Messrohre,
+- type: ListItem
+  text: · 1 Trichter,
+- type: ListItem
+  text: · Notizblock, Stift und Taschenrechner
+- type: ListItem
+  text: · diese Bedienungsanleitung.
+- type: ListItem
+  text: · der Bedienungsanleitung der Software.
+- type: SectionHeaderItem
+  text: Allgemeine Anweisungen
+- type: ListItem
+  text:  Kontrollieren Sie den eingestellten Dosierstand und den Auslasspunkt.
+- type: ListItem
+  text:  Kontrollieren Sie die Höhe (75 cm über dem Auffangbehälter) und den Stand
+    (Winkel) des Streuers.
+- type: ListItem
+  text:  Kontrollieren Sie die Drehzahl der Zapfwelle und der Streuscheiben.
+- type: ListItem
+  text:  Platzieren Sie die Behälter immer horizontal auf dem Boden.
+- type: ListItem
+  text:  Platzieren Sie die Behälter in einem Abstand von höchsten 4 Meter. Besorgen
+    Sie sich für die Tests der Arbeitsbreite von mehr als 24 Meter zusätzliche Behälter.
+    Sie können auch erst einen Teil der Arbeitsbreite testen und anschließend die
+    Behälter leeren und über den Rest der Arbeitsbreite verteilen.
+- type: ListItem
+  text:  Verwenden Sie den Streuer nicht bei Regen oder hoher Luftfeuchtigkeit. Der
+    Kunstdünger bleibt dann an den Auffangbehältern kleben, wodurch das erhaltene
+    Bild nicht mehr korrekt ist.
+- type: ListItem
+  text:  Streuen Sie nie bei Windgeschwindigkeiten von mehr als 3 m/s (Windstärke
+    2).
+- type: TextItem
+  text: '77'
+<|begin_of_text|>page_number: 78
+items:
+- type: SectionHeaderItem
+  text: Arbeiten vor dem Streuen
+- type: SectionHeaderItem
+  text: Linkes und rechtes Streubild testen
+- type: TextItem
+  text: Für eine gute Verteilung des Kunstdüngers müssen die linke und rechte Streuscheibe
+    gleichmäßig streuen. Überprüfen Sie dies jedes Jahr.
+- type: TextItem
+  text: HINWEIS
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: HINWEIS
+- type: TextItem
+  text: Platzieren Sie die Auffangbehälter mithilfe einer Wasserwaage hori-
+- type: TextItem
+  text: zontal!
+- type: TextItem
+  text: Der Test ist für eine Arbeitsbreite von 24 Metern ausgelegt. Es steht Ihnen
+    frei, den Test für eine andere Arbeitsbreite auszuführen. Verteilen Sie die Behälter
+    mit gleichem Zwischenabstand über die Arbeitsbreite.
+- type: SectionHeaderItem
+  text: Ausführung
+- type: ListItem
+  text:  Schalten Sie den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss
+    und betätigen Sie die Feststellbremse des Schleppers.
+- type: ListItem
+  text:  Entkoppeln Sie die linke Streuscheibe, indem Sie das Kupplungsstück nach
+    links schieben. Arretieren Sie das Kupplungsstück wieder mit dem Sicherungsclip.
+- type: ListItem
+  text:  Suchen Sie in der (Online-)Streutabelle für die am ehesten vergleichbaren
+    Düngemittel, Saaten oder Körner die richtige Auslaufposition auf, um 24 Meter
+    breit zu streuen und stellen Sie dies mit dem Griff ein.
+- type: ListItem
+  text:  Siehe Absatz »Auslassöffnung« auf Seite 65 und das Vorwort des Streutabellenbuch.
+- type: ListItem
+  text:  Montieren Sie die Gelenkwelle am richtigen Anschlusspunkt des Zentralgetriebes,
+    der in der betreffenden Streutabelle angegeben ist.
+- type: ListItem
+  text:  Siehe Absatz »Anschlusspunkt Gelenkwelle« auf Seite 64.
+- type: ListItem
+  text:  Kontrollieren Sie die Höhe des Streuers (Höhe Streuscheibe = 75 cm über
+    dem Auffangbehältern).
+- type: ListItem
+  text:  Setzen Sie die Gitter in die Auffangbehälter.
+- type: ListItem
+  text:  Setzen Sie Auffangbehälter 1 mitten auf die Spur des Schleppers.
+- type: ListItem
+  text:  Platzieren Sie die sonstigen Auffangbehälter alle 4 Meter auf der rechten
+    Seite der Schlepperspur.
+- type: TextItem
+  text: '78'
+<|begin_of_text|>page_number: 79
+items:
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Arbeiten vor dem Streuen
+- type: ListItem
+  text:  Den Schleppermotor anlassen.
+- type: ListItem
+  text:  Schließen Sie die Kabine, indem Sie alle Türen und Fenster schließen.
+- type: ListItem
+  text:  Schalten Sie das Bedienpult ein.
+- type: ListItem
+  text:  Geben Sie die gewünschte Dosis ein.
+- type: ListItem
+  text:  Geben Sie die Arbeitsbreite ein.
+- type: TextItem
+  text: Wir empfehlen Ihnen, bei der gewünschten Fahrgeschwindigkeit eine Dosis von
+    mindestens 250 kg/ha einzustellen und eine geringe Fahrgeschwindigkeit zu wählen.
+- type: ListItem
+  text:  Schalten Sie die linke Streuscheibe ein.
+- type: ListItem
+  text:  Schalten Sie die automatische Kalibrierung aus.
+- type: ListItem
+  text:  Schalten Sie die Gelenkwelle ein stellen Sie die Drehzahl der Streuscheiben
+    ein, wie in der entsprechenden Streutabelle wiedergegeben.
+- type: ListItem
+  text:  Öffnen Sie die rechte Dosiereinheit.
+- type: ListItem
+  text:  Fahren Sie mitten über den 1. Auffangbehälter und halten Sie erst an, wenn
+    Sie mindestens 20 Meter weiter gefahren sind. Der Streuer streut nämlich ungefähr
+    gleich weit nach hinten wie zur Seite.
+- type: ListItem
+  text:  Schließen Sie die Dosiereinheit.
+- type: ListItem
+  text:  Leeren Sie den Auffangbehälter mithilfe des Trichters in die Messrohre und
+    notieren Sie die Werte in Ihrem Notizbuch.
+- type: TextItem
+  text: Wiederholen Sie das vorstehende Verfahren, aber entkoppeln Sie die rechte
+    Streuscheibe und schalten die Dosiereinheit der rechten Streuscheibe aus. Stellen
+    Sie die Auffangbehälter auf die linke Seite der Schlepperspur.
+- type: TextItem
+  text: Fahren Sie mit derselben Geschwindigkeit und mit gleicher Zapfwellendrehzahl
+    wie beim ersten Mal!
+- type: TextItem
+  text: '79'
+<|begin_of_text|>page_number: 80
+items:
+- type: SectionHeaderItem
+  text: Arbeiten vor dem Streuen
+- type: SectionHeaderItem
+  text: Beurteilung
+- type: ListItem
+  text:  Notieren Sie die Werte, die Sie in den Messröhrchen von der linken und der
+    rechten Streuscheibe ablesen.
+- type: ListItem
+  text:  Vergleichen Sie die Werte, rechnen Sie je Röhrchen die prozentuale Differenz
+    zwischen der linken und der rechten Seite aus.
+- type: SectionHeaderItem
+  text: Anpassung
+- type: TextItem
+  text: 'Wenn die Form des Streubilds auf der linken und rechten Seite nicht gleich
+    ist und die Abweichung mehr als 3 % beträgt, können Sie das Folgende unternehmen
+    oder von ihrem Händler ausführen lassen:'
+- type: ListItem
+  text:  Überprüfen Sie, ob die Maschine in Länge und Breite horizontal hinter dem
+    Schlepper hängt.
+- type: ListItem
+  text:  Führen Sie die »Kontrolle und Einstellung Dosiermechanismus« aus, wie auf
+    Seite 133 beschrieben und wiederholen Sie diesen Test.
+- type: ListItem
+  text:  Führen Sie die »Kontrolle und Einstellung Einstellmechanismus Auslauföffnung«
+    aus, wie auf Seite 136 beschrieben und wiederholen Sie diesen Test.
+- type: TextItem
+  text: Ist die Abweichung des Streubilds immer noch zu hoch, nehmen Sie bitte Kontakt
+    mit Ihrem Händler auf.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '80'
+<|begin_of_text|>page_number: 81
+items:
+- type: SectionHeaderItem
+  text: Streubild bei Flächendüngung testen
+- type: TextItem
+  text: Arbeiten vor dem Streuen
+- type: TextItem
+  text: Wenn Sie den Streuer korrekt eingestellt haben und die Fahrwege im richtigen
+    Abstand zueinander stehen, erhalten Sie eine gute Verteilung über das Land. Bedingung
+    ist jedoch, dass das Streubild des Streuers die richtige Form aufweist.
+- type: TextItem
+  text: Daher müssen Sie das Streubild testen und ggf. anpassen.  Siehe auch Absatz
+    »Streubild bei Flächendüngung« auf Seite 28.
+- type: SectionHeaderItem
+  text: Ausführung
+- type: ListItem
+  text:  Schalten Sie den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss
+    und betätigen Sie die Feststellbremse des Schleppers.
+- type: ListItem
+  text:  Stellen Sie den Streuer anhand der Daten aus der Streutabelle der gewünschten
+    Arbeitsbreite (X Meter) ein, die zu den am ehesten vergleichbaren Kunstdünger,
+    Saaten oder Körnern gehört (Höhe Streuscheibe = 75 cm über den Auffangbehältern)
+   .
+- type: ListItem
+  text:  Setzen Sie die Gitter in die Auffangbehälter.
+- type: ListItem
+  text:  Setzen Sie Auffangbehälter 1 mitten auf die Spur des Schleppers.
+- type: ListItem
+  text: HINWEIS Platzieren Sie die Auffangbehälter mithilfe einer Wasserwaage hori-
+- type: TextItem
+  text: zontal!
+- type: ListItem
+  text:  Verteilen Sie die 6 übrigen Behälter an einer Seite der Spur über die tatsächliche
+    Arbeitsbreite des Streuers.
+- type: TextItem
+  text: Die tatsächliche Arbeitsbreite ist zweimal so groß wie die effektive Arbeitsbreite!
+- type: ListItem
+  text: ✵ Wenn Sie mit einer Arbeitsbreite von 24 Metern streuen möchten, stellen
+    Sie die Behälter 24/6 = alle 4 Meter auf.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '81'
+<|begin_of_text|>page_number: 82
+items:
+- type: SectionHeaderItem
+  text: Arbeiten vor dem Streuen
+- type: ListItem
+  text:  Den Schleppermotor anlassen.
+- type: ListItem
+  text:  Schließen Sie die Kabine, indem Sie alle Türen und Fenster schließen.
+- type: ListItem
+  text:  Schalten Sie das Bedienpult ein.
+- type: ListItem
+  text:  Geben Sie die gewünschte Dosis ein.
+- type: ListItem
+  text:  Geben Sie den neuen Wert ein.
+- type: ListItem
+  text:  Geben Sie die Arbeitsbreite ein.
+- type: TextItem
+  text: Wir empfehlen Ihnen, bei der gewünschten Fahrgeschwindigkeit eine Dosis von
+    mindestens 250 kg/ha einzustellen und eine geringe Fahrgeschwindigkeit zu wählen.
+- type: ListItem
+  text:  Schalten Sie die automatische Kalibrierung aus.
+- type: ListItem
+  text:  Schalten Sie die Gelenkwelle ein stellen Sie die Drehzahl der Streuscheiben
+    ein, wie in der entsprechenden Streutabelle wiedergegeben.
+- type: ListItem
+  text:  Nehmen Sie die Fahrt in der Spur auf und öffnen Sie die Dosiereinheiten
+    einige Meter, bevor Sie mitten über den ersten Behälter fahren, indem Sie die
+    Start-Taste drücken.
+- type: ListItem
+  text:  Stoppen Sie mit dem Streuen erst, wenn Sie mit dem Auffangbehälter mindestens
+    eine Arbeitsbreite (z. B. 18 oder 24 Meter) passiert haben. Der Streuer streut
+    nämlich ungefähr gleich weit nach hinten wie zur Seite.
+- type: ListItem
+  text:  Schließen Sie die Dosiereinheiten.
+- type: ListItem
+  text:  Fahren Sie in der folgenden Spur zurück, mitten über den Auffangbehälter
+    7. Halten Sie denselben Abstand beim Öffnen und Schließen der Dosiereinheiten.
+    Halten Sie die Fahrgeschwindigkeit und die Zapfwellendrehzahl gleich.
+- type: ListItem
+  text:  Wenn Sie eine Dosis von weniger als 250 kg/ha eingestellt haben, fahren
+    Sie noch einmal über dieselbe Fahrspur hin und zurück, um für einen guten Vergleich
+    ausreichend Kunstdünger in den Auffangbehältern zu sammeln.
+- type: TextItem
+  text: Verwenden Sie dieselben Abstände zwischen Öffnen und Schließen der Dosiereinheiten.
+- type: TextItem
+  text: Halten Sie die Fahrgeschwindigkeit und die Zapfwellendrehzahl gleich.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '82'
+<|begin_of_text|>page_number: 83
+items:
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: HINWEIS
+- type: TextItem
+  text: Arbeiten vor dem Streuen
+- type: SectionHeaderItem
+  text: Beurteilung und Anpassung
+- type: TextItem
+  text: 'Der Inhalt der separaten Röhrchen darf maximal 15 % vom Durchschnitt abweichen:'
+- type: TextItem
+  text: Wenn sich bei der Wiederholung des Tests die Korrektur um 2 Buchstaben als
+    zu stark herausstellt, setzen Sie die Einstellung der Auslauföffnung um 1 Buchstaben
+    zurück.
+- type: TableItem
+  table_data:
+    A:
+      0: B
+      1: C
+      2: D
+      3: E
+    Gutes Streubild, der Streuer ist gut eingestellt:
+      0: Der Streuer streut zu schmal.  Setzen Sie die Einstellung der Auslassöffnung
+        2 Buchstaben  Richtung A  Wiederholen Sie den Test
+      1: 'Der Streuer streut zu breit:  Setzen Sie die Einstellung der Auslassöffnung
+        2 Buchstaben  Richtung U  Wiederholen Sie den Test'
+      2: 'Der Streuer streut zu schmal (trapezförmiges Streubild):  Setzen Sie die
+        Einstellung der Auslassöffnung 2 Buchstaben  Richtung A  Wiederholen Sie
+        den Test'
+      3: Der Streuer streut zu breit (trapezförmiges Streubild)  Setzen Sie die Einstellung
+        der Auslassöffnung 2 Buchstaben  Richtung U  Wiederholen Sie den Test
+- type: TextItem
+  text: '83'
+<|begin_of_text|>page_number: 84
+items:
+- type: SectionHeaderItem
+  text: Arbeiten vor dem Streuen
+- type: SectionHeaderItem
+  text: Streubild hydraulisches Grenzstreublech testen
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: HINWEIS
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Führen Sie immer erst einen Abdrehtest aus und stellen Sie die richtige Dosierstellung
+    ein, bevor Sie das Streubild kontrollieren. Die Veränderung der Dosierstellung
+    hat Einfluss auf das Streubild.  Siehe Absatz »Streubildkontrolle (Streumengentest)«
+    auf Seite 76.
+- type: TextItem
+  text: Beim Gebrauch des hydraulischen Grenzstreublechs beabsichtigen Sie eine maximale
+    Anfüllung zum Rand hin, jedoch bei einem minimalen Verlust im Graben.
+- type: TextItem
+  text: Testen Sie daher die Funktion Ihres Grenzstreublechs. Führen Sie den Test
+    nicht am Grabenrand aus, sondern markieren Sie eine Linie, hinter der sich der
+    fiktive Grabenrand befindet.
+- type: SectionHeaderItem
+  text: Ausführung
+- type: ListItem
+  text:  Schalten Sie den Schlepper AUS, ziehen Sie den Schlüssel aus dem Zündschloss
+    und betätigen Sie die Feststellbremse des Schleppers.
+- type: ListItem
+  text:  Kuppeln Sie die rechte oder linke Streuscheibe ab, indem Sie das Kupplungsstück
+    nach rechts bzw. links schieben. Arretieren Sie das Kupplungsstück wieder mit
+    dem Sicherungsclip.
+- type: ListItem
+  text:  Schließen Sie die Dosiereinheit der rechten und linken Streuscheibe.
+- type: TextItem
+  text: Überprüfen Sie, dass die Schaufeln das Grenzstreublech nicht berühren.
+- type: ListItem
+  text:  Stellen Sie den Streuer anhand der Daten aus der Streutabelle, der gewünschten
+    Arbeitsbreite und den Anweisungen im Kapitel "Einscheiben-Grenzstreuen" (Höhe
+    Streuscheibe = 75 cm oberhalb der Auffangbehälter) ein.
+- type: ListItem
+  text:  Setzen Sie einen Auffangbehälter mitten auf die Fahrspur des Schleppers.
+    Die Mitte der Fahrspur liegt 2 Meter ab der Linie, hinter der der fiktive Graben
+    liegt.
+- type: TextItem
+  text: HINWEIS Platzieren Sie die Auffangbehälter mithilfe einer Wasserwaage horizontal!
+- type: PictureItem
+  caption: HINWEIS Platzieren Sie die Auffangbehälter mithilfe einer Wasserwaage horizontal!
+- type: TextItem
+  text: '84'
+<|begin_of_text|>page_number: 85
+items:
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Hydraulisches Grenzstreublech einstellen
+- type: TextItem
+  text: HINWEIS
+- type: TextItem
+  text: HINWEIS
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Arbeiten vor dem Streuen
+- type: ListItem
+  text:  Platzieren Sie einen Auffangbehälter auf dem Land entlang dem fiktiven Graben
+    und 2 Auffangbehälter im Anschluss in den fiktiven Graben.
+- type: ListItem
+  text:  Starten Sie den Schlepper und schalten Sie die Zapfwelle ein. Die richtige
+    Zapfwellendrehzahl ist der Standardwert, verringert um 25 %, also 540 U/min -
+    25 % = 400 U/min.
+- type: ListItem
+  text:  Wählen Sie einen solchen Gang, dass Sie mit derselben Geschwindigkeit fahren
+    wie bei normaler Zapfwellendrehzahl, oder die Dosis wird um 25 % reduziert.
+- type: ListItem
+  text:  Beginnen Sie die Fahrt entlang des Feldrands. Der Abstand zwischen dem Feldrand
+    und der Mitte des Schleppers muss 2 Meter betragen.
+- type: ListItem
+  text:  Öffnen Sie die Dosiereinheit einige Meter, bevor Sie mitten über den ersten
+    Behälter fahren.
+- type: ListItem
+  text:  Stoppen Sie mit dem Streuen erst, wenn Sie mit dem Auffangbehälter mindestens
+    eine Arbeitsbreite (z. B. 24 Meter) passiert haben. Der Streuer streut nämlich
+    ungefähr gleich weit nach hinten wie zur Seite.
+- type: ListItem
+  text:  Wenn Sie eine Dosis von weniger als 250 kg/ha eingestellt haben, fahren
+    Sie noch einmal über dieselbe Fahrspur, um für einen guten Vergleich ausreichend
+    Kunstdünger in den Auffangbehältern zu sammeln.
+- type: TextItem
+  text: Verwenden Sie dieselben Abstände zwischen Öffnen und Schließen der Dosiereinheit.
+- type: TextItem
+  text: Halten Sie die Fahrgeschwindigkeit und die Zapfwellendrehzahl gleich.
+- type: ListItem
+  text:  Leeren Sie die Auffangbehälter mithilfe des Trichters in die Messröhrchen.
+- type: TextItem
+  text: Für beide Seiten ist ein hydraulische Grenzstreublech erhältlich.
+- type: ListItem
+  text:  Lassen Sie das Grenzstreublech absenken.
+- type: ListItem
+  text:  Drehen Sie den Hahn zu, um zu vermeiden, dass sich das Blech während der
+    Arbeit unbeabsichtigt nach oben bewegt.
+- type: ListItem
+  text:  Schließen Sie die Dosierung an der Seite, an der nicht gestreut wird.
+- type: ListItem
+  text:  Kuppeln Sie den Antrieb des Blechs an der Seite ab, an der nicht gestreut
+    werden muss.
+- type: ListItem
+  text:  Stellen Sie das Blech anhand der (Online-)Streutabelle ein.
+- type: TextItem
+  text: Verwenden Sie beim Streuen die korrekte Scheibendrehzahl.
+- type: TextItem
+  text: Um mehr am Rand zu streuen, stellen Sie das Blech auf die Stellung 9.
+- type: TextItem
+  text: Um weniger am Rand zu streuen, stellen Sie das Blech auf die Stellung 1.
+- type: TextItem
+  text: In der Streutabelle sind die Einstellungen für den Ertrag wiedergegeben und
+    die H2O-Stellung für die Ertragsstellung verwendet die standardmäßig montierten
+    (kurzen) Bleche
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '85'
+<|begin_of_text|>page_number: 86
+items:
+- type: SectionHeaderItem
+  text: Arbeiten vor dem Streuen
+- type: TextItem
+  text: Für das Grenzstreuen mit der H2O-Stellung sind für das hydraulische Grenzstreublech
+    längere Bleche lose mitgeliefert.
+- type: TextItem
+  text: Folgen Sie in diesem Fall nicht den Einstellungen der Streutabelle H2O
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Die Stellungen bei der H2O-Stellung sind A bis D und sind in den Streutabellen
+    angegeben
+- type: ListItem
+  text:  Siehe zur richtigen Montage der Bleche die mitgelieferte Anweisung.
+- type: TextItem
+  text: '86'
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+<|begin_of_text|>page_number: 87
+items:
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Hydraulisches Grenzstreublech
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Arbeiten vor dem Streuen
+- type: SectionHeaderItem
+  text: Beurteilung und Anpassung
+- type: TextItem
+  text: Der maximal zulässige Verlust im Graben ist in der Umweltnorm festgelegt.
+    Um der Norm zu entsprechen, darf die Menge Düngemittel im 1. Auffangbehälter,
+    der in dem fiktiven Graben steht, maximal 10 % der Menge des Auffangbehälters
+    betragen, der in der Mitte der Fahrspur ist (= 100 %).
+- type: TextItem
+  text: Der Auffangbehälter auf dem Land entlang dem fiktiven Grabenrand gibt Ihnen
+    ein Bild von der Anfüllung. Die Anfüllung darf niemals 100 % betragen.
+- type: TableItem
+  table_data:
+    0:
+      0: A
+      1: B
+      2: C
+    1:
+      0: Gutes Streubild, das Grenzstreublech ist gut eingestellt
+      1: Das Grenzstreublech streut zu schmal.  Stellen Sie diese ein wenig nach
+        rechts, Richtung (9) (= Gra- ben).  Wiederholen Sie den Test.
+      2: 'Das Grenzstreublech streut zu breit:  Stellen Sie diese ein wenig nach
+        links, Richtung (1) (= Par- zelle).  Wiederholen Sie den Test.'
+- type: ListItem
+  text:  Testen Sie anschließend das Streubild bei Flächendüngung auf die Weise,
+    wie dies im folgenden Absatz beschrieben ist.
+- type: TextItem
+  text: '87'
+<|begin_of_text|>page_number: 88
+items:
+- type: SectionHeaderItem
+  text: Arbeiten vor dem Streuen
+- type: TextItem
+  text: Streubild bei Flächendüngung unter Anwendung des hydraulischen Grenzstreublechs
+    testen
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Die Verringerung der Zapfwellendrehzahl und das Schließen der rechten Streuscheibe
+    haben gleichfalls Einfluss auf das Streubild auf der linken Seite des Streuers.
+    Prüfen Sie daher das Streubild bei Flächendüngung beim Gebrauch des Grenzstreublechs.
+- type: TextItem
+  text: Befolgen Sie die Vorgehensweise, jedoch mit den Anpassungen für das Grenzstreuen,
+    wie sie in
+- type: TextItem
+  text:  Absatz »Streubild bei Flächendüngung testen« auf Seite 81.
+- type: SectionHeaderItem
+  text: Ausführung
+- type: ListItem
+  text:  Ändern Sie nicht die Position des Grenzstreublechs und lassen Sie das rechte
+    oder linke Grenzstreublech abgekuppelt.
+- type: TextItem
+  text: 'Beim ersten Gang:'
+- type: ListItem
+  text:  Ändern Sie nicht die Einstellung des Streuers, der Zapfwellendrehzahl und
+    der Fahrgeschwindigkeit, sondern lassen dies alles gleich wie die Einstellungen
+    vor dem Grenzstreuen.
+- type: TextItem
+  text: 'Beim zweiten Gang:'
+- type: ListItem
+  text:  Stellen Sie das Grenzstreublech nach oben.
+- type: ListItem
+  text:  Stellen Sie den Streuer für das Vollfeldstreuen ein.
+- type: ListItem
+  text:  Stellen Sie die Drehzahl der Streuscheiben ein, wie dies in der betreffenden
+    Streutabelle wiedergegeben ist.
+- type: ListItem
+  text:  Lassen Sie die Fahrgeschwindigkeit und die Zapfwellendrehzahl während des
+    ersten Umlaufs gleich.
+- type: SectionHeaderItem
+  text: Beurteilung
+- type: TextItem
+  text: Wahrscheinlich treffen Sie in den mittleren Behältern eine geringere Dosis
+    an. Das Bild gleicht dem in Abb. B aus
+- type: TextItem
+  text:  Absatz »Streubild bei Flächendüngung testen« auf Seite 81. Die Ursache besteht
+    in einer geringeren Zapfwellendrehzahl. Beim Grenzstreuen darf das Niveau in den
+    mittleren Messröhrchen 25
+- type: TextItem
+  text: '% geringer sein als in den äußersten Messröhrchen.'
+- type: SectionHeaderItem
+  text: Anpassung
+- type: TextItem
+  text: 'Wenn die Abweichung mehr als 25 % beträgt:'
+- type: ListItem
+  text:  Erhöhen Sie die Streuscheibendrehzahl um 50 U/min.
+- type: ListItem
+  text:  Führen Sie den Streubild bei Flächendüngungtest mit den Anpassungen für
+    Grenzstreuen nochmals aus, bis dass die Abweichung weniger als 25 % beträgt.
+- type: ListItem
+  text:  Führen Sie den Test des Streubilds der Grenzstreuplatte erneut aus. Passen
+    Sie den Stand der Grenzstreuplatte an, bis der Verlust wieder unterhalb der gesetzlichen
+    Norm ist.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '88'
+<|begin_of_text|>page_number: 89
+items:
+- type: SectionHeaderItem
+  text: Streubild ExactLine testen
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Arbeiten vor dem Streuen
+- type: TextItem
+  text: Beim Gebrauch der ExactLine beabsichtigen Sie eine maximale Anfüllung zum
+    Rand hin, jedoch bei einem minimalen Verlust im Graben. Testen Sie daher die Funktion
+    der ExactLine. Führen Sie den Test nicht am Grabenrand aus, sondern markieren
+    Sie eine Linie, hinter der sich der fiktive Grabenrand befindet.
+- type: SectionHeaderItem
+  text: Ausführung
+- type: ListItem
+  text:  Stellen Sie den Streuer anhand der Daten aus der Streutabelle der gewünschten
+    Arbeitsbreite ein, die zu den am ehesten vergleichbaren Kunstdünger, Saaten oder
+    Körnern gehört (Höhe Streuscheibe = 75 cm über den Auffangbehältern).
+- type: ListItem
+  text:  Bedienen Sie das hydraulische Steuergerät einige Sekunden, um die ExactLine
+    in Betriebsbereitschaft zu setzen und den Gasspeicher auf einen ordentlichen Druck
+    zu bringen.
+- type: ListItem
+  text:  Schließen Sie den Hahn im hydraulischen Schlauch, um zu vermeiden, dass
+    die ExactLine unbeabsichtigt in eine andere Position wechselt.
+- type: ListItem
+  text:  Schalten Sie den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss
+    und betätigen Sie die Feststellbremse des Schleppers.
+- type: ListItem
+  text:  Stellen Sie die ExactLine anhand der Daten aus der Streutabelle der gewünschten
+    Arbeitsbreite in die 'Umweltstellung' ein.
+- type: ListItem
+  text:  Siehe Absatz »Zweischeiben-Grenzstreuen mit der ExactLine« auf Seite 110.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '89'
+<|begin_of_text|>page_number: 90
+items:
+- type: TextItem
+  text: Arbeiten vor dem Streuen
+- type: ListItem
+  text:  Platzieren Sie einen Auffangbehälter auf dem Land entlang dem fiktiven Graben
+    und einen Auffangbehälter im Anschluss in dem fiktiven Graben.
+- type: TextItem
+  text: 'HINWEIS:'
+- type: TextItem
+  text: Platzieren Sie die Auffangbehälter mithilfe einer Wasserwaage horizontal!
+- type: ListItem
+  text:  Setzen Sie einen Auffangbehälter mitten auf die Fahrspur des Schleppers.
+    Die Fahrspur liegt eine halbe Arbeitsbreite neben dem fiktiven Graben. Verteilen
+    Sie die weiteren Behälter zwischen der Fahrspur und dem fiktiven Graben.
+- type: ListItem
+  text:  Starten Sie den Schlepper und schalten Sie das Bedienpult ein.
+- type: ListItem
+  text:  Schließen Sie die Kabine, indem Sie alle Türen und Fenster schließen.
+- type: ListItem
+  text:  Schalten Sie die Zapfwelle ein und stellen Sie die Drehzahl der Streuscheiben
+    anhand der Streutabelle ein oder gemäß der Tabelle in
+- type: ListItem
+  text:  Wählen Sie, falls erwünscht, eine solche Beschleunigung, dass Sie mit derselben
+    Geschwindigkeit wie beim Vollfeldstreuen fahren.
+- type: ListItem
+  text:  Schalten Sie die automatische Kalibrierung aus.
+- type: ListItem
+  text:  Nehmen Sie die Fahrt in der Spur auf und öffnen Sie die Dosiereinheiten
+    einige Meter, bevor Sie mitten über den ersten Behälter fahren, indem Sie die
+    Start-Taste drücken.
+- type: ListItem
+  text:  Stoppen Sie mit dem Streuen erst, wenn Sie mit dem Auffangbehälter mindestens
+    eine Arbeitsbreite (z. B. 18 oder 24 Meter) passiert haben. Der Streuer streut
+    nämlich ungefähr gleich weit nach hinten wie zur Seite.
+- type: ListItem
+  text:  Schließen Sie die Dosiereinheiten.
+- type: ListItem
+  text:  Wenn Sie eine Dosis von weniger als 250 kg/ha eingestellt haben, fahren
+    Sie noch einmal über dieselbe Fahrspur, um für einen guten Vergleich ausreichend
+    Kunstdünger in den Auffangbehältern zu sammeln.
+- type: TextItem
+  text: Verwenden Sie dieselben Abstände zwischen Öffnen und Schließen der Dosiereinheiten.
+- type: TextItem
+  text: Halten Sie die Fahrgeschwindigkeit und die Zapfwellendrehzahl gleich.
+- type: ListItem
+  text:  Leeren Sie die Auffangbehälter mithilfe des Trichters in die Messröhrchen.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '90'
+<|begin_of_text|>page_number: 91
+items:
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Arbeiten vor dem Streuen
+- type: SectionHeaderItem
+  text: Beurteilung und Anpassung
+- type: TextItem
+  text: Der maximal zulässige Verlust im Graben ist in der Umweltnorm festgelegt.
+    Um der Norm zu entsprechen, darf die Menge Düngemittel im 1. Auffangbehälter,
+    der in dem fiktiven Graben steht, maximal 10 % der Menge des Auffangbehälters
+    betragen, der in der Mitte der Fahrspur ist (= 100 %).
+- type: TextItem
+  text: Der Auffangbehälter auf dem Land entlang dem fiktiven Grabenrand gibt Ihnen
+    ein Bild von der Anfüllung. Die Anfüllung darf niemals 100 % betragen.
+- type: TableItem
+  table_data:
+    0:
+      0: A
+      1: B
+      2: C
+    1:
+      0: Gutes Streubild, die ExactLine ist gut eingestellt
+      1: Die ExactLine streut zu schmal.  Stellen Sie ihn 1 Stellung breiter (z.
+        B. von 3 auf 4 oder  von 7 auf Transportstellung)  Wiederholen Sie den Test
+      2: 'Die ExactLine streut zu breit:  Stellen Sie ihn 1 Stellung schmaler (z.
+        B. von 5 auf 4  oder von Transportstellung auf 7)  Wiederholen Sie den Test'
+- type: TextItem
+  text: Wenn Sie die ExactLine 1 Stellung höher oder niedriger (z. B. von 1 auf 2,
+    oder 3 auf 2) setzen, verändert sich die Arbeitsbreite am Grabenrand ungefähr
+    0,3 Meter.
+- type: SectionHeaderItem
+  text: Zurückstellen der Scheibenhöhe nach dem Streumengentest
+- type: TextItem
+  text: Während des Streumengentests haben Sie die Scheibenhöhe über den Auffangbehältern
+    auf 75 cm eingestellt.
+- type: ListItem
+  text:  Stellen Sie vor dem Streuen die Scheibenhöhe auf 75 cm über dem Boden oder
+    dem Erntegut ein!
+- type: ListItem
+  text:  Siehe Absatz »Streuhöhe« auf Seite 95.
+- type: TextItem
+  text: '91'
+<|begin_of_text|>page_number: 92
+items:
+- type: TextItem
+  text: Straßenfahrt
+- type: TextItem
+  text: Straßenfahrt
+- type: SectionHeaderItem
+  text: Vor dem Straßentransport
+- type: TextItem
+  text: '92'
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Überschreiten Sie nicht die zulässige und sichere Höhe in Bezug auf
+- type: ListItem
+  text: · die laut Straßenverkehrsordnung vorgeschriebene maximale Höhe für Fahrzeuge;
+- type: ListItem
+  text: · Hochspannungsleitungen oder andere Kabel, die über die Straße führen;
+- type: ListItem
+  text: · voraussichtliche Beschränkungen der Durchfahrthöhe.
+- type: TextItem
+  text: Durch sorgfältige Beachtung diesbezüglicher Hindernisse vermeidet man gefährliche
+    Situationen, die zu teuren Schäden und möglicherweise zu schweren Verletzungen
+    führen können.
+- type: SectionHeaderItem
+  text: 'Bevor Sie den Schlepper verlassen, müssen Sie:'
+- type: ListItem
+  text: · die Zapfwelle ausschalten,
+- type: ListItem
+  text: · das Hydrauliksystem drucklos machen,
+- type: ListItem
+  text: · das elektronische Bediensystem ausschalten,
+- type: ListItem
+  text: · den Schlepper ausschalten,
+- type: ListItem
+  text: · den Zündschlüssel vom Zündschloss abziehen,
+- type: ListItem
+  text: · die Feststellbremse des Schleppers anziehen.
+- type: TextItem
+  text: So vermeidet man, dass der Schlepper angelassen werden kann, während jemand
+    an der Maschine arbeitet; auf diese Weise könnten Personen schwer verletzt werden.
+- type: TextItem
+  text: 'Bevor Sie sich mit Ihrem Schlepper mit Maschine auf öffentliche Straßen begeben,
+    ist das Folgende zu tun:'
+- type: ListItem
+  text:  Überprüfen Sie, ob Schlepper und Maschine der Straßenverkehrsordnung genügen.
+- type: ListItem
+  text:  Kontrollieren Sie die Funktion und Befestigung der Beleuchtung, Warn- und
+    Schutzvorrichtungen sowie der Bremsanlage.
+- type: ListItem
+  text:  Überprüfen Sie, ob der Reflektor des Kraftfahrzeugs mit beschränkter Geschwindigkeit
+    (<40 km/h) auf Ihrem Schlepper nicht durch das Werkzeug verdeckt wird.
+- type: ListItem
+  text:  Montieren Sie andernfalls einen zusätzlichen Reflektor an das Werkzeug.
+- type: ListItem
+  text:  Kontrollieren Sie den Lauf der Schnellkupplungsseile des Krafthebers.
+
+</context>
+<question>
+    What is the 'tap' material used for hydraulic border spreading plate tap?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

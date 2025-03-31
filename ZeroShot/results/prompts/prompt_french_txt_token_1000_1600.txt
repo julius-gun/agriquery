@@ -1,0 +1,51 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    'environnement
+Une dose et un épandage trop importants de produits hors de la bordure de parcelle, notamment avec des eaux de surface, constituent de sérieuses contraintes pour l'environnement. Ménagez l'environnement en réglant un débit correct et en procédant avec application.
+Travail avec la cabine fermée
+Lorsque les vitres, les portes ou d'autres ouvertures sont ouvertes, de la poussière d'engrais peut entrer dans la cabine. Dans une cabine ouverte, le niveau sonore est de surcroît plus élevé. Pour cette raison, travaillez avec la cabine du tracteur fermée et pourvue de filtres de carbone actif au niveau des arrivées d'air. La poussière provenant de l'engrais et les nuisances sonores prolongées peuvent entraîner des blessures corporelles.
+94<|begin_of_text|>
+===Page 95===
+
+Réglage de la machine
+Hauteur d'épandage
+Niveau sol ou sommet de la végétation
+[Image: Niveau sol ou sommet de la végétation]
+[Image]
+INDICATION
+Utilisation dans les champs
+La plupart des types d'engrais absorbent l'eau et peuvent alors former des blocs. Ces blocs sont susceptibles de provoquer des bourrages au niveau de l'épandeur ou d'abîmer la nappe d'épandage.
+· Si les conditions sont humides, travaillez uniquement avec la bâche de trémie bien fermée.
+· N'épandez jamais sans bâche de trémie lorsque les conditions sont humides.
+· Ne laissez jamais l'engrais pendant longtemps dans l'épandeur. Des blocs peuvent également se former sous l'action de l'humidité de l'air.
+· Nettoyez à fond l'épandeur après chaque utilisation, ainsi que les orifices de dosage et les bagues d'écoulement.
+Avant de réaliser votre premier passage avec la machine, vous devez réaliser dans les champs le réglage :
+Pour le bon fonctionnement de l'épandeur, il est important d'amener celui-ci
+· à la bonne hauteur au-dessus du sol ou de la végétation et
+· de le placer à l'horizontale à l'aide du réglage de la chandelle et du bras supérieur.
+A partir de la partie inférieure des pales, la distance jusqu'au sol ou jusqu'à la végétation doit être de 75 cm.
+ placez la machine à la bonne hauteur avec le dispositif de relevage.
+ Réglez l'épandeur à l'horizontale à l'aide du réglage de la chandelle et du bras supérieur.
+ fixez la limitation de relevage dans cette position.
+Correction de la hauteur en cas de surfertilisation
+Si la hauteur exigée de 75 cm au-dessus de la végétation n'est pas réalisable avec votre dispositif de levage :
+ utilisez la position d'épandage en hauteur des tenons d'attelage, et/ou
+ réglez le distributeur d'engrais au préalable en vous conformant aux tableaux d'épandage.
+ Cf. paragraphe »Choix de la hauteur du tenon d'attelage« de la page 53.
+95
+</context>
+<question>
+    What is the tolerance for 'measured distance from the bottom of the vanes, the distance to the ground or the crop' in cm?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

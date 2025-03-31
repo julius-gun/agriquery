@@ -1,0 +1,68 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     »Kontrolle von Schrauben und Muttern«                                                       ·                                                                                                       130
+2                                  »Kontrolle Hydrauliksystem«             ·                                         ·                                                                                                       131
+3                               Zustand Rührer und Rührerwelle             ·                                                                                                                                                    
+4                                            Zustand Schaufeln             ·                                                                                                                                                  43
+5                »Kontrolle und Einstellung Dosiermechanismus«                                                       ·                                                     ·                                                 133
+6   »Kontrolle und Einstellung Einstellmechanismus Auslauföff-                                                       ·                                                                                                       136
+7                                                        nung«                                                                                                             ·                                                    
+8                 »Kontrolle und Einstellung Höhe Auslaufrohr«                                                       ·                                                     ·                                                 138
+9                                                    Schmieren     Schmieren                                 Schmieren                                             Schmieren      Schmieren              Schmieren     Schmieren
+10                               4 Schmiernippel der Zapfwelle             ·                                                                                                                                                 126
+11                      2 Schmiernippel auf beide Auslassdosen             ·                                                                                                                                                 126
+12                1 Schmiernippel auf allen vier Stellgliedern             ·                                                                                                                                                 126
+13                               Fett anbringen oder beifüllen                                                                                                                                                                  
+14                                     Profilrohre Gelenkwelle                                                                                                             ·              ·                                  127
+15                                             Zentralgetriebe                                                       ·                                                     ·                                                 127
+16                                  Getriebe der Streuscheiben                                                                                                             ·                                                 128
+17                                                Öl anbringen  Öl anbringen                              Öl anbringen                                          Öl anbringen   Öl anbringen           Öl anbringen  Öl anbringen
+18                    Kupplungsstücke in Antrieb Streuscheiben                                                       ·                                                     ·                                                 128
+19                                                 Austauschen                                                                                                                                                                  
+20                      Hydraulikschläuche und Kupplungsstücke                                                                                                                            ·                      ·           131
+21                                      Abdichtung Rührerwelle                                                                                                             ·                                     ·           140
+22                                                      Rührer                                                                                                                                                   ·              
+23                                                   Schaufeln                                                                                                                                                   ·              
+125<|begin_of_text|>
+===Page 126===
+
+Wartung
+Schmierpunkte
+Gelenkwelle mit Schnellverschluss
+[Image]
+Auslaufrohre
+[Image]
+Stellglieder
+Schmiernippel
+[Image: Schmiernippel]
+126
+Alle Schmiernippel der Maschine können mit einer Universalfettsorte geschmiert werden.
+ Siehe »Öl- und Fettvolumen« auf Seite 124.
+ Siehe »Wartungsintervalle« auf Seite 125.
+Die Gelenkwelle ist mit Schmiernippeln versehen
+ Schmieren Sie die Nippel.
+ Kontrollieren Sie auch den Zustand der Schutzrohre und der Sicherungsketten.
+ Ersetzen Sie diese, wenn diese beschädigt sind.
+Die Auslaufrohre sind gelagert an der Rührerwelle befestigt und mit 2 Schmiernippeln versehen.
+ Öffnen Sie die Auslaufrohre
+ Siehe die Bedienungsanleitung der Software
+ Drehen Sie die Streuscheibe mit der Hand, bis beide Schmiernippel sichtbar sind.
+ Schmieren Sie die 2 Nippel der Auslassdosen.
+Die Stellglieder sind mit 1 Schmiernippel versehen.
+ Schmieren Sie die Nippel aller vier Stellglieder.
+</context>
+<question>
+    What type of 'universal grease' is recommended for all 'lubricating nipples'?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

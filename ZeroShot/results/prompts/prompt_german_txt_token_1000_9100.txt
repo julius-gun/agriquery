@@ -1,0 +1,49 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    ünscht, eine solche Beschleunigung, dass Sie mit derselben Geschwindigkeit wie beim Vollfeldstreuen fahren.
+ Schalten Sie die automatische Kalibrierung aus.
+ Nehmen Sie die Fahrt in der Spur auf und öffnen Sie die Dosiereinheiten einige Meter, bevor Sie mitten über den ersten Behälter fahren, indem Sie die Start-Taste drücken.
+ Stoppen Sie mit dem Streuen erst, wenn Sie mit dem Auffangbehälter mindestens eine Arbeitsbreite (z. B. 18 oder 24 Meter) passiert haben. Der Streuer streut nämlich ungefähr gleich weit nach hinten wie zur Seite.
+ Schließen Sie die Dosiereinheiten.
+ Wenn Sie eine Dosis von weniger als 250 kg/ha eingestellt haben, fahren Sie noch einmal über dieselbe Fahrspur, um für einen guten Vergleich ausreichend Kunstdünger in den Auffangbehältern zu sammeln.
+Verwenden Sie dieselben Abstände zwischen Öffnen und Schließen der Dosiereinheiten.
+Halten Sie die Fahrgeschwindigkeit und die Zapfwellendrehzahl gleich.
+ Leeren Sie die Auffangbehälter mithilfe des Trichters in die Messröhrchen.
+[Image]
+90<|begin_of_text|>
+===Page 91===
+
+[Image]
+[Image]
+[Image]
+[Image]
+Arbeiten vor dem Streuen
+Beurteilung und Anpassung
+Der maximal zulässige Verlust im Graben ist in der Umweltnorm festgelegt. Um der Norm zu entsprechen, darf die Menge Düngemittel im 1. Auffangbehälter, der in dem fiktiven Graben steht, maximal 10 % der Menge des Auffangbehälters betragen, der in der Mitte der Fahrspur ist (= 100 %).
+Der Auffangbehälter auf dem Land entlang dem fiktiven Grabenrand gibt Ihnen ein Bild von der Anfüllung. Die Anfüllung darf niemals 100 % betragen.
+   0                                                                                                                                                      1
+0  A                                                                                                     Gutes Streubild, die ExactLine ist gut eingestellt
+1  B  Die ExactLine streut zu schmal.  Stellen Sie ihn 1 Stellung breiter (z. B. von 3 auf 4 oder  von 7 auf Transportstellung)  Wiederholen Sie den Test
+2  C  Die ExactLine streut zu breit:  Stellen Sie ihn 1 Stellung schmaler (z. B. von 5 auf 4  oder von Transportstellung auf 7)  Wiederholen Sie den Test
+Wenn Sie die ExactLine 1 Stellung höher oder niedriger (z. B. von 1 auf 2, oder 3 auf 2) setzen, verändert sich die Arbeitsbreite am Grabenrand ungefähr 0,3 Meter.
+Zurückstellen der Scheibenhöhe nach dem Streumengentest
+Während des Streumengentests haben Sie die Scheibenhöhe über den Auffangbehältern auf 75 cm eingestellt.
+ Stellen Sie vor dem Streuen die Scheibenhöhe auf 75 cm über dem Boden oder dem Erntegut ein!
+ Siehe Absatz »Streuhöhe« auf Seite 95.
+91
+</context>
+<question>
+    What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

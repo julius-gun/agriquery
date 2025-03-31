@@ -1,0 +1,19 @@
+<purpose>ANSWER COMPARISON TASK. Do ANSWER_ONE and ANSWER_TWO convey the same information regarding the QUESTION? Adhere strictly to the INSTRUCTIONS. Base your ANSWER on the CONTEXT.</purpose>
+<INSTRUCTIONS>
+    <instruction>- Respond 'yes' if ANSWER_ONE and the ANSWER_TWO convey the SAME TECHNICAL MEANING</instruction>
+    <instruction>- Consider 'yes' if differences are INSIGNIFICANT to the core technical content</instruction>
+    <instruction>- Respond 'no' ONLY if there are MEANINGFUL differences that alter the technical understanding</instruction>
+    <instruction>- Assess the SUBSTANCE of the information, not surface-level variations</instruction>
+    <instruction>- Answer ONLY with yes or no</instruction>
+    <instruction>- Don't provide additional information</instruction>
+</INSTRUCTIONS>        
+
+<CONTEXT>
+    <QUESTION>{question}</QUESTION>
+    <ANSWER_ONE>{model_answer}</ANSWER_ONE>
+    <ANSWER_TWO>{expected_answer}</ANSWER_TWO>
+</CONTEXT>
+
+<ANSWER>
+    (yes/no)
+</ANSWER>

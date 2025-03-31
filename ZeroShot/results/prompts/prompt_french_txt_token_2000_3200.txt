@@ -1,0 +1,83 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    Utilisation dans les champs
+En fonction de l'état du sol ou de la végétation, il peut être souhaitable d'épandre plus ou moins d'engrais par endroits, Le système de commande vous permet d'effectuer un sur- ou sous-dosage du côté gauche, droit ou des deux côtés au cours de l'épandage. Toutes les touches figurent dans l'écran principal.
+ Voir les instructions du logiciel
+Les nappes d'épandage des deux disques d'épandage se che-
+vauchent partiellement, notamment au milieu à l'arrière de l'épandeur. Par conséquent, le débit réel va différer par rapport au débit que vous réglez pendant le sur- ou sous-dosage sur un seul côté. Vous le constaterez notamment pour les petites largeurs de travail, parce que les nappes d'épandage se chevauchent alors le plus.
+Avec de plus petites largeurs de travail et une nappe d'épandage en forme de triangle, les nappes d'épandage du premier et du deuxième passage se chevauchent entièrement.
+ Reportez-vous également au paragraphe »Formes de la nappe d'épandage« de la page 28.
+Pour épandre un débit adapté, vous devez par conséquent effectuer un sur- ou sous-dosage dans la trace de jalonnage qui suit aussi bien lors du premier que du deuxième passage.
+[Image]
+105<|begin_of_text|>
+===Page 106===
+
+Utilisation dans les champs
+Épandage de bordure
+INDICATION
+106
+La dispersion d'engrais sur le bord de la parcelle nécessite une attention spécifique. D'une part, vous voulez une dose complémentaire maximale après la bordure pour un bon rendement, d'autre part, vous voulez minimiser les pertes de l'autre côté de la bordure de parcelle.
+L'épandeur a 2 façons différentes de travailler et autant d'adaptations correspondantes pour l'épandage de bordure.
+· Épandage unilatéral en bordure à l'aide du déflecteur de bordure hydraulique,
+· Épandage des bordures avec ExactLine.
+Pour l'épandage unilatéral en bordure, vous passez avec le tracteur le long de la bordure de parcelle et vous épandez dans la parcelle à partir de cette bordure. Pour l'épandage de bordure, vous passez dans la première voie de pulvérisation à partir de la bordure de parcelle et vous épandez en direction de la bordure de parcelle.
+Nous vous recommandons d'épandre en premier lieu sur la parcelle avant d'épandre sur les bordures. Au cours de l'épandage de bordure, le système de commande n'effectue aucun étalonnage automatique et ne peut ainsi pas déterminer avec précision le bon réglage des ouvertures correspondant au débit souhaité. Par conséquent, le débit peut différer par rapport au débit souhaité au cours de l'épandage de bordure. En procédant d'abord à l'épandage sur la parcelle, le système de commande peut déterminer le bon réglage des ouvertures et épandre avec le débit adéquat, même au cours de l'épandage de bordure.<|begin_of_text|>
+===Page 107===
+
+Épandage unilatéral en bordure avec le déflecteur de bordure hydraulique
+Fonctionnement
+[Image]
+Utilisation dans les champs
+Lors de l'épandage unilatéral en bordure, vous roulez le long de la bordure de parcelle et vous commandez le flux d'engrais à l'aide du déflecteur de bordure hydraulique (accessoire). La largeur de travail au bord de la parcelle se règle en modifiant la position du déflecteur de bordure hydraulique (accessoire).
+                                       0                                                                                                                                                                1
+0  Vers ( 1 )  (mode  « environnement »)  La quantité épandue est moindre vers le bord  de la parcelle.  La perte au-delà de la bordure de parcelle est  minime, la dose complémentaire est moins  bonne.
+1      Vers ( 9 )  (mode  « rendement »)                                                             Vous épandez davantage vers le bord de la par- celle.  La dose complémentaire est meilleure, mais la
+La perte maximale autorisée au-delà de la bordure de parcelle est définie dans une norme environnementale. Pour satisfaire à celle-ci, la quantité d'engrais épandue au-delà de la bordure de parcelle peut représenter 10 % tout au plus de la quantité épandue au centre derrière l'épandeur (= 100 %). Testez pour cette raison le fonctionnement du déflecteur de bordure (accessoire) à chaque fois avant d'effectuer le test, comme indiqué au
+ paragraphe »Test du profil d'épandage avec le déflecteur de bordure hydraulique« de la page 84.
+[Image]
+107<|begin_of_text|>
+===Page 108===
+
+Utilisation dans les champs
+Procédure avec le déflecteur de bordure hydraulique
+[Image]
+[Image]
+108
+Le déflecteur de bordure hydraulique permet l'épandage en bordure à gauche et à droite.
+ Coupez le moteur du tracteur et retirez la clé du contact.
+ Serrez le frein à main sur le tracteur.
+ Séparez le disque d'épandage droit en poussant la pièce d'attelage vers la droite. Bloquez à nouveau la pièce d'attelage à l'aide du boulon de fixation.
+ Abaissez le déflecteur de bordure.
+ Vérifiez que les pales ne touchent pas le déflecteur de bordure!
+ Réglez l'épandeur à l'aide des données du tableau d'épandage de la largeur de travail souhaitée. Utilisez les mêmes réglages et point de raccordement de l'arbre de transmission que pour l'épandage en plein champ,
+ reportez-vous également au paragraphe »Réglage de l'épandeur« de la page 62.
+ démarrez le tracteur.
+ Branchez le boîtier de commande.
+ Embrayez la prise de force. Le régime optimal des disques d'épandage correspond à la valeur indiquée dans le tableau d'épandage correspondant.
+ Choisissez si vous le souhaitez un rapport qui vous permette d'avancer à la même vitesse que lors de l'épandage plein champ.
+Le système de commande va commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.
+En cas de dysfonctionnement ou d'encrassement de l'épandeur :
+ Arrêtez immédiatement d'épandre!
+ Débrayez immédiatement la prise de force!
+ Reportez-vous ensuite au paragraphe »Dysfonctionnement et obstruction« de la page 113.
+Après l'épandage de bordure :
+ Coupez le moteur du tracteur, retirez la clé du contact et serrez le frein à main sur le tracteur.
+ Relevez le déflecteur de bordure.
+ Fermez le dosage.
+ Raccordez à nouveau l'entraînement du disque d'épandage droit.
+</context>
+<question>
+    What is seven-sided boundary spreading with the hydraulicborder spreading plate?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

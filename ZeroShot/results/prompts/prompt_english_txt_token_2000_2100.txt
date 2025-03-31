@@ -1,0 +1,140 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     the incomplete final pass with the next one.
+97<|begin_of_text|>
+===Page 98===
+
+Use in the field
+Tramline patterns
+Using the ExactLine with tramlines
+98
+Your preferred border spreading method determines the tramline pattern.
+Select on the basis of the site width, the presence of the spreader tramlines and the spreader's equipment.
+Drive half the working width from the field edge (1/2 X meters) when doing boundary track spreading with ExactLine (optional extra).
+ Set the first way at half the working width (1/2 X meter) from the field edge (in the first sprayer tramline).
+ The paths that follow are set at the full working width.
+ See paragraph »Boundary track spreading with ExactLine« on page 110.
+[Image]
+TIP: Indicate whether the field boundary is to the right of the machine while spreading the headland in the GEOCONTROL!<|begin_of_text|>
+===Page 99===
+
+Using the hydraulic border spreading plate with tramlines
+During one-sided boundary spreading with hydraulic border spreading plate, you drive along the outermost work area on the field edge and control the fertiliser granule stream by means of the hydraulic border spreading plate (accessory).
+The paths that follow are set at:
+· half the working width of Situation A (the first sprayer tramline),
+· the complete working width Situation B.
+ See paragraph »One-sided boundary spreading with the hydraulic border spreading plate« on page 107.
+[Image]
+TIP: Indicate that the field boundary is to the right of the machine while spreading the headland in the GEOCONTROL!
+99
+Use in the field<|begin_of_text|>
+===Page 100===
+
+Use in the field
+Start spreading
+INDICATION
+INDICATION.
+Connect headland with the GEOCONTROL function
+Overlap on the headland
+Overlap on the field boundary
+100
+To begin spreading, proceed as follows:
+ Close all the doors and windows in the cabin.
+ Drive the tractor to the first tramline, depending on the driving pattern required, which may be recognised by the marker in place.
+ Switch the control box on.
+ Check the settings as described in
+ Without GEOCONTROL, select and activate a site number in the field registration,
+ Switch on the PTO shaft and set the correct spreading disc rpm as reported in the spreading chart.
+Do not allow the spreading disc to run for longer than is necessary while the dosing units are closed. This will prevent the agitator from grinding the fertiliser.
+ Start driving and open the dosing units at the same time by pressing the start key.
+The rpm of the tractor engine (therefore also of the PTO shaft) must remain constant while spreading (with regards to distributing fertiliser along the width).
+The driving speed can only be adjusted by selecting another speed!
+Based on the offset set in the 'TC Implement Settings' screen, the GEOCONTROL will switch the spreading sections off by itself when passing the headland limit. This happens if the spreading pattern overlaps completely and you run up the headland.
+Depending on the set overlap percentage, the connection on the headland and gores will more or less overlap.
+The usual setting is 50%.
+ See the GEOCONTROL manual.
+Even the extent of overlap of the field boundary created can be separately set in the GEOCONTROL manual.
+TIP Set the overlap on the field boundary to 0 if you do not wish to spread over the field boundary.<|begin_of_text|>
+===Page 101===
+
+INDICATION
+INDICATION
+Use in the field
+approaching headland with the GEOCONTROL function switched off:
+ Close the dosing units by pressing the stop key before turning to the headland. The PTO shaft can keep running if you intend to start spreading immediately again.
+You will find the correct working method and corresponding distances on the headland in
+ the next paragraph »Working method on the headland« and paragraph »Spreading on field« from page 97.
+ Drive to the next tramline and re-start the spreader at the right time, as displayed in the next paragraph »Working method on the headland«.
+In the event of spreader failure or stoppage:
+ Stop spreading immediately!
+ Disconnect the PTO shaft immediately!
+ See then paragraph »Failure and stoppage« on page 113.
+If the hopper content becomes less than 100 kg, the control system switches off the automatic calibration. Measurement accuracy declines in such a way that new automatic calibration cannot produce a better discharge curve.
+At low doses <50 kg/ha, it is possible to reduce the minimum hopper capacity for automatic calibration to minus 15 kg.
+ See the software instruction manual.
+If the spreader is filled during the spreading process, e.g. from an auger riding alongside the vehicle the automatic calibration must be switched off. With automatic calibration the control system weighs the dispersed quantity of fertiliser (kg) within a certain time. It also checks these values in terms of the selected, preset application rate. The distributed quantity can therefore not be correctly weighed if the hopper is filled while spreading. The weight in the hopper could even increase during the measurement period. The correction performed by the control system would be inaccurate as a result, which could lead to crop damage.
+101<|begin_of_text|>
+===Page 102===
+
+Use in the field
+Working method on the headland
+102
+The driving pattern that you use, in other words how you must turn on the headland, depends on your border spreading method.
+· spreading the border from the sprayer tramline with ExactLine, one-sided boundary spreading with additional room with the border spreading plate (situation A), or
+· border spreading by closing off one disc and using a border spreading plate (situation B).
+Do the following when spreading the headland:
+For boundary track spreading from the sprayer tramline (ExactLine and situation A)
+[Image]
+GEOCONTROL headland function ExactLine
+ Begin with creating the field boundary where you spread on edges with the ExactLine while driving to the left through the first sprayer tramline.
+ Make a second round with the ExactLine switched off for a double headland, if required.
+ Fill the field with injections on your sprayer tramline defined previously.
+The GEOCONTROL will itself determine the correct start/stop moment while approaching and turning from the spread headland.<|begin_of_text|>
+===Page 103===
+
+Use in the field
+Hydraulic border spreading plate
+ Set the field boundary as close as possible along the field boundary while driving to the left or to the right, to spread right down to the border with the border spreading plate.
+ Fill the headland through to half the working width without the border spreading plate with the right/left dosing closed to make an additional pass.
+ See »One-sided boundary spreading with the hydraulic border spreading plate« on page 107.
+ Fill the field with injections on your sprayer tramline defined previously.
+The GEOCONTROL will itself determine the correct start/stop moment while approaching and turning from the spread headland.
+Spreading without GEOCONTROL headland:
+ Stop spreading by closing the dosing units of the machine when you are half a working width from the end of the land.
+ Let the spreading discs turns and do not switch off the PTO shaft.
+ Open the dosing units again at one and a half the working width of the field edge.
+ Finally spread the field edges with the ExactLine.
+ See paragraph »Border spreading« on page 106.
+With one-sided border spreading (situation B)
+[Image]
+103<|begin_of_text|>
+===Page 104===
+
+Use in the field
+GEOCONTROL headland function
+104
+ Begin with creating the field boundary where you spread down to the border along the field boundary while driving to the left/right with the border spreading plate and the right/left dosing switched off.
+ Fill the field with injections on your sprayer tramline defined previously.
+The GEOCONTROL will interrupt and start the process at the correct time while turning on the headland.
+Without GEOCONTROL
+ Drive as closely as possible to the end of the property and stop spreading by closing the dosing units before you turn.
+ Let the spreading discs turns and do not switch off the PTO shaft.
+ Open the dosing units again when you are a full working width down from the end of the land.
+ Finally spread the field edges with the border spreading plate.
+ See paragraph »Border spreading« on page 106.
+</context>
+<question>
+    What happens when hopper content falls below 100 kg?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

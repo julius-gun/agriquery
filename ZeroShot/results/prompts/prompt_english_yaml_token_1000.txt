@@ -1,0 +1,95 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     it
+    is rotating can cause serious or deadly injuries.
+- type: SectionHeaderItem
+  text: Protecting the environment
+- type: TextItem
+  text: Spreading a too high dose of materials outside of the field edge, especially
+    on water surface, creates a heavy burden on the environment. Protect the environment
+    by applying a correct application rate in a correct working manner.
+- type: SectionHeaderItem
+  text: Work with a closed cabin
+- type: TextItem
+  text: Fertiliser dust can blow indoors through open windows, doors or other openings.
+    Moreover, the sound level is higher in an open cabin. It is therefore recommended
+    to always work with a closed cabin with active carbon filters in the air inlets.
+    Fertiliser dust and a high sound level can cause physical damage.
+<|begin_of_text|>page_number: 95
+items:
+- type: SectionHeaderItem
+  text: Adjusting the machine
+- type: SectionHeaderItem
+  text: Spreading height
+- type: TextItem
+  text: Ground level or the top level of the crops
+- type: PictureItem
+  caption: Ground level or the top level of the crops
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: INDICATION
+- type: TextItem
+  text: Use in the field
+- type: TextItem
+  text: Most types of fertiliser attract water and can thereby form large chunks.
+    These chunks can block the spreader or distort the spreading pattern.
+- type: ListItem
+  text: · When working under moist weather conditions, use a hopper cover that closes
+    well.
+- type: ListItem
+  text: · Do not spread without a hopper cover under moist conditions.
+- type: ListItem
+  text: · Never leave the fertiliser for a long period of time in the spreader. Chunks
+    can also be formed through moisture in the air.
+- type: ListItem
+  text: · Always clean the spreader well after use, including the dosing openings
+    and the discharge bushings.
+- type: TextItem
+  text: 'Before you can make the first pass, you must make adjustments in the field
+    to:'
+- type: TextItem
+  text: 'The following is important to ensure that the spreader works properly:'
+- type: ListItem
+  text: · set it to the correct height from the ground or above the crop and
+- type: ListItem
+  text: · by levelling it with the lift rod adjustment and top link.
+- type: TextItem
+  text: Measured from the bottom of the vanes, the distance to the ground or the crop
+    must be 75 cm.
+- type: ListItem
+  text:  Use the power lift to lift the machine to the correct height.
+- type: ListItem
+  text:  Set the spreader horizontally with the lift rod adjustment and the top link.
+- type: ListItem
+  text:  Lock the lift limiter in this position.
+- type: SectionHeaderItem
+  text: Height correction with top dressing
+- type: TextItem
+  text: If the required height of 75 cm above the crop is not possible with your power
+    lift
+- type: ListItem
+  text:  use the high spreading setting of the linkage pins and/or
+- type: ListItem
+  text:  set the spreader forward as indicated in the spreading charts.
+- type: ListItem
+  text:  See paragraph »Selecting linkage pin height« on page 53.
+- type: TextItem
+  text: '95'
+
+</context>
+<question>
+    What is the tolerance for 'measured distance from the bottom of the vanes, the distance to the ground or the crop' in cm?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

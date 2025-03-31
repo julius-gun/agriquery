@@ -1,0 +1,82 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     d'engrais le long de l'arbre de l'agitateur.
+    La bague d'étanchéité doit être remplacée à chaque début de saison et au bout
+    de toutes les 100 heures d'utilisation de la machine. Procédez aux opérations
+    uniquement sur une machine propre dont la trémie est vide.
+- type: ListItem
+  text:  Réglez le levier de dosage fin dans la position de dosage normal.
+- type: ListItem
+  text:  Démarrez le tracteur et branchez le boîtier de commande.
+- type: ListItem
+  text:  Activez la fonction de vidange de trémie.
+- type: ListItem
+  text:  Voir les instructions du logiciel
+- type: ListItem
+  text:  Attendez que les deux vérins électriques se soient entièrement déployés
+    et que les unités de dosage soient entièrement ouvertes.
+- type: ListItem
+  text:  Placez la machine sur le sol ou sur des supports solides reposant sur une
+    surface plane et robuste.
+- type: ListItem
+  text:  Débranchez le système de commande électronique et coupez le moteur du tracteur,
+    retirez la clé de contact et serrez le frein à main.
+<|begin_of_text|>page_number: 141
+items:
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Bague d'étanchéité en métal
+- type: PictureItem
+  caption: Bague d'étanchéité en métal
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Maintenance
+- type: ListItem
+  text:  Ouvrez les tamis avec l'outil fourni et verrouillez-les.
+- type: ListItem
+  text:  Retirez l'agitateur de l'arbre de l'agitateur.
+- type: ListItem
+  text:  Soutenez la bague de roulement en plastique à travers une ouverture de dosage
+    afin que celle-ci ne s'affaisse pas.
+- type: ListItem
+  text:  Retirez les 3 boulons de fixation des bagues d'étanchéité.
+- type: ListItem
+  text:  Retirez les bagues d'étanchéité métalliques.
+- type: ListItem
+  text:  Contrôlez l'état de l'arbre de l'agitateur.
+- type: ListItem
+  text:  Remplacez le joint d'étanchéité en plastique.
+- type: ListItem
+  text:  Placez à nouveau les bagues d'étanchéité métalliques.
+- type: ListItem
+  text:  Remontez les 3 boulons de fixation.
+- type: TextItem
+  text: CONSEIL Vous pouvez relâcher la bague de roulement en plastique après avoir
+    serré le premier boulon de fixation.
+- type: ListItem
+  text:  Remontez l'agitateur sur son arbre.
+- type: TextItem
+  text: Effectuez ensuite le contrôle détaillé au
+- type: ListItem
+  text:  paragraphe »Contrôle et réglage du mécanisme de dosage« de la page 133.
+- type: TextItem
+  text: '141'
+
+</context>
+<question>
+    What is the material of the 'metal seal rings' for agitator axle seal?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

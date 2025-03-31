@@ -1,0 +1,49 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    äßig.
+Die Kupplungsstücke zwischen dem Zentralgetriebe und den Getrieben der Streuscheiben verwenden Sie beim Grenzstreuen und bei der Kontrolle des Streubilds durch den Streumengentest. Mit den Kupplungsstücken entkoppeln Sie eine der Streuscheiben.
+ Bringen Sie gängiges Schmieröl auf die Antriebswellen und Kupplungsstücke auf.
+Durch das Ölen der Kupplungsstücke vermeiden Sie, dass diese korrodieren und schwierig bedienbar werden.
+[Image]
+128<|begin_of_text|>
+===Page 129===
+
+Anzugsmomente Stahl
+Wartung
+[Image]
+Richtlinien für Anzugsmomente (in Nm) für selbstsichernde Muttern, Sechskantschrauben und -muttern.
+.
+   Qualität.Reibung *.Gewinde Anzugsmomente.4.6.0,10. Anzugsmomente.4.6.0,13. Anzugsmomente.8.8.0,10. Anzugsmomente.8.8.0,13. Anzugsmomente.10.9.0,10. Anzugsmomente.10.9.0,13. Anzugsmomente.12.9.0,10. Anzugsmomente.12.9.0,13.
+0                          M5                     1,7                       2                       5                       6                        7                        8                        9                       10
+1                          M6                       3                       4                       9                      10                       13                       15                       15                       18
+2                          M8                       8                       9                      21                      25                       31                       36                       36                       42
+3                         M10                      16                      19                      40                      50                       60                       70                       70                       85
+4                         M12                      27                      32                      70                      85                      105                      120                      120                      145
+5                         M14                      42                      50                     115                     135                      165                      195                      195                      230
+6                         M16                      65                      76                     175                     210                      260                      300                      300                      350
+7                         M18                      90                     110                     250                     290                      350                      420                      410                      490
+8                         M20                     125                     150                     350                     420                      500                      600                      580                      700
+9                         M22                     170                     200                     470                     560                      670                      800                      780                      930
+10                        M24                     210                     250                     600                     710                      860                     1020                     1000                     1180
+* Der Reibungskoeffizient von 0,10 gilt für geöltes Blech, Gusseisen, gehärtete Flächen, gefettete Gewinde usw. Der höhere Wert von 0,13 gilt für trockenes Blech.
+Anzugsmomente für Schrauben und Muttern mit gerändelter Unterseite 10 % zusätzlich, wie z. B.:
+· Tensilock (K100),
+· Whizlock.
+Ausnahmen von dieser Tabelle sind in dem Ersatzteilheft und/oder in der Betriebsanleitung aufgeführt.
+129
+</context>
+<question>
+    With what torque in Nm must a M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

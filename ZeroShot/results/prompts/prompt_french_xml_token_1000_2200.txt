@@ -1,0 +1,27 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     tableau d'épandage adapté dans le manuel de tableaux d'épandage, dans les tableaux d'épandage en ligne ou dans l'application mobile gratuite, vous devez réunir les propriétés physiques de l'engrais :</text><text>· type et forme des granulés,</text><text> cf. paragraphe ci-dessous »Détermination du type et de la forme des granulés«,</text><text>· granulométrie (= proportion de grains de tailles différentes),</text><text> Cf. paragraphe »Détermination de la granulométrie« de la page 59,</text><text>· poids spécifique,</text><text> Cf. paragraphe »Détermination du poids spécifique« de la page 60.</text><text>La granulométrie est la caractéristique la plus déterminante de l'engrais lors de l'épandage. Sélectionnez le type d'engrais souhaité dans les tableaux d'épandage (en ligne) au moyen de la granulométrie. N'utilisez jamais un tableau d'épandage pour un autre type d'engrais, même si la granulométrie concorde! Déterminez ensuite d'après le poids spécifique le tableau d'épandage qui correspond le mieux à votre type d'engrais.</text></page><|begin_of_text|><page number="58"><text>Opérations avant l'épandage</text><text>Déterminez le type d'engrais d'après la forme et la surface :</text><table>                                       Type Traitement                                                                                                                       Forme                                                                              Surface
+0                                  granulés      bruts                                                                                          sphéricité plus ou moins régulière                                                                                bruts
+1                                                lisse                                                                                       sphéricité la plus régulière possible                                                                          assez lisse
+2                                   Minéral                                                                                                                 sphéricité irrégulière                                                                         très inégale
+3                            Engrais prillé                                                       sphéricité parfaite, creux à l'inté- rieur, quelques petits trous à la sur- face                                                                           très lisse
+4                                cristallin                          allongé, en forme de cylindre, avec  des formes arrondies, creux à l'inté- rieur, quelques trous à la surface                                                                                lisse
+5                                   Mélange                                                      mélange de grains de formes diffé- rentes, différents des descriptions  ci-dessus  mélange de grains de surfaces  différentes, différents des des- criptions ci-dessus
+6                                  Bouchons                                                                                                          Bouchons ou engrais organique                                                                                     
+7  Graines de semis Granulés anti-li- maces             Les graines de semis diffèrent  d'une variété à l'autre. Les graines de semis peuvent avoir  différentes caractéristiques.                                                                                     </table><image /><text>granulés</text><image caption="granulés" /><text>Engrais prillé</text><text>cristallin</text><image caption="cristallin" /><text>Mélange</text><image caption="Mélange" /><text>58</text><text>Bouchons</text><text>Graines de semis</text><text>Granulés anti-limaces</text><image caption="Granulés anti-limaces" /><image /><text>Minéral</text><image caption="Minéral" /><image /></page>
+</context>
+<question>
+    What is the pattern of the type 'mineral'?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

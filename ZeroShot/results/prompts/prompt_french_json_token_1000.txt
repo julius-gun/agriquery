@@ -1,0 +1,76 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|>{
+  "page_number": 85,
+  "items": [
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "R\u00e9glage du d\u00e9flecteur de bordure hydraulique"
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Op\u00e9rations avant l'\u00e9pandage"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Placez 1 bac de collecte sur le champ le long de la bordure de tranch\u00e9e puis 2 bacs de collecte dans la tranch\u00e9e fictive."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 D\u00e9marrez le tracteur, embrayez la prise de force. Le r\u00e9gime de prise de force correct est la valeur standard moins 25 %, c'est-\u00e0-dire 540 tr/min - 25 % = 400 tr/min."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 S\u00e9lectionnez un rapport vous permettant de rouler \u00e0 la m\u00eame vitesse qu'avec un r\u00e9gime de prise de force normal, ou r\u00e9duisez le d\u00e9bit de 25 %."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Commencez \u00e0 rouler le long de la bordure de parcelle. La distance entre la bordure de parcelle et le centre du tracteur doit \u00eatre de 2 m\u00e8tres."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Ouvrez l'unit\u00e9 de dosage sur quelques m\u00e8tres avant de passer au centre au-dessus du premier bac."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Arr\u00eatez seulement d'\u00e9pandre une fois que vous avez d\u00e9pass\u00e9 les bacs de collecte d'au moins une largeur de travail (par ex. 24 m\u00e8tres). L'\u00e9pandeur \u00e9pand en effet un peu plus vers l'arri\u00e8re que sur le c\u00f4t\u00e9."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Si vous avez r\u00e9gl\u00e9 un d\u00e9bit inf\u00e9rieur \u00e0 250 kg/ha, faites une fois encore l'aller et retour sur la m\u00eame orni\u00e8re afin d'accumuler suffisamment d'engrais dans les bacs de collecte pour obtenir une bonne comparaison."
+    },
+    {
+      "type": "TextItem",
+      "text": "Respectez la m\u00eame distance pour l'ouverture et la
+</context>
+<question>
+    What is the 'tap' material used for hydraulic border spreading plate tap?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

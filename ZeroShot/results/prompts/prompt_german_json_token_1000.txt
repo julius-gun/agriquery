@@ -1,0 +1,88 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|>{
+  "page_number": 140,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Wartung"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Dichtung R\u00fchrerwelle austauschen"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "140"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Vermeiden Sie den Kontakt mit Kunstd\u00fcnger und anderen Mitteln"
+    },
+    {
+      "type": "TextItem",
+      "text": "Beim F\u00fcllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstd\u00fcnger und anderen Mitteln, die Sie ausstreuen m\u00f6chten. Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie die zus\u00e4tzliche Hinweise. Der Kontakt kann K\u00f6rperverletzungen verursachen."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Achtung Quetschgefahr"
+    },
+    {
+      "type": "TextItem",
+      "text": "Bei der \u00dcberpr\u00fcfung und Justierung des Streuers besteht Quetschgefahr."
+    },
+    {
+      "type": "TextItem",
+      "text": "Arbeiten Sie sicher w\u00e4hrend der \u00dcberpr\u00fcfung und Einstellung, indem Sie:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 das elektronische Steuersystem ausschalten,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 den Schlepper ausschalten und den Z\u00fcndschl\u00fcssel vom Z\u00fcndschloss abziehen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 die Feststellbremse des Schleppers anziehen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 warten, bis alle Teile der Maschine still stehen, bevor Sie mit der Wartung beginnen."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 sch\u00fctzende Kleidung, wie z. B. Sicherheitshandschuhe und Sicherheitsschuhe tragen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 die beschriebenen Handlungen alleine und vorsichtig ausf\u00fchren."
+    },
+    {
+      "type": "TextItem",
+      "text": "Einklemmen kann K\u00f6rperverletzungen verursachen."
+    },
+    {
+      "type": "TextItem",
+      "text": "Die R\u00fchrerwelle ist mit einer Kunststoffdichtung versehen, um zu vermeiden, dass Sie Kunstd\u00fcngerk\u00f6rner entlang der R\u00fchrerwelle verlieren. Die Dichtung muss jede Saison und nach jeweils 100 Betriebsstunden der Maschine ausgetaus
+</context>
+<question>
+    What is the 'plastic seal' material specification for agitator axle seal?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

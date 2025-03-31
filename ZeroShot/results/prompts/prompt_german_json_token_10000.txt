@@ -1,0 +1,991 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    ListItem",
+      "text": "\uf034 Verriegeln Sie das Sieb, um ein unbeabsichtigtes Zufallen zu vermeiden."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Schlie\u00dfen Sie das Sieb und kontrollieren Sie die Arretiervorrichtung."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 F\u00fcllen Sie den Streuer wieder."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Achten Sie w\u00e4hrend des Bef\u00fcllens mit Kunstd\u00fcnger auf das Vorhandensein von Brocken."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Schlie\u00dfen Sie die Abdeckplane."
+    },
+    {
+      "type": "TextItem",
+      "text": "HINWEIS"
+    },
+    {
+      "type": "TextItem",
+      "text": "Verschluss des Siebs"
+    },
+    {
+      "type": "TextItem",
+      "text": "Verriegelung ge\u00f6ffnetes Sieb"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "Verschluss des SiebsVerriegelung ge\u00f6ffnetes Sieb"
+    },
+    {
+      "type": "TextItem",
+      "text": "Siebverschluss arretiert"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "Siebverschluss arretiert"
+    },
+    {
+      "type": "TextItem",
+      "text": "116"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 117,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Au\u00dferbetriebnahme"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Au\u00dferbetriebnahme"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Vermeiden Sie den Kontakt mit Kunstd\u00fcnger und anderen Mitteln"
+    },
+    {
+      "type": "TextItem",
+      "text": "Bei der Au\u00dferbetriebnahme der Maschine k\u00f6nnen Sie leicht in Kontakt mit Mitteln kommen. Tragen Sie daher Schutzkleidung, wie z. B. Sicherheitshandschuhe, Sicherheitsschuhe und Schutzbrille. Lesen Sie auch die Sicherheitshinweise des Reinigungsmittelherstellers und befolgen Sie dies Anweisungen. Der Kontakt mit sch\u00e4dlichen Mitteln kann Verletzungen verursachen. Nehmen Sie in einem solchen Fall Kontakt mit einem Arzt auf."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Achtung Quetschgefahr"
+    },
+    {
+      "type": "TextItem",
+      "text": "Bei der Arbeit mit dem Streuer besteht Quetschgefahr."
+    },
+    {
+      "type": "TextItem",
+      "text": "Arbeiten Sie sicher mit der Maschine, indem Sie:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 das Hydrauliksystem drucklos machen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 das elektronische Steuersystem ausschalten,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 den Schlepper ausschalten und den Z\u00fcndschl\u00fcssel vom Z\u00fcndschloss abziehen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 die Feststellbremse des Schleppers anziehen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 warten, bis alle Teile der Maschine stillstehen, bevor Sie sich n\u00e4hern,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 sch\u00fctzende Kleidung, wie z. B. Sicherheitshandschuhe und Sicherheitsschuhe tragen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 die beschriebenen Handlungen alleine und vorsichtig ausf\u00fchren."
+    },
+    {
+      "type": "TextItem",
+      "text": "Einklemmen kann K\u00f6rperverletzungen verursachen."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Sch\u00fctzen Sie die Maschine"
+    },
+    {
+      "type": "TextItem",
+      "text": "Kunstd\u00fcnger und andere Salze haben gro\u00dfen Einfluss auf die Korrosionsgeschwindigkeit. Leeren Sie den Beh\u00e4lter nach Beendigung der Arbeiten. Sch\u00fctzen Sie die Maschine, indem Sie sie nach Gebrauch immer reinigen und Besch\u00e4digungen am Lack beiarbeiten. Korrosion greift die St\u00e4rke der Konstruktion und die Funktion der Maschine an, was eine stark verk\u00fcrzte Lebensdauer zur Folge hat."
+    },
+    {
+      "type": "TextItem",
+      "text": "Die (blanken) Metallteile der Maschine nach der Reinigung mit der mitgelieferten Dose Konservierungsmittel zum Schutz gegen Korrosion der Maschine einspr\u00fchen; vor Gebrauch die Anleitung durchlesen."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Vorsicht bei der Reinigung mit einem Hochdruckreiniger"
+    },
+    {
+      "type": "TextItem",
+      "text": "Sie k\u00f6nnen die Maschine mit Wasser oder Dampf reinigen, ggf. unter Verwendung geeigneter Reinigungsmittel. Lesen Sie auch die Sicherheitshinweise/-anleitungen des Reinigungsmittelherstellers und befolgen Sie diese Anweisungen."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Verwenden Sie nur geringen Druck bei niedriger Temperatur; 80 bar und 40 o C maximal."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Halten Sie mit der Spritzd\u00fcse mindestens einen Abstand von 30 cm zu drehenden Teilen, Sensoren, Elementen des elektrischen Systems, Hydraulikschl\u00e4uchen, Aufklebern und Kunststoffteilen."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Spritzen Sie auf Aufkleberr\u00e4nder nur senkrecht."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Abfallstoffe lagern und entsorgen"
+    },
+    {
+      "type": "TextItem",
+      "text": "Das Abwasser, das w\u00e4hrend der Reinigung der Maschine anf\u00e4llt, enth\u00e4lt Verschmutzungen mit Kunstd\u00fcnger und ggf. Schmiermitteln. Sammeln Sie diese Abfallstoffe und entsorgen Sie diese gem\u00e4\u00df der nationalen Gesetzgebung."
+    },
+    {
+      "type": "TextItem",
+      "text": "117"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 118,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Au\u00dferbetriebnahme"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Reinigung"
+    },
+    {
+      "type": "TextItem",
+      "text": "118"
+    },
+    {
+      "type": "TextItem",
+      "text": "Bevor Sie die Maschine f\u00fcr k\u00fcrzere oder l\u00e4ngere Zeit au\u00dfer Betrieb setzen, sollte diese zuerst geschmiert, dann gereinigt und noch einmal geschmiert werden. Mit dem ersten Schmieren vermeiden Sie, dass w\u00e4hrend der Reinigung Schmutz, Kunstd\u00fcnger und Wasser in die Lager gelangt. Schmieren und \u00f6len Sie alle Punkte nach der Reinigung nochmals zur Konservierung ein."
+    },
+    {
+      "type": "TextItem",
+      "text": "Die Vorteile dieser Arbeitsreihenfolge sind:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 zus\u00e4tzliche \u00dcberpr\u00fcfung der Maschine direkt nach der Arbeit,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 l\u00e4ngere Lebensdauer der Maschine,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 geringere Ausfallzeiten durch St\u00f6rungen w\u00e4hrend des Betriebs der Maschine."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Schmieren Sie die Schmiernippel der Maschine."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae Siehe Absatz \u00bbSchmierpunkte\u00ab ab Seite 126."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Die Maschine reinigen."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Schmieren Sie nochmals die Schmiernippel der Maschine."
+    },
+    {
+      "type": "TextItem",
+      "text": "Bei Verwendung eines Hochdruckreinigers nicht mit dem Strahl auf die Dichtungen und Entl\u00fcftungsverschl\u00fcsse zielen. Auf diese Weise wird vermieden, dass Schmutz und Wasser in die Getriebe eindringen."
+    },
+    {
+      "type": "TextItem",
+      "text": "Richten Sie den Strahl nicht auf elektrische Komponenten. Wasser kann elektrische St\u00f6rungen verursachen."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "HINWEIS"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 119,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Abkoppeln der Maschine"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Au\u00dferbetriebnahme"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Sicher abkuppeln"
+    },
+    {
+      "type": "TextItem",
+      "text": "Sie d\u00fcrfen die Maschine nur abkuppeln, wenn folgende Bedingungen erf\u00fcllt sind:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 alle Teile in einer sicheren Stellung stehen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 die direkte Umgebung sicher ist,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 der Beh\u00e4lter leer ist."
+    },
+    {
+      "type": "TextItem",
+      "text": "Arbeiten Sie sicher, indem Sie:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 die Umgebung (Kinder!) \u00fcberpr\u00fcfen und daf\u00fcr sorgen, dass sich niemand innerhalb des Arbeitsbereichs des Schleppers oder der Maschine befindet."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Sicherheitsschuhe und Sicherheitshandschuhe tragen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 die Maschine oder den St\u00fctzfu\u00df auf einen flachen und festen Untergrund stellen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 bei externer Bedienung des Krafthebers w\u00e4hrend des Abkoppelns niemals zwischen dem Schlepper und der Maschine stehen. Im Bereich des Krafthebers besteht Verletzungsgefahr durch Quetschen und Einklemmen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 den Kraftheber langsam und vorsichtig bedienen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 den Kraftheber w\u00e4hrend des Abkoppelns in einen solchen Stand setzen, dass unbeabsichtigtes Heben oder Senken ausgeschlossen ist."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 ausreichend Abstand halten zwischen den Teilen (wie z. B. St\u00fctzfu\u00df, usw. ), die auf dem Boden aufliegen."
+    },
+    {
+      "type": "TextItem",
+      "text": "Unsicheres Arbeiten kann ernsthafte Verletzungen verursachen."
+    },
+    {
+      "type": "TextItem",
+      "text": "Wenn die Maschine f\u00fcr eine l\u00e4ngere Au\u00dferbetriebnahme stabil abgestellt werden soll, ist wie folgt vorzugehen:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Die Zapfwelle ausschalten."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Vergewissern Sie sich, dass der Hahn des Hydraulikschlauchs der ExactLine geschlossen ist."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Vergewissern Sie sich, dass der Hahn des Hydraulikschlauchs des hydraulischen Grenzstreublechs geschlossen ist."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Den Druck in allen hydraulischen Systemen abbauen."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Stellen Sie die Maschine auf einen flachen, stabilen Untergrund."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Schalten Sie das elektronische Steuersystem aus."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Bet\u00e4tigen Sie die Feststellbremse des Schleppers."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Passen Sie die L\u00e4nge der Verstellspindel an, so dass diese nicht mehr unter Spannung steht."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Entnehmen Sie die Verstellspindel, indem Sie das Entkupplungsseil von den Fangtaschen entkoppeln und die Verstellspindel hochziehen."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Entnehmen Sie die Unterlenkanschl\u00fcsse, indem Sie das Entkupplungsseil von den Fangtaschen entkoppeln und den Kraftheber so weit wie m\u00f6glich absacken lassen."
+    },
+    {
+      "type": "TextItem",
+      "text": "119"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 120,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Au\u00dferbetriebnahme"
+    },
+    {
+      "type": "TextItem",
+      "text": "TIPP Wenn der Kraftheber nicht weit genug absacken kann, um die Fangtaschen zu entkoppeln, empfehlen wir Ihnen, den Streuer auf eine feste, stabile Erh\u00f6hung zu platzieren, z. B. eine Palette."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Fahren Sie den Schlepper ungef\u00e4hr 200 mm nach vorne (der maximale Abstand h\u00e4ngt von dem Bereich der Zapfwelle ab; die H\u00e4lften m\u00fcssen einander \u00fcberlappen)."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Schalten Sie den Schlepper aus, ziehen Sie den Schl\u00fcssel aus dem Z\u00fcndschloss und bet\u00e4tigen Sie die Feststellbremse des Schleppers."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Platzieren Sie Unterlegkeile, um eine mit Abstellr\u00e4der ausgestattete Maschine gegen Wegrollen zu sichern."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Ziehen Sie die elektrischen Stecker ab und h\u00e4ngen diese in den Halter."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Ziehen Sie die Hydraulikschl\u00e4uche ab."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Setzen Sie die Schutzkappen auf die Kupplungen der Hydraulikschl\u00e4uche."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 H\u00e4ngen Sie die Hydraulikschl\u00e4uche in die Schlauchhalterung ein."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Entnehmen Sie die Zapfwelle und h\u00e4ngen diese in den Haken."
+    },
+    {
+      "type": "TextItem",
+      "text": "Wenn die Maschine mit Abstellr\u00e4dern ausgestattet ist:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Fahren Sie die Maschine auf den gew\u00fcnschten Abstellplatz."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Setzen Sie die Unterlegkeile vor die Abstellr\u00e4der."
+    },
+    {
+      "type": "TextItem",
+      "text": "Halter f\u00fcr elektrische Stecker und Hydraulikschl\u00e4uche."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "120"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 121,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Vorbereitung f\u00fcr die Winterlagerung"
+    },
+    {
+      "type": "TextItem",
+      "text": "TIPP"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Au\u00dferbetriebnahme"
+    },
+    {
+      "type": "TextItem",
+      "text": "Am Ende der Erntesaison wird die Maschine f\u00fcr die Winterlagerung vorbereitet."
+    },
+    {
+      "type": "TextItem",
+      "text": "Bevor Sie die Maschine f\u00fcr k\u00fcrzere oder l\u00e4ngere Zeit au\u00dfer Betrieb setzen, sollte diese zuerst geschmiert, dann gereinigt und noch einmal geschmiert werden. Mit dem ersten Schmieren vermeiden Sie, dass w\u00e4hrend der Reinigung Schmutz, Kunstd\u00fcnger und Wasser in die Lager gelangt. Schmieren und \u00f6len Sie alle Punkte nach der Reinigung nochmals zur Konservierung ein."
+    },
+    {
+      "type": "TextItem",
+      "text": "Die Vorteile dieser Arbeitsreihenfolge ist:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 zus\u00e4tzliche \u00dcberpr\u00fcfung der Maschine direkt nach der Arbeit,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 l\u00e4ngere Lebensdauer der Maschine,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 geringere Ausfallzeiten durch St\u00f6rungen w\u00e4hrend des Betriebs der Maschine."
+    },
+    {
+      "type": "TextItem",
+      "text": "Bei Verwendung eines Hochdruckreinigers nicht mit dem Strahl auf die Dichtungen und Entl\u00fcftungsverschl\u00fcsse zielen. Auf diese Weise wird vermieden, dass Schmutz und Wasser in die Getriebe eindringen."
+    },
+    {
+      "type": "TextItem",
+      "text": "Richten Sie den Strahl nicht auf elektrische Komponenten. Wasser kann elektrische St\u00f6rungen verursachen."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae Siehe \u00bbVorsicht bei der Reinigung mit einem Hochdruckreiniger\u00ab auf Seite 117."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Die Maschine reinigen."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Die Maschine trocknen lassen."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Eventuelle Lacksch\u00e4den ausbessern."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Schmieren und \u00f6len Sie alle Punkte nochmals zur Konservierung."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae Siehe Absatz \u00bbWartungsintervalle\u00ab auf Seite 125."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Versehen Sie blanke Teile, wie Kolbenstangen der Hydraulikzylinder mit konservierendem Fett oder spr\u00fchen (blanke) Metallteile der Maschine mit Konservierungsmittel (mitgeliefert) zum Schutz vor Korrosion der Maschine ein."
+    },
+    {
+      "type": "TextItem",
+      "text": "HINWEIS Verwenden Sie ein Fett, das nicht austrocknet und hart wird. Und zwar, um Sch\u00e4den an der Abdichtung der Zylinder zu vermeiden."
+    },
+    {
+      "type": "TextItem",
+      "text": "121"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 122,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Wartung"
+    },
+    {
+      "type": "TextItem",
+      "text": "Wartung"
+    },
+    {
+      "type": "TextItem",
+      "text": "122"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Reparieren Sie Besch\u00e4digungen sofort und sicher"
+    },
+    {
+      "type": "TextItem",
+      "text": "Reparieren Sie eine Maschine, bevor Sie weiter auf eine sichere Weise arbeiten, indem Sie:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 den Schlepper und die Maschine auf einen flachen und festen Untergrund stellen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 die Zapfwelle ausschalten,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 das Hydrauliksystem drucklos machen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 das elektronische Steuersystem ausschalten,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 den Schlepper ausschalten und den Z\u00fcndschl\u00fcssel vom Z\u00fcndschloss abziehen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 die Feststellbremse des Schleppers anziehen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 falls m\u00f6glich, den Schlepper entkoppeln,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 warten, bis sich alle Teile der Maschine nicht mehr bewegen. Die Maschine bewegt sich durch die Masse (Massentr\u00e4gheit) noch einige Zeit weiter."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Unterlegkeile vor die R\u00e4der einer Maschine mit Abstellr\u00e4dern platzieren, um ein Wegrollen zu vermeiden,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 sch\u00fctzende Kleidung, wie z. B. Sicherheitshandschuhe und Sicherheitsschuhe tragen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 die beschriebenen Handlungen vorsichtig und alleine ausf\u00fchren,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 geeignete Werkzeuge gebrauchen."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 gro\u00dfe oder schwere Teile beim Austausch sorgf\u00e4ltig an die passenden Hebezeuge befestigen und sichern,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Teile st\u00fctzen und sichern, die sich unbeabsichtigt bewegen k\u00f6nnen,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Teile von der Maschine nicht verwenden, um auf die Maschine zu steigen. Verwenden Sie nur die Tritte, Leitern oder sonstige daf\u00fcr bestimmte Hilfsmittel."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 die Versorgung bei Arbeiten am elektrischen System unterbrechen."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 die Kabel des Dynamos und des Akkus abziehen, bevor Sie am Schlepper oder angekoppelten Maschinen schwei\u00dfen!"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Ausf\u00fchrung durch befugte Personen"
+    },
+    {
+      "type": "TextItem",
+      "text": "Lassen Sie Wartungs- und Reparaturarbeiten durch befugte und sachkundige Personen ausf\u00fchren, wie dies beschrieben ist in \uf0ae Absatz \u00bbBefugnis\u00ab auf Seite 11."
+    },
+    {
+      "type": "TextItem",
+      "text": "Jede Form der Haftung des Herstellers und die Garantie verf\u00e4llt, wenn die Wartungs- und Reparaturarbeiten von unbefugten Personen ausgef\u00fchrt werden."
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 123,
+  "items": [
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Wartung"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Keine Ver\u00e4nderung an der Maschine anbringen"
+    },
+    {
+      "type": "TextItem",
+      "text": "Ver\u00e4ndern Sie die Maschine auf keinerlei Weise. Unzul\u00e4ssige Ver\u00e4nderungen k\u00f6nnen den Gebrauch und/oder die Sicherheit der Maschine beeintr\u00e4chtigen und die Lebensdauer der Maschine beeinflussen."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Verwenden Sie beim Austausch lediglich Originalersatzteile"
+    },
+    {
+      "type": "TextItem",
+      "text": "Der Gebrauch von anderen als den Originalersatzteilen kann zu Problemen und unsicheren Situationen beim Gebrauch der Maschine f\u00fchren."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Zubeh\u00f6r und Teile richtig montieren"
+    },
+    {
+      "type": "TextItem",
+      "text": "Montieren Sie Zubeh\u00f6r und Teile gem\u00e4\u00df Vorschrift und befestigen Sie diese ausschlie\u00dflich an den daf\u00fcr bestimmten Vorrichtungen; sorgen Sie f\u00fcr eine gute Sicherung. Schlecht befestigte Zubeh\u00f6rteile k\u00f6nnen Personensch\u00e4den und Sch\u00e4den an Erntegut und Maschine hervorrufen."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Drehen Sie alle Schrauben und Muttern fest"
+    },
+    {
+      "type": "TextItem",
+      "text": "Kontrollieren Sie alle Schrauben und Muttern regelm\u00e4\u00dfig und drehen Sie diese nach der ersten Betriebsstunde fest, im Anschluss an:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 die \u00dcbergabe und"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Ausf\u00fchrung der Wartungs- und Reparaturarbeiten."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Vermeiden Sie ein Einklemmen unter den Sieben"
+    },
+    {
+      "type": "TextItem",
+      "text": "Bei (Wartungs-)Arbeiten in dem Beh\u00e4lter oder dem Schlie\u00dfen der Siebe k\u00f6nnen Sie sich einklemmen. Sichern Sie das Sieb in ge\u00f6ffneter Stellung und entriegeln Sie die Siebe an den Au\u00dfenseiten. Einklemmen kann Verletzungen verursachen."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Vermeiden Sie Kontakt mit sch\u00e4dlichen Mitteln"
+    },
+    {
+      "type": "TextItem",
+      "text": "Bei der Reinigung der Maschine k\u00f6nnen Sie leicht in Kontakt mit sch\u00e4dlichen Mitteln kommen. Tragen Sie daher Schutzkleidung, wie z. B. Sicherheitshandschuhe, Sicherheitsschuhe und Schutzbrille. Lesen Sie auch die Sicherheitshinweise des Reinigungsmittelherstellers und befolgen Sie dies Anweisungen. Der Kontakt mit sch\u00e4dlichen Mitteln kann Verletzungen verursachen. Nehmen Sie in einem solchen Fall Kontakt mit einem Arzt auf."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Explosionsgefahr durch Nitrat"
+    },
+    {
+      "type": "TextItem",
+      "text": "Nitrat enthaltende D\u00fcngemittel k\u00f6nnen eine Explosionsgefahr darstellen, wenn sie mit Feuer in Kontakt kommen. Entfernen Sie daher s\u00e4mtliche D\u00fcngemittelreste aus allen Hohlr\u00e4umen, Ecken, Rohren und Schl\u00e4uchen, bevor Sie an der Maschine Schwei\u00df-, Schneideoder Schleifarbeiten vornehmen. Eine Explosion verursacht Sch\u00e4den an der Maschine und eventuell K\u00f6rperverletzungen."
+    },
+    {
+      "type": "TextItem",
+      "text": "Beachten Sie auch die Sicherheitsvorschriften gem\u00e4\u00df Anf\u00fchrung in \uf0ae Absatz \u00bbSicherheitsvorschriften\u00ab ab Seite 10."
+    },
+    {
+      "type": "TextItem",
+      "text": "123"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 124,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Wartung"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "\u00d6l- und Fettvolumen"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Niemals mehr \u00d6l oder Fett als vorgeschrieben verwenden"
+    },
+    {
+      "type": "TextItem",
+      "text": "Ist der \u00d6lstand zu hoch, so kann die Maschine hei\u00dflaufen und die Dichtung besch\u00e4digt werden."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Abfallstoffe sammeln und entsorgen"
+    },
+    {
+      "type": "TextItem",
+      "text": "Abfallstoffe, die w\u00e4hrend der Wartung der Maschine entstehen, enthalten m\u00f6glicherweise Verschmutzung mit Kunstd\u00fcnger, \u00d6l oder Fett. Sammeln Sie diese Abfallstoffe und entsorgen Sie diese gem\u00e4\u00df der nationalen Gesetzgebung."
+    },
+    {
+      "type": "TableItem",
+      "table_data": {
+        "Teil / Ma\u00dfnahme": {
+          "0": "Zentralgetriebe Getriebe Streuscheiben",
+          "1": "Mit Fett schmieren Mit \u00d6l schmieren"
+        },
+        "Menge": {
+          "0": "2 x 0,25 Liter 1,5 Liter",
+          "1": "1 bis 2 Schl\u00e4ge"
+        },
+        "Spezifikationen": {
+          "0": "Getriebefett EP00/000 Getriebefett EP00/000",
+          "1": "Shell Rodina 2, Castrol GS2 oder gleichwertig MIL-L-2105C, SAE 80W-90"
+        }
+      }
+    },
+    {
+      "type": "TextItem",
+      "text": "124"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 125,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Wartungsintervalle"
+    },
+    {
+      "type": "TextItem",
+      "text": "Wartung"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Halten Sie die nachstehenden Kontroll- und Wartungsintervalle ein, um die Maschine in einem guten Zustand zu halten."
+    },
+    {
+      "type": "TableItem",
+      "table_data": {
+        "t\u00e4 gl ic h": {
+          "0": "Kontrollieren",
+          "1": "\u00bbKontrolle von Schrauben und Muttern\u00ab",
+          "2": "\u00bbKontrolle Hydrauliksystem\u00ab",
+          "3": "Zustand R\u00fchrer und R\u00fchrerwelle",
+          "4": "Zustand Schaufeln",
+          "5": "\u00bbKontrolle und Einstellung Dosiermechanismus\u00ab",
+          "6": "\u00bbKontrolle und Einstellung Einstellmechanismus Auslauf\u00f6ff-",
+          "7": "nung\u00ab",
+          "8": "\u00bbKontrolle und Einstellung H\u00f6he Auslaufrohr\u00ab",
+          "9": "Schmieren",
+          "10": "4 Schmiernippel der Zapfwelle",
+          "11": "2 Schmiernippel auf beide Auslassdosen",
+          "12": "1 Schmiernippel auf allen vier Stellgliedern",
+          "13": "Fett anbringen oder beif\u00fcllen",
+          "14": "Profilrohre Gelenkwelle",
+          "15": "Zentralgetriebe",
+          "16": "Getriebe der Streuscheiben",
+          "17": "\u00d6l anbringen",
+          "18": "Kupplungsst\u00fccke in Antrieb Streuscheiben",
+          "19": "Austauschen",
+          "20": "Hydraulikschl\u00e4uche und Kupplungsst\u00fccke",
+          "21": "Abdichtung R\u00fchrerwelle",
+          "22": "R\u00fchrer",
+          "23": "Schaufeln"
+        },
+        "": {
+          "0": "",
+          "1": "",
+          "2": "\u00b7",
+          "3": "\u00b7",
+          "4": "\u00b7",
+          "5": "",
+          "6": "",
+          "7": "",
+          "8": "",
+          "9": "Schmieren",
+          "10": "\u00b7",
+          "11": "\u00b7",
+          "12": "\u00b7",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "\u00d6l anbringen",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "22": "",
+          "23": ""
+        },
+        "nac h  den e r st en 10  Be trieb sst und": {
+          "0": "",
+          "1": "\u00b7",
+          "2": "\u00b7",
+          "3": "",
+          "4": "",
+          "5": "\u00b7",
+          "6": "\u00b7",
+          "7": "",
+          "8": "\u00b7",
+          "9": "Schmieren",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "\u00b7",
+          "16": "",
+          "17": "\u00d6l anbringen",
+          "18": "\u00b7",
+          "19": "",
+          "20": "",
+          "21": "",
+          "22": "",
+          "23": ""
+        },
+        "na ch  jeweils  1 0 0  St unde n min. 1x pr o  J a hr": {
+          "0": "",
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "\u00b7",
+          "6": "",
+          "7": "\u00b7",
+          "8": "\u00b7",
+          "9": "Schmieren",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "\u00b7",
+          "15": "\u00b7",
+          "16": "\u00b7",
+          "17": "\u00d6l anbringen",
+          "18": "\u00b7",
+          "19": "",
+          "20": "",
+          "21": "\u00b7",
+          "22": "",
+          "23": ""
+        },
+        "Wie empf ohlen": {
+          "0": "",
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "6": "",
+          "7": "",
+          "8": "",
+          "9": "Schmieren",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "\u00b7",
+          "15": "",
+          "16": "",
+          "17": "\u00d6l anbringen",
+          "18": "",
+          "19": "",
+          "20": "\u00b7",
+          "21": "",
+          "22": "",
+          "23": ""
+        },
+        "We nn ve rsc h lis sen": {
+          "0": "",
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "6": "",
+          "7": "",
+          "8": "",
+          "9": "Schmieren",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "\u00d6l anbringen",
+          "18": "",
+          "19": "",
+          "20": "\u00b7",
+          "21": "\u00b7",
+          "22": "\u00b7",
+          "23": "\u00b7"
+        },
+        "Seite": {
+          "0": "",
+          "1": "130",
+          "2": "131",
+          "3": "",
+          "4": "43",
+          "5": "133",
+          "6": "136",
+          "7": "",
+          "8": "138",
+          "9": "Schmieren",
+          "10": "126",
+          "11": "126",
+          "12": "126",
+          "13": "",
+          "14": "127",
+          "15": "127",
+          "16": "128",
+          "17": "\u00d6l anbringen",
+          "18": "128",
+          "19": "",
+          "20": "131",
+          "21": "140",
+          "22": "",
+          "23": ""
+        }
+      }
+    },
+    {
+      "type": "TextItem",
+      "text": "125"
+    }
+  ]
+}
+</context>
+<question>
+    What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

@@ -1,0 +1,19 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     dispositif de levage :</text><text> utilisez la position d'épandage en hauteur des tenons d'attelage, et/ou</text><text> réglez le distributeur d'engrais au préalable en vous conformant aux tableaux d'épandage.</text><text> Cf. paragraphe »Choix de la hauteur du tenon d'attelage« de la page 53.</text><text>95</text></page><|begin_of_text|><page number="96"><text>Utilisation dans les champs</text><text>Dernier contrôle du réglage</text><text>96</text><text>Une liste de contrôle est imprimée ci-dessous ainsi que sur la couverture du tableau d'épandage.</text><text> Effectuez ce dernier contrôle pour un bon résultat d'épandage.</text><text>Travaillez-vous avec des réglages du tableau d'épandage adéquat d'après :</text><text>· la granulométrie,</text><text>· poids spécifique,</text><text>· le type d'engrais,</text><text>· la largeur de travail souhaitée,</text><text>· la vitesse d'avancement souhaitée?</text><text>Avez-vous correctement réglé l'épandeur?</text><text>Avez-vous :</text><text>· réglé la hauteur au-dessus du sol ou de la végétation à 75 cm?</text><text>· la combinaison de pales correcte a été montée correctement?</text><text>· ouvert le nombre d'orifices de dosage adéquat (dosage fin)?</text><text>· réglé le bon point de chute?</text><text>· réglé le bon débit?</text><text>· correctement réglé la fonction GEOPOINT® (centre du profil d'épandage)?</text><text>· monté l'arbre de transmission sur le point de raccordement correspondant du boîtier de pignons?</text><text>· réglé le système ExactLine ou le déflecteur de bordure hydraulique en position de transport (ou de travail)?</text><text>· entré les données requises dans le système de commande?</text><text>Avez-vous vérifié les réglages :</text><text>Avez-vous :</text><text>· contrôlé les réglages du système de commande?</text><text>· effectué un contrôle de répartition sur bacs afin de contrôler la nappe d'épandage?</text><text>Travaillez-vous comme il convient :</text><text>· Avez-vous sélectionné ou importé les données de parcelle appropriées?</text><text>· L'application GEOCONTROL est-elle bien réglée?</text><text>· Le décalage est-il bien réglé?</text><text> Voir les instructions du logiciel.</text><text>· Avez-vous réglé le bon régime de prise de force?</text><text>· Roulez-vous à la vitesse d'avancement appropriée?</text><text>· Avez-vous tracé les sillons à la bonne distance?</text><text>· La vitesse du vent n'est-elle pas trop élevée?</text></page>
+</context>
+<question>
+    What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

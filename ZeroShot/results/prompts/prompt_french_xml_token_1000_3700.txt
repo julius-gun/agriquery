@@ -1,0 +1,19 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    100 %). Testez pour cette raison le fonctionnement du déflecteur de bordure (accessoire) à chaque fois avant d'effectuer le test, comme indiqué au</text><text> paragraphe »Test du profil d'épandage avec le déflecteur de bordure hydraulique« de la page 84.</text><image /><text>107</text></page><|begin_of_text|><page number="108"><text>Utilisation dans les champs</text><text>Procédure avec le déflecteur de bordure hydraulique</text><image /><image /><text>108</text><text>Le déflecteur de bordure hydraulique permet l'épandage en bordure à gauche et à droite.</text><text> Coupez le moteur du tracteur et retirez la clé du contact.</text><text> Serrez le frein à main sur le tracteur.</text><text> Séparez le disque d'épandage droit en poussant la pièce d'attelage vers la droite. Bloquez à nouveau la pièce d'attelage à l'aide du boulon de fixation.</text><text> Abaissez le déflecteur de bordure.</text><text> Vérifiez que les pales ne touchent pas le déflecteur de bordure!</text><text> Réglez l'épandeur à l'aide des données du tableau d'épandage de la largeur de travail souhaitée. Utilisez les mêmes réglages et point de raccordement de l'arbre de transmission que pour l'épandage en plein champ,</text><text> reportez-vous également au paragraphe »Réglage de l'épandeur« de la page 62.</text><text> démarrez le tracteur.</text><text> Branchez le boîtier de commande.</text><text> Embrayez la prise de force. Le régime optimal des disques d'épandage correspond à la valeur indiquée dans le tableau d'épandage correspondant.</text><text> Choisissez si vous le souhaitez un rapport qui vous permette d'avancer à la même vitesse que lors de l'épandage plein champ.</text><text>Le système de commande va commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.</text><text>En cas de dysfonctionnement ou d'encrassement de l'épandeur :</text><text> Arrêtez immédiatement d'épandre!</text><text> Débrayez immédiatement la prise de force!</text><text> Reportez-vous ensuite au paragraphe »Dysfonctionnement et obstruction« de la page 113.</text><text>Après l'épandage de bordure :</text><text> Coupez le moteur du tracteur, retirez la clé du contact et serrez le frein à main sur le tracteur.</text><text> Relevez le déflecteur de bordure.</text><text> Fermez le dosage.</text><text> Raccordez à nouveau l'entraînement du disque d'épandage droit.</text></page>
+</context>
+<question>
+    What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

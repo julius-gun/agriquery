@@ -1,0 +1,2309 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|>page_number: 72
+items:
+- type: SectionHeaderItem
+  text: Opérations avant l'épandage
+- type: SectionHeaderItem
+  text: Débit variable, à commande externe
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: S
+- type: TextItem
+  text: Raccordement RS 232
+- type: TextItem
+  text: '72'
+- type: TextItem
+  text: Outre la possibilité d'épandre la même dose sur toute la parcelle, le système
+    de commande permet également de faire un épandage variable, commandé de l'extérieur.
+    Cela vous permet d'épandre selon vos besoins, par exemple à l'aide d'un détecteur
+    d'azote.
+- type: TextItem
+  text: Vous pouvez également épandre via le système GPS à un débit que vous aurez
+    préalablement réglé dans le système de gestion correspondant pour la parcelle
+    en question.
+- type: ListItem
+  text:  Pour en savoir plus sur ces différentes options et les réglages correspondants,
+    consultez les manuels d'utilisation du système externe et du boîtier de commande,
+    par ex. l'IsoMatch.
+- type: TextItem
+  text: Le système de commande de l'épandeur allié au boîtier de commande IsoMatch
+    Tellus renvoie en outre le débit et la largeur de travail adaptés vers le système
+    externe.
+- type: TextItem
+  text: Le système externe et le système de commande de l'épandeur avec boîtier de
+    commande IsoMatch communiquent par le biais d'un port série avec une prise RS232.
+    Ce raccord se situe sur la face arrière du boîtier de commande. Le brochage du
+    connecteur RS232 9 broches et les réglages nécessaires figurent dans
+- type: ListItem
+  text:  le manuel d'utilisation du boîtier de commande IsoMatch Tellus.
+<|begin_of_text|>page_number: 73
+items:
+- type: SectionHeaderItem
+  text: Remplissage
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Opérations avant l'épandage
+- type: SectionHeaderItem
+  text: Evitez tout contact avec l'engrais et d'autres produits
+- type: TextItem
+  text: Lors du remplissage de la machine, vous pouvez facilement entrer en contact
+    avec des produits. Portez pour cette raison des vêtements de protection, tels
+    que des gants protecteurs, des chaussures de sécurité et des lunettes protectrices.
+    Lisez également les indications de sécurité du fabricant des produits concernés
+    et conformez-vous à ces indications. Le contact avec ces produits peut entraîner
+    des blessures. Consultez le cas échéant un médecin!
+- type: SectionHeaderItem
+  text: Réactions chimiques liées au mélange d'engrais
+- type: TextItem
+  text: Le mélange de différents types d'engrais peut entraîner des réactions
+- type: TextItem
+  text: chimiques, et par là-même des vapeurs, liquides ou solides toxiques. Risque
+    d'explosion! Des blessures graves et des dommages au niveau de la couche végétale
+    et de la machine peuvent en résulter. Procédez uniquement aux mélanges de différents
+    types d'engrais si la combinaison de ces engrais est autorisée par le(s) fabricant(s).
+    Les réactions chimiques peuvent endommager la machine et occasionner des blessures
+    corporelles.
+- type: SectionHeaderItem
+  text: Lisez les consignes de sécurité du fournisseur
+- type: TextItem
+  text: Avant d'utiliser la machine, ayez soin de bien lire les consignes de sécurité
+    du fournisseur et conformez-vous y. Portez au besoin des vêtements de protection
+    supplémentaires.
+- type: TextItem
+  text: Le non-respect des consignes de sécurité peut donner lieu à des blessures
+    corporelles et à des dommages au niveau de la machine.
+- type: SectionHeaderItem
+  text: Utilisez des outils de qualité
+- type: TextItem
+  text: Lors du remplissage, vous travaillez souvent en présence de produits en grandes
+    quantités. Utilisez des outils de qualités, tels que des appareils de levage,
+    pour le transport des produits et le remplissage de la machine. Tenez compte de
+    la loi ARBO sur les conditions de travail. Veillez à votre propre sécurité et
+    adoptez un comportement de vigilance. Des outils de mauvaise qualité peuvent entraîner
+    des blessures graves.
+- type: SectionHeaderItem
+  text: Remplissez uniquement les machines portées
+- type: TextItem
+  text: Ne placez jamais la machine sur le sol lors du remplissage mais laissez-la
+    toujours suspendue au dispositif de levage du tracteur. La machine est conçue
+    pour être chargée lorsqu'elle est suspendue. Ne placez jamais une machine remplie
+    sur le sol. Si la machine est chargée lorsqu'elle est au sol, cela peut l'endommager.
+- type: SectionHeaderItem
+  text: Travail avec la cabine fermée
+- type: TextItem
+  text: Lorsque les vitres, les portes ou d'autres ouvertures sont ouvertes, de la
+    poussière d'engrais peut entrer dans la cabine. Dans une cabine ouverte, le niveau
+    sonore est de surcroît plus élevé. Pour cette raison, travaillez avec la cabine
+    du tracteur fermée et pourvue de filtres de carbone actif au niveau des arrivées
+    d'air. La poussière provenant de l'engrais et les nuisances sonores prolongées
+    peuvent entraîner des blessures corporelles.
+- type: TextItem
+  text: '73'
+<|begin_of_text|>page_number: 74
+items:
+- type: SectionHeaderItem
+  text: Opérations avant l'épandage
+- type: TextItem
+  text: INDICATION La plupart des types d'engrais absorbent l'eau et peuvent alors
+    former des blocs. Ces blocs sont susceptibles de provoquer des bourrages au niveau
+    de l'épandeur ou d'abîmer la nappe d'épandage.
+- type: ListItem
+  text: · Si les conditions sont humides, travaillez uniquement avec la bâche de trémie
+    bien fermée.
+- type: ListItem
+  text: · N'épandez jamais sans bâche de trémie lorsque les conditions sont humides.
+- type: ListItem
+  text: · Ne laissez jamais l'engrais pendant longtemps dans l'épandeur. Des blocs
+    peuvent également se former sous l'action de l'humidité de l'air.
+- type: ListItem
+  text: · Nettoyez à fond l'épandeur après chaque utilisation, ainsi que les orifices
+    de dosage et les bagues d'écoulement.
+- type: TextItem
+  text: Après le réglage de l'épandeur, vous pouvez le remplir jusqu'au niveau souhaité.
+    Nous vous conseillons de charger la machine lorsque celle-ci se trouve à 10 cm
+    au-dessus du sol. Si vous n'avez pas besoin d'effectuer des opérations au-dessus
+    de la trémie, la hauteur peut être adaptée au système de remplissage automatique.
+- type: TextItem
+  text: Si au cours du remplissage, qu'il soit manuel ou avec de grands sacs,
+- type: TextItem
+  text: la distance entre le bord de la trémie et le sol est supérieure à 1250 mm,
+    il vous faut utiliser une plateforme de chargement. La hauteur de remplissage
+    est indiquée au
+- type: ListItem
+  text:  paragraphe »Caractéristiques techniques« de la page 36.
+- type: ListItem
+  text:  Amenez la machine vers la plateforme, s'il s'agit d'une plateforme de chargement
+    fixe. La distance maximale entre la machine et la plateforme ne peut excéder 200
+    mm.
+- type: ListItem
+  text:  Faites descendre la machine à la hauteur souhaitée. La machine ne doit pas
+    reposer à même le sol mais doit être relevée à au moins 10 cm du sol!
+- type: ListItem
+  text:  Contrôlez si les unités de dosage sont fermées et fermez-les si nécessaire
+    en vous rendant sur l'écran principal et en appuyant sur la touche "STOP".
+- type: TextItem
+  text: La position des unités de dosage s'affiche dans l'écran principal sur le boîtier
+    de commande du système de commande.
+- type: ListItem
+  text:  Arrêtez le système de commande électronique.
+- type: ListItem
+  text:  Coupez le moteur du tracteur et retirez la clé du contact.
+- type: ListItem
+  text:  Serrez le frein à main sur le tracteur.
+- type: ListItem
+  text:  Fermez la cabine en fermant toutes les portes et les vitres.
+- type: ListItem
+  text:  Placez des cales devant les roues du tracteur.
+- type: ListItem
+  text:  S'il s'agit d'une plateforme de chargement mobile, approchez la plateforme
+    de chargement de l'épandeur jusqu'à ce que la distance entre les deux soit tout
+    au plus de 200 mm.
+- type: ListItem
+  text:  Ouvrez la bâche de trémie.
+- type: ListItem
+  text:  Contrôlez si les tamis sont fermés et verrouillés.
+- type: ListItem
+  text:  Remplissez la machine jusqu'au niveau souhaité à l'aide d'outils de qualité.
+    Remplissez les moitiés de trémie de façon homogène afin que les deux moitiés se
+    vident en même temps.
+- type: SectionHeaderItem
+  text: Hauteur de chargement
+- type: SectionHeaderItem
+  text: Procédure
+- type: TextItem
+  text: '74'
+<|begin_of_text|>page_number: 75
+items:
+- type: TextItem
+  text: INDICATION
+- type: SectionHeaderItem
+  text: Opérations avant l'épandage
+- type: TextItem
+  text: Travaillez avec précaution pendant le remplissage, tenez compte de la réglementation
+    relative aux conditions de travail. Veillez à ce qu'aucun objet ou outil ne tombe
+    dans la trémie. Ils seraient susceptibles de boucher ou d'endommager l'épandeur.
+- type: ListItem
+  text:  Refermez la bâche de trémie.
+- type: TextItem
+  text: Ne dépassez pas le poids total maximal autorisé!
+- type: ListItem
+  text:  Cf. également le paragraphe »Caractéristiques techniques« de la page 36.
+- type: TextItem
+  text: La conception de la machine ne la rend pas apte à supporter une charge supplémentaire.
+    Tenez compte de la charge par essieu autorisée, de la capacité de charge des pneumatiques
+    et du poids hors tout du tracteur et de la machine, ainsi que de la charge par
+    essieu minimale du tracteur.
+- type: ListItem
+  text:  Reportez-vous également au paragraphe »Calcul de la charge par essieu pour
+    les machines portées« de la page 13.
+- type: TextItem
+  text: INDICATION Si le poids augmente, l'épandeur rempli peut pencher en arrière
+   !
+- type: ListItem
+  text:  Réglez l'épandeur une fois rempli à nouveau à l'horizontale dans le sens
+    de la longueur.
+- type: TextItem
+  text: INDICATION
+- type: TextItem
+  text: Si vous remplissez l'épandeur au cours de l'épandage, par exemple au moyen
+    du vérin de l'outil roulant à côté de l'épandeur, vous devez désactiver l'étalonnage
+    automatique. Avec l'étalonnage automatique, le système de commande pèse la quantité
+    épandue (kg) d'engrais pendant une durée déterminée. Il contrôle ensuite cette
+    valeur avec le débit réglé souhaité. Si vous remplissez la trémie au cours de
+    l'épandage, la quantité épandue ne peut être correctement pesée. Le poids dans
+    la trémie peut même augmenter au moment où la mesure est effectuée. Les rectifications
+    apportées par le système de commande ne seront pas correctes, entraînant ainsi
+    des dommages au niveau de la végétation.
+- type: TextItem
+  text: '75'
+<|begin_of_text|>page_number: 76
+items:
+- type: SectionHeaderItem
+  text: Opérations avant l'épandage
+- type: SectionHeaderItem
+  text: Contrôle du profil d'épandage (test sur bacs)
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '76'
+- type: SectionHeaderItem
+  text: Evitez tout contact avec l'engrais et d'autres produits
+- type: TextItem
+  text: Lorsque vous remplissez, réglez et testez l'épandeur, il se peut que vous
+    entriez en contact avec l'engrais ou d'autres produits d'épandage. Portez des
+    vêtements de protection et des gants, lisez les instructions de sécurité du fournisseur
+    et conformez-vous aux instructions supplémentaires. Le contact avec des produits
+    peut être à l'origine de blessures corporelles.
+- type: SectionHeaderItem
+  text: Attention à ne pas vous coincer!
+- type: TextItem
+  text: 'Lors du réglage de l''épandeur, vous pouvez facilement vous coincer. Veillez
+    à votre sécurité lors du réglage en :'
+- type: ListItem
+  text: · coupant le contact du tracteur et en retirant la clé du contact,
+- type: ListItem
+  text: · serrant le frein à main sur le tracteur,
+- type: ListItem
+  text: · attendant que toutes les pièces de la machine se soient totalement arrêtées
+    avant de procéder aux opérations de réglage,
+- type: ListItem
+  text: · d'exécuter seul et avec prudence la procédure décrite.
+- type: TextItem
+  text: En vous coinçant, vous pouvez vous blesser.
+- type: SectionHeaderItem
+  text: Effectuez ce test tout seul. Actionnez la machine tout seul!
+- type: TextItem
+  text: Des situations dangereuses pour une autre personne peuvent survenir lors de
+    l'actionnement de la machine et de la phase de test. Des blessures corporelles
+    peuvent en résulter.
+- type: SectionHeaderItem
+  text: Protection de l'environnement
+- type: TextItem
+  text: Une dose et un épandage trop importants de produits hors de la bordure de
+    parcelle, notamment avec des eaux de surface, constituent de sérieuses contraintes
+    pour l'environnement. Ménagez l'environnement en réglant un débit correct et en
+    procédant avec application.
+- type: SectionHeaderItem
+  text: La prise de force s'arrête après qu'elle ait été débrayée
+- type: TextItem
+  text: Après avoir débrayé la prise de force, certains dangers peuvent survenir du
+    fait de la coupure de la machine à cause de l'inertie de masse. Ne restez pas
+    à proximité de la machine avant que toutes les pièces en mouvement se soient totalement
+    arrêtées. Si vous vous approchez d'une machine en rotation, vous risquez de vous
+    blesser gravement voire mortellement.
+- type: SectionHeaderItem
+  text: Travail avec la cabine fermée
+- type: TextItem
+  text: Lorsque les vitres, les portes ou d'autres ouvertures sont ouvertes, de la
+    poussière d'engrais peut entrer dans la cabine. Dans une cabine ouverte, le niveau
+    sonore est de surcroît plus élevé. Pour cette raison, travaillez avec la cabine
+    du tracteur fermée et pourvue de filtres de carbone actif au niveau des arrivées
+    d'air. La poussière provenant de l'engrais et les nuisances sonores prolongées
+    peuvent entraîner des blessures corporelles.
+- type: TextItem
+  text: En effectuant un test sur bacs, vous contrôlez la répartition de l'engrais
+    ainsi que le distributeur d'engrais qui effectue cette répartition. Une fois les
+    résultats du test obtenus, vous êtes en mesure de mieux régler l'épandeur et ainsi
+    d'améliorer la répartition de l'engrais et de limiter les pertes.
+- type: TextItem
+  text: Vous pouvez faire appel à une société spécialisée pour effectuer le
+- type: TextItem
+  text: contrôle de répartition sur bacs ou l'effectuer par vous-même. Vous devez
+    alors vous procurer le matériel requis pour ce faire. Nous vous conseillons de
+    faire effectuer ce contrôle par une société agréée. Des spécialistes peuvent en
+    outre vous conseiller si vous avez des problèmes ou des questions.
+<|begin_of_text|>page_number: 77
+items:
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: INDICATION
+- type: SectionHeaderItem
+  text: Opérations avant l'épandage
+- type: SectionHeaderItem
+  text: 'Quand faut-il effectuer un test sur bacs :'
+- type: ListItem
+  text: · Si vous utilisez un type d'engrais qui ne figure ni dans le manuel de tableaux
+    d'épandage, ni dans les tableaux d'épandage en ligne, ni dans l'application mobile
+    gratuite fonctionnant sous iOs et/ou Android.
+- type: ListItem
+  text: · Si vous utilisez un type d'engrais dont la granulométrie et la densité diffèrent
+    des valeurs indiquées dans le manuel de tableaux d'épandage, dans les tableaux
+    d'épandage en ligne ou dans l'application mobile gratuite fonctionnant sous iOs
+    et/ou Android.
+- type: ListItem
+  text: · lorsque vous utilisez un engrais dont la qualité est médiocre.
+- type: ListItem
+  text: · effectuez le test de l'épandage à gauche et à droite chaque année afin de
+    contrôler si la répartition est la même au niveau des deux disques d'épandage.
+- type: ListItem
+  text: · après chaque modification au niveau du mécanisme d'épandage de l'épandeur
+    ou après le remplacement de pièces.
+- type: TextItem
+  text: Les conditions atmosphériques exercent une grande influence sur la nappe d'épandage
+    lors de l'épandage et lors de l'exécution d'un contrôle de répartition sur bacs.
+    Effectuez le contrôle de répartition sur bacs par temps sec, avec une faible humidité
+    atmosphérique et une vitesse du vent n'excédant pas 3 m\s (force du vent 2).
+- type: SectionHeaderItem
+  text: Matériel nécessaire
+- type: ListItem
+  text: · mètre à ruban ou règle graduée,
+- type: ListItem
+  text: · niveau à bulle pour régler les bacs de collecte à l'horizontale,
+- type: ListItem
+  text: · 7 bacs de collecte,
+- type: ListItem
+  text: · 7 tubes de mesure,
+- type: ListItem
+  text: · 1 entonnoir,
+- type: ListItem
+  text: · bloc-notes, stylo et calculatrice,
+- type: ListItem
+  text: · manuel d'utilisation.
+- type: ListItem
+  text: · niveau des instructions du logiciel
+- type: SectionHeaderItem
+  text: Instructions générales
+- type: ListItem
+  text:  Contrôlez le réglage des ouvertures de dosage et le point de chute.
+- type: ListItem
+  text:  Contrôlez la hauteur (75 cm au-dessus des bacs de collecte) et la position
+    (inclinaison) de l'épandeur.
+- type: ListItem
+  text:  Contrôlez le régime de la prise de force et les disques d'épandage.
+- type: ListItem
+  text:  Placez les bacs toujours à l'horizontale sur le sol.
+- type: ListItem
+  text:  Positionnez les bacs à une distance maximale de 4 mètres. Procurez-vous
+    des bacs supplémentaires pour le test des largeurs de travail supérieures à 24
+    mètres. Vous pouvez également d'abord tester une partie de la largeur de travail,
+    puis vider les bacs et les répartir sur le reste de la largeur de travail.
+- type: ListItem
+  text:  N'utilisez pas l'épandeur lorsqu'il pleut ou que l'humidité atmosphérique
+    est élevée. L'engrais resterait alors collé aux bacs de collecte, ce qui aurait
+    pour conséquence l'obtention d'une nappe d'épandage irrégulière.
+- type: ListItem
+  text:  Ne procédez pas à l'épandage lorsque le vent souffle à des vitesses supérieures
+    à 3 m/s (force du vent 2).
+- type: TextItem
+  text: '77'
+<|begin_of_text|>page_number: 78
+items:
+- type: SectionHeaderItem
+  text: Opérations avant l'épandage
+- type: SectionHeaderItem
+  text: Test de la nappe d'épandage à gauche et à droite
+- type: TextItem
+  text: INDICATION
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Pour une bonne répartition de l'engrais, le disque d'épandage gauche doit
+    épandre autant que le disque d'épandage droit. Vérifiez ce point une fois par
+    an!
+- type: TextItem
+  text: Le test est prévu pour une largeur de travail de 24 mètres. Vous pouvez effectuer
+    ce test sur une autre largeur de travail. Répartissez les bacs à égale distance
+    les uns des autres sur la largeur de travail donnée.
+- type: SectionHeaderItem
+  text: Réalisation
+- type: ListItem
+  text:  Coupez le moteur du tracteur, retirez la clé du contact et serrez le frein
+    à main sur le tracteur.
+- type: ListItem
+  text:  Séparez le disque d'épandage gauche en poussant la pièce d'attelage vers
+    la gauche. Bloquez à nouveau la pièce d'attelage à l'aide du boulon de fixation.
+- type: ListItem
+  text:  Recherchez dans le tableau d'épandage (en ligne) des types d'engrais, de
+    semences ou de granulés les plus similaires la position adéquate du point d'écoulement
+    pour épandre sur 24 mètres de large et réglez-la à l'aide du levier.
+- type: ListItem
+  text:  Reportez-vous au paragraphe »Point de chute« de la page 65 et à l'avant-propos
+    du manuel de tableaux d'épandage.
+- type: ListItem
+  text:  Montez l'arbre de transmission sur le point de raccordement approprié du
+    boîtier central qui est indiqué sur le tableau correspondant.
+- type: ListItem
+  text:  Voir paragraphe »Point de jonction de l'arbre de transmission« de la page
+    64.
+- type: ListItem
+  text:  Contrôlez la hauteur du distributeur d'engrais (hauteur du disque d'épandage
+    = 75 cm au-dessus des bacs de collecte).
+- type: ListItem
+  text:  Placez les grilles dans les bacs de collecte.
+- type: ListItem
+  text:  Positionnez le bac de collecte 1 au centre de l'ornière du tracteur.
+- type: ListItem
+  text:  Placez les autres bacs de collecte à droite de l'ornière du tracteur, sur
+    4 mètres.
+- type: TextItem
+  text: INDICATION Placez les bacs de collecte à l'horizontale à l'aide d'un niveau
+    à bulle!
+- type: TextItem
+  text: '78'
+<|begin_of_text|>page_number: 79
+items:
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Opérations avant l'épandage
+- type: ListItem
+  text:  démarrez le tracteur.
+- type: ListItem
+  text:  Fermez la cabine en fermant toutes les portes et les vitres.
+- type: ListItem
+  text:  Branchez le boîtier de commande.
+- type: ListItem
+  text:  Entrez le débit souhaité.
+- type: ListItem
+  text:  Entrez la largeur de travail.
+- type: TextItem
+  text: Nous vous recommandons de régler un débit d'au moins 250 kg/ha pour la vitesse
+    d'avancement souhaitée et de choisir une faible vitesse d'avancement.
+- type: ListItem
+  text:  Activez le disque d'épandage gauche.
+- type: ListItem
+  text:  Désactivez l'étalonnage automatique.
+- type: ListItem
+  text:  Embrayez la prise de force et réglez le régime des disques d'épandage tel
+    qu'indiqué dans le tableau d'épandage correspondant.
+- type: ListItem
+  text:  Ouvrez l'unité de dosage droite.
+- type: ListItem
+  text:  Passez au centre au-dessus du premier bac de collecte et arrêtezvous seulement
+    lorsque vous avez parcouru au moins 20 mètres par rapport à ce bac de collecte.
+    L'épandeur épand en effet un peu plus vers l'arrière que sur le côté.
+- type: ListItem
+  text:  Fermez l'unité de dosage.
+- type: ListItem
+  text:  Videz les bacs de collecte à l'aide de l'entonnoir dans les tubes de mesure
+    et notez les valeurs dans votre bloc-notes.
+- type: TextItem
+  text: Répétez la procédure ci-dessus mais séparez cette fois le disque d'épandage
+    droit et désactivez l'unité de dosage du disque d'épandage droit. Positionnez
+    les bacs de collecte à gauche de l'ornière du tracteur.
+- type: TextItem
+  text: Roulez à la même allure et au même régime de prise de force que la première
+    fois!
+- type: TextItem
+  text: '79'
+<|begin_of_text|>page_number: 80
+items:
+- type: SectionHeaderItem
+  text: Opérations avant l'épandage
+- type: SectionHeaderItem
+  text: Evaluation
+- type: ListItem
+  text:  Notez les valeurs que vous lisez sur les tubes de mesure des disques d'épandage
+    gauche et droit.
+- type: ListItem
+  text:  Comparez les valeurs, calculez par tube de mesure l'écart en pourcentage
+    entre le côté gauche et le côté droit.
+- type: SectionHeaderItem
+  text: Adaptation
+- type: TextItem
+  text: 'Lorsque la forme de la nappe d''épandage des disques d''épandage gauche et
+    droit n''est pas la même et que l''écart est supérieur à 3 %, vous pouvez effectuer
+    ce qui suit ou faire appel à votre revendeur pour cette opération :'
+- type: ListItem
+  text:  Contrôlez si la machine est attachée à l'horizontale derrière le tracteur
+    dans le sens de la longueur et de la largeur.
+- type: ListItem
+  text:  Procédez au »Contrôle et réglage du mécanisme de dosage« tel que le décrit
+    la page 133 et répétez ce test.
+- type: ListItem
+  text:  Procédez au »Contrôle et réglage du mécanisme de réglage du point de chute«
+    tel que le décrit la page 136 et répétez ce test.
+- type: TextItem
+  text: Si l'écart au niveau de la nappe d'épandage est encore trop important, contactez
+    votre revendeur.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '80'
+<|begin_of_text|>page_number: 81
+items:
+- type: SectionHeaderItem
+  text: Test de la nappe d'épandage plein champ
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Opérations avant l'épandage
+- type: TextItem
+  text: Lorsque vous avez correctement réglé votre épandeur et que les traces de jalonnage
+    sont à une distance correcte les unes des autres, vous obtenez une bonne répartition
+    de l'engrais sur le champ, à condition que la nappe d'épandage de l'épandeur ait
+    une forme correcte. Pour cette raison, vous devez tester la nappe d'épandage et
+    l'adapter si nécessaire.
+- type: ListItem
+  text:  Reportez-vous également au paragraphe »Nappe d'épandage plein champ« de
+    la page 28.
+- type: SectionHeaderItem
+  text: Réalisation
+- type: ListItem
+  text:  Coupez le moteur du tracteur, retirez la clé du contact et serrez le frein
+    à main sur le tracteur.
+- type: ListItem
+  text:  Réglez le distributeur d'engrais à l'aide des données du tableau d'épandage
+    sur la largeur de travail souhaitée (X mètres) correspondant au meilleur type
+    d'engrais, de graines ou de granulés (hauteur du disque d'épandage = 75 cm au-dessus
+    des bacs de collecte).
+- type: ListItem
+  text:  Placez les grilles dans les bacs de collecte.
+- type: ListItem
+  text:  Positionnez le bac de collecte 1 au centre de l'ornière du tracteur.
+- type: TextItem
+  text: INDICATION Placez les bacs de collecte à l'horizontale à l'aide d'un niveau
+    à bulle!
+- type: ListItem
+  text:  Répartissez les 6 bacs sur le côté droit ou gauche de l'ornière du tracteur
+    sur toute la largeur de travail réelle de l'épandeur.
+- type: TextItem
+  text: La largeur de travail réelle est 2 fois plus grande que la largeur de travail
+    effective!
+- type: TextItem
+  text: Si vous voulez épandre avec une largeur de travail de 24 mètres, placez les
+    bacs tous les 4 mètres (24/6 = 4 mètres).
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '81'
+<|begin_of_text|>page_number: 82
+items:
+- type: SectionHeaderItem
+  text: Opérations avant l'épandage
+- type: ListItem
+  text:  démarrez le tracteur.
+- type: ListItem
+  text:  Fermez la cabine en fermant toutes les portes et les vitres.
+- type: ListItem
+  text:  Branchez le boîtier de commande.
+- type: ListItem
+  text:  Entrez le débit souhaité.
+- type: ListItem
+  text:  Entrez la nouvelle valeur.
+- type: ListItem
+  text:  Entrez la largeur de travail.
+- type: TextItem
+  text: Nous vous recommandons de régler un débit d'au moins 250 kg/ha pour la vitesse
+    d'avancement souhaitée et de choisir une faible vitesse d'avancement.
+- type: ListItem
+  text:  Désactivez l'étalonnage automatique.
+- type: ListItem
+  text:  Embrayez la prise de force et réglez le régime des disques d'épandage tel
+    qu'indiqué dans le tableau d'épandage correspondant.
+- type: ListItem
+  text:  Commencez à rouler sur l'ornière et ouvrez les unités de dosage quelques
+    mètres avant de passer au centre au-dessus du premier bac en appuyant sur la touche
+    "START".
+- type: ListItem
+  text:  Arrêtez seulement d'épandre une fois que vous avez passé les bacs de collecte
+    sur au moins une largeur de travail (par ex. 18 ou 24 m). L'épandeur épand en
+    effet un peu plus vers l'arrière que sur le côté.
+- type: ListItem
+  text:  Fermez les unités de dosage.
+- type: ListItem
+  text:  Repassez dans la voie suivante, au milieu au dessus du bac collecteur 7.
+    Gardez la même distance pour l'ouverture et la fermeture des unités de dosage.
+    Conservez la même vitesse d'avancement et le même régime de prise de force!
+- type: ListItem
+  text:  Si vous avez réglé un débit inférieur à 250 kg/ha, faites encore une fois
+    l'aller et retour sur la même ornière afin d'accumuler suffisamment d'engrais
+    dans les bacs de collecte pour obtenir une bonne comparaison.
+- type: TextItem
+  text: Respectez la même distance pour l'ouverture et la fermeture des unités de
+    dosage.
+- type: TextItem
+  text: Conservez la même vitesse d'avancement et le même régime de prise de force
+   !
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '82'
+<|begin_of_text|>page_number: 83
+items:
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: B
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: C
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: INDICATION
+- type: TextItem
+  text: Opérations avant l'épandage
+- type: SectionHeaderItem
+  text: Evaluation et adaptation
+- type: TextItem
+  text: Le contenu des tubes individuels peut différer au maximum de 15 % par rapport
+    à la moyenne.
+- type: TextItem
+  text: Si lors du deuxième test, la correction avec 2 lettres semble être trop élevée,
+    retirez une lettre pour le point de chute.
+- type: TableItem
+  table_data:
+    A:
+      0: B
+      1: C
+      2: D
+      3: E
+    Nappe d'épandage régulière, l'épandeur est bien réglé:
+      0: L'épandage est trop étroit.  Réglez l'ouverture d'écoulement de 2 lettres
+        vers le A  Effectuez à nouveau le test
+      1: 'L''épandage est trop large :  Réglez l''ouverture d''écoulement de 2 lettres
+        vers le U  Effectuez à nouveau le test'
+      2: 'L''épandage est trop étroit (nappe d''épandage en trapèze) :  Réglez l''ouverture
+        d''écoulement de 2 lettres vers le A  Effectuez à nouveau le test'
+      3: 'L''épandage est trop large (nappe d''épandage en trapèze) :  Réglez l''ouverture
+        d''écoulement de 2 lettres vers le U  Effectuez à nouveau le test'
+- type: TextItem
+  text: '83'
+<|begin_of_text|>page_number: 84
+items:
+- type: SectionHeaderItem
+  text: Opérations avant l'épandage
+- type: SectionHeaderItem
+  text: Test du profil d'épandage avec le déflecteur de bordure hydraulique
+- type: TextItem
+  text: Procédez toujours en premier lieu à un test d'étalonnage du débit et réglez
+    la position de dosage correcte avant de contrôler la nappe d'épandage. Une modification
+    des réglages des ouvertures a également une incidence sur la nappe d'épandage
+   !
+- type: PictureItem
+  caption: ''
+- type: ListItem
+  text:  Voir paragraphe »Contrôle du profil d'épandage (test sur bacs)« de la page
+    76.
+- type: TextItem
+  text: Lorsque vous utilisez le déflecteur de bordure hydraulique, vous voulez obtenir
+    un apport maximal en bordure, mais des pertes minimes dans la tranchée.
+- type: TextItem
+  text: Testez pour cela le fonctionnement du disque d'épandage de bordure. N'effectuez
+    pas le test le long du bord de la tranchée, mais marquez une ligne derrière laquelle
+    la tranchée fictive se trouve.
+- type: SectionHeaderItem
+  text: Réalisation
+- type: ListItem
+  text:  Coupez le moteur du tracteur, retirez la clé du contact et serrez le frein
+    à main sur le tracteur.
+- type: ListItem
+  text:  Débrayez le disque d'épandage droit ou gauche en déplaçant le raccord vers
+    la droite ou vers la gauche. Bloquez à nouveau la pièce d'attelage à l'aide du
+    boulon de fixation.
+- type: ListItem
+  text:  Fermez l'unité de dosage du disque d'épandage droit ou gauche.
+- type: TextItem
+  text: INDICATION Vérifiez que les pales ne touchent pas le déflecteur de bordure
+   !
+- type: PictureItem
+  caption: ''
+- type: ListItem
+  text:  Réglez le distributeur d'engrais à l'aide des données du tableau d'épandage,
+    de la largeur de travail souhaitée et des instructions du chapitre « Épandage
+    unilatéral en bordure » (hauteur du disque d'épandage = 75 cm au-dessus des bacs
+    de collecte).
+- type: ListItem
+  text:  Positionnez 1 bac de collecte au centre de l'ornière du tracteur. Le centre
+    de l'ornière du tracteur se trouve à 2 mètres de la ligne derrière laquelle la
+    tranchée fictive se trouve.
+- type: TextItem
+  text: INDICATION Placez les bacs de collecte à l'horizontale à l'aide d'un niveau
+    à bulle!
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '84'
+<|begin_of_text|>page_number: 85
+items:
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Réglage du déflecteur de bordure hydraulique
+- type: TextItem
+  text: INDICATION
+- type: TextItem
+  text: INDICATION
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Opérations avant l'épandage
+- type: ListItem
+  text:  Placez 1 bac de collecte sur le champ le long de la bordure de tranchée
+    puis 2 bacs de collecte dans la tranchée fictive.
+- type: ListItem
+  text:  Démarrez le tracteur, embrayez la prise de force. Le régime de prise de
+    force correct est la valeur standard moins 25 %, c'est-à-dire 540 tr/min - 25
+    % = 400 tr/min.
+- type: ListItem
+  text:  Sélectionnez un rapport vous permettant de rouler à la même vitesse qu'avec
+    un régime de prise de force normal, ou réduisez le débit de 25 %.
+- type: ListItem
+  text:  Commencez à rouler le long de la bordure de parcelle. La distance entre
+    la bordure de parcelle et le centre du tracteur doit être de 2 mètres.
+- type: ListItem
+  text:  Ouvrez l'unité de dosage sur quelques mètres avant de passer au centre au-dessus
+    du premier bac.
+- type: ListItem
+  text:  Arrêtez seulement d'épandre une fois que vous avez dépassé les bacs de collecte
+    d'au moins une largeur de travail (par ex. 24 mètres). L'épandeur épand en effet
+    un peu plus vers l'arrière que sur le côté.
+- type: ListItem
+  text:  Si vous avez réglé un débit inférieur à 250 kg/ha, faites une fois encore
+    l'aller et retour sur la même ornière afin d'accumuler suffisamment d'engrais
+    dans les bacs de collecte pour obtenir une bonne comparaison.
+- type: TextItem
+  text: Respectez la même distance pour l'ouverture et la fermeture de l'unité de
+    dosage.
+- type: SectionHeaderItem
+  text: Conservez la même vitesse d'avancement et le même régime de prise de force
+   !
+- type: ListItem
+  text:  Videz les bacs de collecte à l'aide de l'entonnoir dans les tubes de mesure.
+- type: TextItem
+  text: Un déflecteur de bordure hydraulique est disponible des deux côtés.
+- type: ListItem
+  text:  Abaissez le déflecteur de bordure.
+- type: ListItem
+  text:  Fermez la vanne pour éviter que le déflecteur se relève de façon accidentelle
+    pendant le travail.
+- type: ListItem
+  text:  Fermez le dosage du côté où vous ne devez pas épandre.
+- type: ListItem
+  text:  Débrayez l'entraînement du disque du côté où vous ne devez pas épandre.
+- type: ListItem
+  text:  Réglez le déflecteur au moyen du tableau d'épandage (en ligne).
+- type: TextItem
+  text: Respectez un régime de disque optimal pour l'épandage.
+- type: TextItem
+  text: Réglez le déflecteur de bordure vers la position 9 si vous voulez épandre
+    vers la bordure.
+- type: TextItem
+  text: Réglez le déflecteur de bordure vers la position 1 si vous voulez vous éloigner
+    de la bordure pour l'épandage.
+- type: TextItem
+  text: Le tableau d'épandage indique les réglages pour les modes rendement et H 2
+    O. Pour le mode rendement, utilisez les déflecteurs (courts) montés en standard
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '85'
+<|begin_of_text|>page_number: 86
+items:
+- type: SectionHeaderItem
+  text: Opérations avant l'épandage
+- type: TextItem
+  text: Pour l'épandage des bordures en mode H 2 O, des déflecteurs de bordure plus
+    longs sont fournis.
+- type: TextItem
+  text: Reprenez dans ce cas les réglages du tableau d'épandage pour le mode H 2 O
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Les positions pour le mode H 2 O vont de A à D et sont indiquées dans les
+    tableaux d'épandage
+- type: ListItem
+  text:  Consultez les instructions fournies pour monter correctement les déflecteurs.
+- type: TextItem
+  text: '86'
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+<|begin_of_text|>page_number: 87
+items:
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Déflecteur de bordure hydraulique
+- type: PictureItem
+  caption: Déflecteur de bordure hydraulique
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Opérations avant l'épandage
+- type: SectionHeaderItem
+  text: Evaluation et adaptation
+- type: TextItem
+  text: La perte maximale autorisée dans le fossé est définie dans une norme environnementale.
+    Pour satisfaire à celle-ci, la quantité d'engrais dans le premier bac de collecte
+    situé dans le fossé fictif peut représenter au maximum 10 % de la quantité contenue
+    dans le bac de collecte au centre de la voie du tracteur (= 100 %).
+- type: TextItem
+  text: Le bac de collecte sur le champ le long de la bordure de tranchée fictive
+    fournit une dose complémentaire pour la nappe d'épandage. La dose complémentaire
+    ne doit jamais être de 100 %.
+- type: TableItem
+  table_data:
+    0:
+      0: A
+      1: B
+      2: C
+    1:
+      0: Nappe d'épandage régulière, l'épandeur est bien réglé
+      1: L'épandage de bordure est trop étroit.  Réglez le déflecteur de bordure
+        légèrement vers la droite, vers  le (9) (= fossé).  Effectuez à nouveau le
+        test.
+      2: 'L''épandage de bordure est trop large :  Réglez le déflecteur de bordure
+        légèrement vers la gauche,  vers le (1) (= parcelle).'
+- type: ListItem
+  text:  Testez ensuite la nappe d'épandage plein champ à l'aide de la procédure
+    décrite au paragraphe qui suit.
+- type: TextItem
+  text: '87'
+<|begin_of_text|>page_number: 88
+items:
+- type: SectionHeaderItem
+  text: Opérations avant l'épandage
+- type: TextItem
+  text: Test du profil d'épandage grande largeur avec le déflecteur de bordure hydraulique
+- type: TextItem
+  text: La diminution du régime de prise de force et la fermeture du disque d'épandage
+    droit ont également une incidence sur la nappe d'épandage sur le bord gauche de
+    l'épandeur. Testez pour cette raison la nappe d'épandage plein champ à l'aide
+    du déflecteur de bordure. Conformez-vous à la procédure mais en y incluant les
+    adaptations pour l'épandage de bordure, décrites au
+- type: PictureItem
+  caption: ''
+- type: ListItem
+  text:  paragraphe »Test de la nappe d'épandage plein champ« de la page 81.
+- type: SectionHeaderItem
+  text: Réalisation
+- type: ListItem
+  text:  Ne modifiez pas la position du déflecteur de bordure et laissez le disque
+    d'épandage droit ou gauche débrayé.
+- type: TextItem
+  text: 'Lors du premier passage :'
+- type: ListItem
+  text:  Ne modifiez pas le réglage de l'épandeur, le régime de prise de force ni
+    la vitesse d'avancement, mais veillez à ce que ces valeurs soient identiques à
+    celles utilisées pour l'épandage de bordure.
+- type: TextItem
+  text: 'Lors du deuxième passage :'
+- type: ListItem
+  text:  Relevez le déflecteur de bordure.
+- type: ListItem
+  text:  Réglez l'épandeur pour l'épandage plein champ.
+- type: ListItem
+  text:  Réglez le régime des disques d'épandage tel qu'indiqué dans le tableau d'épandage
+    correspondant.
+- type: ListItem
+  text:  La vitesse d'avancement et le régime de la prise de force doivent être identiques
+    aux valeurs du premier passage.
+- type: SectionHeaderItem
+  text: Evaluation
+- type: TextItem
+  text: Il est probable que vous trouviez dans les bacs du milieu un débit moins important.
+    La nappe d'épandage ressemble à la nappe d'épandage B du
+- type: ListItem
+  text:  paragraphe »Test de la nappe d'épandage plein champ« de la page 81.
+- type: TextItem
+  text: La raison en est le régime de prise de force peu élevé. Lors de l'épandage
+    de bordure, le niveau dans le tube de mesure central est de 25 % plus bas que
+    dans les tubes de mesure extérieurs.
+- type: SectionHeaderItem
+  text: Adaptation
+- type: TextItem
+  text: 'Lorsque l''écart est supérieur à 25 % :'
+- type: ListItem
+  text:  augmentez le régime du disque d'épandage de 50 tr/min.
+- type: ListItem
+  text:  Effectuez à nouveau le test de la nappe d'épandage plein champ à l'aide
+    d'adaptations pour l'épandage de bordure jusqu'à ce que l'écart soit inférieur
+    à 25 %.
+- type: ListItem
+  text:  Procédez à nouveau au test de la nappe d'épandage du déflecteur de bordure.
+    N'adaptez la position du déflecteur de bordure que lorsque la perte descend en
+    deçà de la norme légale.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '88'
+<|begin_of_text|>page_number: 89
+items:
+- type: SectionHeaderItem
+  text: Test du profil d'épandage avec l'ExactLine
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Opérations avant l'épandage
+- type: TextItem
+  text: En utilisant ExactLine, vous cherchez à compléter au maximum en bordure, avec
+    un minimum de pertes dans le fossé.
+- type: TextItem
+  text: Testez pour cela le fonctionnement du système ExactLine. N'effectuez pas le
+    test le long du bord de la tranchée, mais marquez une ligne derrière laquelle
+    la tranchée fictive se trouve.
+- type: SectionHeaderItem
+  text: Réalisation
+- type: ListItem
+  text:  Réglez l'épandeur à l'aide des données du tableau d'épandage sur la largeur
+    de travail souhaitée correspondant au meilleur type d'engrais, de graines ou de
+    granulés (hauteur du disque d'épandage = 75 cm au-dessus des bacs de collecte)
+   .
+- type: ListItem
+  text:  Actionnez le distributeur hydraulique pendant quelques secondes afin de
+    placer le système ExactLine en position de travail et de mettre suffisamment sous
+    pression le réservoir de gaz.
+- type: ListItem
+  text:  Fermez le robinet du flexible hydraulique afin d'éviter que le système ExactLine
+    se mette accidentellement dans une autre position.
+- type: ListItem
+  text:  Coupez le moteur du tracteur, retirez la clé du contact et serrez le frein
+    à main sur le tracteur.
+- type: ListItem
+  text:  Réglez l'épandeur sur la position'milieu' à l'aide des données du tableau
+    d'épandage de la largeur de travail souhaitée
+- type: ListItem
+  text:  Voir paragraphe »Épandage de bordure à l'aide du système ExactLine« de la
+    page 110.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '89'
+<|begin_of_text|>page_number: 90
+items:
+- type: SectionHeaderItem
+  text: Opérations avant l'épandage
+- type: ListItem
+  text:  Placez 1 bac de collecte sur le champ le long de la bordure de tranchée
+    fictive puis 1 bac de collecte dans la tranchée fictive.
+- type: TextItem
+  text: 'INDICATION :'
+- type: TextItem
+  text: Placez les bacs de collecte à l'horizontale à l'aide d'un niveau à bulle!
+- type: ListItem
+  text:  Positionnez 1 bac de collecte au centre de l'ornière du tracteur. L'ornière
+    se trouve sur une moitié de la largeur de travail à partir de la tranchée fictive.
+    Répartissez les autres bacs de façon proportionnelle entre l'ornière et la tranchée
+    fictive.
+- type: ListItem
+  text:  Démarrez le tracteur et branchez le boîtier de commande.
+- type: ListItem
+  text:  Fermez la cabine en fermant toutes les portes et les vitres.
+- type: ListItem
+  text:  Embrayez la prise de force et réglez le régime des disques d'épandage à
+    l'aide du tableau d'épandage ou du tableau du
+- type: ListItem
+  text:  Choisissez si vous le souhaitez un rapport qui vous permette d'avancer à
+    la même vitesse que lors de l'épandage plein champ.
+- type: ListItem
+  text:  Désactivez l'étalonnage automatique.
+- type: ListItem
+  text:  Commencez à rouler sur l'ornière et ouvrez les unités de dosage quelques
+    mètres avant de passer au centre au-dessus du premier bac en appuyant sur la touche
+    "START".
+- type: ListItem
+  text:  Arrêtez seulement d'épandre une fois que vous avez passé les bacs de collecte
+    sur au moins une largeur de travail (par ex. 18 ou 24 m). L'épandeur épand en
+    effet un peu plus vers l'arrière que sur le côté.
+- type: ListItem
+  text:  Fermez les unités de dosage.
+- type: ListItem
+  text:  Si vous avez réglé un débit inférieur à 250 kg/ha, faites une fois encore
+    l'aller et retour sur la même ornière afin d'accumuler suffisamment d'engrais
+    dans les bacs de collecte pour obtenir une bonne comparaison.
+- type: TextItem
+  text: Respectez la même distance pour l'ouverture et la fermeture des unités de
+    dosage.
+- type: SectionHeaderItem
+  text: Conservez la même vitesse d'avancement et le même régime de prise de force
+   !
+- type: ListItem
+  text:  Videz les bacs de collecte à l'aide de l'entonnoir dans les tubes de mesure.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '90'
+<|begin_of_text|>page_number: 91
+items:
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Opérations avant l'épandage
+- type: SectionHeaderItem
+  text: Evaluation et adaptation
+- type: TextItem
+  text: La perte maximale autorisée dans la tranchée est définie dans une norme environnementale.
+    Pour satisfaire à celle-ci, la quantité d'engrais dans le premier bac de collecte
+    situé dans la tranchée fictive peut représenter au maximum 10 % de la quantité
+    contenue dans le bac de collecte au centre de l'ornière (= 100 %).
+- type: TextItem
+  text: Le bac de collecte sur le champ le long de la bordure de tranchée fictive
+    fournit une dose complémentaire pour la nappe d'épandage. La dose complémentaire
+    ne doit jamais être de 100 %.
+- type: TableItem
+  table_data:
+    A:
+      0: B
+      1: C
+    Nappe d'épandage régulière, ExactLine est bien réglé:
+      0: L'épandage est trop étroit.  Réglez-le un cran plus large (par exemple de
+        3 vers 4  ou de 7 vers la position de transport)  Effectuez à nouveau le
+        test
+      1: 'L''épandage est trop large :  Réglez-le un cran plus petit (par exemple
+        de 5 vers 4 ou  de la position de transport vers 7)  Effectuez à nouveau
+        le test'
+- type: TextItem
+  text: Si vous réglez le système ExactLine un cran plus haut ou plus bas (par exemple
+    de 1 vers 2 ou de 3 vers 2), la largeur de travail varie d'environ 0,3 mètre au
+    niveau de la bordure du fossé.
+- type: SectionHeaderItem
+  text: Ramener la hauteur d'épandage après le test sur bacs
+- type: TextItem
+  text: Pendant le test sur bacs, vous avez réglé la hauteur des disques à 75 cm.
+- type: ListItem
+  text:  Avant l'épandage, réglez la hauteur des disques à 75 cm au-dessus du sol
+    ou de la plante.
+- type: ListItem
+  text:  Voir le paragraphe »Hauteur d'épandage«, page 95.
+- type: TextItem
+  text: '91'
+<|begin_of_text|>page_number: 92
+items:
+- type: SectionHeaderItem
+  text: Circulation sur la voie publique
+- type: TextItem
+  text: Circulation sur la voie publique
+- type: SectionHeaderItem
+  text: Avant de prendre la route
+- type: TextItem
+  text: '92'
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Respectez la hauteur maximale de sécurité autorisée relativement
+- type: ListItem
+  text: · à la hauteur maximale prescrite pour les véhicules dans le code de la route,
+- type: ListItem
+  text: · aux lignes à haute tension et autres câbles électriques sur la route,
+- type: ListItem
+  text: · aux restrictions de hauteurs prévisibles.
+- type: TextItem
+  text: En faisant preuve d'une attention accrue, vous éviterez les situations dangereuses
+    qui peuvent causer des dégâts matériels importants et des dommages corporels graves.
+- type: SectionHeaderItem
+  text: 'Avant de quitter le tracteur, vous devez :'
+- type: ListItem
+  text: · débrayer la prise de force,
+- type: ListItem
+  text: · mettre hors pression le système hydraulique,
+- type: ListItem
+  text: · débrancher le système de commande électronique,
+- type: ListItem
+  text: · couper le contact sur le tracteur,
+- type: ListItem
+  text: · retirer la clé du contact,
+- type: ListItem
+  text: · serrer le frein à main sur le tracteur.
+- type: TextItem
+  text: Vous éviterez ainsi que le tracteur puisse démarrer alors que vous travaillez
+    sur la machine et donc que la machine bouge, ce qui risquerait d'entraîner des
+    dommages corporels graves.
+- type: TextItem
+  text: 'Avant d''emprunter la voie publique avec votre tracteur et la machine, il
+    convient d''effectuer ce qui suit :'
+- type: ListItem
+  text:  Vérifiez si le tracteur et la machine satisfont aux règles de la circulation
+    routière.
+- type: ListItem
+  text:  contrôler le fonctionnement et la fixation de l'éclairage, des autocollants
+    d'avertissement, des protections et du freinage.
+- type: ListItem
+  text:  Vérifiez si le catadioptre pour véhicule à moteur à vitesse limitée (< 40
+    km/h) du tracteur n'est pas masqué par l'outil.
+- type: ListItem
+  text:  Si tel est le cas, montez un catadioptre supplémentaire derrière l'outil.
+- type: ListItem
+  text:  contrôler le fonctionnement des câbles de l'attelage rapide du dispositif
+    de levage.
+<|begin_of_text|>page_number: 93
+items:
+- type: SectionHeaderItem
+  text: Préparation de la machine pour le transport
+- type: SectionHeaderItem
+  text: Circulation sur la voie publique
+- type: TextItem
+  text: 'Avant d''emprunter la voie publique avec votre tracteur et la machine, il
+    convient d''effectuer ce qui suit :'
+- type: ListItem
+  text:  Vérifiez si le tracteur et la machine satisfont aux règles de la circulation
+    routière.
+- type: ListItem
+  text:  contrôler le fonctionnement et la fixation de l'éclairage, des autocollants
+    d'avertissement, des protections et du freinage.
+- type: ListItem
+  text:  contrôler le fonctionnement des câbles de l'attelage rapide du dispositif
+    de levage.
+- type: ListItem
+  text:  Montez le cas échéant un éclairage supplémentaire et des panneaux d'avertissement.
+- type: ListItem
+  text: ' Contrôlez toutes les parties escamotables et vérifiez leur verrouillage
+    :'
+- type: ListItem
+  text: · jupe,
+- type: ListItem
+  text: · ExactLine,
+- type: ListItem
+  text: · déflecteur de bordure hydraulique.
+- type: ListItem
+  text:  Réglez toutes les pièces de la machine et du tracteur, notamment la prise
+    de force, le système hydraulique, pneumatique et électrique, en position de transport.
+- type: ListItem
+  text:  contrôlez la répartition du poids entre l'essieu avant et arrière.
+- type: ListItem
+  text:  fixez éventuellement des masses frontales.
+- type: ListItem
+  text:  vérifiez la hauteur maximale de l'ensemble.
+- type: ListItem
+  text:  Abaissez éventuellement le dispositif de levage.
+- type: ListItem
+  text:  Verrouillez le poste de commande du dispositif de levage lorsque vous roulez,
+    de sorte à ce que la machine portée ne puisse s'abaisser involontairement.
+- type: ListItem
+  text:  Vérifiez le fonctionnement des éclairages.
+- type: ListItem
+  text:  Vérifiez que les unités de dosage sont fermées.
+- type: ListItem
+  text:  Couper le boîtier de commande.
+- type: ListItem
+  text:  Nettoyez l'encrassement que vous pouvez perdre et ainsi répandre sur la
+    route. Une route encrassée constitue un danger pour ses usagers.
+- type: ListItem
+  text:  Assurez-vous pour cela que les pièces telles que les câbles, les flexibles,
+    etc., qui activent par exemple à distance des cylindres, soient positionnées de
+    telle sorte qu'elles ne puissent ni activer ni bloquer accidentellement ces derniers
+   !
+- type: ListItem
+  text:  Veillez à une fixation latérale suffisante d'une machine portée en position
+    de transport.
+- type: TextItem
+  text: '93'
+<|begin_of_text|>page_number: 94
+items:
+- type: TextItem
+  text: Utilisation dans les champs
+- type: TextItem
+  text: Utilisation dans les champs
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: 'Coincement entre des pièces en mouvement :'
+- type: TextItem
+  text: Faites attention à ne pas vous coincer entre les pièces en mouvement lors
+    des opérations de réglage. Un contact accidentel avec des manettes de commande
+    peut actionner la machine.
+- type: TextItem
+  text: Ne commencez les opérations sur la machine que lorsque toutes les pièces de
+    la machine sont arrêtées et que les manettes de commande sont à l'abri de toute
+    fausse manoeuvre. Portez des chaussures de sécurité et des gants protecteurs et
+    travaillez seul. Vous pouvez gravement vous blesser si vous vous coincez.
+- type: SectionHeaderItem
+  text: Contrôlez l'environnement direct
+- type: TextItem
+  text: Contrôlez et surveillez en permanence l'environnement direct au début et au
+    cours des opérations effectuées avec et sur la machine. Assurez-vous d'avoir une
+    vue dégagée sur l'environnement direct. Ne commencez pas les opérations avec la
+    machine avant d'avoir éloigné toute personne et tout obstacle de la zone de travail
+    et de la zone dangereuse du tracteur et de la machine.
+- type: TextItem
+  text: Veillez à ce que personne (vous y compris) ne se trouve dans la zone de travail
+    et dans la zone dangereuse lorsque la machine fonctionne. Si une personne se trouve
+    dans la zone de travail et dans la zone dangereuse, elle risque d'être blessée.
+- type: SectionHeaderItem
+  text: Avant de quitter le tracteur, vous devez
+- type: ListItem
+  text: · débrayer la prise de force,
+- type: ListItem
+  text: · mettre hors pression le système hydraulique,
+- type: ListItem
+  text: · débrancher le système de commande électronique,
+- type: ListItem
+  text: · couper le contact sur le tracteur,
+- type: ListItem
+  text: · retirer la clé du contact,
+- type: ListItem
+  text: · serrer le frein à main sur le tracteur.
+- type: TextItem
+  text: Vous éviterez ainsi que le tracteur puisse démarrer alors que vous travaillez
+    sur la machine et donc que la machine bouge, ce qui risquerait d'entraîner des
+    dommages corporels graves.
+- type: SectionHeaderItem
+  text: La prise de force s'arrête après qu'elle ait été débrayée
+- type: TextItem
+  text: Après avoir débrayé la prise de force, certains dangers peuvent survenir du
+    fait de la coupure de la machine à cause de l'inertie de masse. Ne restez pas
+    à proximité de la machine avant que toutes les pièces en mouvement se soient totalement
+    arrêtées. Si vous vous approchez d'une machine en rotation, vous risquez de vous
+    blesser gravement voire mortellement.
+- type: SectionHeaderItem
+  text: Protection de l'environnement
+- type: TextItem
+  text: Une dose et un épandage trop importants de produits hors de la bordure de
+    parcelle, notamment avec des eaux de surface, constituent de sérieuses contraintes
+    pour l'environnement. Ménagez l'environnement en réglant un débit correct et en
+    procédant avec application.
+- type: SectionHeaderItem
+  text: Travail avec la cabine fermée
+- type: TextItem
+  text: Lorsque les vitres, les portes ou d'autres ouvertures sont ouvertes, de la
+    poussière d'engrais peut entrer dans la cabine. Dans une cabine ouverte, le niveau
+    sonore est de surcroît plus élevé. Pour cette raison, travaillez avec la cabine
+    du tracteur fermée et pourvue de filtres de carbone actif au niveau des arrivées
+    d'air. La poussière provenant de l'engrais et les nuisances sonores prolongées
+    peuvent entraîner des blessures corporelles.
+- type: TextItem
+  text: '94'
+<|begin_of_text|>page_number: 95
+items:
+- type: SectionHeaderItem
+  text: Réglage de la machine
+- type: SectionHeaderItem
+  text: Hauteur d'épandage
+- type: TextItem
+  text: Niveau sol ou sommet de la végétation
+- type: PictureItem
+  caption: Niveau sol ou sommet de la végétation
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: INDICATION
+- type: TextItem
+  text: Utilisation dans les champs
+- type: TextItem
+  text: La plupart des types d'engrais absorbent l'eau et peuvent alors former des
+    blocs. Ces blocs sont susceptibles de provoquer des bourrages au niveau de l'épandeur
+    ou d'abîmer la nappe d'épandage.
+- type: ListItem
+  text: · Si les conditions sont humides, travaillez uniquement avec la bâche de trémie
+    bien fermée.
+- type: ListItem
+  text: · N'épandez jamais sans bâche de trémie lorsque les conditions sont humides.
+- type: ListItem
+  text: · Ne laissez jamais l'engrais pendant longtemps dans l'épandeur. Des blocs
+    peuvent également se former sous l'action de l'humidité de l'air.
+- type: ListItem
+  text: · Nettoyez à fond l'épandeur après chaque utilisation, ainsi que les orifices
+    de dosage et les bagues d'écoulement.
+- type: TextItem
+  text: 'Avant de réaliser votre premier passage avec la machine, vous devez réaliser
+    dans les champs le réglage :'
+- type: TextItem
+  text: Pour le bon fonctionnement de l'épandeur, il est important d'amener celui-ci
+- type: ListItem
+  text: · à la bonne hauteur au-dessus du sol ou de la végétation et
+- type: ListItem
+  text: · de le placer à l'horizontale à l'aide du réglage de la chandelle et du bras
+    supérieur.
+- type: TextItem
+  text: A partir de la partie inférieure des pales, la distance jusqu'au sol ou jusqu'à
+    la végétation doit être de 75 cm.
+- type: ListItem
+  text:  placez la machine à la bonne hauteur avec le dispositif de relevage.
+- type: ListItem
+  text:  Réglez l'épandeur à l'horizontale à l'aide du réglage de la chandelle et
+    du bras supérieur.
+- type: ListItem
+  text:  fixez la limitation de relevage dans cette position.
+- type: SectionHeaderItem
+  text: Correction de la hauteur en cas de surfertilisation
+- type: TextItem
+  text: 'Si la hauteur exigée de 75 cm au-dessus de la végétation n''est pas réalisable
+    avec votre dispositif de levage :'
+- type: ListItem
+  text:  utilisez la position d'épandage en hauteur des tenons d'attelage, et/ou
+- type: ListItem
+  text:  réglez le distributeur d'engrais au préalable en vous conformant aux tableaux
+    d'épandage.
+- type: ListItem
+  text:  Cf. paragraphe »Choix de la hauteur du tenon d'attelage« de la page 53.
+- type: TextItem
+  text: '95'
+<|begin_of_text|>page_number: 96
+items:
+- type: SectionHeaderItem
+  text: Utilisation dans les champs
+- type: SectionHeaderItem
+  text: Dernier contrôle du réglage
+- type: TextItem
+  text: '96'
+- type: TextItem
+  text: Une liste de contrôle est imprimée ci-dessous ainsi que sur la couverture
+    du tableau d'épandage.
+- type: ListItem
+  text:  Effectuez ce dernier contrôle pour un bon résultat d'épandage.
+- type: SectionHeaderItem
+  text: 'Travaillez-vous avec des réglages du tableau d''épandage adéquat d''après
+    :'
+- type: ListItem
+  text: · la granulométrie,
+- type: ListItem
+  text: · poids spécifique,
+- type: ListItem
+  text: · le type d'engrais,
+- type: ListItem
+  text: · la largeur de travail souhaitée,
+- type: ListItem
+  text: · la vitesse d'avancement souhaitée?
+- type: SectionHeaderItem
+  text: Avez-vous correctement réglé l'épandeur?
+- type: TextItem
+  text: 'Avez-vous :'
+- type: ListItem
+  text: · réglé la hauteur au-dessus du sol ou de la végétation à 75 cm?
+- type: ListItem
+  text: · la combinaison de pales correcte a été montée correctement?
+- type: ListItem
+  text: · ouvert le nombre d'orifices de dosage adéquat (dosage fin)?
+- type: ListItem
+  text: · réglé le bon point de chute?
+- type: ListItem
+  text: · réglé le bon débit?
+- type: ListItem
+  text: · correctement réglé la fonction GEOPOINT® (centre du profil d'épandage)?
+- type: ListItem
+  text: · monté l'arbre de transmission sur le point de raccordement correspondant
+    du boîtier de pignons?
+- type: ListItem
+  text: · réglé le système ExactLine ou le déflecteur de bordure hydraulique en position
+    de transport (ou de travail)?
+- type: ListItem
+  text: · entré les données requises dans le système de commande?
+- type: SectionHeaderItem
+  text: 'Avez-vous vérifié les réglages :'
+- type: TextItem
+  text: 'Avez-vous :'
+- type: ListItem
+  text: · contrôlé les réglages du système de commande?
+- type: ListItem
+  text: · effectué un contrôle de répartition sur bacs afin de contrôler la nappe
+    d'épandage?
+- type: SectionHeaderItem
+  text: 'Travaillez-vous comme il convient :'
+- type: ListItem
+  text: · Avez-vous sélectionné ou importé les données de parcelle appropriées?
+- type: ListItem
+  text: · L'application GEOCONTROL est-elle bien réglée?
+- type: ListItem
+  text: · Le décalage est-il bien réglé?
+- type: ListItem
+  text:  Voir les instructions du logiciel.
+- type: ListItem
+  text: · Avez-vous réglé le bon régime de prise de force?
+- type: ListItem
+  text: · Roulez-vous à la vitesse d'avancement appropriée?
+- type: ListItem
+  text: · Avez-vous tracé les sillons à la bonne distance?
+- type: ListItem
+  text: · La vitesse du vent n'est-elle pas trop élevée?
+<|begin_of_text|>page_number: 97
+items:
+- type: SectionHeaderItem
+  text: Épandage sur la parcelle
+- type: SectionHeaderItem
+  text: Épandage en tournière
+- type: SectionHeaderItem
+  text: Passages de remplissage
+- type: SectionHeaderItem
+  text: Réalisation de traces de jalonnage
+- type: TextItem
+  text: Utilisation dans les champs
+- type: SectionHeaderItem
+  text: Travail avec le GEOCONTROL
+- type: TextItem
+  text: L'exécution d'une nouvelle tâche avec l'application GEOCONTROL s'effectue
+    à partir d'une parcelle mémorisée ou d'une nouvelle parcelle.
+- type: ListItem
+  text:  Voir pour cela le manuel du GEOCONTROL sur votre terminal.
+- type: TextItem
+  text: Le bout de champ sera tout d'abord aménagé avec la largeur de travail et le
+    système d'épandage en bordure choisis. La tournière sert de limite de parcelle
+    et est mémorisée dans le GEOCONTROL.
+- type: TextItem
+  text: Pour mettre en place le raccordement au bout de champ avant de tourner à partir
+    du passage de travail, il est souhaitable que le bout de champ soit large.
+- type: ListItem
+  text:  Épandez sur un bout de champ large ou double de façon à mettre en place
+    le raccordement en circulant sur une ligne droite avant de virer de bord.
+- type: TextItem
+  text: La parcelle peut ensuite être remplie en passages complets. Vous pouvez à
+    cet effet aménager un modèle de pistes (de pulvérisation) pour des traitements
+    consécutifs.
+- type: SectionHeaderItem
+  text: Évitez les erreurs d'alignement
+- type: TextItem
+  text: Pour une bonne répartition, il est important que les nappes d'épandage se
+    rejoignent correctement. Lorsque les largeurs de travail sont moyennes et que
+    la nappe d'épandage est en triangle, un écart de recouvrement est moins grave.
+- type: TextItem
+  text: Si la nappe d'épandage est en forme de trapèze, principalement pour de très
+    grandes largeurs de travail, les variations dans le chevauchement seront rapidement
+    visibles à l'œil nu. Le chevauchement des nappes d'épandage est alors beaucoup
+    plus restreint et par conséquent, les défauts risquent d'être plus nombreux.
+- type: TextItem
+  text: Vous pouvez éviter ce phénomène en réalisant au préalable des traces de jalonnage.
+    Vous pouvez le faire en réalisant des traces de jalonnage en bout de champ et
+    en les signalant par exemple par des piquets.
+- type: TextItem
+  text: La visibilité de tournière à tournière est pour cela importante. Placez, si
+    nécessaire, des marqueurs supplémentaires dans le champ pour une bonne visibilité
+    sur l'ornière du tracteur.
+- type: TextItem
+  text: Avec le guidage par le GEOCONTROL, le distributeur d'engrais peut réduire
+    la largeur de travail pour raccorder le dernier passage incomplet avec le précédent.
+- type: TextItem
+  text: '97'
+<|begin_of_text|>page_number: 98
+items:
+- type: SectionHeaderItem
+  text: Utilisation dans les champs
+- type: SectionHeaderItem
+  text: Modes de jalonnage
+- type: SectionHeaderItem
+  text: Traces de jalonnage avec l'ExactLine
+- type: TextItem
+  text: La façon dont vous voulez épandre en bordure détermine le mode de jalonnage.
+- type: TextItem
+  text: Faites votre choix en fonction de la largeur de la parcelle, de la présence
+    de voies de pulvérisation et de l'équipement de l'épandeur.
+- type: TextItem
+  text: Lors de l'épandage de bordure avec le système ExactLine (accessoire), vous
+    effectuez le passage le plus à l'extérieur sur la moitié de la largeur de travail
+    (1/2 X mètre) à partir de la bordure de parcelle.
+- type: ListItem
+  text:  Effectuez le premier passage sur la moitié de la largeur de travail (1/2
+    X mètre) à partir de la bordure de parcelle (dans la première voie de pulvérisation).
+- type: ListItem
+  text:  Les manœuvres suivantes doivent être réglées sur toute la largeur de travail.
+- type: ListItem
+  text:  Voir paragraphe »Épandage de bordure à l'aide du système ExactLine« de la
+    page 110.
+- type: TextItem
+  text: 'CONSEIL : indiquez dans le GEOCONTROL si la limite de parcelle se trouve
+    à droite de la machine pendant l''épandage en bout de champ!'
+- type: PictureItem
+  caption: 'CONSEIL : indiquez dans le GEOCONTROL si la limite de parcelle se trouve
+    à droite de la machine pendant l''épandage en bout de champ!'
+- type: TextItem
+  text: '98'
+<|begin_of_text|>page_number: 99
+items:
+- type: TextItem
+  text: Jalonnage avec le déflecteur de bordure hydraulique
+- type: TextItem
+  text: Utilisation dans les champs
+- type: TextItem
+  text: Lors de l'épandage unilatéral en bordure avec le déflecteur de bordure hydraulique,
+    vous effectuez le passage le plus à l'extérieur le long de la bordure de parcelle
+    et vous commandez le flux d'engrais à l'aide du déflecteur de bordure hydraulique
+    (accessoire).
+- type: TextItem
+  text: 'Les manœuvres suivantes sont à régler sur :'
+- type: ListItem
+  text: · la moitié de la largeur de travail Situation A (dans la première voie de
+    pulvérisation),
+- type: ListItem
+  text: · la largeur de travail complète Situation B.
+- type: ListItem
+  text:  Voir paragraphe »Épandage unilatéral en bordure avec le déflecteur de bordure
+    hydraulique« de la page 107.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: 'CONSEIL : indiquez dans le GEOCONTROL que la limite de parcelle se trouve
+    à droite de la machine pendant l''épandage en bout de champ!'
+- type: PictureItem
+  caption: 'CONSEIL : indiquez dans le GEOCONTROL que la limite de parcelle se trouve
+    à droite de la machine pendant l''épandage en bout de champ!'
+- type: TextItem
+  text: '99'
+<|begin_of_text|>page_number: 100
+items:
+- type: SectionHeaderItem
+  text: Utilisation dans les champs
+- type: SectionHeaderItem
+  text: Démarrage de l'épandage
+- type: TextItem
+  text: 'Procédez comme suit pour commencer à épandre :'
+- type: ListItem
+  text:  Fermez la cabine en fermant toutes les portes et les vitres.
+- type: ListItem
+  text:  Dirigez-vous avec le tracteur vers la première trace de jalonnage, signalée
+    éventuellement à l'aide d'un repère, en fonction du mode de conduite souhaité.
+- type: ListItem
+  text:  Branchez le boîtier de commande.
+- type: ListItem
+  text:  Contrôlez les réglages tels que décrits au
+- type: ListItem
+  text:  Sans le GEOCONTROL, sélectionnez et activez un numéro de parcelle dans la
+    mémorisation des parcelles,
+- type: ListItem
+  text:  Embrayez la prise de force et réglez le régime des disques d'épandage tel
+    qu'indiqué dans le tableau d'épandage.
+- type: TextItem
+  text: Ne laissez pas les disques d'épandage tourner inutilement pendant longtemps
+    avec les unités de dosage fermées. Vous éviterez ainsi le broyage de l'engrais
+    par l'agitateur.
+- type: ListItem
+  text:  Commencez à rouler et ouvrez en même temps les unités de dosage en appuyant
+    sur la touche "START".
+- type: TextItem
+  text: Le régime du moteur du tracteur (et donc de la prise de force) doit pour cela
+    rester le même pendant l'épandage (à cause de la répartition de l'engrais sur
+    la largeur).
+- type: TextItem
+  text: Vous pouvez par conséquent adapter la vitesse d'avancement uniquement en sélectionnant
+    un autre rapport!
+- type: TextItem
+  text: INDICATION
+- type: TextItem
+  text: INDICATION
+- type: TextItem
+  text: Reprise de ligne après le demi-tour en bout de champ à l'aide de la fonction
+    GEOCONTROL
+- type: TextItem
+  text: En fonction du décalage paramétré dans l'écran "TC Implement Settings", le
+    GEOCONTROL désactive automatiquement les sections du distributeur d'engrais lorsqu'il
+    franchit la limite de la fourrière. C'est ce qui se passe si le profil d'épandage
+    chevauche suffisamment le bout de champ et lorsque vous tournez sur le bout de
+    champ.
+- type: TextItem
+  text: Recouvrement en bout de champ
+- type: TextItem
+  text: Recouvrement sur la limite de parcelle
+- type: TextItem
+  text: CONSEIL
+- type: TextItem
+  text: '100'
+- type: TextItem
+  text: En fonction du pourcentage de recouvrement réglé, le raccordement en bout
+    de champ et aux pointes chevauchera plus ou moins.
+- type: TextItem
+  text: La valeur habituelle est de 50%.
+- type: ListItem
+  text:  Voir les instructions du GEOCONTROL.
+- type: TextItem
+  text: Le degré de recouvrement au niveau de la limite de parcelle créée est également
+    réglable séparément dans le GEOCONTROL.
+- type: TextItem
+  text: Réglez le recouvrement sur la limite de parcelle sur 0 si vous ne voulez pas
+    d'épandage sur la limite de parcelle.
+<|begin_of_text|>page_number: 101
+items:
+- type: TextItem
+  text: INDICATION
+- type: TextItem
+  text: INDICATION
+- type: TextItem
+  text: Utilisation dans les champs
+- type: SectionHeaderItem
+  text: 'Approche du bout de champ avec la fonction GEOCONTROL désactivée :'
+- type: ListItem
+  text:  Fermez les unités de dosage en appuyant sur la touche "STOP" pour effectuer
+    le demi-tour sur tournière. Ce faisant, vous pouvez laisser tourner la prise de
+    force si vous vous apprêtez à poursuivre l'épandage.
+- type: TextItem
+  text: La procédure adéquate et les distances correspondantes en tournière sont disponibles
+    dans
+- type: ListItem
+  text:  le paragraphe »Procédure en bout de champ« et le paragraphe »Épandage sur
+    la parcelle« à partir de la page 97.
+- type: ListItem
+  text:  Roulez vers la trace de jalonnage suivante et démarrez à nouveau le distributeur
+    d'engrais au bon moment, comme indiqué au paragraphe »Procédure en bout de champ«.
+- type: TextItem
+  text: 'En cas de dysfonctionnement ou d''encrassement de l''épandeur :'
+- type: ListItem
+  text:  Arrêtez immédiatement d'épandre!
+- type: ListItem
+  text:  Débrayez immédiatement la prise de force!
+- type: ListItem
+  text:  Reportez-vous ensuite au paragraphe »Dysfonctionnement et obstruction« de
+    la page 113.
+- type: TextItem
+  text: Lorsque le contenu de la trémie atteint une valeur inférieure à 100 kg, le
+    système de commande coupe l'étalonnage automatique. La précision de la mesure
+    diminue à tel point qu'un nouvel étalonnage automatique ne permet pas d'établir
+    une meilleure courbe d'écoulement. Pour de faibles débits inférieurs à 50 kg/ha,
+    il est possible d'abaisser le contenu minimum de la trémie jusqu'à 15 kg minimum
+    pour l'étalonnage automatique.
+- type: ListItem
+  text:  Voir les instructions du logiciel.
+- type: TextItem
+  text: Si vous remplissez l'épandeur au cours de l'épandage, par exemple au moyen
+    du vérin de l'outil roulant à côté de l'épandeur, vous devez désactiver l'étalonnage
+    automatique. Avec l'étalonnage automatique, le système de commande pèse la quantité
+    épandue (kg) d'engrais pendant une durée déterminée. Il contrôle ensuite cette
+    valeur avec le débit réglé souhaité. Si vous remplissez la trémie au cours de
+    l'épandage, la quantité épandue ne peut être correctement pesée. Le poids dans
+    la trémie peut même augmenter au moment où la mesure est effectuée. Les rectifications
+    apportées par le système de commande ne seront pas correctes, entraînant ainsi
+    des dommages au niveau de la végétation.
+- type: TextItem
+  text: '101'
+<|begin_of_text|>page_number: 102
+items:
+- type: TextItem
+  text: Utilisation dans les champs
+- type: TextItem
+  text: Procédure en bout de champ Le mode de conduite que vous utilisez, notamment
+    la façon dont vous devez tourner en bout de champ, dépend de la façon dont vous
+    procédez à l'épandage de bordure.
+- type: ListItem
+  text: · À partir de la voie de pulvérisation, épandage de bordure avec le système
+    ExactLine et épandage unilatéral en bordure avec le déflecteur de bordure avec
+    passage supplémentaire (situation A), ou
+- type: ListItem
+  text: · épandage unilatéral en bordure avec un disque fermé et à l'aide du déflecteur
+    de bordure (situation B).
+- type: TextItem
+  text: 'Lors de l''épandage en tournière, procédez comme suit :'
+- type: TextItem
+  text: Épandage de bordure à partir de la voie de pulvérisation (ExactLine et situation
+    A)
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Fonction de bout de champ GEOCONTROL
+- type: TextItem
+  text: '102'
+- type: SectionHeaderItem
+  text: ExactLine
+- type: ListItem
+  text:  Commencez par créer la bordure de parcelle à partir de laquelle vous épandez
+    sur la première voie de pulvérisation avec l'ExactLine en roulant à gauche.
+- type: ListItem
+  text:  Faites éventuellement un deuxième passage avec l'ExactLine désactivé pour
+    un double passage en bout de champ.
+- type: ListItem
+  text:  Remplissez la parcelle avec des tours sur vos traces de pulvérisation déterminées
+    à l'avance.
+- type: TextItem
+  text: Le GEOCONTROL détermine automatiquement le moment de démarrage / d'arrêt à
+    l'approche et à la sortie de la fourrière traitée. Déflecteur de bordure hydraulique
+- type: ListItem
+  text:  Créez la limite de parcelle en épandant aussi près que possible le
+<|begin_of_text|>page_number: 103
+items:
+- type: TextItem
+  text: Utilisation dans les champs
+- type: TextItem
+  text: long de la limite en roulant vers la gauche ou vers la droite à l'aide du
+    déflecteur de bordure.
+- type: ListItem
+  text:  Complétez le bout de champ en réalisant un passage supplémentaire sur une
+    demi-largeur de travail sans déflecteur de bordure et avec le dosage droit/gauche
+    fermé.
+- type: ListItem
+  text:  Cf. »Épandage unilatéral en bordure avec le déflecteur de bordure hydraulique«
+    de la page 107.
+- type: ListItem
+  text:  Remplissez la parcelle avec des tours sur vos traces de pulvérisation déterminées
+    à l'avance.
+- type: TextItem
+  text: Le GEOCONTROL détermine automatiquement le moment de démarrage / d'arrêt à
+    l'approche et à la sortie de la fourrière traitée.
+- type: SectionHeaderItem
+  text: 'Épandage en bout de champ sans le GEOCONTROL :'
+- type: ListItem
+  text:  Arrêtez l'épandage en fermant les unités de dosage de la machine lorsqu'il
+    vous reste encore une moitié de largeur de travail à parcourir avant la fin de
+    la parcelle.
+- type: ListItem
+  text:  Laissez tourner les disques d'épandage, ne débrayez pas la prise de force.
+- type: ListItem
+  text:  Ouvrez à nouveau les unités de dosage après avoir tourné sur une distance
+    équivalente à une largeur de travail et demi de la fin de la parcelle.
+- type: ListItem
+  text:  Épandez pour finir en bordure de parcelle avec le système ExactLine.
+- type: ListItem
+  text:  Reportez-vous au chapitre »Épandage de bordure« de la page 106.
+- type: SectionHeaderItem
+  text: Lors de l'épandage unilatéral en bordure (situation B)
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '103'
+<|begin_of_text|>page_number: 104
+items:
+- type: SectionHeaderItem
+  text: Utilisation dans les champs
+- type: SectionHeaderItem
+  text: Fonction de bout de champ GEOCONTROL
+- type: TextItem
+  text: '104'
+- type: ListItem
+  text:  Commencez par créer la limite de parcelle à partir de laquelle vous voulez
+    épandre à gauche ou à droite en la longeant avec le déflecteur de bordure et le
+    dosage gauche/droit désactivé.
+- type: ListItem
+  text:  Remplissez la parcelle avec des tours sur vos traces de pulvérisation déterminées
+    à l'avance.
+- type: TextItem
+  text: Le GEOCONTROL interrompt et débute le travail au moment adéquat pendant le
+    demi-tour en bout de champ.
+- type: SectionHeaderItem
+  text: Sans GEOCONTROL
+- type: ListItem
+  text:  Roulez aussi près que possible jusqu'à la fin de la parcelle et arrêtez
+    l'épandage en fermant les unités de dosage juste avant de tourner.
+- type: ListItem
+  text:  Laissez tourner les disques d'épandage, ne débrayez pas la prise de force.
+- type: ListItem
+  text:  Ouvrez à nouveau les unités de dosage après avoir tourné sur une distance
+    équivalente à une largeur de travail depuis la fin de la parcelle.
+- type: ListItem
+  text:  Épandez pour finir en bordure de parcelle avec le déflecteur de bordure.
+- type: ListItem
+  text:  Reportez-vous au chapitre »Épandage de bordure« de la page 106.
+<|begin_of_text|>page_number: 105
+items:
+- type: SectionHeaderItem
+  text: Sur- ou sous-dosage
+- type: TextItem
+  text: Résultats du sur- ou sous-dosage unilatéral
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Utilisation dans les champs
+- type: TextItem
+  text: En fonction de l'état du sol ou de la végétation, il peut être souhaitable
+    d'épandre plus ou moins d'engrais par endroits, Le système de commande vous permet
+    d'effectuer un sur- ou sous-dosage du côté gauche, droit ou des deux côtés au
+    cours de l'épandage. Toutes les touches figurent dans l'écran principal.
+- type: ListItem
+  text:  Voir les instructions du logiciel
+- type: TextItem
+  text: Les nappes d'épandage des deux disques d'épandage se che-
+- type: TextItem
+  text: vauchent partiellement, notamment au milieu à l'arrière de l'épandeur. Par
+    conséquent, le débit réel va différer par rapport au débit que vous réglez pendant
+    le sur- ou sous-dosage sur un seul côté. Vous le constaterez notamment pour les
+    petites largeurs de travail, parce que les nappes d'épandage se chevauchent alors
+    le plus.
+- type: TextItem
+  text: Avec de plus petites largeurs de travail et une nappe d'épandage en forme
+    de triangle, les nappes d'épandage du premier et du deuxième passage se chevauchent
+    entièrement.
+- type: ListItem
+  text:  Reportez-vous également au paragraphe »Formes de la nappe d'épandage« de
+    la page 28.
+- type: TextItem
+  text: Pour épandre un débit adapté, vous devez par conséquent effectuer un sur-
+    ou sous-dosage dans la trace de jalonnage qui suit aussi bien lors du premier
+    que du deuxième passage.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '105'
+<|begin_of_text|>page_number: 106
+items:
+- type: SectionHeaderItem
+  text: Utilisation dans les champs
+- type: SectionHeaderItem
+  text: Épandage de bordure
+- type: TextItem
+  text: INDICATION
+- type: TextItem
+  text: '106'
+- type: TextItem
+  text: La dispersion d'engrais sur le bord de la parcelle nécessite une attention
+    spécifique. D'une part, vous voulez une dose complémentaire maximale après la
+    bordure pour un bon rendement, d'autre part, vous voulez minimiser les pertes
+    de l'autre côté de la bordure de parcelle.
+- type: TextItem
+  text: L'épandeur a 2 façons différentes de travailler et autant d'adaptations correspondantes
+    pour l'épandage de bordure.
+- type: ListItem
+  text: · Épandage unilatéral en bordure à l'aide du déflecteur de bordure hydraulique,
+- type: ListItem
+  text: · Épandage des bordures avec ExactLine.
+- type: TextItem
+  text: Pour l'épandage unilatéral en bordure, vous passez avec le tracteur le long
+    de la bordure de parcelle et vous épandez dans la parcelle à partir de cette bordure.
+    Pour l'épandage de bordure, vous passez dans la première voie de pulvérisation
+    à partir de la bordure de parcelle et vous épandez en direction de la bordure
+    de parcelle.
+- type: TextItem
+  text: Nous vous recommandons d'épandre en premier lieu sur la parcelle avant d'épandre
+    sur les bordures. Au cours de l'épandage de bordure, le système de commande n'effectue
+    aucun étalonnage automatique et ne peut ainsi pas déterminer avec précision le
+    bon réglage des ouvertures correspondant au débit souhaité. Par conséquent, le
+    débit peut différer par rapport au débit souhaité au cours de l'épandage de bordure.
+    En procédant d'abord à l'épandage sur la parcelle, le système de commande peut
+    déterminer le bon réglage des ouvertures et épandre avec le débit adéquat, même
+    au cours de l'épandage de bordure.
+<|begin_of_text|>page_number: 107
+items:
+- type: SectionHeaderItem
+  text: Épandage unilatéral en bordure avec le déflecteur de bordure hydraulique
+- type: SectionHeaderItem
+  text: Fonctionnement
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Utilisation dans les champs
+- type: TextItem
+  text: Lors de l'épandage unilatéral en bordure, vous roulez le long de la bordure
+    de parcelle et vous commandez le flux d'engrais à l'aide du déflecteur de bordure
+    hydraulique (accessoire). La largeur de travail au bord de la parcelle se règle
+    en modifiant la position du déflecteur de bordure hydraulique (accessoire).
+- type: TableItem
+  table_data:
+    0:
+      0: Vers ( 1 )  (mode  « environnement »)
+      1: Vers ( 9 )  (mode  « rendement »)
+    1:
+      0: La quantité épandue est moindre vers le bord  de la parcelle.  La perte au-delà
+        de la bordure de parcelle est  minime, la dose complémentaire est moins  bonne.
+      1: Vous épandez davantage vers le bord de la par- celle.  La dose complémentaire
+        est meilleure, mais la
+- type: TextItem
+  text: La perte maximale autorisée au-delà de la bordure de parcelle est définie
+    dans une norme environnementale. Pour satisfaire à celle-ci, la quantité d'engrais
+    épandue au-delà de la bordure de parcelle peut représenter 10 % tout au plus de
+    la quantité épandue au centre derrière l'épandeur (= 100 %). Testez pour cette
+    raison le fonctionnement du déflecteur de bordure (accessoire) à chaque fois avant
+    d'effectuer le test, comme indiqué au
+- type: ListItem
+  text:  paragraphe »Test du profil d'épandage avec le déflecteur de bordure hydraulique«
+    de la page 84.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '107'
+<|begin_of_text|>page_number: 108
+items:
+- type: SectionHeaderItem
+  text: Utilisation dans les champs
+- type: SectionHeaderItem
+  text: Procédure avec le déflecteur de bordure hydraulique
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '108'
+- type: TextItem
+  text: Le déflecteur de bordure hydraulique permet l'épandage en bordure à gauche
+    et à droite.
+- type: ListItem
+  text:  Coupez le moteur du tracteur et retirez la clé du contact.
+- type: ListItem
+  text:  Serrez le frein à main sur le tracteur.
+- type: ListItem
+  text:  Séparez le disque d'épandage droit en poussant la pièce d'attelage vers
+    la droite. Bloquez à nouveau la pièce d'attelage à l'aide du boulon de fixation.
+- type: ListItem
+  text:  Abaissez le déflecteur de bordure.
+- type: ListItem
+  text:  Vérifiez que les pales ne touchent pas le déflecteur de bordure!
+- type: ListItem
+  text:  Réglez l'épandeur à l'aide des données du tableau d'épandage de la largeur
+    de travail souhaitée. Utilisez les mêmes réglages et point de raccordement de
+    l'arbre de transmission que pour l'épandage en plein champ,
+- type: ListItem
+  text:  reportez-vous également au paragraphe »Réglage de l'épandeur« de la page
+    62.
+- type: ListItem
+  text:  démarrez le tracteur.
+- type: ListItem
+  text:  Branchez le boîtier de commande.
+- type: ListItem
+  text:  Embrayez la prise de force. Le régime optimal des disques d'épandage correspond
+    à la valeur indiquée dans le tableau d'épandage correspondant.
+- type: ListItem
+  text:  Choisissez si vous le souhaitez un rapport qui vous permette d'avancer à
+    la même vitesse que lors de l'épandage plein champ.
+- type: TextItem
+  text: Le système de commande va commander les unités de dosage de sorte à ce que
+    le débit épandu soit identique au débit réglé, en dépit du faible régime de la
+    prise de force.
+- type: TextItem
+  text: 'En cas de dysfonctionnement ou d''encrassement de l''épandeur :'
+- type: ListItem
+  text:  Arrêtez immédiatement d'épandre!
+- type: ListItem
+  text:  Débrayez immédiatement la prise de force!
+- type: ListItem
+  text:  Reportez-vous ensuite au paragraphe »Dysfonctionnement et obstruction« de
+    la page 113.
+- type: TextItem
+  text: 'Après l''épandage de bordure :'
+- type: ListItem
+  text:  Coupez le moteur du tracteur, retirez la clé du contact et serrez le frein
+    à main sur le tracteur.
+- type: ListItem
+  text:  Relevez le déflecteur de bordure.
+- type: ListItem
+  text:  Fermez le dosage.
+- type: ListItem
+  text:  Raccordez à nouveau l'entraînement du disque d'épandage droit.
+<|begin_of_text|>page_number: 109
+items:
+- type: SectionHeaderItem
+  text: Mode de conduite
+- type: TextItem
+  text: Utilisation dans les champs
+- type: TextItem
+  text: En fonction de la situation sur votre parcelle, vous pouvez appliquer deux
+    situations de conduite différentes.
+- type: SectionHeaderItem
+  text: 'Épandage à partir des voies de pulvérisation (situation A) :'
+- type: ListItem
+  text:  Effectuez un premier passage avec le centre du tracteur sur environ 2 mètres
+    à partir de la bordure de parcelle. Réduisez la vitesse de l'arbre de prise de
+    force à 75%.
+- type: ListItem
+  text:  Retirez le déflecteur de bordure après le premier passage ou relevez le
+    déflecteur de bordure hydraulique, mais laissez le disque d'épandage droit débrayé
+    et l'unité de dosage fermée,
+- type: ListItem
+  text:  reportez-vous à la procédure ci-dessus.
+- type: ListItem
+  text:  Augmentez la vitesse de l'arbre de prise de force à 100%.
+- type: ListItem
+  text:  Effectuez un deuxième passage dans la première voie de pulvérisation.
+- type: ListItem
+  text:  Raccordez à nouveau l'entraînement du disque d'épandage droit après le deuxième
+    passage.
+- type: ListItem
+  text:  Ouvrez l'unité de dosage du disque d'épandage droit.
+- type: SectionHeaderItem
+  text: 'Épandage sans voies de pulvérisation (situation B) :'
+- type: ListItem
+  text:  Effectuez un premier passage avec le centre du tracteur sur environ 2 mètres
+    à partir de la bordure de parcelle. Réduisez la vitesse de l'arbre de prise de
+    force à 75%.
+- type: ListItem
+  text:  Retirez le déflecteur de bordure après le premier passage ou relevez le
+    déflecteur de bordure hydraulique.
+- type: ListItem
+  text:  Raccordez à nouveau l'entraînement du disque d'épandage droit.
+- type: ListItem
+  text:  Ouvrez l'unité de dosage du disque d'épandage droit.
+- type: ListItem
+  text:  Effectuez un deuxième passage sur 1 largeur de travail (X mètres) de distance
+    par rapport à la bordure de parcelle. Maintenez la distance exacte jusqu'à la
+    bordure de parcelle, par exemple à l'aide de piquets.
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '109'
+<|begin_of_text|>page_number: 110
+items:
+- type: SectionHeaderItem
+  text: Utilisation dans les champs
+- type: SectionHeaderItem
+  text: Épandage de bordure à l'aide du système ExactLine
+- type: SectionHeaderItem
+  text: Fonctionnement
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: ExactLine
+- type: TextItem
+  text: Réglage
+- type: TextItem
+  text: '110'
+- type: TextItem
+  text: Lors de l'épandage de bordure avec le système ExactLine (accessoire), vous
+    vous déplacez sur la moitié de la largeur de travail (1/2 X mètre) (= première
+    voie de pulvérisation) à partir de la bordure de parcelle. Le flux de grains d'engrais,
+    de graines ou d'autres granulés, se commande à l'aide du système ExactLine. La
+    largeur de travail au bord de la parcelle se règle en modifiant la position du
+    système ExactLine.
+- type: TextItem
+  text: La perte maximale autorisée au-delà de la bordure de parcelle est définie
+    dans une norme environnementale. Pour satisfaire à celle-ci, la quantité d'engrais
+    épandue au-delà de la bordure de parcelle peut représenter 10 % tout au plus de
+    la quantité épandue au centre derrière l'épandeur (= 100 %). Testez pour cette
+    raison le fonctionnement du système TrimFlow à chaque fois avant d'effectuer le
+    test comme indiqué au
+- type: ListItem
+  text:  paragraphe »Test du profil d'épandage avec l'ExactLine« de la page 89.
+- type: TextItem
+  text: Les tableaux d'épandage (en ligne) vous donnent le réglage adéquat de l'ExactLine
+    avec le régime correspondant pour la prise de force et les disques d'épandage.
+- type: TextItem
+  text: 'Si le réglage du système ExactLine ne figure pas dans le tableau d''épandage
+    en question, vous pouvez :'
+- type: ListItem
+  text: · le chercher dans les tableaux d'épandage en ligne ou dans l'application
+    mobile gratuite fonctionnant sous iOs et/ou Android.
+- type: ListItem
+  text:  Cf. paragraphe »Service de tableaux d'épandage en ligne« de la page 61.
+- type: TextItem
+  text: Contrôlez systématiquement le réglage du système ExactLine en effectuant le
+    test, consultez pour cela le
+- type: ListItem
+  text:  paragraphe »Test du profil d'épandage avec l'ExactLine« de la page 89.
+- type: TextItem
+  text: Le type d'engrais a déjà été déterminé lors du réglage de votre épandeur,
+    tel que décrit au
+- type: ListItem
+  text:  paragraphe »Détermination du type et de la forme des granulés« de la page
+    57.
+- type: TextItem
+  text: 'Dans le tableau, vous pouvez choisir entre 3 modes :'
+- type: ListItem
+  text: · YIELD.
+- type: ListItem
+  text: · ECO,
+- type: TextItem
+  text: En mode rendement (YIELD), la perte au-delà de la bordure de parcelle est
+    supérieure aux exigences de la norme environnementale. N'utilisez par conséquent
+    jamais ce mode le long des eaux de surface. La dose complémentaire vers la bordure
+    est bonne dans cette position.
+- type: TextItem
+  text: En mode environnement (ECO), la perte au-delà de la bordure de parcelle est
+    inférieure ou égale aux exigences de la norme environnementale. Utilisez ce mode
+    à chaque fois que vous travaillez le long d'eaux de surface! Cela peut avoir
+    pour conséquence une dose complémentaire non optimale vers la bordure de parcelle.
+- type: ListItem
+  text:  Voir les instructions du logiciel.
+- type: TextItem
+  text: INDICATION
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+<|begin_of_text|>page_number: 111
+items:
+- type: SectionHeaderItem
+  text: Procédure
+- type: SectionHeaderItem
+  text: batterie d'accumulateurs
+- type: TextItem
+  text: ExactLine en position marche
+- type: PictureItem
+  caption: ExactLine en position marche
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Utilisation dans les champs
+- type: ListItem
+  text:  Actionnez le distributeur hydraulique à simple effet pendant quelques secondes
+    afin de placer le système ExactLine en position de travail. En outre, vous mettez
+    également la batterie d'accumulateurs sous pression. Le symbole du système ExactLine
+    apparaît sur l'écran principal. Il n'apparaît que si le système ExactLine se trouve
+    en position de travail.
+- type: ListItem
+  text:  Fermez le robinet sur la conduite hydraulique pour éviter que le système
+    ExactLine ne change de position en cours d'épandage à cause d'un distributeur
+    qui fuirait.
+- type: ListItem
+  text:  Coupez le moteur du tracteur, retirez la clé du contact et serrez le frein
+    à main sur le tracteur.
+- type: ListItem
+  text:  Ne modifiez pas les réglages de l'épandeur.
+- type: ListItem
+  text:  Voir paragraphe »Réglage de l'épandeur« de la page 62.
+- type: ListItem
+  text:  Réglez le système ExactLine sur la position souhaitée à l'aide du tableau
+    d'épandage (en ligne).
+- type: ListItem
+  text:  Démarrez le tracteur et réglez un régime correct pour la prise de force
+    et les disques d'épandage en vous aidant du tableau d'épandage (en ligne) ou du
+    tableau de la page précédente.
+- type: ListItem
+  text:  Choisissez si vous le souhaitez un rapport qui vous permette d'avancer à
+    la même vitesse que lors de l'épandage plein champ.
+- type: ListItem
+  text:  Actionnez ensuite l'épandeur de la même façon que pour l'épandage plein
+    champ,
+- type: ListItem
+  text:  Cf. paragraphe »Démarrage de l'épandage« de la page 100.
+- type: ListItem
+  text:  Contrôlez régulièrement au cours de l'épandage si le symbole du système
+    ExactLine reste affiché sur l'écran. S'il disparaît, le système ExactLine n'est
+    plus dans une position de travail optimale.
+- type: ListItem
+  text:  Réglez à nouveau le système ExactLine en position de transport après utilisation
+    en ouvrant le robinet de la conduite hydraulique et en ouvrant ensuite pendant
+    quelques secondes le distributeur hydraulique à simple effet correspondant.
+- type: TextItem
+  text: L'écran principal indique la position du système ExactLine, si vous avez activé
+    cette fonction.
+- type: ListItem
+  text:  Voir les instructions du logiciel.
+- type: TextItem
+  text: De ce fait, les défauts d'épandage, dus à une mauvaise position du système
+    ExactLine, devraient être moins fréquents.
+- type: TextItem
+  text: 'En cas de dysfonctionnement ou d''encrassement de l''épandeur :'
+- type: ListItem
+  text:  Arrêtez immédiatement d'épandre!
+- type: ListItem
+  text:  Débrayez immédiatement la prise de force!
+- type: ListItem
+  text:  Reportez-vous ensuite au paragraphe »Dysfonctionnement et obstruction« de
+    la page 113.
+- type: TextItem
+  text: '111'
+<|begin_of_text|>page_number: 112
+items:
+- type: SectionHeaderItem
+  text: Utilisation dans les champs
+- type: SectionHeaderItem
+  text: Mode de conduite
+- type: TextItem
+  text: Lorsque vous utilisez le système ExactLine, vous passez avec le tracteur dans
+    le premier sillon sur une demie largeur de travail (1/2 X mètre) à partir de la
+    bordure de parcelle.
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Fin des opérations
+- type: TextItem
+  text: '112'
+- type: TextItem
+  text: 'Juste après avoir travaillé avec la machine et avant de circuler sur la route,
+    vous devez :'
+- type: ListItem
+  text:  Fermez les unités de dosage.
+- type: ListItem
+  text:  Débrayez la prise de force.
+- type: ListItem
+  text:  Arrêtez le système de commande électronique.
+- type: ListItem
+  text:  Coupez le moteur du tracteur et retirez la clé du contact.
+- type: ListItem
+  text:  Serrez le frein à main sur le tracteur.
+- type: ListItem
+  text:  Débarrassez la machine des résidus de cultures, de la terre et des pierres.
+- type: ListItem
+  text:  Fixer la jupe.
+- type: ListItem
+  text:  prendre toutes les mesures nécessaires au transport sur route.
+- type: ListItem
+  text:  Voir paragraphe »Préparation de la machine pour le transport« de la page
+    93.
+<|begin_of_text|>page_number: 113
+items:
+- type: SectionHeaderItem
+  text: Dysfonctionnement et obstruction
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Causes
+- type: SectionHeaderItem
+  text: Utilisation dans les champs
+- type: SectionHeaderItem
+  text: Attention à ne pas vous coincer!
+- type: TextItem
+  text: 'Lors du réglage de l''épandeur, vous pouvez facilement vous coincer. Travaillez
+    en toute sécurité avec la machine en :'
+- type: ListItem
+  text: · mis hors pression le système hydraulique,
+- type: ListItem
+  text: · coupant le système de commande électronique,
+- type: ListItem
+  text: · coupant le contact du tracteur et en retirant la clé du contact,
+- type: ListItem
+  text: · serrant le frein à main sur le tracteur,
+- type: ListItem
+  text: · attendant l'arrêt total de toutes les pièces de la machine pour vous en
+    approcher,
+- type: ListItem
+  text: · portant des vêtements de protection tels que des gants protecteurs et des
+    chaussures de sécurité,
+- type: ListItem
+  text: · d'exécuter seul et avec prudence la procédure décrite.
+- type: TextItem
+  text: En vous coinçant, vous pouvez vous blesser.
+- type: SectionHeaderItem
+  text: Evitez tout contact avec l'engrais et d'autres produits
+- type: TextItem
+  text: Lors des opérations avec l'épandeur, il se peut que vous entriez en contact
+    avec l'engrais ou d'autres produits d'épandage. Portez des vêtements de protection
+    et des gants protecteurs, lisez les instructions de sécurité du fournisseur et
+    suivez les indications supplémentaires. Le contact avec des produits peut être
+    à l'origine de blessures corporelles.
+- type: TextItem
+  text: 'Si au cours de l''épandage :'
+- type: ListItem
+  text: · vous constatez qu'un disque d'épandage n'épand rien ou seulement de façon
+    irrégulière alors que les unités de dosage sont ouvertes,
+- type: ListItem
+  text: · vous entendez des bruits anormalement élevés,
+- type: ListItem
+  text: · vous observez des vibrations importantes au niveau de la machine,
+- type: ListItem
+  text: · vous voyez le message d'alerte sur l'écran indiquant que la prise de force
+    n'est pas embrayée alors qu'elle l'est,
+- type: ListItem
+  text: · le message d'alerte apparaît sur l'écran principal indiquant que les unités
+    de dosage ne peuvent être fermées,
+- type: ListItem
+  text:  Consultez le manuel d'utilisation du logiciel.
+- type: TextItem
+  text: Arrêtez immédiatement d'épandre! Débrayez immédiatement la prise de force
+   !
+- type: TextItem
+  text: '113'
+<|begin_of_text|>page_number: 114
+items:
+- type: SectionHeaderItem
+  text: Utilisation dans les champs
+- type: TextItem
+  text: 'Voici les causes probables de ces dysfonctionnements :'
+- type: ListItem
+  text: · un objet dur bloque l'agitateur,
+- type: ListItem
+  text: · un objet dur ou un gros bloc d'engrais bloque (partiellement) l'arrivée
+    d'engrais vers l'agitateur,
+- type: ListItem
+  text: · un objet dur ou un gros bloc d'engrais bloque (partiellement) le passage
+    du flux d'engrais par les ouvertures de dosage ou la bague d'écoulement,
+- type: ListItem
+  text: · l'engrais broyé et/ou humide forme une couche qui adhère sous l'agitateur
+    et bloque l'écoulement par les orifices de dosage,
+- type: ListItem
+  text: · l'engrais humide dans la bague d'écoulement a formé un bloc et empêche l'écoulement
+    par l'ouverture de la bague d'écoulement. Cela peut notamment se produire si l'épandeur
+    n'a pas été soigneusement nettoyé après sa dernière utilisation.
+- type: TextItem
+  text: La plupart des types d'engrais absorbent l'eau et peuvent alors former des
+    blocs. Ces blocs sont susceptibles de provoquer des bourrages au niveau de l'épandeur
+    ou d'abîmer la nappe d'épandage.
+- type: ListItem
+  text: · Si les conditions sont humides, travaillez uniquement avec la bâche de trémie
+    bien fermée.
+- type: ListItem
+  text: · N'épandez jamais sans bâche de trémie lorsque les conditions sont humides.
+- type: ListItem
+  text: · Ne laissez jamais l'engrais pendant longtemps dans l'épandeur. Des blocs
+    peuvent également se former sous l'action de l'humidité de l'air.
+- type: ListItem
+  text: · Nettoyez à fond l'épandeur après chaque utilisation, ainsi que les orifices
+    de dosage et les bagues d'écoulement.
+- type: SectionHeaderItem
+  text: Vigilance recommandée
+- type: TextItem
+  text: Approchez-vous doucement de la machine et procédez avec précaution aux opérations.
+    Des éléments peuvent être brûlants ou sous tension. Des blessures corporelles
+    peuvent en résulter.
+- type: TextItem
+  text: Procédez comme suit pour découvrir l'origine du dysfonctionnement ou de l'obstruction
+    et résoudre le problème si vous en avez le pouvoir.
+- type: ListItem
+  text:  Débrayez immédiatement la prise de force.
+- type: ListItem
+  text: 
+</context>
+<question>
+    What is the recommended tire pressure 'range' for transport mode?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

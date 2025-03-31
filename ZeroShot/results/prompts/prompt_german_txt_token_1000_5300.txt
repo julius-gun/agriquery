@@ -1,0 +1,50 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     auf  Schlepper  1 bis 3 Steuergeräte bei Ausrüstung mit ExactLine/hydrauli- schem Grenzstreublech  1 bis 3 Steuergeräte bei Ausrüstung mit ExactLine/hydrauli- schem Grenzstreublech
+37<|begin_of_text|>
+===Page 38===
+
+Vor dem ersten Gebrauch
+Vor dem ersten Gebrauch
+Kontrolle der gelieferten Maschine
+Montagehinweise
+TIPP
+[Image]
+Im Allgemeinen wird die Maschine vom Händler betriebsbereit montiert und übergeben. Er ist ebenfalls für die Anweisungen zu Gebrauch und Wartung verantwortlich. Zudem muss er alle erforderlichen Dokumente übergeben, wie z. B.:
+· Anweisungsbuch,
+· Teilebuch,
+· Streutabellenbuch,
+· eventuell Test- oder Prüfdokumente
+Falls Teile fehlen oder Transportschäden aufgetreten sind, bitten wir Sie, dies sofort bei der Übergabe dem Händler zu melden.
+Bevor die Maschine eingesetzt werden kann, müssen verschiedene Komponenten und die mitgelieferten Zubehörteile ausgepackt und montiert werden.
+Es empfiehlt sich, zusätzlich zu dieser Montageanleitung auch das Ersatzteilheft zur Hand zu nehmen, um die Einzelteile identifizieren und ihre Position an der Maschine leichter finden zu können.
+Zum Anheben der Teile geeignete Hilfsmittel verwenden
+Verwenden Sie zugelassene Seilgurte oder Ketten und befestigen Sie diese an den vorgesehenen Lastaufhängepunkten der Maschine. Wird die Maschine auf unsachgemäße Weise oder mit ungeeigneten Hilfsmitteln angehoben, so kann sie sich lösen und herabfallen, was zu Beschädigungen und möglicherweise zu Verletzungen führt.
+Auf sauberem Untergrund arbeiten
+Vor Beginn der Montagearbeiten müssen der Untergrund und der unmittelbare Arbeitsbereich gereinigt werden, in dem die Maschine aufgestellt wird. Eine Maschine, die auf Verpackungsresten oder Einzelteilen ruht, kann während der Montage wegrutschen. Dadurch kann die Maschine beschädigt und können Personen verletzt werden.
+Zubehör und Teile richtig montieren
+Montieren Sie Zubehör und Teile gemäß Vorschrift und befestigen Sie diese ausschließlich an den dafür bestimmten Vorrichtungen; sorgen Sie für eine gute Sicherung. Schlecht befestigte Zubehörteile können Personenschäden und Schäden an Erntegut und Maschine hervorrufen.
+Drehen Sie alle Schrauben und Muttern fest
+Kontrollieren Sie alle Schrauben und Muttern regelmäßig und drehen Sie diese nach der ersten Betriebsstunde fest, im Anschluss an:
+· die Übergabe und
+· Ausführung der Wartungs- und Reparaturarbeiten.
+Beim Zentrieren von Bohrungen niemals zur Kontrolle Finger in die Öffnung stecken
+Für die Kontrolle der korrekten Ausrichtung muss ein Stift benutzt werden. Andernfalls besteht die Gefahr schwerer Verletzungen durch Bewegungen der Maschine oder Maschinenteile.
+[Image]
+38
+</context>
+<question>
+    After initial setup of the machine and after any maintenance or repairs, how long should the machine be operated before re-checking all nuts and bolts?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

@@ -1,0 +1,52 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     Positionnez 1 bac de collecte au centre de l'ornière du tracteur. Le centre de l'ornière du tracteur se trouve à 2 mètres de la ligne derrière laquelle la tranchée fictive se trouve.
+INDICATION Placez les bacs de collecte à l'horizontale à l'aide d'un niveau à bulle!
+[Image]
+84<|begin_of_text|>
+===Page 85===
+
+[Image]
+Réglage du déflecteur de bordure hydraulique
+INDICATION
+INDICATION
+[Image]
+Opérations avant l'épandage
+ Placez 1 bac de collecte sur le champ le long de la bordure de tranchée puis 2 bacs de collecte dans la tranchée fictive.
+ Démarrez le tracteur, embrayez la prise de force. Le régime de prise de force correct est la valeur standard moins 25 %, c'est-à-dire 540 tr/min - 25 % = 400 tr/min.
+ Sélectionnez un rapport vous permettant de rouler à la même vitesse qu'avec un régime de prise de force normal, ou réduisez le débit de 25 %.
+ Commencez à rouler le long de la bordure de parcelle. La distance entre la bordure de parcelle et le centre du tracteur doit être de 2 mètres.
+ Ouvrez l'unité de dosage sur quelques mètres avant de passer au centre au-dessus du premier bac.
+ Arrêtez seulement d'épandre une fois que vous avez dépassé les bacs de collecte d'au moins une largeur de travail (par ex. 24 mètres). L'épandeur épand en effet un peu plus vers l'arrière que sur le côté.
+ Si vous avez réglé un débit inférieur à 250 kg/ha, faites une fois encore l'aller et retour sur la même ornière afin d'accumuler suffisamment d'engrais dans les bacs de collecte pour obtenir une bonne comparaison.
+Respectez la même distance pour l'ouverture et la fermeture de l'unité de dosage.
+Conservez la même vitesse d'avancement et le même régime de prise de force!
+ Videz les bacs de collecte à l'aide de l'entonnoir dans les tubes de mesure.
+Un déflecteur de bordure hydraulique est disponible des deux côtés.
+ Abaissez le déflecteur de bordure.
+ Fermez la vanne pour éviter que le déflecteur se relève de façon accidentelle pendant le travail.
+ Fermez le dosage du côté où vous ne devez pas épandre.
+ Débrayez l'entraînement du disque du côté où vous ne devez pas épandre.
+ Réglez le déflecteur au moyen du tableau d'épandage (en ligne).
+Respectez un régime de disque optimal pour l'épandage.
+Réglez le déflecteur de bordure vers la position 9 si vous voulez épandre vers la bordure.
+Réglez le déflecteur de bordure vers la position 1 si vous voulez vous éloigner de la bordure pour l'épandage.
+Le tableau d'épandage indique les réglages pour les modes rendement et H 2 O. Pour le mode rendement, utilisez les déflecteurs (courts) montés en standard
+[Image]
+85
+</context>
+<question>
+    Can the hydraulic border spreading plate be actuated pneumatically?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

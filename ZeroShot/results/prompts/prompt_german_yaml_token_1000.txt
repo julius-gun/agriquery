@@ -1,0 +1,83 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     die Unterlegkeile vor die Abstellräder.
+- type: TextItem
+  text: Halter für elektrische Stecker und Hydraulikschläuche.
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '120'
+<|begin_of_text|>page_number: 121
+items:
+- type: SectionHeaderItem
+  text: Vorbereitung für die Winterlagerung
+- type: TextItem
+  text: TIPP
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Außerbetriebnahme
+- type: TextItem
+  text: Am Ende der Erntesaison wird die Maschine für die Winterlagerung vorbereitet.
+- type: TextItem
+  text: Bevor Sie die Maschine für kürzere oder längere Zeit außer Betrieb setzen,
+    sollte diese zuerst geschmiert, dann gereinigt und noch einmal geschmiert werden.
+    Mit dem ersten Schmieren vermeiden Sie, dass während der Reinigung Schmutz, Kunstdünger
+    und Wasser in die Lager gelangt. Schmieren und ölen Sie alle Punkte nach der Reinigung
+    nochmals zur Konservierung ein.
+- type: TextItem
+  text: 'Die Vorteile dieser Arbeitsreihenfolge ist:'
+- type: ListItem
+  text: · zusätzliche Überprüfung der Maschine direkt nach der Arbeit,
+- type: ListItem
+  text: · längere Lebensdauer der Maschine,
+- type: ListItem
+  text: · geringere Ausfallzeiten durch Störungen während des Betriebs der Maschine.
+- type: TextItem
+  text: Bei Verwendung eines Hochdruckreinigers nicht mit dem Strahl auf die Dichtungen
+    und Entlüftungsverschlüsse zielen. Auf diese Weise wird vermieden, dass Schmutz
+    und Wasser in die Getriebe eindringen.
+- type: TextItem
+  text: Richten Sie den Strahl nicht auf elektrische Komponenten. Wasser kann elektrische
+    Störungen verursachen.
+- type: ListItem
+  text:  Siehe »Vorsicht bei der Reinigung mit einem Hochdruckreiniger« auf Seite
+    117.
+- type: ListItem
+  text:  Die Maschine reinigen.
+- type: ListItem
+  text:  Die Maschine trocknen lassen.
+- type: ListItem
+  text:  Eventuelle Lackschäden ausbessern.
+- type: ListItem
+  text:  Schmieren und ölen Sie alle Punkte nochmals zur Konservierung.
+- type: ListItem
+  text:  Siehe Absatz »Wartungsintervalle« auf Seite 125.
+- type: ListItem
+  text:  Versehen Sie blanke Teile, wie Kolbenstangen der Hydraulikzylinder mit konservierendem
+    Fett oder sprühen (blanke) Metallteile der Maschine mit Konservierungsmittel (mitgeliefert)
+    zum Schutz vor Korrosion der Maschine ein.
+- type: TextItem
+  text: HINWEIS Verwenden Sie ein Fett, das nicht austrocknet und hart wird. Und zwar,
+    um Schäden an der Abdichtung der Zylinder zu vermeiden.
+- type: TextItem
+  text: '121'
+
+</context>
+<question>
+    What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

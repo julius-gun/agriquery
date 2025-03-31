@@ -1,0 +1,19 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|><page number="74"><text>Arbeiten vor dem Streuen</text><text>HINWEIS</text><text>Die meisten Sorten Kunstdünger ziehen Wasser an und können dann große Brocken bilden. Diese Brocken können den Streuer verstopfen oder das Streubild stören.</text><text>· Arbeiten Sie bei feuchtem Wetter mit einer gut geschlossenen Abdeckplane.</text><text>· Streuen Sie ohne Abdeckplane nicht bei feuchtem Wetter.</text><text>· Lassen Sie Kunstdünger nie lange im Streuer. Durch Feuchtigkeit in der Luft können ebenfalls Brocken entstehen.</text><text>· Reinigen Sie den Streuer immer gründlich, auch die Dosieröffnungen und Auslaufrohre.</text><text>Nach der Justierung des Streuers können Sie diesen bis zum gewünschten Niveau füllen. Wir empfehlen Ihnen, die Maschine zu laden, wenn diese 10 cm über den Boden gehoben ist. Wenn Sie keine Arbeiten über dem Behälter ausführen müssen, kann die Höhe an das automatische Füllsystem angepasst werden.</text><text>Wenn während des Befüllens, manuell oder mit großen Säcken, der Abstand zwischen Behälterrand und Boden größer als 1250 mm ist, müssen Sie die Ladeplattform verwenden. Die Füllhöhe ist angegeben in</text><text> Absatz »Technische Daten« auf Seite 36.</text><text> Fahren Sie die Maschine, bei einer festen Ladeplattform, auf die Plattform. Der Abstand zwischen der Maschine und der Plattform darf maximal 200 mm betragen.</text><text> Lassen Sie die Maschine bis zur gewünschten Höhe ab. Die Maschine darf sich nicht auf dem Boden befinden, sondern muss mindestens 10 cm angehoben sein.</text><text> Überprüfen Sie, ob die Dosiereinheiten geschlossen sind und schließen diese ggf., indem Sie im Hauptbildschirm auf die StopTaste drücken.</text><text>Die Position der Dosiereinheiten wird im Hauptbildschirm des Bedienpults des Steuersystems wiedergegeben.</text><text> Schalten Sie das elektronische Steuersystem aus.</text><text> Schalten Sie den Schlepper aus und ziehen Sie den Zündschlüssel aus dem Zündschloss.</text><text> Betätigen Sie die Feststellbremse des Schleppers.</text><text> Schließen Sie die Kabine, indem Sie alle Türen und Fenster schließen.</text><text> Platzieren Sie Unterlegkeile vor die Räder des Schleppers.</text><text> Stellen Sie die Ladeplattform, sofern diese versetzbar ist, zum Streuer, so dass der Abstand zwischen beiden maximal 200 mm beträgt.</text><text> Öffnen Sie die Abdeckplane.</text><text> Überprüfen Sie, ob die Siebe geschlossen und verriegelt sind.</text><text> Füllen Sie die Maschine mithilfe geeigneter Hilfsmittel bis zu dem gewünschten Niveau. Füllen Sie die Behälterhälften gleichmäßig, so dass beide Hälften auch in etwa gleichzeitig leer sind.</
+</context>
+<question>
+    What is the maximum acceptable 'chunk' size of fertilizer in mm to prevent blockage?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

@@ -1,0 +1,3727 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     spreader."
+    },
+    {
+      "type": "ListItem",
+      "text": "TIP Set the spreader angle before you fill the hopper. It is easier to adjust the top link if the hopper is empty."
+    },
+    {
+      "type": "TextItem",
+      "text": "Check the position again after the hopper has been filled!"
+    },
+    {
+      "type": "TextItem",
+      "text": "If the inclination is at 4 o of 8 o, the spreader area slides further behind the spreader."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 In the machine data screen, increase the length B by 10% or 20% at 4 o or 8 o."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae Please refer to the software instruction manual for the procedure."
+    },
+    {
+      "type": "TextItem",
+      "text": "The (online) spreading chart shows the rpm of the spreading discs as well as the rpm of the PTO shaft. The PTO speed is given, as well as the connection point to be used for the machine coupling shaft. You have to calculate the speed of the spreader discs. The actual RPM of the spreading discs is displayed on the control box screen."
+    },
+    {
+      "type": "TextItem",
+      "text": "The PTO shaft rpm often have to be adjusted with border spreading. When using the ExactLine and the border spreading plate, you can find the recommended PTO shaft rpm and associated spreading disc rpm in the spreading chart book, via the online spreading chart service on the website or via the free application (App) for mobile phones. Use the connection point shown in the spreading chart."
+    },
+    {
+      "type": "TextItem",
+      "text": "See paragraph \u00bbBorder spreading\u00ab on page 106."
+    },
+    {
+      "type": "TextItem",
+      "text": "65"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 66,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Application rate"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Constant application rate"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "The control system can drive the spreader in three different ways:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 distribution that resembles the settings for the preset application rate must be determined under changing circumstances through automatic calibration and driving speed correction,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae see the paragraph below,\u00bbConstant application rate\u00ab."
+    },
+    {
+      "type": "TextItem",
+      "text": "with similar or lower application rates (< 40 kg/min) the fine application kit should be used,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See paragraph \u00bbFine application\u00ab on page 67."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 with very low application rates on very uneven terrain, preset application rates must be checked manually to ensure that the correct dosing setting is being distributed, without automatic calibration but with driving speed correction,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 under changing circumstances location specific application rate driven by an external signal, through automatic calibration and driving speed correction,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See paragraph \u00bbVariable, externally driven application rate\u00ab on page 72."
+    },
+    {
+      "type": "TextItem",
+      "text": "The control system can spread an equal amount of fertiliser over the entire field. In doing so, the control system corrects changes in driving speed, while maintaining the option to adjust the application rate manually for over- or underdosing."
+    },
+    {
+      "type": "TextItem",
+      "text": "The control system can search for the correct dosing setting with the preset application rate through automatic calibration. The disadvantage is that the application rate for the second automatic calibration (= approx. 2 minutes) could differ markedly from the selected application rate. It is therefore strongly recommended that the starting values be taken from the spreading charts. This can be done in the 'Curve Calibration' screen. The control system calculates the discharge curve from the starting values. The control system corrects the spreader for changing circumstances, based on this curve, e.g. as a result of changes in driving speed."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See also paragraph \u00bbThe ISO control system\u00ab on page 30."
+    },
+    {
+      "type": "TextItem",
+      "text": "Look for the most comparable fertiliser type and the correct settings for the selected working width in the (online) spreading chart:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Read the setting of the dosing in the Dosing Setting column that goes with the selected application rate and driving speed."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 The corresponding flowrate is given in the Kg/min column."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 The given values are to be entered in the control system."
+    },
+    {
+      "type": "TextItem",
+      "text": "If the selected application rate is not given in the spreading charts, use the settings that are the closest to the selected application rate. If the selected driving speed is not given, use the settings closest to the selected driving speed."
+    },
+    {
+      "type": "TextItem",
+      "text": "66"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 67,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Fine application"
+    },
+    {
+      "type": "TextItem",
+      "text": "Fine application handle Normal dosing setting"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "Fine application handle Normal dosing setting"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Fine application handle Fine application setting"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "Fine application handle Fine application setting"
+    },
+    {
+      "type": "TextItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "TextItem",
+      "text": "All three dosing openings normally open uniformly with the selected application rate and the corresponding flowrate that you set. With a low application rate and/or a low driving speed the dosing openings are only opened a slight bit so that very little fertiliser would stream through the dosing openings of the spreader. This could easily cause blockage, which would lead to a bad spreading pattern and possible damage the crops."
+    },
+    {
+      "type": "TextItem",
+      "text": "We therefore advise that you make use of the fine application if the flowrate is less than 40 kg/min."
+    },
+    {
+      "type": "TextItem",
+      "text": "The flowrate with a specific working width, application rate and driving speed is given in the fourth column of the spreading chart."
+    },
+    {
+      "type": "TextItem",
+      "text": "If very low application rates (less than 25 kg/ha) are to be distributed, e.g. only a few kilograms per hectare, the control system cannot perform automatic calibrations. The distributed weight is too small to accurately adjust the application rate."
+    },
+    {
+      "type": "TextItem",
+      "text": "Close 2 of the 3 dosing openings to prevent blockages. The remaining opening must be further opened as the application rate with the constant flowrate would be three times as much."
+    },
+    {
+      "type": "TextItem",
+      "text": "The handle to close 2 of the 3 fine dosing openings is located at the outside of the spreading disc, above a similar handle for the discharge point. You will find the indications on top of the fine application handle for the number of dosing openings: 3 open holes for standard dosing and 1 open hole and 2 thick holes for fine application."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the tractor off, remove the key from the ignition and engage the parking brake of the tractor."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Pull the hand-grip of the fine application lever out."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the fine application handle until the arrow on the hand-grip indicates the desired position."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Let go of the hand-grip and check if the fine application handle is locked."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the fine application lever on the other spreading disc in the same way to the same position."
+    },
+    {
+      "type": "TextItem",
+      "text": "67"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 68,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Dosing setting"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Setting the spreader"
+    },
+    {
+      "type": "TextItem",
+      "text": "68"
+    },
+    {
+      "type": "TextItem",
+      "text": "The dosing setting to be set can be:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Read from the relevant spreading chart when you want to spread at a lower application rate using the fine application kit and the symbol of the Fine application kit is indicated in the spreading chart. This is indicated by means of 1 open hole (dosing opening)."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Determine an application rate not given as described in paragraph \u00bbDischarge point\u00abfrom page 65."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 To be calculated using the relevant spreading chart when you wish to spread at a lower application rate with the fine application kit, and the Fine application kit symbol is indicated in the spreading chart; it is indicated using 3 open holes (dosage opening)."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Calculation"
+    },
+    {
+      "type": "TextItem",
+      "text": "As 2 of the 3 dosing openings are closed the flowrate of the remaining dosing opening should be three times as much in order to obtain an even application rate."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Read the Dosing Setting, Discharge Point and Flowrate from the spreading chart. Calculate the flowrate with the formula given below as required."
+    },
+    {
+      "type": "TextItem",
+      "text": "If the selected application rate or driving speed is not indicated in the spreading chart the required flowrate can also be calculated as follows:"
+    },
+    {
+      "type": "TextItem",
+      "text": "flowrate required (kg/min) ="
+    },
+    {
+      "type": "TextItem",
+      "text": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha)"
+    },
+    {
+      "type": "TextItem",
+      "text": "600"
+    },
+    {
+      "type": "TextItem",
+      "text": "Use the letter given for setting the discharge point in the line of the spreading chart that most closely resembling the calculated flowrate."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Multiply the flowrate (given in the Kg/min column or calculated) with a factor of 3."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Select the closest flowrate for the whole spreader in the Kg/min column."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Read off the relevant dosing setting or estimate it as closely as possible."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "NOTE \uf034 Do not use the discharge point indicated there!"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "NOTE \uf034 Do not use the discharge point indicated there!"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the given discharge point as described"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae in paragraph \u00bbDischarge point\u00ab on page 65."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Enter the dosing setting in the control system and determine the relevant flowrate by means of a manual calibration test, as described in the following paragraph."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See also the example in paragraph \u00bbConstant application rate\u00ab on page 66."
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 69,
+  "items": [
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "525 rpm"
+    },
+    {
+      "type": "TextItem",
+      "text": "950 rpm"
+    },
+    {
+      "type": "TextItem",
+      "text": "6,5 m"
+    },
+    {
+      "type": "TextItem",
+      "text": "285 / 285 / 285"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "TextItem",
+      "text": "Suppose you would want to spread slug pellets with the characteristics given in the spreading chart below: With a working width of 12 metres, a driving speed of 8 km/h and a se-"
+    },
+    {
+      "type": "TextItem",
+      "text": "lected application rate of 23 kg/ha."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 the recommended discharge point: D,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 the recommended dosing setting is 12+1 (= 13),"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 the relevant flowrate is 3.7 kg/min,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 the fine application kit must be used."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 The settings given are based on using a fine application kit, which you do not need to calculate yourself."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "SlugPellets"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Schnecken Linsen"
+    },
+    {
+      "type": "TextItem",
+      "text": "Delicia"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "12 m"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TableItem",
+      "table_data": {
+        "": {
+          "0": "6+0",
+          "1": "6+1",
+          "2": "6+2",
+          "3": "6+3",
+          "4": "6+4",
+          "5": "6+5",
+          "6": "12+0",
+          "7": "12+1",
+          "8": "12+2",
+          "9": "12+3"
+        },
+        "kg/min": {
+          "0": "0,21",
+          "1": "0,32",
+          "2": "0,43",
+          "3": "0,54",
+          "4": "0,77",
+          "5": "1,0",
+          "6": "1,2",
+          "7": "1,4",
+          "8": "1,6",
+          "9": "1,8"
+        },
+        "_2": {
+          "0": "C",
+          "1": "C",
+          "2": "C",
+          "3": "C",
+          "4": "C",
+          "5": "C",
+          "6": "C",
+          "7": "D",
+          "8": "D",
+          "9": "E"
+        },
+        "kg/min_2": {
+          "0": "0,54",
+          "1": "0,83",
+          "2": "1,1",
+          "3": "1,4",
+          "4": "2,0",
+          "5": "2,6",
+          "6": "3,2",
+          "7": "3,7",
+          "8": "4,3",
+          "9": "4,8"
+        },
+        "5,0": {
+          "0": "5,4",
+          "1": "8,3",
+          "2": "11",
+          "3": "14",
+          "4": "20",
+          "5": "26",
+          "6": "32",
+          "7": "37",
+          "8": "43",
+          "9": "48"
+        },
+        "6,0": {
+          "0": "4,5",
+          "1": "6,9",
+          "2": "9,3",
+          "3": "12",
+          "4": "17",
+          "5": "22",
+          "6": "27",
+          "7": "31",
+          "8": "36",
+          "9": "40"
+        },
+        "km/h.7,0": {
+          "0": "3,9",
+          "1": "5,9",
+          "2": "8,0",
+          "3": "10,0",
+          "4": "14",
+          "5": "19",
+          "6": "23",
+          "7": "27",
+          "8": "30",
+          "9": "34"
+        },
+        "8,0": {
+          "0": "3,4",
+          "1": "5,2",
+          "2": "7,0",
+          "3": "8,8",
+          "4": "13",
+          "5": "16",
+          "6": "20",
+          "7": "23",
+          "8": "27",
+          "9": "30"
+        },
+        "9,0": {
+          "0": "3,0",
+          "1": "4,6",
+          "2": "6,2",
+          "3": "7,8",
+          "4": "11",
+          "5": "14",
+          "6": "18",
+          "7": "21",
+          "8": "24",
+          "9": "27"
+        },
+        "kg/ha.10,0": {
+          "0": "2,7",
+          "1": "4,1",
+          "2": "5,6",
+          "3": "7,0",
+          "4": "10",
+          "5": "13",
+          "6": "16",
+          "7": "19",
+          "8": "21",
+          "9": "24"
+        },
+        "kg/ha.11,0": {
+          "0": "2,5",
+          "1": "3,8",
+          "2": "5,1",
+          "3": "6,4",
+          "4": "9,1",
+          "5": "12",
+          "6": "15",
+          "7": "17",
+          "8": "19",
+          "9": "22"
+        }
+      }
+    },
+    {
+      "type": "TextItem",
+      "text": "0,72  kg/L"
+    },
+    {
+      "type": "TextItem",
+      "text": "69"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 70,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Suppose you would want to spread Nutramon from the example with the features as given in the spreading chart on this page: With a working width of 27 metres, a driving speed of 8 km/h and a se-"
+    },
+    {
+      "type": "TextItem",
+      "text": "lected application rate of 25 kg/ha."
+    },
+    {
+      "type": "TextItem",
+      "text": "The required application rate falls beyond the scope of the spreading chart."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Calculate the required flowrate."
+    },
+    {
+      "type": "TextItem",
+      "text": "27 (m) x 8 (km/h) x 25 (kg/ha)"
+    },
+    {
+      "type": "TextItem",
+      "text": "600 flowrate required (kg/min) ="
+    },
+    {
+      "type": "TextItem",
+      "text": "Result: flowrate required = 9 kg/min."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the discharge point as indicated in the chart: J."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Calculate the required flowrate with fine application: 3 x 9 = 27 kg/ min."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 This value is in the dosing setting: 18+3 (= 21)."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Do a manual calibration test to check the flowrate setting."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TableItem",
+      "table_data": {
+        "18+0.7,7 I 17 74 18+3 12 J 26": {
+          "0": "24+0",
+          "1": "24+3",
+          "2": "30+0",
+          "3": "30+3",
+          "4": "36+0",
+          "5": "36+3",
+          "6": "42+0",
+          "7": "42+3",
+          "8": "48+0",
+          "9": "48+3",
+          "10": "54+0",
+          "11": "54+3",
+          "12": "60+0",
+          "13": "60+3",
+          "14": "66+0",
+          "15": "66+3",
+          "16": "72+0",
+          "17": "72+3",
+          "18": "78+0",
+          "19": "78+3",
+          "20": "84+0",
+          "21": "84+3 90+0"
+        },
+        "": {
+          "0": "17",
+          "1": "",
+          "2": "21 26",
+          "3": "",
+          "4": "31",
+          "5": "36",
+          "6": "43 50",
+          "7": "57",
+          "8": "65",
+          "9": "73",
+          "10": "81",
+          "11": "90",
+          "12": "99",
+          "13": "108",
+          "14": "118",
+          "15": "128",
+          "16": "138",
+          "17": "151",
+          "18": "163",
+          "19": "175",
+          "20": "",
+          "21": "182 189 197"
+        },
+        "_2": {
+          "0": "",
+          "1": "L",
+          "2": "L L",
+          "3": "L",
+          "4": "L",
+          "5": "L",
+          "6": "L",
+          "7": "L",
+          "8": "L",
+          "9": "L",
+          "10": "L",
+          "11": "L",
+          "12": "L",
+          "13": "L",
+          "14": "L",
+          "15": "L",
+          "16": "L",
+          "17": "L",
+          "18": "L",
+          "19": "L",
+          "20": "L",
+          "21": "L L"
+        },
+        "_3": {
+          "0": "",
+          "1": "35",
+          "2": "47",
+          "3": "59",
+          "4": "71",
+          "5": "83",
+          "6": "99 115",
+          "7": "130",
+          "8": "148",
+          "9": "166",
+          "10": "184",
+          "11": "207",
+          "12": "230",
+          "13": "253",
+          "14": "274",
+          "15": "296",
+          "16": "318",
+          "17": "342",
+          "18": "366",
+          "19": "390",
+          "20": "405",
+          "21": "420 435"
+        },
+        "115": {
+          "0": "",
+          "1": "156",
+          "2": "209",
+          "3": "262",
+          "4": "315",
+          "5": "368 439",
+          "6": "509",
+          "7": "579",
+          "8": "659",
+          "9": "739",
+          "10": "818",
+          "11": "920",
+          "12": "1021",
+          "13": "1123",
+          "14": "1220",
+          "15": "1317",
+          "16": "1413",
+          "17": "1519",
+          "18": "1625",
+          "19": "1732",
+          "20": "1799",
+          "21": "1867 1934"
+        },
+        "62 96": {
+          "0": "130",
+          "1": "175",
+          "2": "",
+          "3": "219",
+          "4": "263",
+          "5": "307 366",
+          "6": "424",
+          "7": "483",
+          "8": "549",
+          "9": "615",
+          "10": "682",
+          "11": "767",
+          "12": "851",
+          "13": "936",
+          "14": "1017",
+          "15": "1097",
+          "16": "1178",
+          "17": "1266",
+          "18": "1355",
+          "19": "1443",
+          "20": "1499",
+          "21": "1556 1612"
+        },
+        "km/h.km/h.53 82": {
+          "0": "112",
+          "1": "150",
+          "2": "",
+          "3": "187 225",
+          "4": "263",
+          "5": "313",
+          "6": "363",
+          "7": "414",
+          "8": "471",
+          "9": "",
+          "10": "528 584",
+          "11": "657",
+          "12": "730",
+          "13": "802",
+          "14": "871",
+          "15": "940",
+          "16": "1010",
+          "17": "1085",
+          "18": "1161",
+          "19": "1237",
+          "20": "1285",
+          "21": "1333 1382"
+        },
+        "46 72": {
+          "0": "98",
+          "1": "131",
+          "2": "164",
+          "3": "197",
+          "4": "",
+          "5": "230",
+          "6": "274 318",
+          "7": "362",
+          "8": "412",
+          "9": "462",
+          "10": "511",
+          "11": "575",
+          "12": "638",
+          "13": "702",
+          "14": "762",
+          "15": "823",
+          "16": "883",
+          "17": "950",
+          "18": "1016",
+          "19": "1082",
+          "20": "1124",
+          "21": "1167 1209"
+        },
+        "41 64": {
+          "0": "87",
+          "1": "116",
+          "2": "146",
+          "3": "",
+          "4": "175",
+          "5": "205 244",
+          "6": "283",
+          "7": "322",
+          "8": "366",
+          "9": "410",
+          "10": "455",
+          "11": "511",
+          "12": "567",
+          "13": "624",
+          "14": "678",
+          "15": "731",
+          "16": "785",
+          "17": "844",
+          "18": "903",
+          "19": "962",
+          "20": "1000",
+          "21": "1037 1075"
+        },
+        "kg/ha.kg/ha.37 58": {
+          "0": "78",
+          "1": "105",
+          "2": "131",
+          "3": "",
+          "4": "158",
+          "5": "184 219",
+          "6": "254",
+          "7": "290",
+          "8": "329",
+          "9": "369",
+          "10": "409",
+          "11": "460",
+          "12": "511",
+          "13": "562",
+          "14": "610",
+          "15": "658",
+          "16": "707",
+          "17": "760",
+          "18": "813",
+          "19": "866",
+          "20": "900",
+          "21": "933 967"
+        },
+        "34 52": {
+          "0": "71",
+          "1": "95",
+          "2": "",
+          "3": "119",
+          "4": "143",
+          "5": "167 199",
+          "6": "231",
+          "7": "263",
+          "8": "299",
+          "9": "336",
+          "10": "372",
+          "11": "418",
+          "12": "464",
+          "13": "511",
+          "14": "554",
+          "15": "598",
+          "16": "642",
+          "17": "691",
+          "18": "739",
+          "19": "787",
+          "20": "818",
+          "21": "848 879"
+        }
+      }
+    },
+    {
+      "type": "TextItem",
+      "text": "70"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 71,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Manual calibration test"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "support for the calibration container"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "support for the calibration container"
+    },
+    {
+      "type": "TextItem",
+      "text": "support for the calibration"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "S"
+    },
+    {
+      "type": "TextItem",
+      "text": "Lock nut"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "Lock nut"
+    },
+    {
+      "type": "TextItem",
+      "text": "NOTE"
+    },
+    {
+      "type": "TextItem",
+      "text": "Do not empty the calibration container!"
+    },
+    {
+      "type": "TextItem",
+      "text": "Rinsing the calibration container greatly improves the accuracy the calibration test. All parts of the calibration container where fertiliser, seeds or granules could remain would now be filled."
+    },
+    {
+      "type": "TextItem",
+      "text": "The calibration test can now start."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae Please refer to the software instruction manual for the procedure."
+    },
+    {
+      "type": "TextItem",
+      "text": "71"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "PTO shaft rotates after disengaging"
+    },
+    {
+      "type": "TextItem",
+      "text": "After switching off the PTO shaft, danger could arise as the machine will continue running because of inertia. Keep a safe distance to the machine until the moving parts have come to a complete stop. Approaching the machine while it is rotating can cause serious or deadly injuries."
+    },
+    {
+      "type": "TextItem",
+      "text": "You can check with a manual calibration test if the preset dosing setting reaches the selected flowrate."
+    },
+    {
+      "type": "TextItem",
+      "text": "The calibration test is normally performed on the left spreading disc. Perform the calibration test with a filled hopper. \uf0ae See also paragraph \u00bbFilling\u00ab on page 73."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the tractor off, remove the key from the ignition and engage the parking brake of the tractor."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Disconnect the right spreading disc by sliding the connector to the right. Secure the connector with a lock clip."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Remove the vanes from the left spreading disc."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Connect the coupling shaft to the coupling point on the machine shown in the relevant spreading chart."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See also paragraph \u00bbCoupling shaft connection point\u00ab on page 64."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Mount the calibration container carefully on the left spreading disc."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the calibration container with the settings knob so that the spreading disc does not touch the calibration container."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Weigh a large trough and place it under the discharging point of the calibration container."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Start the tractor again."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close all the doors and windows in the cabin."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the control box on."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the right spreading disc off."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See the software instruction manual."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Engage the PTO shaft."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Open the left dosing unit."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Allow the spreader to spread for 5 seconds in order to 'rinse' the calibration container."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close the dosing unit."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the PTO shaft and the tractor off, remove the key from the ignition, empty the trough and place it back under the discharge point of the calibration container."
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 72,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Variable, externally driven application rate"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "S"
+    },
+    {
+      "type": "TextItem",
+      "text": "RS 232 connection"
+    },
+    {
+      "type": "TextItem",
+      "text": "72"
+    },
+    {
+      "type": "TextItem",
+      "text": "The control system provides the options to distribute the same application rate all over the field and the option to spread a variable, externally driven application rate. This provides the option to spread as per requirements, e.g. through a nitrogen sensor."
+    },
+    {
+      "type": "TextItem",
+      "text": "An application rate that had been preset in the corresponding management system for the relevant field can also be entered through the GPS system."
+    },
+    {
+      "type": "TextItem",
+      "text": "\uf0ae For the options and corresponding settings, see the user's manuals for the external system and the control box, e.g. the IsoMatch. The control system of the spreader in combination with the IsoMatch control box also transmits the application rate and working width used back to the external system."
+    },
+    {
+      "type": "TextItem",
+      "text": "The external system and the control system of a spreader with an IsoMatch control box communicate through a serial port with an RS 232 connection. This connection is located at the back of the control box. The occupation of pins in the 9-point RS 232 plug and the settings required are given in"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae the user manual of the IsoMatch control box."
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 73,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Filling"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Avoid contact with the fertiliser and other material"
+    },
+    {
+      "type": "TextItem",
+      "text": "You could come into contact with materials when filling the machine. Always wear protective clothing, such as safety gloves, shoes and goggles. Read and adhere to the additional safety instructions and the of the material producer. Contact with the materials could lead to injury. Contact your physician in such an event!"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Chemical reactions caused by mixing fertilisers"
+    },
+    {
+      "type": "TextItem",
+      "text": "Mixing different types of fertiliser could lead to a chemical reaction whereby poisonous vapours, liquids or other materials could come about. Possible danger of explosion! This could lead to personal injury and damage to the crop and machine."
+    },
+    {
+      "type": "TextItem",
+      "text": "Only mix different types of fertiliser if allowed by the manufacturer(s)."
+    },
+    {
+      "type": "TextItem",
+      "text": "Chemical reactions could lead to damage to the machines and personal injury."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Read the safety instructions provided by the supplier"
+    },
+    {
+      "type": "TextItem",
+      "text": "Read the safety instructions provided by the supplier and apply that. Protective clothing should be worn when necessary."
+    },
+    {
+      "type": "TextItem",
+      "text": "Disregarding the safety instructions could result in personal injury and damage to the machine."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Use proper tools"
+    },
+    {
+      "type": "TextItem",
+      "text": "Great volumes of material is often handled during the filling process. Use proper tools such as lifting devices when moving and filling the machine. Keep legislation concerning working conditions in mind. Work carefully and responsibly. Inferior tools can cause serious inju-"
+    },
+    {
+      "type": "TextItem",
+      "text": "ries."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Only fill mounted machines"
+    },
+    {
+      "type": "TextItem",
+      "text": "Never place a machine in the ground while filling it. Always keep it in the power lift of the tractor. The machine is designed to be loaded while in a suspended state. Never park a filled machine on the ground. Filling the machine while it is on the ground could lead to damage."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Work with a closed cabin"
+    },
+    {
+      "type": "TextItem",
+      "text": "Fertiliser dust can blow indoors through open windows, doors or other openings. Moreover, the sound level is higher in an open cabin. It is therefore recommended to always work with a closed cabin with active carbon filters in the air inlets. Fertiliser dust and a high sound level can cause physical damage."
+    },
+    {
+      "type": "TextItem",
+      "text": "73"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 74,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "TextItem",
+      "text": "Most types of fertiliser attract water and can thereby form large chunks. These chunks can block the spreader or distort the spreading pattern."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 When working under moist conditions, use a hopper cover that closes well."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Do not spread without a hopper cover under moist conditions."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Never leave the fertiliser for a long period of time in the spreader. Chunks can also be formed through moisture in the air."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Always clean the spreader well after use, including the dosing openings and the discharge bushings."
+    },
+    {
+      "type": "TextItem",
+      "text": "You can fill the spreader to the desired levels after it has been put in place. It is recommended that the machine be loaded while it is lifted 10 cm above the soil. If no activities need to be performed on top of the hopper, the height can be adjusted with the automatic filling system."
+    },
+    {
+      "type": "TextItem",
+      "text": "A load platform must be used if the distance between the hopper rim and the ground is more than 1250 mm while filling manually or with large bags. The filling height is given in"
+    },
+    {
+      "type": "TextItem",
+      "text": "\uf0ae paragraph \u00bbTechnical specifications\u00ab on page 36."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 If a fixed loading platform is used, drive the machine to the platform. The distance between the machine and the platform must be a maximum of 200 mm."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Lower the machine at the desired level. The machine must not rest on the ground, but rather be lifted a minimum distance of 10 cm!"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check if the dosing units are closed. Close them if necessary by pressing the stop key on the main screen."
+    },
+    {
+      "type": "TextItem",
+      "text": "The position of the dosing units is displayed in the main screen on the control box of the control system."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the electronic control system off."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the tractor off and remove the keys from the ignition."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Engage the parking brake of the tractor."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close all the doors and windows in the cabin."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Place wheel chocks in front of the wheels of the tractor."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 If a mobile loading platform is being used, place the loading platform at the spreader so that there would be a maximum distance of 200 mm between the two."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Open the hopper cover."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check if the sieve is closed and secured."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Fill the machine to the desired level with the correct tools. Fill the hopper halves to the same level so that the both of them would run empty at the same time."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Loading height"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Working method"
+    },
+    {
+      "type": "TextItem",
+      "text": "74"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 75,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "TextItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "TextItem",
+      "text": "Work carefully while filling and take the regulations that apply to working conditions into consideration! Make sure no objects or tools fall into the hopper. as it could block or damage the spreader!"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close the hopper cover."
+    },
+    {
+      "type": "TextItem",
+      "text": "Do not exceed the maximum recommended weight! \uf0ae See also \u00bbTechnical specifications\u00ab on page 36. The machine has not been constructed to carry the additional weight. Keep the axle load, load capacity of the wheels and the total weight of the tractor in mind, as well as the minimum axle load of the tractor. \uf0ae See also paragraph \u00bbCalculate the axle load with tractor-mounted"
+    },
+    {
+      "type": "ListItem",
+      "text": "machines\u00ab on page 13."
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION If the weight should increase the filled spreader could fall backwards! \uf034 Set the spreader level length wise after it has been filled."
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "TextItem",
+      "text": "If the spreader is filled during the spreading process, e.g. from an auger riding alongside the vehicle the automatic calibration must be switched off. With automatic calibration the control system weighs the dispersed quantity of fertiliser (kg) within a certain time. It also checks these values in terms of the selected, preset application rate. The distributed quantity can therefore not be correctly weighed if the hopper is filled while spreading. The weight in the hopper could even increase during the measurement period. The correction performed by the control system would be inaccurate as a result, which could lead to crop damage."
+    },
+    {
+      "type": "TextItem",
+      "text": "75"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 76,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Spreading pattern check (tray test)"
+    },
+    {
+      "type": "TextItem",
+      "text": "76"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Avoid contact with the fertiliser and other material"
+    },
+    {
+      "type": "TextItem",
+      "text": "You will most likely get into contact with the fertiliser and other material you may wish to spread while filling, adjusting and testing the spreader. Wear protective clothing and gloves, read the safety instructions provided by the supplier and follow their directions. Contact with these materials could cause physical harm."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Be careful that nothing gets jammed"
+    },
+    {
+      "type": "TextItem",
+      "text": "It is easy for parts to get jammed while adjusting the spreader. Work carefully:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 switch the tractor off and remove the key from the ignition,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 engage the parking brake of the tractor,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 wait for all machine parts to come to a standstill before you start with the adjustments,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 carefully follow the instructions given."
+    },
+    {
+      "type": "TextItem",
+      "text": "Friction with these materials could cause physical injury."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "The test should be performed on your own. Operate the machine on your own!"
+    },
+    {
+      "type": "TextItem",
+      "text": "Dangerous situations for other people could easily occur when the machine is turning and the test conducted. Contact with these materials could cause physical injury."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Protecting the environment"
+    },
+    {
+      "type": "TextItem",
+      "text": "Spreading a too high dose of materials outside of the field edge, especially on water surface, creates a heavy burden on the environment. Protect the environment by applying a correct application rate in a correct working manner."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "PTO shaft rotates after disengaging"
+    },
+    {
+      "type": "TextItem",
+      "text": "After switching off the PTO shaft, danger could arise as the machine will continue running because of inertia. Keep a safe distance to the machine until the moving parts have come to a complete stop. Approaching the machine while it is rotating can cause serious or deadly injuries."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Work with a closed cabin"
+    },
+    {
+      "type": "TextItem",
+      "text": "Fertiliser dust can blow indoors through open windows, doors or other openings. Moreover, the sound level is higher in an open cabin. It is therefore recommended to always work with a closed cabin with active carbon filters in the air inlets. Fertiliser dust and a high sound level can cause physical damage."
+    },
+    {
+      "type": "TextItem",
+      "text": "A tray test checks the distribution of the fertiliser as the spreader distributes it. The results of this test will indicate if you can improve the settings of the spreader, thereby improving the distribution of fertiliser and limiting loss."
+    },
+    {
+      "type": "TextItem",
+      "text": "Tray tests can be performed by specialised companies, but it is also possible to perform this test on your own. You will have to purchase some materials for it, however."
+    },
+    {
+      "type": "TextItem",
+      "text": "We recommend that you request a specialist company to perform the tray test as they can also provide you with advice and answer your questions."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 77,
+  "items": [
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "TextItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "When to perform the tray test:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 When using a fertiliser type that is not in the spreading chart book, via the online spreading chart service on the website or via the free application (App) for mobile phones with an iOs and/or Android operating system."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 When using a fertiliser type of which the distribution and density deviate from the values indicated in the spreading chart book, via the online spreading chart service on the website or via the free application (App) for mobile phones with an iOs and/or Android operating system."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 When using fertiliser of moderate quality."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Test should be carried out annually on the left and the right side to check the equal distribution of both spreading discs."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 After each change to the spreading mechanism of the spreader or when parts are replaced."
+    },
+    {
+      "type": "TextItem",
+      "text": "Weather conditions have a great influence on the spreading pattern while spreading, as well as while performing the tray test. The tray test should be performed with dry weather, low humidity and with a maximum wind speed of 3 m/s (wind force of 2)."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Material required"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 measuring tape or ruler,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 spirit level to set the troughs horizontal,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 7 troughs,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 7 graduated tubes,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 1 funnel,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 notebook, pen and calculator,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 this manual."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 the instruction manual of the software."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "General instructions"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check the preset dosing setting and the discharge point."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check the height (75 cm above the troughs) and the position (angle) of the spreader."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check the rpm of the PTO shaft and the spreader discs."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Always place the buckets horizontally on the floor."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Place the buckets at a maximum distance of 4 metres. Provide additional widths for testing widths of more than 24 meters. Also, you can first test part of the working width and then empty the trays and distribute them over the rest of the working width."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Do not use the spreader while it is raining or with high humidity. This will cause the fertiliser to cling to the troughs, which would not provide the desired results."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Do not spread with wind speeds of more than 3 m/s (wind force of 2)."
+    },
+    {
+      "type": "TextItem",
+      "text": "77"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 78,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Test the left and right spreading patterns"
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "The left and right spreading discs must spread the same volumes of fertiliser to ensure good distribution. Check this every year!"
+    },
+    {
+      "type": "TextItem",
+      "text": "This test describes a working width of 24 metres. You are of course free to run the test for a different working width. Divide the buckets at equal distances along the working width."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Operation"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the tractor off, remove the key from the ignition and engage the parking brake of the tractor."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Disconnect the left spreading disc by sliding the connector to he left. Secure the connector with a lock clip."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Search the correct discharge position to spread over 24 metres in the best comparable fertiliser, seeds or granules (online) spreading chart and set the handle accordingly."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See paragraph \u00bbDischarge point\u00ab on page 65 and the foreword of the spreading chart book."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Fit the coupling shaft to the correct attachment point of the central gearbox as indicated in the associated spreading chart."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See paragraph \u00bbCoupling shaft connection point\u00ab on page 64."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check the height of the spreader (height of the spreading disc = 75 cm above the troughs)."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Place the grids in the troughs."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Place trough 1 in the middle of the tractor tracks."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Place the other troughs 4 metres to the right of the tractor tracks."
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION Position the troughs horizontally with a spirit level!"
+    },
+    {
+      "type": "TextItem",
+      "text": "78"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 79,
+  "items": [
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Start the tractor again."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close all the doors and windows in the cabin."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the control box on."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Enter the required application rate."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Enter the working width."
+    },
+    {
+      "type": "TextItem",
+      "text": "It is recommended that an application rate of at least 250 kg/ha is entered with the selected driving speed."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch on the left spreading disc."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch off the automatic calibration."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Engage the PTO shaft and set the RPM of the spreading discs as given in the relevant spreading chart."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Open the right dosing unit."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Drive over the first trough and stop only after you have driven at least 20 metres past this trough. This is because the spreader distributes roughly even to the back, front and to the side."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close the dosing unit."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Empty the trough with a funnel into the graduated tubes and record the reading in your notebook."
+    },
+    {
+      "type": "TextItem",
+      "text": "Repeat the above procedure, but disconnect the right spreading disc and switch the dosing unit of the right spreading disc off. Put the troughs on the left side of the tractor track."
+    },
+    {
+      "type": "TextItem",
+      "text": "Drive with the same speed and with the same PTO shaft rpm as with the first time!"
+    },
+    {
+      "type": "TextItem",
+      "text": "79"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 80,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Assessment"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Record the values you find in the graduated tubes for the left and right spreading discs."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Compare the values, calculate the percentage differences between the measuring tubes on the left and the right."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Adaptation"
+    },
+    {
+      "type": "TextItem",
+      "text": "If the spreading patterns on the left and right spreading discs are not the same and the difference is greater than 3% you will have to do the following, or request your dealer to do so:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check if the machine is hanging horizontally and vertically behind the tractor in length and width."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Perform the \u00bbChecking and setting the dosing mechanism\u00ab as described on page 133 and repeat the test."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Perform the \u00bbChecking and setting the discharge point setting mechanism\u00ab as described on page 136 and repeat the test."
+    },
+    {
+      "type": "TextItem",
+      "text": "If the difference in the spreading pattern is too great, contact your dealer."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "80"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 81,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Full field spreading pattern test"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "TextItem",
+      "text": "If the spreader is correctly set and the tramlines are set at the correct distance from each other you would achieve a good distribution of fertiliser over the land. This will only be achieved if the spreader spreads with the correct spreading pattern."
+    },
+    {
+      "type": "TextItem",
+      "text": "This is then the reason why you have to test the spreading pattern and adjust it as required."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See also paragraph \u00bbFull field spreading pattern\u00ab on page 28."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Operation"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the tractor off, remove the key from the ignition and engage the parking brake of the tractor."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the spreader as per the details given in the spreading chart for the selected working width (X metre) that most closely matches the fertiliser, seeds or granules (height of the spreading disc = 75 cm above the troughs)."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Place the grids in the troughs."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Place trough 1 in the middle of the tractor tracks."
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION Position the troughs horizontally with a spirit level!"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Divide the additional 6 buckets on the one side of the track over the actual working width of the spreader."
+    },
+    {
+      "type": "TextItem",
+      "text": "The actual width is twice the size of the effective working width!"
+    },
+    {
+      "type": "TextItem",
+      "text": "If you want to spread over a working width of 24 metres, place the buckets at 24/6 metres = 4 metres."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "81"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 82,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Start the tractor again."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close all the doors and windows in the cabin."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the control box on."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Enter the required application rate."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Key in the new value."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Enter the working width."
+    },
+    {
+      "type": "TextItem",
+      "text": "It is recommended that an application rate of at least 250 kg/ha is entered with the selected driving speed."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch off the automatic calibration."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Engage the PTO shaft and set the RPM of the spreading discs as given in the relevant spreading chart."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Drive along the tracks and open the dosing units a few metres before you drive over the first bucket in the middle by pressing the start key."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Only stop spreading after you have driven at least one working width over the troughs (e.g. 18 or 24 metres). This is because the spreader distributes roughly even to the back, front and to the side."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close the dosing units."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Drive back in the next track, over trough 7. Maintain the same distance with opening and closing the dosing units. Keep to the same driving speed and PTO shaft rpm!"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 If you set an application rate of less than 250 kg/ha, drive to and from over the same tracks in order to collect sufficient fertiliser in the troughs for a good comparison."
+    },
+    {
+      "type": "TextItem",
+      "text": "Maintain the same distance with opening and closing the dosing units. Keep to the same driving speed and PTO shaft rpm!"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "82"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 83,
+  "items": [
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "B"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "C"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "TextItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Review and adaptation"
+    },
+    {
+      "type": "TextItem",
+      "text": "The content of the separate tubes can differ 15% at most from the average."
+    },
+    {
+      "type": "TextItem",
+      "text": "If the correction seems to be 2 characters too strong after repeating the test, set the discharge point back by one character."
+    },
+    {
+      "type": "TableItem",
+      "table_data": {
+        "A": {
+          "0": "B",
+          "1": "C",
+          "2": "D",
+          "3": "E"
+        },
+        "Good spreading pattern, the spreader has been adjusted well": {
+          "0": "The spreader is not spreading wide enough. \uf034 Adjust the discharge opening 2 letters in the direction of A \uf034 Repeat the test",
+          "1": "The spreader is spreading too wide: \uf034 Adjust the discharge opening 2 letters in the direction of U",
+          "2": "The spreader is not spreading wide enough (trapezium spreading  pattern): \uf034 Adjust the discharge opening 2 letters in the direction of A \uf034 Repeat the test",
+          "3": "The spreader is spreading too wide (trapezium spreading pattern): \uf034 Adjust the discharge opening 2 letters in the direction of U \uf034 Repeat the test"
+        }
+      }
+    },
+    {
+      "type": "TextItem",
+      "text": "83"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 84,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Testing the spreading pattern of the hydraulic border spreading plate"
+    },
+    {
+      "type": "TextItem",
+      "text": "Always perform a calibration test first and determine the correct dosing setting before checking the spreading pattern. Changes to the dosing setting will also have an influence on the spreading pattern! \uf0ae See paragraph \u00bbSpreading pattern check (tray test)\u00ab on page 76."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "When using the border spreading plate the aim is to obtain maximum distribution to the border with minimum loss in the ditch."
+    },
+    {
+      "type": "TextItem",
+      "text": "This is then why the border spreading plate has to be tested. Do not perform this test next to the ditch, rather mark a line behind which the fictive ditch will be."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Operation"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the tractor off, remove the key from the ignition and engage the parking brake of the tractor."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Disconnect the right or left spreading disc by sliding the connector to the right or left. Secure the connector with a lock clip."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close the dosing unit of the right or left spreading disc."
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION Check that the vanes do not touch the border spreading plate!"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the spreader in accordance with the spreading chart for the desired working width and the instructions given in the 'One-sided boundary spreading\" chapter (height of the spreading disc = 75 cm above the troughs)."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Place 1 trough in the middle of the tractor tracks. The centre of the driving track must be 2 metres from the line behind which the fictive ditch is located."
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION Position the troughs horizontally with a spirit level!"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "INDICATION Position the troughs horizontally with a spirit level!"
+    },
+    {
+      "type": "TextItem",
+      "text": "84"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 85,
+  "items": [
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Setting the hydraulic border spreading plate"
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Place 1 trough on the land next to the fictive border ditch and 2 troughs next to each other in the fictive ditch."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Start the tractor and engage the PTO shaft. The correct PTO shaft rpm is the standard value, less 25%, being 540 rpm - 25% = 400 rpm."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Select a gear that would ensure that you drive at the same speed as with the normal PTO shaft, or reduce the application rate by 25%."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Start driving along the field edge. The distance between the border and the middle of the tractor must be 2 metres."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Open the dosing unit a few metres before you get to the middle bucket."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Only stop spreading after you have driven at least one working width over the troughs (e.g. 24 metres). This is because the spreader distributes roughly even to the back, front and to the side."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 If you set an application rate of less than 250 kg/ha, drive over the same tracks in order to collect sufficient fertiliser in the troughs for a good comparison."
+    },
+    {
+      "type": "TextItem",
+      "text": "Maintain the same distance with opening and closing the dosing unit. Keep to the same driving speed and PTO shaft rpm!"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Empty the troughs with a funnel into the graduated tubes."
+    },
+    {
+      "type": "TextItem",
+      "text": "A hydraulic border spreading plate is available for both sides."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Lower the border spreading plate."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close the tap to prevent unintentional lifting of the plate while working."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close off the dosing on the side where no spreading is to be done."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 disconnect the drive of the plate on the side where no spreading is to be done."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the plate using the (online) spreading chart."
+    },
+    {
+      "type": "TextItem",
+      "text": "Maintain the correct disc rpm when spreading."
+    },
+    {
+      "type": "TextItem",
+      "text": "Set the plate more in the direction of position 9 to spread more towards the edge."
+    },
+    {
+      "type": "TextItem",
+      "text": "Set the plate more in the direction of position 1 to spread less towards the edge."
+    },
+    {
+      "type": "TextItem",
+      "text": "The spreading chart shows settings for the yield and H2O positions; for the yield position use the standard mounted (short) plates."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "85"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 86,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "TextItem",
+      "text": "Should you want to use the H2O setting for border spreading, longer plates are supplied separately with the hydraulic border spreading plate."
+    },
+    {
+      "type": "TextItem",
+      "text": "In this case, follow the settings of the H2O spreading chart."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "The positions in the H2O position are A to D and are indicated in the spreading charts."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae refer to the instructions provided for the correct installation of the plates."
+    },
+    {
+      "type": "TextItem",
+      "text": "86"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 87,
+  "items": [
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Hydraulic border spreading plate"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "Hydraulic border spreading plate"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Review and adaptation"
+    },
+    {
+      "type": "TextItem",
+      "text": "The maximum acceptable loss in the ditch is determined by environmental standards.In order to comply with the standards the quantity of fertiliser in the 1st trough, standing in the imaginative ditch, must be a maximum of 10% of the quantity collected in the trough in the middle of the track (= 100%)."
+    },
+    {
+      "type": "TextItem",
+      "text": "The trough on the land next to the fictive ditch provides an insight into the topping. It will never be 100%."
+    },
+    {
+      "type": "TableItem",
+      "table_data": {
+        "0": {
+          "0": "A",
+          "1": "B",
+          "2": "C"
+        },
+        "1": {
+          "0": "Good spreading pattern, the border spreading plate has been ad- justed well.",
+          "1": "The border spreading plate is not spreading wide enough. \uf034 Set this small part a bit to the right in the direction (9) (= ditch). \uf034 Repeat the test.",
+          "2": "The border spreading plate is spreading too wide: \uf034 Set this a bit to the left in the direction (1) (= field). \uf034 Repeat the test."
+        }
+      }
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Test the full field spreading pattern next as described in the following paragraph."
+    },
+    {
+      "type": "TextItem",
+      "text": "87"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 88,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "TextItem",
+      "text": "Testing the full field spreading pattern with the hydraulic border spreading plate"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Reducing the PTO shaft rpm and closing the right spreading disc also have an influence on the spreading pattern on the left side of the spreader. The full field spreading pattern should therefore be tested when using the border spreading plate."
+    },
+    {
+      "type": "TextItem",
+      "text": "Follow the instructions, adjusted for border spreading, as described in \uf0ae paragraph \u00bbFull field spreading pattern test\u00ab on page 81."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Operation"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Do not change the position of the border spreading plate and disconnect the right or left spreading disc."
+    },
+    {
+      "type": "TextItem",
+      "text": "With the first time:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Do not change the settings of the spreader, the PTO shaft rpm or the driving speed as these should be the same as settings for border spreading."
+    },
+    {
+      "type": "TextItem",
+      "text": "With the second time:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Lift the border spreading plate."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the spreader for full field spreading."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the RPM of the spreading discs as given in the relevant spreading chart."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 The driving speed and PTO shaft rpm must be the same as the first time."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Assessment"
+    },
+    {
+      "type": "TextItem",
+      "text": "The middle buckets could contain less application rate. The pattern on illustration B from"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae paragraph \u00bbFull field spreading pattern test\u00ab on page 81."
+    },
+    {
+      "type": "TextItem",
+      "text": "This is because of the lower PTO shaft rpm."
+    },
+    {
+      "type": "TextItem",
+      "text": "The level of the middle measuring tube in border spreading could be 25% lower than with the outer graduated tubes."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Adaptation"
+    },
+    {
+      "type": "TextItem",
+      "text": "If the difference is more than 25%:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Increase the spreading disc rpm by 50 rpm."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Perform the full field spreading pattern test with the adjustments for border spreading again until the deviation is less than 25%."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Perform the spreading pattern test of the border spreading plate anew. Adjust the position of the border spreading plate until the loss is below the legal requirements."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "88"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 89,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Testing ExactLine spreading pattern"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "TextItem",
+      "text": "When using the ExactLine the aim is to obtain maximum distribution to the border with minimum loss in the ditch."
+    },
+    {
+      "type": "TextItem",
+      "text": "This is why the ExactLine has to be tested. Do not perform this test next to the ditch, rather mark a line behind which the fictive ditch will be."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Operation"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the spreader as per the details given in the spreading chart for the selected working width that most closely matches the fertiliser, seeds or granules (height of the spreading disc = 75 cm above the troughs)."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Allow the hydraulic valve to run a few seconds to bring the ExactLine to working condition and to put good pressure in the accumulator."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close the taps in the hydraulic hose to prevent the ExactLine from ending up in a different position by accident."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the tractor off, remove the key from the ignition and engage the parking brake of the tractor."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the ExactLine to the environment setting as per the details given in the spreading chart for the desired working width"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See paragraph \u00bbBoundary track spreading with ExactLine\u00ab on page 110."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "89"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 90,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Place 1 trough on the land next to the fictive border ditch and 1 trough next to each other in the fictive ditch."
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION:"
+    },
+    {
+      "type": "TextItem",
+      "text": "Position the troughs horizontally with a spirit level!"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Place 1 trough in the middle of the tractor tracks. The driving track must be half a working width from the fictive ditch. Divide the additional buckets between the track and the fictive ditch."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Start the tractor and engage the control box."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close all the doors and windows in the cabin."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Engage the PTO shaft and set the RPM of the spreading discs as per the spreading chart or based on the table in"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 If you want, you can choose to accelerate so that you are driving at the same speed as during full field spreading."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch off the automatic calibration."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Drive along the tracks and open the dosing units a few metres before you drive over the first bucket in the middle by pressing the start key."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Only stop spreading after you have driven at least one working width over the troughs (e.g. 18 or 24 metres). This is because the spreader distributes roughly even to the back, front and to the side."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close the dosing units."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 If you set an application rate of less than 250 kg/ha, drive over the same tracks in order to collect sufficient fertiliser in the troughs for a good comparison."
+    },
+    {
+      "type": "TextItem",
+      "text": "Maintain the same distance with opening and closing the dosing units. Keep to the same driving speed and PTO shaft rpm!"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Empty the troughs with a funnel into the graduated tubes."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "90"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 91,
+  "items": [
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "To be done before spreading"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Review and adaptation"
+    },
+    {
+      "type": "TextItem",
+      "text": "The maximum acceptable loss in the ditch is determined by environmental standards. In order to comply with the standards the quantity of fertiliser in the 1st trough, standing in the imaginative ditch, must be a maximum of 10% of the quantity collected in the trough in the middle of the track (= 100%)."
+    },
+    {
+      "type": "TextItem",
+      "text": "The trough on the land next to the fictive ditch provides an insight into the topping. It will never be 100%."
+    },
+    {
+      "type": "TableItem",
+      "table_data": {
+        "A": {
+          "0": "B",
+          "1": "",
+          "2": "C"
+        },
+        "Good spreading pattern, the ExactLine has been adjusted  well": {
+          "0": "The ExactLine is not spreading wide enough. \uf034 transport setting) \uf034 Repeat the test",
+          "1": "Adjust this 1 setting wider (e.g. from 3 to 4 or from 7 to",
+          "2": "The ExactLine is spreading too wide: \uf034 Adjust this 1 setting narrower (e.g. from 5 to 4 or from  transport setting to 7) \uf034 Repeat the test"
+        }
+      }
+    },
+    {
+      "type": "TextItem",
+      "text": "If you adjust the ExactLine 1 setting higher or lower (e.g. from 1 to 2, or from 3 to 2), the working width on the side of the ditch changes roughly 0,3 metres."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Setting the spreading height back to the tray test"
+    },
+    {
+      "type": "TextItem",
+      "text": "During the tray test the disc height above the troughs was set to 75 cm."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Imagine spreading with the disc height at 75 cm above the ground or crops!"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See paragraph \u00bbSpreading height\u00ab on page 95."
+    },
+    {
+      "type": "TextItem",
+      "text": "91"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 92,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Driving on the road"
+    },
+    {
+      "type": "TextItem",
+      "text": "Driving on the road"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Before taking the road"
+    },
+    {
+      "type": "TextItem",
+      "text": "92"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Observe the permissible and safe height with regard to"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 prescribed maximum height for vehicles in the road traffic regulations,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 high-voltage cables or other cables over the road;"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 anticipated maximum headroom."
+    },
+    {
+      "type": "TextItem",
+      "text": "Pay close attention to these aspects to prevent dangerous situations that could lead to major material damage and possibly to serious physical injury."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Before leaving the tractor:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 switch the PTO shaft off,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 release the pressure from the hydraulic system,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 switch the electronic control system off,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 switch the tractor off,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 remove the key from the ignition,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 engage the parking brake of the tractor."
+    },
+    {
+      "type": "TextItem",
+      "text": "That way you make sure that the tractor cannot be started when you are working on the machine and that the machine cannot move, which could cause severe physical injury."
+    },
+    {
+      "type": "TextItem",
+      "text": "Before travelling on a public road with your tractor and machine, you should do the following:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check whether tractor and machine are roadworthy."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check that the lights, warning indicators, protectors and brakes are attached properly and are working."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check whether the reflector, motor vehicle with limited speed (<40km/h) on your tractor, is hidden by the implement."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Then fit an additional reflector at the back of the implement."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check the run of the quick coupling ropes of the power lift."
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 93,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Preparing the machine to be transported"
+    },
+    {
+      "type": "TextItem",
+      "text": "Driving on the road"
+    },
+    {
+      "type": "TextItem",
+      "text": "Before travelling on a public road with your tractor and machine, you should do the following:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check whether tractor and machine are roadworthy."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check that the lights, warning indicators, protectors and brakes are attached properly and are working."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check the run of the quick coupling ropes of the power lift."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Fit extra lighting and warning signs, if necessary."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check all folding parts and their locking devices:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 hopper cover,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 ExactLine"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 hydraulic border spreading plate."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set all parts of the machine and the tractor, especially the PTO shaft, the hydraulics, the wheels and the electric system, to transport mode."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check the weight distribution between front and rear axles."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Mount front weights, if necessary."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check the headroom of the combination."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Lower the power lift, if necessary."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Lock the control lever of the power lift while moving so that the machine is not lowered by accident."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check if the lights are in good working order."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check whether the dosing units are closed."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch off the control box."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Remove dirt that could fall off while on the road. A dirty road could be hazardous for other drivers."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Control devices, e.g. ropes, hoses, etc. for remote actuation of devices such as cylinders, shall be guided and positioned in a way they never inadvertently release nor block desired movements/actuations!"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Always ensure adequate lateral securing of a mounted machine in transport position."
+    },
+    {
+      "type": "TextItem",
+      "text": "93"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 94,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Use in the field"
+    },
+    {
+      "type": "TextItem",
+      "text": "Use in the field"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "94"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Friction between moving parts"
+    },
+    {
+      "type": "TextItem",
+      "text": "Be careful of moving parts making contact with each other while working. You could accidentally touch control levers and cause the machine to move."
+    },
+    {
+      "type": "TextItem",
+      "text": "Only start working once all machine parts have stopped and the control lever have been secured. Wear safety shoes and gloves and work alone. If something gets jammed it could lead to personal injury."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Check the immediate vicinity"
+    },
+    {
+      "type": "TextItem",
+      "text": "Check the immediate vicinity and keep a constant eye on it at the start, as well as while you are working with the machine. Familiarise yourself with the immediate vicinity. Do not start working until all people and obstacles within the working area and danger zone of the tractor and machine have been removed."
+    },
+    {
+      "type": "TextItem",
+      "text": "Never stay or allow anyone to stay within the danger area while the machine is running! If there are people within the working area and the danger zone it could lead to injury."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Before leaving the tractor:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 switch the PTO shaft off,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 release the pressure from the hydraulic system,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 switch the electronic control system off,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 switch the tractor off,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 remove the key from the ignition,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 engage the parking brake of the tractor."
+    },
+    {
+      "type": "TextItem",
+      "text": "That way you make sure that the tractor cannot be started when you are working on the machine and that the machine cannot move, which could cause severe physical injury."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "PTO shaft rotates after disengaging"
+    },
+    {
+      "type": "TextItem",
+      "text": "After switching off the PTO shaft, danger could arise as the machine will continue running because of inertia. Keep a safe distance to the machine until the moving parts have come to a complete stop. Approaching the machine while it is rotating can cause serious or deadly injuries."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Protecting the environment"
+    },
+    {
+      "type": "TextItem",
+      "text": "Spreading a too high dose of materials outside of the field edge, especially on water surface, creates a heavy burden on the environment. Protect the environment by applying a correct application rate in a correct working manner."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Work with a closed cabin"
+    },
+    {
+      "type": "TextItem",
+      "text": "Fertiliser dust can blow indoors through open windows, doors or other openings. Moreover, the sound level is higher in an open cabin. It is therefore recommended to always work with a closed cabin with active carbon filters in the air inlets. Fertiliser dust and a high sound level can cause physical damage."
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 95,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Adjusting the machine"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Spreading height"
+    },
+    {
+      "type": "TextItem",
+      "text": "Ground level or the top level of the crops"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "Ground level or the top level of the crops"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "TextItem",
+      "text": "Use in the field"
+    },
+    {
+      "type": "TextItem",
+      "text": "Most types of fertiliser attract water and can thereby form large chunks. These chunks can block the spreader or distort the spreading pattern."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 When working under moist weather conditions, use a hopper cover that closes well."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Do not spread without a hopper cover under moist conditions."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Never leave the fertiliser for a long period of time in the spreader. Chunks can also be formed through moisture in the air."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Always clean the spreader well after use, including the dosing openings and the discharge bushings."
+    },
+    {
+      "type": "TextItem",
+      "text": "Before you can make the first pass, you must make adjustments in the field to:"
+    },
+    {
+      "type": "TextItem",
+      "text": "The following is important to ensure that the spreader works properly:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 set it to the correct height from the ground or above the crop and"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 by levelling it with the lift rod adjustment and top link."
+    },
+    {
+      "type": "TextItem",
+      "text": "Measured from the bottom of the vanes, the distance to the ground or the crop must be 75 cm."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Use the power lift to lift the machine to the correct height."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the spreader horizontally with the lift rod adjustment and the top link."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Lock the lift limiter in this position."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Height correction with top dressing"
+    },
+    {
+      "type": "TextItem",
+      "text": "If the required height of 75 cm above the crop is not possible with your power lift"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 use the high spreading setting of the linkage pins and/or"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 set the spreader forward as indicated in the spreading charts."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See paragraph \u00bbSelecting linkage pin height\u00ab on page 53."
+    },
+    {
+      "type": "TextItem",
+      "text": "95"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 96,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Use in the field"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Last setting check"
+    },
+    {
+      "type": "TextItem",
+      "text": "96"
+    },
+    {
+      "type": "TextItem",
+      "text": "A checklist is given below, as well as in the jacket of the spreading chart."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Do this last check to ensure good spreading results."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Are you working with the correct settings from the correct spreading chart, based on:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 distribution,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 similar weight,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 type of fertiliser,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 desired working width,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 desired driving speed?"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Did you set the spreader in the correct way? Did you:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 set the height over the ground or crops to 75 cm?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 was the correct vane combination mounted?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 are the correct number of dosing openings opened (fine application)?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 is the correct discharge point set?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 is the correct application rate set?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 is the correct GEOPOINT\u00ae (centre spreading pattern) set?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 is the coupling shaft fitted to the correct point on the gearbox?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 is the ExactLine or hydraulic border spreading plate in the transport setting (or working position)?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 are the data required entered in the control system?"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Did you check the following settings:"
+    },
+    {
+      "type": "TextItem",
+      "text": "Did you:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 have you checked the control system settings?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 perform a tray test to check the spreading pattern?"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Work in the correct manner:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Is the field data selected or input correctly?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Is the GEOCONTROL application setting correct?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Have you correctly set the offset?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See the software instruction manual."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Did you set the correct PTO shaft rpm?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Are you driving at the correct driving speed?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Did you set the tramlines at the correct distance?"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Wind speed too high?"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 97,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Spreading on field"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Spreading on the headland"
+    },
+    {
+      "type": "TextItem",
+      "text": "Filling passes"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Set tramlines"
+    },
+    {
+      "type": "TextItem",
+      "text": "Use in the field"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Working with the GEOCONTROL"
+    },
+    {
+      "type": "TextItem",
+      "text": "Starting a new task is done from a saved field or one to be created newly with the GEOCONTROL application."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae Refer to the GEOCONTROL manual in your terminal for this purpose."
+    },
+    {
+      "type": "TextItem",
+      "text": "A broad headland is desirable in order to make the connection to the headland before turning in from the pass. The headland will act as the field boundary and is saved in GEOCONTROL."
+    },
+    {
+      "type": "TextItem",
+      "text": "A broad headland is desirable in order to make the connection to the headland before turning in from the pass."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Spread a broad or double headland so that you make the connection while driving straight before making a turn."
+    },
+    {
+      "type": "TextItem",
+      "text": "Thereafter, the field can be filled in full passes. You can create a (spray)track pattern for following processes."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Prevent drive errors"
+    },
+    {
+      "type": "TextItem",
+      "text": "It is important that the spreading patterns overlap well to ensure good distribution. A difference in the overlapping is less vital with average working widths, using a triangular spreading pattern."
+    },
+    {
+      "type": "TextItem",
+      "text": "Differences in the spreading pattern would easily be noticed with a trapezium shape on very large working widths, in particular. The overlap of the spreading pattern is then much smaller and therefore more sensitive to mistakes."
+    },
+    {
+      "type": "TextItem",
+      "text": "This can be prevented by setting tramlines before hand. This can be done by setting out tramlines on the headlands and marking them with, for example, picket poles."
+    },
+    {
+      "type": "TextItem",
+      "text": "Visibility of the from headland to headland is very important. Place additional markers in the field if necessary to ensure that the track is clearly visible."
+    },
+    {
+      "type": "TextItem",
+      "text": "When controlled by the GEOCONTROL the spreader has the option of reducing the working width in order to connect the incomplete final pass with the next one."
+    },
+    {
+      "type": "TextItem",
+      "text": "97"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 98,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Use in the field"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Tramline patterns"
+    },
+    {
+      "type": "TextItem",
+      "text": "Using the ExactLine with tramlines"
+    },
+    {
+      "type": "TextItem",
+      "text": "98"
+    },
+    {
+      "type": "TextItem",
+      "text": "Your preferred border spreading method determines the tramline pattern."
+    },
+    {
+      "type": "TextItem",
+      "text": "Select on the basis of the site width, the presence of the spreader tramlines and the spreader's equipment."
+    },
+    {
+      "type": "TextItem",
+      "text": "Drive half the working width from the field edge (1/2 X meters) when doing boundary track spreading with ExactLine (optional extra)."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the first way at half the working width (1/2 X meter) from the field edge (in the first sprayer tramline)."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 The paths that follow are set at the full working width."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See paragraph \u00bbBoundary track spreading with ExactLine\u00ab on page 110."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "ListItem",
+      "text": "TIP: Indicate whether the field boundary is to the right of the machine while spreading the headland in the GEOCONTROL!"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 99,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Using the hydraulic border spreading plate with tramlines"
+    },
+    {
+      "type": "TextItem",
+      "text": "During one-sided boundary spreading with hydraulic border spreading plate, you drive along the outermost work area on the field edge and control the fertiliser granule stream by means of the hydraulic border spreading plate (accessory)."
+    },
+    {
+      "type": "TextItem",
+      "text": "The paths that follow are set at:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 half the working width of Situation A (the first sprayer tramline),"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 the complete working width Situation B."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See paragraph \u00bbOne-sided boundary spreading with the hydraulic border spreading plate\u00ab on page 107."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "ListItem",
+      "text": "TIP: Indicate that the field boundary is to the right of the machine while spreading the headland in the GEOCONTROL!"
+    },
+    {
+      "type": "TextItem",
+      "text": "99"
+    },
+    {
+      "type": "TextItem",
+      "text": "Use in the field"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 100,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Use in the field"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Start spreading"
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Connect headland with the GEOCONTROL function"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Overlap on the headland"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Overlap on the field boundary"
+    },
+    {
+      "type": "TextItem",
+      "text": "100"
+    },
+    {
+      "type": "TextItem",
+      "text": "To begin spreading, proceed as follows:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close all the doors and windows in the cabin."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Drive the tractor to the first tramline, depending on the driving pattern required, which may be recognised by the marker in place."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch the control box on."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Check the settings as described in"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Without GEOCONTROL, select and activate a site number in the field registration,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Switch on the PTO shaft and set the correct spreading disc rpm as reported in the spreading chart."
+    },
+    {
+      "type": "TextItem",
+      "text": "Do not allow the spreading disc to run for longer than is necessary while the dosing units are closed. This will prevent the agitator from grinding the fertiliser."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Start driving and open the dosing units at the same time by pressing the start key."
+    },
+    {
+      "type": "TextItem",
+      "text": "The rpm of the tractor engine (therefore also of the PTO shaft) must remain constant while spreading (with regards to distributing fertiliser along the width)."
+    },
+    {
+      "type": "TextItem",
+      "text": "The driving speed can only be adjusted by selecting another speed!"
+    },
+    {
+      "type": "TextItem",
+      "text": "Based on the offset set in the 'TC Implement Settings' screen, the GEOCONTROL will switch the spreading sections off by itself when passing the headland limit. This happens if the spreading pattern overlaps completely and you run up the headland."
+    },
+    {
+      "type": "TextItem",
+      "text": "Depending on the set overlap percentage, the connection on the headland and gores will more or less overlap."
+    },
+    {
+      "type": "TextItem",
+      "text": "The usual setting is 50%."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See the GEOCONTROL manual."
+    },
+    {
+      "type": "TextItem",
+      "text": "Even the extent of overlap of the field boundary created can be separately set in the GEOCONTROL manual."
+    },
+    {
+      "type": "ListItem",
+      "text": "TIP Set the overlap on the field boundary to 0 if you do not wish to spread over the field boundary."
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 101,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "TextItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "TextItem",
+      "text": "Use in the field"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "approaching headland with the GEOCONTROL function switched off:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Close the dosing units by pressing the stop key before turning to the headland. The PTO shaft can keep running if you intend to start spreading immediately again."
+    },
+    {
+      "type": "TextItem",
+      "text": "You will find the correct working method and corresponding distances on the headland in"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae the next paragraph \u00bbWorking method on the headland\u00ab and paragraph \u00bbSpreading on field\u00ab from page 97."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Drive to the next tramline and re-start the spreader at the right time, as displayed in the next paragraph \u00bbWorking method on the headland\u00ab."
+    },
+    {
+      "type": "TextItem",
+      "text": "In the event of spreader failure or stoppage:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Stop spreading immediately!"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Disconnect the PTO shaft immediately!"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See then paragraph \u00bbFailure and stoppage\u00ab on page 113."
+    },
+    {
+      "type": "TextItem",
+      "text": "If the hopper content becomes less than 100 kg, the control system switches off the automatic calibration. Measurement accuracy declines in such a way that new automatic calibration cannot produce a better discharge curve."
+    },
+    {
+      "type": "TextItem",
+      "text": "At low doses <50 kg/ha, it is possible to reduce the minimum hopper capacity for automatic calibration to minus 15 kg."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See the software instruction manual."
+    },
+    {
+      "type": "TextItem",
+      "text": "If the spreader is filled during the spreading process, e.g. from an auger riding alongside the vehicle the automatic calibration must be switched off. With automatic calibration the control system weighs the dispersed quantity of fertiliser (kg) within a certain time. It also checks these values in terms of the selected, preset application rate. The distributed quantity can therefore not be correctly weighed if the hopper is filled while spreading. The weight in the hopper could even increase during the measurement period. The correction performed by the control system would be inaccurate as a result, which could lead to crop damage."
+    },
+    {
+      "type": "TextItem",
+      "text": "101"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 102,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Use in the field"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Working method on the headland"
+    },
+    {
+      "type": "TextItem",
+      "text": "102"
+    },
+    {
+      "type": "TextItem",
+      "text": "The driving pattern that you use, in other words how you must turn on the headland, depends on your border spreading method."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 spreading the border from the sprayer tramline with ExactLine, one-sided boundary spreading with additional room with the border spreading plate (situation A), or"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 border spreading by closing off one disc and using a border spreading plate (situation B)."
+    },
+    {
+      "type": "TextItem",
+      "text": "Do the following when spreading the headland:"
+    },
+    {
+      "type": "TextItem",
+      "text": "For boundary track spreading from the sprayer tramline (ExactLine and situation A)"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "GEOCONTROL headland function ExactLine"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Begin with creating the field boundary where you spread on edges with the ExactLine while driving to the left through the first sprayer tramline."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Make a second round with the ExactLine switched off for a double headland, if required."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Fill the field with injections on your sprayer tramline defined previously."
+    },
+    {
+      "type": "TextItem",
+      "text": "The GEOCONTROL will itself determine the correct start/stop moment while approaching and turning from the spread headland."
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 103,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Use in the field"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Hydraulic border spreading plate"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Set the field boundary as close as possible along the field boundary while driving to the left or to the right, to spread right down to the border with the border spreading plate."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Fill the headland through to half the working width without the border spreading plate with the right/left dosing closed to make an additional pass."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See \u00bbOne-sided boundary spreading with the hydraulic border spreading plate\u00ab on page 107."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Fill the field with injections on your sprayer tramline defined previously."
+    },
+    {
+      "type": "TextItem",
+      "text": "The GEOCONTROL will itself determine the correct start/stop moment while approaching and turning from the spread headland."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Spreading without GEOCONTROL headland:"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Stop spreading by closing the dosing units of the machine when you are half a working width from the end of the land."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Let the spreading discs turns and do not switch off the PTO shaft."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Open the dosing units again at one and a half the working width of the field edge."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Finally spread the field edges with the ExactLine."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See paragraph \u00bbBorder spreading\u00ab on page 106."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "With one-sided border spreading (situation B)"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "103"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 104,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Use in the field"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "GEOCONTROL headland function"
+    },
+    {
+      "type": "TextItem",
+      "text": "104"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Begin with creating the field boundary where you spread down to the border along the field boundary while driving to the left/right with the border spreading plate and the right/left dosing switched off."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Fill the field with injections on your sprayer tramline defined previously."
+    },
+    {
+      "type": "TextItem",
+      "text": "The GEOCONTROL will interrupt and start the process at the correct time while turning on the headland."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Without GEOCONTROL"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Drive as closely as possible to the end of the property and stop spreading by closing the dosing units before you turn."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Let the spreading discs turns and do not switch off the PTO shaft."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Open the dosing units again when you are a full working width down from the end of the land."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Finally spread the field edges with the border spreading plate."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae See paragraph \u00bbBorder spreading\u00ab on page 106."
+    }
+  ]
+}
+</context>
+<question>
+    What is the 'tap' material used for hydraulic border spreading plate tap?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

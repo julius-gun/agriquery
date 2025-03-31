@@ -1,0 +1,7 @@
+You are a farmer in Cansas driving on a tractor and you have questions regarding the fertilizer spreader you are currently using. Create simple, short, but technical unanswerable questions from the context of each page in <old_book>. The question should also be generally unanswerable from the whole context of <old_book>, not just the specific page . Take for instance a strange word from each page and ask questions that can not be answered with the given page context. Ask technical questions about certain aspects of the machinery, how to do it exactly etc. It should be an unanswerable questions from the context. Use the same structured output as defined in <json_file>, e.g.
+    {
+        "question": "How much extra diesel does the tractor consume to use the Exacta-TLX GEOSPREAD?",
+        "answer": "Not found in context",
+        "page": 23
+    },
+

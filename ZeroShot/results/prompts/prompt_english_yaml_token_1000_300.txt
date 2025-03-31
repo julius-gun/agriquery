@@ -1,0 +1,93 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+      text:  Disconnect the right spreading disc by sliding the connector to the right.
+    Secure the connector with a lock clip.
+- type: ListItem
+  text:  Remove the vanes from the left spreading disc.
+- type: ListItem
+  text:  Connect the coupling shaft to the coupling point on the machine shown in
+    the relevant spreading chart.
+- type: ListItem
+  text:  See also paragraph »Coupling shaft connection point« on page 64.
+- type: ListItem
+  text:  Mount the calibration container carefully on the left spreading disc.
+- type: ListItem
+  text:  Set the calibration container with the settings knob so that the spreading
+    disc does not touch the calibration container.
+- type: ListItem
+  text:  Weigh a large trough and place it under the discharging point of the calibration
+    container.
+- type: ListItem
+  text:  Start the tractor again.
+- type: ListItem
+  text:  Close all the doors and windows in the cabin.
+- type: ListItem
+  text:  Switch the control box on.
+- type: ListItem
+  text:  Switch the right spreading disc off.
+- type: ListItem
+  text:  See the software instruction manual.
+- type: ListItem
+  text:  Engage the PTO shaft.
+- type: ListItem
+  text:  Open the left dosing unit.
+- type: ListItem
+  text:  Allow the spreader to spread for 5 seconds in order to 'rinse' the calibration
+    container.
+- type: ListItem
+  text:  Close the dosing unit.
+- type: ListItem
+  text:  Switch the PTO shaft and the tractor off, remove the key from the ignition,
+    empty the trough and place it back under the discharge point of the calibration
+    container.
+<|begin_of_text|>page_number: 72
+items:
+- type: SectionHeaderItem
+  text: To be done before spreading
+- type: SectionHeaderItem
+  text: Variable, externally driven application rate
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: S
+- type: TextItem
+  text: RS 232 connection
+- type: TextItem
+  text: '72'
+- type: TextItem
+  text: The control system provides the options to distribute the same application
+    rate all over the field and the option to spread a variable, externally driven
+    application rate. This provides the option to spread as per requirements, e.g.
+    through a nitrogen sensor.
+- type: TextItem
+  text: An application rate that had been preset in the corresponding management system
+    for the relevant field can also be entered through the GPS system.
+- type: TextItem
+  text:  For the options and corresponding settings, see the user's manuals for the
+    external system and the control box, e.g. the IsoMatch. The control system of
+    the spreader in combination with the IsoMatch control box also transmits the application
+    rate and working width used back to the external system.
+- type: TextItem
+  text: The external system and the control system of a spreader with an IsoMatch
+    control box communicate through a serial port with an RS 232 connection. This
+    connection is located at the back of the control box. The occupation of pins in
+    the 9-point RS 232 plug and the settings required are given in
+- type: ListItem
+  text:  the user manual of the IsoMatch control box.
+
+</context>
+<question>
+    What is the minimum 'baud rate' for 'RS 232 connection'?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

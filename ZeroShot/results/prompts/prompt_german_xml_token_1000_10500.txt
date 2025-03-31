@@ -1,0 +1,19 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|><page number="94"><text>Einsatz auf dem Feld</text><text>Einsatz auf dem Feld</text><image /><text>Einklemmen zwischen bewegenden Teilen:</text><text>Nehmen Sie sich vor Einklemmen während Justierarbeiten in Acht. Die Maschine kann durch eine versehentliche Berührung der Bedienhebel in Gang gesetzt werden.</text><text>Beginnen Sie erst mit den Arbeiten, wenn alle Teile der Maschine sich nicht mehr bewegen und die Bedienhebel gesichert sind. Tragen Sie Sicherheitshandschuhe und Sicherheitsschuhe und arbeiten Sie alleine. Sie können sich durch Quetschungen verletzen.</text><text>Kontrollieren Sie die direkte Umgebung</text><text>Kontrollieren Sie die direkte Umgebung zu Beginn und während der Arbeiten mit und an der Maschine und bleiben Sie diesbezüglich aufmerksam. Stellen Sie eine ausreichende Sicht auf die direkte Umgebung sicher. Beginnen Sie keine Arbeiten, bevor nicht alle Personen und Hindernisse auf dem Arbeitsbereich und der Gefahrenzone des Schleppers und der Maschine entfernt worden sind.</text><text>Sorgen Sie dafür, dass sich niemand (auch Sie nicht) im Arbeitsbereich und in der Gefahrenzone befindet, während die Maschine in Betrieb ist! Der Aufenthalt innerhalb des Arbeitsbereichs und der Gefahrenzone kann Verletzungen verursachen.</text><text>Bevor Sie den Schlepper verlassen, müssen Sie</text><text>· die Zapfwelle ausschalten,</text><text>· das Hydrauliksystem drucklos machen,</text><text>· das elektronische Bediensystem ausschalten,</text><text>· den Schlepper ausschalten,</text><text>· den Zündschlüssel vom Zündschloss abziehen,</text><text>· die Feststellbremse des Schleppers anziehen.</text><text>So vermeidet man, dass der Schlepper angelassen werden kann, während jemand an der Maschine arbeitet; auf diese Weise könnten Personen schwer verletzt werden.</text><text>Zapfwelle läuft nach Ausschalten nach</text><text>Nach dem Ausschalten der Zapfwelle kann Gefahr durch das Nachdrehen der Maschine aufgrund ihre Massenträgheit entstehen. Halten Sie sich von der Maschine fern, bis dass alle bewegenden Teile wirklich still stehen. Der Kontakt zu einer laufenden Maschine kann ernsthafte oder tödliche Verletzungen verursachen.</text><text>Schonen Sie die Umwelt</text><text>Eine zu hohe Dosierung und Verteilung von Mitteln außerhalb des Feldrands, insbesondere bei Oberflächenwasser, stellen eine schwere Belastung für die Umwelt dar. Schonen Sie die Umwelt durch eine richtige Dosis und genaue Arbeitsweise.</text><text>Arbeiten Sie in einer geschlossenen Kabine</text><text>Durch offene Fenster, Türen oder andere Öffnungen kann Kunstdüngerstaub hineingelangen. In einer offenen Kabine ist zudem der Geräuschpegel höher. Arbeiten Sie daher in einer geschlossenen Kabine mit einem Aktivkohlefilter in den Lufteinlässen. Kunstdüngerstaub und eine dauerhaf
+</context>
+<question>
+    After disengaging the PTO shaft, what poses a continued danger and why?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

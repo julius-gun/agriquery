@@ -1,0 +1,884 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|>{
+  "page_number": 137,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Maintenance"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Montez la ficelle comme sur l'illustration qui suit."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Respectez scrupuleusement la distance entre le c\u00f4t\u00e9 int\u00e9rieur de la ficelle et l'ouverture de la bague d'\u00e9coulement."
+    },
+    {
+      "type": "TextItem",
+      "text": "Si la distance mesur\u00e9e est sup\u00e9rieure ou inf\u00e9rieure \u00e0 109 mm, proc\u00e9dez comme suit :"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Desserrez l\u00e9g\u00e8rement les 2 boulons de la plaque du v\u00e9rin \u00e9lectrique."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 D\u00e9placez la plaque du v\u00e9rin \u00e9lectrique jusqu'\u00e0 ce que la distance entre le c\u00f4t\u00e9 int\u00e9rieur de la ficelle et l'ouverture de la bague d'\u00e9coulement soit de 109 mm."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Serrez \u00e0 nouveau les 2 boulons sans d\u00e9placer \u00e0 nouveau la plaque du v\u00e9rin \u00e9lectrique."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Proc\u00e9dez \u00e9galement au contr\u00f4le pour l'autre c\u00f4t\u00e9."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Fixez le tableau de bord en vissant les 3 vis de fixation."
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "137"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 138,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Maintenance"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Contr\u00f4le et r\u00e9glage de la hauteur de la bague d'\u00e9coulement"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Bras de levage"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "Bras de levage"
+    },
+    {
+      "type": "TextItem",
+      "text": "goulotte"
+    },
+    {
+      "type": "TextItem",
+      "text": "disque d'\u00e9pandage"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "goulottedisque d'\u00e9pandage"
+    },
+    {
+      "type": "TextItem",
+      "text": "\u00c9l\u00e9ments de fixation"
+    },
+    {
+      "type": "TextItem",
+      "text": "Tableau de bord"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "\u00c9l\u00e9ments de fixationTableau de bord"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "138"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Evitez tout contact avec l'engrais et d'autres produits"
+    },
+    {
+      "type": "TextItem",
+      "text": "Lorsque vous remplissez, r\u00e9glez et testez l'\u00e9pandeur, il se peut que vous entriez en contact avec l'engrais ou d'autres produits d'\u00e9pandage. Portez des v\u00eatements de protection et des gants protecteurs, lisez les instructions de s\u00e9curit\u00e9 du fournisseur et conformez-vous aux instructions suppl\u00e9mentaires. Le contact avec des produits peut \u00eatre \u00e0 l'origine de blessures corporelles."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Attention \u00e0 ne pas vous coincer!"
+    },
+    {
+      "type": "TextItem",
+      "text": "Lors du contr\u00f4le et du r\u00e9glage de l'\u00e9pandeur, vous pouvez facilement vous coincer."
+    },
+    {
+      "type": "TextItem",
+      "text": "Veillez \u00e0 votre s\u00e9curit\u00e9 lors du contr\u00f4le et du r\u00e9glage en :"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 coupant le syst\u00e8me de commande \u00e9lectronique,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 coupant le contact du tracteur et en retirant la cl\u00e9 du contact,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 serrant le frein \u00e0 main sur le tracteur,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 attendant que toutes les pi\u00e8ces de la machine se soient totalement arr\u00eat\u00e9es avant de proc\u00e9der aux op\u00e9rations de maintenance,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 portant des v\u00eatements de protection tels que des gants protecteurs et des chaussures de s\u00e9curit\u00e9,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 d'ex\u00e9cuter seul et avec prudence la proc\u00e9dure d\u00e9crite."
+    },
+    {
+      "type": "TextItem",
+      "text": "En vous coin\u00e7ant, vous pouvez vous blesser."
+    },
+    {
+      "type": "TextItem",
+      "text": "La distance entre la bague d'\u00e9coulement et le disque d'\u00e9pandage doit \u00eatre de 1,0 mm."
+    },
+    {
+      "type": "TextItem",
+      "text": "Si la distance est trop importante, l'engrais ne s'\u00e9coule pas par l'ouverture de la bague d'\u00e9coulement sur le disque d'\u00e9pandage mais sur un point quelconque sous la bague d'\u00e9coulement. Il en r\u00e9sulte une alt\u00e9ration de la nappe d'\u00e9pandage."
+    },
+    {
+      "type": "TextItem",
+      "text": "Si la distance est trop r\u00e9duite, une tr\u00e9mie pleine peut reposer partiellement sur le disque d'\u00e9pandage, ce qui endommage s\u00e9rieusement la machine."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Attelez la machine vide et relevez-la \u00e0 sa hauteur de travail (75 cm)."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Coupez le moteur du tracteur, retirez la cl\u00e9 du contact et serrez le frein \u00e0 main sur le tracteur."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Placez des supports solides et stables sous les extr\u00e9mit\u00e9s des bras de levage."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Abaissez les bras de levage sur les supports. La machine ne risque plus de s'abaisser accidentellement."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Coupez le moteur du tracteur, retirez la cl\u00e9 du contact et serrez le frein \u00e0 main sur le tracteur."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Mesurez la distance entre la bague d'\u00e9coulement et le disque d'\u00e9pandage."
+    },
+    {
+      "type": "TextItem",
+      "text": "Les petites distances peuvent \u00eatre mesur\u00e9es avec pr\u00e9cision avec un capteur de mesure."
+    },
+    {
+      "type": "TextItem",
+      "text": "Si la distance mesur\u00e9e est sup\u00e9rieure ou inf\u00e9rieure \u00e0 1,0 mm, proc\u00e9dez comme suit :"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Retirez le tableau de bord en d\u00e9vissant les 3 \u00e9l\u00e9ments de fixation."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 D\u00e9vissez l\u00e9g\u00e8rement les \u00e9crous de blocage sur les 4 boulons de fixation qui fixent le m\u00e9canisme de dosage sur la tr\u00e9mie."
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 139,
+  "items": [
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "INDICATION"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Bague \u00e0 ba\u00efonnette"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Maintenance"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Vissez les \u00e9crous sur les 4 boulons de fixation de fa\u00e7on \u00e0 ce que le m\u00e9canisme de dosage coulisse vers le haut."
+    },
+    {
+      "type": "TextItem",
+      "text": "Le m\u00e9canisme de dosage remonte par rapport au disque d'\u00e9pandage et \u00e0 la bague d'\u00e9coulement. Remontez en tournant le m\u00e9canisme de dosage de fa\u00e7on \u00e0 ce que vous puissiez facilement acc\u00e9der aux boulons permettant de fixer la bague d'\u00e9coulement au niveau de l'\u00e9toile sur l'arbre de l'agitateur."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 D\u00e9vissez l\u00e9g\u00e8rement les boulons qui permettent de fixer la bague au niveau de l'\u00e9toile."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Faites glisser la bague d'\u00e9coulement vers le haut et vers le bas jusqu'\u00e0 ce que la distance par rapport au disque d'\u00e9pandage soit de 1,0 mm."
+    },
+    {
+      "type": "TextItem",
+      "text": "Vous pouvez \u00e9galement placer des plaques d'une \u00e9paisseur de 1,0 mm entre la bague d'\u00e9coulement et le disque d'\u00e9pandage et y laisser reposer la bague d'\u00e9coulement."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Vissez les boulons qui permettent de fixer la bague d'\u00e9coulement au niveau de l'\u00e9toile sur l'arbre de l'agitateur."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 V\u00e9rifiez une fois de plus la hauteur et r\u00e9glez-la si n\u00e9cessaire."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Abaissez le m\u00e9canisme de dosage en remontant en tournant les \u00e9crous sur les boulons de fixation."
+    },
+    {
+      "type": "TextItem",
+      "text": "Laissez descendre le m\u00e9canisme de dosage jusqu'\u00e0 ce que la bague \u00e0 ba\u00efonnette soit pass\u00e9e \u00e0 moiti\u00e9 par dessus les boulons permettant de fixer la bague d'\u00e9coulement au niveau de l'\u00e9toile."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Contr\u00f4lez la position du m\u00e9canisme de dosage par rapport \u00e0 l'arbre de l'agitateur. La distance entre l'arbre de l'agitateur et la bague d'\u00e9tanch\u00e9it\u00e9 doit \u00eatre la m\u00eame sur tous les c\u00f4t\u00e9s."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae Voir paragraphe \u00bbContr\u00f4le et r\u00e9glage du m\u00e9canisme de dosage\u00ab de la page 133."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Resserrez les \u00e9crous des 4 boulons de fixation sans d\u00e9placer le m\u00e9canisme de dosage."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 V\u00e9rifiez si l'agitateur ne touche pas les boulons permettant de fixer la bague d'\u00e9tanch\u00e9it\u00e9 de l'agitateur."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Fixez \u00e0 nouveau le tableau de bord \u00e0 l'aide des 3 \u00e9l\u00e9ments de fixation."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Proc\u00e9dez \u00e9galement au contr\u00f4le pour l'autre c\u00f4t\u00e9."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Enfin, contr\u00f4lez la position des m\u00e9canismes de dosage et la position des disques de dosage. R\u00e9f\u00e9rez-vous pour ce faire au"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae paragraphe \u00bbContr\u00f4le et r\u00e9glage du m\u00e9canisme de dosage\u00ab de la page 133."
+    },
+    {
+      "type": "TextItem",
+      "text": "139"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 140,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Maintenance"
+    },
+    {
+      "type": "TextItem",
+      "text": "Remplacement du joint d'\u00e9tanch\u00e9it\u00e9 de l'arbre de l'agitateur"
+    },
+    {
+      "type": "TextItem",
+      "text": "140"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Evitez tout contact avec l'engrais et d'autres produits"
+    },
+    {
+      "type": "TextItem",
+      "text": "Lorsque vous remplissez, r\u00e9glez et testez l'\u00e9pandeur, il se peut que vous entriez en contact avec l'engrais ou d'autres produits d'\u00e9pandage. Portez des v\u00eatements de protection et des gants protecteurs, lisez les instructions de s\u00e9curit\u00e9 du fournisseur et conformez-vous aux instructions suppl\u00e9mentaires. Le contact avec des produits peut \u00eatre \u00e0 l'origine de blessures corporelles."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Attention \u00e0 ne pas vous coincer!"
+    },
+    {
+      "type": "TextItem",
+      "text": "Lors du contr\u00f4le et du r\u00e9glage de l'\u00e9pandeur, vous pouvez facilement vous coincer."
+    },
+    {
+      "type": "TextItem",
+      "text": "Veillez \u00e0 votre s\u00e9curit\u00e9 lors du contr\u00f4le et du r\u00e9glage en :"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 coupant le syst\u00e8me de commande \u00e9lectronique,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 coupant le contact du tracteur et en retirant la cl\u00e9 du contact,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 serr\u00e9 le frein \u00e0 main sur le tracteur,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 attendant que toutes les pi\u00e8ces de la machine se soient totalement arr\u00eat\u00e9es avant de proc\u00e9der aux op\u00e9rations de maintenance,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 portant des v\u00eatements de protection tels que des gants protecteurs et des chaussures de s\u00e9curit\u00e9,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 d'ex\u00e9cuter seul et avec prudence la proc\u00e9dure d\u00e9crite."
+    },
+    {
+      "type": "TextItem",
+      "text": "En vous coin\u00e7ant, vous pouvez vous blesser."
+    },
+    {
+      "type": "TextItem",
+      "text": "L'arbre de l'agitateur est pourvu d'un joint d'\u00e9tanch\u00e9it\u00e9 en plastique afin d'\u00e9viter que vous perdiez des granul\u00e9s d'engrais le long de l'arbre de l'agitateur. La bague d'\u00e9tanch\u00e9it\u00e9 doit \u00eatre remplac\u00e9e \u00e0 chaque d\u00e9but de saison et au bout de toutes les 100 heures d'utilisation de la machine. Proc\u00e9dez aux op\u00e9rations uniquement sur une machine propre dont la tr\u00e9mie est vide."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 R\u00e9glez le levier de dosage fin dans la position de dosage normal."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 D\u00e9marrez le tracteur et branchez le bo\u00eetier de commande."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Activez la fonction de vidange de tr\u00e9mie."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae Voir les instructions du logiciel"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Attendez que les deux v\u00e9rins \u00e9lectriques se soient enti\u00e8rement d\u00e9ploy\u00e9s et que les unit\u00e9s de dosage soient enti\u00e8rement ouvertes."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Placez la machine sur le sol ou sur des supports solides reposant sur une surface plane et robuste."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 D\u00e9branchez le syst\u00e8me de commande \u00e9lectronique et coupez le moteur du tracteur, retirez la cl\u00e9 de contact et serrez le frein \u00e0 main."
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 141,
+  "items": [
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Bague d'\u00e9tanch\u00e9it\u00e9 en m\u00e9tal"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "Bague d'\u00e9tanch\u00e9it\u00e9 en m\u00e9tal"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Maintenance"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Ouvrez les tamis avec l'outil fourni et verrouillez-les."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Retirez l'agitateur de l'arbre de l'agitateur."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Soutenez la bague de roulement en plastique \u00e0 travers une ouverture de dosage afin que celle-ci ne s'affaisse pas."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Retirez les 3 boulons de fixation des bagues d'\u00e9tanch\u00e9it\u00e9."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Retirez les bagues d'\u00e9tanch\u00e9it\u00e9 m\u00e9talliques."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Contr\u00f4lez l'\u00e9tat de l'arbre de l'agitateur."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Remplacez le joint d'\u00e9tanch\u00e9it\u00e9 en plastique."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Placez \u00e0 nouveau les bagues d'\u00e9tanch\u00e9it\u00e9 m\u00e9talliques."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Remontez les 3 boulons de fixation."
+    },
+    {
+      "type": "TextItem",
+      "text": "CONSEIL Vous pouvez rel\u00e2cher la bague de roulement en plastique apr\u00e8s avoir serr\u00e9 le premier boulon de fixation."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf034 Remontez l'agitateur sur son arbre."
+    },
+    {
+      "type": "TextItem",
+      "text": "Effectuez ensuite le contr\u00f4le d\u00e9taill\u00e9 au"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae paragraphe \u00bbContr\u00f4le et r\u00e9glage du m\u00e9canisme de dosage\u00ab de la page 133."
+    },
+    {
+      "type": "TextItem",
+      "text": "141"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 142,
+  "items": [
+    {
+      "type": "TextItem",
+      "text": "Accessoires"
+    },
+    {
+      "type": "TextItem",
+      "text": "Accessoires"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "G\u00e9n\u00e9ralit\u00e9s"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Bo\u00eetier de commande IsoMatch"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "142"
+    },
+    {
+      "type": "TextItem",
+      "text": "Pour adapter la machine \u00e0 votre tracteur et/ou aux conditions de travail, les accessoires suivants sont disponibles :"
+    },
+    {
+      "type": "TextItem",
+      "text": "Si vous utilisez des pi\u00e8ces et des accessoires non d'origine, la responsabilit\u00e9 du fabricant ne peut \u00eatre engag\u00e9e et aucune garantie ne s'applique pour la machine."
+    },
+    {
+      "type": "TextItem",
+      "text": "Pour une commande ISO int\u00e9grale, le bo\u00eetier IsoMatch offre un grand nombre de nouvelles.fonctions suppl\u00e9mentaires."
+    },
+    {
+      "type": "TextItem",
+      "text": "Le bo\u00eetier IsoMatch Tellus r\u00e9unit les toutes derni\u00e8res avanc\u00e9es en mati\u00e8re de commande ISOBUS, de raccordement au tracteur et \u00e0 l'outil et de facilit\u00e9 d'utilisation."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Une multitude de fonctions et de programmes sur un seul bo\u00eetier de commande"
+    },
+    {
+      "type": "TextItem",
+      "text": "L'\u00e9cran dispose de deux interfaces qui permettent une grande polyvalence :"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Affichage simultan\u00e9 de 2 programmes ou fonctionnalit\u00e9s sur le m\u00eame terminal, comme par exemple l'\u00e9pandeur et un autre programme de commande, sans avoir \u00e0 changer d'\u00e9cran de travail."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Manuel d'utilisation dans la langue de votre choix \u00e0 l'\u00e9cran."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Contr\u00f4le permanent depuis la cabine gr\u00e2ce \u00e0 la cam\u00e9ra sur :"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 une partie sp\u00e9cifique de la machine,"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 les r\u00e9coltes"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 ou l'environnement proche."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Fonctions suppl\u00e9mentaires :"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Calculatrice"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Navigateur Internet"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 \u00c9cran de cam\u00e9ra (cam\u00e9ra en option)"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Barre d'\u00e9tat avec l'heure, la puissance du signal GPS et le sens d'avancement (avec l'extension GEOCONTROL sur l'IsoMatch)"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Possibilit\u00e9 de m\u00e9moriser les \u00e9l\u00e9ments suivants :"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Fichiers PDF"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Donn\u00e9es du tracteur"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Donn\u00e9es sp\u00e9cifiques \u00e0 la parcelle"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Donn\u00e9es sp\u00e9cifiques aux machines ISOBUS."
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Donn\u00e9es sp\u00e9cifiques au client."
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 143,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Bo\u00eetier de commande IsoMatch Tellus GO"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Raccordement sur un tracteur ISOBUS"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Transformation du tracteur non ISOBUS avec l'IsoMatch Power"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Accessoires"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Compact et complet"
+    },
+    {
+      "type": "TextItem",
+      "text": "De prise en main optimale et plus compact que la version \u00e0 double \u00e9cran, le bo\u00eetier IsoMatch Tellus GO permet la commande ISOBUS de toutes les fonctions. Outre ses dimensions r\u00e9duites par l'adoption d'un seul \u00e9cran, il se distingue essentiellement de l'IsoMatch Tellus par le nombre de prises USB et l'absence de WLAN/WIFI."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "De nombreuses fonctions suppl\u00e9mentaires"
+    },
+    {
+      "type": "TextItem",
+      "text": "Les derniers d\u00e9veloppements en mati\u00e8re de communication ISOBUS entre le tracteur et l'outil et de facilit\u00e9 d'utilisation ont \u00e9t\u00e9 int\u00e9gr\u00e9s \u00e0 l'IsoMatch Tellus GO."
+    },
+    {
+      "type": "TextItem",
+      "text": "Une molette de d\u00e9filement en haut \u00e0 droite sur le bo\u00eetier et un pav\u00e9 num\u00e9rique d\u00e9di\u00e9 int\u00e9gr\u00e9 \u00e0 la poign\u00e9e facilitent la navigation dans les menus."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Raccordement au tracteur ISOBUS par c\u00e2ble avec connecteur 9 broches pour \"IsoMatch Tellus\""
+    },
+    {
+      "type": "TextItem",
+      "text": "Si votre tracteur est pr\u00e9\u00e9quip\u00e9 ISOBUS, il suffit d'un c\u00e2ble de connexion 9 broches pour relier le tracteur au bo\u00eetier IsoMatch Tellus GO."
+    },
+    {
+      "type": "TextItem",
+      "text": "Les autres branchements s'effectuent via le faisceau de raccordement pour IsoMatch Tellus fourni en standard."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Raccordement au tracteur ISOBUS par c\u00e2ble avec connecteur 9 broches pour \"IsoMatch Tellus\""
+    },
+    {
+      "type": "TextItem",
+      "text": "Si votre tracteur dispose d'une connexion ISOBUS compl\u00e8te, un c\u00e2ble avec connecteur de raccordement au tracteur (9 broches) suffit pour relier le tracteur au bo\u00eetier de commande IsoMatch Tellus."
+    },
+    {
+      "type": "TextItem",
+      "text": "Les autres branchements s'effectuent via le faisceau de raccordement pour IsoMatch Tellus fourni en standard."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Raccordement au tracteur avec c\u00e2ble ISO 11786 (7 broches)"
+    },
+    {
+      "type": "TextItem",
+      "text": "Avec le terminal IsoMatch Tellus, un pack de raccordement est fourni de s\u00e9rie :"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 C\u00e2ble ISO 11786 (7 broches)"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 \u00c9clairage et cl\u00e9 de contact"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 CAN tracteur (connecteur sp\u00e9cifique tracteur en option requis)"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Port cam\u00e9ra."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Faisceau de raccordement IsoMatch Power pour tracteurs non ISOBUS"
+    },
+    {
+      "type": "TextItem",
+      "text": "Si votre tracteur n'est pas ISOBUS, vous pouvez installer le faisceau de raccordement IsoMatch Power."
+    },
+    {
+      "type": "TextItem",
+      "text": "Cela permet de le rendre enti\u00e8rement compatible ISOBUS et de raccorder et commander votre machine par le biais du bo\u00eetier de commande IsoMatch Tellus."
+    },
+    {
+      "type": "TextItem",
+      "text": "Utilisez le c\u00e2ble d'alimentation \"IsoMatch Tellus\" fourni en standard pour les autres branchements."
+    },
+    {
+      "type": "TextItem",
+      "text": "143"
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 144,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Accessoires"
+    },
+    {
+      "type": "TextItem",
+      "text": "C\u00e2ble avec connecteurs 7 broches pour connexion ISO 11786 dans la cabine du tracteur"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Entr\u00e9e capteur IsoMatch Tellus"
+    },
+    {
+      "type": "TextItem",
+      "text": "Entr\u00e9e capteur IsoMatch Tellus avec connecteur de Entr\u00e9e capteur IsoMatch Tellus avec connecteur de capteur"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "Entr\u00e9e capteur IsoMatch Tellus avec connecteur de Entr\u00e9e capteur IsoMatch Tellus avec connecteur de capteur"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "C\u00e2ble de rallonge ISO"
+    },
+    {
+      "type": "TextItem",
+      "text": "C\u00e2ble RS232"
+    },
+    {
+      "type": "PictureItem",
+      "caption": "C\u00e2ble RS232"
+    },
+    {
+      "type": "TextItem",
+      "text": "144"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Juste apr\u00e8s le c\u00e2ble de raccordement ISO 11786 dans la cabine"
+    },
+    {
+      "type": "TextItem",
+      "text": "Montez sur le connecteur 7 broches du c\u00e2ble de raccordement \u00ab IsoMatch Tellus \u00bb fourni en standard une rallonge de c\u00e2ble (option) vers la connexion tracteur ISO 11786 en cabine."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Directement sur le radar ou le capteur de roue du tracteur"
+    },
+    {
+      "type": "TextItem",
+      "text": "Avec l'entr\u00e9e capteur IsoMatch Tellus disponible en option, vous pouvez raccorder le capteur de vitesse du tracteur ou le radar au bo\u00eetier de commande IsoMatch Tellus."
+    },
+    {
+      "type": "TextItem",
+      "text": "Vous pouvez l'utiliser si vous n'avez pas de prise ISO 11786 en cabine. Les autres branchements sont identiques \u00e0 ceux du faisceau de raccordement pour IsoMatch Tellus fourni en standard."
+    },
+    {
+      "type": "TextItem",
+      "text": "Plusieurs types de c\u00e2bles et rallonges de c\u00e2bles sont disponibles pour les types de radars courants."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae Consultez \u00e9galement le catalogue de pi\u00e8ces d\u00e9tach\u00e9es."
+    },
+    {
+      "type": "TextItem",
+      "text": "Un c\u00e2ble ISO est disponible pour les \u00e9pandeurs tra\u00een\u00e9s. Il remplace le c\u00e2ble court d\u00e9j\u00e0 mont\u00e9. Changez le c\u00e2ble entier."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae Le sch\u00e9ma de raccordement des fils est indiqu\u00e9 dans le catalogue de pi\u00e8ces d\u00e9tach\u00e9es."
+    },
+    {
+      "type": "TextItem",
+      "text": "La communication entre le bo\u00eetier de commande Tellus et un syst\u00e8me externe s'effectue via un connecteur RS232. Vous pouvez utiliser un c\u00e2ble avec un connecteur RS232 pour raccorder le signal du syst\u00e8me externe au bo\u00eetier de commande Tellus. Le brochage du connecteur est disponible dans"
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae le manuel d'utilisation du bo\u00eetier de commande Tellus."
+    }
+  ]
+}<|begin_of_text|>{
+  "page_number": 145,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Logiciel Spreader control"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Logiciel GEOCONTROL"
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "IsoMatch Grip"
+    },
+    {
+      "type": "PictureItem",
+      "caption": ""
+    },
+    {
+      "type": "TextItem",
+      "text": "Accessoires"
+    },
+    {
+      "type": "TextItem",
+      "text": "La boutique en ligne www.isomatchshop.com vous permet d'acheter une licence d'utilisateur qui vous permettra, une fois la p\u00e9riode d'\u00e9valuation gratuite expir\u00e9e, d'utiliser votre machine avec"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Gestionnaire des t\u00e2ches"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 Un d\u00e9bit externe"
+    },
+    {
+      "type": "ListItem",
+      "text": "\u00b7 La gestion des fourri\u00e8res et le syst\u00e8me GEOSPREAD."
+    },
+    {
+      "type": "ListItem",
+      "text": "\uf0ae Consultez le site Internet www.isomatchshop.com"
+    },
+    {
+      "type": "TextItem",
+      "text": "L'IsoMatch GEOCONTROL est une application logicielle avanc\u00e9e qui permet d'accro\u00eetre la pr\u00e9cision et l'efficacit\u00e9 des distributeurs d'engrais."
+    },
+    {
+      "type": "SectionHeaderItem",
+      "text": "Commande du GEOSPREAD par positionnement"
+    },
+    {
+      "type": "TextItem",
+      "text": "
+</context>
+<question>
+    What is the material of the 'metal seal rings' for agitator axle seal?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

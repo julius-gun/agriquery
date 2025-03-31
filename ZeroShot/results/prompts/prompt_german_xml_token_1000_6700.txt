@@ -1,0 +1,19 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    inheit mitgeliefert. Ergänzend erhalten Sie nachfolgend eine kurze Montageanleitung.</text><text>Sollten Sie vom Bedienpult IsoMatch oder einem anderen separaten ISO-Bedienpult bei einem Schlepper Gebrauch machen, der mit dem ISOBUS Kommunikationssystem ausgestattet ist, können Sie dieses mit dem mitgelieferten 7-poligen CAN-Kabel an einen Standard-CANAnschluss des Schleppers anschließen.</text><text> Schließen Sie die Seite des Kabels, an dem 1 Stecker befestigt ist, an den CAN-Anschluss des Schleppers an.</text><text> Schließen Sie die Seite des Kabels, an dem 2 Stecker an den beiden Anschlüssen des Bedienpults befestigt sind, an.</text><text>Wenn Sie das IsoMatch-Bedienpult oder ein anderes separates ISOBedienpult bei einem Schlepper verwenden, der nicht mit einem ISOBUS-Kommunikationssystem ausgestattet ist, benötigen Sie einen Schlepper-ECU. Ihr Händler kann Ihnen diesen liefern. Dieser Schlepper-ECU verfügt über einen ausgehenden 9-poligen CAN-Stecker.</text><text> Schließen Sie den CAN-Stecker an die Bedieneinheit an.</text><text>39</text></page><|begin_of_text|><page number="40"><text>Vor dem ersten Gebrauch</text><text>Konsole montieren</text><text>Konsole für das Bedienpulte</text><image /><text>Konsole auf Montagefläche</text><image /><text>40</text><text>Montieren Sie das Bedienpult an einer Stelle, an der dieses:</text><text>· gut sichtbar ist,</text><text>· während des Streuens leicht zu bedienen ist,</text><text>· ein Minimum an Sichtverlust und Behinderung beim Fahren des Schleppers aufweist.</text><text>Die Konsole hat zwei Winkel- und Höhenverstellungen für optimale Sicht auf das Bedienpult.</text><text> Montieren Sie die Konsole mit den mitgelieferten Befestigungsmaterialien an der Rückseite des Bedienpults.</text><text> Montieren Sie das Rohr für den Konsolenfuß auf einem festen Untergrund.</text><text>Da vorab nicht bekannt ist, wo in der Kabine ein geeigneter Ort ist, müssen Sie selbst für eine Fußplatte sorgen, an die das Rohr geschweißt wird.</text><text> Schweißen Sie eine Fußplatte vor der Montage auf eine ausgewählte Fläche in der Kabine.</text><text> Achten Sie darauf, dass hinter der Montagefläche ausreichend Raum für Bohr- und Montagearbeiten ist.</text><text> Bohren Sie ein Lochmuster in die Fußplatte und die Montagefläche in der Kabine.</text><text> Montieren Sie den Fuß an die Konsole.</text><text> Platzieren Sie das Bedienpult auf dem Fußrohr.</text><text> Binden Sie die überflüssige Länge an Kabel mit Kabelbindern zusammen.</text><text> Siehe auch die Betriebsanleitung zu Ihrem Bedienpult.</text></page>
+</context>
+<question>
+    How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

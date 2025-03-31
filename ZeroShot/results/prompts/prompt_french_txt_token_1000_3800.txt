@@ -1,0 +1,50 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     la clé du contact et serrez le frein à main sur le tracteur.
+ Séparez le disque d'épandage droit en poussant la pièce d'attelage vers la droite. Bloquez à nouveau la pièce d'attelage à l'aide du boulon de fixation.
+ Retirez les pales du disque d'épandage gauche.
+ Raccordez l'arbre de transmission côté machine au point de jonction comme mentionné dans le tableau d'épandage correspondant.
+ Reportez-vous également au paragraphe »Point de jonction de l'arbre de transmission« de la page 64.
+ Montez le container d'étalonnage avec précision sur le disque d'épandage gauche.
+ Réglez le container d'étalonnage avec le bouton de réglage afin que le disque d'épandage ne frotte pas contre le container d'étalonnage.
+ Pesez une grande trémie de collecte et placez-la sous le point de chute du réservoir.
+ démarrez le tracteur.
+ Fermez la cabine en fermant toutes les portes et les vitres.
+ Branchez le boîtier de commande.
+ Désactivez le disque d'épandage droit.
+ Voir les instructions du logiciel
+ Embrayez la prise de force.
+ Ouvrez l'unité de dosage gauche.
+ Faites fonctionner l'épandeur pendant 5 secondes afin de "purger" le container d'étalonnage.
+ Fermez l'unité de dosage.
+ Débrayez la prise de force et coupez l'alimentation du tracteur, retirez la clé du contact, videz la trémie de collecte et placez-la sous le point de chute du container d'étalonnage.<|begin_of_text|>
+===Page 72===
+
+Opérations avant l'épandage
+Débit variable, à commande externe
+[Image]
+S
+Raccordement RS 232
+72
+Outre la possibilité d'épandre la même dose sur toute la parcelle, le système de commande permet également de faire un épandage variable, commandé de l'extérieur. Cela vous permet d'épandre selon vos besoins, par exemple à l'aide d'un détecteur d'azote.
+Vous pouvez également épandre via le système GPS à un débit que vous aurez préalablement réglé dans le système de gestion correspondant pour la parcelle en question.
+ Pour en savoir plus sur ces différentes options et les réglages correspondants, consultez les manuels d'utilisation du système externe et du boîtier de commande, par ex. l'IsoMatch.
+Le système de commande de l'épandeur allié au boîtier de commande IsoMatch Tellus renvoie en outre le débit et la largeur de travail adaptés vers le système externe.
+Le système externe et le système de commande de l'épandeur avec boîtier de commande IsoMatch communiquent par le biais d'un port série avec une prise RS232. Ce raccord se situe sur la face arrière du boîtier de commande. Le brochage du connecteur RS232 9 broches et les réglages nécessaires figurent dans
+ le manuel d'utilisation du boîtier de commande IsoMatch Tellus.
+</context>
+<question>
+    What type of serial connection does the IsoMatch control box use for communication?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

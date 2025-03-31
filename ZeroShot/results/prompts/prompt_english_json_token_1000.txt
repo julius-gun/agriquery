@@ -1,0 +1,120 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|>{
+  "page_number": 125,
+  "items": [
+    {
+      "type": "SectionHeaderItem",
+      "text": "Maintenance intervals"
+    },
+    {
+      "type": "TextItem",
+      "text": "Maintenance"
+    },
+    {
+      "type": "TextItem",
+      "text": "Keep to the checking and maintenance intervals given below to keep the machine in good working order."
+    },
+    {
+      "type": "TableItem",
+      "table_data": {
+        "da il y": {
+          "0": "Inspection",
+          "1": "\u00bbChecking bolts and nuts\u00ab",
+          "2": "\u00bbChecking the hydraulic system\u00ab",
+          "3": "Condition of the agitator and the agitator axle",
+          "4": "Condition of the vanes",
+          "5": "\u00bbChecking and setting the dosing mechanism\u00ab",
+          "6": "\u00bbChecking and setting the discharge point setting mecha- nism\u00ab",
+          "7": "\u00bbChecking and setting the discharge bushing height\u00ab",
+          "8": "",
+          "9": "Lubrication",
+          "10": "4 grease nipples on the PTO shaft",
+          "11": "2 grease nipples on both discharge bushings",
+          "12": "1 grease nipple on all four actuators",
+          "13": "Applying or adding grease",
+          "14": "Coupling shafts profiled tubes",
+          "15": "Central gearbox",
+          "16": "Spreading discs gearboxes",
+          "17": "Add oil",
+          "18": "Connectors in spreading disc drives",
+          "19": "Replace",
+          "20": "Hydraulic hoses and connectors",
+          "21": "agitator seal",
+          "22": "agitator",
+          "23": "Vanes"
+        },
+        "": {
+          "0": "",
+          "1": "",
+          "2": "\u00b7",
+          "3": "\u00b7",
+          "4": "\u00b7",
+          "5": "",
+          "6": "",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "\u00b7",
+          "11": "\u00b7",
+          "12": "\u00b7",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "22": "",
+          "23": ""
+        },
+        "af te r th e first  10 hou rs": {
+          "0": "",
+          "1": "\u00b7",
+          "2": "\u00b7",
+          "3": "",
+          "4": "",
+          "5": "\u00b7",
+          "6": "\u00b7",
+          "7": "",
+          "8": "\u00b7",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "\u00b7",
+          "16": "",
+          "17": "",
+          "18": "\u00b7",
+          "19": "",
+          "20": "",
+          "21": "",
+          "22": "",
+          "23": ""
+        },
+        "we ekly": {
+          "0": "",
+          "1": "\u00b7",
+          "2": "",
+          "3": "",
+         
+</context>
+<question>
+    How many operational hours can 'vanes' typically last before requiring replacement?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

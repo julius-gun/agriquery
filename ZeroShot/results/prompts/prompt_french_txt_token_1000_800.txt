@@ -1,0 +1,52 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    age du mécanisme de dosage« de la page 133.
+ Resserrez les écrous des 4 boulons de fixation sans déplacer le mécanisme de dosage.
+ Vérifiez si l'agitateur ne touche pas les boulons permettant de fixer la bague d'étanchéité de l'agitateur.
+ Fixez à nouveau le tableau de bord à l'aide des 3 éléments de fixation.
+ Procédez également au contrôle pour l'autre côté.
+ Enfin, contrôlez la position des mécanismes de dosage et la position des disques de dosage. Référez-vous pour ce faire au
+ paragraphe »Contrôle et réglage du mécanisme de dosage« de la page 133.
+139<|begin_of_text|>
+===Page 140===
+
+Maintenance
+Remplacement du joint d'étanchéité de l'arbre de l'agitateur
+140
+[Image]
+Evitez tout contact avec l'engrais et d'autres produits
+Lorsque vous remplissez, réglez et testez l'épandeur, il se peut que vous entriez en contact avec l'engrais ou d'autres produits d'épandage. Portez des vêtements de protection et des gants protecteurs, lisez les instructions de sécurité du fournisseur et conformez-vous aux instructions supplémentaires. Le contact avec des produits peut être à l'origine de blessures corporelles.
+Attention à ne pas vous coincer!
+Lors du contrôle et du réglage de l'épandeur, vous pouvez facilement vous coincer.
+Veillez à votre sécurité lors du contrôle et du réglage en :
+· coupant le système de commande électronique,
+· coupant le contact du tracteur et en retirant la clé du contact,
+· serré le frein à main sur le tracteur,
+· attendant que toutes les pièces de la machine se soient totalement arrêtées avant de procéder aux opérations de maintenance,
+· portant des vêtements de protection tels que des gants protecteurs et des chaussures de sécurité,
+· d'exécuter seul et avec prudence la procédure décrite.
+En vous coinçant, vous pouvez vous blesser.
+L'arbre de l'agitateur est pourvu d'un joint d'étanchéité en plastique afin d'éviter que vous perdiez des granulés d'engrais le long de l'arbre de l'agitateur. La bague d'étanchéité doit être remplacée à chaque début de saison et au bout de toutes les 100 heures d'utilisation de la machine. Procédez aux opérations uniquement sur une machine propre dont la trémie est vide.
+ Réglez le levier de dosage fin dans la position de dosage normal.
+ Démarrez le tracteur et branchez le boîtier de commande.
+ Activez la fonction de vidange de trémie.
+ Voir les instructions du logiciel
+ Attendez que les deux vérins électriques se soient entièrement déployés et que les unités de dosage soient entièrement ouvertes.
+ Placez la machine sur le sol ou sur des supports solides reposant sur une surface plane et robuste.
+ Débranchez le système de commande électronique et coupez le moteur du tracteur, retirez la clé de contact et serrez le frein à main.
+</context>
+<question>
+    How often should the agitator axle seal be replaced?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

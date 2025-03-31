@@ -1,0 +1,22 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|><page number="86"><text>Opérations avant l'épandage</text><text>Pour l'épandage des bordures en mode H 2 O, des déflecteurs de bordure plus longs sont fournis.</text><text>Reprenez dans ce cas les réglages du tableau d'épandage pour le mode H 2 O</text><image /><text>Les positions pour le mode H 2 O vont de A à D et sont indiquées dans les tableaux d'épandage</text><text> Consultez les instructions fournies pour monter correctement les déflecteurs.</text><text>86</text><image /><image /></page><|begin_of_text|><page number="87"><image /><image /><text>Déflecteur de bordure hydraulique</text><image caption="Déflecteur de bordure hydraulique" /><image /><text>Opérations avant l'épandage</text><text>Evaluation et adaptation</text><text>La perte maximale autorisée dans le fossé est définie dans une norme environnementale. Pour satisfaire à celle-ci, la quantité d'engrais dans le premier bac de collecte situé dans le fossé fictif peut représenter au maximum 10 % de la quantité contenue dans le bac de collecte au centre de la voie du tracteur (= 100 %).</text><text>Le bac de collecte sur le champ le long de la bordure de tranchée fictive fournit une dose complémentaire pour la nappe d'épandage. La dose complémentaire ne doit jamais être de 100 %.</text><table>   0                                                                                                                                                           1
+0  A                                                                                                       Nappe d'épandage régulière, l'épandeur est bien réglé
+1  B  L'épandage de bordure est trop étroit.  Réglez le déflecteur de bordure légèrement vers la droite, vers  le (9) (= fossé).  Effectuez à nouveau le test.
+2  C                              L'épandage de bordure est trop large :  Réglez le déflecteur de bordure légèrement vers la gauche,  vers le (1) (= parcelle).</table><text> Testez ensuite la nappe d'épandage plein champ à l'aide de la procédure décrite au paragraphe qui suit.</text><text>87</text></page><|begin_of_text|><page number="88"><text>Opérations avant l'épandage</text><text>Test du profil d'épandage grande largeur avec le déflecteur de bordure hydraulique</text><text>La diminution du régime de prise de force et la fermeture du disque d'épandage droit ont également une incidence sur la nappe d'épandage sur le bord gauche de l'épandeur. Testez pour cette raison la nappe d'épandage plein champ à l'aide du déflecteur de bordure. Conformez-vous à la procédure mais en y incluant les adaptations pour l'épandage de bordure, décrites au</text><image /><text> paragraphe »Test de la nappe d'épandage plein champ« de la page 81.</text><text>Réalisation</text><text> Ne modifiez pas la position du déflecteur de bordure et laissez le
+</context>
+<question>
+    By which environmental standards is the maximum acceptable loss in the ditch is determined?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

@@ -1,0 +1,50 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     verrouillez-les.
+ Retirez l'agitateur de l'arbre de l'agitateur.
+ Contrôlez si la distance entre l'arbre de l'agitateur et la bague d'étanchéité est la même sur tous les côtés.
+Si la distance n'est pas identique partout, vous pouvez modifier la position des disques de dosage par rapport à l'arbre de l'agitateur.
+ Retirez le tableau de bord en dévissant les 3 éléments de fixation.
+ Dévissez légèrement les écrous sur les 4 boulons de fixation qui fixent le mécanisme de dosage sur la trémie.
+ Déplacez les disques de dosage de sorte à ce que la distance entre l'arbre de l'agitateur et la bague d'étanchéité soit identique sur tous les côtés.
+ Resserrez les écrous sur les 4 boulons de fixation sans déplacer à nouveau les disques de dosage.
+ Montez à nouveau l'agitateur.
+ Fixez à nouveau le tableau de bord à l'aide des 3 éléments de fixation.
+ Effectuez ensuite le contrôle détaillé au
+ paragraphe »Contrôle et réglage du mécanisme de réglage du point de chute« de la page 136.<|begin_of_text|>
+===Page 135===
+
+Réglage des disques de dosage
+[Image]
+[Image]
+Point de fixation
+[Image]
+Maintenance
+Afin d'obtenir un dosage correct, il est nécessaire de placer les disques de dosage dans la bonne position les uns par rapport aux autres. Si les orifices de dosage ne ferment pas correctement, vous perdrez de l'engrais inutilement et le débit sera involontairement plus élevé que ce que vous escomptiez pour les réglages d'ouvertures déterminés. Si les disques sont trop loin les uns des autres, le débit sera involontairement inférieur.
+Si les plaques de dosage sont correctement montées, vous pouvez encore apercevoir un peu de lumière lorsque les orifices de dosage sont fermés.
+ Fermez les unités de dosage de l'épandeur sur le boîtier de commande. Les vérins électriques doivent être entièrement remis en place.
+ Placez la machine sur le sol ou sur des supports solides reposant sur une surface plane et robuste.
+ Débranchez le système de commande électronique et coupez le moteur du tracteur, retirez la clé de contact et serrez le frein à main.
+ Ouvrez les tamis avec l'outil fourni et verrouillez-les.
+ Vérifiez si vous apercevez une petite fente entre les disques de dosage.
+ Si ce n'est pas le cas, déplacez alors le point de chute du vérin électrique au niveau du mécanisme de dosage jusqu'à ce qu'une petite fente apparaisse entre les disques de dosage.
+ Démarrez le tracteur et ouvrez et fermez les unités de dosage en appuyant plusieurs fois sur les touches "START" et "STOP".
+ Débranchez le système de commande électronique, coupez le moteur du tracteur et retirez la clé du contact.
+ Vérifiez à nouveau si vous apercevez une petite fente entre les disques de dosage.
+135
+</context>
+<question>
+    What is the 'small crack of light' dimension in millimeters between 'dosing baffles' when closed?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

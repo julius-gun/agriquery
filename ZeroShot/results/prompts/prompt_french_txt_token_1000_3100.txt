@@ -1,0 +1,53 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    ant d'une formation complète et aux personnes qualifiées pour les travaux agricoles formés à l'utilisation de cette machine conformément à la législation nationale et n'ignorant rien des techniques de montage.
+Pour des raisons de sécurité
+Lisez le contenu de ce manuel avant de mettre en service ou monter la machine. Vous obtiendrez ainsi un résultat optimal et travaillerez en toute sécurité.
+ Voir paragraphe »Consignes de sécurité« de la page 10. Pour toute question ou imprécision, nous vous prions de vous adresser au fabricant de la machine.
+Veillez à ce que le présent manuel soit à la disposition de toutes les personnes amenées à utiliser cette machine. Vous serez ainsi à même :
+· d'éviter tout accident éventuel,
+· de respecter les conditions de garantie,
+· de disposer en permanence d'une machine fonctionnelle en parfait état de marche.
+Note destinée à l'employeur
+· L'ensemble du personnel travaillant avec cette machine doit y être habilité conformément à la législation nationale en vigueur.
+·  L'ensemble du personnel doit être régulièrement formé à l'utilisation de la machine (au moins une fois par an), conformément aux directives d'association d'assurance de responsabilité civile de l'employeur.. L'utilisation de la machine est interdite à toute personne non formée ou non habilitée à l'utiliser.
+· Vous êtes responsable de la sécurité d'utilisation et de l'entretien de votre machine. Vous devez vous assurer que toute personne (vous y compris) amenée à se servir de la machine, à l'entretenir ou à travailler avec celle-ci, connaît et maîtrise les procédures de fonctionnement et de maintenance ainsi que les consignes de sécurité décrites dans le présent manuel d'utilisation.
+· Il est de votre responsabilité de vous assurer que des moyens de protection ont été remis à chacun de vos employés amenés à utiliser, entretenir ou réparer la machine. Ces moyens de protection sont notamment les suivants : lunettes de sécurité, chaussures de sécurité, gants de sécurité, etc.<|begin_of_text|>
+===Page 5===
+
+Signification des symboles
+INDICATION
+[Image]
+[Image]
+[Image]
+Avant-propos
+Divers symboles sont utilisés pour clarifier le texte. Leur signification est indiquée ci-dessous :
+· Les énumérations sont indiquées par un point.
+ Les opérations que vous devez effectuer sont précédées d'un triangle.
+ Une flèche renvoie à un autre passage de ce manuel.
+En outre, les pictogrammes utilisés sont destinés à vous aider à trouver facilement certaines parties du texte.
+Les mots « Conseil » et « Indication » sont suivis de conseils ou d'indications pour l'utilisation de la machine.
+Le triangle d'avertissement indique des consignes de sécurité importantes. Le non-respect de ces consignes peut entraîner :
+· de sérieux dysfonctionnements de la machine,
+· l'endommagement de la machine,
+· des dommages corporels ou accidents.
+La clé plate annonce des conseils de montage ou de réglage.
+Une étoile annonce des exemples qui ont pour but d'expliciter le texte.
+Toutes les indications d'orientation utilisées dans le texte désignent toujours le sens de la marche.
+5
+</context>
+<question>
+    By which international standard are the pictograms used in this manual specified for agricultural machinery?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

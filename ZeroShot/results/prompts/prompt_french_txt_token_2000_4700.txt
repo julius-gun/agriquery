@@ -1,0 +1,95 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|>
+===Page 23===
+
+Apprendre à connaître la machine
+Apprendre à connaître la machine
+Domaine d'utilisation de la machine
+Raccordement sur les pointes en bout de champ
+[Image: Raccordement sur les pointes en bout de champ]
+Logiciel
+Logiciel
+Système d'épandage CentreFlow
+[Image]
+Cette machine actionnée par prise de force est adaptée à l'épandage entre autres de types d'engrais granulaires pour la culture de plein champ et herbagère. Elle est fixée
+· à l'aide du dispositif de levage à trois points du tracteur (Cat. II),
+· au moyen du chevalet d'attelage (accessoires) pour les tracteurs avec dispositif de relevage de cat. III ou
+· sur un essieu monté fourni à cet effet.
+L'épandage de bordure est possible avec l'utilisation des éléments suivants :
+· le déflecteur de bordure hydraulique,
+· le système d'épandage de bordure ExactLine.
+GEOSPREAD et GEOCONTROL
+Le logiciel de commande GEOCONTROL permet d'améliorer
+· la reprise de ligne après le demi-tour en bout de champ,
+· le travail en pointe
+· et le dernier passage incomplet.
+Épandage sur les pointes
+Dans les pointes, la reprise après le demi-tour en bout de champ est également optimale grâce à l'ajustement de la largeur de travail par le GEOSPREAD.
+La description de ce manuel porte sur le système de commande GEOSPREAD.
+ Voir les instructions du logiciel.
+La description de ce manuel porte sur le système de commande GEOSPREAD
+ Pour une description détaillée, voir le manuel d'instructions du logiciel
+Cet épandeur centrifuge est doté de deux disques avec huit pales chacun. Ils sont montés à plat de manière à ce que l'engrais soit réparti sur le terrain en un flux horizontal constant. La quantité d'engrais est réglée à l'aide d'un disque de dosage situé au-dessus du disque d'épandage, les deux disques de dosage sont placés au-dessus du centre des bagues d'écoulement.
+L'engrais tombe sur le disque d'épandage rotatif. Via une ouverture dans les goulottes, le point de chute est localisé vers les pales. Ainsi, les grains d'engrais impriment déjà un mouvement rotatif avant d'entrer en contact avec les pales sur le disque. La casse des grains et la formation de poudre sont ainsi évitées.
+L'agitateur monté en bas dans la trémie assure un débit régulier et constant de l'engrais, des graines ou des granulés vers les orifices de dosage. De plus, l'agitateur évite que les débris d'engrais ne viennent obstruer un ou plusieurs orifices de dosage.
+23<|begin_of_text|>
+===Page 24===
+
+Apprendre à connaître la machine
+Réglage de précision
+Débit
+[Image]
+Dosage fin
+Levier de dosage fin position de dosage normal
+[Image: Levier de dosage fin position de dosage normal]
+Levier de dosage fin position de dosage fin
+[Image: Levier de dosage fin position de dosage fin]
+24
+L'épandeur dispose de deux vérins électriques par unité de dosage pour régler le débit et la largeur de travail indépendamment l'un de l'autre. En outre, il est possible de fermer 2 des 3 orifices de dosage de sorte à ce que le débit souhaité puisse être réglé de manière précise, même avec une faible vitesse d'écoulement tout en limitant au maximum le risque d'obstruction.
+Pour le réglage du débit, la machine est équipée à l'arrière de deux vérins électriques qui commandent chacun un disque de dosage. Ce vérin permet d'ouvrir le disque de dosage dans chaque position souhaitée. Ainsi, il est possible d'effectuer un dosage précis indépendamment de la vitesse d'avancement. Il est également possible de piloter le réglage des ouvertures de dosage à l'aide de capteurs extérieurs, par exemple un détecteur d'azote.
+ Voir paragraphe »Débit« de la page 66.
+Les vérins électriques sont commandés au niveau du logiciel de l'épandeur. Au moyen de capteurs de pesée, l'épandeur mesure en continu la quantité d'écoulement et la corrige si nécessaire au moyen du débit réglé.
+Si vous souhaitez fermer le mécanisme de dosage sur un côté, vous pouvez sélectionner cette fonction sur le boîtier de commande ; l'un des deux disques de dosage se ferme immédiatement.
+Dosage normal
+Pour obtenir un dosage précis sur une grande plage de réglage, on ouvre les 3 orifices de dosage sur chaque disque.
+Dosage fin
+Pour l'épandage de fumier souterrain, l'épandeur est équipé de façon standard d'un système de dosage fin. Ce dosage fin doit être réglé, par unité de dosage, à l'aide d'un levier. Un faible débit requiert un petit orifice de dosage. Afin pour cela
+· obtenir un réglage fin
+· et éviter tout risque d'obstruction,
+un passage vers un orifice plus grand est souhaitable.
+En position de dosage fin, 2 des 3 orifices de dosage sont fermés. L'engrais s'écoule désormais par l'orifice restant qui est ouvert plus grand, ce qui donne un écoulement précis et sûr, même à faible débit.<|begin_of_text|>
+===Page 25===
+
+Apprendre à connaître la machine
+Division de la largeur de travail avec le GEOSPREAD
+Vérin électrique pour la réglage du point d'écoulement
+[Image: Vérin électrique pour la réglage du point d'écoulement]
+Combinaison avec le système GEOSPREAD
+Réglage des lettres du point d'écoulement
+[Image]
+La nappe d'épandage est également déterminée par la répartition transversale.
+C'est au point d'écoulement que les grains d'engrais entrent en contact avec les aubes sur le disque d'épandage, ce qui est déterminant pour la répartition de la largeur.
+Vérins électriques pour le réglage du point d'écoulement
+Le GEOSPREAD dispose de deux vérins électriques pour le réglage du point d'écoulement. Le réglage du point d'écoulement dépend du type d'engrais chimique et de la vitesse d'écoulement en kg/min. Sur le tableau d'épandage, vous trouverez le réglage des lettres pour le point d'écoulement aux côtés du débit et de la largeur de travail que vous aurez retenus. L'ordinateur d'épandage détermine le bon réglage à l'aide des données de travail et du tableau d'épandage saisies.
+Forme de nappe d'épandage
+En règle générale, la nappe d'épandage est en forme de triangle avec un recouvrement complet.
+En fonction du type d'engrais, du débit et de la largeur de travail, le profil d'épandage peut être en trapèze. Cette nappe d'épandage a une zone de recouvrement inférieure à 100 %.
+Réduction de la largeur de travail pendant le passage
+La commande
+</context>
+<question>
+    Is fine application more expensive than normal dosing?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

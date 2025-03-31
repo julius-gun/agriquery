@@ -1,0 +1,9 @@
+ollama pull llama3.2:1b
+ollama pull llama3.2
+ollama pull llama3.1
+ollama pull phi3:mini-128k
+ollama pull phi3:medium-128k
+ollama pull gemma2:latest
+ollama pull qwen2.5
+ollama pull deepseek-r1:14b
+ollama pull deepseek-r1:1.5b

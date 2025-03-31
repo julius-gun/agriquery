@@ -1,0 +1,19 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|>[{"page_number": 93, "element_type": "SectionHeaderItem", "content": "Maschine transportfertig machen", "additional_info": ""}, {"page_number": 93, "element_type": "TextItem", "content": "Stra\u00dfenfahrt", "additional_info": ""}, {"page_number": 93, "element_type": "TextItem", "content": "Bevor Sie sich mit Ihrem Schlepper mit Maschine auf \u00f6ffentliche Stra\u00dfen begeben, ist das Folgende zu tun:", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\uf034 \u00dcberpr\u00fcfen Sie, ob Schlepper und Maschine der Stra\u00dfenverkehrsordnung gen\u00fcgen.", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\uf034 Kontrollieren Sie die Funktion und Befestigung der Beleuchtung, Warn- und Schutzvorrichtungen sowie der Bremsanlage.", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\uf034 Kontrollieren Sie den Lauf der Schnellkupplungsseile des Krafthebers.", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\uf034 Eventuelle zus\u00e4tzliche Beleuchtungsanlagen und Warnkennzeichen anbringen.", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\uf034 Alle klappbaren Teile \u00fcberpr\u00fcfen und kontrollieren, dass diese gesichert sind:", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\u00b7 Abdeckplane,", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\u00b7 ExactLine", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\u00b7 hydraulisches Grenzstreublech.", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\uf034 Setzen Sie alle Teile der Maschine und des Schleppers, vornehmlich die Zapfwelle, das hydraulische, pneumatische und elektrische System in Transportstellung.", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\uf034 Die Gewichtsverteilung zwischen Vorder- und Hinterachse kontrollieren.", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\uf034 Eventuell Frontballast anbringen.", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\uf034 Die Durchfahrth\u00f6he der Kombination von Schlepper und Maschine pr\u00fcfen.", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\uf034 Eventuell den Kraftheber absenken.", "additional_info": ""}, {"page_number": 93, "element_type": "ListItem", "content": "\uf034 Verriegeln Sie den Bedienhebel des Krafthe
+</context>
+<question>
+    What is the recommended tire pressure 'range' for transport mode?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

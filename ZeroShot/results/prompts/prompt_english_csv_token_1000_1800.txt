@@ -1,0 +1,19 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|>[{"page_number": 95, "element_type": "SectionHeaderItem", "content": "Adjusting the machine", "additional_info": ""}, {"page_number": 95, "element_type": "SectionHeaderItem", "content": "Spreading height", "additional_info": ""}, {"page_number": 95, "element_type": "TextItem", "content": "Ground level or the top level of the crops", "additional_info": ""}, {"page_number": 95, "element_type": "PictureItem", "content": "Image", "additional_info": "Ground level or the top level of the crops"}, {"page_number": 95, "element_type": "PictureItem", "content": "Image", "additional_info": ""}, {"page_number": 95, "element_type": "TextItem", "content": "INDICATION", "additional_info": ""}, {"page_number": 95, "element_type": "TextItem", "content": "Use in the field", "additional_info": ""}, {"page_number": 95, "element_type": "TextItem", "content": "Most types of fertiliser attract water and can thereby form large chunks. These chunks can block the spreader or distort the spreading pattern.", "additional_info": ""}, {"page_number": 95, "element_type": "ListItem", "content": "\u00b7 When working under moist weather conditions, use a hopper cover that closes well.", "additional_info": ""}, {"page_number": 95, "element_type": "ListItem", "content": "\u00b7 Do not spread without a hopper cover under moist conditions.", "additional_info": ""}, {"page_number": 95, "element_type": "ListItem", "content": "\u00b7 Never leave the fertiliser for a long period of time in the spreader. Chunks can also be formed through moisture in the air.", "additional_info": ""}, {"page_number": 95, "element_type": "ListItem", "content": "\u00b7 Always clean the spreader well after use, including the dosing openings and the discharge bushings.", "additional_info": ""}, {"page_number": 95, "element_type": "TextItem", "content": "Before you can make the first pass, you must make adjustments in the field to:", "additional_info": ""}, {"page_number": 95, "element_type": "TextItem", "content": "The following is important to ensure that the spreader works properly:", "additional_info": ""}, {"page_number": 95, "element_type": "ListItem", "content": "\u00b7 set it to the correct height from the ground or above the crop and", "additional_info": ""}, {"page_number": 95, "element_type": "ListItem", "content": "\u00b7 by levelling it with the lift rod adjustment and top link.", "additional_info": ""}, {"page_number": 95, "element_type": "TextItem", "content": "Measured from the bottom of the vanes, the distance to the ground or the crop must be 75 cm.", "additional_info": ""}, {"page_number": 95, "element_type": "ListItem", "content": "\uf034 Use the power lift to lift the machine to the correct height.", "additional_info": ""}, {"page_number": 95, "element_type": "ListItem", "content": "\uf034 Set the spreader horizontally with the lift rod adjustment and the top link.", "additional_info": ""}, {"page_number": 95, "element_type": "ListItem", "content": "\uf034 Lock
+</context>
+<question>
+    What is the tolerance for 'measured distance from the bottom of the vanes, the distance to the ground or the crop' in cm?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

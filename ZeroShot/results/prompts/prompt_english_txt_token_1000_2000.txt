@@ -1,0 +1,91 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|>
+===Page 125===
+
+Maintenance intervals
+Maintenance
+Keep to the checking and maintenance intervals given below to keep the machine in good working order.
+                                                           da il y    af te r th e first  10 hou rs we ekly ev ery  1 00  ho urs min. 1 x  per ye ar As  r eco mme nde d If  worn Page
+0                                                       Inspection                                                                                                                    
+1                                        »Checking bolts and nuts«                                ·       ·                                                                        130
+2                                  »Checking the hydraulic system«  ·                             ·                                                                                131
+3                  Condition of the agitator and the agitator axle  ·                                                                                                                 
+4                                           Condition of the vanes  ·                                                                                                               43
+5                      »Checking and setting the dosing mechanism«                                ·                                                ·                               133
+6   »Checking and setting the discharge point setting mecha- nism«                                ·                                                ·                               136
+7              »Checking and setting the discharge bushing height«                                                                                 ·                                  
+8                                                                                                 ·                                                                                138
+9                                                      Lubrication                                                                                                                    
+10                               4 grease nipples on the PTO shaft  ·                                                                                                              126
+11                     2 grease nipples on both discharge bushings  ·                                                                                                              126
+12                           1 grease nipple on all four actuators  ·                                                                                                              126
+13                                       Applying or adding grease                                                                                                                    
+14                                  Coupling shafts profiled tubes                                                                                 ·                   ·           127
+15                                                 Central gearbox                                ·                                                ·                               127
+16                                       Spreading discs gearboxes                                                                                 ·                               128
+17                                                         Add oil                                                                                                                    
+18                             Connectors in spreading disc drives                                ·                                                ·                               128
+19                                                         Replace                                                                                                                    
+20                                  Hydraulic hoses and connectors                                                                                                     ·        ·  131
+21                                                   agitator seal                                                                                 ·                            ·  140
+22                                                        agitator                                                                                                              ·     
+23                                                           Vanes                                                                                                              ·     
+125<|begin_of_text|>
+===Page 126===
+
+Maintenance
+Lubricating points
+Coupling shaft with quick lock
+[Image]
+Discharge bushings
+[Image]
+Actuators
+Grease nipples
+[Image: Grease nipples]
+126
+All lubricating nipples of the machine can be filled with a universal grease type.
+ See »Oil and grease content« on page 124.
+ See »Maintenance intervals« on page 125.
+The coupling shaft is provided with grease nipples.
+ Lubricate the nipples.
+ Check the condition of the protection sleeves and the check chains.
+ Replace them if damaged.
+The discharge bushings are attached lower down to the agitator axle and have 2 grease nipples.
+ Open the discharge bushings
+ See the software instruction manual.
+ Turn the spreading disc by hand until both grease nipples are visible.
+ Grease the 2 nipples of both discharge bushings.
+The actuators are provided with 1 grease nipple.
+ Grease the nipple of all four actuators.<|begin_of_text|>
+===Page 127===
+
+Maintenance
+Applying or adding grease
+Coupling shaft profiled tubes You must grease the profiled tubes of the coupling shaft regularly. Ap-
+[Image]
+Central gear box
+[Image]
+gearboxes of the spreading discs
+There is grease in the gearbox below the spreading discs. The level of the grease under the filler opening must be 35 mm when the machine has been standing still for a short time.
+[Image]
+ Remove dirt, fertiliser or grease from the gearbox.
+ Open the gearbox by removing the cap from the filler opening.
+ Measure the level of the grease.
+ Add grease until the desired level is reached
+</context>
+<question>
+    How many grease nipples do the discharge bushings have?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

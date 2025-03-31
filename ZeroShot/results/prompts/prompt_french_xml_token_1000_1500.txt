@@ -1,0 +1,19 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|><page number="138"><text>Maintenance</text><text>Contrôle et réglage de la hauteur de la bague d'écoulement</text><image /><text>Bras de levage</text><image caption="Bras de levage" /><text>goulotte</text><text>disque d'épandage</text><image caption="goulottedisque d'épandage" /><text>Éléments de fixation</text><text>Tableau de bord</text><image caption="Éléments de fixationTableau de bord" /><image /><text>138</text><text>Evitez tout contact avec l'engrais et d'autres produits</text><text>Lorsque vous remplissez, réglez et testez l'épandeur, il se peut que vous entriez en contact avec l'engrais ou d'autres produits d'épandage. Portez des vêtements de protection et des gants protecteurs, lisez les instructions de sécurité du fournisseur et conformez-vous aux instructions supplémentaires. Le contact avec des produits peut être à l'origine de blessures corporelles.</text><text>Attention à ne pas vous coincer!</text><text>Lors du contrôle et du réglage de l'épandeur, vous pouvez facilement vous coincer.</text><text>Veillez à votre sécurité lors du contrôle et du réglage en :</text><text>· coupant le système de commande électronique,</text><text>· coupant le contact du tracteur et en retirant la clé du contact,</text><text>· serrant le frein à main sur le tracteur,</text><text>· attendant que toutes les pièces de la machine se soient totalement arrêtées avant de procéder aux opérations de maintenance,</text><text>· portant des vêtements de protection tels que des gants protecteurs et des chaussures de sécurité,</text><text>· d'exécuter seul et avec prudence la procédure décrite.</text><text>En vous coinçant, vous pouvez vous blesser.</text><text>La distance entre la bague d'écoulement et le disque d'épandage doit être de 1,0 mm.</text><text>Si la distance est trop importante, l'engrais ne s'écoule pas par l'ouverture de la bague d'écoulement sur le disque d'épandage mais sur un point quelconque sous la bague d'écoulement. Il en résulte une altération de la nappe d'épandage.</text><text>Si la distance est trop réduite, une trémie pleine peut reposer partiellement sur le disque d'épandage, ce qui endommage sérieusement la machine.</text><text> Attelez la machine vide et relevez-la à sa hauteur de travail (75 cm).</text><text> Coupez le moteur du tracteur, retirez la clé du contact et serrez le frein à main sur le tracteur.</text><text> Placez des supports solides et stables sous les extrémités des bras de levage.</text><text> Abaissez les bras de levage sur les supports. La machine ne risque plus de s'abaisser accidentellement.</text><text> Coupez le moteur du tracteur, retirez la clé du
+</context>
+<question>
+    What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

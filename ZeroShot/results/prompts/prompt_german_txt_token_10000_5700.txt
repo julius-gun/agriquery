@@ -1,0 +1,384 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    reumengentest) ausführen.
+ Siehe Vorgehensweise in Absatz »Streubildkontrolle (Streumengentest)« auf Seite 76.
+In der (Online-)Streutabelle finden Sie neben dem Symbol Winkel Streuer die Empfehlung für den Winkel des Streuers. Normalerweise soll der Streuer horizontal stehen. Insbesondere bei großen Arbeitsbreiten oder bei Spätdüngung kann es erforderlich sein, den Streuer in einen Winkel zu setzen.
+Sie können den richtigen Winkel einstellen, indem Sie den Oberlenker verdrehen.
+Auf dem Streuer befindet sich ein Zeiger, der den Winkel des Streuers wiedergibt.
+Stellen Sie den Winkel des Streuers ein, bevor Sie den Behälter füllen. Sie können den Oberlenker leichter verdrehen, wenn der Behälter leer ist.
+Überprüfen Sie den Stand auch bei vollem Behälter!
+Wenn die Schrägstellung auf 4 o oder 8 o steht, verschiebt sich das Streugebiet weiter hinter den Streuer.
+ Vergrößern Sie im Bildschirm Maschinendaten, die Länge B um 10 % bzw. 20 % bei 4 o oder 8 o.
+ Siehe zur Arbeitsweise die Bedienungsanleitung der Software.
+In der (Online-)Streutabelle wird sowohl die benötigte Drehzahl der Streuscheiben als auch die der Zapfwelle wiedergegeben. Die Zapfwellendrehzahl wird zusammen mit dem verwendeten Anschlusspunkt der Gelenkwelle an der Maschinenseite wiedergegeben. Sie müssen die angegebene Streuscheibendrehzahl erreichen. Die aktuelle Drehzahl der Streuscheiben ist auf dem Bildschirm der Bedieneinheit wiedergegeben.
+Im Fall von Grenzstreuen ist es meistens erforderlich, die Zapfwellendrehzahl anzupassen. Bei Einsatz von ExactLine und Grenzstreublech erhalten Sie die empfohlene Zapfwellendrehzahl und dazugehörige Streuscheibendrehzahl im Streutabellenbuch, über den Online-Streutabellenservice auf der Website oder über die kostenlose App für Mobiltelefone.
+Verwenden Sie den Anschlusspunkt, der in derselben Streutabelle angegeben ist.
+Siehe Kapitel »Grenzstreuen« ab Seite 106.
+65<|begin_of_text|>
+===Page 66===
+
+Arbeiten vor dem Streuen
+Dosis
+Gleichmäßige Dosis
+[Image]
+[Image]
+[Image]
+Das Bediensystem kann den Streuer auf drei verschiedene Weisen ansteuern:
+· unter wechselnden Umständen eine so gleichmäßig wie mögliche Verteilung einer vorab eingestellten Dosis mithilfe einer automatischen Kalibrierung und Fahrgeschwindigkeitskorrektur realisieren,
+ siehe nachstehender Absatz »Gleichmäßige Dosis«.
+bei gleichmäßigen, geringen Dosen (< 40 kg/min) verwenden Sie das Feindosierset,
+ siehe Absatz »Feindosieren« auf Seite 67.
+· bei sehr geringen Dosen oder auf sehr ungleichen Parzellen einer vorab eingestellten Dosis mit einer manuell kontrollierten Dosierstellung verstreuen, ohne automatische Kalibrierung, aber mit Geschwindigkeitskorrektur,
+· unter wechselnden Umständen eine ortsspezifische Dosis realisieren, unter Ansteuerung eines externen Signals, mithilfe von automatischer Kalibrierung und Fahrgeschwindigkeitskorrektur,
+ siehe Absatz »Variable, extern gesteuerte Dosis« auf Seite 72.
+Das Bediensystem kann über die ganze Parzelle eine gleiche Menge Kunstdünger verteilen. Dabei korrigiert das Steuersystem Veränderungen bei der Fahrgeschwindigkeit, aber Sie behalten die Möglichkeit, die Dosis manuell mit Über- oder Unterdosierung anzupassen.
+Das Bediensystem kann während des Streuens durch automatische Kalibrierung den richtigen Dosierstand zu der eingestellten Dosis suchen. Der Nachteil besteht darin, dass die Dosis bis zur zweiten automatischen Kalibrierung ( = ungefähr 2 Minuten) erheblich von der gewünschten Dosis abweichen kann. Wir empfehlen Ihnen daher dringend, einen Startwert einzugeben, den Sie aus der Streutabelle ablesen können. Dies erfolgt in dem Bildschirm 'Curve Calibration'. Mit dem Startwert berechnet das Steuersystem die Auslaufkurve. Anhand dieser Kurve korrigiert das Steuersystem den Streuer bei veränderten Umständen, beispielsweise einer veränderten Fahrgeschwindigkeit.
+ Siehe auch Absatz »Das ISO-Bediensystem« ab Seite 30.
+Suchen Sie in der (Online-)Streutabelle die am ehesten vergleichbare Düngemittelsorte und die gewünschte Arbeitsbreite und korrekten Einstellungen auf:
+ Lesen Sie in der Spalte Dosierstellung die Dosierstellung ab, die zu der gewünschten Dosis und der gewünschten Fahrgeschwindigkeit gehört.
+ Lesen Sie in der Spalte kg/min die dazugehörige Auslassgeschwindigkeit ab.
+ Geben Sie die abgelesenen Werte in das Bediensystem ein.
+Sollte die von Ihnen gewünschte zu streuende Dosis nicht in der Streutabelle enthalten sein, verwenden Sie die Einstellungen zu der Dosis, die der von Ihnen gewünschten am nächsten kommt. Sollte die Fahrgeschwindigkeit nicht angegeben sein, dann verwenden Sie die Einstellungen der Fahrgeschwindigkeit, die der von Ihnen gewünschten Fahrgeschwindigkeit am nächsten kommt.
+66<|begin_of_text|>
+===Page 67===
+
+Feindosieren
+Hebel Feindosierung Stellung normal dosieren
+[Image: Hebel Feindosierung Stellung normal dosieren]
+[Image]
+Hebel Feindosierung Stellung Feindosierung
+[Image: Hebel Feindosierung Stellung Feindosierung]
+Arbeiten vor dem Streuen
+Normalerweise öffnen alle drei Dosieröffnungen gleichmäßig mit der gewünschten Dosis und dazugehörigen Auslassgeschwindigkeit, die Sie eingestellt haben. Bei einer geringeren Dosis und/oder geringeren Fahrgeschwindigkeit sind die Dosieröffnungen nur ein bisschen geöffnet, da nur wenig Kunstdünger durch die Dosieröffnungen strömen soll. Verstopfungen können dabei leicht auftreten, was zu einem schlechten Streubild und zu Schäden am Erntegut führen kann.
+Wir empfehlen daher, die Feindosierung zu verwenden, wenn die Aus-
+lassgeschwindigkeit geringer als 40 kg/min ist. Den Durchsatz bei einer bestimmten Arbeitsbreite, Dosis und Geschwindigkeit finden Sie in der vierten Spalte der Streutabelle.
+Wenn Sie sehr geringe Dosen (weniger als 25 kg/ha) verstreuen möchten, z. B. wenige Kilogramm pro Hektar, kann das Bediensystem keine automatische Kalibrierungen ausführen. Das verstreute Gewicht ist zu klein, um die Dosis genau einstellen zu können.
+Um Verstopfungen zu vermeiden, können Sie 2 der 3 Dosieröffnungen schließen. Die verbleibende Öffnung muss sich dann weiter öffnen, da bei gleichbleibender Dosis der Durchsatz durch die Öffnung dreimal so hoch sein muss.
+Den Feindosierhebel, mit dem Sie 2 der 3 Dosieröffnungen schließen oder öffnen können, finden Sie an der Außenseite der Streuscheibe, oberhalb des gleichförmigen Hebels für den Auslasspunkt. Bei dem Feindosierhebel befinden sich die Kennzeichnungen für die Anzahl der Dosieröffnungen: 3 offene runde Öffnungen für normales Dosieren, 1 offene runde und 2 geschlossene Öffnungen für das Feindosieren.
+ Schalten Sie den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss und betätigen Sie die Feststellbremse des Schleppers.
+ Ziehen Sie den Griff des Feindosierhebels nach außen.
+ Verstellen Sie den Feindosierhebel, bis dass der Pfeil auf dem Handgriff die gewünschte Stellung aufweist.
+ Lassen Sie den Griff los und überprüfen Sie, ob der Feindosierhebel verriegelt ist.
+
+Stellen Sie den Feindosierhebel an der anderen Streuscheibe auf gleiche Weise in dieselbe Position.
+67<|begin_of_text|>
+===Page 68===
+
+Arbeiten vor dem Streuen
+Dosierstellung
+[Image]
+[Image]
+[Image]
+Die Dosierstellung, die Sie testen werden, können Sie:
+· Aus der betreffenden Streutabelle ablesen, wenn Sie eine geringe Dosis verstreuen möchten, bei der Sie das Feindosier-Set verwenden und in der Streutabelle hinter dem Symbol Feindosier-Set angegeben ist; dies wird durch 1 offene Öffnung (Dosieröffnung) angegeben.
+· Bestimmen Sie eine nicht angegebene Dosis, wie dies in Absatz »Auslassöffnung« auf Seite 65 beschrieben ist.
+· Aus der betreffenden Streutabelle ablesen, wenn Sie eine geringe Dosis verstreuen möchten, bei der Sie das Feindosier-Set verwenden und in der Streutabelle hinter dem Symbol Feindosier-Set angegeben ist; dies wird durch 3 offene Öffnungen (Dosieröffnungen) angegeben.
+Berechnung
+Da 2 von den 3 Dosieröffnungen geschlossen sind, muss die Auslassgeschwindigkeit durch die verbleibende Dosieröffnung 3-mal so groß sein, um die gleiche Dosis zu verstreuen.
+ Lesen Sie Dosierstellung, Auslassöffnung und Durchsatz aus der Streutabelle ab. Berechnen Sie ggf. den erforderlichen Durchsatz mit der nachstehenden Formel.
+Auch wenn die von Ihnen gewünschte Dosis oder Fahrgeschwindigkeit nicht in der Streutabelle aufgeführt ist, können Sie die benötigte Auslassgeschwindigkeit wie folgt berechnen:
+[Image]
+[Image]
+Benötigte Auslassgeschwindigkeit (kg/min) =
+Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha)
+600
+Nehmen Sie für die Einstellung der Auslassöffnung den Buchstaben, der in der Zeile der Streutabelle angegeben ist, die der Auslassgeschwindigkeit am nächsten kommt.
+ Multiplizieren Sie den Durchsatz (in der Spalte ( Kg/min ) enthalten oder berechnet) mit dem Faktor 3.
+ Entnehmen Sie der Spalte Kg/min den am ehesten vergleichbaren Durchsatz für den gesamten Streuer.
+ Lesen Sie die dazugehörige Dosierstellung ab oder schätzen Sie diese so gut wie möglich.
+Streuer einstellen
+68
+[Image]
+ACHTUNG!
+[Image: ACHTUNG!]
+ Verwenden Sie nicht die dort angegebene Auslassöffnung!
+ Stellen Sie den abgelesenen Auslasspunkt ein, wie dies beschrieben ist
+ in Absatz »Auslassöffnung« auf Seite 65.
+ Geben Sie diesen Dosierstand in das Bediensystem ein und bestimmen Sie die dazugehörige Auslassgeschwindigkeit durch einen manuellen Abdrehtest, wie im nachfolgenden Absatz beschrieben.
+ Siehe auch das Beispiel in Absatz »Gleichmäßige Dosis« ab Seite 66.<|begin_of_text|>
+===Page 69===
+
+[Image]
+[Image]
+[Image]
+[Image]
+525 rpm
+950 rpm
+6,5 m
+285 / 285 / 285
+[Image]
+[Image]
+Arbeiten vor dem Streuen
+✵ Angenommen, Sie möchten Schneckenkörner mit den Eigenschaften verstreuen, wie sie in der nachstehenden Streutabelle wiedergegeben sind.
+Bei einer Arbeitsbreite von 12 Metern, einer Fahrgeschwindigkeit von 8 km/h und einer gewünschten Dosis von 23 kg/ha.
+· die empfohlene Auslauföffnung: D,
+· die empfohlene Dosierstellung ist 12+1 (= 13),
+· die dazugehörige Auslassgeschwindigkeit ist 3,7 kg/min,
+· müssen Sie das Feindosier-Set verwenden
+· Die angegebene Einstellung basiert auf der Verwendung des Feindosier-Sets; diese müssen Sie nicht selbst umrechnen.
+SlugPellets
+[Image: SlugPellets]
+[Image]
+[Image]
+[Image]
+[Image]
+Delicia Schnecken Linsen
+12 m
+        kg/min    kg/min  5,0  6,0 km/h.7,0  8,0  9,0 kg/ha.10,0 kg/ha.11,0
+0   6+0   0,21  C   0,54  5,4  4,5      3,9  3,4  3,0        2,7        2,5
+1   6+1   0,32  C   0,83  8,3  6,9      5,9  5,2  4,6        4,1        3,8
+2   6+2   0,43  C    1,1   11  9,3      8,0  7,0  6,2        5,6        5,1
+3   6+3   0,54  C    1,4   14   12     10,0  8,8  7,8        7,0        6,4
+4   6+4   0,77  C    2,0   20   17       14   13   11         10        9,1
+5   6+5    1,0  C    2,6   26   22       19   16   14         13         12
+6  12+0    1,2  C    3,2   32   27       23   20   18         16         15
+7  12+1    1,4  D    3,7   37   31       27   23   21         19         17
+8  12+2    1,6  D    4,3   43   36       30   27   24         21         19
+9  12+3    1,8  E    4,8   48   40       34   30   27         24         22
+0,72  kg/L
+69<|begin_of_text|>
+===Page 70===
+
+Arbeiten vor dem Streuen
+✵ Angenommen, Sie möchten Nutramon aus dem Beispiel verstreuen, mit den Eigenschaften, wie sie in der Streutabelle auf dieser Seite angegeben sind:
+Bei einer Arbeitsbreite von 27 Metern, einer Fahrgeschwindigkeit von 8 km/h und einer gewünschten Dosis von 25 kg/ha.
+Die gesuchte Dosis fällt außerhalb des Bereichs der Streutabelle.
+ Berechnen Sie die benötigte Auslassgeschwindigkeit.
+600 Benötigte Auslassgeschwindigkeit (kg/min) = 27 (m) x 8 (km/h) x 25 (kg/ha)
+Ergebnis benötigter Durchsatz = 9 kg/min.
+ Stellen Sie die Auslauföffnung ein, die in der Tabelle angegeben ist: J
+ Berechnen Sie den benötigten Durchsatz beim Feindosieren: 3 x 9 = 27 kg/min.
+ Dieser Wert steht bei der Dosierstellung: 18+3 (= 21).
+ Führen Sie einen manuellen Abdrehtest aus, um die Auslassgeschwindigkeit zu kontrollieren.
+[Image]
+   18+0 7,7 I 17 74 18+3 12 26 115. kg/min..   J. kg/min..      5,0.. 6,0.62 96. km/h.7,0.53.82 8,0.46 72. 9,0.41 64. kg/ha.10,0.37 58. 11,0.34.52
+0                              24+0       17    L       35        156        130            112         98         87                78         71
+1                              24+3       21    L       47        209        175            150        131        116           105 131         95
+2                              30+0       26    L       59        262        219            187        164        146                          119
+3                              30+3       31    L       71        315        263            225        197        175               158        143
+4                              36+0       36    L       83    368 439        307            263        230        205               184        167
+5                         36+3 42+0    43 50  L L   99 115        509    366 424        313 363    274 318    244 283           219 254    199 231
+6                              42+3       57    L      130        579        483            414        362        322               290        263
+7                              48+0       65    L      148        659        549            471        412        366               329        299
+8                              48+3       73    L                 739        615            528        462        410               369           
+9                              54+0       81    L      166        818        682            584        511        455               409    336 372
+10                             54+3       90    L      184        920        767            657        575        511               460        418
+11                             60+0       99    L      207       1021        851            730        638        567               511        464
+12                             60+3      108    L  230 253       1123        936            802        702        624               562        511
+13                             66+0      118    L      274       1220       1017            871        762        678               610        554
+14                             66+3      128    L      296       1317       1097            940        823        731               658        598
+15                             72+0      138    L      318       1413       1178           1010        883        785               707        642
+16                             72+3      151    L      342       1519       1266           1085        950        844               760        691
+17                             78+0      163    L      366       1625       1355           1161       1016        903               813        739
+18                             78+3      175    L      390       1732       1443           1237       1082        962               866        787
+19                             84+0             L                                          1285                                     900        818
+20                             84+3  182 189    L  405 420  1799 1867  1499 1556           1333  1124 1167  1000 1037               933        848
+21                             90+0      197    L      435       1934       1612           1382       1209       1075               967        879
+70<|begin_of_text|>
+===Page 71===
+
+Manueller Abdrehtest
+[Image]
+[Image]
+Halterung für den Auffangbe-
+[Image]
+S
+Sicherungsmutter
+[Image: Sicherungsmutter]
+ACHTUNG:
+Leeren Sie nicht den Abdrehbehälter!
+Durch das Spülen des Abdrehbehälters verbessern Sie die Genauigkeit des Abdrehtests erheblich. Alle Stellen im Abdrehbehälter, in dem Kunstdünger, Saaten oder Körner liegen bleiben können, sind nun gefüllt.
+Jetzt können Sie den Abdrehtest starten.
+ Siehe zur Arbeitsweise die Bedienungsanleitung der Software.
+71
+Arbeiten vor dem Streuen
+Zapfwelle läuft nach Ausschalten nach
+Nach dem Ausschalten der Zapfwelle kann Gefahr durch das Nachdrehen der Maschine aufgrund ihre Massenträgheit entstehen. Halten Sie sich von der Maschine fern, bis dass alle bewegenden Teile wirklich still stehen. Der Kontakt zu einer laufenden Maschine kann ernsthafte oder tödliche Verletzungen verursachen.
+Mit einem manuellen Abdrehtest kontrollieren Sie, ob bei dem eingegebenen Dosierstand die gewünschte Auslassgeschwindigkeit erreicht wird.
+Den Abdrehtest führen Sie normalerweise an der linken Streuscheibe aus. Führen Sie den Abdrehtest mit einem gefüllten Behälter aus.  Siehe auch Absatz »Füllen« auf Seite 73.
+ Schalten Sie den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss und betätigen Sie die Feststellbremse des Schleppers.
+ Entkoppeln Sie die rechte Streuscheibe, indem Sie das Kupplungsstück nach rechts schieben. Arretieren Sie das Kupplungsstück wieder mit dem Sicherungsclip.
+ Nehmen Sie die Schaufeln von der linken Streuscheibe ab.
+ Schließen Sie die Gelenkwelle maschinenseitig am Anschlusspunkt an, wie dies in der betreffenden Streutabelle wiedergegeben ist.
+ Siehe auch Absatz »Anschlusspunkt Gelenkwelle« auf Seite 64.
+ Montieren Sie den Auffangbehälter um die linke Streuscheibe herum.
+ Stellen Sie den Auffangbehälter mit dem Stellknopf so ein, dass die Streuscheibe den Auffangbehälter nicht berührt.
+ Wiegen Sie einen großen Auffangbehälter und platzieren Sie diesen unter den Auffangbehälter.
+ Den Schleppermotor anlassen.
+ Schließen Sie die Kabine, indem Sie alle Türen und Fenster schließen.
+ Schalten Sie das Bedienpult ein.
+ Schalten Sie die rechte Streuscheibe aus.
+ Siehe die Bedienungsanleitung der Software
+ Schalten Sie die Zapfwelle ein.
+ Öffnen Sie die linke Dosiereinheit.
+ Lassen Sie den Streuer für 5 Sekunden streuen, um den Abdrehbehälter 'durchzuspülen'.
+ Schließen Sie die Dosiereinheit.
+ Schalten Sie die Zapfwelle und den Schlepper aus, ziehen Sie den Zündschlüssel aus dem Zündschloss ab, leeren Sie den Auffangbehälter und platzieren Sie diesen wieder unter der Auslassöffnung des Auffangbehälters.<|begin_of_text|>
+===Page 72===
+
+Arbeiten vor dem Streuen
+Variable, extern gesteuerte Dosis
+[Image]
+S
+RS 232-Anschluss
+72
+Neben der Möglichkeit, über die gesamte Parzelle die gleiche Dosis zu verstreuen verfügt das Steuersystem auch über die Möglichkeit, eine variable, extern gesteuerte Dosis zu verteilen. Dies bietet Ihnen die Möglichkeit, nach Bedarf zu streuen, beispielsweise mithilfe eines Stickstofffühlers.
+Sie können auch über das GPS-System eine Dosis verstreuen, die Sie vorab in das dazugehörige Managementsystem für die betreffende Parzelle eingestellt haben.
+ Die Möglichkeiten und dazugehörigen Einstellungen sind in den Bedienungsanleitungen des externen Systems und des Bedienpults beschrieben (z. B. IsoMatch-Bedienpult).
+Das Bediensystem Ihres Streuers in Kombination mit dem Bedienpult IsoMatch sendet die angewandte Dosis und Arbeitsbreite zudem zurück an das externe System.
+Das externe System und das Steuersystem des Streuers mit dem IsoMatch-Bedienpult kommunizieren untereinander über einen seriellen Anschluss (sogenannte RS 232-Verbindung). Dieser Anschluss befindet sich auf der Rückseite der Bedieneinheit. Die Kontaktbelegung der des 9-poligen RS 232-Steckers und die benötigten Einstellungen finden Sie in
+ der Gebrauchsanleitung des Bedienpults IsoMatch.<|begin_of_text|>
+===Page 73===
+
+Füllen
+[Image]
+Arbeiten vor dem Streuen
+Vermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln
+Beim Füllen der Maschine können Sie leicht in Kontakt mit schädlichen Mitteln kommen. Tragen Sie daher Schutzkleidung, wie z. B. Sicherheitshandschuhe, Sicherheitsschuhe und Schutzbrille. Lesen Sie auch die Sicherheitshinweise des Reinigungsmittelherstellers und befolgen Sie diese zusätzlichen Anweisungen. Der Kontakt mit schädlichen Mitteln kann Verletzungen verursachen. Nehmen Sie in einem solchen Fall Kontakt mit einem Arzt auf.
+Chemische Reaktionen durch Vermischen von Kunstdünger
+Das Vermischen von Kunstdüngersorten kann chemische Reaktionen verursachen, wodurch giftige Dämpfe, Flüssigkeiten oder Feststoffe entstehen können. Mögliche Gefahr der Explosion! Körperverletzungen und Schäden an Erntegut und Maschine können die Folge sein. Erstellen Sie nur dann Mischungen von Düngemittelsorten, wenn die Kombination von dem (den) Hersteller(n) zugelassen wird. Chemische Reaktionen können Schäden an der Maschine und Personenschäden verursachen.
+Lesen Sie die Sicherheitsanweisungen des Lieferanten durch
+Lesen Sie vor dem Gebrauch die Sicherheitsanweisungen des Lieferanten durch und befolgen Sie diese. Tragen Sie bei Bedarf zusätzliche Schutzkleidung.
+Die Vernachlässigung der Sicherheitsanweisungen kann Körperverletzungen und Beschädigungen an der Maschine zur Folge haben.
+Verwenden Sie geeignete Hilfsmittel
+Während des Füllens arbeiten Sie häufig mit großen Mengen von Mitteln. Verwenden Sie geeignete Hilfsmittel, wie zum Beispiel Hebevorrichtungen, für den Transport der Mittel und das Füllen der Maschine. Halten Sie die Gesetzgebung rund um die Arbeitsbedingungen ein. Sorgen Sie für ihre eigene Sicherheit und gehen Sie vorsichtig vor. Ungeeignete Hilfsmittel können zu ernsthaften Verletzungen führen.
+Befüllen Sie lediglich angekoppelte Maschinen
+Setzen Sie eine Maschine niemals während des Befüllens auf den Boden, sondern lassen Sie sie immer im Kraftheber des Schleppers hängen. Die Maschine wurde dazu konstruiert, im hängenden Zustand belastet zu werden. Setzen Sie eine gefüllte Maschine niemals auf den Boden. Bei Belastung der Maschine, während sich diese auf dem Boden befindet, kann Schaden an der Maschine entstehen.
+Arbeiten Sie in einer geschlossenen Kabine
+Durch offene Fenster, Türen oder andere Öffnungen kann Kunstdüngerstaub hineingelangen. In einer offenen Kabine ist zudem der Geräuschpegel höher. Arbeiten Sie daher in einer geschlossenen Kabine mit einem Aktivkohlefilter in den Lufteinlässen. Kunstdüngerstaub und eine dauerhafte hohe Geräuschbelastung können Körperverletzungen verursachen.
+73<|begin_of_text|>
+===Page 74===
+
+Arbeiten vor dem Streuen
+HINWEIS
+Die meisten Sorten Kunstdünger ziehen Wasser an und können dann große Brocken bilden. Diese Brocken können den Streuer verstopfen oder das Streubild stören.
+· Arbeiten Sie bei feuchtem Wetter mit einer gut geschlossenen Abdeckplane.
+· Streuen Sie ohne Abdeckplane nicht bei feuchtem Wetter.
+· Lassen Sie Kunstdünger nie lange im Streuer. Durch Feuchtigkeit in der Luft können ebenfalls Brocken entstehen.
+· Reinigen Sie den Streuer immer gründlich, auch die Dosieröffnungen und Auslaufrohre.
+Nach der Justierung des Streuers können Sie diesen bis zum gewünschten Niveau füllen. Wir empfehlen Ihnen, die Maschine zu laden, wenn diese 10 cm über den Boden gehoben ist. Wenn Sie keine Arbeiten über dem Behälter ausführen müssen, kann die Höhe an das automatische Füllsystem angepasst werden.
+Wenn während des Befüllens, manuell oder mit großen Säcken, der Abstand zwischen Behälterrand und Boden größer als 1250 mm ist, müssen Sie die Ladeplattform verwenden. Die Füllhöhe ist angegeben in
+ Absatz »Technische Daten« auf Seite 36.
+ Fahren Sie die Maschine, bei einer festen Ladeplattform, auf die Plattform. Der Abstand zwischen der Maschine und der Plattform darf maximal 200 mm betragen.
+ Lassen Sie die Maschine bis zur gewünschten Höhe ab. Die Maschine darf sich nicht auf dem Boden befinden, sondern muss mindestens 10 cm angehoben sein.
+ Überprüfen Sie, ob die Dosiereinheiten geschlossen sind und schließen diese ggf., indem Sie im Hauptbildschirm auf die StopTaste drücken.
+Die Position der Dosiereinheiten wird im Hauptbildschirm des Bedienpults des Steuersystems wiedergegeben.
+ Schalten Sie das elektronische Steuersystem aus.
+ Schalten Sie den Schlepper aus und ziehen Sie den Zündschlüssel aus dem Zündschloss.
+ Betätigen Sie die Feststellbremse des Schleppers.
+ Schließen Sie die Kabine, indem Sie alle Türen und Fenster schließen.
+ Platzieren Sie Unterlegkeile vor die Räder des Schleppers.
+ Stellen Sie die Ladeplattform, sofern diese versetzbar ist, zum Streuer, so dass der Abstand zwischen beiden maximal 200 mm beträgt.
+ Öffnen Sie die Abdeckplane.
+ Überprüfen Sie, ob die Siebe geschlossen und verriegelt sind.
+ Füllen Sie die Maschine mithilfe geeigneter Hilfsmittel bis zu dem gewünschten Niveau. Füllen Sie die Behälterhälften gleichmäßig, so dass beide Hälften auch in etwa gleichzeitig leer sind.
+Ladehöhe
+Vorgehensweise
+74<|begin_of_text|>
+===Page 75===
+
+HINWEIS
+Arbeiten vor dem Streuen
+Arbeiten Sie beim Füllen sorgfältig und befolgen Sie die arbeitsrechtlichen Vorschriften! Lassen Sie keine Gegenstände oder Werkzeuge in den Behälter fallen. Diese können den Streuer verstopfen oder beschädigen!
+ Schließen Sie die Abdeckplane.
+Überschreiten Sie nicht das zulässige Gesamtgewicht!  Siehe auch »Technische Daten« auf Seite 36. Die Konstruktion der Maschine ist nicht auf eine zusätzliche Belastung ausgelegt. Halten Sie die zulässige Achslast, Tragleistung der Reifen und das Gesamtgewicht von Schlepper und Maschine sowie die Mindestachsbelastung des Schleppers ein.
+ Siehe auch Absatz »Berechnung der Achslast bei beladenen Maschinen« auf Seite 13.
+HINWEIS Durch Zunahme des Gewichts wird der gefüllte Streuer nach hinten neigen.
+ Stellen Sie den Streuer in gefülltem Zustand erneut horizontal in Längsrichtung.
+HINWEIS
+Wenn Sie den Streuer während des Streuens füllen, z. B. durch ein Schraubengewinde aus einem daneben fahrenden Fahrzeug, müssen Sie die automatische Kalibrierung ausschalten. Bei der automatischen Kalibrierung wiegt das Bediensystem die verstreute Menge (kg) Kunstdünger in einer bestimmten Zeit. Und vergleicht diesen Wert anschließend mit dem gewünschten, eingestellten Wert. Indem beim Streuen gefüllt wird, kann die verstreute Menge nicht korrekt gewogen werden. Das Gewicht in dem Behälter kann während des Messzeitraums sogar zugenommen haben. Die Korrektur, die das Bediensystem ausführt, ist dann unrichtig und hat möglicherweise Gewächsschäden zur Folge.
+75<|begin_of_text|>
+===Page 76===
+
+Arbeiten vor dem Streuen
+Streubildkontrolle (Streumengentest)
+76
+Vermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln
+Beim Füllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstdünger und anderen Mitteln, die Sie ausstreuen möchten. Tragen Sie Schutzkleidung und Handschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie die zusätzlich angegebenen Hinweise. Der Kontakt kann Körperverletzungen verursachen.
+Achtung Quetschgefahr
+Bei der Justierung des Streuers besteht Quetschgefahr.
+Arbeiten Sie sicher während der Justierung, indem Sie:
+· den Schlepper ausschalten und den Zündschlüssel vom Zündschloss abziehen,
+· die Feststellbremse des Schleppers anziehen,
+· warten, bis alle Teile der Maschine still stehen, bevor Sie mit der Justierung beginnen,
+· die beschriebenen Handlungen alleine und vorsichtig ausführen.
+Einklemmen kann Körperverletzungen verursachen.
+Führen Sie den Test ausschließlich alleine aus. Bedienen Sie die Maschine alleine!
+Gefährliche Situationen für andere Personen können bei der Bedienung der Maschine und der Ausführung des Tests einfach entstehen. Körperverletzungen können die Folge sein.
+Schonen Sie die Umwelt
+Eine zu hohe Dosierung und Verteilung von Mitteln außerhalb des Feldrands, insbesondere bei Oberflächenwasser, stellen eine schwere Belastung für die Umwelt dar. Schonen Sie die Umwelt durch eine richtige Dosis und genaue Arbeitsweise.
+Zapfwelle läuft nach Ausschalten nach
+Nach dem Ausschalten der Zapfwelle kann Gefahr durch das Nachdrehen der Maschine aufgrund ihre Massenträgheit entstehen. Halten Sie sich von der Maschine fern, bis dass alle bewegenden Teile wirklich still stehen. Der Kontakt zu einer laufenden Maschine kann ernsthafte oder tödliche Verletzungen verursachen.
+Arbeiten Sie in einer geschlossenen Kabine
+Durch offene Fenster, Türen oder andere Öffnungen kann Kunstdüngerstaub hineingelangen. In einer offenen Kabine ist zudem der Geräuschpegel höher. Arbeiten Sie daher in einer geschlossenen Kabine mit einem Aktivkohlefilter in den Lufteinlässen. Kunstdüngerstaub und eine dauerhafte hohe Geräuschbelastung können Körperverletzungen verursachen.
+Bei einem Streumengentest überprüfen Sie die Verteilung des Kunstdüngers, wie ihn der Streuer verteilt. Mit den Ergebnissen aus diesem Test können Sie den Streuer besser einstellen und so die Verteilung des Kunstdüngers verbessern und die Verluste einschränken. Einen Streumengentest können Sie von spezialisierten Unternehmen ausführen lassen, Sie können ihn jedoch auch selbst durchführen. Sie müssen dann jedoch auch die erforderlichen Materialien anschaffen. Wir empfehlen Ihnen, den Test von einem anerkannten Unternehmen ausführen zu lassen. Die Spezialisten können Sie außerdem bei Fragen und Problemen unterstützen.
+[Image]<|begin_of_text|>
+===Page 77===
+
+[Image]
+HINWEIS
+Arbeiten vor dem Streuen
+Wann müssen Sie einen Streumengentest durchführen:
+· Bei Verwendung einer Düngemittelsorte, die nicht im Streutabellenbuch, über den Online-Streutabellenservice auf der Website oder über die kostenlose App für Mobiltelefone mit einem iOs und/ oder Android Betriebssystem zu ermitteln ist.
+· Bei Verwendung einer Düngemittelsorte, deren Korngrößenverteilung und Dichte von denen im Streutabellenbuch, über den OnlineStreutabellenservice auf der Website oder über die kostenlose App für Mobiltelefone mit einem iOs und/oder Android Betriebssystem angegebenen Werten abweicht.
+· Bei Verwendung von Kunstdünger von mäßiger Qualität.
+· Jährlich den Links-Rechts-Test ausführen, um die gleiche Verteilung durch die beiden Streuscheiben zu überprüfen.
+· Nach jeder Änderung am Streumechanismus des Streuers oder dem Austausch von Teilen.
+Die Wetterverhältnisse haben großen Einfluss auf das Streubild während des Streuens und bei der Ausführung des Streumengentests. Führen Sie den Streumengentest bei trockenem Wetter, geringer Luftfeuchtigkeit und einer maximalen Windgeschwindigkeit von 3 m/s (Windstärke 2) aus.
+Benötigte Materialien
+· Bandmaß oder Messlatte,
+· Wasserwaage, um Auffangbehälter horizontal zu setzen,
+· 7 Auffangbehälter,
+· 7 Messrohre,
+· 1 Trichter,
+· Notizblock, Stift und Taschenrechner
+· diese Bedienungsanleitung.
+· der Bedienungsanleitung der Software.
+Allgemeine Anweisungen
+ Kontrollieren Sie den eingestellten Dosierstand und den Auslasspunkt.
+ Kontrollieren Sie die Höhe (75 cm über dem Auffangbehälter) und den Stand (Winkel) des Streuers.
+ Kontrollieren Sie die Drehzahl der Zapfwelle und der Streuscheiben.
+ Platzieren Sie die Behälter immer horizontal auf dem Boden.
+ Platzieren Sie die Behälter in einem Abstand von höchsten 4 Meter. Besorgen Sie sich für die Tests der Arbeitsbreite von mehr als 24 Meter zusätzliche Behälter. Sie können auch erst einen Teil der Arbeitsbreite testen und anschließend die Behälter leeren und über den Rest der Arbeitsbreite verteilen.
+ Verwenden Sie den Streuer nicht bei Regen oder hoher Luftfeuchtigkeit. Der Kunstdünger bleibt dann an den Auffangbehältern kleben, wodurch das erhaltene Bild nicht mehr korrekt ist.
+ Streuen Sie nie bei Windgeschwindigkeiten von mehr als 3 m/s (Windstärke 2).
+77<|begin_of_text|>
+===Page 78===
+
+Arbeiten vor dem Streuen
+Linkes und rechtes Streubild testen
+Für eine gute Verteilung des Kunstdüngers müssen die linke und rechte Streuscheibe gleichmäßig streuen. Überprüfen Sie dies jedes Jahr.
+HINWEIS
+[Image]
+HINWEIS
+Platzieren Sie die Auffangbehälter mithilfe einer Wasserwaage hori-
+zontal!
+Der Test ist für eine Arbeitsbreite von 24 Metern ausgelegt. Es steht Ihnen frei, den Test für eine andere Arbeitsbreite auszuführen. Verteilen Sie die Behälter mit gleichem Zwischenabstand über die Arbeitsbreite.
+Ausführung
+ Schalten Sie den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss und betätigen Sie die Feststellbremse des Schleppers.
+ Entkoppeln Sie die linke Streuscheibe, indem Sie das Kupplungsstück nach links schieben. Arretieren Sie das Kupplungsstück wieder mit dem Sicherungsclip.
+ Suchen Sie in der (Online-)Streutabelle für die am ehesten vergleichbaren Düngemittel, Saaten oder Körner die richtige Auslaufposition auf, um 24 Meter breit zu streuen und stellen Sie dies mit dem Griff ein.
+ Siehe Absatz »Auslassöffnung« auf Seite 65 und das Vorwort des Streutabellenbuch.
+ Montieren Sie die Gelenkwelle am richtigen Anschlusspunkt des Zentralgetriebes, der in der betreffenden Streutabelle angegeben ist.
+ Siehe Absatz »Anschlusspunkt Gelenkwelle« auf Seite 64.
+ Kontrollieren Sie die Höhe des Streuers (Höhe Streuscheibe = 75 cm über dem Auffangbehältern).
+ Setzen Sie die Gitter in die Auffangbehälter.
+ Setzen Sie Auffangbehälter 1 mitten auf die Spur des Schleppers.
+ Platzieren Sie die sonstigen Auffangbehälter alle 4 Meter auf der rechten Seite der Schlepperspur.
+78
+</context>
+<question>
+    What is the minimum 'baud rate' for 'RS 232 connection'?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

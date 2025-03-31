@@ -1,0 +1,49 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     indem Sie das Kupplungsstück nach rechts schieben. Arretieren Sie das Kupplungsstück wieder mit dem Sicherungsclip.
+ Nehmen Sie die Schaufeln von der linken Streuscheibe ab.
+ Schließen Sie die Gelenkwelle maschinenseitig am Anschlusspunkt an, wie dies in der betreffenden Streutabelle wiedergegeben ist.
+ Siehe auch Absatz »Anschlusspunkt Gelenkwelle« auf Seite 64.
+ Montieren Sie den Auffangbehälter um die linke Streuscheibe herum.
+ Stellen Sie den Auffangbehälter mit dem Stellknopf so ein, dass die Streuscheibe den Auffangbehälter nicht berührt.
+ Wiegen Sie einen großen Auffangbehälter und platzieren Sie diesen unter den Auffangbehälter.
+ Den Schleppermotor anlassen.
+ Schließen Sie die Kabine, indem Sie alle Türen und Fenster schließen.
+ Schalten Sie das Bedienpult ein.
+ Schalten Sie die rechte Streuscheibe aus.
+ Siehe die Bedienungsanleitung der Software
+ Schalten Sie die Zapfwelle ein.
+ Öffnen Sie die linke Dosiereinheit.
+ Lassen Sie den Streuer für 5 Sekunden streuen, um den Abdrehbehälter 'durchzuspülen'.
+ Schließen Sie die Dosiereinheit.
+ Schalten Sie die Zapfwelle und den Schlepper aus, ziehen Sie den Zündschlüssel aus dem Zündschloss ab, leeren Sie den Auffangbehälter und platzieren Sie diesen wieder unter der Auslassöffnung des Auffangbehälters.<|begin_of_text|>
+===Page 72===
+
+Arbeiten vor dem Streuen
+Variable, extern gesteuerte Dosis
+[Image]
+S
+RS 232-Anschluss
+72
+Neben der Möglichkeit, über die gesamte Parzelle die gleiche Dosis zu verstreuen verfügt das Steuersystem auch über die Möglichkeit, eine variable, extern gesteuerte Dosis zu verteilen. Dies bietet Ihnen die Möglichkeit, nach Bedarf zu streuen, beispielsweise mithilfe eines Stickstofffühlers.
+Sie können auch über das GPS-System eine Dosis verstreuen, die Sie vorab in das dazugehörige Managementsystem für die betreffende Parzelle eingestellt haben.
+ Die Möglichkeiten und dazugehörigen Einstellungen sind in den Bedienungsanleitungen des externen Systems und des Bedienpults beschrieben (z. B. IsoMatch-Bedienpult).
+Das Bediensystem Ihres Streuers in Kombination mit dem Bedienpult IsoMatch sendet die angewandte Dosis und Arbeitsbreite zudem zurück an das externe System.
+Das externe System und das Steuersystem des Streuers mit dem IsoMatch-Bedienpult kommunizieren untereinander über einen seriellen Anschluss (sogenannte RS 232-Verbindung). Dieser Anschluss befindet sich auf der Rückseite der Bedieneinheit. Die Kontaktbelegung der des 9-poligen RS 232-Steckers und die benötigten Einstellungen finden Sie in
+ der Gebrauchsanleitung des Bedienpults IsoMatch.
+</context>
+<question>
+    What is the minimum 'baud rate' for 'RS 232 connection'?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

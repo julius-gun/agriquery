@@ -1,0 +1,3558 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+     of the tractor,
+- type: ListItem
+  text: · disconnect the tractor if possible,
+- type: ListItem
+  text: · wait until all parts have stopped moving. The mass (inertia) could keep
+    the machine running for a bit!
+- type: ListItem
+  text: · place wheel chocks in front of the wheels of a machine with parking wheels
+    to prevent it from rolling away,
+- type: ListItem
+  text: · wear protective clothing, such as safety gloves and shoes,
+- type: ListItem
+  text: · carefully follow the instructions given,
+- type: ListItem
+  text: · use the correct tools,
+- type: ListItem
+  text: · bigger or heavier parts must be locked and secured to lifting gear when
+    being replaced,
+- type: ListItem
+  text: · parts that could move unintentionally must be supported and secured,
+- type: ListItem
+  text: · do not climb on parts of the machine that are not in use. Only use stepladders,
+    ladders or other tools intended for this purpose.
+- type: ListItem
+  text: · disconnect the feed while working on the electric system.
+- type: ListItem
+  text: · disconnect the cables from the battery and the dynamo before arc welding
+    on the tractor or the connected machine!
+- type: SectionHeaderItem
+  text: Performed by an authorised person
+- type: TextItem
+  text: Always have an authorised expert perform maintenance and repairs as prescribed
+    in, as prescribed in
+- type: ListItem
+  text:  paragraph »Authorisation« on page 11.
+- type: TextItem
+  text: All forms of responsibility of the manufacturer become null and void and the
+    guarantee lapses if maintenance and repair work are performed by an unauthorised
+    person.
+<|begin_of_text|>page_number: 123
+items:
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Maintenance
+- type: SectionHeaderItem
+  text: Do not modify the machine
+- type: TextItem
+  text: Do not modify the machine in any way. Unauthorised modifications may impair
+    the function and/or safety and affect the life of the machine.
+- type: SectionHeaderItem
+  text: Only use original parts when replacing
+- type: TextItem
+  text: Using other non-genuine parts could lead to problems and unsafe situations
+    when using the machine.
+- type: SectionHeaderItem
+  text: Accessories and parts must be correctly mounted
+- type: TextItem
+  text: Assemble accessories and parts according to specifications and attach them
+    only for their designated purpose; ensure that it is locked correctly. Accessories
+    and parts which are not fastened securely could lead to personal injury and damage
+    to the crop and machine.
+- type: SectionHeaderItem
+  text: Tighten all bolts and nuts
+- type: TextItem
+  text: Check that all the nuts and bolts are well set. Check this again after one
+    hour of use
+- type: ListItem
+  text: · after delivery and
+- type: ListItem
+  text: · after maintenance or repairs have been carried out.
+- type: SectionHeaderItem
+  text: Avoid jamming under the sieves
+- type: TextItem
+  text: There is a risk that parts of your body may get jammed in the hopper during
+    maintenance activities or when closing the sieves. Secure the sieve in an open
+    position and unlock the sieves on the outside. Jamming could cause injury.
+- type: SectionHeaderItem
+  text: Avoid contact with materials
+- type: TextItem
+  text: You should only come into contact with the materials when cleaning the machine.
+    Always wear protective clothing, such as safety gloves, shoes and goggles. Read
+    and adhere to the additional safety instructions and the of the material producer.
+    Contact with the materials could lead to injury. Contact your physician in such
+    an event!
+- type: SectionHeaderItem
+  text: Explosion danger because of nitrate
+- type: TextItem
+  text: Fertiliser that contains nitrate can create an explosion danger if it should
+    come into contact with fire. All fertiliser remnants should therefore be removed
+    from voids, corners, tubes and tubing before welding, cutting or grinding on the
+    machine. An explosion will cause damage to the machine and could lead to personal
+    injury.
+- type: TextItem
+  text: Adhere to all the safety precautions as described in  paragraph »Safety requirements«
+    from page 10.
+- type: TextItem
+  text: '123'
+<|begin_of_text|>page_number: 124
+items:
+- type: TextItem
+  text: Maintenance
+- type: SectionHeaderItem
+  text: Oil and grease content
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Never use more oil or grease than prescribed
+- type: TextItem
+  text: A too high oil level may result in an overheated machine and damaged seals.
+- type: SectionHeaderItem
+  text: Waste storage and disposal
+- type: TextItem
+  text: Waste from performing maintenance on the machine could be contaminated with
+    fertiliser, oil and grease. Collect the waste and dispose of it in terms of national
+    regulations.
+- type: TableItem
+  table_data:
+    Part / action:
+      0: Central gearbox gearboxes of the spreading discs
+      1: Lubricate with grease Lubricate with oil
+    Quantity:
+      0: 2 x 0.25 litre 1.5 litres
+      1: 1 to 2 times
+    Specifications:
+      0: EP00/000 gear grease EP00/000 gear grease
+      1: Shell Rodina 2, Castrol GS2 or equivalent MIL-L-2105C, SAE 80W-90
+- type: TextItem
+  text: '124'
+<|begin_of_text|>page_number: 125
+items:
+- type: SectionHeaderItem
+  text: Maintenance intervals
+- type: TextItem
+  text: Maintenance
+- type: TextItem
+  text: Keep to the checking and maintenance intervals given below to keep the machine
+    in good working order.
+- type: TableItem
+  table_data:
+    da il y:
+      0: Inspection
+      1: »Checking bolts and nuts«
+      2: »Checking the hydraulic system«
+      3: Condition of the agitator and the agitator axle
+      4: Condition of the vanes
+      5: »Checking and setting the dosing mechanism«
+      6: »Checking and setting the discharge point setting mecha- nism«
+      7: »Checking and setting the discharge bushing height«
+      8: ''
+      9: Lubrication
+      10: 4 grease nipples on the PTO shaft
+      11: 2 grease nipples on both discharge bushings
+      12: 1 grease nipple on all four actuators
+      13: Applying or adding grease
+      14: Coupling shafts profiled tubes
+      15: Central gearbox
+      16: Spreading discs gearboxes
+      17: Add oil
+      18: Connectors in spreading disc drives
+      19: Replace
+      20: Hydraulic hoses and connectors
+      21: agitator seal
+      22: agitator
+      23: Vanes
+   ? ''
+    : 0: ''
+      1: ''
+      2: ·
+      3: ·
+      4: ·
+      5: ''
+      6: ''
+      7: ''
+      8: ''
+      9: ''
+      10: ·
+      11: ·
+      12: ·
+      13: ''
+      14: ''
+      15: ''
+      16: ''
+      17: ''
+      18: ''
+      19: ''
+      20: ''
+      21: ''
+      22: ''
+      23: ''
+    af te r th e first  10 hou rs:
+      0: ''
+      1: ·
+      2: ·
+      3: ''
+      4: ''
+      5: ·
+      6: ·
+      7: ''
+      8: ·
+      9: ''
+      10: ''
+      11: ''
+      12: ''
+      13: ''
+      14: ''
+      15: ·
+      16: ''
+      17: ''
+      18: ·
+      19: ''
+      20: ''
+      21: ''
+      22: ''
+      23: ''
+    we ekly:
+      0: ''
+      1: ·
+      2: ''
+      3: ''
+      4: ''
+      5: ''
+      6: ''
+      7: ''
+      8: ''
+      9: ''
+      10: ''
+      11: ''
+      12: ''
+      13: ''
+      14: ''
+      15: ''
+      16: ''
+      17: ''
+      18: ''
+      19: ''
+      20: ''
+      21: ''
+      22: ''
+      23: ''
+    ev ery  1 00  ho urs min. 1 x  per ye ar:
+      0: ''
+      1: ''
+      2: ''
+      3: ''
+      4: ''
+      5: ·
+      6: ·
+      7: ·
+      8: ''
+      9: ''
+      10: ''
+      11: ''
+      12: ''
+      13: ''
+      14: ·
+      15: ·
+      16: ·
+      17: ''
+      18: ·
+      19: ''
+      20: ''
+      21: ·
+      22: ''
+      23: ''
+    As  r eco mme nde d:
+      0: ''
+      1: ''
+      2: ''
+      3: ''
+      4: ''
+      5: ''
+      6: ''
+      7: ''
+      8: ''
+      9: ''
+      10: ''
+      11: ''
+      12: ''
+      13: ''
+      14: ·
+      15: ''
+      16: ''
+      17: ''
+      18: ''
+      19: ''
+      20: ·
+      21: ''
+      22: ''
+      23: ''
+    If  worn:
+      0: ''
+      1: ''
+      2: ''
+      3: ''
+      4: ''
+      5: ''
+      6: ''
+      7: ''
+      8: ''
+      9: ''
+      10: ''
+      11: ''
+      12: ''
+      13: ''
+      14: ''
+      15: ''
+      16: ''
+      17: ''
+      18: ''
+      19: ''
+      20: ·
+      21: ·
+      22: ·
+      23: ·
+    Page:
+      0: ''
+      1: '130'
+      2: '131'
+      3: ''
+      4: '43'
+      5: '133'
+      6: '136'
+      7: ''
+      8: '138'
+      9: ''
+      10: '126'
+      11: '126'
+      12: '126'
+      13: ''
+      14: '127'
+      15: '127'
+      16: '128'
+      17: ''
+      18: '128'
+      19: ''
+      20: '131'
+      21: '140'
+      22: ''
+      23: ''
+- type: TextItem
+  text: '125'
+<|begin_of_text|>page_number: 126
+items:
+- type: TextItem
+  text: Maintenance
+- type: SectionHeaderItem
+  text: Lubricating points
+- type: SectionHeaderItem
+  text: Coupling shaft with quick lock
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Discharge bushings
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Actuators
+- type: TextItem
+  text: Grease nipples
+- type: PictureItem
+  caption: Grease nipples
+- type: TextItem
+  text: '126'
+- type: TextItem
+  text: All lubricating nipples of the machine can be filled with a universal grease
+    type.
+- type: ListItem
+  text:  See »Oil and grease content« on page 124.
+- type: ListItem
+  text:  See »Maintenance intervals« on page 125.
+- type: TextItem
+  text: The coupling shaft is provided with grease nipples.
+- type: ListItem
+  text:  Lubricate the nipples.
+- type: ListItem
+  text:  Check the condition of the protection sleeves and the check chains.
+- type: ListItem
+  text:  Replace them if damaged.
+- type: TextItem
+  text: The discharge bushings are attached lower down to the agitator axle and have
+    2 grease nipples.
+- type: ListItem
+  text:  Open the discharge bushings
+- type: ListItem
+  text:  See the software instruction manual.
+- type: ListItem
+  text:  Turn the spreading disc by hand until both grease nipples are visible.
+- type: ListItem
+  text:  Grease the 2 nipples of both discharge bushings.
+- type: TextItem
+  text: The actuators are provided with 1 grease nipple.
+- type: ListItem
+  text:  Grease the nipple of all four actuators.
+<|begin_of_text|>page_number: 127
+items:
+- type: TextItem
+  text: Maintenance
+- type: SectionHeaderItem
+  text: Applying or adding grease
+- type: TextItem
+  text: Coupling shaft profiled tubes You must grease the profiled tubes of the coupling
+    shaft regularly. Ap-
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Central gear box
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: gearboxes of the spreading discs
+- type: TextItem
+  text: There is grease in the gearbox below the spreading discs. The level of the
+    grease under the filler opening must be 35 mm when the machine has been standing
+    still for a short time.
+- type: PictureItem
+  caption: ''
+- type: ListItem
+  text:  Remove dirt, fertiliser or grease from the gearbox.
+- type: ListItem
+  text:  Open the gearbox by removing the cap from the filler opening.
+- type: ListItem
+  text:  Measure the level of the grease.
+- type: ListItem
+  text:  Add grease until the desired level is reached.
+- type: ListItem
+  text:  Close the filler opening.
+- type: TextItem
+  text: ply grease to the contact surfaces of both of the profiled tubes should you
+    note during coupling or decoupling that the halves of the coupling shaft are not
+    sliding in and out smoothly. This should at any rate be done at least once per
+    season.
+- type: ListItem
+  text:  Detach the coupling shaft on the one side.
+- type: ListItem
+  text:  Pull the shaft halves away from each another.
+- type: ListItem
+  text:  Grease the running surface of the inner profiled tube.
+- type: ListItem
+  text:  Slide the coupling shaft halves into each other.
+- type: ListItem
+  text:  Attach the coupling shaft.
+- type: ListItem
+  text:  Hook the check chains to the tractor side.
+- type: TextItem
+  text: The central gearbox consists of 2 compartments filled with gear wheel grease
+    EP 00/000. The grease in principle never needs to be replaced.
+- type: TextItem
+  text: Each compartment holds 0.25 litre.
+- type: ListItem
+  text:  Check the level regularly.
+- type: ListItem
+  text:  Remove dirt, fertiliser or grease from the gearbox.
+- type: ListItem
+  text:  Remove the cap from the dipstick and filler opening.
+- type: ListItem
+  text:  Fill the gear box with new grease until it almost comes out of the opening.
+- type: TextItem
+  text: Replace the cap.
+- type: TextItem
+  text: '127'
+<|begin_of_text|>page_number: 128
+items:
+- type: TextItem
+  text: Maintenance
+- type: SectionHeaderItem
+  text: Add oil
+- type: SectionHeaderItem
+  text: Connectors
+- type: TextItem
+  text: The following parts only function well if they are provided with sufficient
+    oil. Check this regularly.
+- type: TextItem
+  text: The connectors between the central gearbox and the spreading disc gearboxes
+    are used with border spreading and when checking the spreading pattern with the
+    tray test. Disconnect one of the connectors from the spreading discs.
+- type: ListItem
+  text:  Apply a suitable lubricant to the drive axles and connectors. Oiling the
+    connectors will prevent them from corroding and becoming
+- type: TextItem
+  text: difficult to use.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '128'
+<|begin_of_text|>page_number: 129
+items:
+- type: SectionHeaderItem
+  text: Steel tightening torques
+- type: TextItem
+  text: Maintenance
+- type: TextItem
+  text: Guidelines for torques (in Nm) for self-locking nuts, hexagon bolts and nuts.
+- type: TextItem
+  text:.
+- type: TableItem
+  table_data:
+    Quality.Friction *.Thread:
+      0: M5
+      1: M6
+      2: M8
+      3: M10
+      4: M12
+      5: M14
+      6: M16
+      7: M18
+      8: M20
+      9: M22
+      10: M24
+    Torques.4.6.0,10.:
+      0: 1,7
+      1: '3'
+      2: '8'
+      3: '16'
+      4: '27'
+      5: '42'
+      6: '65'
+      7: '90'
+      8: '125'
+      9: '170'
+      10: '210'
+    Torques.4.6.0,13.:
+      0: '2'
+      1: '4'
+      2: '9'
+      3: '19'
+      4: '32'
+      5: '50'
+      6: '76'
+      7: '110'
+      8: '150'
+      9: '200'
+      10: '250'
+    Torques.8.8.0,10.:
+      0: '5'
+      1: '9'
+      2: '21'
+      3: '40'
+      4: '70'
+      5: '115'
+      6: '175'
+      7: '250'
+      8: '350'
+      9: '470'
+      10: '600'
+    Torques.8.8.0,13.:
+      0: '6'
+      1: '10'
+      2: '25'
+      3: '50'
+      4: '85'
+      5: '135'
+      6: '210'
+      7: '290'
+      8: '420'
+      9: '560'
+      10: '710'
+    Torques.10.9.0,10.:
+      0: '7'
+      1: '13'
+      2: '31'
+      3: '60'
+      4: '105'
+      5: '165'
+      6: '260'
+      7: '350'
+      8: '500'
+      9: '670'
+      10: '860'
+    Torques.10.9.0,13.:
+      0: '8'
+      1: '15'
+      2: '36'
+      3: '70'
+      4: '120'
+      5: '195'
+      6: '300'
+      7: '420'
+      8: '600'
+      9: '800'
+      10: '1020'
+    Torques.12.9.0,10.:
+      0: '9'
+      1: '15'
+      2: '36'
+      3: '70'
+      4: '120'
+      5: '195'
+      6: '300'
+      7: '410'
+      8: '580'
+      9: '780'
+      10: '1000'
+    Torques.12.9.0,13.:
+      0: '10'
+      1: '18'
+      2: '42'
+      3: '85'
+      4: '145'
+      5: '230'
+      6: '350'
+      7: '490'
+      8: '700'
+      9: '930'
+      10: '1180'
+- type: ListItem
+  text: '* The friction coefficient of 0.10 applies to oiled sheets, cast iron, hardened
+    surfaces, greased threads, etc. The higher value of 0.13 applies to dry sheets.'
+- type: TextItem
+  text: 'Torques for bolts and nuts with serrated lower edges 10% extra, such as:'
+- type: ListItem
+  text: · Tensilock (K100)
+- type: ListItem
+  text: · Whizlock.
+- type: TextItem
+  text: Exceptions to this table are listed in the parts and/or instruction manual.
+- type: TextItem
+  text: '129'
+<|begin_of_text|>page_number: 130
+items:
+- type: TextItem
+  text: Maintenance
+- type: SectionHeaderItem
+  text: Stainless steel tightening torques
+- type: TextItem
+  text: Guidelines for torques (in Nm) for self-locking nuts, hexagon bolts and nuts.
+- type: TextItem
+  text:.
+- type: TableItem
+  table_data:
+    Quality.Friction *.Thread:
+      0: M5
+      1: M6
+      2: M8
+      3: M10
+      4: M12
+      5: M14
+      6: M16
+      7: M18
+      8: M20
+      9: M22
+      10: M24
+    Torques.70 (A2).0.10.:
+      0: '3.6'
+      1: '6.3'
+      2: '15.2'
+      3: '29.9'
+      4: '51'
+      5: '82'
+      6: '126'
+      7: '176'
+      8: '247'
+      9: '337'
+      10: '426'
+    Torques.70 (A2).0.20.:
+      0: '5.7'
+      1: '9.9'
+      2: '24.1'
+      3: '47.7'
+      4: '82'
+      5: '131'
+      6: '204'
+      7: '282'
+      8: '401'
+      9: '551'
+      10: '690'
+    Torques.70 (A2).0.30.:
+      0: '7'
+      1: '12.2'
+      2: '29.9'
+      3: '59.3'
+      4: '102'
+      5: '163'
+      6: '255'
+      7: '352'
+      8: '501'
+      9: '692'
+      10: '863'
+    Torques.80 (A4).0.10.:
+      0: '4.8'
+      1: '8.4'
+      2: '20.3'
+      3: '39'
+      4: '68'
+      5: '109'
+      6: '168'
+      7: '235'
+      8: '330'
+      9: '450'
+      10: '568'
+    Torques.80 (A4).0.20.:
+      0: '7.6'
+      1: '13.2'
+      2: '32.1'
+      3: '63'
+      4: '109'
+      5: '175'
+      6: '272'
+      7: '376'
+      8: '534'
+      9: '735'
+      10: '920'
+    Torques.80 (A4).0.30.:
+      0: '9.4'
+      1: '16.3'
+      2: '39.9'
+      3: '79'
+      4: '136'
+      5: '217'
+      6: '340'
+      7: '469'
+      8: '669'
+      9: '923'
+      10: '1151'
+- type: ListItem
+  text: '* The friction coefficient of 0.10 applies to oiled sheets, cast iron, hardened
+    surfaces, greased threads, etc. The higher value of 0.30 applies to dry sheets.'
+- type: TextItem
+  text: Exceptions to this table are listed in the parts and/or instruction manual.
+- type: TextItem
+  text: Nuts and bolts could become loose through vibrations. Check the nuts and bolts
+    regularly to prevent damage to the machine and possible injury, especially after
+    maintenance.
+- type: ListItem
+  text: ' Check all bolt and nut connections:'
+- type: ListItem
+  text: ' Turn all nut and bolt connections up to the point as given in the chart
+    below:'
+- type: ListItem
+  text: · after the first operating hour,
+- type: ListItem
+  text: · regularly (at least weekly).
+- type: SectionHeaderItem
+  text: Checking bolts and nuts
+- type: TextItem
+  text: '130'
+- type: PictureItem
+  caption: ''
+<|begin_of_text|>page_number: 131
+items:
+- type: SectionHeaderItem
+  text: Checking the hydraulic system
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Replacement intervals
+- type: TextItem
+  text: Maintenance
+- type: SectionHeaderItem
+  text: Hydraulic oil is under high pressure
+- type: TextItem
+  text: Never try to stop a leak with your fingers. Never try to locate a hydraulic
+    leak or try to contain it by hand! When inspecting always use appropriate aid
+    (e.g. a piece of wood or sheet metal) and wear safety goggles, safety gloves and
+    gloves! High pressure fluid easily penetrates skin and clothes, causing severe
+    injuries. In the event of injury, contact your physician immediately!
+- type: SectionHeaderItem
+  text: Do not exceed the maximum hydraulic pressure of 210 bars
+- type: TextItem
+  text: Prevent the pressure in the hydraulic system from exceeding 210 bars! Working
+    above the permitted pressure may damage your machine and result in dangerous situations.
+- type: SectionHeaderItem
+  text: Keep your distance from the hydraulics during inspecting and test running
+- type: TextItem
+  text: Use a stick to bend the hydraulic hoses when checking them for leakage. That
+    way you will keep at sufficient distance. Oil jets or hoses that snap back may
+    cause serious physical injury due to the prevailing pressure and temperature.
+- type: SectionHeaderItem
+  text: Work safely on the hydraulic system
+- type: TextItem
+  text: 'The hydraulic system could be under high pressure. Do not work on the hydraulic
+    system without:'
+- type: ListItem
+  text: · releasing the pressure from the hydraulic system,
+- type: ListItem
+  text: · switching off the electronic control system,
+- type: ListItem
+  text: · switching the tractor off,
+- type: ListItem
+  text: · the key must be removed from the ignition,
+- type: ListItem
+  text: · engage the parking brake of the tractor,
+- type: ListItem
+  text: · using the proper tools,
+- type: ListItem
+  text: · wear safety glasses, gloves and shoes.
+- type: TextItem
+  text: Working in an unsafe manner on the hydraulic system could lead to injury and
+    damage to the machine. In the event of injury, contact your physician immediately!
+    There is also the risk of infection!
+- type: TextItem
+  text: Before operating the hydraulic system, check all connections and hoses for
+    damage and leakage.
+- type: TextItem
+  text: Regularly inspect the hydraulic system (hoses, pipes, connections). All hoses,
+    piping and connecting points must be checked regularly, but at least once a year,
+    by an expert for leakages or visible damage! The lifetime of a hose should be
+    6 years maximum (see the production date on the hoses).
+- type: TextItem
+  text: Damaged or old parts must be replaced with new ones that comply with the technical
+    specifications of the manufacturer of the machine. Damage to the hydraulic system
+    could lead to injury.
+- type: TextItem
+  text: '131'
+<|begin_of_text|>page_number: 132
+items:
+- type: TextItem
+  text: Maintenance
+- type: SectionHeaderItem
+  text: Inspection criteria
+- type: SectionHeaderItem
+  text: Replacing instructions
+- type: TextItem
+  text: '132'
+- type: TextItem
+  text: 'It is not permitted to carry out repairs on hydraulic hoses! Replace hoses
+    if the following is detected during inspection:'
+- type: ListItem
+  text: · damage to the exterior up to the armouring (such as abrasion marks, cuts
+    and tears),
+- type: ListItem
+  text: · the exterior becoming brittle (tears in the hose),
+- type: ListItem
+  text: · distortion not normal for the pattern of the hose while under pressure,
+    as well as without pressure or with bends, e.g. layers pealing off and blisters
+    forming,
+- type: ListItem
+  text: · leakages,
+- type: ListItem
+  text: · not mounted as per requirements,
+- type: ListItem
+  text: · damage or distortion of the hose block, which would compromise the strength
+    of the block or the connection between the hose and the regulating block,
+- type: ListItem
+  text: · hose coming out of the connectors,
+- type: ListItem
+  text: · corrosion of the connector which would compromise the function and strength,
+- type: ListItem
+  text: · exceeding the storage and the operating limits.
+- type: TextItem
+  text: Only use original parts when replacing hoses. Hoses must be placed and mounted
+    in the proper way. Be careful not to change the connections. Replaced hoses must
+    be suitable to the permitted work pressure and be resistant to chemical, mechanical
+    and thermal loads. Only use hose clamps made from stainless steel.
+- type: ListItem
+  text:  Run the hydraulic control valves until all the cylinders are engaged.
+- type: ListItem
+  text:  Place the machine on the ground or on firm supports on a firm, level ground.
+- type: ListItem
+  text:  Take the pressure off the hydraulic system.
+- type: ListItem
+  text:  Switch the electronic control system and the tractor off, remove the key
+    from the ignition and engage the parking brake of the tractor.
+- type: ListItem
+  text:  Disengage the machine.
+- type: ListItem
+  text:  See paragraph »Disconnecting the machine« on page 119.
+- type: ListItem
+  text:  Demount the connectors with the proper tools.
+- type: ListItem
+  text:  Collect the oil that drips from the cylinders and the hoses.
+- type: ListItem
+  text:  Mount new hoses and put them so that they would not get pinched.
+- type: ListItem
+  text:  Dispose of the collected oil as required by national legislation.
+- type: TextItem
+  text: Operate the hydraulic control valves of the tractor very carefully at first
+    after replacing the hoses as there could still be pockets of air in the pipes!
+    Open and close all the hydraulic control valves a few times before you start working.
+<|begin_of_text|>page_number: 133
+items:
+- type: SectionHeaderItem
+  text: Checking and setting the dosing mechanism
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Maintenance
+- type: SectionHeaderItem
+  text: Avoid contact with the fertiliser and other material
+- type: TextItem
+  text: You will most likely get into contact with the fertiliser and other material
+    you may wish to spread while filling, adjusting and testing the spreader. Wear
+    protective clothing and safety gloves, read the safety instructions provided by
+    the supplier and follow their directions. Contact with these materials could cause
+    physical harm.
+- type: SectionHeaderItem
+  text: Be careful that nothing gets jammed
+- type: TextItem
+  text: It is easy for parts to get jammed while adjusting and checking the spreader.
+- type: TextItem
+  text: 'Work safely while checking and adjusting:'
+- type: ListItem
+  text: · switching off the electronic control system,
+- type: ListItem
+  text: · switch the tractor off and remove the key from the ignition,
+- type: ListItem
+  text: · engage the parking brake of the tractor,
+- type: ListItem
+  text: · wait for all machine parts to come to a standstill before you start with
+    the adjustments,
+- type: ListItem
+  text: · wear protective clothing, such as safety gloves and shoes,
+- type: ListItem
+  text: · carefully follow the instructions given.
+- type: TextItem
+  text: Friction with these materials could cause physical injury.
+- type: TextItem
+  text: 'Check the settings of the dosing mechanism:'
+- type: ListItem
+  text: · after the first 10 running hours,
+- type: ListItem
+  text: · for each season,
+- type: ListItem
+  text: · after every 100 operational hours,
+- type: ListItem
+  text: · if the spreading pattern between the left and right spreading discs differs
+    more than 3%.
+- type: ListItem
+  text:  See paragraph »Test the left and right spreading patterns« on page 78.
+- type: TextItem
+  text: '133'
+<|begin_of_text|>page_number: 134
+items:
+- type: SectionHeaderItem
+  text: Maintenance
+- type: SectionHeaderItem
+  text: Set the position of the dosing mechanism
+- type: TextItem
+  text: The dosing mechanism must be mounted exactly in the middle above the spreading
+    discs. The agitator axle must turn freely from the seal ring.
+- type: TextItem
+  text: agitator axle
+- type: PictureItem
+  caption: agitator axle
+- type: TextItem
+  text: Seal ring
+- type: PictureItem
+  caption: Seal ring
+- type: TextItem
+  text: Dashboard
+- type: PictureItem
+  caption: Dashboard
+- type: TextItem
+  text: fastening bolt
+- type: PictureItem
+  caption: fastening bolt
+- type: TextItem
+  text: '134'
+- type: TextItem
+  text: INDICATION
+- type: TextItem
+  text: If you open the filters, you should block them to prevent unwanted closing.
+- type: ListItem
+  text:  Place the machine on the ground or on firm supports on a firm, level ground.
+- type: ListItem
+  text:  Switch the electronic control system and the tractor off, remove the key
+    from the ignition and engage the parking brake of the tractor.
+- type: ListItem
+  text:  Open the sieves with the included attachment and deposit it.
+- type: ListItem
+  text:  Remove the agitator from the agitator axle.
+- type: ListItem
+  text:  Check if the distance between the agitator axle and the seal ring is the
+    same on all sides.
+- type: TextItem
+  text: If the distance is not equal all over the position of the dosing plate can
+    be changed with regards to the agitator axle.
+- type: ListItem
+  text:  Remove the dashboard by loosening the 3 fixing knobs.
+- type: ListItem
+  text:  Turn the nuts on the 4 fastening bolts with which the dosing mechanism is
+    attached to the hopper a few times to loosen them.
+- type: ListItem
+  text:  Move the dosing plate so that the distance between the agitator axle and
+    the seal ring is the same on all sides.
+- type: ListItem
+  text:  Fasten the nuts on the 4 fastening bolts again without moving the dosing
+    plates again.
+- type: ListItem
+  text:  Put the agitator back on.
+- type: ListItem
+  text:  Reattach the dashboard with the three fixing knobs.
+- type: ListItem
+  text:  Check the connections as described in
+- type: ListItem
+  text:  paragraph »Checking and setting the discharge point setting mechanism« on
+    page 136.
+<|begin_of_text|>page_number: 135
+items:
+- type: SectionHeaderItem
+  text: Setting the dosing baffles
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Fixing slot
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Maintenance
+- type: TextItem
+  text: It is necessary to set the dosing plates to the correct positions to each
+    other to ensure correct dosing. If the dosing openings do not close well you will
+    loose unnecessary fertiliser and the application rate will be higher than intended
+    with a specific dosing setting. If the baffles slide far over each other the application
+    rate will be much lower than expected.
+- type: TextItem
+  text: If the dosing plates are mounted in the correct positions, you will see a
+    small crack of light when the dosing openings are closed.
+- type: ListItem
+  text:  Close the spreader dosing units on the control box. The actuators must be
+    closed properly.
+- type: ListItem
+  text:  Place the machine on the ground or on firm supports on a firm, level ground.
+- type: ListItem
+  text:  Switch the electronic control system and the tractor off, remove the key
+    from the ignition and engage the parking brake of the tractor.
+- type: ListItem
+  text:  Open the sieves with the included attachment and deposit it.
+- type: ListItem
+  text:  Check if you can see a small crack between the dosing baffles.
+- type: ListItem
+  text:  If not, move the actuator attachment point on the dosing mechanism until
+    a small chink is visible between the dosing plates.
+- type: ListItem
+  text:  Start the tractor and open and close the dosing units by operating the start
+    and stop keys a few times.
+- type: ListItem
+  text:  Switch the electronic control system and the tractor off and remove the
+    keys from the ignition.
+- type: ListItem
+  text:  Check if you can see a small crack between the dosing baffles.
+- type: TextItem
+  text: '135'
+<|begin_of_text|>page_number: 136
+items:
+- type: TextItem
+  text: Maintenance
+- type: SectionHeaderItem
+  text: Checking and setting
+- type: TextItem
+  text: setting mechanism
+- type: TextItem
+  text: the discharge point
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Fixing knobs
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '136'
+- type: SectionHeaderItem
+  text: Avoid contact with the fertiliser and other material
+- type: TextItem
+  text: You will most likely get into contact with the fertiliser and other material
+    you may wish to spread while filling, adjusting and testing the spreader. Wear
+    protective clothing and safety gloves, read the safety instructions provided by
+    the supplier and follow their directions. Contact with these materials could cause
+    physical harm.
+- type: SectionHeaderItem
+  text: Be careful that nothing gets jammed
+- type: TextItem
+  text: It is easy for parts to get jammed while adjusting and checking the spreader.
+- type: TextItem
+  text: 'Work safely while checking and adjusting:'
+- type: ListItem
+  text: · switching off the electronic control system,
+- type: ListItem
+  text: · switch the tractor off and remove the key from the ignition,
+- type: ListItem
+  text: · engage the parking brake of the tractor,
+- type: ListItem
+  text: · wait for all machine parts to come to a standstill before you start with
+    the adjustments,
+- type: ListItem
+  text: · wear protective clothing, such as safety gloves and shoes,
+- type: ListItem
+  text: · carefully follow the instructions given.
+- type: TextItem
+  text: Friction with these materials could cause physical injury.
+- type: TextItem
+  text: If the form of the spreading pattern is not the same on the left and on the
+    right and the difference in the application rate is more than 3% it could be caused
+    by a difference in position of the discharge point with regards to the spreading
+    disc between the left and right sides. The distance between the inside of the
+    rope and the opening of the discharge bushing must be 109 mm.
+- type: ListItem
+  text:  Place the machine on the ground or on firm supports on a firm, level ground.
+- type: ListItem
+  text:  Perform the first checks as described in
+- type: ListItem
+  text:  paragraph »Checking and setting the dosing mechanism« on page 133.
+- type: ListItem
+  text:  Switch the electronic control system and the tractor off, remove the key
+    from the ignition and engage the parking brake of the tractor.
+- type: ListItem
+  text:  Specify the discharge position Q on the terminal.
+- type: ListItem
+  text:  Press successively start and stop spreading to activate the correct position.
+<|begin_of_text|>page_number: 137
+items:
+- type: TextItem
+  text: Maintenance
+- type: ListItem
+  text:  Attach the rope as per the illustration.
+- type: ListItem
+  text:  Measure the distance between the inside of the rope and the opening of the
+    discharge bushing carefully.
+- type: TextItem
+  text: 'If the measured distance is more or less than 109 mm, do the following:'
+- type: ListItem
+  text:  Loosen the 2 bolts of the actuator plate slightly.
+- type: ListItem
+  text:  Slide the actuator plate until the distance between the inside of the rope
+    and the opening of the discharge bushing is 109 mm.
+- type: ListItem
+  text:  Re-fasten the 2 bolts without sliding the actuator plate again.
+- type: ListItem
+  text:  Perform the check on the other side as well.
+- type: ListItem
+  text:  Secure the dashboard by fastening the 3 fixing knobs.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '137'
+<|begin_of_text|>page_number: 138
+items:
+- type: TextItem
+  text: Maintenance
+- type: SectionHeaderItem
+  text: Checking and setting the discharge bushing height
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Spreading disc
+- type: PictureItem
+  caption: Spreading disc
+- type: TextItem
+  text: Fixing knobs
+- type: TextItem
+  text: Dashboard
+- type: PictureItem
+  caption: Fixing knobsDashboard
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '138'
+- type: SectionHeaderItem
+  text: Avoid contact with the fertiliser and other material
+- type: TextItem
+  text: You will most likely get into contact with the fertiliser and other material
+    you may wish to spread while filling, adjusting and testing the spreader. Wear
+    protective clothing and safety gloves, read the safety instructions provided by
+    the supplier and follow their directions. Contact with these materials could cause
+    physical harm.
+- type: SectionHeaderItem
+  text: Be careful that nothing gets jammed
+- type: TextItem
+  text: It is easy for parts to get jammed while adjusting and checking the spreader.
+- type: TextItem
+  text: 'Work safely while checking and adjusting:'
+- type: ListItem
+  text: · switching off the electronic control system,
+- type: ListItem
+  text: · switch the tractor off and remove the key from the ignition,
+- type: ListItem
+  text: · engage the parking brake of the tractor,
+- type: ListItem
+  text: · wait for all machine parts to come to a standstill before you start with
+    the adjustments,
+- type: ListItem
+  text: · wear protective clothing, such as safety gloves and shoes,
+- type: ListItem
+  text: · carefully follow the instructions given.
+- type: TextItem
+  text: Friction with these materials could cause physical injury.
+- type: TextItem
+  text: The distance between the discharge bushing and the spreading disc must be
+    1.0 mm.
+- type: TextItem
+  text: If the distance is too great, the fertiliser does not flow through the discharge
+    point opening onto the spreading disc but onto a random point below the discharge
+    bushing. This results in a disrupted spreading pattern.
+- type: TextItem
+  text: If the distance is too short, a full hopper may rest partly on the spreading
+    disc, which seriously damages the machine as a result.
+- type: ListItem
+  text:  Attach the empty machine and raise it to working height (75 cm).
+- type: ListItem
+  text:  Switch the tractor off, remove the key from the ignition and engage the
+    parking brake of the tractor.
+- type: ListItem
+  text:  Place heavy, stable supports under the ends of the lifting arms.
+- type: ListItem
+  text:  Lower the arms onto the supports. Now the machine cannot drop accidentally.
+- type: ListItem
+  text:  Switch the tractor off, remove the key from the ignition and engage the
+    parking brake of the tractor.
+- type: ListItem
+  text:  Measure the distance between the spreading disc and the discharge bushing.
+- type: TextItem
+  text: You can use a feeler gauge to measure short distances accurately.
+- type: TextItem
+  text: 'If the measured distance is more or less than 1.0 mm, do the following:'
+- type: ListItem
+  text:  Remove the dashboard by loosening the 3 fixing knobs.
+- type: ListItem
+  text:  Turn the lock nuts on the 4 fastening bolts with which the dosing mechanism
+    is attached to the hopper a few times to loosen them.
+<|begin_of_text|>page_number: 139
+items:
+- type: TextItem
+  text: INDICATION
+- type: PictureItem
+  caption: INDICATION
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Bayonet ring
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Maintenance
+- type: ListItem
+  text:  Turn the nuts on the 4 fastening bolts so that the dosing mechanism moves
+    upward.
+- type: TextItem
+  text: The dosing mechanism is now higher than the spreading disc and discharge bushing.
+    Turn the dosing mechanism upwards until you have good access to the bolts attaching
+    the discharge bushing to the agitator axle star.
+- type: ListItem
+  text:  Unscrew the bolts attaching the discharge bush to the star a few times.
+- type: ListItem
+  text:  Move the discharge bushing upwards or downwards until the distance to the
+    spreading disc is 1.0 mm.
+- type: TextItem
+  text: You can also put 1.0 mm thick plates between the discharge bush and the spreading
+    disc and lower the discharge bush onto them.
+- type: ListItem
+  text:  Turn on the bolts attaching the discharge bushing to the agitator axle star.
+- type: ListItem
+  text:  Check the height again and adjust it if necessary.
+- type: ListItem
+  text:  Lower the dosing mechanism by turning the fastening bolt nuts upward.
+- type: SectionHeaderItem
+  text: Lower the dosing mechanism until the bayonet ring has moved halfway across
+    the bolts attaching the discharge bushing to the star.
+- type: ListItem
+  text:  Check the position of the dosing mechanism relative to the agitator axle.
+    The distance between the agitator axle and the sealing ring must be the same on
+    all sides.
+- type: ListItem
+  text:  See paragraph »Checking and setting the dosing mechanism« on page 133.
+- type: ListItem
+  text:  Turn on the lock nuts on 4 fastening bolts without moving the dosing mechanism
+    again.
+- type: ListItem
+  text:  Check that the agitator is not in contact with the bolts attaching the agitator
+    seal ring.
+- type: ListItem
+  text:  Reattach the dashboard with the three fixing knobs.
+- type: ListItem
+  text:  Perform the check on the other side as well.
+- type: ListItem
+  text:  Finally, check the position of the dosing mechanism and the position of
+    the dosing baffle as described in
+- type: ListItem
+  text:  paragraph »Checking and setting the dosing mechanism« on page 133.
+- type: TextItem
+  text: '139'
+<|begin_of_text|>page_number: 140
+items:
+- type: TextItem
+  text: Maintenance
+- type: SectionHeaderItem
+  text: Replacing agitator axle seal
+- type: TextItem
+  text: '140'
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Avoid contact with the fertiliser and other material
+- type: TextItem
+  text: You will most likely get into contact with the fertiliser and other material
+    you may wish to spread while filling, adjusting and testing the spreader. Wear
+    protective clothing and safety gloves, read the safety instructions provided by
+    the supplier and follow their directions. Contact with these materials could cause
+    physical harm.
+- type: SectionHeaderItem
+  text: Be careful that nothing gets jammed
+- type: TextItem
+  text: It is easy for parts to get jammed while adjusting and checking the spreader.
+- type: TextItem
+  text: 'Work safely while checking and adjusting:'
+- type: ListItem
+  text: · switching off the electronic control system,
+- type: ListItem
+  text: · switch the tractor off and remove the key from the ignition,
+- type: ListItem
+  text: · engage the parking brake of the tractor,
+- type: ListItem
+  text: · wait for all machine parts to come to a standstill before you start with
+    the adjustments,
+- type: ListItem
+  text: · wear protective clothing, such as safety gloves and shoes,
+- type: ListItem
+  text: · carefully follow the instructions given.
+- type: TextItem
+  text: Friction with these materials could cause physical injury.
+- type: TextItem
+  text: The agitator axle is equipped with a plastic seal to prevent fertiliser granule
+    loss along the agitator axle. The seal must be replaced every season, as well
+    as after every 100 operational hours. Only work on a clean machine with an empty
+    hopper.
+- type: ListItem
+  text:  Set the fine application handle to the normal dosing setting.
+- type: ListItem
+  text:  Start the tractor and engage the control box.
+- type: ListItem
+  text:  Activate the empty hopper function.
+- type: ListItem
+  text:  Please refer to the software instruction manual
+- type: ListItem
+  text:  Wait until both actuators are completely extended and the dosing units are
+    completely open.
+- type: ListItem
+  text:  Place the machine on the ground or on firm supports on a firm, level ground.
+- type: ListItem
+  text:  Switch the electronic control system and the tractor off, remove the key
+    from the ignition and engage the parking brake of the tractor.
+<|begin_of_text|>page_number: 141
+items:
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Metal seal ring
+- type: PictureItem
+  caption: Metal seal ring
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Maintenance
+- type: ListItem
+  text:  Open the sieves with the included attachment and deposit it.
+- type: ListItem
+  text:  Remove the agitator from the agitator axle.
+- type: ListItem
+  text:  Support the fertiliser bearing ring through a dosing opening so that it
+    will not drop.
+- type: ListItem
+  text:  Remove the 3 fastening bolts from the seal rings.
+- type: ListItem
+  text:  Remove the metal seal rings.
+- type: ListItem
+  text:  Check the condition of the agitator axle.
+- type: ListItem
+  text:  Replace the fertiliser sealing ring.
+- type: ListItem
+  text:  Put the metal seal rings back in position.
+- type: ListItem
+  text:  Put the 3 fastening bolts back in place.
+- type: ListItem
+  text: TIP You can let go of the plastic bearing ring again after the first fastening
+    bolt has been put in place.
+- type: ListItem
+  text:  Put the agitator back into the agitator axle.
+- type: TextItem
+  text: Check the connections as described in
+- type: ListItem
+  text:  paragraph »Checking and setting the dosing mechanism« on page 133.
+- type: TextItem
+  text: '141'
+<|begin_of_text|>page_number: 142
+items:
+- type: TextItem
+  text: Accessories
+- type: TextItem
+  text: Accessories
+- type: SectionHeaderItem
+  text: General
+- type: SectionHeaderItem
+  text: IsoMatch control box
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '142'
+- type: TextItem
+  text: The following accessories for your machine are available to adapt it to your
+    tractor and/or are working conditions.
+- type: TextItem
+  text: All of the responsibilities of the manufacturer lapse and the guarantee becomes
+    null and void if non-genuine parts are used.
+- type: TextItem
+  text: For complete ISO control, the IsoMatch control box offers many extra new functions.
+- type: TextItem
+  text: The latest developments in the field of ISOBUS steering, coupling of the tractor
+    and machine and ease-of-use are all incorporated in the IsoMatch.
+- type: SectionHeaderItem
+  text: Many functions and programmes on one control box
+- type: TextItem
+  text: 'The divided screen has a flexible division to:'
+- type: ListItem
+  text: · operate 2 programmes or functions simultaneously on screen, e.g. the spreader
+    and a separate operating programme. This can be done without having to switch.
+- type: ListItem
+  text: · Instruction booklet in the correct language on screen.
+- type: ListItem
+  text: '· Check the following by camera in the cabin while working:'
+- type: ListItem
+  text: · a specific point on the machine,
+- type: ListItem
+  text: · the crop
+- type: ListItem
+  text: · or the vicinity.
+- type: ListItem
+  text: '· Extra functions:'
+- type: ListItem
+  text: · Calculator
+- type: ListItem
+  text: · Internet browser
+- type: ListItem
+  text: · Camera screen (Camera is optional)
+- type: ListItem
+  text: · Status bar for time, GPS signal strength and driving direction (with GEOCONTROL
+    extension to the IsoMatch)
+- type: ListItem
+  text: '· Save:'
+- type: ListItem
+  text: · Documents
+- type: ListItem
+  text: · Tractor data
+- type: ListItem
+  text: · Field particulars
+- type: ListItem
+  text: · Work particulars of various ISO machines.
+- type: ListItem
+  text: · Client particulars.
+<|begin_of_text|>page_number: 143
+items:
+- type: SectionHeaderItem
+  text: IsoMatch Tellus GO control box
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: ISOBUS tractor connection
+- type: TextItem
+  text: Input IM Tellus with ISO11786 In cab connection
+- type: PictureItem
+  caption: Input IM Tellus with ISO11786 In cab connection
+- type: SectionHeaderItem
+  text: Conversion to non-ISO tractor with IsoMatch power
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Accessories
+- type: SectionHeaderItem
+  text: Compact and complete
+- type: TextItem
+  text: IsoMatch Go, as a handy and more compact variant of the doublescreen version,
+    offers complete ISO control with all functions. Besides the smaller dimension
+    with the single screen, the number of USB connections and the absence of Wlan/Wifi
+    constitutes the biggest difference.
+- type: SectionHeaderItem
+  text: Many additional functions.
+- type: TextItem
+  text: The latest developments in ISOBUS communication between tractor and implement
+    and ease-of-use are all incorporated into the IsoMatch Tellus GO.
+- type: TextItem
+  text: A scroll wheel on the upper right of the box and an additional keyboard make
+    menu navigation easy.
+- type: SectionHeaderItem
+  text: Connect the ISOBUS tractor via IM Tellus 9-point in Cab cable
+- type: TextItem
+  text: If your tractor is provided with a full ISOBUS connection, a connection with
+    the 9-pins in Cab cable between your tractor and the IsoMatch Tellus GO control
+    box is sufficient.
+- type: TextItem
+  text: Other connections are made via the "Input IM Tellus" cable, supplied as a
+    standard item.
+- type: SectionHeaderItem
+  text: Connect the ISOBUS tractor via IM Tellus 9-point in Cab cable
+- type: TextItem
+  text: If your tractor is provided with a complete ISOBUS connection, a connection
+    with the 9-pins in Cab cable between your tractor and the IsoMatch control box
+    is sufficient.
+- type: TextItem
+  text: Other connections are made via the "Input IM Tellus" cable, supplied as a
+    standard item.
+- type: SectionHeaderItem
+  text: Input IM Tellus with ISO11786 In cab connection
+- type: TextItem
+  text: 'A connection set is supplied as a standard item with the IsoMatch for:'
+- type: ListItem
+  text: · ISO 11786 In cab
+- type: ListItem
+  text: · lights and ignition
+- type: ListItem
+  text: · Tractor CAN (optional plug specific to the tractor required)
+- type: ListItem
+  text: · Video input.
+- type: SectionHeaderItem
+  text: IsoMatch power cable set for non-ISO tractors
+- type: TextItem
+  text: If the tractor does not have an ISOBUS communication, it can be added with
+    the IsoMatch power cable set.
+- type: TextItem
+  text: Hereafter, your tractor is entirely ISOBUS ready, and you can connect and
+    operate the machine with the IsoMatch control box.
+- type: TextItem
+  text: The "Input IM Tellus" cable, supplied as a standard item, can be used for
+    other connections.
+- type: TextItem
+  text: '143'
+<|begin_of_text|>page_number: 144
+items:
+- type: TextItem
+  text: Accessories
+- type: SectionHeaderItem
+  text: Cable with 7-point plugs for ISO 11786 in cab connection
+- type: SectionHeaderItem
+  text: IM Tellus sensor input
+- type: TextItem
+  text: Sensor input IM Tellus with sensor connection Sensor input IM Tellus with
+    sensor connection
+- type: PictureItem
+  caption: Sensor input IM Tellus with sensor connection Sensor input IM Tellus with
+    sensor connection
+- type: SectionHeaderItem
+  text: Extended ISO cable
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: RS232 cable
+- type: TextItem
+  text: '144'
+- type: SectionHeaderItem
+  text: Directly to the ISO 11786 in cab tractor connection in the tractor cabin
+- type: TextItem
+  text: You can mount an optional extension cable to the ISO 11786 in cab tractor
+    connection on the 7-point plug "Input IM Tellus" cable supplied as a standard
+    item.
+- type: SectionHeaderItem
+  text: Directly to the tractor radar or wheel sensor
+- type: TextItem
+  text: You can connect the tractor's speed sensor or radar to the IsoMatch control
+    box with the optional "Sensor input IM Tellus".
+- type: TextItem
+  text: This is needed if your tractor does not have the ISO 11786 in cab connection.
+    Other connections are the same as the "Input IM Tellus" cable set, supplied as
+    a standard item.
+- type: TextItem
+  text: Various cables and extension cables for many different types of radar are
+    available.
+- type: ListItem
+  text:  Also see the spare parts manual.
+- type: TextItem
+  text: An extended ISO cable is available for a tractor-trailed spreader. This replaces
+    the short cable that is already fitted. Exchange the whole cable.
+- type: ListItem
+  text:  The wire-connecting diagram is displayed in the spare parts manual.
+- type: TextItem
+  text: The Tellus control box communicates with an external system via an RS 232
+    connection. You can use a cable with an RS232 plug to connect the signal from
+    an external system to the Tellus control box. You can find the plug pin occupation
+    in
+- type: ListItem
+  text:  The Tellus control box operating manual.
+<|begin_of_text|>page_number: 145
+items:
+- type: SectionHeaderItem
+  text: Spreader control software
+- type: SectionHeaderItem
+  text: GEOCONTROL software
+- type: SectionHeaderItem
+  text: IsoMatch Grip
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Accessories
+- type: TextItem
+  text: A user licence can be purchased via the IsoMatch shop which, after the expiry
+    of the free test period, allows your machine to work with
+- type: ListItem
+  text: · Task controller
+- type: ListItem
+  text: · external application rate
+- type: ListItem
+  text: · control for headland management and GEOSPREAD functions.
+- type: ListItem
+  text:  See the website www.isomatchshop.com
+- type: TextItem
+  text: IsoMatch GEOCONTROL is an advanced software application for more precise and
+    efficient use of fertiliser spreaders.
+- type: SectionHeaderItem
+  text: Site-dependent control of your GEOSPREADER
+- type: TextItem
+  text: Around the spreader
+- type: ListItem
+  text: · to get spreading done specific to the site
+- type: ListItem
+  text: · with automatic headland control
+- type: ListItem
+  text: · and working width reduction with gored spreading,
+- type: TextItem
+  text: you require additional software. See the website www.isomatchshop.com
+- type: TextItem
+  text: The IsoMatch Grip is a control unit on which most of the machine functions
+    used can be operated centrally with one handle. This is available in addition
+    to the ISO tractor or ISOMatch control box.
+- type: SectionHeaderItem
+  text: Handle control
+- type: TextItem
+  text: While working attention and visibility is often required to follow the work
+    process. If operating buttons can be located by the sense of touch  reaction  speed  can  be  increased  and  operating  mistakes
+    avoided. By locating the control buttons on the handle by touch while you are
+    looking where you are driving system control can remain focussed.
+- type: ListItem
+  text:  See the website www.isomatchshop.com.
+- type: TextItem
+  text: '145'
+<|begin_of_text|>page_number: 146
+items:
+- type: SectionHeaderItem
+  text: Accessories
+- type: SectionHeaderItem
+  text: ISOMatch InLine
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: IsoMatch Global GPS antenna
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: IsoMatch Wireless
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: IsoMatch Eye
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '146'
+- type: TextItem
+  text: To complement the GEOCONTROL functions an optically guided steering
+- type: TextItem
+  text: instrument will assist you in finding and keeping the A-B line during various
+    activities.
+- type: SectionHeaderItem
+  text: DGPS driven steering
+- type: TextItem
+  text: The upper and middle section shows the DGPS driven steering while spraying
+    and for other treatments, where close monitoring of the pass is required.
+- type: SectionHeaderItem
+  text: GEOCONTROL Section Activity
+- type: TextItem
+  text: At the bottom of the display you will see the enabled and disabled sections
+    displayed.
+- type: ListItem
+  text:  See the website www.isomatchshop.com
+- type: TextItem
+  text: The latest development in ISOBUS communication is an extension to the IsoMatch
+    terminal for tractors which cannot give any own locational information. The GPS
+    antenna with DGPS accuracy allows satellite navigation for field-specific section
+    control, variable dosing and field registration.
+- type: ListItem
+  text:  See the website www.isomatchshop.com
+- type: TextItem
+  text: Connection with local Wireless Internet and IsoMatch. With IsoMatch Wireless,
+    you can easily connect the IsoMatch Tellus (GO) to any wireless network. Think
+    of hot spot, home network, etc.
+- type: ListItem
+  text:  See the website www.isomatchshop.com
+- type: TextItem
+  text: IsoMatch Eye is an accessory for better visibility, day and night. The camera
+    can be connected to the IsoMatch Tellus and IsoMatch Tellus GO terminal.
+- type: ListItem
+  text:  See the website www.isomatchshop.com
+<|begin_of_text|>page_number: 147
+items:
+- type: SectionHeaderItem
+  text: IsoMatch MultiEye
+- type: TextItem
+  text: Reflector
+- type: PictureItem
+  caption: Reflector
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Accessories
+- type: TextItem
+  text: IsoMatch MultiEye is an accessory that enables connecting several cameras
+    to the IsoMatch Tellus and the IsoMatch Tellus GO terminal.
+- type: ListItem
+  text:  See the website www.isomatchshop.com
+- type: TextItem
+  text: Motor vehicles with limited speed (<40 km/h), agricultural and forestry tractors
+    and their trailers, as well as other vehicles, must be provided with an orange
+    triangle with a red reflector at the rear in the form of a truncated triangle.
+- type: TextItem
+  text: Intermediate frame (Cat 3/4) The intermediate frame will enable you to use
+    the machine behind a Cat III tractor.
+- type: TextItem
+  text: Set of vanes for large working widths
+- type: PictureItem
+  caption: Set of vanes for large working widths
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Keep in mind an increase in the distance between the centre of the rear axle
+    and the centre of the lifting arm coupling point.
+- type: TextItem
+  text:  see paragraph »Calculate the axle load with tractor-mounted machines« on
+    page 13,
+- type: TextItem
+  text: Set of vanes for spreading large working widths (up to 54 metres).
+- type: TextItem
+  text: '147'
+<|begin_of_text|>page_number: 148
+items:
+- type: SectionHeaderItem
+  text: Accessories
+- type: SectionHeaderItem
+  text: Hopper empty sensor
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: ExactLine
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Hydraulic border spreading plate
+- type: TextItem
+  text: The hydraulic border spreading plate allows you to perform one-sided boundary
+    spreading as well as border spreading from the sprayer tramline.
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '148'
+- type: ListItem
+  text:  See paragraph »Border spreading« on page 106.
+- type: TextItem
+  text: The hopper empty sensor is equipped with an alarm that goes off when the hopper
+    is almost empty.
+- type: TextItem
+  text: The sensor usually comes with the valve set.
+- type: TextItem
+  text: ExactLine is an accurate border spreading tool for boundary track spreading
+    from the last sprayer tramline. ExactLine provides a very good border spreading
+    pattern with an optimal balance between profit and the environment.
+- type: ListItem
+  text:  See paragraph »Boundary track spreading with ExactLine« on page 110.
+<|begin_of_text|>page_number: 149
+items:
+- type: SectionHeaderItem
+  text: Calibration container
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Drain kit
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Accessories
+- type: TextItem
+  text: A calibration test is essential to obtain accurate settings for a manually
+    entered application rate. The calibration container is an indispensable tool for
+    this.
+- type: TextItem
+  text: A drain kit is available for emptying the hopper quickly.
+- type: TextItem
+  text: '149'
+<|begin_of_text|>page_number: 150
+items:
+- type: SectionHeaderItem
+  text: Accessories
+- type: SectionHeaderItem
+  text: Hopper extensions
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Hopper cover
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Electric hopper cover
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Pellet sieve
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: '150'
+- type: TextItem
+  text: The loading volume of the spreader can be increased by putting one, two or
+    three hopper extensions in place.
+- type: TextItem
+  text:  See paragraph »Technical specifications« on page 36.
+- type: TextItem
+  text: Keep the increase in the filling height and the weight of the machine into
+    account.
+- type: ListItem
+  text:  See paragraph »Calculate the axle load with tractor-mounted machines« on
+    page 13.
+- type: TextItem
+  text: The hopper cover protects the fertiliser in the hopper against humidity and
+    dirt.
+- type: TextItem
+  text: The sail can be folded back for a larger filler opening.
+- type: TextItem
+  text: The electric hopper cover protects the fertiliser in the hopper against humidity
+    and dirt.
+- type: TextItem
+  text: The cover can be opened and closed electrically for a large fill opening.
+- type: TextItem
+  text:  See paragraph »Electric hopper cover« on page 42.
+- type: TextItem
+  text: This sieve can be used when spreading with pellets.
+<|begin_of_text|>page_number: 151
+items:
+- type: SectionHeaderItem
+  text: Parking wheels set
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Mud guards
+- type: PictureItem
+  caption: ''
+- type: SectionHeaderItem
+  text: Step
+- type: PictureItem
+  caption: ''
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: Accessories
+- type: TextItem
+  text: A disconnected machine can easily be moved with the parking wheels set. Caster
+    wheels may be placed on the side of the frame.
+- type: TextItem
+  text: A set of mud guards is available to protect the machine from being dirtied
+    by the tractor wheels.
+- type: TextItem
+  text: For safely carrying out an inspection in the hopper, a step (left and/or right
+    of the hopper) is available.
+- type: TextItem
+  text: '151'
+<|begin_of_text|>page_number: 152
+items:
+- type: TextItem
+  text: Troubleshooting
+- type: TextItem
+  text: Troubleshooting
+- type: SectionHeaderItem
+  text: Trouble-shooting table
+- type: TableItem
+  table_data:
+    Problem:
+      0: Incorrect appli- cation rates  (kg per hec- tare)
+      1: Incorrect appli- cation rates  (kg per hec- tare)
+      2: Incorrect appli- cation rates  (kg per hec- tare)
+      3: Incorrect appli- cation rates  (kg per hec- tare)
+      4: Incorrect appli- cation rates  (kg per hec- tare)
+      5: Incorrect appli- cation rates  (kg per hec- tare)
+      6: Incorrect appli- cation rates  (kg per hec- tare)
+      7: Incorrect appli- cation rates  (kg per hec- tare)
+      8: Incorrect appli- cation rates  (kg per hec- tare)
+      9: Incorrect appli- cation rates  (kg per hec- tare)
+      10: Incorrect appli- cation rates  (kg per hec- tare)
+      11: Incorrect appli- cation rates  (kg per hec- tare)
+      12: Incorrect appli- cation rates  (kg per hec- tare)
+      13: Difference be- tween the flow- rate on the left  and the right  spreading  discs
+      14: Difference be- tween the flow- rate on the left  and the right  spreading  discs
+      15: Difference be- tween the flow- rate on the left  and the right  spreading  discs
+    Possible cause:
+      0: Dosing setting incorrectly set
+      1: Incorrect setting for fine dosage
+      2: Driving speed signal not correctly set
+      3: Incorrect driving speed signal
+      4: Incorrect distance between the driving  tracks
+      5: New type of fertiliser spread with the  same settings as the previous type.
+        Qual- ity varies greatly between types.
+      6: The flow of the fertiliser is blocked
+      7: Dosing setting and flowrate not entered  on the 'Curve Calibration' screen
+        before  starting work activities
+      8: Incorrect application rate, working width  and/or letter value discharge
+        point en- tered
+      9: The control system is being operated  manually, so it does not perform automat-
+        ic calibration
+      10: Incorrect values entered after a manual  calibration test at a manually
+        entered ap- plication rate
+      11: The speedometer is incorrect or not  measuring
+      12: 'For a tractor without driving speed meas- urement: the simulated and real
+        driving  speeds do not correspond'
+      13: Actuators set unequally
+      14: The stop of one or both of the actuators  have been moved
+      15: Discharge is blocked on the one side
+    Solution:
+      0: Check the dosing setting
+      1: Set the dosing setting for fine application  as per the instructions
+      2: Set the correct source of the driving speed  signal in the control system,
+        as well as the  control box
+      3: Calibrate the driving speed
+      4: Always set the driving tracks before  spreading
+      5: Determine the characteristics of the fertil- iser, look for the relevant
+        spreading chart  and set the spreader again
+      6: Clean the machine well after each use. Replace the agitator if it is worn
+        out
+      7: Find the correct values in the spreading  chart and enter them
+      8: Enter the correct values in the control sys- tem
+      9: Switch to automatic operation
+      10: Perform the calibration test in the correct  manner and enter the result
+        obtained
+      11: Check the sensors and cables and cali- brate the wheel sensor or radar
+      12: Adjust the simulated driving speed on the  main screen or the real driving
+        speed
+      13: Check the settings
+      14: Check the position of the connecting  points and readjust them
+      15: Clean the machine well after each use. Replace the agitator if it is worn
+        out
+    Pag e:
+      0: '78'
+      1: '67'
+      2: ''
+      3: ''
+      4: '97'
+      5: 57,  62
+      6: '118'
+      7: '66'
+      8: '62'
+      9: ''
+      10: ''
+      11: '41'
+      12: '41'
+      13: 133,  136
+      14: '133'
+      15: '118'
+- type: TextItem
+  text: '152'
+<|begin_of_text|>page_number: 153
+items:
+- type: TextItem
+  text: Troubleshooting
+- type: TableItem
+  table_data:
+    Problem:
+      0: Great amounts  of dust while  spreading
+      1: Great amounts  of dust while  spreading
+      2: Great amounts  of dust while  spreading
+      3: Great amounts  of dust while  spreading
+      4: Spreading  tracks visible  among the  crops
+      5: Spreading  tracks visible  among the  crops
+      6: Spreading  tracks visible  among the  crops
+      7: Spreading  tracks visible  among the  crops
+      8: Spreading  tracks visible  among the  crops
+      9: Spreading  tracks visible  among the  crops
+      10: Spreading  tracks visible  among the  crops
+      11: Spreading  tracks visible  among the  crops
+      12: Spreading  tracks visible  among the  crops
+      13: Spreading  tracks visible  among the  crops
+      14: Spreading  tracks visible  among the  crops
+      15: Spreading  tracks visible  among the  crops
+      16: Spreading  tracks visible  among the  crops
+    Possible cause:
+      0: Average quality fertiliser (too soft, broken,  mixed types) or incorrect
+        storage
+      1: Rpm on the spreading discs too high
+      2: agitator grinds. Dosing units closed for too  long with the PTO shaft running
+      3: Right agitator grinds
+      4: Average quality fertiliser. 80% of the gran- ules with a diameter between
+        2.0 - 4.75  mm
+      5: Blend of fertiliser types used. A blend can  become unmixed again or types
+        of fertil- iser could contain varying spreading qual- ities
+      6: New type of fertiliser spread with the  same settings as the previous type.
+        Qual- ity varies greatly between types.
+      7: Use of wrong spreading chart
+      8: 'Working with unfavourable weather con- ditions: high levels of humidity,
+        rain, heat  or high wind speeds (> 5 m/sec)'
+      9: Incorrect overlapping of the spreading  pattern
+      10: Horizontal/vertical settings of the machine  not correct
+      11: Spreader not set to the correct height
+      12: Working width incorrect
+      13: Worn or missing vanes
+      14: Tyre pressure on the left and right not the  same
+      15: The setting mechanism of the discharge  point is not set well
+      16: The dosing mechanism is not set well
+    Solution:
+      0: Contact your supplier. Update the storage area. Spread with smaller working
+        widths as far  as possible
+      1: Check the PTO shaft speed and the cou- pling shaft mounting point
+      2: Switch the PTO shaft off after closing the  dosing units. Check the agitator
+        for damage
+      3: Spreading disc not disconnected while  border spreading with the border spread-
+        ing plate
+      4: Determine the distribution and spread  with small working widths if possible
+      5: Check the type, pattern and distribution. Spread with smaller working widths
+        as far  as possible
+      6: Determine the characteristics of the fertil- iser, look for the relevant
+        spreading chart  and set the spreader again
+      7: Determine the characteristics of the fertil- iser and select the correct
+        spreading chart
+      8: Only work under good weather conditions
+      9: Always set the driving tracks before  spreading
+      10: Check if the machine is standing level  horizontally and vertically.
+      11: Check and set to the correct working  height (75 cm above the crops or soil)
+      12: Check the discharge point letter and the  PTO shaft RPM
+      13: Check the vanes
+      14: Check the tyre pressure
+      15: Perform the »Checking and setting the  discharge point setting mechanism«
+      16: Perform the »Checking and setting the  dosing mechanism«
+    Pag e:
+      0: 57,  59,  64
+      1: 46,
+      2: ''
+      3: '107'
+      4: 59,  64
+      5: 57, 59
+      6: 57,  62
+      7: 57,  60
+      8: ''
+      9: '97'
+      10: '53'
+      11: '94'
+      12: 65,
+      13: '64'
+      14: ''
+      15: '136'
+      16: '136'
+- type: TextItem
+  text: '153'
+<|begin_of_text|>page_number: 154
+items:
+- type: SectionHeaderItem
+  text: Troubleshooting
+- type: TableItem
+  table_data:
+    Problem:
+      0: Machine  makes a noise  while running
+      1: Machine  makes a noise  while running
+      2: Machine  makes a noise  while running
+      3: Machine  makes a noise  while running
+      4: Powerful vibra- tions percepti- ble
+      5: Powerful vibra- tions percepti- ble
+      6: Powerful vibra- tions percepti- ble
+      7: Powerful vibra- tions percepti- ble
+      8: Alarm on the  control box  screen
+      9: The external  system is not  communicat- ing with the  control box
+      10: The external  system is not  communicat- ing with the  control box
+      11: The external  system is not  communicat- ing with the  control box
+      12: The external  system is not  communicat- ing with the  control box
+      13: Spreader does  not appear on  the screen
+      14: Spreader does  not appear on  the screen
+      15: Spreader does  not appear on  the screen
+    Possible cause:
+      0: Discharge bushing makes contact with  the spreading disc
+      1: Spreader put down with filled hopper
+      2: Spreading disc hidden/ out of balance
+      3: Build-up of fertiliser at the agitator and/or  spreading discs
+      4: Shut down the PTO shaft immediately!
+      5: Great imbalance in the spreading discs
+      6: Bent agitator axle or damaged agitator
+      7: PTO shaft working angle out of working  reach
+      8: The control system cannot perform re- quested function correctly
+      9: RS232 plug does not have the correct  connection on the side of the control
+        box  for the signal from the external system
+      10: The control box and external systems are  not communicating with each other
+        in the  same language
+      11: Application rate control by means of an  external signal is not connected
+      12: External system not switched on or incor- rectly set
+      13: Control box displays another system
+      14: Spreader ISO plug not connected
+      15: Power supply to the spreader and/or con- trol box interrupted
+    Solution:
+      0: Please contact your dealer
+      1: Repair the machine.  Set dosing mechanism and discharge  point again
+      2: Check the spreading discs for damage  and for the presence of all the vanes
+      3: Remove the fertiliser. Clean the machine well after each use.
+      4: Attend to the problem to prevent damage
+      5: Check the vanes and spreading discs
+      6: Replace the agitator axle or the agitator
+      7: Limit the working angle to a maximum of  30º
+      8: Consult meaning and advice in the soft- ware instruction manual.
+      9: Check and modify the plug pin occupation  on the side of the control box,
+        see user's  manual for control box and external sys- tem
+      10: Check the control box settings by means  of the external system data, see
+        user's  manual for the control box, tractor, Tellus  and external system
+      11: Switch on the external signal reception See the software instruction manual.
+      12: Check external system operation
+      13: Press the switch key to choose the  spreader display
+      14: Connect the spreader ISO plug
+      15: Check the electrical cables and fuses
+    Pag e:
+      0: ''
+      1: 133,  136
+      2: '64'
+      3: '118'
+      4: ''
+      5: '64'
+      6: ''
+      7: '51'
+      8: ''
+      9: ''
+      10: ''
+      11: ''
+      12: ''
+      13: '33'
+      14: '55'
+      15: ''
+- type: TextItem
+  text: '154'
+<|begin_of_text|>page_number: 155
+items:
+- type: TextItem
+  text: Falling into disuse
+- type: TextItem
+  text: Falling into disuse
+- type: TextItem
+  text: When the lifespan of the machine has finished, its separate parts must be
+    properly disposed of. Keep local legislation in mind with this!
+- type: SectionHeaderItem
+  text: Metal parts
+- type: TextItem
+  text: You must deliver all metal parts to a metal recycling company.
+- type: SectionHeaderItem
+  text: Plastic parts
+- type: TextItem
+  text: All plastic parts can be disposed of as unwanted garbage.
+- type: SectionHeaderItem
+  text: Oil and grease
+- type: TextItem
+  text: You must send oil and grease to a processing company for used oil and grease.
+- type: SectionHeaderItem
+  text: Rubber
+- type: TextItem
+  text: Rubber parts such as tyres and hoses must be disposed of at a rubber processing
+    company.
+- type: SectionHeaderItem
+  text: Electronic waste
+- type: TextItem
+  text: Electronic waste, such as the electronic control box and the machine boxes,
+    must be disposed of at specialist companies.
+- type: SectionHeaderItem
+  text: Fertiliser
+- type: TextItem
+  text: Remaining fertiliser must be stored or disposed of in accordance with the
+    regulations for chemicals.
+- type: TextItem
+  text: '155'
+<|begin_of_text|>page_number: 156
+items:
+- type: TextItem
+  text: Liability
+- type: TextItem
+  text: Liability
+- type: SectionHeaderItem
+  text: Liability
+- type: TextItem
+  text: '156'
+- type: TextItem
+  text: 'Without prejudice to the other stipulations of these General Conditions and
+    the stipulations of the act on product responsibility, the seller is only responsible
+    for damage caused by culpable breach of contract and by unlawful actions in the
+    framework of the regulations below:'
+- type: ListItem
+  text: 1. He/she is completely responsible for damage that result from gross neglect
+    due to his/her own actions or due to gross negligence of his/ her legal representatives
+    or supervising employees.
+- type: ListItem
+  text: 2. He/she can be held responsible for not abiding to the main contractual
+    requirements and to the other requirements of the contract insofar as that is
+    of vital importance for the purpose of the agreement (cardinal requirements) in
+    principle, through each of his/her own culpable acts or through each culpable
+    act of his/her legal representatives or those under his/her supervision, insofar
+    as responsibility is not already indicated under point 1.
+- type: ListItem
+  text: 3. The seller is also responsible for intentional and gross neglect caused
+    by him/her or by someone under his/her supervision for so far as responsibility
+    has not been determined under point 1 yet. Liability for his/her own neglect in
+    terms of simple neglect by his/her legal representatives or on his behalf by people
+    under his/her supervision excluded, will the requirements of point 2 remain valid.
+- type: ListItem
+  text: 4. Insofar as there is liability in terms of points 2 and 3, the extent thereof
+    is limited to normal remuneration for damage incurred.
+- type: ListItem
+  text: 5. The above regulations under 1 to 4 can be applied to any liability with
+    the conclusion of the agreement. These stipulations are limited with retroactive
+    effect to damages based on this legal title.
+<|begin_of_text|>page_number: 157
+items:
+- type: SectionHeaderItem
+  text: Complaints
+- type: SectionHeaderItem
+  text: Guarantee
+- type: TextItem
+  text: Liability
+- type: PictureItem
+  caption: ''
+- type: TextItem
+  text: 'The following stipulations apply, along with national legislation:'
+- type: ListItem
+  text: · The buyer must check the equipment, accessories and spare parts upon delivery
+    for transport damage and completeness. Any possible shortcomings must be reported
+    without delay.
+- type: ListItem
+  text: · The seller will only consider complaints if the buyer reports that in writing
+    within fourteen days after delivery by the seller.
+- type: ListItem
+  text: · The buyer must report hidden damage as soon as it becomes visible, but no
+    later than six months after delivery of the equipment. The legal period of limitation
+    remains valid.
+- type: TextItem
+  text: You can obtain the applicable guarantee conditions for your machine from your
+    dealer. He is also responsible for the first settlement of guarantee cases.
+- type: TextItem
+  text: '157'
+<|begin_of_text|>page_number: 158
+items:
+- type: SectionHeaderItem
+  text: Original EC declaration of conformity
+- type: TextItem
+  text: Original EC declaration of conformity
+- type: TextItem
+  text: Kverneland Group Nieuw-Vennep BV Hoofdweg 1278 NL-2153 LR Nieuw-Vennep The
+    Netherlands
+- type: TextItem
+  text: declares fully under own responsibility that the product
+- type: SectionHeaderItem
+  text: Exacta-TLX GEOSPREAD weighing spreader with accessories in all models
+- type: SectionHeaderItem
+  text: 'Type: VN407'
+- type: TextItem
+  text: 'Valid from series number: VN4070001001'
+- type: TextItem
+  text: 'complies with the following applicable EU legislations:'
+- type: ListItem
+  text: · Directive 2006/42/EC
+- type: ListItem
+  text: · Directive 2014/30/EU
+- type: TextItem
+  text: 'The following harmonised standards have been applied:'
+- type: ListItem
+  text: · EN ISO 4254-1     :2015
+- type: ListItem
+  text: · EN ISO 4254-8     :2018
+- type: TextItem
+  text: Kverneland Group Nieuw-Vennep BV Nieuw-Vennep, 22.06.2021
+- type: TextItem
+  text: R.H.F. Harmsen Director and authorised representative*
+- type: PictureItem
+  caption: R.H.F. Harmsen Director and authorised representative*
+- type: ListItem
+  text: '* Person authorised to compile the technical file and established in the
+    Community. See above for address.'
+- type: TextItem
+  text: Type plate
+- type: PictureItem
+  caption: Type plate
+- type: TextItem
+  text: '158'
+<|begin_of_text|>page_number: 159
+items:
+- type: SectionHeaderItem
+  text: Notes
+- type: TextItem
+  text: '159'
+- type: TextItem
+  text: Notes
+<|begin_of_text|>page_number: 160
+items:
+- type: TextItem
+  text: Index
+- type: SectionHeaderItem
+  text: A
+- type: TextItem
+  text: Accessories
+- type: TableItem
+  table_data:
+    0:
+      0: cable with plugs for ISO 11786 in cab connection
+      1: 144 Calibration container
+      2: drain kit
+      3: Electric hopper cover
+      4: ExactLine
+      5: Extended ISO cable
+      6: GEOCONTROL software
+      7: hopper cover
+      8: hopper extensions
+      9: hydraulic border spreading plate
+      10: IM Tellus sensor input
+      11: IsoMatch Eye
+      12: IsoMatch Global GPS antenna
+      13: IsoMatch Grip
+      14: ISOMatch InLine
+      15: IsoMatch MultiEye
+      16: IsoMatch power cable set
+      17: Isomatch Tellus control box
+      18: Isomatch Tellus GO control box
+      19: IsoMatch Wireless
+      20: Mud guards
+      21: Parking wheels set
+      22: pellet sieve
+      23: reflector
+      24: RS-232 cable
+      25: set of vanes for large working widths
+      26: Spreader control software
+      27: step
+      28: tractor ECU driving speed signal
+      29: Actuator
+      30: lubrication
+      31: Maintenance
+      32: Adjusting
+      33: discharge bush height
+      34: Discharge point
+      35: dosing baffle
+      36: dosing mechanism
+      37: machine
+      38: position of the dosing mechanism
+      39: Agitator axle seal
+      40: Maintenance
+      41: replace
+      42: Application rate
+      43: fine application
+      44: inspection
+      45: setting
+      46: Variable, externally driven  Applications of the machine
+      47: Apply safety
+      48: Attachment for sieve opening
+      49: automatic weighing system
+    1:
+      0: cable with plugs for ISO 11786 in cab connection
+      1: '149'
+      2: '149'
+      3: '150'
+      4: '148'
+      5: '144'
+      6: '145'
+      7: '150'
+      8: '150'
+      9: '148'
+      10: '144'
+      11: '146'
+      12: '146'
+      13: '145'
+      14: '146'
+      15: '147'
+      16: '143'
+      17: '142'
+      18: '143'
+      19: '146'
+      20: '151'
+      21: '151'
+      22: '150'
+      23: '147'
+      24: '144'
+      25: '147'
+      26: '145'
+      27: '151'
+      28: '144'
+      29: '30'
+      30: '126'
+      31: '126'
+      32: ''
+      33: '138'
+      34: '136'
+      35: '135'
+      36: '133'
+      37: '56'
+      38: '134'
+      39: ''
+      40: '140'
+      41: '140'
+      42: 24, 66
+      43: '67'
+      44: '76'
+      45: '66'
+      46: '72'
+      47: '23'
+      48: 19 44
+      49: '30'
+- type: TextItem
+  text: '160'
+- type: TextItem
+  text: Index
+- type: TextItem
+  text: AutosetApp
+- type: TableItem
+  table_data:
+    0:
+      0: ''
+      1: Axle load
+      2: calculation mounted machine
+      3: Calculations
+      4: Required details
+    1:
+      0: '61'
+      1: '13'
+      2: '13'
+      3: '15'
+      4: '14'
+- type: SectionHeaderItem
+  text: B
+- type: TableItem
+  table_data:
+    0:
+      0: Border spreading plate
+      1: headland
+      2: spreading pattern  testing full field spreading pattern
+      3: tramlines
+      4: Boundary track spreading
+      5: ExactLine
+      6: headland
+      7: spreading pattern
+    1:
+      0: ''
+      1: '102'
+      2: 28 88
+      3: '99'
+      4: ''
+      5: 106, 110
+      6: '102'
+      7: '29'
+- type: SectionHeaderItem
+  text: C
+- type: TableItem
+  table_data:
+    0:
+      0: Cable with plugs for ISO 11786 in cab connection
+      1: 144 calculating the axle load
+      2: Calculating the axle load with tractor-mounted  machines
+      3: Calibration container
+      4: Calibration test
+      5: manual
+      6: CentreFlow
+      7: Check
+      8: agitator axle seal
+      9: bolts and nuts
+      10: calibration test
+      11: Delivered machine
+      12: Discharge point
+      13: dosing mechanism
+      14: field adjustment
+      15: hydraulic system
+      16: spreading pattern
+      17: Check height of discharge bushing
+      18: Checking coupling shaft length
+      19: Cleaning
+      20: Clothes/protection
+      21: Combined control with GEOSPREAD system
+      22: Complaints
+      23: Connecting
+      24: coupling shaft
+      25: electric plugs
+      26: hydraulic hoses
+      27: machine
+      28: power lift
+      29: safety
+      30: Connecting electric plugs
+      31: Connecting the power lift
+      32: Connectors
+    1:
+      0: ''
+      1: '13'
+      2: '13'
+      3: '149'
+      4: ''
+      5: '71'
+      6: '23'
+      7: ''
+      8: '140'
+      9: '130'
+      10: '76'
+      11: '38'
+      12: '136'
+      13: '133'
+      14: '96'
+      15: '131'
+      16: '76'
+      17: '138'
+      18: '50'
+      19: '118'
+      20: '11'
+      21: '25'
+      22: '157'
+      23: ''
+      24: '54'
+      25: '55'
+      26: '55'
+      27: '53'
+      28: '56'
+      29: '52'
+      30: '55'
+      31: '56'
+      32: ''
+<|begin_of_text|>page_number: 161
+items:
+- type: TextItem
+  text: add oil
+- type: TextItem
+  text: Electric hopper cover
+- type: TextItem
+  text: '150'
+- type: TableItem
+  table_data:
+    0:
+      0: ''
+      1: Maintenance
+      2: Constant application rate
+      3: Containing grease and oil
+      4: Control box
+      5: ISOBUS
+      6: IsoMatch Tellus
+      7: Control system
+      8: safety
+      9: Coupling hydraulics
+      10: Coupling shaft
+      11: checking length
+      12: connecting
+      13: connecting point
+      14: fitting
+      15: lubricating points
+      16: Maintenance
+      17: profiled tubes
+      18: safety
+      19: shorten
+      20: working angle
+      21: Coupling shaft connection point
+      22: Coupling shaft working angle
+      23: Damage
+      24: Data
+      25: technical
+      26: Discharge bushing
+      27: lubricating points  Setting the height
+      28: Discharge point
+      29: adjusting
+      30: inspection
+      31: setting
+      32: transverse distribution
+      33: Disconnect
+      34: machine
+      35: Winter storage
+      36: Distribution
+      37: Distribution box
+      38: Dosing mechanism
+      39: adjusting
+      40: check
+      41: set the position
+      42: Dosing setting
+      43: Drain kit
+      44: Driving pattern
+      45: Driving speed
+      46: GPS signal
+      47: ''
+      48: Driving speed signal
+      49: E
+    1:
+      0: '128'
+      1: '128'
+      2: '66'
+      3: '124'
+      4: ''
+      5: 39, 41
+      6: 33, 142, 143
+      7: ''
+      8: '18'
+      9: '55'
+      10: '18'
+      11: '50'
+      12: '54'
+      13: 46, 64
+      14: '50'
+      15: '126'
+      16: '127'
+      17: '127'
+      18: '18'
+      19: '51'
+      20: 51, 54
+      21: 46, 64
+      22: 51, 54
+      23: '115'
+      24: ''
+      25: 36, 37
+      26: ''
+      27: 126 138
+      28: ''
+      29: '136'
+      30: '136'
+      31: '65'
+      32: '25'
+      33: '119'
+      34: '119'
+      35: '121'
+      36: '59'
+      37: '30'
+      38: ''
+      39: '133'
+      40: '133'
+      41: '134'
+      42: '68'
+      43: '149'
+      44: 109, 112
+      45: ''
+      46: '41'
+      47: '41'
+      48: ''
+      49: ''
+- type: TextItem
+  text: Environment
+- type: TextItem
+  text: Index
+- type: TextItem
+  text: 62, 76, 94
+- type: TableItem
+  table_data:
+    0:
+      0: Environment
+      1: ExactLine
+      2: boundary track spreading
+      3: Driving pattern
+      4: environment setting
+      5: headland
+      6: profit setting
+      7: setting
+      8: spreading pattern
+      9: Test the spreading pattern
+      10: tramlines
+      11: working method
+      12: Explanation for warning stickers
+      13: Extended ISO cable
+      14: F
+      15: Failure
+      16: causes
+      17: working method
+      18: Falling into disuse
+      19: Fertiliser
+      20: characteristics
+      21: density
+      22: distribution
+      23: explosion danger
+      24: mixing
+      25: safety
+      26: type and shape
+      27: Field
+      28: Adjusting the machine
+      29: last check
+      30: safety
+      31: Spreading
+      32: Filling
+      33: Loading height
+      34: safety
+      35: working method
+      36: Fine application
+      37: Fine dosing
+      38: Flowrate required
+      39: Front power lift
+      40: Full field spreading pattern  testing
+      41: G
+      42: Gearbox maintenance
+      43: GEOCONTROL
+      44: adaptation
+      45: GPS signal
+      46: headland
+      47: headland function
+      48: Software
+      49: spreading on field
+      50: Grease
+    1:
+      0: 62, 76, 94
+      1: '148'
+      2: 106, 110
+      3: '112'
+      4: '110'
+      5: '102'
+      6: '110'
+      7: '110'
+      8: '29'
+      9: '89'
+      10: '98'
+      11: '111'
+      12: '8'
+      13: '144'
+      14: ''
+      15: '113'
+      16: '113'
+      17: '114'
+      18: '155'
+      19: ''
+      20: '57'
+      21: '60'
+      22: '59'
+      23: '11'
+      24: '11'
+      25: '11'
+      26: '57'
+      27: ''
+      28: '95'
+      29: '96'
+      30: '20'
+      31: '100'
+      32: '73'
+      33: '74'
+      34: '73'
+      35: '74'
+      36: '67'
+      37: '24'
+      38: '31'
+      39: '53'
+      40: 28 81, 88
+      41: ''
+      42: '127'
+      43: '102'
+      44: '65'
+      45: '41'
+      46: '100'
+      47: 102, 104
+      48: '145'
+      49: '97'
+      50: '127'
+- type: TextItem
+  text: '161'
+<|begin_of_text|>page_number: 162
+items:
+- type: SectionHeaderItem
+  text: Index
+- type: TableItem
+  table_data:
+    0:
+      0: applying/adding  central gearbox
+      1: profiled tubes
+      2: ''
+      3: spreading disc gearboxes  Grease type
+      4: Guarantee
+      5: H
+      6: Headland
+      7: connecting headland with the
+      8: GEOCONTROL function
+      9: GEOCONTROL
+      10: Spreading
+      11: Hearing damage
+      12: Hopper cover
+      13: Hopper extensions
+      14: Hydraulic border spreading plate
+      15: one-sided boundary spreading
+      16: position
+      17: setting
+      18: spreading pattern
+      19: Test the spreading pattern
+      20: working method
+      21: Hydraulic hoses
+      22: Change process
+      23: connect
+      24: Inspection criteria
+      25: replace
+      26: Replacement intervals
+      27: Hydraulic system
+      28: check
+      29: Inspection criteria
+      30: Maintenance
+      31: Replacement intervals  safety
+      32: I
+      33: IM Tellus sensor input
+      34: Impact of GEOSPREAD
+      35: Inspection
+      36: discharge bush height
+      37: machine
+      38: Intended use
+      39: ISO control system  ISO tractor
+      40: ISOBUS
+      41: communication system
+      42: control box
+      43: control system
+      44: plug
+      45: tractor ECU  IsoMatch Eye
+      46: ''
+      47: IsoMatch Global GPS antenna
+      48: IsoMatch Grip
+    1:
+      0: '127'
+      1: 127 127
+      2: '127'
+      3: '36'
+      4: '157'
+      5: ''
+      6: ''
+      7: ''
+      8: '100'
+      9: 102, 104
+      10: '102'
+      11: '11'
+      12: '150'
+      13: '150'
+      14: '148'
+      15: '107'
+      16: '47'
+      17: '85'
+      18: '28'
+      19: '84'
+      20: '108'
+      21: ''
+      22: '132'
+      23: '55'
+      24: '132'
+      25: '132'
+      26: '131'
+      27: ''
+      28: '131'
+      29: '132'
+      30: '131'
+      31: '131'
+      32: ''
+      33: '144'
+      34: '28'
+      35: ''
+      36: '138'
+      37: '56'
+      38: '10'
+      39: 30 32
+      40: ''
+      41: '30'
+      42: 39, 41
+      43: '30'
+      44: '30'
+      45: '41'
+      46: '146'
+      47: '146'
+      48: '145'
+- type: TextItem
+  text: '162'
+- type: TextItem
+  text: ISOMatch InLine
+- type: TableItem
+  table_data:
+    0:
+      0: ISOMatch InLine
+      1: IsoMatch MultiEye
+      2: IsoMatch power cable set
+      3: IsoMatch Tellus
+      4: control box
+      5: control system
+      6: Scroll-wheel navigation
+      7: IsoMatch terminal
+      8: ISO tractor
+      9: NON-ISO tractor
+      10: IsoMatch Wireless
+      11: L
+      12: Last setting check
+      13: Liability
+      14: Linkage frame
+      15: Linkage pin height
+      16: Loading height
+      17: Lubricating points
+      18: actuators
+      19: coupling shaft
+      20: discharge bushings
+      21: M
+      22: Machine
+      23: adjusting
+      24: applications
+      25: cleaning
+      26: connecting
+      27: connecting hydraulically
+      28: coupling shaft  Disconnect
+      29: electrical connection
+      30: ''
+      31: field adjustments
+      32: filling
+      33: inspection
+      34: maintenance
+      35: Preparing for transport
+      36: product life
+      37: safety
+      38: safety decals
+      39: use
+      40: Maintenance
+      41: actuator
+      42: bolts and nuts
+      43: Connectors
+      44: discharge bushings
+      45: dosing mechanism
+      46: gearboxes
+      47: greasing  hydraulic system
+      48: intervals
+      49: lubricating points
+      50: replace the oil
+    1:
+      0: '146'
+      1: '147'
+      2: '143'
+      3: '33'
+      4: '33'
+      5: '30'
+      6: '34'
+      7: ''
+      8: '41'
+      9: '41'
+      10: '146'
+      11: ''
+      12: '96'
+      13: '156'
+      14: '45'
+      15: '53'
+      16: '74'
+      17: '126'
+      18: '126'
+      19: '126'
+      20: '126'
+      21: ''
+      22: ''
+      23: '56'
+      24: '23'
+      25: '118'
+      26: '53'
+      27: '55'
+      28: '18'
+      29: '119'
+      30: '55'
+      31: '95'
+      32: '73'
+      33: '56'
+      34: '21'
+      35: '93'
+      36: '155'
+      37: '17'
+      38: '17'
+      39: 19 122
+      40: ''
+      41: '126'
+      42: '130'
+      43: '128'
+      44: '126'
+      45: '133'
+      46: '127'
+      47: 127 131
+      48: '125'
+      49: '126'
+      50: '128'
+<|begin_of_text|>page_number: 163
+items:
+- type: TextItem
+  text: safety
+- type: TextItem
+  text: Top up the grease
+- type: TextItem
+  text: '127'
+- type: TextItem
+  text: Maintenance intervals
+- type: TextItem
+  text: '125'
+- type: TextItem
+  text: Manual calibration test
+- type: TextItem
+  text: '71'
+- type: TextItem
+  text: Meaning
+- type: TextItem
+  text: symbols
+- type: TextItem
+  text: '5'
+- type: TextItem
+  text: Mounting instructions
+- type: TextItem
+  text: safety
+- type: TextItem
+  text: '38'
+- type: TextItem
+  text: Mud guards
+- type: TextItem
+  text: 45, 151
+- type: SectionHeaderItem
+  text: O
+- type: SectionHeaderItem
+  text: Oil
+- type: TextItem
+  text: add
+- type: TextItem
+  text: '128'
+- type: TextItem
+  text: Replace
+- type: TextItem
+  text: '128'
+- type: TextItem
+  text: Oil and grease contents
+- type: TextItem
+  text: '124'
+- type: TextItem
+  text: One-sided boundary spreading
+- type: TextItem
+  text: headland
+- type: TextItem
+  text: '102'
+- type: TextItem
+  text: hydraulic border spreading plate
+- type: TextItem
+  text: '107'
+- type: TextItem
+  text: spreading pattern
+- type: TextItem
+  text: '28'
+- type: TextItem
+  text: Online spreading charts
+- type: TextItem
+  text: '61'
+- type: TextItem
+  text: Over and underdosing
+- type: TextItem
+  text: one-sided
+- type: TextItem
+  text: '105'
+- type: TextItem
+  text: results
+- type: TextItem
+  text: '105'
+- type: TextItem
+  text: two-sided
+- type: TextItem
+  text: '105'
+- type: SectionHeaderItem
+  text: P
+- type: TableItem
+  table_data:
+    0:
+      0: Parking safety
+      1: Parking wheels
+      2: set
+      3: Pellet sieve
+      4: Person
+      5: authorisation
+      6: clothing
+      7: personal protection
+      8: responsibility
+      9: safety
+      10: pictograms,
+      11: Plot
+      12: safety
+      13: Spreading
+      14: Position
+      15: hydraulic border spreading plate
+      16: indicator
+    1:
+      0: '117'
+      1: '43'
+      2: '151'
+      3: 44, 150
+      4: '10'
+      5: '11'
+      6: '11'
+      7: '11'
+      8: '10'
+      9: '10'
+      10: '5'
+      11: ''
+      12: '94'
+      13: '97'
+      14: ''
+      15: '47'
+      16: '47'
+- type: SectionHeaderItem
+  text: R
+- type: TextItem
+  text: Radar cables
+- type: TextItem
+  text: '144'
+- type: TextItem
+  text: Reference sensor
+- type: TextItem
+  text: '30'
+- type: TextItem
+  text: Reflector
+- type: TextItem
+  text: 44, 147
+- type: TextItem
+  text: Repair
+- type: TextItem
+  text: '122'
+- type: TextItem
+  text: Replacing agitator axle seal
+- type: TextItem
+  text: '140'
+- type: TextItem
+  text: RPM sensor
+- type: TextItem
+  text: '30'
+- type: TextItem
+  text: RS-232 cable
+- type: TextItem
+  text: '144'
+- type: TextItem
+  text: 21, 122
+- type: TextItem
+  text: Index
+- type: SectionHeaderItem
+  text: S
+- type: TableItem
+  table_data:
+    0:
+      0: Safety
+      1: authorisation
+      2: axle load
+      3: Clothes/protection
+      4: connecting
+      5: coupling shaft
+      6: electronic control system
+      7: fertiliser
+      8: hydraulic system
+      9: intended use
+      10: machine
+      11: Maintenance
+      12: Mounting instructions
+      13: on the field
+      14: on the land
+      15: On the road
+      16: stickers
+      17: storage
+      18: tractor
+      19: Transport
+      20: use
+      21: warning stickers
+      22: workplace
+      23: Safety regulations
+      24: Set of vanes for large working widths
+      25: Setting
+      26: Application rate
+      27: constant application rate
+      28: correct details
+      29: Discharge point
+      30: ExactLine
+      31: fine application
+      32: hydraulic border spreading plate
+      33: PTO shaft rpm
+      34: spreader
+      35: spreading height
+      36: working width
+      37: Setting PTO shaft rpm
+      38: Setting the dosing baffles
+      39: Software
+      40: GEOCONTROL
+      41: Spreader control
+      42: Software version
+      43: Speed signal
+      44: Splitter box
+      45: Spreader
+      46: set with correct data
+      47: setting
+      48: Spreading
+      49: headland
+      50: stopping
+      51: working method
+      52: Spreading charts
+      53: AutosetApp
+      54: correct details
+    1:
+      0: ''
+      1: '11'
+      2: '13'
+      3: '11'
+      4: '52'
+      5: '18'
+      6: '18'
+      7: '11'
+      8: '18'
+      9: '10'
+      10: '17'
+      11: '21'
+      12: '38'
+      13: '20'
+      14: '94'
+      15: '92'
+      16: '17'
+      17: '117'
+      18: '12'
+      19: '20'
+      20: '19'
+      21: 7, 8
+      22: '12'
+      23: '10'
+      24: 44, 147
+      25: ''
+      26: '66'
+      27: '66'
+      28: '57'
+      29: '65'
+      30: '110'
+      31: '67'
+      32: '85'
+      33: '65'
+      34: '62'
+      35: '95'
+      36: '64'
+      37: '65'
+      38: '135'
+      39: '23'
+      40: '145'
+      41: '145'
+      42: '23'
+      43: '41'
+      44: '47'
+      45: ''
+      46: '57'
+      47: '62'
+      48: '100'
+      49: '102'
+      50: '112'
+      51: '100'
+      52: ''
+      53: '61'
+      54: '57'
+- type: TextItem
+  text: '163'
+<|begin_of_text|>page_number: 164
+items:
+- type: SectionHeaderItem
+  text: Index
+- type: TableItem
+  table_data:
+    0:
+      0: finding correctly
+      1: online
+      2: telephone App
+      3: Spreading height
+      4: power lift
+      5: setting
+      6: Spreading pattern
+      7: border spreading plate
+      8: boundary track spreading
+      9: check
+      10: ExactLine
+      11: full field  full field with the border spreading plate
+      12: hydraulic border spreading plate
+      13: left and right  one-sided boundary spreading
+      14: testing
+      15: tray test
+      16: Step
+      17: stoppage
+      18: causes
+      19: working method
+      20: Storage
+      21: cleaning the machine
+      22: safety
+      23: Winter storage
+      24: symbols
+    1:
+      0: '60'
+      1: '61'
+      2: '61'
+      3: ''
+      4: '95'
+      5: '95'
+      6: '28'
+      7: '28'
+      8: '29'
+      9: '76'
+      10: 29, 89
+      11: 28 88
+      12: '28'
+      13: 78 28
+      14: '76'
+      15: '76'
+      16: 45, 151
+      17: '113'
+      18: '113'
+      19: '114'
+      20: ''
+      21: '118'
+      22: '117'
+      23: '121'
+      24: '5'
+- type: SectionHeaderItem
+  text: T
+- type: TextItem
+  text: Technical specifications
+- type: TextItem
+  text: 36, 37
+- type: TextItem
+  text: Telephone App
+- type: TextItem
+  text: '61'
+- type: TextItem
+  text: Terminating work
+- type: TextItem
+  text: '112'
+- type: TextItem
+  text: Testing
+- type: TextItem
+  text: ExactLine spreading pattern
+- type: TextItem
+  text: '89'
+- type: TextItem
+  text: Full field spreading pattern
+- type: TextItem
+  text: '81'
+- type: TextItem
+  text: full field spreading patternline border spreading
+- type: TextItem
+  text: plate
+- type: TextItem
+  text: '88'
+- type: TextItem
+  text: spreading pattern
+- type: TextItem
+  text: '76'
+- type: TextItem
+  text: Spreading pattern left and right
+- type: TextItem
+  text: '78'
+- type: TextItem
+  text: spreading pattern of the hydraulic border
+- type: TextItem
+  text: spreading plate
+- type: TextItem
+  text: '84'
+- type: TextItem
+  text: Top dressing
+- type: TextItem
+  text: inclination
+- type: TextItem
+  text: '65'
+- type: TextItem
+  text: linkage pin height
+- type: TextItem
+  text: '53'
+- type: TextItem
+  text: Tractor
+- type: TextItem
+  text: '12'
+- type: TextItem
+  text: active carbon filter
+- type: TextItem
+  text: '13'
+- type: TextItem
+  text: axle load
+- type: TextItem
+  text: '13'
+- type: TextItem
+  text: closed area
+- type: TextItem
+  text: '13'
+- type: TextItem
+  text: electrical installation
+- type: TextItem
+  text: '49'
+- type: TextItem
+  text: exit
+- type: TextItem
+  text: '13'
+- type: TextItem
+  text: fire extinguisher
+- type: TextItem
+  text: '13'
+- type: TextItem
+  text: hydraulic system
+- type: TextItem
+  text: '49'
+- type: TextItem
+  text: IsoMatch
+- type: TextItem
+  text: '32'
+- type: TextItem
+  text: linkage frame
+- type: TextItem
+  text: '45'
+- type: TextItem
+  text: manoeuvrability
+- type: TextItem
+  text: '13'
+- type: TextItem
+  text: '164'
+- type: TableItem
+  table_data:
+    0:
+      0: power lift
+      1: safety
+      2: supplies
+      3: workplace
+      4: Tractor ECU
+      5: driving speed signal
+      6: driving speed signal plug
+      7: Tractor radar cables
+      8: Tramline patterns
+      9: Tramlines
+      10: pattern
+      11: setting out
+      12: with border spreading plate
+      13: with ExactLine
+      14: Transport
+      15: preparing the machine
+      16: safety
+      17: Transverse distribution GEOSPREAD
+      18: Tray test
+      19: Troubleshooting  Trouble-shooting table
+      20: Type of fertiliser
+      21: blend
+      22: crystalline
+      23: granular
+      24: mineral
+      25: Pellets
+      26: prills
+      27: seed
+      28: slug pellets
+      29: Type plate
+    1:
+      0: '49'
+      1: '12'
+      2: '49'
+      3: '12'
+      4: '41'
+      5: '144'
+      6: '144'
+      7: '144'
+      8: '98'
+      9: ''
+      10: '98'
+      11: '97'
+      12: '99'
+      13: '98'
+      14: ''
+      15: '93'
+      16: 20, 92
+      17: '25'
+      18: '76'
+      19: 152 152
+      20: ''
+      21: '58'
+      22: '58'
+      23: '58'
+      24: '58'
+      25: '58'
+      26: '58'
+      27: '58'
+      28: '58'
+      29: '158'
+- type: SectionHeaderItem
+  text: U
+- type: TextItem
+  text: User
+- type: TextItem
+  text: authorisation
+- type: TextItem
+  text: '11'
+- type: TextItem
+  text: clothing
+- type: TextItem
+  text: '11'
+- type: TextItem
+  text: obligations
+- type: TextItem
+  text: '10'
+- type: TextItem
+  text: protection
+- type: TextItem
+  text: '11'
+- type: TextItem
+  text: responsibility
+- type: TextItem
+  text: '10'
+- type: SectionHeaderItem
+  text: V
+- type: TextItem
+  text: Vanes
+- type: TextItem
+  text: '43'
+- type: TextItem
+  text: Variable, externally driven application rate
+- type: TextItem
+  text: '72'
+- type: TextItem
+  text: W
+- type: TextItem
+  text: Warning stickers
+- type: TextItem
+  text: explanation
+- type: TextItem
+  text: '8'
+- type: TextItem
+  text: place
+- type: TextItem
+  text: '7'
+- type: TextItem
+  text: warning triangle
+- type: TextItem
+  text: '5'
+- type: TextItem
+  text: Weighcells
+- type: TextItem
+  text: '30'
+- type: TextItem
+  text: weighing system
+- type: TextItem
+  text: '30'
+- type: TextItem
+  text: Winter storage
+- type: TextItem
+  text: '121'
+<|begin_of_text|>page_number: 165
+items:
+- type: TableItem
+  table_data:
+    0:
+      0: Working method
+      1: ExactLine
+      2: failure/stoppage
+      3: filling
+      4: hydraulic border spreading plate
+      5: on headland
+      6: Working width
+      7: coupling shaft connection point
+      8: Discharge point
+      9: setting
+      10: Workplace
+      11: active carbon filter
+      12: checking vicinity
+      13: operation
+      14: safety
+    1:
+      0: ''
+      1: '111'
+      2: '114'
+      3: '74'
+      4: '108'
+      5: '102'
+      6: ''
+      7: '64'
+      8: '65'
+      9: '64'
+      10: ''
+      11: '12'
+      12: '12'
+      13: '12'
+      14: '12'
+- type: TextItem
+  text: Index
+- type: TextItem
+  text: '165'
+
+</context>
+<question>
+    What is the drain rate in liters per minute of 'drain kit' for hopper emptying?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

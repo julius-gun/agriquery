@@ -1,0 +1,19 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    <|begin_of_text|><page number="74"><text>Opérations avant l'épandage</text><text>INDICATION La plupart des types d'engrais absorbent l'eau et peuvent alors former des blocs. Ces blocs sont susceptibles de provoquer des bourrages au niveau de l'épandeur ou d'abîmer la nappe d'épandage.</text><text>· Si les conditions sont humides, travaillez uniquement avec la bâche de trémie bien fermée.</text><text>· N'épandez jamais sans bâche de trémie lorsque les conditions sont humides.</text><text>· Ne laissez jamais l'engrais pendant longtemps dans l'épandeur. Des blocs peuvent également se former sous l'action de l'humidité de l'air.</text><text>· Nettoyez à fond l'épandeur après chaque utilisation, ainsi que les orifices de dosage et les bagues d'écoulement.</text><text>Après le réglage de l'épandeur, vous pouvez le remplir jusqu'au niveau souhaité. Nous vous conseillons de charger la machine lorsque celle-ci se trouve à 10 cm au-dessus du sol. Si vous n'avez pas besoin d'effectuer des opérations au-dessus de la trémie, la hauteur peut être adaptée au système de remplissage automatique.</text><text>Si au cours du remplissage, qu'il soit manuel ou avec de grands sacs,</text><text>la distance entre le bord de la trémie et le sol est supérieure à 1250 mm, il vous faut utiliser une plateforme de chargement. La hauteur de remplissage est indiquée au</text><text> paragraphe »Caractéristiques techniques« de la page 36.</text><text> Amenez la machine vers la plateforme, s'il s'agit d'une plateforme de chargement fixe. La distance maximale entre la machine et la plateforme ne peut excéder 200 mm.</text><text> Faites descendre la machine à la hauteur souhaitée. La machine ne doit pas reposer à même le sol mais doit être relevée à au moins 10 cm du sol!</text><text> Contrôlez si les unités de dosage sont fermées et fermez-les si nécessaire en vous rendant sur l'écran principal et en appuyant sur la touche "STOP".</text><text>La position des unités de dosage s'affiche dans l'écran principal sur le boîtier de commande du système de commande.</text><text> Arrêtez le système de commande électronique.</text><text> Coupez le moteur du tracteur et retirez la clé du contact.</text><text> Serrez le frein à main sur le tracteur.</text><text> Fermez la cabine en fermant toutes les portes et les vitres.</text><text> Placez des cales devant les roues du tracteur.</text><text> S'il s'agit d'une plateforme de chargement mobile, approchez la plateforme de chargement de l'épandeur jusqu'à ce que la distance entre les deux soit tout au plus de 200 mm.</text><text> Ouvrez la bâche de trémie.</text><text> Contrôlez si les tamis
+</context>
+<question>
+    When loading manually, what's the maximum distance in mm between the hopper rim and the ground before a platform is mandatory?
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>
