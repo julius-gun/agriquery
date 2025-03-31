@@ -36,94 +36,94 @@ For a more comprehensive view, explore all generated plots in the [results/visua
 #### F1 Score Heatmaps
 
 ##### F1 Score vs Language Noise (1000 tokens)
-![Heatmap F1 Score LLM vs Language Noise 1000](/results/visualization/plots/heatmap/heatmap_f1_score_llm_vs_language_noise_1000.png)
+![Heatmap F1 Score LLM vs Language Noise 1000](results/visualization/plots/heatmap/heatmap_f1_score_llm_vs_language_noise_1000.png)
 
 ##### F1 Score vs Language Noise (10000 tokens)
-![Heatmap F1 Score LLM vs Language Noise 10000](/results/visualization/plots/heatmap/heatmap_f1_score_llm_vs_language_noise_10000.png)
+![Heatmap F1 Score LLM vs Language Noise 10000](results/visualization/plots/heatmap/heatmap_f1_score_llm_vs_language_noise_10000.png)
 
 ##### F1 Score vs Language Noise (30000 tokens)
-![Heatmap F1 Score LLM vs Language Noise 30000](/results/visualization/plots/heatmap/heatmap_f1_score_llm_vs_language_noise_30000.png)
+![Heatmap F1 Score LLM vs Language Noise 30000](results/visualization/plots/heatmap/heatmap_f1_score_llm_vs_language_noise_30000.png)
 
 #### Precision and Recall Heatmaps
 
 ##### Precision Heatmap for Files
-![Heatmap Precision Files](/results/visualization/plots/heatmap/heatmap_precision_files.png)
+![Heatmap Precision Files](results/visualization/plots/heatmap/heatmap_precision_files.png)
 
 ##### Recall Heatmap for Files
-![Heatmap Recall Files](/results/visualization/plots/heatmap/heatmap_recall_files.png)
+![Heatmap Recall Files](results/visualization/plots/heatmap/heatmap_recall_files.png)
 
 ### Bar Chart Plots
 
 #### Accuracy Comparison Bar Charts
 
 ##### Accuracy Comparison (1000 tokens, Text Files)
-![Accuracy Comparison 1000 Text](/results/visualization/plots/bar_chart/accuracy_comparison_1000_txt.png)
+![Accuracy Comparison 1000 Text](results/visualization/plots/bar_chart/accuracy_comparison_1000_txt.png)
 
 ##### Accuracy Comparison (10000 tokens, Text Files)
-![Accuracy Comparison 10000 Text](/results/visualization/plots/bar_chart/accuracy_comparison_10000_txt.png)
+![Accuracy Comparison 10000 Text](results/visualization/plots/bar_chart/accuracy_comparison_10000_txt.png)
 
 ##### Accuracy Comparison (30000 tokens, Text Files)
-![Accuracy Comparison 30000 Text](/results/visualization/plots/bar_chart/accuracy_comparison_30000_txt.png)
+![Accuracy Comparison 30000 Text](results/visualization/plots/bar_chart/accuracy_comparison_30000_txt.png)
 
 ##### Accuracy Comparison (1000 tokens, File Formats)
-![Accuracy Comparison File Formats 1000](/results/visualization/plots/bar_chart/accuracy_comparison_file_formats_1000.png)
+![Accuracy Comparison File Formats 1000](results/visualization/plots/bar_chart/accuracy_comparison_file_formats_1000.png)
 
 ##### Accuracy Comparison (10000 tokens, File Formats)
-![Accuracy Comparison File Formats 10000](/results/visualization/plots/bar_chart/accuracy_comparison_file_formats_10000.png)
+![Accuracy Comparison File Formats 10000](results/visualization/plots/bar_chart/accuracy_comparison_file_formats_10000.png)
 
 ##### Accuracy Comparison (30000 tokens, File Formats)
-![Accuracy Comparison File Formats 30000](/results/visualization/plots/bar_chart/accuracy_comparison_file_formats_30000.png)
+![Accuracy Comparison File Formats 30000](results/visualization/plots/bar_chart/accuracy_comparison_file_formats_30000.png)
 
 #### F1 Score Comparison Bar Charts
 
 ##### F1 Score Comparison (1000 tokens, Text Files)
-![F1 Score Comparison 1000 Text](/results/visualization/plots/bar_chart/f1_score_comparison_1000_txt.png)
+![F1 Score Comparison 1000 Text](results/visualization/plots/bar_chart/f1_score_comparison_1000_txt.png)
 
 ##### F1 Score Comparison (10000 tokens, Text Files)
-![F1 Score Comparison 10000 Text](/results/visualization/plots/bar_chart/f1_score_comparison_10000_txt.png)
+![F1 Score Comparison 10000 Text](results/visualization/plots/bar_chart/f1_score_comparison_10000_txt.png)
 
 ##### F1 Score Comparison (30000 tokens, Text Files)
-![F1 Score Comparison 30000 Text](/results/visualization/plots/bar_chart/f1_score_comparison_30000_txt.png)
+![F1 Score Comparison 30000 Text](results/visualization/plots/bar_chart/f1_score_comparison_30000_txt.png)
 
 ##### F1 Score Comparison (1000 tokens, File Formats)
-![F1 Score Comparison File Formats 1000](/results/visualization/plots/bar_chart/f1_score_comparison_file_formats_1000.png)
+![F1 Score Comparison File Formats 1000](results/visualization/plots/bar_chart/f1_score_comparison_file_formats_1000.png)
 
 ##### F1 Score Comparison (10000 tokens, File Formats)
-![F1 Score Comparison File Formats 10000](/results/visualization/plots/bar_chart/f1_score_comparison_file_formats_10000.png)
+![F1 Score Comparison File Formats 10000](results/visualization/plots/bar_chart/f1_score_comparison_file_formats_10000.png)
 
 ##### F1 Score Comparison (30000 tokens, File Formats)
-![F1 Score Comparison File Formats 30000](/results/visualization/plots/bar_chart/f1_score_comparison_file_formats_30000.png)
+![F1 Score Comparison File Formats 30000](results/visualization/plots/bar_chart/f1_score_comparison_file_formats_30000.png)
 
 #### Precision Comparison Bar Charts
 
 ##### Precision Comparison (1000 tokens, Text Files)
-![Precision Comparison 1000 Text](/results/visualization/plots/bar_chart/precision_comparison_1000_txt.png)
+![Precision Comparison 1000 Text](results/visualization/plots/bar_chart/precision_comparison_1000_txt.png)
 
 ##### Precision Comparison (10000 tokens, Text Files)
-![Precision Comparison 10000 Text](/results/visualization/plots/bar_chart/precision_comparison_10000_txt.png)
+![Precision Comparison 10000 Text](results/visualization/plots/bar_chart/precision_comparison_10000_txt.png)
 
 ##### Precision Comparison (30000 tokens, Text Files)
-![Precision Comparison 30000 Text](/results/visualization/plots/bar_chart/precision_comparison_30000_txt.png)
+![Precision Comparison 30000 Text](results/visualization/plots/bar_chart/precision_comparison_30000_txt.png)
 
 #### Recall Comparison Bar Charts
 
 ##### Recall Comparison (1000 tokens, Text Files)
-![Recall Comparison 1000 Text](/results/visualization/plots/bar_chart/recall_comparison_1000_txt.png)
+![Recall Comparison 1000 Text](results/visualization/plots/bar_chart/recall_comparison_1000_txt.png)
 
 ##### Recall Comparison (10000 tokens, Text Files)
-![Recall Comparison 10000 Text](/results/visualization/plots/bar_chart/recall_comparison_10000_txt.png)
+![Recall Comparison 10000 Text](results/visualization/plots/bar_chart/recall_comparison_10000_txt.png)
 
 ##### Recall Comparison (30000 tokens, Text Files)
-![Recall Comparison 30000 Text](/results/visualization/plots/bar_chart/recall_comparison_30000_txt.png)
+![Recall Comparison 30000 Text](results/visualization/plots/bar_chart/recall_comparison_30000_txt.png)
 
 ##### Recall Comparison (1000 tokens, File Formats)
-![Recall Comparison File Formats 1000](/results/visualization/plots/bar_chart/recall_comparison_file_formats_1000.png)
+![Recall Comparison File Formats 1000](results/visualization/plots/bar_chart/recall_comparison_file_formats_1000.png)
 
 ##### Recall Comparison (10000 tokens, File Formats)
-![Recall Comparison File Formats 10000](/results/visualization/plots/bar_chart/recall_comparison_file_formats_10000.png)
+![Recall Comparison File Formats 10000](results/visualization/plots/bar_chart/recall_comparison_file_formats_10000.png)
 
 ##### Recall Comparison (30000 tokens, File Formats)
-![Recall Comparison File Formats 30000](/results/visualization/plots/bar_chart/recall_comparison_file_formats_30000.png)
+![Recall Comparison File Formats 30000](results/visualization/plots/bar_chart/recall_comparison_file_formats_30000.png)
 
 
 ### Line Chart Plots
@@ -131,13 +131,13 @@ For a more comprehensive view, explore all generated plots in the [results/visua
 #### Non-Language Aggregated Line Charts
 
 ##### F1 Score vs Noise (XML, Average Language, Average Dataset)
-![F1 Score vs Noise XML Avg Lang Avg Dataset](/results/visualization/plots/line_chart/non_language_aggregated/f1_score_vs_noise_xml_avg_lang_avg_dataset.png)
+![F1 Score vs Noise XML Avg Lang Avg Dataset](results/visualization/plots/line_chart/non_language_aggregated/f1_score_vs_noise_xml_avg_lang_avg_dataset.png)
 
 ##### Precision vs Noise (TXT, Average Language, Average Dataset)
-![Precision vs Noise TXT Avg Lang Avg Dataset](/results/visualization/plots/line_chart/non_language_aggregated/precision_vs_noise_txt_avg_lang_avg_dataset.png)
+![Precision vs Noise TXT Avg Lang Avg Dataset](results/visualization/plots/line_chart/non_language_aggregated/precision_vs_noise_txt_avg_lang_avg_dataset.png)
 
 ##### Recall vs Noise (TXT, Average Language, Average Dataset)
-![Recall vs Noise TXT Avg Lang Avg Dataset](/results/visualization/plots/line_chart/non_language_aggregated/recall_vs_noise_txt_avg_lang_avg_dataset.png)
+![Recall vs Noise TXT Avg Lang Avg Dataset](results/visualization/plots/line_chart/non_language_aggregated/recall_vs_noise_txt_avg_lang_avg_dataset.png)
 # LLM noise levels that were tested
 | Model | Extension | Language | Noise Level |
 |---|---|---|---|
