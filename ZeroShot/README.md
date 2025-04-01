@@ -17,9 +17,9 @@ This project assesses the performance of Large Language Models (LLMs) in underst
 
 The project uses a dataset designed to test both answerable and unanswerable questions, ensuring a balanced evaluation:
 
-*   **General Question-Answer Pairs:** [44 pairs](/question_datasets/question_answers_pairs.json)
-*   **Table-Based Question-Answer Pairs:** [10 pairs](/question_datasets/question_answers_tables.json)
-*   **Unanswerable Question-Answer Pairs:** [54 pairs](/question_datasets/question_answers_unanswerable.json) (designed to test negative constraints)
+*   **General Question-Answer Pairs:** [44 pairs](question_datasets/question_answers_pairs.json)
+*   **Table-Based Question-Answer Pairs:** [10 pairs](question_datasets/question_answers_tables.json)
+*   **Unanswerable Question-Answer Pairs:** [54 pairs](question_datasets/question_answers_unanswerable.json) (designed to test negative constraints)
 
 # Installation
 [Docker installation instructions can be found here](Docker-README.md)
