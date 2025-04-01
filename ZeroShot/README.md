@@ -200,7 +200,11 @@ python main.py --mode evaluate --config config.json
 *   `--config config.json`:  Specifies the configuration file to be used. `config.json` contains settings for models, datasets, and output directories.
 
 **Important:**
+*   **Ollama Models:** If you are using Ollama models, ensure that you have pulled the required models before running the tests or evaluations. You can easily pull all necessary models by running the `ollama pull models.bat` script located in the `ZeroShot\trash\` directory. This script will pull all the Ollama models listed in your `config.json` file.
 
+    ```bash
+    ZeroShot\trash\ollama pull models.bat
+    ```
      **Note:** Ensure that the paths in `config.json` are correct relative to your project directory. You can modify this file to adjust the models being tested, dataset locations, and output settings.
 
 # Preliminary Results
