@@ -17,25 +17,29 @@ from utils.question_loader import QuestionLoader
 from llm_connectors.llm_connector_manager import LLMConnectorManager
 from testers.test_executor import TestExecutor
 from utils.result_manager import ResultManager
-from rag.document_processor import DocumentProcessor
-from rag.retrieval_pipeline import RetrievalPipeline
 
 
 class LLMTester:
-    """Orchestrates LLM testing, now using modular components and RAG."""
+    """Orchestrates LLM testing, now using modular components."""
 
     def __init__(self, config_path: str = "config.json"):
         self.config_loader = ConfigLoader(config_path)
         self.output_dir = self.config_loader.get_output_dir()
+        self.document_loader = DocumentLoader(self.output_dir, config_path)
+        self.question_tracker = QuestionTracker(
+            self.config_loader.get_question_tracker_path()
+        )
         self.question_prompt_template = self.config_loader.load_prompt_template(
             "question_prompt"
         )
         self.evaluation_prompt_template = self.config_loader.load_prompt_template(
             "evaluation_prompt"
         )
-        self.rag_config = self.config_loader.config.get("rag_config", {})
+        self.file_extensions_to_test = self.config_loader.config.get(
+            "file_extensions_to_test", ["txt"]
+        )
 
-        # Initialize modular components
+        # Initialize modular components - Evaluator initialization REMOVED from here
         self.question_loader = QuestionLoader(
             self.config_loader.get_question_dataset_paths()
         )
@@ -43,18 +47,15 @@ class LLMTester:
             self.config_loader.config["llm_models"]
         )
         self.result_manager = ResultManager(self.output_dir)
-        self.document_processor = DocumentProcessor(self.rag_config) # Initialize DocumentProcessor
-        self.retrieval_pipeline = RetrievalPipeline(self.rag_config) # Initialize RetrievalPipeline
-
 
     def is_result_file_complete(
-        self, language, model_name, file_extension, context_type, noise_level, rag_enabled
+        self, language, model_name, file_extension, context_type, noise_level
     ):
         """
         Checks if the result file for a given configuration is 100% answered.
         """
         results = self.result_manager.load_previous_results(
-            language, model_name, file_extension, context_type, noise_level, rag_enabled
+            language, model_name, file_extension, context_type, noise_level
         )
         questions = (
             self.question_loader.load_questions()
@@ -74,7 +75,6 @@ class LLMTester:
         noise_levels: List[int],
         documents_to_test,
         models_to_test: List[str] = None, # keep for compatibility, even if not used here directly
-        rag_enabled: bool = False, # Add rag_enabled parameter
     ):
         """Runs tests for the specified LLM and configurations, using modular components."""
 
@@ -116,11 +116,6 @@ class LLMTester:
                         )
                         extension_pbar.update(1)
                         continue  # Skip to the next extension if no pages are loaded
-
-                    # RAG Document Processing - moved here to process per file extension
-                    processed_nodes = self.document_processor.process_document(self.pages)
-                    self.retrieval_pipeline.vector_store.add_nodes(processed_nodes) # Indexing here
-
                     self.context_handler = ContextHandler(
                         self.pages, self.config_loader.config_path
                     )
@@ -129,14 +124,14 @@ class LLMTester:
                         total=len(noise_levels), desc=f"Noise Levels ({file_extension})"
                     ) as noise_level_pbar:
                         for noise_level in noise_levels:  # Middle loop 2: Noise Levels
-                            if self.is_result_file_complete(language, model_name, file_extension, context_type, noise_level, rag_enabled):
+                            if self.is_result_file_complete(language, model_name, file_extension, context_type, noise_level):
                                 # print(f"Results already 100% for {language.capitalize()} manual: {model_name} - Noise {noise_level} - {file_extension}. Skipping tests.")
                                 noise_level_pbar.update(1) # Still update progress bar
                                 continue # Skip to the next noise level
 
                             print(f"Starting tests for language: {language}")
                             print(
-                                f"Running tests with {language.capitalize()} manual: {model_name} ({current_llm_type}), context type: {context_type}, noise level: {noise_level}, file extension: {file_extension}, RAG enabled: {rag_enabled}"
+                                f"Running tests with {language.capitalize()} manual: {model_name} ({current_llm_type}), context type: {context_type}, noise level: {noise_level}, file extension: {file_extension}"
                             )
 
                             # Load previous results *before* the question loop  using ResultManager
@@ -146,7 +141,6 @@ class LLMTester:
                                 file_extension,
                                 context_type,
                                 noise_level,
-                                rag_enabled,
                             )
 
                             unanswered_questions = []
@@ -158,14 +152,15 @@ class LLMTester:
                                     and r["noise_level"] == noise_level
                                     and r["model_name"] == model_name
                                     and r["file_extension"] == file_extension
-                                    and r["rag_enabled"] == rag_enabled
                                     for r in self.results
                                 )
                                 if not already_answered:
                                     unanswered_questions.append(question_data)
 
                             num_unanswered_questions = len(unanswered_questions)
-
+                            # print(
+                            #     f"Number of unanswered questions: {num_unanswered_questions}"
+                            # )
 
                             if num_unanswered_questions > 0:
 
@@ -173,16 +168,14 @@ class LLMTester:
                                     self.config_loader.config_path,
                                     # self.evaluator, # Removed: Evaluator not needed in TestExecutor during testing
                                     self.question_prompt_template,
-                                    self.context_handler, # still needed for non-RAG context
+                                    self.context_handler,
                                     self.output_dir,
-                                    self.retrieval_pipeline, # Pass retrieval pipeline to TestExecutor
-                                    rag_enabled, # Pass rag_enabled flag
                                 )
 
                                 # Initialize tqdm *inside* the noise_level loop, only if there are unanswered questions
                                 question_pbar = tqdm(
                                     total=num_unanswered_questions,
-                                    desc=f"Testing {language.capitalize()} manual: {model_name} - Noise {noise_level} - {file_extension} - RAG: {rag_enabled}",
+                                    desc=f"Testing {language.capitalize()} manual: {model_name} - Noise {noise_level} - {file_extension}",
                                     leave=True,
                                 )
                                 # Refresh progress bar immediately after initialization to ensure it's displayed correctly
@@ -203,7 +196,6 @@ class LLMTester:
                                             llm_connector,
                                             self.results,  # Pass self.results to append to
                                             language,  # Pass language to test executor
-                                            rag_enabled, # Pass rag_enabled flag
                                         )
 
                                         self.result_manager.save_results(  # Save results using ResultManager
@@ -213,7 +205,6 @@ class LLMTester:
                                             file_extension,
                                             context_type,
                                             noise_level,
-                                            rag_enabled, # Save rag_enabled flag
                                         )
 
                                     except Exception as question_error:
@@ -228,7 +219,7 @@ class LLMTester:
 
                             else:
                                 print(
-                                    f"All questions already answered for {language.capitalize()} manual: {model_name} - Noise {noise_level} - {file_extension} - RAG: {rag_enabled}. Skipping tests."
+                                    f"All questions already answered for {language.capitalize()} manual: {model_name} - Noise {noise_level} - {file_extension}. Skipping tests."
                                 )
                             noise_level_pbar.update(
                                 1
@@ -254,7 +245,6 @@ class LLMTester:
         noise_levels: List[int],
         context_type: str,
         documents_to_test, # ADD documents_to_test here
-        rag_enabled: bool = False, # Add rag_enabled parameter
     ):
         """
         Runs evaluations for the specified models and configurations in a separate loop.
@@ -287,7 +277,7 @@ class LLMTester:
                             noise_level
                         ) in noise_levels:  # Middle loop 2: Noise Levels for evaluation
                             print(
-                                f"Starting deferred evaluation for {language.capitalize()} manual: {model_name} - {file_extension} - Noise {noise_level} - RAG: {rag_enabled}"
+                                f"Starting deferred evaluation for {language.capitalize()} manual: {model_name} - {file_extension} - Noise {noise_level}"
                             )
                             self.evaluate_results(
                                 language, # Use the language from the current document
@@ -295,7 +285,6 @@ class LLMTester:
                                 file_extension,
                                 context_type,
                                 [noise_level],
-                                rag_enabled, # Pass rag_enabled flag to evaluation
                             )  # Call evaluate_results here, for each noise level
 
                             noise_level_pbar.update(
@@ -305,7 +294,7 @@ class LLMTester:
         print(f"Completed evaluations for model: {model_name}")
 
     def evaluate_results(
-        self, language, model_name, file_extension, context_type, noise_levels, rag_enabled
+        self, language, model_name, file_extension, context_type, noise_levels
     ):
         """
         Evaluates model answers for results with empty self_evaluation.
@@ -314,7 +303,7 @@ class LLMTester:
         all_results = []
         for noise_level in noise_levels:  # Iterate over noise levels to evaluate all results for current model, extension, context_type
             results_dir = os.path.join(self.output_dir)
-            filename = self.result_manager._generate_filename(language, model_name, file_extension, context_type, noise_level, rag_enabled) # FIXED FILENAME GENERATION
+            filename = self.result_manager._generate_filename(language, model_name, file_extension, context_type, noise_level) # FIXED FILENAME GENERATION
             filepath = os.path.join(results_dir, filename) # FIXED FILENAME GENERATION
 
 
@@ -330,7 +319,7 @@ class LLMTester:
 
         if not all_results:
             print(
-                f"No results found for evaluation for {model_name}, {file_extension}, {context_type}, noise levels {noise_levels}, RAG: {rag_enabled}."
+                f"No results found for evaluation for {model_name}, {file_extension}, {context_type}, noise levels {noise_levels}."
             )
             return
 
@@ -339,16 +328,16 @@ class LLMTester:
         )
         if num_to_evaluate == 0:
             print(
-                f"No results to evaluate for {model_name}, {file_extension}, {context_type}, noise levels {noise_levels}, RAG: {rag_enabled}."
+                f"No results to evaluate for {model_name}, {file_extension}, {context_type}, noise levels {noise_levels}."
             )
             return
 
         print(
-            f"Evaluating {num_to_evaluate} results for {model_name}, {file_extension}, {context_type}, noise levels {noise_levels}, RAG: {rag_enabled}..."
+            f"Evaluating {num_to_evaluate} results for {model_name}, {file_extension}, {context_type}, noise levels {noise_levels}..."
         )
         evaluation_pbar = tqdm(
             total=num_to_evaluate,
-            desc=f"Evaluating {model_name} - {file_extension} - {context_type} - RAG: {rag_enabled}",
+            desc=f"Evaluating {model_name} - {file_extension} - {context_type}",
             leave=True,
         )
 
@@ -375,7 +364,9 @@ class LLMTester:
                 res for res in all_results if res["noise_level"] == noise_level
             ]  # Filter results for current noise level
             results_dir = os.path.join(self.output_dir)
-            filename = self.result_manager._generate_filename(language, model_name, file_extension, context_type, noise_level, rag_enabled)
+            # filename = f"{language}_{model_name}_{file_extension}_{context_type}_{noise_level}_results.json" # OLD FILENAME GENERATION
+            # filename = f"{language}_{model_name}_{file_extension}_{context_type}_{noise_level}_results.json" # FIXED FILENAME GENERATION HERE TOO
+            filename = self.result_manager._generate_filename(language, model_name, file_extension, context_type, noise_level) # FIXED FILENAME GENERATION HERE TOO
             filepath = os.path.join(results_dir, filename)
             with open(filepath, "w", encoding="utf-8") as f:
                 json.dump(
@@ -383,7 +374,7 @@ class LLMTester:
                 )  # Save updated results for each noise level
 
         print(
-            f"Evaluation completed and saved for {model_name}, {file_extension}, {context_type}, noise levels {noise_levels}, RAG: {rag_enabled}."
+            f"Evaluation completed and saved for {model_name}, {file_extension}, {context_type}, noise levels {noise_levels}."
         )
         self.results = all_results  # Update self.results to use for metrics calculation - using all_results now
         self.calculate_and_display_metrics()  # Calculate and display metrics after evaluation

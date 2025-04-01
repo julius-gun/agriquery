@@ -122,10 +122,5 @@
         "yaml",
         "html",
         "json"
-    ],
-    "rag_config": {
-        "chunk_size": 1024,
-        "retrieval_algorithm": "keyword",
-        "num_retrieved_documents": 5
-    }
+    ]
 }

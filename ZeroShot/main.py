@@ -67,6 +67,7 @@ def main():
     parser.add_argument(
         "--context_type",
         type=str,
+        # default="page",
         default="token",
         choices=["page", "token"],
         help="Context type (page or token).",
@@ -98,12 +99,6 @@ def main():
         choices=["test", "evaluate"],
         help="Mode to run in: 'test' or 'evaluate'. Defaults to 'test'.",
     )
-    parser.add_argument(
-        "--rag_enabled",
-        action="store_true",
-        help="Enable Retrieval-Augmented Generation (RAG).",
-    )
-
 
     args = parser.parse_args()
 
@@ -120,9 +115,8 @@ def main():
                 args.context_type,
                 args.noise_levels,
                 documents_to_test, # Pass documents_to_test list
-                rag_enabled=args.rag_enabled, # Pass rag_enabled flag
             )
-            args.mode = "evaluate" # Evaluate after testing, ensure evaluation runs after test
+            args.mode == "evaluate" # Evaluate after testing
             print(f"Finished testing {model_name}")
         if args.mode == "evaluate":
              tester.run_evaluations(
@@ -131,7 +125,6 @@ def main():
                 args.noise_levels,
                 args.context_type,
                 documents_to_test, # Pass documents_to_test
-                rag_enabled=args.rag_enabled, # Pass rag_enabled flag
             )
              print(f"Finished evaluation for {model_name}")
 
