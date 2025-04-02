@@ -15,11 +15,11 @@ path_to_text = 'english_manual.txt'
 
 # --- Dataset paths are now defined here, can be moved to a config file later ---
 dataset_paths = {
-    "general_questions": 'RAG\question_datasets\question_answers_pairs.json',
-    "table_questions": 'RAG\question_datasets\question_answers_tables.json',
-    "unanswerable_questions": 'RAG\question_datasets\question_answers_unanswerable.json'
+    "general_questions": 'question_datasets\question_answers_pairs.json',
+    "table_questions": 'question_datasets\question_answers_tables.json',
+    "unanswerable_questions": 'question_datasets\question_answers_unanswerable.json'
 }
-config_file_path = 'RAG/config.json' # Path to config file
+config_file_path = 'config.json' # Path to config file
 
 # Load configuration from JSON file
 if os.path.exists(config_file_path):

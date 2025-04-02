@@ -18,13 +18,13 @@
   "question_model_name": "qwen2.5_7B-128k",
   "evaluator_model_name": "gemma2_9B-8k",
   "prompt_paths": {
-    "question_prompt": "RAG/prompt_templates/question_prompt.txt",
-    "evaluation_prompt": "RAG/prompt_templates/evaluation_prompt.txt"
+    "question_prompt": "prompt_templates/question_prompt.txt",
+    "evaluation_prompt": "prompt_templates/evaluation_prompt.txt"
   },
   "question_dataset_paths": {
-    "general_questions": "RAG/question_datasets/question_answers_pairs.json",
-    "table_questions": "RAG/question_datasets/question_answers_tables.json",
-    "unanswerable_questions": "RAG/question_datasets/question_answers_unanswerable.json"
+    "general_questions": "question_datasets/question_answers_pairs.json",
+    "table_questions": "question_datasets/question_answers_tables.json",
+    "unanswerable_questions": "question_datasets/question_answers_unanswerable.json"
   },
   "output_dir": "results",
   "rag_parameters": {

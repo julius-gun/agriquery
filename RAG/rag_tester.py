@@ -80,7 +80,7 @@ def run_rag_test(config_path="config.json"): # Changed default config path to co
 
             # --- Evaluation ---
             evaluation_result = evaluator.evaluate_answer(question, model_answer, expected_answer)
-
+            print(f"Evaluation Result: {evaluation_result}") # Debug print
 
             result_entry = {
                 "question": question,
@@ -90,11 +90,14 @@ def run_rag_test(config_path="config.json"): # Changed default config path to co
                 "page": page,
                 "dataset": dataset_name,
             }
+            print(f"Dataset Name: {dataset_name}") # Debug print
+            print(f"Result Entry: {result_entry}") # Debug print
             dataset_results.append(result_entry)
 
         end_time = time.time()
         dataset_duration = end_time - start_time
 
+        print(f"Dataset Results before metrics calculation: {dataset_results}") # Debug print
         evaluation_metrics = calculate_metrics(dataset_results) # Calculate metrics using metrics.py
 
         dataset_evaluation_results = { # Use the metrics dictionary directly
