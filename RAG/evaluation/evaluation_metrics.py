@@ -44,5 +44,4 @@ def evaluate_rag_pipeline(dataset, retriever, collection, rag_params):
             correct_retrievals += 1
 
     retrieval_accuracy = (correct_retrievals / total_questions) * 100 if total_questions > 0 else 0
-    print(f"Retrieval Accuracy: {retrieval_accuracy:.2f}%")
     return {"retrieval_accuracy": retrieval_accuracy, "total_questions": total_questions} # Return results as dictionary for analysis, including total questions

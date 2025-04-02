@@ -1,4 +1,6 @@
 import json
+from evaluation.metrics import calculate_metrics
+from typing import Dict
 
 
 def analyze_evaluation_results(evaluation_metrics, dataset_type):
@@ -12,67 +14,20 @@ def analyze_evaluation_results(evaluation_metrics, dataset_type):
 
     print(f"Analysis for dataset type: {dataset_type}")
 
-    if "accuracy" in evaluation_metrics:
-        accuracy = evaluation_metrics["accuracy"]
-        print(f"  Accuracy: {accuracy:.2f}%")
-    else:
-        print(
-            f"  No accuracy found in evaluation metrics for dataset type: {dataset_type}"
-        )
 
-    if "precision" in evaluation_metrics:
-        precision = evaluation_metrics["precision"]
-        print(f"  Precision: {precision:.2f}%")
-    else:
-        print(
-            f"  No precision found in evaluation metrics for dataset type: {dataset_type}"
-        )
-
-    if "recall" in evaluation_metrics:
-        recall = evaluation_metrics["recall"]
-        print(f"  Recall: {recall:.2f}%")
-    else:
-        print(
-            f"  No recall found in evaluation metrics for dataset type: {dataset_type}"
-        )
-
-    if "f1_score" in evaluation_metrics:
-        f1_score = evaluation_metrics["f1_score"]
-        print(f"  F1 Score: {f1_score:.2f}%")
-    else:
-        print(
-            f"  No F1 Score found in evaluation metrics for dataset_type: {dataset_type}"
-        )
-
-    # if "total_questions" in evaluation_metrics:
-    #     total_questions = evaluation_metrics["total_questions"]
-    #     print(f"  Total Questions: {total_questions}")
-    # else:
-    #     print("  Total Questions: N/A")
-
-    # if "true_positives" in evaluation_metrics:
-    #     true_positives = evaluation_metrics["true_positives"]
-    #     print(f"  True Positives: {true_positives}")
-    # else:
-    #     print("  True Positives: N/A")
-
-    # if "true_negatives" in evaluation_metrics:
-    #     true_negatives = evaluation_metrics["true_negatives"]
-    #     print(f"  True Negatives: {true_negatives}")
-    # else:
-    #     print("  True Negatives: N/A")
-
-    # if "false_positives" in evaluation_metrics:
-    #     false_positives = evaluation_metrics["false_positives"]
-    #     print(f"  False Positives: {false_positives}")
-    # else:
-    #     print("  False Positives: N/A")
-
-    # if "false_negatives" in evaluation_metrics:
-    #     false_negatives = evaluation_metrics["false_negatives"]
-    #     print(f"  False Negatives: {false_negatives}")
-    # else:
-    #     print("  False Negatives: N/A")
+    if isinstance(evaluation_metrics, Dict): # Check if evaluation_metrics is a dictionary
+        if "accuracy" in evaluation_metrics:
+            accuracy = evaluation_metrics["accuracy"]
+            print(f"  Accuracy: {accuracy:.2f}%")
+        if "precision" in evaluation_metrics:
+            precision = evaluation_metrics["precision"]
+            print(f"  Precision: {precision:.2f}%")
+        if "recall" in evaluation_metrics:
+            recall = evaluation_metrics["recall"]
+            print(f"  Recall: {recall:.2f}%")
+        if "f1_score" in evaluation_metrics:
+            f1_score = evaluation_metrics["f1_score"]
+            print(f"  F1 Score: {f1_score:.2f}%")
 
     # Placeholder for future detailed analysis
     # print("\nDetailed Breakdown (Future Enhancement):")
@@ -122,3 +77,8 @@ def analyze_dataset_across_types(dataset_paths):
             print(
                 f"  Dataset Type: {dataset_name}: Failed to load from {dataset_path}"
             )  # Use dataset_name here as well
+def calculate_and_analyze_metrics(dataset_results, dataset_name):
+    """Calculates metrics using metrics.py and analyzes them."""
+    evaluation_metrics = calculate_metrics(dataset_results)
+    analyze_evaluation_results(evaluation_metrics, dataset_name)
+    return evaluation_metrics # Return metrics for further use if needed
