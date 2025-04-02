@@ -20,13 +20,13 @@ def run_rag_test(config_path="config.json"): # Changed default config path to co
     rag_config = config_loader.config # Load the entire config
 
     # --- Load Models ---
-    llm_connector_manager = LLMConnectorManager(config_loader.get_llm_models_config()) # Pass the whole llm config
+    llm_connector_manager = LLMConnectorManager(config_loader.get_llm_models_config("ollama")) # Pass only ollama config
     question_model_name = config_loader.get_question_model_name() # Use getter
-    question_llm_config = config_loader.get_llm_models_config().get("ollama", {}).get(question_model_name, {"name": question_model_name}) # get model config
+    question_llm_config = config_loader.get_llm_models_config("ollama").get(question_model_name, {"name": question_model_name}) # get model config
     question_llm_connector = llm_connector_manager.get_connector("ollama", question_model_name) # Assuming ollama for now
 
     evaluator_model_name = config_loader.get_evaluator_model_name()
-    evaluator_llm_config = config_loader.get_llm_models_config().get("ollama", {}).get(evaluator_model_name, {"name": evaluator_model_name}) # get model config for evaluator model
+    evaluator_llm_config = config_loader.get_llm_models_config("ollama").get(evaluator_model_name, {"name": evaluator_model_name}) # get model config for evaluator model
     evaluator_llm_connector = llm_connector_manager.get_connector("ollama", evaluator_model_name) # Assuming ollama for now
 
 
@@ -86,7 +86,7 @@ def run_rag_test(config_path="config.json"): # Changed default config path to co
                 "question": question,
                 "expected_answer": expected_answer,
                 "model_answer": model_answer,
-                "self_evaluation": evaluation_result, # Changed 'evaluation' to 'self_evaluation'
+                "self_evaluation": evaluation_result, # Changed 'evaluation' to 'self_evaluation' and store evaluator result
                 "page": page,
                 "dataset": dataset_name,
             }

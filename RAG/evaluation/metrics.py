@@ -1,7 +1,7 @@
 from typing import List, Dict, Tuple
 
 
-def calculate_accuracy(results: List[Dict]) -> Tuple[float, int, int, int, int]:
+def calculate_accuracy(results: List[Dict]) -> Tuple[float, int, int, int, int, int, int]:
     """Calculate accuracy metrics, including true negatives."""
     total_questions = len(results)
     correct_answers = 0
@@ -13,7 +13,7 @@ def calculate_accuracy(results: List[Dict]) -> Tuple[float, int, int, int, int]:
     # print(f"Results for accuracy calculation: {results}") # Debugging line
     for result in results:
         dataset = result.get("dataset", "")
-        evaluation = result.get("self_evaluation", "").lower()
+        evaluation = result.get("self_evaluation", "").lower() # Use self_evaluation from results
 
         if "unanswerable" in dataset:  # Handle unanswerable questions
             if "yes" in evaluation:
@@ -51,7 +51,7 @@ def calculate_precision(results: List[Dict]) -> float:
 
     for result in results:
         dataset = result.get("dataset", "")
-        evaluation = result.get("self_evaluation", "").lower()
+        evaluation = result.get("self_evaluation", "").lower() # Use self_evaluation from results
         model_answer = result.get("model_answer", "").lower()
 
         if "unanswerable" in dataset:
