@@ -20,13 +20,12 @@ def run_rag_test(config_path="config.json"): # Changed default config path to co
     rag_config = config_loader.config # Load the entire config
 
     # --- Load Models ---
-    llm_connector_manager = LLMConnectorManager(config_loader.get_llm_models_config("ollama")) # Pass only ollama config
+    # Pass the entire llm_models dictionary to the manager
+    llm_connector_manager = LLMConnectorManager(rag_config["llm_models"])
     question_model_name = config_loader.get_question_model_name() # Use getter
-    question_llm_config = config_loader.get_llm_models_config("ollama").get(question_model_name, {"name": question_model_name}) # get model config
     question_llm_connector = llm_connector_manager.get_connector("ollama", question_model_name) # Assuming ollama for now
 
     evaluator_model_name = config_loader.get_evaluator_model_name()
-    evaluator_llm_config = config_loader.get_llm_models_config("ollama").get(evaluator_model_name, {"name": evaluator_model_name}) # get model config for evaluator model
     evaluator_llm_connector = llm_connector_manager.get_connector("ollama", evaluator_model_name) # Assuming ollama for now
 
 
@@ -56,19 +55,24 @@ def run_rag_test(config_path="config.json"): # Changed default config path to co
             page = question_data["page"] # Assuming page number is available
 
             # --- RAG Retrieval ---
-            rag_params = config_loader.get_rag_parameters() # Get RAG parameters
-            retriever = initialize_retriever(rag_params.get("retrieval_algorithm", "embedding")) # Initialize retriever from config
+            rag_params_dict = config_loader.get_rag_parameters() # Get RAG parameters dictionary
+            rag_params = RagParameters.from_dict(rag_params_dict) # Create RagParameters object
+
+            # Use attribute access for RagParameters object
+            retriever = initialize_retriever(rag_params.retrieval_algorithm)
             question_embedding = retriever.vectorize_text(question)
 
-            results = collection.get(include=['embeddings', 'documents']) # Fetch all embeddings and documents - to be optimized later if needed
+            # Fetch embeddings and documents - consider optimizing if performance is an issue
+            results = collection.get(include=['embeddings', 'documents'])
             document_chunk_embeddings_from_db = results['embeddings']
             document_chunks_text_from_db = results['documents']
 
+            # Use attribute access for RagParameters object
             retrieved_chunks_text, _ = retriever.retrieve_relevant_chunks(
                 question_embedding,
                 document_chunk_embeddings_from_db,
                 document_chunks_text_from_db,
-                top_k=rag_params.get("num_retrieved_docs", 3) # Retrieve top_k documents as per RAG params
+                top_k=rag_params.num_retrieved_docs
             )
             context = "\n".join(retrieved_chunks_text) # Concatenate retrieved chunks into context string
 
@@ -134,4 +138,5 @@ def run_rag_test(config_path="config.json"): # Changed default config path to co
 
 
 if __name__ == "__main__":
-    run_rag_test()
+    # run_rag_test()
+    run_rag_test("config_fast.json") # Example of running with a specific config file
