@@ -1,17 +1,95 @@
 {
   "llm_models": {
     "ollama": {
+      "deepseek-r1_70B-128k": {
+        "name": "deepseek-r1:70b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
+      },
+      "deepseek-r1_8B-128k": {
+        "name": "deepseek-r1:8b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
+      },
+      "deepseek-r1_1.5B-128k": {
+        "name": "deepseek-r1:1.5b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
+      },
+      "deepseek-r1_14B-128k": {
+        "name": "deepseek-r1:14b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
+      },
       "qwen2.5_7B-128k": {
         "name": "qwen2.5:latest",
         "temperature": 0.0,
         "num_predict": 1024,
         "context_window": 128000
-    },
+      },
+      "phi3_14B_q4_medium-128k": {
+        "name": "phi3:medium-128k",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
+      },
+      "phi3_8B_q4_mini-128k": {
+        "name": "phi3:mini-128k",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
+      },
+      "llama3.1_8B-128k": {
+        "name": "llama3.1:latest",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
+      },
+      "llama3.2_3B-128k": {
+        "name": "llama3.2:latest",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
+      },
+      "llama3.2_1B-128k": {
+        "name": "llama3.2:1b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
+      },
+      "phi3_14B_medium-4k": {
+        "name": "phi3:medium",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 4000
+      },
       "gemma2_9B-8k": {
         "name": "gemma2:latest",
         "temperature": 0.0,
         "num_predict": 1024,
         "context_window": 8192
+      },
+      "phi4_14B-4k": {
+        "name": "phi4:latest",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 4096
+      },
+      "r1-1776_70B-128k": {
+        "name": "r1-1776:70b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
+      },
+      "DeepSeek-R1-Distill-Qwen-7B-uncensored-128k": {
+        "name": "thirdeyeai/DeepSeek-R1-Distill-Qwen-7B-uncensored",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
       }
     }
   },
