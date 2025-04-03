@@ -1,18 +1,57 @@
 # RAG/testers/rag_tester.py
 import json
 import os
-import time,  datetime
+import time
+import datetime
+import hashlib # Added for generating unique keys
 
-from analysis.analysis_tools import analyze_evaluation_results, analyze_dataset_across_types, load_dataset, calculate_and_analyze_metrics
+from analysis.analysis_tools import analyze_dataset_across_types, load_dataset, calculate_and_analyze_metrics
 from evaluation.evaluator import Evaluator
 from llm_connectors.llm_connector_manager import LLMConnectorManager
 from parameter_tuning.parameters import RagParameters
-from rag_pipeline import initialize_retriever, collection  # Assuming collection and initialize_retriever are needed
+# Assuming collection and initialize_retriever are needed from rag_pipeline
+# If rag_pipeline.py handles DB setup separately, these might not be needed here directly
+# For now, assume they are available or initialized elsewhere as needed by the retriever.
+# We might need to adjust imports based on final structure. Let's assume retriever setup happens before this script.
+from rag_pipeline import initialize_retriever, collection
 from utils.config_loader import ConfigLoader
-from evaluation.metrics import calculate_metrics # Import calculate_metrics
+# Note: calculate_metrics is used within calculate_and_analyze_metrics, direct import might not be needed here.
 
+# --- Helper Functions for Result File Handling ---
 
-def run_rag_test(config_path="config.json"): # Changed default config path to config.json
+def load_or_initialize_results(filepath: str) -> dict:
+    """Loads results from a JSON file or returns an empty dict if not found/invalid."""
+    if os.path.exists(filepath):
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            print(f"Warning: Error decoding JSON from {filepath}. Starting with empty results.")
+            return {}
+        except Exception as e:
+            print(f"Warning: Error loading results file {filepath}: {e}. Starting with empty results.")
+            return {}
+    else:
+        return {}
+
+def save_results(filepath: str, data: dict):
+    """Saves the results data to a JSON file."""
+    try:
+        # Ensure the output directory exists
+        os.makedirs(os.path.dirname(filepath), exist_ok=True)
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=4)
+    except Exception as e:
+        print(f"Error: Failed to save results to {filepath}: {e}")
+
+def generate_question_key(dataset_name: str, question: str) -> str:
+    """Generates a unique key for a question within a dataset."""
+    # Using SHA256 hash for a consistent and filesystem-friendly key
+    return hashlib.sha256(f"{dataset_name}_{question}".encode()).hexdigest()
+
+# --- Main Test Function ---
+
+def run_rag_test(config_path="config.json"):
     """
     Runs the RAG test based on the provided configuration.
     """
