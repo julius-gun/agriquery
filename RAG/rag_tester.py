@@ -14,7 +14,7 @@ from parameter_tuning.parameters import RagParameters
 # If rag_pipeline.py handles DB setup separately, these might not be needed here directly
 # For now, assume they are available or initialized elsewhere as needed by the retriever.
 # We might need to adjust imports based on final structure. Let's assume retriever setup happens before this script.
-from rag_pipeline import initialize_retriever, collection
+from rag_pipeline import retriever, collection
 from utils.config_loader import ConfigLoader
 
 # --- Helper Functions for Result File Handling ---
@@ -98,6 +98,12 @@ def run_rag_test(config_path="config.json"):
             total_questions_to_answer += len(dataset)
 
     answered_questions_count = 0
+    # Get RAG parameters ONCE before the loop
+    rag_params_dict = config_loader.get_rag_parameters()
+    rag_params = RagParameters.from_dict(rag_params_dict)
+    # The retriever instance is already initialized and imported from rag_pipeline
+    # The collection instance is already initialized and imported from rag_pipeline
+
     for dataset_name, dataset_path in dataset_paths.items():
         print(f"\nProcessing Dataset for QA: {dataset_name}")
         dataset = load_dataset(dataset_path)
@@ -108,11 +114,8 @@ def run_rag_test(config_path="config.json"):
         dataset_intermediate_results = []
         dataset_start_time = time.time()
 
-        # Initialize retriever once per dataset (assuming params are static per dataset)
-        # If params can change per question, move inside inner loop
-        rag_params_dict = config_loader.get_rag_parameters()
-        rag_params = RagParameters.from_dict(rag_params_dict)
-        retriever = initialize_retriever(rag_params.retrieval_algorithm)
+        # REMOVE redundant retriever initialization inside the loop
+        # retriever = initialize_retriever(rag_params.retrieval_algorithm) # NO LONGER NEEDED
 
         for i, question_data in enumerate(dataset):
             answered_questions_count += 1
@@ -142,24 +145,51 @@ def run_rag_test(config_path="config.json"):
 
             # --- RAG Retrieval ---
             try:
+                # Use the imported retriever instance directly
                 question_embedding = retriever.vectorize_text(question)
-                db_results = collection.get(include=['embeddings', 'documents'])
-                document_chunk_embeddings_from_db = db_results.get('embeddings')
-                document_chunks_text_from_db = db_results.get('documents')
+                # Use the imported collection instance directly
+                # Fetch only embeddings and documents needed for retrieval logic
+                # NOTE: retriever.retrieve_relevant_chunks expects embeddings and text lists
+                # Getting ALL embeddings/docs from Chroma can be slow for large DBs.
+                # A more efficient way is to use collection.query()
+                query_results = collection.query(
+                    query_embeddings=question_embedding,
+                    n_results=rag_params.num_retrieved_docs, # Use num_retrieved_docs here
+                    include=['documents'] # Only need documents for context
+                )
 
-                if document_chunk_embeddings_from_db is None or document_chunks_text_from_db is None:
-                     print(f"  Warning: Could not retrieve embeddings or documents from DB.")
+                # Check if query_results is structured as expected (list of lists)
+                if query_results and query_results.get('documents') and isinstance(query_results['documents'], list) and len(query_results['documents']) > 0:
+                     retrieved_chunks_text = query_results['documents'][0] # Chroma returns [[doc1, doc2,...]]
+                     context = "\n".join(retrieved_chunks_text)
+                     if not context:
+                          print("  Warning: Retrieval returned empty documents.")
+                          # Decide if this is an error or just no context found
+                          # context = "No relevant context found." # Or set qa_error = True
+                else:
+                     print(f"  Warning: Could not retrieve documents from DB for query. Results: {query_results}")
                      context = "Error: Could not retrieve context from database."
                      model_answer = "Error: Failed during retrieval."
                      qa_error = True
-                else:
-                    retrieved_chunks_text, _ = retriever.retrieve_relevant_chunks(
-                        question_embedding,
-                        document_chunk_embeddings_from_db,
-                        document_chunks_text_from_db,
-                        top_k=rag_params.num_retrieved_docs
-                    )
-                    context = "\n".join(retrieved_chunks_text)
+
+                # --- Old retrieval logic (less efficient for large DBs) ---
+                # db_results = collection.get(include=['embeddings', 'documents'])
+                # document_chunk_embeddings_from_db = db_results.get('embeddings')
+                # document_chunks_text_from_db = db_results.get('documents')
+                # if document_chunk_embeddings_from_db is None or document_chunks_text_from_db is None:
+                #      print(f"  Warning: Could not retrieve embeddings or documents from DB.")
+                #      context = "Error: Could not retrieve context from database."
+                #      model_answer = "Error: Failed during retrieval."
+                #      qa_error = True
+                # else:
+                #     retrieved_chunks_text, _ = retriever.retrieve_relevant_chunks(
+                #         question_embedding,
+                #         document_chunk_embeddings_from_db, # This requires getting ALL embeddings
+                #         document_chunks_text_from_db,      # This requires getting ALL documents
+                #         top_k=rag_params.num_retrieved_docs
+                #     )
+                #     context = "\n".join(retrieved_chunks_text)
+                # --- End of old logic ---
 
             except Exception as e:
                 print(f"  Error during RAG retrieval: {e}")
@@ -171,6 +201,9 @@ def run_rag_test(config_path="config.json"):
             if not qa_error:
                 try:
                     prompt = question_prompt_template.format(context=context, question=question)
+                    # Check prompt length (optional but good practice)
+                    # token_count = len(question_llm_connector.tokenizer.encode(prompt)) # Assuming connector has tokenizer
+                    # print(f"    Prompt token count: {token_count}")
                     model_answer = question_llm_connector.invoke(prompt)
                 except Exception as e:
                     print(f"  Error during LLM QA invocation: {e}")
@@ -330,5 +363,9 @@ def run_rag_test(config_path="config.json"):
 
 
 if __name__ == "__main__":
-    run_rag_test() # Example using default config.json
-    # run_rag_test("config_fast.json") # Example of running with a specific config file
+    # Ensure rag_pipeline.py has run at least once directly to perform embedding
+    # Or add logic here to check if embedding needs to be run.
+    print("Starting RAG Tester...")
+    print("IMPORTANT: Ensure the embedding pipeline (rag_pipeline.py) has been run at least once to populate the ChromaDB collection.")
+    run_rag_test()
+    print("RAG Tester finished.")
