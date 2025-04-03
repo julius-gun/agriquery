@@ -15,9 +15,9 @@ path_to_text = 'english_manual.txt'
 
 # --- Dataset paths are now defined here, can be moved to a config file later ---
 dataset_paths = {
-    "general_questions": 'question_datasets\question_answers_pairs.json',
-    "table_questions": 'question_datasets\question_answers_tables.json',
-    "unanswerable_questions": 'question_datasets\question_answers_unanswerable.json'
+    "general_questions": 'question_datasets/question_answers_pairs.json',
+    "table_questions": 'question_datasets/question_answers_tables.json',
+    "unanswerable_questions": 'question_datasets/question_answers_unanswerable.json'
 }
 config_file_path = 'config.json' # Path to config file
 
@@ -114,16 +114,23 @@ for dataset_name, dataset_path in dataset_paths.items(): # Iterate through datas
     dataset = load_dataset(dataset_path)
     if dataset:
         print(f"\n--- Evaluating on {dataset_name} dataset ---")
+        # This call now returns a dict with 'source_hit_rate'
         evaluation_results = evaluate_rag_pipeline(dataset, retriever, collection, rag_params)
         all_evaluation_results[dataset_name] = evaluation_results
-        analyze_evaluation_results(evaluation_results, dataset_name) # Analyze results per dataset
+        # Pass the results to the analysis function (which we'll update next)
+        analyze_evaluation_results(evaluation_results, dataset_name)
 
 # --- Analyze Datasets ---
 analyze_dataset_across_types(dataset_paths) # Pass dataset_paths to analysis function
 
 # --- Overall Analysis ---
-print("\n--- Overall Evaluation Analysis ---")
+print("\n--- Overall Retrieval Evaluation Analysis ---") # Updated title slightly
 # Example of overall analysis (can be extended)
 for dataset_name, results in all_evaluation_results.items(): # Iterate through evaluation results
-    if "retrieval_accuracy" in results:
-        print(f"Dataset: {dataset_name}, Retrieval Accuracy: {results['retrieval_accuracy']:.2f}%")
+    # Use the new key 'source_hit_rate'
+    if "source_hit_rate" in results:
+        # Update the key access and print statement
+        print(f"Dataset: {dataset_name}, Source Hit Rate: {results['source_hit_rate']:.2f}%")
+    else:
+        # Handle cases where the key might be missing (e.g., if evaluation failed)
+        print(f"Dataset: {dataset_name}, Source Hit Rate: Not Available")

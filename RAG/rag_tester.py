@@ -3,10 +3,9 @@ import json
 import os
 import time
 import datetime
-import hashlib # Added for generating unique keys
+import hashlib
 
-# Import analysis tools and the specific metrics calculation function
-from analysis.analysis_tools import analyze_dataset_across_types, load_dataset, analyze_evaluation_results
+from analysis.analysis_tools import analyze_dataset_across_types, load_dataset
 from evaluation.metrics import calculate_metrics # Import the core function
 from evaluation.evaluator import Evaluator
 from llm_connectors.llm_connector_manager import LLMConnectorManager
@@ -54,8 +53,10 @@ def generate_question_key(dataset_name: str, question: str) -> str:
 
 def run_rag_test(config_path="config.json"):
     """
-    Runs the RAG test based on the provided configuration, calculating
-    overall metrics across all datasets.
+    Runs the RAG test:
+    1. Answers all questions using the QA LLM.
+    2. Evaluates all answers using the Evaluator LLM.
+    3. Calculates overall metrics.
     """
     config_loader = ConfigLoader(config_path)
     rag_config = config_loader.config # Load the entire config
@@ -64,9 +65,7 @@ def run_rag_test(config_path="config.json"):
     # Pass the entire llm_models dictionary to the manager
     llm_connector_manager = LLMConnectorManager(rag_config["llm_models"])
     question_model_name = config_loader.get_question_model_name()
-    # Determine LLM type for question model (assuming ollama, adjust if needed)
-    # TODO: Make LLM type configurable per model if necessary
-    question_llm_type = "ollama"
+    question_llm_type = "ollama" # TODO: Make configurable if needed
     question_llm_connector = llm_connector_manager.get_connector(question_llm_type, question_model_name)
 
     evaluator_model_name = config_loader.get_evaluator_model_name()
@@ -85,51 +84,74 @@ def run_rag_test(config_path="config.json"):
     # --- Load Datasets ---
     dataset_paths = config_loader.get_question_dataset_paths()
 
-    # --- Initialize Lists/Dicts for Aggregation ---
-    all_individual_results = [] # List to store results from ALL datasets for overall metrics
-    per_dataset_details = {} # Dict to store results grouped by dataset for saving
+    # --- Initialize Data Structures ---
+    # Stores results after QA phase, before evaluation phase
+    intermediate_results_by_dataset = {}
+    overall_qa_start_time = time.time()
 
-    overall_start_time = time.time()
-
-    # --- Process Each Dataset ---
+    # --- Phase 1: Question Answering ---
+    print("\n--- Phase 1: Answering all questions ---")
+    total_questions_to_answer = 0
     for dataset_name, dataset_path in dataset_paths.items():
-        print(f"\n--- Processing Dataset: {dataset_name} ---")
+        dataset = load_dataset(dataset_path)
+        if dataset:
+            total_questions_to_answer += len(dataset)
+
+    answered_questions_count = 0
+    for dataset_name, dataset_path in dataset_paths.items():
+        print(f"\nProcessing Dataset for QA: {dataset_name}")
         dataset = load_dataset(dataset_path)
         if not dataset:
             print(f"Skipping dataset: {dataset_name} due to loading error.")
             continue
 
-        dataset_specific_results = [] # Results for the current dataset only
+        dataset_intermediate_results = []
         dataset_start_time = time.time()
 
+        # Initialize retriever once per dataset (assuming params are static per dataset)
+        # If params can change per question, move inside inner loop
+        rag_params_dict = config_loader.get_rag_parameters()
+        rag_params = RagParameters.from_dict(rag_params_dict)
+        retriever = initialize_retriever(rag_params.retrieval_algorithm)
+
         for i, question_data in enumerate(dataset):
+            answered_questions_count += 1
             question = question_data.get("question")
             expected_answer = question_data.get("answer")
-            page = question_data.get("page", "N/A") # Default page to N/A if missing
+            page = question_data.get("page", "N/A")
 
-            if not question or expected_answer is None: # Check if essential data is present
+            if not question or expected_answer is None:
                 print(f"Warning: Skipping entry {i} in {dataset_name} due to missing question or answer.")
+                # Store minimal error info if needed, or just skip
+                intermediate_entry = {
+                    "question": question or "Missing Question",
+                    "expected_answer": expected_answer,
+                    "model_answer": "Error: Missing essential data",
+                    "page": page,
+                    "dataset": dataset_name,
+                    "qa_error": True
+                }
+                dataset_intermediate_results.append(intermediate_entry)
                 continue
 
-            print(f"Processing Q{i+1}/{len(dataset)}: {question[:80]}...") # Progress indicator
+            print(f"Answering Q {answered_questions_count}/{total_questions_to_answer} (Dataset: {dataset_name} {i+1}/{len(dataset)}): {question[:80]}...")
+
+            context = ""
+            model_answer = ""
+            qa_error = False
 
             # --- RAG Retrieval ---
             try:
-                rag_params_dict = config_loader.get_rag_parameters()
-                rag_params = RagParameters.from_dict(rag_params_dict)
-                retriever = initialize_retriever(rag_params.retrieval_algorithm) # Initialize retriever inside loop if params can change per dataset? Or outside if static. Assuming static for now.
                 question_embedding = retriever.vectorize_text(question)
-
-                # Fetch embeddings and documents - consider optimizing if performance is an issue
-                # Ensure 'collection' is initialized correctly (e.g., from rag_pipeline.py or here)
-                db_results = collection.get(include=['embeddings', 'documents']) # Renamed to avoid conflict
+                db_results = collection.get(include=['embeddings', 'documents'])
                 document_chunk_embeddings_from_db = db_results.get('embeddings')
                 document_chunks_text_from_db = db_results.get('documents')
 
                 if document_chunk_embeddings_from_db is None or document_chunks_text_from_db is None:
-                     print(f"Warning: Could not retrieve embeddings or documents from DB for question: {question}")
+                     print(f"  Warning: Could not retrieve embeddings or documents from DB.")
                      context = "Error: Could not retrieve context from database."
-                     retrieved_chunks_text = []
+                     model_answer = "Error: Failed during retrieval."
+                     qa_error = True
                 else:
                     retrieved_chunks_text, _ = retriever.retrieve_relevant_chunks(
                         question_embedding,
@@ -140,69 +162,132 @@ def run_rag_test(config_path="config.json"):
                     context = "\n".join(retrieved_chunks_text)
 
             except Exception as e:
-                print(f"Error during RAG retrieval for question '{question}': {e}")
+                print(f"  Error during RAG retrieval: {e}")
                 context = "Error during retrieval."
-                retrieved_chunks_text = []
                 model_answer = "Error: Failed during retrieval."
-                evaluation_result = "error" # Mark as error
+                qa_error = True
 
-            # --- LLM Question Answering (only if retrieval didn't fail hard) ---
-            if evaluation_result != "error": # Proceed only if retrieval was okay
+            # --- LLM Question Answering ---
+            if not qa_error:
                 try:
                     prompt = question_prompt_template.format(context=context, question=question)
                     model_answer = question_llm_connector.invoke(prompt)
                 except Exception as e:
-                    print(f"Error during LLM QA invocation for question '{question}': {e}")
+                    print(f"  Error during LLM QA invocation: {e}")
                     model_answer = "Error: Failed during QA generation."
-                    evaluation_result = "error" # Mark as error
+                    qa_error = True
 
-            # --- Evaluation (only if QA didn't fail) ---
-            if evaluation_result != "error":
-                try:
-                    # Ensure expected_answer is a string for the evaluator
-                    evaluation_result = evaluator.evaluate_answer(question, model_answer, str(expected_answer))
-                    print(f"  Evaluator judgment: {evaluation_result}") # Debug print
-                except Exception as e:
-                    print(f"Error during evaluation for question '{question}': {e}")
-                    evaluation_result = "error" # Mark evaluation as error
-
-            # --- Store Result ---
-            # Ensure the keys match what calculate_metrics expects: 'self_evaluation' and 'dataset'
-            result_entry = {
+            # --- Store Intermediate Result (without evaluation yet) ---
+            intermediate_entry = {
                 "question": question,
                 "expected_answer": expected_answer,
                 "model_answer": model_answer,
-                "retrieved_context": context, # Optionally store context
-                "self_evaluation": evaluation_result.strip().lower() if isinstance(evaluation_result, str) else "error", # Store evaluator result, handle errors
                 "page": page,
-                "dataset": dataset_name, # Store the source dataset name/key
+                "dataset": dataset_name,
+                "qa_error": qa_error # Flag if QA/Retrieval failed
             }
-            dataset_specific_results.append(result_entry)
-            all_individual_results.append(result_entry) # Add to the overall list
+            dataset_intermediate_results.append(intermediate_entry)
 
         dataset_end_time = time.time()
         dataset_duration = dataset_end_time - dataset_start_time
-        print(f"Finished dataset {dataset_name} in {dataset_duration:.2f} seconds.")
+        print(f"Finished QA for dataset {dataset_name} in {dataset_duration:.2f} seconds.")
 
-        # Store dataset-specific details for saving later
-        per_dataset_details[dataset_name] = {
-            "results": dataset_specific_results,
-            "duration": dataset_duration,
-            "total_questions_processed": len(dataset_specific_results)
+        intermediate_results_by_dataset[dataset_name] = {
+             "results": dataset_intermediate_results,
+             "duration_qa_seconds": dataset_duration,
+             "total_questions_processed": len(dataset_intermediate_results)
         }
 
-    overall_end_time = time.time()
-    overall_duration = overall_end_time - overall_start_time
-    print(f"\n--- Finished processing all datasets in {overall_duration:.2f} seconds ---")
+    overall_qa_end_time = time.time()
+    overall_qa_duration = overall_qa_end_time - overall_qa_start_time
+    print(f"\n--- Finished Phase 1 (QA) in {overall_qa_duration:.2f} seconds ---")
 
-    # --- Calculate Overall Metrics (after processing all datasets) ---
-    print("\n--- Calculating Overall Metrics ---")
-    if not all_individual_results:
-        print("No results collected. Cannot calculate overall metrics.")
-        overall_metrics = {} # Assign empty dict if no results
+
+    # --- Phase 2: Evaluation ---
+    print("\n--- Phase 2: Evaluating all answers ---")
+    overall_eval_start_time = time.time()
+    evaluated_questions_count = 0
+    final_results_list_for_metrics = [] # Flat list needed for calculate_metrics
+
+    for dataset_name, dataset_data in intermediate_results_by_dataset.items():
+        print(f"Evaluating Dataset: {dataset_name}")
+        dataset_eval_start_time = time.time()
+        evaluated_results_in_dataset = []
+
+        for i, intermediate_result in enumerate(dataset_data["results"]):
+            evaluated_questions_count += 1
+            print(f"Evaluating A {evaluated_questions_count}/{total_questions_to_answer} (Dataset: {dataset_name} {i+1}/{len(dataset_data['results'])})...")
+
+            evaluation_result = "error" # Default if skipping or error occurs
+            eval_error = False
+
+            # Only evaluate if QA didn't have an error
+            if not intermediate_result.get("qa_error", False):
+                try:
+                    # Ensure expected_answer is a string for the evaluator
+                    eval_judgment = evaluator.evaluate_answer(
+                        intermediate_result["question"],
+                        intermediate_result["model_answer"],
+                        str(intermediate_result["expected_answer"])
+                    )
+                    evaluation_result = eval_judgment.strip().lower() if isinstance(eval_judgment, str) else "error"
+                    print(f"  Evaluator judgment: {evaluation_result}")
+
+                except Exception as e:
+                    print(f"  Error during evaluation: {e}")
+                    evaluation_result = "error"
+                    eval_error = True
+            else:
+                print("  Skipping evaluation due to QA/Retrieval error.")
+                evaluation_result = "skipped_due_to_qa_error" # More specific status
+                eval_error = True # Treat as error for metrics calculation consistency if needed
+
+            # Update the result entry with the evaluation
+            final_entry = intermediate_result.copy() # Start with intermediate data
+            final_entry["self_evaluation"] = evaluation_result # Add the judgment
+            final_entry["eval_error"] = eval_error # Flag evaluation errors
+
+            # Remove temporary flags if desired in final output
+            # final_entry.pop("qa_error", None)
+            # final_entry.pop("eval_error", None)
+
+            evaluated_results_in_dataset.append(final_entry)
+            # Add to the flat list ONLY IF NOT SKIPPED/ERROR? Or always add and let metrics handle it?
+            # Let's add all entries to the flat list, calculate_metrics should handle non "yes"/"no" judgments if needed (or we filter before calling it)
+            final_results_list_for_metrics.append(final_entry)
+
+
+        dataset_eval_end_time = time.time()
+        dataset_eval_duration = dataset_eval_end_time - dataset_eval_start_time
+        # Update the dictionary for this dataset with evaluation info
+        intermediate_results_by_dataset[dataset_name]["results"] = evaluated_results_in_dataset # Replace intermediate with final
+        intermediate_results_by_dataset[dataset_name]["duration_eval_seconds"] = dataset_eval_duration
+        print(f"Finished evaluation for dataset {dataset_name} in {dataset_eval_duration:.2f} seconds.")
+
+
+    overall_eval_end_time = time.time()
+    overall_eval_duration = overall_eval_end_time - overall_eval_start_time
+    print(f"\n--- Finished Phase 2 (Evaluation) in {overall_eval_duration:.2f} seconds ---")
+
+    # --- Phase 3: Calculate Overall Metrics ---
+    print("\n--- Phase 3: Calculating Overall Metrics ---")
+    if not final_results_list_for_metrics:
+        print("No results available for metrics calculation.")
+        overall_metrics = {}
     else:
-        # Pass the aggregated list to the updated calculate_metrics function
-        overall_metrics = calculate_metrics(all_individual_results)
+        # Filter out results that couldn't be properly evaluated if necessary
+        # The current calculate_metrics handles unexpected judgments by printing warnings,
+        # so filtering might not be strictly needed unless you want to exclude errors entirely.
+        valid_results_for_metrics = [
+            r for r in final_results_list_for_metrics
+            if isinstance(r.get("self_evaluation"), str) and r["self_evaluation"] in ["yes", "no"]
+        ]
+        if len(valid_results_for_metrics) != len(final_results_list_for_metrics):
+             print(f"Warning: Calculating metrics on {len(valid_results_for_metrics)} results with valid 'yes'/'no' evaluations "
+                   f"(out of {len(final_results_list_for_metrics)} total processed entries).")
+
+        # Use the potentially filtered list for calculation
+        overall_metrics = calculate_metrics(valid_results_for_metrics) # Use the flat list
 
         print("\n--- Overall Evaluation Analysis (All Datasets) ---")
         # Print all calculated metrics
@@ -225,15 +310,19 @@ def run_rag_test(config_path="config.json"):
     timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S") # Use more robust datetime for timestamp
     results_filename = os.path.join(output_dir, f"rag_test_results_{timestamp}.json")
 
-    # Structure the final JSON output
+    overall_duration = overall_qa_duration + overall_eval_duration # Total time
+
     final_results_to_save = {
         "test_timestamp": timestamp,
         "question_model": question_model_name,
         "evaluator_model": evaluator_model_name,
         "rag_parameters": config_loader.get_rag_parameters(),
-        "overall_metrics": overall_metrics, # Include the calculated overall metrics
+        "overall_metrics": overall_metrics,
         "overall_duration_seconds": overall_duration,
-        "per_dataset_details": per_dataset_details # Include the detailed results per dataset
+        "duration_qa_phase_seconds": overall_qa_duration,
+        "duration_eval_phase_seconds": overall_eval_duration,
+        # Use the updated dictionary containing final results grouped by dataset
+        "per_dataset_details": intermediate_results_by_dataset
     }
 
     save_results(results_filename, final_results_to_save)
@@ -241,5 +330,5 @@ def run_rag_test(config_path="config.json"):
 
 
 if __name__ == "__main__":
-    # run_rag_test() # Example using default config.json
-    run_rag_test("config_fast.json") # Example of running with a specific config file
+    run_rag_test() # Example using default config.json
+    # run_rag_test("config_fast.json") # Example of running with a specific config file
