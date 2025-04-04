@@ -1,5 +1,26 @@
+      
 # p_llm_manual
 
+## Contents
+
+This main README serves as a central navigation point. Please refer to the specific README files and results folders within each project directory for detailed information, setup instructions, and findings.
+
+*   **RAG (Retrieval-Augmented Generation):**
+    *   **Project Details:** [RAG README](RAG/README.md)
+    *   **RAG Evaluation:** [RAG Evaluation](RAG)
+    *   **RAG Results:** [RAG Results Folder](RAG/results/) 
+    *(Note: Please ensure a `README.md` and a `results` folder exist within the `RAG` directory for these links to work correctly. Adjust the results folder path if it's named differently).*
+
+*   **ZeroShot Evaluation:**
+    *   **Project Details:** [ZeroShot README](ZeroShot/README.md)
+    *   **Results:** [ZeroShot Results Folder](ZeroShot/results/)
+    *   **Visualizations:** [ZeroShot Visualization Plots](ZeroShot/results/visualization/plots/)
+
+---
+
+*This README provides navigation. For specific project details and outcomes, please consult the files and folders linked above.*
+
+    
 
 
 ## Getting started
