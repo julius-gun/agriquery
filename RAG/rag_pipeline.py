@@ -11,14 +11,13 @@ from analysis.analysis_tools import (
 )
 import json
 import os
-
-# NEW IMPORT
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 # --- Configuration ---
 persist_directory = "chroma_db"
-collection_name = "english_manual"
+# base_collection_name = "english_manual" # Base name, will be modified
 path_to_text = "english_manual.txt"
+config_file_path = "config.json"  # Path to config file
 
 # --- Dataset paths are now defined here, can be moved to a config file later ---
 dataset_paths = {
@@ -26,7 +25,10 @@ dataset_paths = {
     "table_questions": "question_datasets/question_answers_tables.json",
     "unanswerable_questions": "question_datasets/question_answers_unanswerable.json",
 }
-config_file_path = "config.json"  # Path to config file
+
+# --- Helper Functions (generate_chunk_id, initialize_retriever remain the same) ---
+def generate_chunk_id(text_chunk):
+    return hashlib.sha256(text_chunk.encode("utf-8")).hexdigest()
 
 def initialize_retriever(retrieval_strategy_str: str):
     """Initializes the retriever based on the specified strategy."""
@@ -43,20 +45,15 @@ def initialize_retriever(retrieval_strategy_str: str):
     else:
         raise ValueError(f"Unknown retrieval strategy: {retrieval_strategy_str}")
 
-
-# --- Vectorization and Add to ChromaDB ---
-def generate_chunk_id(text_chunk):  # ID based only on content
-    """Generates a unique ID for a text chunk using SHA256 hashing."""
-    return hashlib.sha256(text_chunk.encode("utf-8")).hexdigest()  # Added encoding
-
-
 def embed_and_add_chunks_to_db(document_chunks_text, collection, retriever):
-    """Embeds text chunks and adds them to ChromaDB, avoiding duplicates."""
+    """Embeds text chunks and adds them to ChromaDB, avoiding duplicates WITHIN this specific collection."""
+    # This function remains largely the same, but operates on the specific collection passed to it.
     added_count = 0
     skipped_count = 0
     error_count = 0
     total_chunks = len(document_chunks_text)
-    print(f"Starting embedding process for {total_chunks} chunks...")
+    collection_name = collection.name # Get name for logging
+    print(f"Starting embedding process for {total_chunks} chunks into collection '{collection_name}'...")
     for i, chunk_text in enumerate(document_chunks_text):
         chunk_id = generate_chunk_id(chunk_text)
         try:
@@ -76,20 +73,18 @@ def embed_and_add_chunks_to_db(document_chunks_text, collection, retriever):
                 added_count += 1
             # Simple progress indicator
             if (i + 1) % 50 == 0 or (i + 1) == total_chunks:
-                 print(f"  Processed {i + 1}/{total_chunks} chunks (Added: {added_count}, Skipped: {skipped_count}, Errors: {error_count})")
-
+                 print(f"  Collection '{collection_name}': Processed {i + 1}/{total_chunks} chunks (Added: {added_count}, Skipped: {skipped_count}, Errors: {error_count})")
         except Exception as e:
-            print(f"!!! ERROR processing chunk {i} (ID: {chunk_id[:10]}...): {e}")
+            print(f"!!! ERROR processing chunk {i} for collection '{collection_name}' (ID: {chunk_id[:10]}...): {e}")
             error_count += 1
             # Optionally continue or break depending on severity
             # continue
     print(
-        f"Embedding finished. Added: {added_count}, Skipped (already exist): {skipped_count}, Errors: {error_count}"
+        f"Embedding finished for collection '{collection_name}'. Added: {added_count}, Skipped (already exist): {skipped_count}, Errors: {error_count}"
     )
 
 
-# --- Global Variables / Setup (Needed by importer and main block) ---
-
+# --- Global Variables / Setup (Client, Embedding Function, Config) ---
 # Load config once
 if os.path.exists(config_file_path):
     with open(config_file_path, 'r') as f:
@@ -99,26 +94,15 @@ else:
 rag_params = config.get("rag_parameters", {})
 
 # Initialize retriever instance (can be imported by rag_tester)
+# Retriever choice doesn't directly affect collection name based on chunking
 retriever = initialize_retriever(rag_params.get("retrieval_algorithm", "embedding"))
 tokenizer = retriever.tokenizer if hasattr(retriever, 'tokenizer') else None
 
 # Initialize embedding function for ChromaDB
 gte_embedding_function = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="Alibaba-NLP/gte-Qwen2-7B-instruct")
 
-# Initialize ChromaDB client and collection (can be imported by rag_tester)
+# Initialize ChromaDB client (can be imported by rag_tester)
 chroma_client = chromadb.PersistentClient(path=persist_directory)
-try:
-    # Use get_or_create for simplicity
-    collection = chroma_client.get_or_create_collection(
-        name=collection_name,
-        embedding_function=gte_embedding_function # Still associate EF for consistency
-    )
-    print(f"Collection '{collection_name}' loaded/created successfully.")
-except Exception as e:
-     print(f"!!! ERROR initializing ChromaDB collection: {e}")
-     # Decide how to proceed - maybe exit or raise
-     raise
-
 
 # --- Main Execution Block ---
 # This code only runs when rag_pipeline.py is executed directly
@@ -126,49 +110,91 @@ if __name__ == "__main__":
 
     print("\n--- Running RAG Pipeline Setup (Embedding) ---")
 
-    # Ensure tokenizer is available if needed for splitting
-    if not tokenizer and rag_params.get("retrieval_algorithm", "embedding") == "embedding":
-         raise TypeError("Tokenizer not found in retriever, but required for token splitting.")
+    # --- Determine Dynamic Collection Name ---
+    chunk_size = rag_params.get("chunk_size", 2000) # Get current chunk size
+    overlap_size = rag_params.get("overlap_size", 50) # Get current overlap size
+    base_collection_name = "english_manual" # Define base name here or load from config if preferred
+    # Create a unique name based on parameters that affect embedding
+    dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
+    print(f"Target collection name based on parameters: '{dynamic_collection_name}'")
 
-    # --- Document Loading and Chunking ---
-    print(f"Loading text from: {path_to_text}")
-    with open(path_to_text, 'r', encoding='utf-8') as f:
-        text = f.read()
+    # --- Check if Collection Exists ---
+    collection_exists = False
+    try:
+        # Try to get the collection. If it succeeds, it exists.
+        collection = chroma_client.get_collection(
+            name=dynamic_collection_name,
+            embedding_function=gte_embedding_function # Provide EF for potential validation
+        )
+        print(f"Collection '{dynamic_collection_name}' already exists.")
+        collection_exists = True
+    except Exception as e:
+        # Assuming exception means it doesn't exist (adjust based on specific ChromaDB exceptions if needed)
+        print(f"Collection '{dynamic_collection_name}' does not exist yet. Will proceed with creation and embedding.")
+        collection_exists = False
 
-    # Define the token-based splitter
-    token_splitter = RecursiveCharacterTextSplitter.from_huggingface_tokenizer(
-        tokenizer=tokenizer,
-        chunk_size=rag_params.get("chunk_size", 2000),
-        chunk_overlap=rag_params.get("overlap_size", 50)
-    )
+    # --- Conditional Embedding ---
+    if not collection_exists:
+        print(f"Creating new collection: '{dynamic_collection_name}'")
+        # Create the collection explicitly
+        collection = chroma_client.create_collection(
+            name=dynamic_collection_name,
+            embedding_function=gte_embedding_function
+        )
 
-    print(f"Splitting text using token limits: chunk_size={rag_params.get('chunk_size', 2000)}, overlap={rag_params.get('overlap_size', 50)}")
-    document_chunks_text = token_splitter.split_text(text)
-    print(f"Generated {len(document_chunks_text)} token-based chunks.")
+        # Ensure tokenizer is available if needed for splitting
+        if not tokenizer and rag_params.get("retrieval_algorithm", "embedding") == "embedding":
+             raise TypeError("Tokenizer not found in retriever, but required for token splitting.")
 
-    # --- Embedding and Adding Chunks to DB ---
-    embed_and_add_chunks_to_db(document_chunks_text, collection, retriever)
+        # --- Document Loading and Chunking ---
+        print(f"Loading text from: {path_to_text}")
+        with open(path_to_text, 'r', encoding='utf-8') as f:
+            text = f.read()
 
-    print("\n--- Running RAG Pipeline Evaluation (Retrieval Metrics) ---")
-    # --- Load and Evaluate Datasets ---
-    all_evaluation_results = {}
-    for dataset_name, dataset_path in dataset_paths.items():
-        dataset = load_dataset(dataset_path)
-        if dataset:
-            print(f"\n--- Evaluating Retrieval on {dataset_name} dataset ---")
-            evaluation_results = evaluate_rag_pipeline(dataset, retriever, collection, rag_params)
-            all_evaluation_results[dataset_name] = evaluation_results
-            analyze_evaluation_results(evaluation_results, dataset_name)
+        # Define the token-based splitter using current parameters
+        token_splitter = RecursiveCharacterTextSplitter.from_huggingface_tokenizer(
+            tokenizer=tokenizer,
+            chunk_size=chunk_size, # Use loaded chunk_size
+            chunk_overlap=overlap_size # Use loaded overlap_size
+        )
 
-    # --- Analyze Datasets ---
-    analyze_dataset_across_types(dataset_paths)
+        print(f"Splitting text using token limits: chunk_size={chunk_size}, overlap={overlap_size}")
+        document_chunks_text = token_splitter.split_text(text)
+        print(f"Generated {len(document_chunks_text)} token-based chunks.")
 
-    # --- Overall Analysis ---
-    print("\n--- Overall Retrieval Evaluation Analysis ---")
-    for dataset_name, results in all_evaluation_results.items():
-        if "source_hit_rate" in results:
-            print(f"Dataset: {dataset_name}, Source Hit Rate: {results['source_hit_rate']:.2f}%")
-        else:
-            print(f"Dataset: {dataset_name}, Source Hit Rate: Not Available")
+        # --- Embedding and Adding Chunks to the NEW DB ---
+        embed_and_add_chunks_to_db(document_chunks_text, collection, retriever)
+    else:
+        print(f"Skipping embedding process for existing collection '{dynamic_collection_name}'.")
+
+    # --- Evaluation (Optional for rag_pipeline.py, but if run, use the correct collection) ---
+    # Note: Evaluation in rag_pipeline.py usually focuses on retrieval metrics (like source hit rate)
+    # which depend on the specific collection content.
+    print(f"\n--- Running RAG Pipeline Evaluation (Retrieval Metrics on '{dynamic_collection_name}') ---")
+
+    # Ensure 'collection' variable refers to the correct one (either newly created or retrieved)
+    if 'collection' not in locals():
+         print("Error: Collection object not available for evaluation.")
+    else:
+        all_evaluation_results = {}
+        for dataset_name, dataset_path in dataset_paths.items():
+            dataset = load_dataset(dataset_path)
+            if dataset:
+                print(f"\n--- Evaluating Retrieval on {dataset_name} dataset using collection '{dynamic_collection_name}' ---")
+                # Pass the specific collection object to the evaluation function
+                evaluation_results = evaluate_rag_pipeline(dataset, retriever, collection, rag_params)
+                all_evaluation_results[dataset_name] = evaluation_results
+                analyze_evaluation_results(evaluation_results, dataset_name)
+
+        # --- Analyze Datasets ---
+        analyze_dataset_across_types(dataset_paths)
+
+        # --- Overall Analysis ---
+        print(f"\n--- Overall Retrieval Evaluation Analysis for Collection '{dynamic_collection_name}' ---")
+        for dataset_name, results in all_evaluation_results.items():
+            if "source_hit_rate" in results:
+                print(f"Dataset: {dataset_name}, Source Hit Rate: {results['source_hit_rate']:.2f}%")
+            else:
+                print(f"Dataset: {dataset_name}, Source Hit Rate: Not Available")
 
     print("\n--- RAG Pipeline Script Finished ---")

@@ -4,9 +4,10 @@ import os
 import time
 import datetime
 import hashlib
+import chromadb # Import chromadb
 
 from analysis.analysis_tools import analyze_dataset_across_types, load_dataset
-from evaluation.metrics import calculate_metrics # Import the core function
+from evaluation.metrics import calculate_metrics
 from evaluation.evaluator import Evaluator
 from llm_connectors.llm_connector_manager import LLMConnectorManager
 from parameter_tuning.parameters import RagParameters
@@ -53,7 +54,8 @@ def generate_question_key(dataset_name: str, question: str) -> str:
 
 def run_rag_test(config_path="config.json"):
     """
-    Runs the RAG test:
+    Runs the RAG test against the specific ChromaDB collection
+    matching the current chunk_size and overlap_size in the config.    
     1. Answers all questions using the QA LLM.
     2. Evaluates all answers using the Evaluator LLM.
     3. Calculates overall metrics.
@@ -84,6 +86,34 @@ def run_rag_test(config_path="config.json"):
     # --- Load Datasets ---
     dataset_paths = config_loader.get_question_dataset_paths()
 
+    # --- Get RAG Parameters and Determine Collection ---
+    rag_params_dict = config_loader.get_rag_parameters()
+    rag_params = RagParameters.from_dict(rag_params_dict) # Use RagParameters class if needed, or just dict
+
+    chunk_size = rag_params_dict.get("chunk_size", 2000)
+    overlap_size = rag_params_dict.get("overlap_size", 50)
+    base_collection_name = "english_manual" # Must match the base name used in rag_pipeline.py
+    dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
+    print(f"Attempting to use ChromaDB collection: '{dynamic_collection_name}' (based on config parameters)")
+
+    # --- Initialize ChromaDB Client and Get Specific Collection ---
+    persist_directory = "chroma_db" # Define persist directory path
+    chroma_client = chromadb.PersistentClient(path=persist_directory)
+    try:
+        # Get the specific collection required for this test run
+        collection = chroma_client.get_collection(name=dynamic_collection_name)
+        print(f"Successfully connected to collection '{dynamic_collection_name}'.")
+    except Exception as e:
+        print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print(f"!!! ERROR: Failed to get ChromaDB collection '{dynamic_collection_name}'.")
+        print(f"!!! Please ensure you have run 'rag_pipeline.py' with:")
+        print(f"!!!   'chunk_size': {chunk_size}")
+        print(f"!!!   'overlap_size': {overlap_size}")
+        print(f"!!! in '{config_path}' to create and embed this collection.")
+        print(f"!!! Original error: {e}")
+        print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        return # Exit the test function if the required DB doesn't exist
+
     # --- Initialize Data Structures ---
     # Stores results after QA phase, before evaluation phase
     intermediate_results_by_dataset = {}
@@ -98,11 +128,8 @@ def run_rag_test(config_path="config.json"):
             total_questions_to_answer += len(dataset)
 
     answered_questions_count = 0
-    # Get RAG parameters ONCE before the loop
-    rag_params_dict = config_loader.get_rag_parameters()
-    rag_params = RagParameters.from_dict(rag_params_dict)
-    # The retriever instance is already initialized and imported from rag_pipeline
-    # The collection instance is already initialized and imported from rag_pipeline
+    # The retriever instance is already initialized globally based on config
+    # The collection instance is now dynamically loaded above
 
     for dataset_name, dataset_path in dataset_paths.items():
         print(f"\nProcessing Dataset for QA: {dataset_name}")
@@ -113,9 +140,6 @@ def run_rag_test(config_path="config.json"):
 
         dataset_intermediate_results = []
         dataset_start_time = time.time()
-
-        # REMOVE redundant retriever initialization inside the loop
-        # retriever = initialize_retriever(rag_params.retrieval_algorithm) # NO LONGER NEEDED
 
         for i, question_data in enumerate(dataset):
             answered_questions_count += 1
@@ -167,7 +191,7 @@ def run_rag_test(config_path="config.json"):
                           # Decide if this is an error or just no context found
                           # context = "No relevant context found." # Or set qa_error = True
                 else:
-                     print(f"  Warning: Could not retrieve documents from DB for query. Results: {query_results}")
+                     print(f"  Warning: Could not retrieve documents from DB collection '{dynamic_collection_name}'. Results: {query_results}")
                      context = "Error: Could not retrieve context from database."
                      model_answer = "Error: Failed during retrieval."
                      qa_error = True
@@ -192,7 +216,7 @@ def run_rag_test(config_path="config.json"):
                 # --- End of old logic ---
 
             except Exception as e:
-                print(f"  Error during RAG retrieval: {e}")
+                print(f"  Error during RAG retrieval from collection '{dynamic_collection_name}': {e}")
                 context = "Error during retrieval."
                 model_answer = "Error: Failed during retrieval."
                 qa_error = True
@@ -337,11 +361,12 @@ def run_rag_test(config_path="config.json"):
     # --- Overall Dataset Analysis (Counts per type) ---
     analyze_dataset_across_types(dataset_paths) # Analyze counts across datasets
 
-    # --- Save Results to JSON ---
-    output_dir = config_loader.get_output_dir() # Use getter for output dir
+    # --- Save Results to JSON (Include collection name for clarity) ---
+    output_dir = config_loader.get_output_dir()
     os.makedirs(output_dir, exist_ok=True)
-    timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S") # Use more robust datetime for timestamp
-    results_filename = os.path.join(output_dir, f"rag_test_results_{timestamp}.json")
+    timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    # Add parameter details to filename for easier identification
+    results_filename = os.path.join(output_dir, f"rag_test_results_cs{chunk_size}_os{overlap_size}_{timestamp}.json")
 
     overall_duration = overall_qa_duration + overall_eval_duration # Total time
 
@@ -349,12 +374,12 @@ def run_rag_test(config_path="config.json"):
         "test_timestamp": timestamp,
         "question_model": question_model_name,
         "evaluator_model": evaluator_model_name,
-        "rag_parameters": config_loader.get_rag_parameters(),
+        "rag_parameters": config_loader.get_rag_parameters(), # Save the full params used
+        "chroma_collection_used": dynamic_collection_name, # Record which collection was tested
         "overall_metrics": overall_metrics,
         "overall_duration_seconds": overall_duration,
         "duration_qa_phase_seconds": overall_qa_duration,
         "duration_eval_phase_seconds": overall_eval_duration,
-        # Use the updated dictionary containing final results grouped by dataset
         "per_dataset_details": intermediate_results_by_dataset
     }
 
@@ -366,6 +391,8 @@ if __name__ == "__main__":
     # Ensure rag_pipeline.py has run at least once directly to perform embedding
     # Or add logic here to check if embedding needs to be run.
     print("Starting RAG Tester...")
-    print("IMPORTANT: Ensure the embedding pipeline (rag_pipeline.py) has been run at least once to populate the ChromaDB collection.")
+    print("IMPORTANT: This script will attempt to load a ChromaDB collection specific to the")
+    print("           'chunk_size' and 'overlap_size' currently set in the config file.")
+    print("           Ensure 'rag_pipeline.py' has been run with these parameters first.")
     run_rag_test()
     print("RAG Tester finished.")
