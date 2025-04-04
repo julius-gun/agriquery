@@ -1,12 +1,6 @@
 {
   "llm_models": {
     "ollama": {
-      "deepseek-r1_70B-128k": {
-        "name": "deepseek-r1:70b",
-        "temperature": 0.0,
-        "num_predict": 1024,
-        "context_window": 128000
-      },
       "deepseek-r1_8B-128k": {
         "name": "deepseek-r1:8b",
         "temperature": 0.0,
@@ -73,28 +67,28 @@
         "num_predict": 1024,
         "context_window": 8192
       },
-      "phi4_14B-4k": {
+      "gemma3_12B-128k": {
+        "name": "gemma3:12b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
+      },
+      "phi4_14B-16k": {
         "name": "phi4:latest",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 4096
+        "context_window": 16384
       },
-      "r1-1776_70B-128k": {
-        "name": "r1-1776:70b",
+      "qwq_32B-128k": {
+        "name": "qwq",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 128000
-      },
-      "DeepSeek-R1-Distill-Qwen-7B-uncensored-128k": {
-        "name": "thirdeyeai/DeepSeek-R1-Distill-Qwen-7B-uncensored",
-        "temperature": 0.0,
-        "num_predict": 1024,
-        "context_window": 128000
+        "context_window": 131072
       }
     }
   },
   "question_model_name": "llama3.2_3B-128k",
-  "evaluator_model_name": "gemma2_9B-8k",
+  "evaluator_model_name": "gemma3_12B-128k",
   "prompt_paths": {
     "question_prompt": "prompt_templates/question_prompt.txt",
     "evaluation_prompt": "prompt_templates/evaluation_prompt.txt"
@@ -102,7 +96,7 @@
   "language_configs": [
     {
       "language": "english",
-      "manual_path": "manuals/english_manual.txt", 
+      "manual_path": "manuals/english_manual.txt",
       "collection_base_name": "english_manual"
     },
     {
