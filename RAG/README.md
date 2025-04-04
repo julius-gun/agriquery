@@ -24,7 +24,7 @@ This project provides a framework for building, testing, and evaluating Retrieva
 
 ## Docker Installation
 
-*Note: Instructions for setting up and running with Docker can be found in the main [README.md](README.md) (this file) or a dedicated `DOCKER_README.md` if available. The provided `Dockerfile` aims to set up the environment and pull necessary models.*
+*Note: Instructions for setting up and running with Docker can be found in the [DOCKER_README.md](DOCKER_README.md). The provided `Dockerfile` aims to set up the environment and pull necessary models.*
 
 ## Manual Installation
 
@@ -34,7 +34,7 @@ For manual installation, follow these steps:
 
     ```bash
     git clone <repository_url>
-    cd <repository_directory_name> # e.g., cd RAG-Framework
+    cd p_llm_manual/RAG
     ```
 
 2.  **Create a virtual environment:**
