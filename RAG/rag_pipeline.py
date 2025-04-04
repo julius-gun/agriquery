@@ -15,18 +15,9 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 # --- Configuration ---
 persist_directory = "chroma_db"
-# base_collection_name = "english_manual" # Base name, will be modified
-path_to_text = "english_manual.txt"
 config_file_path = "config.json"  # Path to config file
 
-# --- Dataset paths are now defined here, can be moved to a config file later ---
-dataset_paths = {
-    "general_questions": "question_datasets/question_answers_pairs.json",
-    "table_questions": "question_datasets/question_answers_tables.json",
-    "unanswerable_questions": "question_datasets/question_answers_unanswerable.json",
-}
-
-# --- Helper Functions (generate_chunk_id, initialize_retriever remain the same) ---
+# --- Helper Functions (generate_chunk_id, initialize_retriever, embed_and_add_chunks_to_db remain the same) ---
 def generate_chunk_id(text_chunk):
     return hashlib.sha256(text_chunk.encode("utf-8")).hexdigest()
 
@@ -91,7 +82,17 @@ if os.path.exists(config_file_path):
         config = json.load(f)
 else:
     raise FileNotFoundError(f"Configuration file not found at: {config_file_path}")
+
+# --- Load specific config sections ---
 rag_params = config.get("rag_parameters", {})
+language_configs = config.get("language_configs", []) # Load language configs
+dataset_paths = config.get("question_dataset_paths", {}) # Load English question paths
+
+if not language_configs:
+    raise ValueError("No 'language_configs' found in config.json. Please define language-specific settings.")
+if not dataset_paths:
+    raise ValueError("No 'question_dataset_paths' found in config.json.")
+
 
 # Initialize retriever instance (can be imported by rag_tester)
 # Retriever choice doesn't directly affect collection name based on chunking
@@ -108,93 +109,118 @@ chroma_client = chromadb.PersistentClient(path=persist_directory)
 # This code only runs when rag_pipeline.py is executed directly
 if __name__ == "__main__":
 
-    print("\n--- Running RAG Pipeline Setup (Embedding) ---")
+    print("\n--- Running RAG Pipeline Setup (Embedding & Evaluation) for Configured Languages ---")
 
-    # --- Determine Dynamic Collection Name ---
+    # --- Get common RAG parameters ---
     chunk_size = rag_params.get("chunk_size", 2000) # Get current chunk size
     overlap_size = rag_params.get("overlap_size", 50) # Get current overlap size
-    base_collection_name = "english_manual" # Define base name here or load from config if preferred
-    # Create a unique name based on parameters that affect embedding
-    dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
-    print(f"Target collection name based on parameters: '{dynamic_collection_name}'")
 
-    # --- Check if Collection Exists ---
-    collection_exists = False
-    try:
-        # Try to get the collection. If it succeeds, it exists.
-        collection = chroma_client.get_collection(
-            name=dynamic_collection_name,
-            embedding_function=gte_embedding_function # Provide EF for potential validation
-        )
-        print(f"Collection '{dynamic_collection_name}' already exists.")
-        collection_exists = True
-    except Exception as e:
-        # Assuming exception means it doesn't exist (adjust based on specific ChromaDB exceptions if needed)
-        print(f"Collection '{dynamic_collection_name}' does not exist yet. Will proceed with creation and embedding.")
+    # --- Loop through each language configuration ---
+    for lang_config in language_configs:
+        language = lang_config.get("language")
+        manual_path = lang_config.get("manual_path")
+        base_collection_name = lang_config.get("collection_base_name")
+
+        if not all([language, manual_path, base_collection_name]):
+            print(f"Warning: Skipping invalid language config entry: {lang_config}")
+            continue
+
+        print(f"\n===== Processing Language: {language.upper()} =====")
+        print(f"Manual Path: {manual_path}")
+
+        # --- Determine Dynamic Collection Name for this language ---
+        dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
+        print(f"Target collection name: '{dynamic_collection_name}'")
+
+        # --- Check if Collection Exists ---
         collection_exists = False
+        collection = None # Initialize collection variable
+        try:
+            # Try to get the collection. If it succeeds, it exists.
+            collection = chroma_client.get_collection(
+                name=dynamic_collection_name,
+                embedding_function=gte_embedding_function # Provide EF for potential validation
+            )
+            print(f"Collection '{dynamic_collection_name}' already exists.")
+            collection_exists = True
+        except Exception as e:
+            # Assuming exception means it doesn't exist (adjust based on specific ChromaDB exceptions if needed)
+            print(f"Collection '{dynamic_collection_name}' does not exist yet. Will proceed with creation and embedding.")
+            collection_exists = False
 
-    # --- Conditional Embedding ---
-    if not collection_exists:
-        print(f"Creating new collection: '{dynamic_collection_name}'")
-        # Create the collection explicitly
-        collection = chroma_client.create_collection(
-            name=dynamic_collection_name,
-            embedding_function=gte_embedding_function
-        )
+        # --- Conditional Embedding ---
+        if not collection_exists:
+            print(f"Creating new collection: '{dynamic_collection_name}'")
+            # Create the collection explicitly
+            collection = chroma_client.create_collection(
+                name=dynamic_collection_name,
+                embedding_function=gte_embedding_function
+            )
 
-        # Ensure tokenizer is available if needed for splitting
-        if not tokenizer and rag_params.get("retrieval_algorithm", "embedding") == "embedding":
-             raise TypeError("Tokenizer not found in retriever, but required for token splitting.")
+            # Ensure tokenizer is available if needed for splitting
+            if not tokenizer and rag_params.get("retrieval_algorithm", "embedding") == "embedding":
+                 raise TypeError("Tokenizer not found in retriever, but required for token splitting.")
 
-        # --- Document Loading and Chunking ---
-        print(f"Loading text from: {path_to_text}")
-        with open(path_to_text, 'r', encoding='utf-8') as f:
-            text = f.read()
+            # --- Document Loading and Chunking for this language ---
+            print(f"Loading text from: {manual_path}")
+            try:
+                with open(manual_path, 'r', encoding='utf-8') as f:
+                    text = f.read()
+            except FileNotFoundError:
+                print(f"!!! ERROR: Manual file not found at '{manual_path}'. Skipping embedding for {language}.")
+                continue # Skip to the next language
 
-        # Define the token-based splitter using current parameters
-        token_splitter = RecursiveCharacterTextSplitter.from_huggingface_tokenizer(
-            tokenizer=tokenizer,
-            chunk_size=chunk_size, # Use loaded chunk_size
-            chunk_overlap=overlap_size # Use loaded overlap_size
-        )
+            # Define the token-based splitter using current parameters
+            token_splitter = RecursiveCharacterTextSplitter.from_huggingface_tokenizer(
+                tokenizer=tokenizer,
+                chunk_size=chunk_size, # Use loaded chunk_size
+                chunk_overlap=overlap_size # Use loaded overlap_size
+            )
 
-        print(f"Splitting text using token limits: chunk_size={chunk_size}, overlap={overlap_size}")
-        document_chunks_text = token_splitter.split_text(text)
-        print(f"Generated {len(document_chunks_text)} token-based chunks.")
+            print(f"Splitting text using token limits: chunk_size={chunk_size}, overlap={overlap_size}")
+            document_chunks_text = token_splitter.split_text(text)
+            print(f"Generated {len(document_chunks_text)} token-based chunks for {language}.")
 
-        # --- Embedding and Adding Chunks to the NEW DB ---
-        embed_and_add_chunks_to_db(document_chunks_text, collection, retriever)
-    else:
-        print(f"Skipping embedding process for existing collection '{dynamic_collection_name}'.")
+            # --- Embedding and Adding Chunks to the NEW DB ---
+            embed_and_add_chunks_to_db(document_chunks_text, collection, retriever)
+        else:
+            print(f"Skipping embedding process for existing collection '{dynamic_collection_name}'.")
 
-    # --- Evaluation (Optional for rag_pipeline.py, but if run, use the correct collection) ---
-    # Note: Evaluation in rag_pipeline.py usually focuses on retrieval metrics (like source hit rate)
-    # which depend on the specific collection content.
-    print(f"\n--- Running RAG Pipeline Evaluation (Retrieval Metrics on '{dynamic_collection_name}') ---")
+        # --- Evaluation (Optional, run against the current language's collection) ---
+        # Note: Evaluation in rag_pipeline.py usually focuses on retrieval metrics (like source hit rate)
+        # which depend on the specific collection content.
+        print(f"\n--- Running RAG Pipeline Evaluation (Retrieval Metrics on '{dynamic_collection_name}') ---")
 
-    # Ensure 'collection' variable refers to the correct one (either newly created or retrieved)
-    if 'collection' not in locals():
-         print("Error: Collection object not available for evaluation.")
-    else:
-        all_evaluation_results = {}
+        # Ensure 'collection' variable refers to the correct one (either newly created or retrieved)
+        if collection is None:
+             print(f"Error: Collection object '{dynamic_collection_name}' not available for evaluation. Skipping evaluation for {language}.")
+             continue # Skip evaluation for this language
+
+        # Use the English question datasets for evaluation against the current language collection
+        all_evaluation_results_for_lang = {}
         for dataset_name, dataset_path in dataset_paths.items():
-            dataset = load_dataset(dataset_path)
+            dataset = load_dataset(dataset_path) # Load English questions
             if dataset:
-                print(f"\n--- Evaluating Retrieval on {dataset_name} dataset using collection '{dynamic_collection_name}' ---")
-                # Pass the specific collection object to the evaluation function
+                print(f"\n--- Evaluating Retrieval on {dataset_name} dataset (English Qs) using collection '{dynamic_collection_name}' ---")
+                # Pass the specific collection object for the current language
                 evaluation_results = evaluate_rag_pipeline(dataset, retriever, collection, rag_params)
-                all_evaluation_results[dataset_name] = evaluation_results
-                analyze_evaluation_results(evaluation_results, dataset_name)
+                all_evaluation_results_for_lang[dataset_name] = evaluation_results
+                analyze_evaluation_results(evaluation_results, f"{dataset_name} ({language} manual)") # Add language context to analysis output
 
-        # --- Analyze Datasets ---
-        analyze_dataset_across_types(dataset_paths)
+        # --- Analyze Datasets (English questions) ---
+        # This analysis is about the question sets themselves, doesn't depend on the language collection
+        # analyze_dataset_across_types(dataset_paths) # Might be redundant to call this in every loop iteration
 
-        # --- Overall Analysis ---
-        print(f"\n--- Overall Retrieval Evaluation Analysis for Collection '{dynamic_collection_name}' ---")
-        for dataset_name, results in all_evaluation_results.items():
+        # --- Overall Analysis for this Language Collection ---
+        print(f"\n--- Overall Retrieval Evaluation Analysis for Collection '{dynamic_collection_name}' ({language.upper()}) ---")
+        for dataset_name, results in all_evaluation_results_for_lang.items():
             if "source_hit_rate" in results:
-                print(f"Dataset: {dataset_name}, Source Hit Rate: {results['source_hit_rate']:.2f}%")
+                print(f"  Dataset: {dataset_name}, Source Hit Rate: {results['source_hit_rate']:.2f}%")
             else:
-                print(f"Dataset: {dataset_name}, Source Hit Rate: Not Available")
+                print(f"  Dataset: {dataset_name}, Source Hit Rate: Not Available")
+
+    # Analyze English datasets once after the loop
+    print("\n--- Analysis of English Question Datasets Used ---")
+    analyze_dataset_across_types(dataset_paths)
 
     print("\n--- RAG Pipeline Script Finished ---")
