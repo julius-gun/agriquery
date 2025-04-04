@@ -2,7 +2,6 @@
 import json
 import os
 import time
-import datetime
 import hashlib
 import chromadb # Import chromadb
 
@@ -17,33 +16,10 @@ from parameter_tuning.parameters import RagParameters
 # We might need to import the retriever instance if its methods are directly called later.
 # from rag_pipeline import retriever # Example if needed
 from utils.config_loader import ConfigLoader
+from utils.result_manager import ResultManager # Import ResultManager
 
 # --- Helper Functions for Result File Handling ---
 
-def load_or_initialize_results(filepath: str) -> dict:
-    """Loads results from a JSON file or returns an empty dict if not found/invalid."""
-    if os.path.exists(filepath):
-        try:
-            with open(filepath, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except json.JSONDecodeError:
-            print(f"Warning: Error decoding JSON from {filepath}. Starting with empty results.")
-            return {}
-        except Exception as e:
-            print(f"Warning: Error loading results file {filepath}: {e}. Starting with empty results.")
-            return {}
-    else:
-        return {}
-
-def save_results(filepath: str, data: dict):
-    """Saves the results data to a JSON file."""
-    try:
-        # Ensure the output directory exists
-        os.makedirs(os.path.dirname(filepath), exist_ok=True)
-        with open(filepath, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=4)
-    except Exception as e:
-        print(f"Error: Failed to save results to {filepath}: {e}")
 
 def generate_question_key(dataset_name: str, question: str) -> str:
     """Generates a unique key for a question within a dataset."""
@@ -56,14 +32,18 @@ def run_rag_test(config_path="config.json"):
     """
     Runs the RAG test for each configured language.
     For each language:
-    1. Connects to the language-specific ChromaDB collection.
+    1. Connects to the language-specific ChromaDB collection based on config parameters.
     2. Answers all ENGLISH questions using the QA LLM with context from that collection.
     3. Evaluates all answers using the Evaluator LLM.
     4. Calculates overall metrics for that language manual.
-    5. Saves results to a language-specific file.
+    5. Saves results using ResultManager with the new filename format.
     """
     config_loader = ConfigLoader(config_path)
     rag_config = config_loader.config # Load the entire config
+    output_dir = config_loader.get_output_dir()
+
+    # --- Initialize Result Manager (Once) ---
+    result_manager = ResultManager(output_dir=output_dir)
 
     # --- Load Models (Once) ---
     # Pass the entire llm_models dictionary to the manager
@@ -110,6 +90,8 @@ def run_rag_test(config_path="config.json"):
     # --- Get RAG Parameters (Once) ---
     rag_params_dict = config_loader.get_rag_parameters()
     rag_params = RagParameters.from_dict(rag_params_dict) # Use RagParameters class if needed, or just dict
+    # Extract parameters needed for filename and logic
+    retrieval_algorithm = rag_params_dict.get("retrieval_algorithm", "embedding")
     chunk_size = rag_params_dict.get("chunk_size", 2000) # Default from config or hardcoded default
     overlap_size = rag_params_dict.get("overlap_size", 50) # Default from config or hardcoded default
     num_retrieved_docs = rag_params.num_retrieved_docs # Get from RagParameters object or dict
@@ -136,6 +118,7 @@ def run_rag_test(config_path="config.json"):
         print(f"\n{'='*20} Starting Test for Language: {language.upper()} {'='*20}")
 
         # --- Determine Dynamic Collection Name for this language ---
+        # This name depends on chunk/overlap size used during *creation* (rag_pipeline.py or create_databases.py)
         dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
         print(f"Attempting to use ChromaDB collection: '{dynamic_collection_name}'")
 
@@ -146,7 +129,7 @@ def run_rag_test(config_path="config.json"):
         except Exception as e:
             print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             print(f"!!! ERROR: Failed to get ChromaDB collection '{dynamic_collection_name}' for language '{language}'.")
-            print(f"!!! Please ensure you have run 'rag_pipeline.py' with:")
+            print(f"!!! Please ensure you have run 'create_databases.py' or 'rag_pipeline.py' with:")
             print(f"!!!   'chunk_size': {chunk_size}")
             print(f"!!!   'overlap_size': {overlap_size}")
             print(f"!!!   and the correct language configuration in '{config_path}'")
@@ -206,7 +189,7 @@ def run_rag_test(config_path="config.json"):
                     # Query the language-specific collection
                     query_results = collection.query(
                         query_embeddings=question_embedding,
-                        n_results=num_retrieved_docs,
+                        n_results=num_retrieved_docs, # Use num_retrieved_docs from params
                         include=['documents']
                     )
 
@@ -341,40 +324,42 @@ def run_rag_test(config_path="config.json"):
                  else:
                      print(f"  {key.replace('_', ' ').title()}: {value}")
 
-        # You can still use analyze_evaluation_results if you only want the subset it prints
-        # analyze_evaluation_results(overall_metrics, "Overall (All Datasets)")
-
-
-    # --- Overall Dataset Analysis (Counts per type) ---
-    # analyze_dataset_across_types(dataset_paths) # Analyze counts across datasets
-
-        # --- Save Results to Language-Specific JSON ---
-        output_dir = config_loader.get_output_dir()
-        os.makedirs(output_dir, exist_ok=True)
-        timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-        # Include language and base collection name in filename
-        results_filename = os.path.join(output_dir, f"rag_test_results_{language}_{base_collection_name}_cs{chunk_size}_os{overlap_size}_{timestamp}.json")
-
+        # --- Prepare Final Results Dictionary ---
         overall_duration = overall_qa_duration + overall_eval_duration
-
         final_results_to_save = {
-            "test_timestamp": timestamp,
-            "language_tested": language,
-            "manual_base_collection_name": base_collection_name,
-            "question_model": question_model_name,
-            "evaluator_model": evaluator_model_name,
-            "rag_parameters": config_loader.get_rag_parameters(),
-            "chroma_collection_used": dynamic_collection_name,
-            "question_datasets_used": list(dataset_paths.keys()), # List names of English datasets used
+            "test_run_parameters": { # Group parameters for clarity
+                "language_tested": language,
+                "question_model": question_model_name,
+                "evaluator_model": evaluator_model_name,
+                "retrieval_algorithm": retrieval_algorithm,
+                "chunk_size": chunk_size,
+                "overlap_size": overlap_size,
+                "num_retrieved_docs": num_retrieved_docs,
+                "chroma_collection_used": dynamic_collection_name,
+                "question_datasets_used": list(dataset_paths.keys()), # List names of English datasets used
+            },
             "overall_metrics": overall_metrics,
-            "overall_duration_seconds": overall_duration,
-            "duration_qa_phase_seconds": overall_qa_duration,
-            "duration_eval_phase_seconds": overall_eval_duration,
+            "timing": {
+                "overall_duration_seconds": overall_duration,
+                "duration_qa_phase_seconds": overall_qa_duration,
+                "duration_eval_phase_seconds": overall_eval_duration,
+            },
             "per_dataset_details": intermediate_results_by_dataset # Results broken down by English dataset type
         }
 
-        save_results(results_filename, final_results_to_save)
-        print(f"\nResults for {language.upper()} saved to: {results_filename}")
+        # --- Save Results using ResultManager ---
+        print(f"\n--- Saving Results for {language.upper()} ---")
+        result_manager.save_results(
+            results=final_results_to_save,
+            retrieval_algorithm=retrieval_algorithm,
+            language=language,
+            question_model_name=question_model_name,
+            chunk_size=chunk_size,
+            overlap_size=overlap_size,
+            num_retrieved_docs=num_retrieved_docs
+        )
+        # The actual filename will be printed by result_manager.save_results
+
         print(f"{'='*20} Finished Test for Language: {language.upper()} {'='*20}")
 
     print("\n--- All Language Tests Completed ---")
@@ -386,9 +371,14 @@ if __name__ == "__main__":
     # load the languages_to_test and print them
     config_loader = ConfigLoader("config.json")
     languages_to_test = config_loader.config.get("language_configs", [])
-    print(f"Starting RAG Tester for the following languages: {languages_to_test}")
-    print("IMPORTANT: This script will attempt to load ChromaDB collections specific to")
-    print("           each configured language and the 'chunk_size'/'overlap_size' in config.")
-    print("           Ensure 'rag_pipeline.py' has been run with these parameters first for all desired languages.")
+    rag_params_main = config_loader.get_rag_parameters()
+    chunk_size_main = rag_params_main.get("chunk_size", "N/A")
+    overlap_size_main = rag_params_main.get("overlap_size", "N/A")
+
+    print(f"Starting RAG Tester for the following languages: {[lc.get('language', 'N/A') for lc in languages_to_test]}")
+    print(f"IMPORTANT: This script will attempt to load ChromaDB collections specific to")
+    print(f"           each configured language and the RAG parameters in config:")
+    print(f"           Chunk Size = {chunk_size_main}, Overlap Size = {overlap_size_main}")
+    print(f"           Ensure 'create_databases.py' or 'rag_pipeline.py' has been run with these parameters first.")
     run_rag_test()
     print("RAG Tester finished.")
