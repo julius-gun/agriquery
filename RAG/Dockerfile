@@ -67,7 +67,7 @@ RUN ollama serve & sleep 10 && \
 COPY start.sh .
 RUN sed -i 's/\r$//' /app/start.sh
 RUN chmod +x /app/start.sh
-RUN ls -l /app/start.sh  # <--- ADD THIS LINE TO VERIFY PERMISSIONS
+RUN ls -l /app/start.sh  # <--- VERIFY PERMISSIONS
       
 CMD ["bash", "/app/start.sh"]
 
