@@ -14,47 +14,61 @@ try:
     # though usually not necessary if run from the project root.
     # sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
+    # run main() of utils.create_databases.py 
+    from utils import create_databases
     from rag_tester import run_rag_test
-    print("Successfully imported 'run_rag_test' from rag_tester.py")
+    # Import the module containing the database creation logic
+    print("Successfully imported 'run_rag_test' and 'utils.create_databases'")
 except ImportError as e:
-    print(f"Error: Could not import 'run_rag_test' from 'rag_tester.py'.")
-    print(f"Ensure 'main.py' is in the correct directory relative to 'rag_tester.py'")
-    print(f"and that the project structure allows the import.")
+    print(f"Error: Could not import required modules ('run_rag_test', 'utils.create_databases').")
+    print(f"Ensure 'main.py' is in the correct directory relative to 'rag_tester.py' and the 'utils' folder.")
+    print(f"and that the project structure allows the imports.")
     print(f"Original error: {e}")
-    sys.exit(1) # Exit if the core function cannot be imported
+    sys.exit(1) # Exit if core functions/modules cannot be imported
 
 # --- Main Execution ---
 def main():
     """
-    Main entry point to start the RAG testing process.
+    Main entry point to create databases and then start the RAG testing process.
     """
     print("\n=============================================")
-    print(" main.py: Initiating RAG Testing Process")
+    print(" main.py: Starting Execution")
     print("=============================================")
-    print("Executing the main testing logic from rag_tester.py...")
-    print("-" * 45)
 
-    start_time = time.time()
+    overall_start_time = time.time()
 
     try:
-        # Call the function that contains the core testing logic
-        # It will use the settings defined in config.json
-        run_rag_test()
+        # --- Step 1: Create/Update Databases ---
+        print("\n--- Running Database Creation/Update ---")
+        db_start_time = time.time()
+        # Call the main function from create_databases.py
+        create_databases.main()
+        db_end_time = time.time()
+        print(f"--- Database Creation/Update Finished (Duration: {db_end_time - db_start_time:.2f} seconds) ---")
 
-        end_time = time.time()
-        duration = end_time - start_time
+        # --- Step 2: Run RAG Tests ---
+        print("\n--- Initiating RAG Testing Process ---")
+        test_start_time = time.time()
+        # Call the function that contains the core testing logic
+        # It will use the settings defined in config.json and the created databases
+        run_rag_test()
+        test_end_time = time.time()
+        print(f"--- RAG Testing Process Finished (Duration: {test_end_time - test_start_time:.2f} seconds) ---")
+
+        overall_end_time = time.time()
+        duration = overall_end_time - overall_start_time
         print("-" * 45)
-        print(f"main.py: RAG testing process (via run_rag_test) completed.")
+        print(f"main.py: All steps completed successfully.")
         print(f"Total execution time recorded by main.py: {duration:.2f} seconds.")
         print("=============================================")
 
     except Exception as e:
-        # Catch potential exceptions during the test run initiated by run_rag_test
-        end_time = time.time()
-        duration = end_time - start_time
+        # Catch potential exceptions during database creation or test run
+        overall_end_time = time.time()
+        duration = overall_end_time - overall_start_time
         print("-" * 45)
         print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print(f"main.py: An error occurred during the RAG testing process!")
+        print(f"main.py: An error occurred during execution!")
         # Log the exception details
         import traceback
         print("\n--- Error Details ---")

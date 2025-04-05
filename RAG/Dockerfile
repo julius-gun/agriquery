@@ -36,7 +36,7 @@ RUN pip install -r requirements.txt
 # --------------------- Additions for ollama service and model pulling ---------------------
 
 # Create ollama service file
-COPY ollama.service /etc/systemd/system/ollama.service
+# COPY ollama.service /etc/systemd/system/ollama.service
 
 # Enable ollama service
 # RUN systemctl start ollama.service && sleep 10  # Start service and wait for 10 seconds
