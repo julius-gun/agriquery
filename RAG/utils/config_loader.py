@@ -2,6 +2,7 @@
 import json
 import os
 import re
+from typing import List, Dict, Any # Import List, Dict, Any
 
 
 class ConfigLoader:
@@ -19,7 +20,11 @@ class ConfigLoader:
             print(
                 f"Warning: Configuration file not found at '{self.config_path}'. Using default configurations."
             )
-            return self._load_default_config()
+            # In a real scenario, you might want to define actual defaults here
+            # or raise an error if the config is essential.
+            # For now, returning an empty dict might suffice for some getters,
+            # but others will fail. Let's keep the original default loader.
+            return self._load_default_config() # Keep default loading logic
         except json.JSONDecodeError:
             raise ValueError(
                 f"Error decoding JSON from '{self.config_path}'. Please check if the file is valid JSON."
@@ -103,51 +108,73 @@ class ConfigLoader:
                     },
                 },
             },
-            "question_model_name": "qwen2.5_7B-128k",
-            "evaluator_model_name": "gemma2_9B-8k",
+            "question_models_to_test": ["gemma2_9B-8k"], # Default to one model
+            "evaluator_model_name": "gemma2_9B-8k", # Default evaluator
             "prompt_paths": {
                 "question_prompt": "RAG/prompt_templates/question_prompt.txt",
                 "evaluation_prompt": "RAG/prompt_templates/evaluation_prompt.txt",
             },
+            "language_configs": [ # Example default language
+                 {
+                    "language": "english",
+                    "manual_path": "manuals/english_manual.txt",
+                    "collection_base_name": "english_manual"
+                 }
+            ],
             "question_dataset_paths": {
                 "general_questions": "question_datasets/question_answers_pairs.json",
                 "table_questions": "question_datasets/question_answers_tables.json",
                 "unanswerable_questions": "question_datasets/question_answers_unanswerable.json"
              },
             "output_dir": "results",
-            "rag_parameters": {  # Added rag_parameters section
-                "retrieval_algorithm": "embedding",
+            "rag_parameters": {
+                "retrieval_algorithms_to_test": ["embedding"], # Default algorithm list
                 "num_retrieved_docs": 3,
+                "chunk_size": 2000, # Default chunk size
+                "overlap_size": 50 # Default overlap size
             },
         }
         return default_config
 
-    def get_llm_models_config(self, llm_type="ollama"):
-        llm_type = llm_type.lower()
-        if llm_type not in self.config["llm_models"]:
-            raise ValueError(f"LLM type '{llm_type}' not supported in config.")
-        return self.config["llm_models"][llm_type]
 
-    def get_question_model_name(self):
-        return self.config[
-            "question_model_name"
-        ]  # Changed to get from top-level config
+    def get_llm_models_config(self, llm_type="ollama") -> Dict[str, Any]:
+        llm_models = self.config.get("llm_models", {})
+        models_for_type = llm_models.get(llm_type.lower(), {})
+        if not models_for_type:
+             # Return empty dict or raise error depending on desired strictness
+             print(f"Warning: LLM type '{llm_type}' not found or has no models defined in config.")
+             # raise ValueError(f"LLM type '{llm_type}' not supported or configured in config.")
+        return models_for_type
 
-    def get_evaluator_model_name(self):
-        return self.config["evaluator_model_name"]
+    def get_question_model_name(self) -> str | None:
+        """Gets the single question model name (potentially a default)."""
+        return self.config.get("question_model_name")
 
-    def get_prompt_path(self, prompt_name):
-        if prompt_name not in self.config["prompt_paths"]:
+    def get_question_models_to_test(self) -> List[str]:
+        """Gets the list of question model names to iterate through for testing."""
+        models = self.config.get("question_models_to_test", [])
+        if not isinstance(models, list):
+            print(f"Warning: 'question_models_to_test' in config is not a list. Found: {type(models)}. Returning empty list.")
+            return []
+        return models
+
+    def get_evaluator_model_name(self) -> str | None:
+        return self.config.get("evaluator_model_name")
+
+    def get_prompt_path(self, prompt_name: str) -> str:
+        prompt_paths = self.config.get("prompt_paths", {})
+        path = prompt_paths.get(prompt_name)
+        if not path:
             raise ValueError(f"Prompt template '{prompt_name}' not defined in config.")
-        return self.config["prompt_paths"][prompt_name]
+        return path
 
-    def get_question_dataset_paths(self):
-        return self.config["question_dataset_paths"]
+    def get_question_dataset_paths(self) -> Dict[str, str]:
+        return self.config.get("question_dataset_paths", {})
 
-    def get_output_dir(self):
-        return self.config.get("output_dir", "results") # default output dir is "results" if not in config
+    def get_output_dir(self) -> str:
+        return self.config.get("output_dir", "results")
 
-    def load_prompt_template(self, prompt_name):
+    def load_prompt_template(self, prompt_name: str) -> str:
         prompt_path = self.get_prompt_path(prompt_name)
         try:
             with open(prompt_path, "r", encoding="utf-8") as f:
@@ -161,32 +188,57 @@ class ConfigLoader:
                 f"Error reading prompt template from '{prompt_path}': {e}"
             )
 
-    def get_rag_parameters(self):
-        return self.config["rag_parameters"]
+    def get_rag_parameters(self) -> Dict[str, Any]:
+        # Return the whole dictionary, default to empty if not found
+        return self.config.get("rag_parameters", {})
+
+    def get_retrieval_algorithms_to_test(self) -> List[str]:
+        """Gets the list of retrieval algorithm names to iterate through for testing."""
+        rag_params = self.get_rag_parameters() # Use the existing getter
+        algorithms = rag_params.get("retrieval_algorithms_to_test", [])
+        if not isinstance(algorithms, list):
+            print(f"Warning: 'retrieval_algorithms_to_test' in rag_parameters is not a list. Found: {type(algorithms)}. Returning empty list.")
+            return []
+        return algorithms
 
 
 if __name__ == "__main__":
-    config_loader = ConfigLoader()
+    config_loader = ConfigLoader() # Load default or config.json
 
+    print("--- Testing ConfigLoader ---")
+
+    # Test existing methods
     ollama_models = config_loader.get_llm_models_config("ollama")
-    print("Ollama models:", ollama_models)
+    print("\nOllama models:", json.dumps(ollama_models, indent=2))
 
     evaluator_model = config_loader.get_evaluator_model_name()
-    print("Evaluator model name:", evaluator_model)
+    print("\nEvaluator model name:", evaluator_model)
 
-    question_model = config_loader.get_question_model_name()
-    print("Question model name:", question_model)
+    # Test new methods
+    question_models_list = config_loader.get_question_models_to_test()
+    print("\nQuestion models to test:", question_models_list)
 
+    retrieval_algorithms_list = config_loader.get_retrieval_algorithms_to_test()
+    print("\nRetrieval algorithms to test:", retrieval_algorithms_list)
+
+    # Test other methods
     question_prompt_path = config_loader.get_prompt_path("question_prompt")
-    print("Question prompt path:", question_prompt_path)
+    print("\nQuestion prompt path:", question_prompt_path)
 
-    question_prompt_content = config_loader.load_prompt_template("question_prompt")
-    print("\nQuestion prompt content:\n", question_prompt_content)
+    try:
+        question_prompt_content = config_loader.load_prompt_template("question_prompt")
+        print("\nQuestion prompt content loaded successfully.") # Don't print content itself
+    except Exception as e:
+        print(f"\nError loading question prompt content: {e}")
+
 
     dataset_paths = config_loader.get_question_dataset_paths()
-    print("Question dataset paths:", dataset_paths)
+    print("\nQuestion dataset paths:", dataset_paths)
 
     rag_parameters = config_loader.get_rag_parameters()
-    print("RAG parameters:", rag_parameters)
+    print("\nRAG parameters:", rag_parameters)
+
     output_dir = config_loader.get_output_dir()
-    print("Output directory:", output_dir)
+    print("\nOutput directory:", output_dir)
+
+    print("\n--- ConfigLoader Test Finished ---")
