@@ -90,7 +90,6 @@
   "question_models_to_test": [
     "deepseek-r1_8B-128k",
     "deepseek-r1_1.5B-128k",
-    "deepseek-r1_14B-128k",
     "qwen2.5_7B-128k",
     "phi3_14B_q4_medium-128k",
     "phi3_8B_q4_mini-128k",
@@ -134,7 +133,7 @@
       "embedding"
     ],
     "num_retrieved_docs": 3,
-    "chunk_size": 2000,
+    "chunk_size": 1000,
     "overlap_size": 50
   }
 }

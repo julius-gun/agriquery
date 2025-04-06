@@ -38,13 +38,13 @@ def main():
     overall_start_time = time.time()
 
     try:
-        # --- Step 1: Create/Update Databases ---
-        print("\n--- Running Database Creation/Update ---")
-        db_start_time = time.time()
-        # Call the main function from create_databases.py
-        create_databases.main()
-        db_end_time = time.time()
-        print(f"--- Database Creation/Update Finished (Duration: {db_end_time - db_start_time:.2f} seconds) ---")
+        # # --- Step 1: Create/Update Databases ---
+        # print("\n--- Running Database Creation/Update ---")
+        # db_start_time = time.time()
+        # # Call the main function from create_databases.py
+        # create_databases.main()
+        # db_end_time = time.time()
+        # print(f"--- Database Creation/Update Finished (Duration: {db_end_time - db_start_time:.2f} seconds) ---")
 
         # --- Step 2: Run RAG Tests ---
         print("\n--- Initiating RAG Testing Process ---")

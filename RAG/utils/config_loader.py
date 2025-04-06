@@ -2,7 +2,7 @@
 import json
 import os
 import re
-from typing import List, Dict, Any # Import List, Dict, Any
+from typing import List, Dict, Any  # Import List, Dict, Any
 
 
 class ConfigLoader:
@@ -24,7 +24,7 @@ class ConfigLoader:
             # or raise an error if the config is essential.
             # For now, returning an empty dict might suffice for some getters,
             # but others will fail. Let's keep the original default loader.
-            return self._load_default_config() # Keep default loading logic
+            return self._load_default_config()  # Keep default loading logic
         except json.JSONDecodeError:
             raise ValueError(
                 f"Error decoding JSON from '{self.config_path}'. Please check if the file is valid JSON."
@@ -32,118 +32,156 @@ class ConfigLoader:
 
     def _load_default_config(self):
         default_config = {
-            "llm_models": {
-                "ollama": {
-                    "deepseek-r1_70B-128k": {
-                        "name": "deepseek-r1:70b",
-                        "temperature": 0.0,
-                        "num_predict": 512,
-                        "context_window": 128000,
-                    },
-                    "deepseek-r1_1.5B-128k": {
-                        "name": "deepseek-r1:1.5b",
-                        "temperature": 0.0,
-                        "num_predict": 512,
-                        "context_window": 128000,
-                    },
-                    "deepseek-r1_14B-128k": {
-                        "name": "deepseek-r1:14b",
-                        "temperature": 0.0,
-                        "num_predict": 512,
-                        "context_window": 128000,
-                    },
-                    "qwen2.5_7B-128k": {
-                        "name": "qwen2.5:latest",
-                        "temperature": 0.0,
-                        "num_predict": 512,
-                        "context_window": 128000,
-                    },
-                    "phi3_14B_q4_medium-128k": {
-                        "name": "phi3:medium-128k",
-                        "temperature": 0.0,
-                        "num_predict": 512,
-                        "context_window": 128000,
-                    },
-                    "phi3_8B_q4_mini-128k": {
-                        "name": "phi3:mini-128k",
-                        "temperature": 0.0,
-                        "num_predict": 512,
-                        "context_window": 128000,
-                    },
-                    "llama3.1_8B-128k": {
-                        "name": "llama3.1:latest",
-                        "temperature": 0.0,
-                        "num_predict": 512,
-                        "context_window": 128000,
-                    },
-                    "llama3.2_3B-128k": {
-                        "name": "llama3.2:latest",
-                        "temperature": 0.0,
-                        "num_predict": 512,
-                        "context_window": 128000,
-                    },
-                    "llama3.2_1B-128k": {
-                        "name": "llama3.2:1b",
-                        "temperature": 0.0,
-                        "num_predict": 512,
-                        "context_window": 128000,
-                    },
-                    "phi3_14B_medium-4k": {
-                        "name": "phi3:medium",
-                        "temperature": 0.0,
-                        "num_predict": 512,
-                        "context_window": 4000,
-                    },
-                    "gemma2_9B-8k": {
-                        "name": "gemma2:latest",
-                        "temperature": 0.0,
-                        "num_predict": 512,
-                        "context_window": 8192,
-                    },
-                    "phi4_14B-4k": {
-                        "name": "phi4:latest",
-                        "temperature": 0.0,
-                        "num_predict": 512,
-                        "context_window": 4096,
-                    },
+            {
+                "llm_models": {
+                    "ollama": {
+                        "deepseek-r1_8B-128k": {
+                            "name": "deepseek-r1:8b",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 128000,
+                        },
+                        "deepseek-r1_1.5B-128k": {
+                            "name": "deepseek-r1:1.5b",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 128000,
+                        },
+                        "deepseek-r1_14B-128k": {
+                            "name": "deepseek-r1:14b",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 128000,
+                        },
+                        "qwen2.5_7B-128k": {
+                            "name": "qwen2.5:latest",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 128000,
+                        },
+                        "phi3_14B_q4_medium-128k": {
+                            "name": "phi3:medium-128k",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 128000,
+                        },
+                        "phi3_8B_q4_mini-128k": {
+                            "name": "phi3:mini-128k",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 128000,
+                        },
+                        "llama3.1_8B-128k": {
+                            "name": "llama3.1:latest",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 128000,
+                        },
+                        "llama3.2_3B-128k": {
+                            "name": "llama3.2:latest",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 128000,
+                        },
+                        "llama3.2_1B-128k": {
+                            "name": "llama3.2:1b",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 128000,
+                        },
+                        "phi3_14B_medium-4k": {
+                            "name": "phi3:medium",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 4000,
+                        },
+                        "gemma2_9B-8k": {
+                            "name": "gemma2:latest",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 8192,
+                        },
+                        "gemma3_12B-128k": {
+                            "name": "gemma3:12b",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 128000,
+                        },
+                        "phi4_14B-16k": {
+                            "name": "phi4:latest",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 16384,
+                        },
+                        "qwq_32B-128k": {
+                            "name": "qwq",
+                            "temperature": 0.0,
+                            "num_predict": 1024,
+                            "context_window": 131072,
+                        },
+                    }
                 },
-            },
-            "question_models_to_test": ["gemma2_9B-8k"], # Default to one model
-            "evaluator_model_name": "gemma2_9B-8k", # Default evaluator
-            "prompt_paths": {
-                "question_prompt": "RAG/prompt_templates/question_prompt.txt",
-                "evaluation_prompt": "RAG/prompt_templates/evaluation_prompt.txt",
-            },
-            "language_configs": [ # Example default language
-                 {
-                    "language": "english",
-                    "manual_path": "manuals/english_manual.txt",
-                    "collection_base_name": "english_manual"
-                 }
-            ],
-            "question_dataset_paths": {
-                "general_questions": "question_datasets/question_answers_pairs.json",
-                "table_questions": "question_datasets/question_answers_tables.json",
-                "unanswerable_questions": "question_datasets/question_answers_unanswerable.json"
-             },
-            "output_dir": "results",
-            "rag_parameters": {
-                "retrieval_algorithms_to_test": ["embedding"], # Default algorithm list
-                "num_retrieved_docs": 3,
-                "chunk_size": 2000, # Default chunk size
-                "overlap_size": 50 # Default overlap size
-            },
+                "question_models_to_test": [
+                    "deepseek-r1_8B-128k",
+                    "deepseek-r1_1.5B-128k",
+                    "deepseek-r1_14B-128k",
+                    "qwen2.5_7B-128k",
+                    "phi3_14B_q4_medium-128k",
+                    "phi3_8B_q4_mini-128k",
+                    "llama3.1_8B-128k",
+                    "llama3.2_3B-128k",
+                    "llama3.2_1B-128k",
+                    "phi3_14B_medium-4k",
+                    "phi4_14B-16k",
+                    "qwq_32B-128k",
+                ],
+                "evaluator_model_name": "gemma3_12B-128k",
+                "prompt_paths": {
+                    "question_prompt": "prompt_templates/question_prompt.txt",
+                    "evaluation_prompt": "prompt_templates/evaluation_prompt.txt",
+                },
+                "language_configs": [
+                    {
+                        "language": "english",
+                        "manual_path": "manuals/english_manual.txt",
+                        "collection_base_name": "english_manual",
+                    },
+                    {
+                        "language": "french",
+                        "manual_path": "manuals/french_manual.txt",
+                        "collection_base_name": "french_manual",
+                    },
+                    {
+                        "language": "german",
+                        "manual_path": "manuals/german_manual.txt",
+                        "collection_base_name": "german_manual",
+                    },
+                ],
+                "question_dataset_paths": {
+                    "general_questions": "question_datasets/question_answers_pairs.json",
+                    "table_questions": "question_datasets/question_answers_tables.json",
+                    "unanswerable_questions": "question_datasets/question_answers_unanswerable.json",
+                },
+                "output_dir": "results",
+                "rag_parameters": {
+                    "retrieval_algorithms_to_test": ["embedding"],
+                    "num_retrieved_docs": 3,
+                    "chunk_size": 2000,
+                    "overlap_size": 50,
+                },
+            }
         }
         return default_config
-
 
     def get_llm_models_config(self, llm_type="ollama") -> Dict[str, Any]:
         llm_models = self.config.get("llm_models", {})
         models_for_type = llm_models.get(llm_type.lower(), {})
         if not models_for_type:
-             # Return empty dict or raise error depending on desired strictness
-             print(f"Warning: LLM type '{llm_type}' not found or has no models defined in config.")
-             # raise ValueError(f"LLM type '{llm_type}' not supported or configured in config.")
+            # Return empty dict or raise error depending on desired strictness
+            print(
+                f"Warning: LLM type '{llm_type}' not found or has no models defined in config."
+            )
+            # raise ValueError(f"LLM type '{llm_type}' not supported or configured in config.")
         return models_for_type
 
     def get_question_model_name(self) -> str | None:
@@ -154,7 +192,9 @@ class ConfigLoader:
         """Gets the list of question model names to iterate through for testing."""
         models = self.config.get("question_models_to_test", [])
         if not isinstance(models, list):
-            print(f"Warning: 'question_models_to_test' in config is not a list. Found: {type(models)}. Returning empty list.")
+            print(
+                f"Warning: 'question_models_to_test' in config is not a list. Found: {type(models)}. Returning empty list."
+            )
             return []
         return models
 
@@ -194,16 +234,18 @@ class ConfigLoader:
 
     def get_retrieval_algorithms_to_test(self) -> List[str]:
         """Gets the list of retrieval algorithm names to iterate through for testing."""
-        rag_params = self.get_rag_parameters() # Use the existing getter
+        rag_params = self.get_rag_parameters()  # Use the existing getter
         algorithms = rag_params.get("retrieval_algorithms_to_test", [])
         if not isinstance(algorithms, list):
-            print(f"Warning: 'retrieval_algorithms_to_test' in rag_parameters is not a list. Found: {type(algorithms)}. Returning empty list.")
+            print(
+                f"Warning: 'retrieval_algorithms_to_test' in rag_parameters is not a list. Found: {type(algorithms)}. Returning empty list."
+            )
             return []
         return algorithms
 
 
 if __name__ == "__main__":
-    config_loader = ConfigLoader() # Load default or config.json
+    config_loader = ConfigLoader()  # Load default or config.json
 
     print("--- Testing ConfigLoader ---")
 
@@ -227,10 +269,11 @@ if __name__ == "__main__":
 
     try:
         question_prompt_content = config_loader.load_prompt_template("question_prompt")
-        print("\nQuestion prompt content loaded successfully.") # Don't print content itself
+        print(
+            "\nQuestion prompt content loaded successfully."
+        )  # Don't print content itself
     except Exception as e:
         print(f"\nError loading question prompt content: {e}")
-
 
     dataset_paths = config_loader.get_question_dataset_paths()
     print("\nQuestion dataset paths:", dataset_paths)
