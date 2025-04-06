@@ -96,7 +96,6 @@
     "llama3.1_8B-128k",
     "llama3.2_3B-128k",
     "llama3.2_1B-128k",
-    "phi3_14B_medium-4k",
     "phi4_14B-16k",
     "qwq_32B-128k"
   ],
@@ -133,7 +132,7 @@
       "embedding"
     ],
     "num_retrieved_docs": 3,
-    "chunk_size": 1000,
-    "overlap_size": 50
+    "chunk_size": 2000,
+    "overlap_size": 100
   }
 }

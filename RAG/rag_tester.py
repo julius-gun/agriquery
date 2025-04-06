@@ -3,6 +3,7 @@ import json
 import os
 import time
 import hashlib
+import re # Import re for sanitization
 import chromadb # Import chromadb
 
 from analysis.analysis_tools import analyze_dataset_across_types, load_dataset
@@ -18,7 +19,47 @@ from retrieval_pipelines.keyword_retrieval import KeywordRetriever
 from utils.config_loader import ConfigLoader
 from utils.result_manager import ResultManager # Import ResultManager
 
-# --- Helper Functions for Result File Handling ---
+# --- Helper Functions ---
+
+def _sanitize_for_filename(filename_part: str) -> str:
+    """Sanitizes a string component for use in a filename."""
+    # Remove characters invalid for Windows/Linux filenames
+    sanitized = re.sub(r'[\\/*?:"<>|]', "_", filename_part)
+    # Replace sequences of underscores/spaces with a single underscore
+    sanitized = re.sub(r'[\s_]+', '_', sanitized)
+    # Remove leading/trailing underscores/spaces
+    sanitized = sanitized.strip('_')
+    # Handle potential empty strings after sanitization
+    if not sanitized:
+        return "invalid_name"
+    return sanitized
+
+def save_llm_input_prompt(
+    prompt_text: str,
+    count: int,
+    language: str,
+    model_name: str,
+    algorithm: str,
+    base_output_dir: str
+):
+    """Saves the input prompt text to a file every N iterations."""
+    try:
+        prompts_dir = os.path.join(base_output_dir, "input_prompts")
+        os.makedirs(prompts_dir, exist_ok=True)
+
+        sanitized_model = _sanitize_for_filename(model_name)
+        sanitized_algo = _sanitize_for_filename(algorithm)
+
+        filename = f"prompt_{count}_{language}_{sanitized_model}_{sanitized_algo}.txt"
+        filepath = os.path.join(prompts_dir, filename)
+
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(prompt_text)
+        # Optional: Add a print statement, but might be too verbose
+        # print(f"      Saved input prompt #{count} to {filepath}")
+
+    except Exception as e:
+        print(f"      Error saving input prompt #{count}: {e}")
 
 
 def generate_question_key(dataset_name: str, question: str) -> str:
@@ -26,7 +67,7 @@ def generate_question_key(dataset_name: str, question: str) -> str:
     # Using SHA256 hash for a consistent and filesystem-friendly key
     return hashlib.sha256(f"{dataset_name}_{question}".encode()).hexdigest()
 
-# --- Main Test Function ---
+# --- Main Test Function ---    
 
 def run_rag_test(config_path="config.json"):
     """
@@ -54,6 +95,7 @@ def run_rag_test(config_path="config.json"):
     chunk_size = rag_params_dict.get("chunk_size", 2000)
     overlap_size = rag_params_dict.get("overlap_size", 50)
     num_retrieved_docs = rag_params_dict.get("num_retrieved_docs", 3)
+    save_prompt_frequency = 100 # Save every 100th prompt
 
     if not question_models_to_test:
         print("Error: No question models specified in 'question_models_to_test' in config. Exiting.")
@@ -207,7 +249,7 @@ def run_rag_test(config_path="config.json"):
                 # --- Initialize Data Structures for this Test Combination ---
                 intermediate_results_by_dataset = {}
                 overall_qa_start_time = time.time()
-                answered_questions_count = 0
+                answered_questions_count = 0 # Reset counter for each combination
 
                 # --- Phase 1: Question Answering ---
                 print(f"\n--- Phase 1: Answering {total_questions_to_answer} English questions "
@@ -219,7 +261,7 @@ def run_rag_test(config_path="config.json"):
                     dataset_start_time = time.time()
 
                     for i, question_data in enumerate(dataset):
-                        answered_questions_count += 1
+                        answered_questions_count += 1 # Increment for every question attempt
                         question = question_data.get("question")
                         expected_answer = question_data.get("answer")
                         page = question_data.get("page", "N/A") # might not be necessary to include in RAG results
@@ -241,6 +283,7 @@ def run_rag_test(config_path="config.json"):
                         context = ""
                         model_answer = ""
                         qa_error = False
+                        prompt = "" # Initialize prompt variable
 
                         # --- RAG Retrieval (Algorithm Dependent) ---
                         try:
@@ -293,6 +336,17 @@ def run_rag_test(config_path="config.json"):
                         if not qa_error and context: # Only proceed if retrieval didn't fail AND context exists
                             try:
                                 prompt = question_prompt_template.format(context=context, question=question)
+                                # --- Conditionally save the prompt ---
+                                if answered_questions_count % save_prompt_frequency == 0:
+                                    save_llm_input_prompt(
+                                        prompt_text=prompt,
+                                        count=answered_questions_count,
+                                        language=language,
+                                        model_name=current_question_model_name,
+                                        algorithm=current_retrieval_algorithm,
+                                        base_output_dir=output_dir
+                                    )
+                                # --- Invoke LLM ---
                                 model_answer = question_llm_connector.invoke(prompt)
                             except Exception as e:
                                 print(f"      Error during LLM QA invocation ({current_question_model_name}): {e}")
@@ -305,6 +359,17 @@ def run_rag_test(config_path="config.json"):
                                  # Ask without context - format might need adjustment if template requires context
                                  # Simple approach: provide empty context or modify prompt
                                  prompt = question_prompt_template.format(context="No context available.", question=question)
+                                 # --- Conditionally save the prompt ---
+                                 if answered_questions_count % save_prompt_frequency == 0:
+                                     save_llm_input_prompt(
+                                         prompt_text=prompt,
+                                         count=answered_questions_count,
+                                         language=language,
+                                         model_name=current_question_model_name,
+                                         algorithm=current_retrieval_algorithm,
+                                         base_output_dir=output_dir
+                                     )
+                                 # --- Invoke LLM ---
                                  model_answer = question_llm_connector.invoke(prompt)
                              except Exception as e:
                                  print(f"      Error during LLM QA invocation (no context): {e}")
@@ -321,7 +386,8 @@ def run_rag_test(config_path="config.json"):
                             "dataset": dataset_name,
                             "qa_error": qa_error
                             # Optionally add retrieved context/chunks here for debugging
-                            # "retrieved_context": context[:500] + "..." if context else None
+                            # "retrieved_context": context[:500] + "..." if context else None,
+                            # "prompt_saved": answered_questions_count % save_prompt_frequency == 0 if prompt else False # Optional: track if saved
                         }
                         dataset_intermediate_results.append(intermediate_entry)
 
@@ -465,7 +531,8 @@ if __name__ == "__main__":
     # Ensure rag_pipeline.py has run at least once directly to perform embedding
     # Or add logic here to check if embedding needs to be run.
     # load the languages_to_test and print them
-    config_to_test = "config_fast.json"
+    config_to_test = "config.json"
+    # config_to_test = "config_fast.json"
     config_loader_main = ConfigLoader(config_to_test) # Renamed to avoid conflict
     languages_to_test_main = config_loader_main.config.get("language_configs", [])
     rag_params_main = config_loader_main.get_rag_parameters()
