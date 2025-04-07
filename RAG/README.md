@@ -1,5 +1,15 @@
 # RAG Testing Framework
 
+
+![F1 Score Box Plot by Model](visualization/plots/f1_boxplot_by_question_model.png)
+*This box plot shows the distribution of F1 scores achieved by different question-answering LLM models across various tests.*
+
+**F1 Score Heatmap (Language vs. Question Model):**
+
+![F1 Score Heatmap Language vs Model](visualization/plots/f1_heatmap_lang_vs_model_all_data.png)
+*This heatmap provides a comparison of F1 scores, showing the performance of each question model for each tested language under specific RAG parameters (e.g., chunk size, retrieval algorithm).*
+
+
 This project provides a framework for building, testing, and evaluating Retrieval-Augmented Generation (RAG) pipelines. It allows testing different language manuals against a common set of English questions, using configurable LLMs, retrieval parameters, and evaluation metrics.
 
 ## Features
