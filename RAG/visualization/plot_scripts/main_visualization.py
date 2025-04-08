@@ -59,14 +59,14 @@ def main():
         "--output-dir",
         type=str,
         default=os.path.join(visualization_dir, "plots"),
-        help="Directory where the generated plot image will be saved.",
+        help="Directory where the generated plot images will be saved.",
     )
     parser.add_argument(
         "--plot-type",
         type=str,
-        default="all",  # Default changed to 'all'
+        default="all",
         choices=["boxplot", "heatmap", "all"],
-        help="Type of plot(s) to generate. 'all' generates default configurations of each type.",
+        help="Type of plot(s) to generate. 'all' generates default boxplot and iterates through heatmap combinations.",
     )
 
     # --- Boxplot Specific Arguments ---
@@ -85,33 +85,8 @@ def main():
         help="Parameter to group the box plots by (used if plot-type is 'boxplot' or 'all').",
     )
 
-    # --- Heatmap Specific Arguments (Filters) ---
-    # Set default values for filters
-    parser.add_argument(
-        "--filter-algo",
-        type=str,
-        # default='embedding', # Default value removed - let heatmap function handle None
-        help="Filter heatmap data by retrieval_algorithm (e.g., 'embedding'). If omitted, no filter applied for this param.",
-    )
-    parser.add_argument(
-        "--filter-chunk",
-        type=int,
-        # default=2000, # Default value removed
-        help="Filter heatmap data by chunk_size (e.g., 2000). If omitted, no filter applied for this param.",
-    )
-    parser.add_argument(
-        "--filter-overlap",
-        type=int,
-        # default=100, # Default value removed
-        help="Filter heatmap data by overlap_size (e.g., 100). If omitted, no filter applied for this param.",
-    )
-    parser.add_argument(
-        "--filter-topk",
-        type=int,
-        # default=3, # Default value removed
-        help="Filter heatmap data by num_retrieved_docs (top_k) (e.g., 3). If omitted, no filter applied for this param.",
-    )
-    # Note: Heatmap index/columns are fixed to language/model for now, but could be args too
+    # --- REMOVED Heatmap Filter Arguments ---
+    # Filtering is now done by iterating through unique combinations found in the data.
 
     parser.add_argument(
         "--output-filename-prefix",
@@ -129,7 +104,7 @@ def main():
     if args.output_filename_prefix:
         print(f"Filename prefix: {args.output_filename_prefix}")
 
-    # 0. Load Config to get languages
+    # 0. Load Config to get languages (needed for consistent heatmap rows)
     try:
         config_loader = ConfigLoader(args.config_path)
         language_configs = config_loader.config.get("language_configs", [])
@@ -140,24 +115,30 @@ def main():
             print(
                 f"Warning: No languages found in 'language_configs' in {args.config_path}. Heatmap might not show all expected languages."
             )
-            all_languages_list = None  # Set to None if empty
+            all_languages_list = None # Heatmap function will use only languages present in data
         else:
-            print(f"Found languages in config: {all_languages_list}")
+            print(f"Found languages in config for consistent heatmap rows: {all_languages_list}")
     except FileNotFoundError:
         print(
-            f"Error: Config file not found at '{args.config_path}'. Cannot determine full language list."
+            f"Warning: Config file not found at '{args.config_path}'. Cannot determine full language list for consistent heatmap rows."
         )
-        all_languages_list = None  # Proceed without the full list
+        all_languages_list = None # Proceed without the full list
     except Exception as e:
-        print(f"Error loading config file '{args.config_path}': {e}")
-        all_languages_list = None  # Proceed without the full list
+        print(f"Warning: Error loading config file '{args.config_path}': {e}. Proceeding without full language list.")
+        all_languages_list = None # Proceed without the full list
 
     # 1. Extract Data
+    print(f"\nExtracting data from: {args.results_dir}")
     df_data = extract_visualization_data(args.results_dir)
 
     if df_data is None or df_data.empty:
-        print("Exiting: No data extracted.")
+        print("Exiting: No data extracted or DataFrame is empty.")
         return
+
+    # Display basic info about extracted data
+    print(f"\nExtracted {len(df_data)} data points.")
+    print("Columns found:", df_data.columns.tolist())
+    # print("Data head:\n", df_data.head()) # Uncomment for debugging
 
     # 2. Prepare for Plotting
     # Ensure the output directory exists
@@ -170,9 +151,8 @@ def main():
     elif args.plot_type in ["boxplot", "heatmap"]:
         plot_types_to_generate = [args.plot_type]
     else:
-        print(
-            f"Error: Invalid plot type '{args.plot_type}' specified."
-        )  # Should be caught by choices, but good practice
+        # This case should be caught by argparse choices, but good practice
+        print(f"Error: Invalid plot type '{args.plot_type}' specified.")
         sys.exit(1)
 
     # 4. Generate Plots
@@ -195,50 +175,61 @@ def main():
             )
 
         elif plot_type == "heatmap":
-            print("Target: Language vs. Question Model")
+            # Identify unique combinations of parameters to iterate over
+            grouping_columns = ['retrieval_algorithm', 'chunk_size', 'overlap_size']
+            if not all(col in df_data.columns for col in grouping_columns):
+                print(f"Error: DataFrame is missing one or more required columns for heatmap grouping: {grouping_columns}")
+                print(f"Available columns: {df_data.columns.tolist()}")
+                continue # Skip heatmap generation if columns are missing
 
-            # --- Construct Filters (only include if argument was provided) ---
-            filter_params = {}
-            if args.filter_algo is not None:
-                filter_params["retrieval_algorithm"] = args.filter_algo
-            if args.filter_chunk is not None:
-                filter_params["chunk_size"] = args.filter_chunk
-            if args.filter_overlap is not None:
-                filter_params["overlap_size"] = args.filter_overlap
-            if args.filter_topk is not None:
-                filter_params["num_retrieved_docs"] = args.filter_topk
+            try:
+                # drop_duplicates returns a DataFrame, convert to list of dicts
+                unique_combinations = df_data[grouping_columns].drop_duplicates().to_dict('records')
+            except KeyError as e:
+                 print(f"Error: Could not find grouping columns {grouping_columns} in DataFrame. Error: {e}")
+                 continue # Skip heatmap generation
 
-            if filter_params:
-                print(f"Applying filters: {filter_params}")
+            if not unique_combinations:
+                print("No unique combinations of (retrieval_algorithm, chunk_size, overlap_size) found in the data.")
             else:
-                print("No filters applied for heatmap.")
+                print(f"Found {len(unique_combinations)} unique parameter combinations for heatmaps.")
 
-            # --- Generate Filename ---
-            if filter_params:
-                filter_str = "_".join(
-                    f"{k.replace('_', '').replace('retrievalalgorithm', 'algo').replace('numretrieveddocs', 'k')}{v}"
-                    for k, v in filter_params.items()
-                )
-                output_filename = f"{args.output_filename_prefix}f1_heatmap_lang_vs_model_{filter_str}.png"
-            else:
-                output_filename = f"{args.output_filename_prefix}f1_heatmap_lang_vs_model_all_data.png"  # Indicate no filter
+                for i, combo in enumerate(unique_combinations):
+                    algo = combo['retrieval_algorithm']
+                    cs = combo['chunk_size']
+                    ov = combo['overlap_size'] # Changed variable name for clarity
 
-            output_filepath = os.path.join(args.output_dir, output_filename)
+                    print(f"\n[{i+1}/{len(unique_combinations)}] Generating Heatmap for: Algo={algo}, Chunk={cs}, Overlap={ov}")
 
-            # --- Create Heatmap ---
-            # Pass the original df_data, filtering happens inside create_f1_heatmap
-            # Pass the list of all languages obtained from the config
-            create_f1_heatmap(
-                data=df_data,  # Pass the full extracted data
-                output_path=output_filepath,
-                filter_params=filter_params
-                if filter_params
-                else None,  # Pass filters or None
-                all_indices=all_languages_list,  # Pass the full language list here
-                index_col="language",  # Fixed for this specific heatmap request
-                columns_col="question_model",  # Fixed for this specific heatmap request
-                values_col="f1_score",
-            )
+                    # Filter data for this specific combination
+                    # Use boolean indexing for clarity and efficiency
+                    filtered_df_combo = df_data[
+                        (df_data['retrieval_algorithm'] == algo) &
+                        (df_data['chunk_size'] == cs) &
+                        (df_data['overlap_size'] == ov)
+                    ].copy() # Use .copy() to avoid SettingWithCopyWarning if modifying later
+
+                    if filtered_df_combo.empty:
+                        print("  No data found for this specific combination. Skipping heatmap.")
+                        continue
+
+                    print(f"  Data points for this combination: {len(filtered_df_combo)}")
+
+                    # Generate filename including the parameters
+                    combo_str = f"algo_{algo}_cs_{cs}_os_{ov}"
+                    output_filename = f"{args.output_filename_prefix}f1_heatmap_lang_vs_model_{combo_str}.png"
+                    output_filepath = os.path.join(args.output_dir, output_filename)
+
+                    # Call heatmap function with filtered data and combo details
+                    create_f1_heatmap(
+                        data=filtered_df_combo, # Pass the filtered data
+                        output_path=output_filepath,
+                        all_indices=all_languages_list, # Pass the full language list for consistent rows
+                        index_col="language",
+                        columns_col="question_model",
+                        values_col="f1_score",
+                        current_params=combo # Pass the dictionary of current parameters for the title
+                    )
 
     print("\n--- Visualization Generation Finished ---")
 
