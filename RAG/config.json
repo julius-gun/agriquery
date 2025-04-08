@@ -131,8 +131,8 @@
     "retrieval_algorithms_to_test": [
       "embedding"
     ],
-    "num_retrieved_docs": 3,
-    "chunk_size": 2000,
-    "overlap_size": 100
+    "chunk_sizes_to_test": [ 200, 500, 1000, 2000 ],
+    "overlap_sizes_to_test": [ 100, 200, 500 ],
+    "num_retrieved_docs": 3
   }
 }
