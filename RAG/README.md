@@ -34,7 +34,7 @@ This project provides a framework for building, testing, and evaluating Retrieva
 
 ## Docker Installation
 
-*Note: Instructions for setting up and running with Docker can be found in the [DOCKER_README.md](DOCKER_README.md). The provided `Dockerfile` aims to set up the environment and pull necessary models.*
+*Note: Instructions for setting up and running with Docker can be found in the [DOCKER_README.md](Docker-README.md). The provided `Dockerfile` aims to set up the environment and pull necessary models.*
 
 ## Manual Installation
 

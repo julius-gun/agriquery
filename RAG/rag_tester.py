@@ -54,13 +54,13 @@ class RagTester:
         self.result_manager = ResultManager(output_dir=self.output_dir)
         self.llm_connector_manager = LLMConnectorManager(self.config["llm_models"])
         self.chroma_client = self._initialize_chromadb_client()
-        self.evaluator = self._initialize_evaluator()
+        self.evaluator = self._initialize_evaluator() # Evaluator initialized with None template here
         self.loaded_datasets, self.total_questions_to_answer = self._load_datasets()
         self.question_prompt_template = self._load_prompt("question_prompt")
-        self.evaluation_prompt_template = self._load_prompt("evaluation_prompt") # Needed by evaluator init
+        self.evaluation_prompt_template = self._load_prompt("evaluation_prompt") # Load the template string
 
-        if self.evaluator: # Re-initialize evaluator if prompt loading was deferred
-             self.evaluator.prompt_template = self.evaluation_prompt_template
+        if self.evaluator: # Now update the evaluator instance with the loaded template
+             self.evaluator.evaluation_prompt_template = self.evaluation_prompt_template # Corrected attribute name
 
         print("--- RagTester Initialization Complete ---")
 
@@ -314,6 +314,7 @@ class RagTester:
                         print(f"      Error during LLM QA invocation ({current_question_model_name}): {e}")
                         model_answer = f"Error: Failed during QA generation. Details: {e}"
                         qa_error = True
+                        break # Break out of the question loop on LLM error
 
                 # --- Store Intermediate Result ---
                 dataset_intermediate_results.append({
@@ -347,6 +348,12 @@ class RagTester:
         if not self.evaluator:
              print("Skipping evaluation phase: Evaluator not initialized.")
              return intermediate_results_by_dataset, 0.0, []
+        # Add a check to ensure the evaluator has its template
+        if not self.evaluator.evaluation_prompt_template:
+             print("FATAL: Skipping evaluation phase: Evaluator prompt template is missing.")
+             # Return intermediate results as they are, with 0 duration and empty list for metrics
+             return intermediate_results_by_dataset, 0.0, []
+
 
         print(f"\n--- Phase 2: Evaluating {total_questions_processed_in_qa} answers ---")
         overall_eval_start_time = time.time()
@@ -386,10 +393,12 @@ class RagTester:
                         print(f"      Error during evaluation call: {e}")
                         evaluation_result = "error_exception"
                         eval_error = True
+                        break # Break out of the question loop on evaluation error
                 else:
                     print("      Skipping evaluation due to QA/Retrieval error.")
                     evaluation_result = "skipped_due_to_qa_error"
                     eval_error = True # Count as eval error if QA failed
+                    break # Break out of the question loop on evaluation error
 
                 final_entry = intermediate_result.copy()
                 final_entry["self_evaluation"] = evaluation_result
