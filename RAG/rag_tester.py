@@ -15,6 +15,7 @@ from llm_connectors.llm_connector_manager import LLMConnectorManager
 from llm_connectors.base_llm_connector import BaseLLMConnector # Import base type for hinting
 from rag_pipeline import initialize_retriever # Keep for retriever initialization
 # Import specific retriever types for type checking and base type
+from retrieval_pipelines.base_retriever import BaseRetriever # Assuming a base type exists
 from retrieval_pipelines.embedding_retriever import EmbeddingRetriever
 from retrieval_pipelines.keyword_retrieval import KeywordRetriever
 from utils.config_loader import ConfigLoader
@@ -32,8 +33,9 @@ CHROMA_PERSIST_DIR = "chroma_db" # Define persist directory path
 class RagTester:
     """
     Orchestrates the RAG testing process by iterating through configured
-    parameters (algorithms, models, languages, chunk sizes, overlaps)
+    parameters (models, algorithms, languages, chunk sizes, overlaps)
     and evaluating the performance. Uses logging for output.
+    Refactored loop order for efficiency: model -> chunk -> overlap -> algo -> lang.
     """
 
     def __init__(self, config_path: str = "config.json"):
@@ -212,16 +214,16 @@ class RagTester:
 
     def _run_qa_phase(
         self,
-        retriever: Any,  
+        retriever: BaseRetriever, # Use BaseRetriever or Any if no common base exists
         collection: Optional[chromadb.Collection], # Collection might be None for non-Chroma retrievers
-        question_llm_connector: Any, # Type hint could be improved (BaseLLMConnector)
-        current_retrieval_algorithm: str,
-        current_question_model_name: str,
+        question_llm_connector: BaseLLMConnector, # Use BaseLLMConnector
+        current_retrieval_algorithm: str, # Keep algorithm name for logic branching
+        current_question_model_name: str, # Keep model name for logging/saving
         language: str,
         chunk_size: int, # Needed for prompt saving filename
         overlap_size: int # Needed for prompt saving filename
     ) -> Tuple[Dict[str, Dict[str, Any]], float, int]:
-        """Runs the Question Answering phase for a single combination."""
+        """Runs the Question Answering phase for a single combination, using pre-initialized components."""
         intermediate_results_by_dataset = {}
         overall_qa_start_time = time.time()
         answered_questions_count = 0
@@ -257,6 +259,7 @@ class RagTester:
 
                 # --- RAG Retrieval ---
                 try:
+                    # Use the passed retriever instance
                     if current_retrieval_algorithm == "embedding":
                         if not isinstance(retriever, EmbeddingRetriever):
                             # Log error and raise for clarity, although type hint helps
@@ -266,10 +269,11 @@ class RagTester:
                              logging.error(f"ChromaDB collection is required for embedding retrieval but was not found/loaded.")
                              raise ValueError(f"ChromaDB collection is required for embedding retrieval but was not found/loaded.")
 
-                        # Assuming vectorize_text is part of the EmbeddingRetriever interface
-                        question_embedding = retriever.vectorize_text(question)
+                        # Use the retriever's vectorize_text method (from BaseRetriever interface)
+                        question_embedding = retriever.vectorize_text(question) # Returns List[List[float]]
+                        # Perform retrieval using ChromaDB directly
                         query_results = collection.query(
-                            query_embeddings=question_embedding,
+                            query_embeddings=question_embedding, # Pass the embedding
                             n_results=self.num_retrieved_docs,
                             include=['documents']
                         )
@@ -283,22 +287,16 @@ class RagTester:
                             # qa_error = True # Decide if this is an error
 
                     elif current_retrieval_algorithm == "keyword":
-                        # Placeholder logic for keyword retrieval
-                        # Assumes KeywordRetriever has necessary methods, even if dummy ones
+                        # Check the type of the retriever instance
                         if not isinstance(retriever, KeywordRetriever):
-                            logging.error("Type mismatch: Retriever is not a KeywordRetriever for keyword algorithm.")
+                            logging.error("Type mismatch: Passed retriever is not a KeywordRetriever for keyword algorithm.")
                             raise TypeError("Retriever is not a KeywordRetriever for keyword algorithm.")
-                        # Keyword retrieval might need different inputs (e.g., all docs)
-                        # This placeholder assumes it can work without a collection or needs adaptation
+
+                        # KeywordRetriever is currently a placeholder.
+                        # Calling its vectorize_text or retrieve_relevant_chunks methods here is not
+                        # meaningful without access to the document corpus/index within this scope.
+                        # Keep the placeholder context generation logic.
                         logging.info("      Keyword retrieval logic is currently a placeholder.")
-                        # Example: Fetch all docs if needed (inefficient)
-                        # if collection:
-                        #     all_docs = collection.get(include=['documents'])['documents']
-                        #     retrieved_chunks_text, _ = retriever.retrieve_relevant_chunks(question, None, all_docs, top_k=self.num_retrieved_docs)
-                        #     context = "\n".join(retrieved_chunks_text)
-                        # else:
-                        #     context = "Error: Keyword retrieval needs a document source (e.g., collection)."
-                        #     qa_error = True
                         context = f"Placeholder context for keyword retrieval of question: {question}" # Dummy context
 
                     else:
@@ -325,6 +323,7 @@ class RagTester:
                                 chunk_size=chunk_size, overlap_size=overlap_size
                             )
 
+                        # Use the passed question_llm_connector instance
                         model_answer = question_llm_connector.invoke(prompt)
 
                     except Exception as e:
@@ -389,7 +388,13 @@ class RagTester:
                 evaluation_result = "error"
                 eval_error = False
 
-                if not intermediate_result.get("qa_error", False):
+                # Skip evaluation if QA phase reported an error for this question
+                if intermediate_result.get("qa_error", False):
+                    logging.info("      Skipping evaluation due to QA/Retrieval error.")
+                    evaluation_result = "skipped_due_to_qa_error"
+                    eval_error = True
+                    # No break here, process next item
+                else:
                     try:
                         eval_judgment = self.evaluator.evaluate_answer(
                             intermediate_result["question"],
@@ -404,18 +409,13 @@ class RagTester:
                              logging.warning(f"      Warning: Evaluator returned unexpected judgment: '{evaluation_result}'")
                              # Decide how to handle: treat as error, or keep as is? Let's treat as non-metric contributing for now.
                              # evaluation_result = "error_unexpected_judgment" # Option
-                             eval_error = True # Mark as error for metrics
+                             eval_error = True # Mark as error for metrics calculation later
 
                     except Exception as e:
                         logging.error(f"      Error during evaluation call: {e}", exc_info=True)
                         evaluation_result = "error_exception"
                         eval_error = True
                         break # Break out of the question loop on evaluation error
-                else:
-                    logging.info("      Skipping evaluation due to QA/Retrieval error.")
-                    evaluation_result = "skipped_due_to_qa_error"
-                    eval_error = True # Count as eval error if QA failed
-                    break # Break out of the question loop on evaluation error
 
                 final_entry = intermediate_result.copy()
                 final_entry["self_evaluation"] = evaluation_result
@@ -423,7 +423,8 @@ class RagTester:
                 evaluated_results_in_dataset.append(final_entry)
 
                 # Add to flat list only if evaluation resulted in a valid 'yes' or 'no' for metrics
-                if evaluation_result in ["yes", "no"]:
+                # And only if there wasn't a QA error or an Eval error
+                if evaluation_result in ["yes", "no"] and not eval_error:
                      final_results_list_for_metrics.append(final_entry)
 
             dataset_eval_end_time = time.time()
@@ -441,11 +442,11 @@ class RagTester:
         """Calculates and prints overall metrics using logging."""
         logging.info(f"\n--- Phase 3: Calculating Overall Metrics ---")
         if not final_results_list_for_metrics:
-            logging.warning("  No valid results (yes/no evaluations) available for metrics calculation.")
+            logging.warning("  No valid results (yes/no evaluations without errors) available for metrics calculation.")
             return {}
 
-        # We already filtered for 'yes'/'no' when creating final_results_list_for_metrics
-        logging.info(f"  Calculating metrics based on {len(final_results_list_for_metrics)} results with valid 'yes'/'no' evaluations.")
+        # We already filtered for 'yes'/'no' and no eval_error when creating final_results_list_for_metrics
+        logging.info(f"  Calculating metrics based on {len(final_results_list_for_metrics)} results with valid 'yes'/'no' evaluations and no errors.")
         try:
             # Assuming calculate_metrics takes the list of dicts and returns a dict of metrics
             overall_metrics = calculate_metrics(final_results_list_for_metrics)
@@ -469,9 +470,13 @@ class RagTester:
         question_model_name: str,
         language_config: Dict[str, Any],
         chunk_size: int,
-        overlap_size: int
+        overlap_size: int,
+        question_llm_connector: BaseLLMConnector, # Accept initialized connector
+        retriever: BaseRetriever # Accept initialized retriever
     ):
-        """Processes a single combination of test parameters."""
+        """
+        Processes a single combination of test parameters using pre-initialized components.
+        """
         language = language_config.get("language")
         base_collection_name = language_config.get("collection_base_name")
 
@@ -489,38 +494,24 @@ class RagTester:
             logging.info(f"Skipping combination: Results file already exists.")
             return # Skip to the next combination
 
-        # --- Initialize Retriever for the current algorithm ---
-        try:
-            retriever = initialize_retriever(retrieval_algorithm)
-            print(f"Initialized retriever: {type(retriever).__name__}")
-        except Exception as e:
-            print(f"Error initializing retriever for algorithm '{retrieval_algorithm}': {e}")
-            print(f"Skipping combination.")
-            return
-
-        # --- Initialize Question LLM Connector ---
-        # TODO: Make question LLM type configurable if needed
-        question_llm_type = DEFAULT_LLM_TYPE
-        try:
-            question_llm_connector = self.llm_connector_manager.get_connector(question_llm_type, question_model_name)
-            print(f"Initialized question connector for model: {question_model_name}")
-        except Exception as e:
-            print(f"Error initializing question connector for model {question_model_name}: {e}")
-            print(f"Skipping combination.")
-            return
+        # --- Components are already initialized and passed in ---
+        # No need to initialize retriever or question_llm_connector here
 
         # --- Get Specific Chroma Collection ---
         # Collection is needed for embedding retrieval, potentially others
-        collection = self._get_chroma_collection(base_collection_name, chunk_size, overlap_size)
-        if collection is None and retrieval_algorithm == "embedding": # Check if essential collection failed
-             logging.warning(f"Skipping combination due to missing required ChromaDB collection for embedding.")
-             # Note: We might want to log an error instead of warning if embedding *requires* it.
-             return
+        # This still needs to be fetched based on chunk/overlap/language
+        collection = None
+        if retrieval_algorithm == "embedding": # Only fetch collection if using embedding retrieval for now
+            collection = self._get_chroma_collection(base_collection_name, chunk_size, overlap_size)
+            if collection is None: # Check if essential collection failed for embedding
+                 logging.warning(f"Skipping combination due to missing required ChromaDB collection for embedding.")
+                 return
+        # Note: Keyword retrieval currently doesn't use the collection in _run_qa_phase
 
         # --- Run QA Phase ---
         intermediate_results, qa_duration, qa_count = self._run_qa_phase(
             retriever=retriever, # Pass initialized retriever
-            collection=collection,
+            collection=collection, # Pass collection (might be None for keyword)
             question_llm_connector=question_llm_connector, # Pass initialized connector
             current_retrieval_algorithm=retrieval_algorithm,
             current_question_model_name=question_model_name,
@@ -549,7 +540,7 @@ class RagTester:
                 "chunk_size": chunk_size,
                 "overlap_size": overlap_size,
                 "num_retrieved_docs": self.num_retrieved_docs,
-                "chroma_collection_used": f"{base_collection_name}_cs{chunk_size}_os{overlap_size}",
+                "chroma_collection_used": f"{base_collection_name}_cs{chunk_size}_os{overlap_size}" if collection else "N/A",
             },
             "overall_metrics": overall_metrics,
             "timing": {
@@ -575,70 +566,97 @@ class RagTester:
     def run_tests(self):
         """
         Runs the full suite of tests based on the loaded configuration,
-        iterating through all combinations of parameters.
+        iterating through all combinations with optimized loop order:
+        model -> chunk -> overlap -> algo -> lang.
+        Initializes components at the appropriate loop level.
         """
-        print("\n--- Starting Test Iterations ---")
+        logging.info("\n--- Starting Test Iterations ---")
         total_combinations = (
-            len(self.retrieval_algorithms_to_test) *
             len(self.question_models_to_test) *
-            len(self.language_configs) *
             len(self.chunk_sizes_to_test) *
-            len(self.overlap_sizes_to_test)
+            len(self.overlap_sizes_to_test) *
+            len(self.retrieval_algorithms_to_test) *
+            len(self.language_configs)
         )
         combination_count = 0
+        # TODO: Make question LLM type configurable if needed
+        question_llm_type = DEFAULT_LLM_TYPE
 
-        # --- Start Iteration Loops ---
-        # Outermost loops: Chunking parameters (as they define the collection)
-        for chunk_size in self.chunk_sizes_to_test:
-            for overlap_size in self.overlap_sizes_to_test:
-                print(f"\n{'='*20} Testing Chunk/Overlap: CS={chunk_size}, OS={overlap_size} {'='*20}")
+        # --- Start Iteration Loops (New Order) ---
+        # Outermost loop: Question Model
+        for model_name in self.question_models_to_test:
+            logging.info(f"\n{'='*20} Testing Question Model: {model_name} {'='*20}")
 
-                # Next loops: Algorithm and Model
-                for algorithm in self.retrieval_algorithms_to_test:
-                    print(f"\n{'+'*15} Testing Retrieval Algorithm: {algorithm.upper()} (CS={chunk_size}, OS={overlap_size}) {'+'*15}")
+            # --- Initialize Question LLM Connector (once per model) ---
+            current_question_llm_connector: Optional[BaseLLMConnector] = None
+            try:
+                current_question_llm_connector = self.llm_connector_manager.get_connector(question_llm_type, model_name)
+                logging.info(f"Successfully initialized question connector for model: {model_name}")
+            except Exception as e:
+                logging.error(f"Error initializing question connector for model {model_name}: {e}. Skipping this model.", exc_info=True)
+                continue # Skip to the next model if connector fails
 
-                    for model_name in self.question_models_to_test:
-                        print(f"\n{'-'*10} Testing Question Model: {model_name} (Algo: {algorithm}, CS={chunk_size}, OS={overlap_size}) {'-'*10}")
+            # Next loops: Chunking parameters
+            for chunk_size in self.chunk_sizes_to_test:
+                for overlap_size in self.overlap_sizes_to_test:
+                    logging.info(f"\n{'+'*15} Testing Chunk/Overlap: CS={chunk_size}, OS={overlap_size} (Model: {model_name}) {'+'*15}")
+
+                    # Next loop: Retrieval Algorithm
+                    for algorithm in self.retrieval_algorithms_to_test:
+                        logging.info(f"\n{'-'*10} Testing Retrieval Algorithm: {algorithm.upper()} (Model: {model_name}, CS={chunk_size}, OS={overlap_size}) {'-'*10}")
+
+                        # --- Initialize Retriever (once per algorithm within chunk/overlap/model) ---
+                        current_retriever: Optional[BaseRetriever] = None # Use BaseRetriever or Any
+                        try:
+                            # initialize_retriever is imported from rag_pipeline
+                            current_retriever = initialize_retriever(algorithm)
+                            logging.info(f"Initialized retriever: {type(current_retriever).__name__} for algorithm '{algorithm}'")
+                        except Exception as e:
+                            logging.error(f"Error initializing retriever for algorithm '{algorithm}': {e}. Skipping this algorithm for current chunk/overlap/model.", exc_info=True)
+                            continue # Skip to the next algorithm if retriever fails
 
                         # Innermost loop: Language (uses the collection defined by chunk/overlap)
                         for lang_config in self.language_configs:
                             language = lang_config.get("language")
                             if not language:
-                                print(f"Warning: Skipping invalid language config entry: {lang_config}")
+                                logging.warning(f"Warning: Skipping invalid language config entry: {lang_config}")
                                 continue
 
                             combination_count += 1
-                            print(f"\n--- Running Combination {combination_count}/{total_combinations} ---")
+                            logging.info(f"\n--- Running Combination {combination_count}/{total_combinations} ---")
 
-                            # Process this specific combination
+                            # Process this specific combination, passing initialized components
                             self._process_single_combination(
                                 retrieval_algorithm=algorithm,
                                 question_model_name=model_name,
                                 language_config=lang_config,
                                 chunk_size=chunk_size,
-                                overlap_size=overlap_size
+                                overlap_size=overlap_size,
+                                question_llm_connector=current_question_llm_connector, # Pass instance
+                                retriever=current_retriever # Pass instance
                             )
 
-        print("\n--- All Test Combinations Completed ---")
+        logging.info("\n--- All Test Combinations Completed ---")
+
 
 def start_rag_tests(config_path: str = "config.json"):
     """
     Initializes and runs the RagTester.
     This function serves as the main entry point for external scripts like main.py.
     """
-    print(f"--- Starting RAG tests via start_rag_tests (config: {config_path}) ---")
+    logging.info(f"--- Starting RAG tests via start_rag_tests (config: {config_path}) ---")
     # Wrap the core logic in a try/except block to report errors clearly
     # The RagTester init and run_tests methods already have internal error handling,
     # but this catches potential issues during the setup call itself.
     try:
         tester = RagTester(config_path=config_path)
         tester.run_tests()
-        print(f"--- RAG tests completed successfully via start_rag_tests ---")
+        logging.info(f"--- RAG tests completed successfully via start_rag_tests ---")
         # Optionally return a status or results summary if needed later
         return True
     except Exception as e:
         # Error should have been logged by RagTester's internal handling or init
-        print(f"--- RAG tests failed during execution initiated by start_rag_tests ---")
+        logging.critical(f"--- RAG tests failed during execution initiated by start_rag_tests ---", exc_info=True)
         # Re-raise the exception so the caller (main.py) knows about the failure
         raise e
 
@@ -650,67 +668,68 @@ if __name__ == "__main__":
     # config_to_test = "config_fast.json"
     config_to_test = "config.json"
 
-    print(f"--- RAG Tester Script Start (Direct Execution) ---")
-    print(f"Using configuration file: {config_to_test}")
+    logging.info(f"--- RAG Tester Script Start (Direct Execution) ---")
+    logging.info(f"Using configuration file: {config_to_test}")
 
     try:
         # --- Pre-computation Check (Informational) ---
         # Load config just to print info before starting the main process
-        temp_config_loader = ConfigLoader(config_to_test)
-        languages_to_test_main = temp_config_loader.config.get("language_configs", [])
-        rag_params_main = temp_config_loader.get_rag_parameters()
-        chunk_sizes_main = rag_params_main.get("chunk_sizes_to_test", "N/A")
-        overlap_sizes_main = rag_params_main.get("overlap_sizes_to_test", "N/A")
-        models_to_test_main = temp_config_loader.get_question_models_to_test()
-        algos_to_test_main = temp_config_loader.get_retrieval_algorithms_to_test()
+        try:
+            temp_config_loader = ConfigLoader(config_to_test)
+            languages_to_test_main = temp_config_loader.config.get("language_configs", [])
+            rag_params_main = temp_config_loader.get_rag_parameters()
+            chunk_sizes_main = rag_params_main.get("chunk_sizes_to_test", "N/A")
+            overlap_sizes_main = rag_params_main.get("overlap_sizes_to_test", "N/A")
+            models_to_test_main = temp_config_loader.get_question_models_to_test()
+            algos_to_test_main = temp_config_loader.get_retrieval_algorithms_to_test()
 
-        print(f"\nStarting RAG Tester for:")
-        print(f"  Languages: {[lc.get('language', 'N/A') for lc in languages_to_test_main]}")
-        print(f"  Question Models: {models_to_test_main}")
-        print(f"  Retrieval Algorithms: {algos_to_test_main}")
-        print(f"  Chunk Sizes: {chunk_sizes_main}")
-        print(f"  Overlap Sizes: {overlap_sizes_main}")
-        print(f"\nIMPORTANT: This script will attempt to load ChromaDB collections specific to")
-        print(f"           each configured language AND the chunk/overlap parameters being tested.")
-        print(f"           Collection name format: [base_name]_cs[chunk_size]_os[overlap_size]")
-        print(f"           Ensure 'create_databases.py' or 'rag_pipeline.py' has been run with")
-        print(f"           combinations matching the 'chunk_sizes_to_test' and 'overlap_sizes_to_test'")
-        print(f"           defined in '{config_to_test}' under 'rag_parameters'.")
+            logging.info(f"\nStarting RAG Tester for:")
+            logging.info(f"  Languages: {[lc.get('language', 'N/A') for lc in languages_to_test_main]}")
+            logging.info(f"  Question Models: {models_to_test_main}")
+            logging.info(f"  Retrieval Algorithms: {algos_to_test_main}")
+            logging.info(f"  Chunk Sizes: {chunk_sizes_main}")
+            logging.info(f"  Overlap Sizes: {overlap_sizes_main}")
+            logging.info(f"\nIMPORTANT: This script will attempt to load ChromaDB collections specific to")
+            logging.info(f"           each configured language AND the chunk/overlap parameters being tested.")
+            logging.info(f"           Collection name format: [base_name]_cs[chunk_size]_os[overlap_size]")
+            logging.info(f"           Ensure 'create_databases.py' or 'rag_pipeline.py' has been run with")
+            logging.info(f"           combinations matching the 'chunk_sizes_to_test' and 'overlap_sizes_to_test'")
+            logging.info(f"           defined in '{config_to_test}' under 'rag_parameters'.")
+        except Exception as config_ex:
+             logging.error(f"Error loading configuration for pre-check: {config_ex}", exc_info=True)
+             # Decide if this should prevent the run or just be a warning
+             raise # Re-raise to prevent running with potentially bad config info
+
         # --- End Pre-computation Check ---
 
-        # --- Initialize and Run Tester (using the new function for consistency) ---
+        # --- Initialize and Run Tester ---
         # Although we could instantiate directly here, calling the function ensures
         # the same entry point logic is used whether run directly or via main.py
         start_rag_tests(config_path=config_to_test)
 
-        # Original direct instantiation (also works, but less consistent):
-        # tester = RagTester(config_path=config_to_test)
-        # tester.run_tests()
-        # print("\n--- RAG Tester Script Finished Successfully (Direct Execution) ---")
-
-
     except FileNotFoundError as e:
-         print(f"\nFATAL ERROR: Configuration file not found.")
-         print(f"  Details: {e}")
-         print("Please ensure the config file exists at the specified path.")
+         logging.critical(f"\nFATAL ERROR: Configuration file not found.")
+         logging.critical(f"  Details: {e}")
+         logging.critical("Please ensure the config file exists at the specified path.")
     except ValueError as e:
-         print(f"\nFATAL ERROR: Invalid or missing configuration.")
-         print(f"  Details: {e}")
-         print("Please check the config file content.")
+         logging.critical(f"\nFATAL ERROR: Invalid or missing configuration.")
+         logging.critical(f"  Details: {e}")
+         logging.critical("Please check the config file content.")
     except ImportError as e:
-         print(f"\nFATAL ERROR: Failed to import necessary modules.")
-         print(f"  Details: {e}")
-         print("Please ensure all dependencies are installed and the project structure is correct.")
+         logging.critical(f"\nFATAL ERROR: Failed to import necessary modules.")
+         logging.critical(f"  Details: {e}")
+         logging.critical("Please ensure all dependencies are installed and the project structure is correct.")
     except Exception as e:
         # Catch any other unexpected errors during initialization or run
         import traceback
-        print(f"\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print(f"FATAL ERROR: An unexpected error occurred during execution!")
-        print(f"Error Type: {type(e).__name__}")
-        print(f"Error Message: {e}")
-        print("Traceback:")
-        traceback.print_exc()
-        print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        logging.critical(f"\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        logging.critical(f"FATAL ERROR: An unexpected error occurred during execution!")
+        logging.critical(f"Error Type: {type(e).__name__}")
+        logging.critical(f"Error Message: {e}")
+        logging.critical("Traceback:")
+        # Log the traceback instead of printing
+        logging.critical(traceback.format_exc())
+        logging.critical(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
     finally:
-        print("--- RAG Tester Script End (Direct Execution) ---")
+        logging.info("--- RAG Tester Script End (Direct Execution) ---")
