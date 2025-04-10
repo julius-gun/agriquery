@@ -4,11 +4,20 @@
 ![F1 Score Box Plot by Model](visualization/plots/f1_boxplot_by_question_model.png)
 *This box plot shows the distribution of F1 scores achieved by different question-answering LLM models across various tests.*
 
-**F1 Score Heatmap (Language vs. Question Model):**
+![F1 Heatmap Model vs Chunk/Overlap (English, Embedding)](visualization/plots/f1_heatmap_model_vs_chunk_overlap_lang_english_algo_embedding.png)
+*F1 score heatmap comparing models vs. chunk/overlap combinations for English language using the embedding algorithm.*
 
-![F1 Score Heatmap Language vs Model](visualization/plots/f1_heatmap_lang_vs_model_all_data.png)
-*This heatmap provides a comparison of F1 scores, showing the performance of each question model for each tested language under specific RAG parameters (e.g., chunk size, retrieval algorithm).*
+![F1 Heatmap Language vs Model (Embedding, CS:200, OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_embedding_cs_200_os_100.png)
+*F1 score heatmap comparing languages vs. models for embedding algorithm with chunk size 200 and overlap 100.*
 
+![F1 Heatmap Language vs Model (Embedding, CS:500, OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_embedding_cs_500_os_100.png)
+*F1 score heatmap comparing languages vs. models for embedding algorithm with chunk size 500 and overlap 100.*
+
+![F1 Heatmap Language vs Model (Embedding, CS:2000, OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_embedding_cs_2000_os_100.png)
+*F1 score heatmap comparing languages vs. models for embedding algorithm with chunk size 2000 and overlap 100.*
+
+![F1 Heatmap Chunk vs Overlap (English, Qwen2.5 7B, Embedding)](visualization/plots/f1_heatmap_chunk_vs_overlap_lang_english_model_qwen2.5_7B-128k_algo_embedding.png)
+*F1 score heatmap comparing chunk size vs. overlap size for English language, Qwen2.5 7B model, using the embedding algorithm.*
 
 This project provides a framework for building, testing, and evaluating Retrieval-Augmented Generation (RAG) pipelines. It allows testing different language manuals against a common set of English questions, using configurable LLMs, retrieval parameters, and evaluation metrics.
 

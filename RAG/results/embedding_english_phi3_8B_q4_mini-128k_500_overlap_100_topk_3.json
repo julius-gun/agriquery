@@ -1,0 +1,60 @@
+{
+    "test_run_parameters": {
+        "language_tested": "english",
+        "question_model": "phi3_8B_q4_mini-128k",
+        "evaluator_model": "gemma3_12B-128k",
+        "retrieval_algorithm": "embedding",
+        "chunk_size": 500,
+        "overlap_size": 100,
+        "num_retrieved_docs": 3,
+        "chroma_collection_used": "english_manual_cs500_os100"
+    },
+    "overall_metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "specificity": 0.0,
+        "f1_score": 1.0,
+        "true_positives": 1,
+        "true_negatives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "total_questions": 1
+    },
+    "timing": {
+        "overall_duration_seconds": 84.44341087341309,
+        "duration_qa_phase_seconds": 84.44323801994324,
+        "duration_eval_phase_seconds": 0.0001728534698486328
+    },
+    "per_dataset_details": {
+        "general_questions": {
+            "results": [],
+            "duration_qa_seconds": 24.759028434753418,
+            "total_questions_processed": 0,
+            "duration_eval_seconds": 4.76837158203125e-06
+        },
+        "table_questions": {
+            "results": [
+                {
+                    "question": "What is the pattern of the type 'mineral'?",
+                    "expected_answer": "angular, with sharp angles and edges",
+                    "model_answer": "angular, with sharp angles and edges",
+                    "page": 58,
+                    "dataset": "table_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                }
+            ],
+            "duration_qa_seconds": 30.65384793281555,
+            "total_questions_processed": 1,
+            "duration_eval_seconds": 6.031990051269531e-05
+        },
+        "unanswerable_questions": {
+            "results": [],
+            "duration_qa_seconds": 29.03021550178528,
+            "total_questions_processed": 0,
+            "duration_eval_seconds": 2.6226043701171875e-06
+        }
+    }
+}
