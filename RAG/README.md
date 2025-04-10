@@ -1,7 +1,7 @@
 # RAG Testing Framework
 
 
-![F1 Score Box Plot by Model](visualization/plots/f1_boxplot_by_question_model.png)
+![F1 Score Box Plot by Model](visualization/plots/f1_boxplot_by_question_model_colored_by_language.png)
 *This box plot shows the distribution of F1 scores achieved by different question-answering LLM models across various tests.*
 
 ![F1 Heatmap Model vs Chunk/Overlap (English, Embedding)](visualization/plots/f1_heatmap_model_vs_chunk_overlap_lang_english_algo_embedding.png)
