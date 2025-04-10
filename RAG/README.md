@@ -19,6 +19,12 @@
 ![F1 Heatmap Chunk vs Overlap (English, Qwen2.5 7B, Embedding)](visualization/plots/f1_heatmap_chunk_vs_overlap_lang_english_model_qwen2.5_7B-128k_algo_embedding.png)
 *F1 score heatmap comparing chunk size vs. overlap size for English language, Qwen2.5 7B model, using the embedding algorithm.*
 
+More Information
+*   **RAG Plots:** [RAG Plots](RAG/visualization/plots/) 
+*   **RAG Results Files:** [RAG Results Folder](RAG/results/) 
+
+
+
 This project provides a framework for building, testing, and evaluating Retrieval-Augmented Generation (RAG) pipelines. It allows testing different language manuals against a common set of English questions, using configurable LLMs, retrieval parameters, and evaluation metrics.
 
 ## Features
