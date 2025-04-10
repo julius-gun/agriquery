@@ -121,28 +121,27 @@ def main():
     if args.output_filename_prefix:
         print(f"Filename prefix: {args.output_filename_prefix}")
 
-    # 0. Load Config to get languages (needed for consistent heatmap rows)
+    # 0. Load Config to get languages (needed for consistent heatmap rows AND boxplot hue order)
+    all_languages_list = None # Initialize
     try:
         config_loader = ConfigLoader(args.config_path)
         language_configs = config_loader.config.get("language_configs", [])
-        all_languages_list = [
+        loaded_languages = [
             lc.get("language") for lc in language_configs if lc.get("language")
         ]
-        if not all_languages_list:
-            print(
-                f"Warning: No languages found in 'language_configs' in {args.config_path}. Heatmap might not show all expected languages."
-            )
-            all_languages_list = None # Heatmap function will use only languages present in data
+        if loaded_languages:
+            all_languages_list = loaded_languages # Store the list
+            print(f"Found languages in config for consistent plot elements: {all_languages_list}")
         else:
-            print(f"Found languages in config for consistent heatmap rows: {all_languages_list}")
+            print(
+                f"Warning: No languages found in 'language_configs' in {args.config_path}. Boxplot legend order may vary."
+            )
     except FileNotFoundError:
         print(
-            f"Warning: Config file not found at '{args.config_path}'. Cannot determine full language list for consistent heatmap rows."
+            f"Warning: Config file not found at '{args.config_path}'. Cannot determine full language list for consistent plot elements."
         )
-        all_languages_list = None # Proceed without the full list
     except Exception as e:
         print(f"Warning: Error loading config file '{args.config_path}': {e}. Proceeding without full language list.")
-        all_languages_list = None # Proceed without the full list
 
     # 1. Extract Data
     print(f"\nExtracting data from: {args.results_dir}")
@@ -179,17 +178,30 @@ def main():
         if plot_type == "boxplot":
             print(f"Grouping by: {args.group_by}")
 
-            # Generate filename
-            output_filename = (
-                f"{args.output_filename_prefix}f1_boxplot_by_{args.group_by}.png"
-            )
-            output_filepath = os.path.join(args.output_dir, output_filename)
+            # --- Prepare arguments for create_f1_boxplot ---
+            boxplot_args = {
+                "data": df_data,
+                "group_by_column": args.group_by,
+                # output_path will be set below
+            }
+            output_filename_base = f"{args.output_filename_prefix}f1_boxplot_by_{args.group_by}"
 
-            create_f1_boxplot(
-                data=df_data,
-                group_by_column=args.group_by,
-                output_path=output_filepath,
-            )
+            # Check if the specific condition for adding language hue is met
+            if args.group_by == "question_model":
+                print("Coloring points by language for 'question_model' grouping.")
+                boxplot_args["hue_column"] = "language"
+                boxplot_args["hue_order"] = all_languages_list # Pass the loaded list (can be None)
+                output_filename = f"{output_filename_base}_colored_by_language.png"
+            else:
+                # Default case: no hue
+                output_filename = f"{output_filename_base}.png"
+
+            output_filepath = os.path.join(args.output_dir, output_filename)
+            boxplot_args["output_path"] = output_filepath
+
+            # Call the boxplot function with the prepared arguments
+            create_f1_boxplot(**boxplot_args)
+
 
         elif plot_type == "heatmap":
             print("\n--- Generating Heatmaps ---")
