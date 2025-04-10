@@ -194,20 +194,19 @@ class RagTester:
     def _get_chroma_collection(self, base_collection_name: str, chunk_size: int, overlap_size: int) -> Optional[chromadb.Collection]:
         """Gets the specific ChromaDB collection for the given parameters."""
         dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
-        logging.info(f"Attempting to use ChromaDB collection: '{dynamic_collection_name}'")
+        logging.info(f"Attempting to get ChromaDB collection: '{dynamic_collection_name}'")
         try:
-            # Note: Keyword retrieval might not strictly need a Chroma collection,
-            # but embedding retrieval does. Handle this dependency if needed.
-            # For now, assume we always try to get it for context retrieval.
+            # Note: Keyword retrieval might not strictly need a Chroma collection for querying,
+            # but we need it here to *fetch the documents* for indexing.
             collection = self.chroma_client.get_collection(name=dynamic_collection_name)
             logging.info(f"Successfully connected to collection '{dynamic_collection_name}'.")
             return collection
         except Exception as e:
-            # This error is critical for embedding retrieval using ChromaDB
+            # This error is critical if the collection is needed (embedding query or keyword indexing)
             logging.error(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             logging.error(f"!!! ERROR: Failed to get ChromaDB collection '{dynamic_collection_name}'.")
-            logging.error(f"!!! This collection is required for the current test combination.")
-            logging.error(f"!!! Ensure 'create_databases.py' (or rag_pipeline.py) was run with chunk={chunk_size}, overlap={overlap_size}.")
+            logging.error(f"!!! This collection is required for the current test combination (embedding query or keyword indexing).")
+            logging.error(f"!!! Ensure 'create_databases.py' (or rag_pipeline.py) was run with chunk={chunk_size}, overlap={overlap_size} for base '{base_collection_name}'.")
             logging.error(f"!!! Original error: {e}")
             logging.error(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             return None # Indicate failure
@@ -215,7 +214,7 @@ class RagTester:
     def _run_qa_phase(
         self,
         retriever: BaseRetriever, # Use BaseRetriever or Any if no common base exists
-        collection: Optional[chromadb.Collection], # Collection might be None for non-Chroma retrievers
+        collection: Optional[chromadb.Collection], # Collection might be None if not needed for direct query
         question_llm_connector: BaseLLMConnector, # Use BaseLLMConnector
         current_retrieval_algorithm: str, # Keep algorithm name for logic branching
         current_question_model_name: str, # Keep model name for logging/saving
@@ -266,18 +265,20 @@ class RagTester:
                             logging.error("Type mismatch: Retriever is not an EmbeddingRetriever for embedding algorithm.")
                             raise TypeError("Retriever is not an EmbeddingRetriever for embedding algorithm.")
                         if collection is None:
+                             # This check might be redundant if collection fetch failure already skipped the combo
                              logging.error(f"ChromaDB collection is required for embedding retrieval but was not found/loaded.")
                              raise ValueError(f"ChromaDB collection is required for embedding retrieval but was not found/loaded.")
 
-                        # Use the retriever's vectorize_text method (from BaseRetriever interface)
+                        # Vectorize the question
                         question_embedding = retriever.vectorize_text(question) # Returns List[List[float]]
                         # Perform retrieval using ChromaDB directly
                         query_results = collection.query(
                             query_embeddings=question_embedding, # Pass the embedding
                             n_results=self.num_retrieved_docs,
-                            include=['documents']
+                            include=['documents'] # Only need documents for context
                         )
                         if query_results and query_results.get('documents') and isinstance(query_results['documents'], list) and len(query_results['documents']) > 0:
+                            # query_results['documents'] is List[List[str]] even for single query
                             retrieved_chunks_text = query_results['documents'][0]
                             context = "\n".join(retrieved_chunks_text)
                             if not context: logging.warning("      Warning: Embedding retrieval returned empty documents.")
@@ -292,12 +293,25 @@ class RagTester:
                             logging.error("Type mismatch: Passed retriever is not a KeywordRetriever for keyword algorithm.")
                             raise TypeError("Retriever is not a KeywordRetriever for keyword algorithm.")
 
-                        # KeywordRetriever is currently a placeholder.
-                        # Calling its vectorize_text or retrieve_relevant_chunks methods here is not
-                        # meaningful without access to the document corpus/index within this scope.
-                        # Keep the placeholder context generation logic.
-                        logging.info("      Keyword retrieval logic is currently a placeholder.")
-                        context = f"Placeholder context for keyword retrieval of question: {question}" # Dummy context
+                        # KeywordRetriever should have been initialized and indexed in run_tests
+                        # 1. "Vectorize" (tokenize) the query
+                        tokenized_query = retriever.vectorize_text(question)
+
+                        # 2. Retrieve relevant chunks using the internal BM25 index
+                        # We don't need document_representations or document_chunks_text here,
+                        # as the retriever holds the indexed corpus internally.
+                        retrieved_chunks_text, scores = retriever.retrieve_relevant_chunks(
+                            query_representation=tokenized_query,
+                            top_k=self.num_retrieved_docs
+                        )
+
+                        if retrieved_chunks_text:
+                            context = "\n".join(retrieved_chunks_text)
+                            logging.debug(f"      Keyword retrieval found {len(retrieved_chunks_text)} chunks with scores: {scores}") # Optional debug
+                        else:
+                            logging.warning(f"      Warning: Keyword retrieval returned no documents for query: '{question[:50]}...'")
+                            context = "No relevant context found via keyword search."
+                            # qa_error = False # Not finding context isn't necessarily an error
 
                     else:
                         logging.error(f"      Error: Unsupported retrieval algorithm '{current_retrieval_algorithm}' during QA.")
@@ -472,10 +486,11 @@ class RagTester:
         chunk_size: int,
         overlap_size: int,
         question_llm_connector: BaseLLMConnector, # Accept initialized connector
-        retriever: BaseRetriever # Accept initialized retriever
+        retriever: BaseRetriever # Accept initialized retriever (might need indexing for keyword)
     ):
         """
         Processes a single combination of test parameters using pre-initialized components.
+        Handles specific setup for KeywordRetriever.
         """
         language = language_config.get("language")
         base_collection_name = language_config.get("collection_base_name")
@@ -495,23 +510,50 @@ class RagTester:
             return # Skip to the next combination
 
         # --- Components are already initialized and passed in ---
-        # No need to initialize retriever or question_llm_connector here
+        # Retriever instance is passed, but KeywordRetriever needs indexing here.
 
-        # --- Get Specific Chroma Collection ---
-        # Collection is needed for embedding retrieval, potentially others
-        # This still needs to be fetched based on chunk/overlap/language
-        collection = None
-        if retrieval_algorithm == "embedding": # Only fetch collection if using embedding retrieval for now
-            collection = self._get_chroma_collection(base_collection_name, chunk_size, overlap_size)
-            if collection is None: # Check if essential collection failed for embedding
-                 logging.warning(f"Skipping combination due to missing required ChromaDB collection for embedding.")
+        # --- Get Specific Chroma Collection & Index Keyword Retriever ---
+        # Collection is needed for embedding retrieval query AND for keyword indexing data.
+        collection = self._get_chroma_collection(base_collection_name, chunk_size, overlap_size)
+        if collection is None:
+             logging.warning(f"Skipping combination: Failed to get required ChromaDB collection '{base_collection_name}_cs{chunk_size}_os{overlap_size}'.")
+             return
+
+        # --- Specific setup for Keyword Retriever ---
+        if retrieval_algorithm == "keyword":
+            if not isinstance(retriever, KeywordRetriever):
+                 # This should ideally not happen if initialization in run_tests is correct
+                 logging.error(f"Type mismatch: Expected KeywordRetriever but got {type(retriever).__name__}. Skipping.")
                  return
-        # Note: Keyword retrieval currently doesn't use the collection in _run_qa_phase
+
+            logging.info(f"Keyword Algorithm: Fetching documents from collection '{collection.name}' for indexing...")
+            try:
+                # Fetch all documents from the collection
+                results = collection.get(include=['documents']) # Fetch only documents
+                if results and results.get('documents'):
+                    document_chunks = results['documents']
+                    if document_chunks:
+                         logging.info(f"Building BM25 index for {len(document_chunks)} documents...")
+                         retriever.build_index(document_chunks) # Build the index now
+                         logging.info(f"BM25 index built successfully for collection '{collection.name}'.")
+                    else:
+                         logging.warning(f"Collection '{collection.name}' exists but contains no documents. Keyword retrieval will yield no results.")
+                         # Optionally build an empty index or handle as needed
+                         retriever.build_index([]) # Build empty index
+                else:
+                    logging.error(f"Failed to fetch documents from collection '{collection.name}' for keyword indexing. Skipping combination.")
+                    return # Cannot proceed with keyword retrieval without documents
+
+            except Exception as e:
+                logging.error(f"Error fetching documents or building index for KeywordRetriever from collection '{collection.name}': {e}. Skipping combination.", exc_info=True)
+                return # Cannot proceed
 
         # --- Run QA Phase ---
+        # The retriever instance (now indexed if keyword) is passed
+        # --- Run QA Phase ---
         intermediate_results, qa_duration, qa_count = self._run_qa_phase(
-            retriever=retriever, # Pass initialized retriever
-            collection=collection, # Pass collection (might be None for keyword)
+            retriever=retriever, # Pass initialized (and potentially indexed) retriever
+            collection=collection, # Pass collection (used by embedding, ignored by keyword retrieval logic now)
             question_llm_connector=question_llm_connector, # Pass initialized connector
             current_retrieval_algorithm=retrieval_algorithm,
             current_question_model_name=question_model_name,
@@ -540,7 +582,7 @@ class RagTester:
                 "chunk_size": chunk_size,
                 "overlap_size": overlap_size,
                 "num_retrieved_docs": self.num_retrieved_docs,
-                "chroma_collection_used": f"{base_collection_name}_cs{chunk_size}_os{overlap_size}" if collection else "N/A",
+                "chroma_collection_used": collection.name if collection else "N/A", # Use dynamic name
             },
             "overall_metrics": overall_metrics,
             "timing": {
@@ -569,6 +611,7 @@ class RagTester:
         iterating through all combinations with optimized loop order:
         model -> chunk -> overlap -> algo -> lang.
         Initializes components at the appropriate loop level.
+        Handles specific setup for KeywordRetriever.
         """
         logging.info("\n--- Starting Test Iterations ---")
         total_combinations = (
@@ -606,11 +649,13 @@ class RagTester:
                         logging.info(f"\n{'-'*10} Testing Retrieval Algorithm: {algorithm.upper()} (Model: {model_name}, CS={chunk_size}, OS={overlap_size}) {'-'*10}")
 
                         # --- Initialize Retriever (once per algorithm within chunk/overlap/model) ---
+                        # Note: KeywordRetriever is initialized here but indexed later in _process_single_combination
                         current_retriever: Optional[BaseRetriever] = None # Use BaseRetriever or Any
                         try:
                             # initialize_retriever is imported from rag_pipeline
                             current_retriever = initialize_retriever(algorithm)
                             logging.info(f"Initialized retriever: {type(current_retriever).__name__} for algorithm '{algorithm}'")
+                            # KeywordRetriever specific indexing happens inside _process_single_combination
                         except Exception as e:
                             logging.error(f"Error initializing retriever for algorithm '{algorithm}': {e}. Skipping this algorithm for current chunk/overlap/model.", exc_info=True)
                             continue # Skip to the next algorithm if retriever fails
@@ -626,6 +671,7 @@ class RagTester:
                             logging.info(f"\n--- Running Combination {combination_count}/{total_combinations} ---")
 
                             # Process this specific combination, passing initialized components
+                            # _process_single_combination now handles KeywordRetriever indexing
                             self._process_single_combination(
                                 retrieval_algorithm=algorithm,
                                 question_model_name=model_name,
@@ -633,7 +679,7 @@ class RagTester:
                                 chunk_size=chunk_size,
                                 overlap_size=overlap_size,
                                 question_llm_connector=current_question_llm_connector, # Pass instance
-                                retriever=current_retriever # Pass instance
+                                retriever=current_retriever # Pass instance (will be indexed if keyword)
                             )
 
         logging.info("\n--- All Test Combinations Completed ---")
@@ -695,6 +741,7 @@ if __name__ == "__main__":
             logging.info(f"           Ensure 'create_databases.py' or 'rag_pipeline.py' has been run with")
             logging.info(f"           combinations matching the 'chunk_sizes_to_test' and 'overlap_sizes_to_test'")
             logging.info(f"           defined in '{config_to_test}' under 'rag_parameters'.")
+            logging.info(f"           These collections are needed for BOTH embedding retrieval AND keyword indexing.") # Added keyword note
         except Exception as config_ex:
              logging.error(f"Error loading configuration for pre-check: {config_ex}", exc_info=True)
              # Decide if this should prevent the run or just be a warning
@@ -716,9 +763,15 @@ if __name__ == "__main__":
          logging.critical(f"  Details: {e}")
          logging.critical("Please check the config file content.")
     except ImportError as e:
-         logging.critical(f"\nFATAL ERROR: Failed to import necessary modules.")
-         logging.critical(f"  Details: {e}")
-         logging.critical("Please ensure all dependencies are installed and the project structure is correct.")
+         # Catch missing rank_bm25 here too
+         if 'rank_bm25' in str(e):
+              logging.critical(f"\nFATAL ERROR: Missing dependency 'rank_bm25'.")
+              logging.critical(f"  Details: {e}")
+              logging.critical("Please install it using: pip install rank-bm25")
+         else:
+              logging.critical(f"\nFATAL ERROR: Failed to import necessary modules.")
+              logging.critical(f"  Details: {e}")
+              logging.critical("Please ensure all dependencies are installed and the project structure is correct.")
     except Exception as e:
         # Catch any other unexpected errors during initialization or run
         import traceback
