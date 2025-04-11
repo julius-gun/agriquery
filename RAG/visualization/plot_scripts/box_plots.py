@@ -10,8 +10,9 @@ def create_f1_boxplot(
     group_by_column: str,
     output_path: str,
     score_column: str = 'f1_score',
-    hue_column: Optional[str] = None, # Added: Column to use for coloring points
-    hue_order: Optional[List[str]] = None, # Added: Order for hue levels (legend)
+    sort_by_median_score: bool = True, # New parameter: Control sorting
+    hue_column: Optional[str] = None,
+    hue_order: Optional[List[str]] = None,
     title: Optional[str] = None,
     xlabel: Optional[str] = None,
     ylabel: Optional[str] = None,
@@ -19,14 +20,19 @@ def create_f1_boxplot(
     figure_height: int = 7
 ):
     """
-    Creates a box plot of F1 scores grouped by a specified column.
-    Optionally colors individual points based on a hue column (e.g., language).
+    Creates a box plot of scores grouped by a specified column.
+    By default, groups are ordered by their median score in ascending order.
+    Optionally colors individual points based on a hue column.
 
     Args:
         data: Pandas DataFrame containing the data.
         group_by_column: The name of the column to group the data by (x-axis).
+                         The categories in this column will be ordered by median score.
         output_path: The full path where the plot image will be saved.
         score_column: The name of the column containing the scores to plot (y-axis).
+        sort_by_median_score: If True (default), order the groups on the x-axis
+                              by their median score (ascending). If False, use
+                              default ordering.
         hue_column: Optional name of the column to use for coloring individual points.
         hue_order: Optional list specifying the order of categories in the hue legend.
         title: Optional title for the plot.
@@ -59,21 +65,38 @@ def create_f1_boxplot(
     if output_dir: # Only create if output_path includes a directory part
         os.makedirs(output_dir, exist_ok=True)
 
+    # --- Determine order based on median score (optional) ---
+    ordered_groups = None # Default to no specific order
+    if sort_by_median_score:
+        try:
+            median_scores = data.groupby(group_by_column)[score_column].median()
+            # Sort the groups based on median score in ascending order
+            ordered_groups = median_scores.sort_values(ascending=True).index.tolist()
+            print(f"Ordering '{group_by_column}' by median '{score_column}' (ascending): {ordered_groups}")
+        except KeyError:
+            print(f"Warning: Could not group by '{group_by_column}' or find score column '{score_column}' for ordering. Plotting in default order.")
+        except Exception as e:
+             print(f"Warning: An error occurred during group ordering: {e}. Plotting in default order.")
+    else:
+        print(f"Plotting '{group_by_column}' in default order (sorting by score disabled).")
+    # --- End order calculation ---
+
+
     # Set plot style
     sns.set_theme(style="whitegrid")
 
     # Create the plot
     plt.figure(figsize=(figure_width, figure_height))
 
-    # Generate the boxplot - Simplified: Removed hue and legend from boxplot itself
+    # Generate the boxplot - Pass 'order' if calculated
     ax = sns.boxplot(
         x=group_by_column,
         y=score_column,
-        hue=group_by_column, # Assign x variable to hue
+        hue=group_by_column, # Assign x variable to hue for box colors
         data=data,
         palette="viridis",
-        # hue=group_by_column, # Removed: Not needed for the boxes themselves
-        # legend=False # Removed
+        order=ordered_groups, # Apply the calculated order (or None for default)
+        legend=False
     )
 
     # --- Add individual data points ---
@@ -84,6 +107,7 @@ def create_f1_boxplot(
         "size": 4,
         "jitter": True,
         "ax": ax,
+        "order": ordered_groups, # Apply the same order (or None) to stripplot
     }
 
     if use_hue:
@@ -117,7 +141,8 @@ def create_f1_boxplot(
     plt.xticks(rotation=45, ha='right') # Rotate labels for better readability
 
     # Set title and labels
-    plot_title = title or f'F1 Score Distribution by {group_by_column.replace("_", " ").title()}'
+    title_suffix = " (Ordered Ascending by Median Score)" if sort_by_median_score and ordered_groups else ""
+    plot_title = title or f'{score_column.replace("_", " ").title()} Distribution by {group_by_column.replace("_", " ").title()}{title_suffix}'
     x_axis_label = xlabel or group_by_column.replace("_", " ").title()
     y_axis_label = ylabel or score_column.replace("_", " ").title()
 
@@ -131,8 +156,13 @@ def create_f1_boxplot(
          # Example: Move legend outside plot area
          # ax.legend(title=hue_column.replace("_", " ").title(), bbox_to_anchor=(1.05, 1), loc='upper left')
          # Or let tight_layout try first
-         pass # Keep default legend placement for now
-
+         # Update legend title if hue is used
+         try:
+             current_legend = ax.get_legend()
+             if current_legend:
+                 current_legend.set_title(hue_column.replace("_", " ").title())
+         except AttributeError:
+             pass # No legend to modify
 
     plt.tight_layout() # Adjust layout to prevent labels overlapping
 
