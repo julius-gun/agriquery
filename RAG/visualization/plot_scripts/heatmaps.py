@@ -24,6 +24,7 @@ def create_f1_heatmap(
     cmap: str = "viridis",
     annot_fmt: str = ".3f",
     figsize: Tuple[int, int] = (14, 8),
+    sort_columns_by_value: bool = True, # New parameter
 ):
     """
     Creates a heatmap of F1 scores, typically with languages as rows and models as columns,
@@ -50,6 +51,8 @@ def create_f1_heatmap(
         cmap: Colormap to use for the heatmap (e.g., "viridis", "coolwarm", "YlGnBu").
         annot_fmt: String format for annotations within the heatmap cells. Default: ".3f".
         figsize: Tuple specifying the figure size (width, height) in inches.
+        sort_columns_by_value: If True (default), sort the columns (e.g., models)
+                               in ascending order based on their mean value_col score.
     """
     if data is None or data.empty:
         # This case should ideally be handled by the calling script before calling this function
@@ -82,7 +85,7 @@ def create_f1_heatmap(
             columns=columns_col,
             aggfunc='mean' # Use mean if multiple runs exist for the exact same lang/model/params
         )
-        if DEBUG_HEATMAP: print(f"--- Heatmap Debug (create_f1_heatmap): Pivot table BEFORE reindexing ---\n{pivot_df.to_string()}\n" + "-"*30)
+        if DEBUG_HEATMAP: print(f"--- Heatmap Debug (create_f1_heatmap): Pivot table BEFORE reindexing/sorting ---\n{pivot_df.to_string()}\n" + "-"*30)
     except Exception as e:
         print(f"Error creating pivot table for {output_path}: {e}")
         return
@@ -95,6 +98,18 @@ def create_f1_heatmap(
              pivot_df.index.name = index_col
         pivot_df = pivot_df.reindex(all_indices)
         if DEBUG_HEATMAP: print(f"--- Heatmap Debug (create_f1_heatmap): Pivot table AFTER reindexing ---\n{pivot_df.to_string()}\n" + "-"*30)
+
+    # --- Sort Columns by Mean Value (Optional) ---
+    if sort_columns_by_value and not pivot_df.empty:
+        try:
+            if DEBUG_HEATMAP: print(f"--- Heatmap Debug (create_f1_heatmap): Sorting columns by mean '{values_col}' (ascending) ---")
+            column_means = pivot_df.mean(axis=0) # Calculate mean for each column
+            sorted_columns = column_means.sort_values(ascending=True).index # Get column names sorted by mean
+            pivot_df = pivot_df[sorted_columns] # Reorder columns
+            if DEBUG_HEATMAP: print(f"--- Heatmap Debug (create_f1_heatmap): Pivot table AFTER column sorting ---\n{pivot_df.to_string()}\n" + "-"*30)
+        except Exception as e:
+            print(f"Warning: Could not sort columns by value for {output_path}. Error: {e}")
+            # Continue without sorted columns
 
     if pivot_df.isnull().all().all():
          print(f"Warning: Pivot table for {output_path} contains only NaN values after pivoting and reindexing. Heatmap might be blank.")
@@ -324,6 +339,7 @@ def create_model_vs_chunk_overlap_heatmap(
     cmap: str = "viridis",
     annot_fmt: str = ".3f",
     figsize: Tuple[int, int] = (14, 10), # Adjusted default size
+    sort_columns_by_value: bool = True, # New parameter
 ):
     """
     Creates a heatmap showing a metric (e.g., F1 score) against combinations of
@@ -349,6 +365,8 @@ def create_model_vs_chunk_overlap_heatmap(
         cmap: Colormap to use for the heatmap (e.g., "viridis", "coolwarm", "YlGnBu").
         annot_fmt: String format for annotations within the heatmap cells. Default: ".3f".
         figsize: Tuple specifying the figure size (width, height) in inches.
+        sort_columns_by_value: If True (default), sort the columns (e.g., models)
+                               in ascending order based on their mean value_col score across all chunk/overlap combinations.
     """
     if data is None or data.empty:
         print(f"Warning: Input data for model vs chunk/overlap heatmap '{output_path}' is None or empty. Skipping plot generation.")
@@ -380,15 +398,27 @@ def create_model_vs_chunk_overlap_heatmap(
             columns=columns_col,
             aggfunc='mean' # Use mean if multiple runs exist for the exact same combo
         )
-        # Sort MultiIndex (numerically by chunk then overlap) and columns (alphabetically)
+        # Sort MultiIndex (numerically by chunk then overlap) and columns (alphabetically initially)
         pivot_df = pivot_df.sort_index(level=[0, 1], ascending=[True, True]).sort_index(axis=1)
-        if DEBUG_HEATMAP: print(f"--- Heatmap Debug (create_model_vs_chunk_overlap_heatmap): Pivot table ---\n{pivot_df.to_string()}\n" + "-"*30)
+        if DEBUG_HEATMAP: print(f"--- Heatmap Debug (create_model_vs_chunk_overlap_heatmap): Pivot table AFTER initial sorting ---\n{pivot_df.to_string()}\n" + "-"*30)
     except KeyError as e:
          print(f"Error creating pivot table for {output_path}: Missing column {e}. Ensure {required_cols} exist in the filtered data.")
          return
     except Exception as e:
         print(f"Error creating pivot table for {output_path}: {e}")
         return
+
+    # --- Sort Columns by Mean Value (Optional) ---
+    if sort_columns_by_value and not pivot_df.empty:
+        try:
+            if DEBUG_HEATMAP: print(f"--- Heatmap Debug (create_model_vs_chunk_overlap_heatmap): Sorting columns by mean '{values_col}' (ascending) ---")
+            column_means = pivot_df.mean(axis=0) # Calculate mean for each column across all index levels
+            sorted_columns = column_means.sort_values(ascending=True).index # Get column names sorted by mean
+            pivot_df = pivot_df[sorted_columns] # Reorder columns
+            if DEBUG_HEATMAP: print(f"--- Heatmap Debug (create_model_vs_chunk_overlap_heatmap): Pivot table AFTER column sorting ---\n{pivot_df.to_string()}\n" + "-"*30)
+        except Exception as e:
+            print(f"Warning: Could not sort columns by value for {output_path}. Error: {e}")
+            # Continue without sorted columns
 
     if pivot_df.isnull().all().all():
          print(f"Warning: Pivot table for {output_path} contains only NaN values. Heatmap might be blank.")
