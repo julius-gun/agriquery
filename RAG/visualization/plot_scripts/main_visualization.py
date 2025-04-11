@@ -83,7 +83,7 @@ def main():
         type=str,
         default="all",
         choices=["boxplot", "heatmap", "all"],
-        help="Type of plot(s) to generate. 'all' generates default boxplot and iterates through heatmap combinations.",
+         help="Type of plot(s) to generate. 'all' generates default boxplot and iterates through heatmap combinations.",
     )
 
     # --- Boxplot Specific Arguments ---

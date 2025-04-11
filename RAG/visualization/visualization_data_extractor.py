@@ -65,46 +65,57 @@ def extract_visualization_data(results_dir: str) -> Optional[pd.DataFrame]:
         print(f"Error: Results directory not found at '{results_dir}'")
         return None
 
-    # Get the list of known languages for validation
+    # Get the list of known languages for validation AND for the regex
     known_languages = get_known_languages()
     if not known_languages:
         print("Error: Could not determine known languages. Aborting extraction.")
         return None
 
-    # Regex to capture parameters from the filename
-    # Groups: 1=algo, 2=lang, 3=model, 4=chunk, 5=overlap, 6=topk
-    # MODIFIED Regex: Use non-greedy match for model name anchored by surrounding structure
-    filename_pattern = re.compile(
-        r"(\w+)_(\w+)_(.+?)_(\d+)_overlap_(\d+)_topk_(\d+)\.json"
-    )
+    # --- MODIFIED Regex ---
+    # Dynamically build the language part of the regex
+    # Escape languages in case they contain special regex characters (unlikely but safe)
+    escaped_languages = [re.escape(lang) for lang in known_languages]
+    language_pattern_part = f"({'|'.join(escaped_languages)})" # e.g., (english|french|german)
+
+    # Construct the full pattern using the dynamic language part
+    # Group 1: Algorithm (\w+)
+    # Group 2: Language (dynamic pattern part)
+    # Group 3: Model Name (.+?) - Non-greedy match up to the next part
+    # Named Groups: chunk, overlap, topk (\d+)
+    filename_pattern_str = rf"(\w+)_{language_pattern_part}_(.+?)_(?P<chunk>\d+)_overlap_(?P<overlap>\d+)_topk_(?P<topk>\d+)\.json"
+    print(f"Using Regex: {filename_pattern_str}") # Debug print for the regex being used
+    filename_pattern = re.compile(filename_pattern_str)
+    # --- END MODIFICATION ---
+
 
     extracted_data = []
     skipped_files = []
 
     print(f"Scanning directory: {results_dir}")
+    print(f"Using known languages for validation: {known_languages}") # Added print
     for filename in os.listdir(results_dir):
         match = filename_pattern.match(filename)
         if match and filename.endswith(".json"):
             filepath = os.path.join(results_dir, filename)
+            # Reset print statement for clarity based on successful match
+            print(f"\nProcessing matched file: {filename}")
             try:
-                # Extract parameters from filename using the regex
+                # Extract parameters from filename using the regex groups
                 retrieval_algorithm = match.group(1)
-                language = match.group(2)
+                language = match.group(2) # Group 2 is now the validated language
                 question_model_name = match.group(3) # Group 3 is the model name
-                chunk_size_str = match.group(4)
-                overlap_size_str = match.group(5)
-                num_retrieved_docs_str = match.group(6)
+                chunk_size_str = match.group('chunk')
+                overlap_size_str = match.group('overlap')
+                num_retrieved_docs_str = match.group('topk')
 
-                # --- VALIDATION STEP ---
-                if language not in known_languages:
-                    # print(f"Debug: Skipping file {filename}. Extracted language '{language}' is not in known list: {known_languages}")
-                    skipped_files.append(filename)
-                    continue # Skip this file as the language part is incorrect
-                # --- END VALIDATION ---
+                # Corrected print statement reflecting the actual groups
+                print(f"  Extracted: algo='{retrieval_algorithm}', lang='{language}', model='{question_model_name}', chunk='{chunk_size_str}', overlap='{overlap_size_str}', topk='{num_retrieved_docs_str}'")
+
 
                 # Proceed only if language is valid
                 with open(filepath, 'r', encoding='utf-8') as f:
                     data = json.load(f)
+                print(f"  JSON loaded successfully.") # Added print
 
                 # Convert numeric parts after validation
                 chunk_size = int(chunk_size_str)
@@ -112,7 +123,10 @@ def extract_visualization_data(results_dir: str) -> Optional[pd.DataFrame]:
                 num_retrieved_docs = int(num_retrieved_docs_str)
 
                 # Extract F1 score safely from JSON content
-                f1_score = data.get('overall_metrics', {}).get('f1_score')
+                overall_metrics = data.get('overall_metrics', {}) # Safer access
+                f1_score = overall_metrics.get('f1_score') # Safer access
+                print(f"  Attempting to get F1 score: Found overall_metrics={overall_metrics is not None}, f1_score={f1_score}") # Added print
+
 
                 if f1_score is not None:
                     extracted_data.append({
@@ -124,10 +138,9 @@ def extract_visualization_data(results_dir: str) -> Optional[pd.DataFrame]:
                         'num_retrieved_docs': num_retrieved_docs,
                         'f1_score': float(f1_score) # Ensure it's a float
                     })
-                    # Optional: Add a print statement during debugging to verify extracted names
-                    # print(f"  Extracted from {filename}: lang={language}, model={question_model_name}, f1={f1_score:.4f}")
+                    print(f"  Successfully extracted data point: f1={f1_score:.4f}") # Added print
                 else:
-                    print(f"Warning: 'f1_score' not found or is null in {filename}. Skipping.")
+                    print(f"  Warning: 'f1_score' not found or is null in overall_metrics. Skipping data point.") # Modified print
                     skipped_files.append(filename + " (missing f1_score)")
 
 
@@ -140,15 +153,19 @@ def extract_visualization_data(results_dir: str) -> Optional[pd.DataFrame]:
             except Exception as e:
                 print(f"Warning: An unexpected error occurred processing {filename}: {e}. Skipping.")
                 skipped_files.append(filename + " (unexpected error)")
-        # else:
-            # Optional: print a message for files that don't match the pattern
-            # if filename.endswith(".json"): # Only print for JSON files that didn't match
-            #    print(f"Info: Skipping file {filename} as it doesn't match the expected pattern.")
-            #    skipped_files.append(filename + " (pattern mismatch)")
+        elif filename.endswith(".json"): # Only report mismatch for JSON files
+             # Check if it *would* have matched if not for the language part
+             # Basic check: does it contain digits_overlap_digits_topk_digits.json?
+             fallback_match = re.search(r"_\d+_overlap_\d+_topk_\d+\.json$", filename)
+             if fallback_match:
+                 print(f"Info: Skipping file {filename} (doesn't match expected pattern, potentially due to language mismatch or structure before model name).")
+                 skipped_files.append(filename + " (pattern mismatch)")
+             # else: # Optionally log files that don't even look like results files
+             #    print(f"Debug: Skipping non-result JSON file {filename}")
 
 
     if skipped_files:
-        print(f"\nSkipped {len(skipped_files)} files due to invalid language, errors, or pattern mismatch.")
+        print(f"\nSkipped {len(skipped_files)} files due to errors or pattern mismatch.")
         # Optionally print the list of skipped files for debugging:
         # print("Skipped files:", skipped_files)
 
