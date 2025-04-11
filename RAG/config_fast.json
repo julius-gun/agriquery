@@ -88,9 +88,9 @@
     }
   },
   "question_models_to_test": [
-    "gemma3_12B-128k"
+    "deepseek-r1_1.5B-128k"
   ],
-  "evaluator_model_name": "gemma2_9B-8k",
+  "evaluator_model_name": "gemma3_12B-128k",
   "prompt_paths": {
     "question_prompt": "prompt_templates/question_prompt.txt",
     "evaluation_prompt": "prompt_templates/evaluation_prompt.txt"
@@ -120,10 +120,10 @@
   "output_dir": "results",
   "rag_parameters": {
     "retrieval_algorithms_to_test": [
-      "embedding"
+      "keyword"
     ],
-    "chunk_sizes_to_test": [ 200, 500, 1000, 2000 ],
-    "overlap_sizes_to_test": [ 100, 200, 500 ],
+    "chunk_sizes_to_test": [ 200 ],
+    "overlap_sizes_to_test": [ 100 ],
     "num_retrieved_docs": 3
   }
 }
