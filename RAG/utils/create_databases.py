@@ -6,6 +6,16 @@ import os
 import json
 import time
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+import sys # Added for path adjustment
+import pathlib # Added for robust path handling
+
+# --- Adjust Python Path ---
+# Add the project root directory (p_llm_manual/RAG) to the Python path
+# This allows finding modules like retrieval_pipelines and utils
+project_root = pathlib.Path(__file__).parent.parent.resolve()
+sys.path.insert(0, str(project_root))
+# --- End Path Adjustment ---
+
 
 # Assuming these modules are accessible from the project root
 from retrieval_pipelines.embedding_retriever import EmbeddingRetriever
@@ -125,17 +135,22 @@ def embed_and_add_chunks_to_db(document_chunks_text, collection, retriever):
 
 # --- Main Script Logic ---
 
-def main(config_path: str = "config.json"):
+# def main(config_path: str = "config.json"):
+def main(config_path: str = "config_fast.json"):
     """
     Main function to create ChromaDB collections for specified languages,
     chunk sizes, and overlap sizes, using parameters from the provided config file path.
     """
     print("--- Starting Batch ChromaDB Collection Creation Script ---")
-    print(f"Using configuration file: {config_path}")
+    # Resolve the config path relative to the project root for consistency
+    absolute_config_path = project_root / config_path
+    print(f"Using configuration file: {absolute_config_path}")
+
 
     # --- Load Configuration ---
     try:
-        config_loader = ConfigLoader(config_path)
+        # Use the absolute path to load config
+        config_loader = ConfigLoader(str(absolute_config_path))
         config = config_loader.config
         language_configs = config.get("language_configs", [])
         rag_params = config.get("rag_parameters", {})
@@ -158,26 +173,28 @@ def main(config_path: str = "config.json"):
         print(f"Target Overlap Sizes from config: {overlap_sizes_to_create}")
 
         if not language_configs:
-            print(f"Warning: No 'language_configs' found in '{config_path}'. No language-specific collections will be processed.")
+            print(f"Warning: No 'language_configs' found in '{absolute_config_path}'. No language-specific collections will be processed.")
             # Decide if we should exit or continue (maybe there are non-language specific tasks?)
             # For now, let's allow continuing, but log clearly.
             # return # Or uncomment to exit if languages are mandatory
 
     except FileNotFoundError:
-        print(f"Error: Configuration file not found at '{config_path}'. Exiting.")
+        print(f"Error: Configuration file not found at '{absolute_config_path}'. Exiting.")
         return
     except ValueError as ve: # Catch specific validation errors
         print(ve)
         return
     except Exception as e:
-        print(f"Error loading or parsing configuration from '{config_path}': {e}. Exiting.")
+        print(f"Error loading or parsing configuration from '{absolute_config_path}': {e}. Exiting.")
         return
 
     # --- Initialize Shared Components ---
     try:
         print("Initializing ChromaDB client...")
-        chroma_client = chromadb.PersistentClient(path=PERSIST_DIRECTORY)
-        print(f"ChromaDB client initialized. Persistence directory: '{PERSIST_DIRECTORY}'")
+        # Use absolute path for persistence directory as well
+        absolute_persist_dir = project_root / PERSIST_DIRECTORY
+        chroma_client = chromadb.PersistentClient(path=str(absolute_persist_dir))
+        print(f"ChromaDB client initialized. Persistence directory: '{absolute_persist_dir}'")
 
         print("Initializing Embedding Retriever (for tokenizer and vectorization)...")
         # TODO: Consider making the embedding model configurable via config file for Retriever
@@ -201,7 +218,9 @@ def main(config_path: str = "config.json"):
         return
 
     # --- Create Output Directory if it doesn't exist ---
-    os.makedirs(PERSIST_DIRECTORY, exist_ok=True)
+    # Use absolute path
+    absolute_persist_dir.mkdir(parents=True, exist_ok=True)
+
 
     # --- Loop Through Languages and Parameters ---
     total_collections_processed = 0
@@ -213,26 +232,29 @@ def main(config_path: str = "config.json"):
 
     for lang_config in language_configs:
         language = lang_config.get("language")
-        manual_path = lang_config.get("manual_path")
+        manual_path_relative = lang_config.get("manual_path") # Path relative to project root
         base_collection_name = lang_config.get("collection_base_name")
 
-        if not all([language, manual_path, base_collection_name]):
+        if not all([language, manual_path_relative, base_collection_name]):
             print(f"Warning: Skipping invalid language config entry: {lang_config}")
             continue
 
-        print(f"\n===== Processing Language: {language.upper()} (Manual: {manual_path}) =====")
+        # Resolve manual path relative to project root
+        absolute_manual_path = project_root / manual_path_relative
+
+        print(f"\n===== Processing Language: {language.upper()} (Manual: {absolute_manual_path}) =====")
 
         # --- Load Manual Text Once Per Language ---
         try:
-            print(f"  Loading manual text from: {manual_path}")
-            with open(manual_path, 'r', encoding='utf-8') as f:
+            print(f"  Loading manual text from: {absolute_manual_path}")
+            with open(absolute_manual_path, 'r', encoding='utf-8') as f:
                 text = f.read()
             print(f"  Manual text loaded ({len(text)} characters).")
         except FileNotFoundError:
-            print(f"  !!! ERROR: Manual file not found at '{manual_path}'. Skipping language '{language}'.")
+            print(f"  !!! ERROR: Manual file not found at '{absolute_manual_path}'. Skipping language '{language}'.")
             continue
         except Exception as e:
-            print(f"  !!! ERROR reading manual file '{manual_path}': {e}. Skipping language '{language}'.")
+            print(f"  !!! ERROR reading manual file '{absolute_manual_path}': {e}. Skipping language '{language}'.")
             continue
 
         # --- Iterate Through Parameter Combinations from Config ---
@@ -331,8 +353,9 @@ def main(config_path: str = "config.json"):
 
 
 if __name__ == "__main__":
-    # Allows running the script directly, using the default config path "config.json"
-    # Consider adding argparse if command-line config path specification is needed for direct runs
+    # Allows running the script directly, using the default config path relative to the project root
+    # If running from the 'utils' directory, the path adjustment at the top handles finding modules.
+    # The config path is now resolved relative to the project root inside main().
     main()
 
 # Fix the error, so that it doesn't happen when main.py is run
