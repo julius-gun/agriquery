@@ -1,8 +1,10 @@
 import chromadb
 from chromadb.utils import embedding_functions
 import hashlib
-# Removed KeywordRetriever import here, as it's only used inside initialize_retriever
+# Import specific retrievers
 from retrieval_pipelines.embedding_retriever import EmbeddingRetriever
+from retrieval_pipelines.keyword_retrieval import KeywordRetriever
+from retrieval_pipelines.hybrid_retriever import HybridRetriever # Import HybridRetriever
 # Import BaseRetriever for type hinting
 from retrieval_pipelines.base_retriever import BaseRetriever
 from evaluation.evaluation_metrics import evaluate_rag_pipeline
@@ -14,7 +16,7 @@ from analysis.analysis_tools import (
 import json
 import os
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from typing import List, Dict, Any # Import Any for type hinting
+from typing import List, Dict, Any, Optional # Import Optional
 
 # --- Configuration ---
 persist_directory = "chroma_db"
@@ -26,18 +28,45 @@ def generate_chunk_id(text_chunk: str) -> str:
     return hashlib.sha256(text_chunk.encode("utf-8")).hexdigest()
 
 # Update return type hint to BaseRetriever
-def initialize_retriever(retrieval_strategy_str: str) -> BaseRetriever:
-    """Initializes the retriever based on the specified strategy."""
+# Update signature to accept chroma_client and collection_name
+def initialize_retriever(
+    retrieval_strategy_str: str,
+    chroma_client: Optional[chromadb.ClientAPI] = None, # Add chroma_client
+    collection_name: Optional[str] = None # Add collection_name
+) -> BaseRetriever:
+    """
+    Initializes the retriever based on the specified strategy.
+
+    Args:
+        retrieval_strategy_str (str): The retrieval strategy ('embedding', 'keyword', 'hybrid').
+        chroma_client (Optional[chromadb.ClientAPI]): The ChromaDB client instance (required for hybrid).
+        collection_name (Optional[str]): The name of the ChromaDB collection (required for hybrid).
+
+    Returns:
+        BaseRetriever: An instance of the specified retriever.
+
+    Raises:
+        ValueError: If the strategy is unknown or required arguments are missing for hybrid.
+        NotImplementedError: If the strategy is 'hybrid' (placeholder).
+    """
+    print(f"Initializing retriever for strategy: '{retrieval_strategy_str}'...") # Added logging
     if retrieval_strategy_str == "embedding":
-        # Ensure EmbeddingRetriever is imported (already done above or can be moved here)
-        # from retrieval_pipelines.embedding_retriever import EmbeddingRetriever
+        # EmbeddingRetriever doesn't strictly need client/collection at init
+        # It's used externally in rag_tester for querying ChromaDB
         return EmbeddingRetriever() # Assuming default params are okay here
     elif retrieval_strategy_str == "keyword":
-        # Ensure KeywordRetriever is imported
-        from retrieval_pipelines.keyword_retrieval import KeywordRetriever
+        # KeywordRetriever doesn't need client/collection at init
         return KeywordRetriever()
     elif retrieval_strategy_str == "hybrid":
-        raise NotImplementedError("Hybrid retrieval not yet implemented.")
+        # Hybrid retriever *does* need client and collection name for its embedding part
+        if not chroma_client or not collection_name:
+             raise ValueError("HybridRetriever requires chroma_client and collection_name during initialization.")
+        # Ensure HybridRetriever is imported (already done above)
+        # from retrieval_pipelines.hybrid_retriever import HybridRetriever
+        # TODO: Make embedding model/max_length configurable if needed
+        return HybridRetriever(chroma_client=chroma_client, collection_name=collection_name)
+    # elif retrieval_strategy_str == "some_other_future_strategy":
+    #     raise NotImplementedError("This other strategy is not yet implemented.")
     else:
         raise ValueError(f"Unknown retrieval strategy: {retrieval_strategy_str}")
 
@@ -47,6 +76,11 @@ def embed_and_add_chunks_to_db(
     collection: chromadb.Collection,
     retriever: BaseRetriever # Use BaseRetriever type hint
 ) -> None:
+    # Note: This function is primarily for *populating* the DB.
+    # HybridRetriever.vectorize_text returns a dict, but ChromaDB `add` expects embeddings.
+    # This function might need adjustment if used directly with a HybridRetriever instance
+    # for populating, or we assume it's only called with EmbeddingRetriever during DB creation.
+    # Let's assume `create_databases.py` or the main block here uses EmbeddingRetriever for population.
     """Embeds text chunks and adds them to ChromaDB, avoiding duplicates WITHIN this specific collection."""
     # This function remains largely the same, but operates on the specific collection passed to it.
     added_count = 0
@@ -55,6 +89,35 @@ def embed_and_add_chunks_to_db(
     total_chunks = len(document_chunks_text)
     collection_name = collection.name # Get name for logging
     print(f"Starting embedding process for {total_chunks} chunks into collection '{collection_name}'...")
+
+    # Determine if the retriever is embedding-capable for adding to Chroma
+    is_embedding_retriever = isinstance(retriever, EmbeddingRetriever)
+    # HybridRetriever *contains* an EmbeddingRetriever, so we might need to access it
+    internal_embedding_retriever = getattr(retriever, 'embedding_retriever', None) if isinstance(retriever, HybridRetriever) else None
+
+    if not is_embedding_retriever and not internal_embedding_retriever:
+        print(f"Warning: The provided retriever ({type(retriever).__name__}) may not be suitable for generating embeddings required by ChromaDB 'add'. Proceeding by adding documents only.")
+        # Fallback: Add documents only if no embedding capability found
+        for i, chunk_text in enumerate(document_chunks_text):
+            chunk_id = generate_chunk_id(chunk_text)
+            try:
+                existing = collection.get(ids=[chunk_id], include=[])
+                if existing["ids"]:
+                    skipped_count += 1
+                else:
+                    collection.add(documents=[chunk_text], ids=[chunk_id])
+                    added_count += 1
+                if (i + 1) % 50 == 0 or (i + 1) == total_chunks:
+                    print(f"  Collection '{collection_name}': Processed {i + 1}/{total_chunks} chunks (Added Docs Only: {added_count}, Skipped: {skipped_count}, Errors: {error_count})")
+            except Exception as e:
+                print(f"!!! ERROR processing chunk {i} (doc only) for collection '{collection_name}' (ID: {chunk_id[:10]}...): {e}")
+                error_count += 1
+        print(f"Document-only adding finished for collection '{collection_name}'. Added: {added_count}, Skipped: {skipped_count}, Errors: {error_count}")
+        return # Exit function after document-only add
+
+    # Proceed with embedding if retriever is suitable
+    embedder_to_use = retriever if is_embedding_retriever else internal_embedding_retriever
+
     for i, chunk_text in enumerate(document_chunks_text):
         chunk_id = generate_chunk_id(chunk_text)
         try:
@@ -66,29 +129,21 @@ def embed_and_add_chunks_to_db(
                 # print(f"Chunk {i} (ID {chunk_id[:10]}...) exists. Skipping.")
                 skipped_count += 1
             else:
-                # Polymorphic call to vectorize_text
-                chunk_representation = retriever.vectorize_text(chunk_text)
-                # Assuming embedding retriever returns List[List[float]] and we take the first/only element
-                # And assuming keyword retriever returns something compatible or this logic needs adjustment
-                # For ChromaDB add, we need 'embeddings' (list of lists) or 'documents'
-                # This part might need refinement depending on what KeywordRetriever.vectorize_text returns
-                # and how non-embedding data should be stored.
-                # Current ChromaDB `add` expects embeddings OR documents.
-                # Let's assume for now this script primarily handles embedding storage.
-                # If KeywordRetriever is used, this `add` call might fail if chunk_representation isn't embedding-like.
-                # A more robust approach might be needed if keyword data needs storing differently.
-                if isinstance(chunk_representation, list) and isinstance(chunk_representation[0], list) and isinstance(chunk_representation[0][0], float):
-                     # Likely an embedding
+                # Use the appropriate embedder's vectorize_text method
+                # Assuming it returns List[List[float]]
+                chunk_embedding = embedder_to_use.vectorize_text(chunk_text)
+
+                if isinstance(chunk_embedding, list) and isinstance(chunk_embedding[0], list) and isinstance(chunk_embedding[0][0], float):
+                     # Standard embedding format
                      collection.add(
-                         embeddings=chunk_representation, # Should be List[List[float]]
+                         embeddings=chunk_embedding, # Should be List[List[float]]
                          documents=[chunk_text],
                          ids=[chunk_id]
                      )
                      added_count += 1
                 else:
-                     # Handle non-embedding case or log a warning/error
-                     # Maybe just add the document?
-                     print(f"Warning: Chunk {i} representation is not a standard embedding. Adding document only.")
+                     # Handle unexpected format from embedder
+                     print(f"Warning: Chunk {i} embedding format unexpected ({type(chunk_embedding)}). Adding document only.")
                      collection.add(
                          documents=[chunk_text],
                          ids=[chunk_id]
@@ -98,7 +153,7 @@ def embed_and_add_chunks_to_db(
                      added_count += 1 # Or handle differently
 
             if (i + 1) % 50 == 0 or (i + 1) == total_chunks:
-                 print(f"  Collection '{collection_name}': Processed {i + 1}/{total_chunks} chunks (Added: {added_count}, Skipped: {skipped_count}, Errors: {error_count})")
+                 print(f"  Collection '{collection_name}': Processed {i + 1}/{total_chunks} chunks (Added w/ Embeddings: {added_count}, Skipped: {skipped_count}, Errors: {error_count})")
         except Exception as e:
             print(f"!!! ERROR processing chunk {i} for collection '{collection_name}' (ID: {chunk_id[:10]}...): {e}")
             error_count += 1
@@ -130,9 +185,16 @@ if not dataset_paths:
 
 # Initialize retriever instance (can be imported by rag_tester)
 # Retriever choice doesn't directly affect collection name based on chunking
-retriever: BaseRetriever = initialize_retriever(rag_params.get("retrieval_algorithm", "embedding"))
+# !! NOTE: This global retriever initialization might be less useful now,
+# !! as rag_tester initializes retrievers inside its loops, potentially passing client/collection.
+# !! Let's comment out the global one or ensure it's not relied upon by rag_tester.
+# retriever: BaseRetriever = initialize_retriever(rag_params.get("retrieval_algorithm", "embedding"))
 # Use Any for tokenizer if we stick with hasattr, or define getter in BaseRetriever
-tokenizer: Any = retriever.tokenizer if hasattr(retriever, 'tokenizer') else None
+# tokenizer: Any = retriever.tokenizer if hasattr(retriever, 'tokenizer') else None
+# Let's get tokenizer from a temporary EmbeddingRetriever instance if needed for splitting
+temp_embed_retriever = EmbeddingRetriever()
+tokenizer: Any = temp_embed_retriever.tokenizer if hasattr(temp_embed_retriever, 'tokenizer') else None
+
 
 # Initialize embedding function for ChromaDB (specific to embedding models)
 # This might need conditional logic if non-embedding models are primary
@@ -177,7 +239,7 @@ if __name__ == "__main__":
                 dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
                 print(f"Target collection name: '{dynamic_collection_name}'")
 
-        # --- Check if Collection Exists ---
+                # --- Check if Collection Exists ---
                 collection_exists = False
                 collection = None
                 try:
@@ -189,6 +251,9 @@ if __name__ == "__main__":
                     print(f"Collection '{dynamic_collection_name}' already exists.")
                     collection_exists = True
                 except Exception as e:
+                    # Use specific exception check if possible, e.g., chromadb.errors.CollectionNotFoundError
+                    # For simplicity, catching general Exception here.
+                    # print(f"Collection '{dynamic_collection_name}' does not exist yet (Error: {e}). Will proceed with creation.")
                     print(f"Collection '{dynamic_collection_name}' does not exist yet. Will proceed with creation.")
                     collection_exists = False
 
@@ -203,15 +268,10 @@ if __name__ == "__main__":
                     )
 
                     # Ensure tokenizer is available if needed for splitting
-                    # This check is more relevant if using token splitting strategy
-                    if not tokenizer and isinstance(retriever, EmbeddingRetriever): # Check specific type if tokenizer is specific
-                         # Or check based on a method/property defined in BaseRetriever?
-                         print("Warning: Tokenizer not found in retriever, required for token splitting.")
+                    if not tokenizer:
+                         print("Warning: Tokenizer not found, required for token splitting based on HuggingFace model.")
                          # Decide if this is fatal or if an alternative splitter can be used
-                         # For now, let's assume RecursiveCharacterTextSplitter needs it.
-                         # If rag_tester uses a different retriever, this might be okay.
                          # Let's try to proceed but log the warning.
-                         # raise TypeError("Tokenizer not found in retriever, but required for token splitting.")
 
 
                     print(f"Loading text from: {manual_path}")
@@ -239,16 +299,20 @@ if __name__ == "__main__":
                         # Example fallback:
                         char_splitter = RecursiveCharacterTextSplitter(
                              chunk_size=chunk_size * 4, # Heuristic: multiply by avg token length
-                             chunk_overlap=overlap_size * 4 # Heuristic
+                             chunk_overlap=overlap_size * 4, # Heuristic
+                             length_function=len,
+                             is_separator_regex=False,
                         )
                         document_chunks_text = char_splitter.split_text(text)
                         print(f"Generated {len(document_chunks_text)} character-based chunks for {language}.")
 
 
                     # --- Embedding/Processing and Adding Chunks ---
-                    # Pass the globally initialized retriever (could be embedding or keyword)
-                    # The embed_and_add function now has logic to handle representation type
-                    embed_and_add_chunks_to_db(document_chunks_text, collection, retriever)
+                    # For populating the database, we should use an EmbeddingRetriever
+                    # to ensure embeddings are generated correctly.
+                    # The global 'retriever' is commented out, so let's instantiate one here.
+                    db_populating_retriever = EmbeddingRetriever() # Use EmbeddingRetriever for DB population
+                    embed_and_add_chunks_to_db(document_chunks_text, collection, db_populating_retriever)
                 else:
                     print(f"Skipping processing for existing collection '{dynamic_collection_name}'.")
 
@@ -270,9 +334,12 @@ if __name__ == "__main__":
                     dataset = load_dataset(dataset_path)
                     if dataset:
                         print(f"\n--- Evaluating Retrieval on {dataset_name} dataset using collection '{dynamic_collection_name}' ---")
-                        # Pass the specific collection and the global retriever
-                        # evaluate_rag_pipeline needs to handle the retriever type appropriately
-                        evaluation_results = evaluate_rag_pipeline(dataset, retriever, collection, rag_params)
+                        # For evaluation here, let's use an EmbeddingRetriever as well,
+                        # since evaluate_rag_pipeline likely expects embedding logic.
+                        # If we wanted to evaluate hybrid retrieval *metrics* here,
+                        # we'd need to initialize HybridRetriever and potentially build its index.
+                        eval_retriever = EmbeddingRetriever()
+                        evaluation_results = evaluate_rag_pipeline(dataset, eval_retriever, collection, rag_params)
                         all_evaluation_results_for_lang_combo[dataset_name] = evaluation_results
                         analysis_label = f"{dataset_name} ({language} manual, CS={chunk_size}, OS={overlap_size})"
                         analyze_evaluation_results(evaluation_results, analysis_label)

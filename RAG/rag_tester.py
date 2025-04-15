@@ -18,6 +18,7 @@ from rag_pipeline import initialize_retriever # Keep for retriever initializatio
 from retrieval_pipelines.base_retriever import BaseRetriever # Assuming a base type exists
 from retrieval_pipelines.embedding_retriever import EmbeddingRetriever
 from retrieval_pipelines.keyword_retrieval import KeywordRetriever
+from retrieval_pipelines.hybrid_retriever import HybridRetriever # Import HybridRetriever
 from utils.config_loader import ConfigLoader
 from utils.result_manager import ResultManager
 
@@ -198,6 +199,7 @@ class RagTester:
         try:
             # Note: Keyword retrieval might not strictly need a Chroma collection for querying,
             # but we need it here to *fetch the documents* for indexing.
+            # Hybrid retrieval also needs it for indexing and embedding search.
             collection = self.chroma_client.get_collection(name=dynamic_collection_name)
             logging.info(f"Successfully connected to collection '{dynamic_collection_name}'.")
             return collection
@@ -205,7 +207,7 @@ class RagTester:
             # This error is critical if the collection is needed (embedding query or keyword indexing)
             logging.error(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             logging.error(f"!!! ERROR: Failed to get ChromaDB collection '{dynamic_collection_name}'.")
-            logging.error(f"!!! This collection is required for the current test combination (embedding query or keyword indexing).")
+            logging.error(f"!!! This collection is required for the current test combination (embedding, keyword, or hybrid).")
             logging.error(f"!!! Ensure 'create_databases.py' (or rag_pipeline.py) was run with chunk={chunk_size}, overlap={overlap_size} for base '{base_collection_name}'.")
             logging.error(f"!!! Original error: {e}")
             logging.error(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
@@ -213,8 +215,8 @@ class RagTester:
 
     def _run_qa_phase(
         self,
-        retriever: BaseRetriever, # Use BaseRetriever or Any if no common base exists
-        collection: Optional[chromadb.Collection], # Collection might be None if not needed for direct query
+        retriever: BaseRetriever, # Use BaseRetriever
+        collection: Optional[chromadb.Collection], # Collection might be None if not needed for direct query *here*
         question_llm_connector: BaseLLMConnector, # Use BaseLLMConnector
         current_retrieval_algorithm: str, # Keep algorithm name for logic branching
         current_question_model_name: str, # Keep model name for logging/saving
@@ -255,10 +257,15 @@ class RagTester:
                 model_answer = ""
                 qa_error = False
                 prompt = ""
+                retrieved_chunks_text = [] # Initialize list for retrieved docs
 
                 # --- RAG Retrieval ---
                 try:
-                    # Use the passed retriever instance
+                    # Polymorphic call to vectorize the query text
+                    # Output type depends on the retriever (List[List[float]], List[str], Dict)
+                    query_representation = retriever.vectorize_text(question)
+
+                    # --- Branch based on algorithm for retrieval ---
                     if current_retrieval_algorithm == "embedding":
                         if not isinstance(retriever, EmbeddingRetriever):
                             # Log error and raise for clarity, although type hint helps
@@ -269,64 +276,93 @@ class RagTester:
                              logging.error(f"ChromaDB collection is required for embedding retrieval but was not found/loaded.")
                              raise ValueError(f"ChromaDB collection is required for embedding retrieval but was not found/loaded.")
 
-                        # Vectorize the question
-                        question_embedding = retriever.vectorize_text(question) # Returns List[List[float]]
+                        # EmbeddingRetriever.vectorize_text returns List[List[float]]
+                        if not isinstance(query_representation, list) or not isinstance(query_representation[0], list):
+                             logging.error(f"Unexpected query representation format for embedding: {type(query_representation)}")
+                             raise TypeError("Unexpected query representation format for embedding.")
+
                         # Perform retrieval using ChromaDB directly
                         query_results = collection.query(
-                            query_embeddings=question_embedding, # Pass the embedding
+                            query_embeddings=query_representation, # Pass the embedding List[List[float]]
                             n_results=self.num_retrieved_docs,
                             include=['documents'] # Only need documents for context
                         )
                         if query_results and query_results.get('documents') and isinstance(query_results['documents'], list) and len(query_results['documents']) > 0:
-                            # query_results['documents'] is List[List[str]] even for single query
-                            retrieved_chunks_text = query_results['documents'][0]
-                            context = "\n".join(retrieved_chunks_text)
-                            if not context: logging.warning("      Warning: Embedding retrieval returned empty documents.")
+                            retrieved_chunks_text = query_results['documents'][0] # query_results['documents'] is List[List[str]]
+                            if not retrieved_chunks_text: logging.warning("      Warning: Embedding retrieval returned empty documents.")
                         else:
                             logging.warning(f"      Warning: Embedding retrieval failed or returned no documents from collection '{collection.name}'. Results: {query_results}")
-                            context = "Error: Could not retrieve context from database via embedding."
-                            # qa_error = True # Decide if this is an error
+                            # context = "Error: Could not retrieve context from database via embedding." # Set context later
 
                     elif current_retrieval_algorithm == "keyword":
                         # Check the type of the retriever instance
                         if not isinstance(retriever, KeywordRetriever):
                             logging.error("Type mismatch: Passed retriever is not a KeywordRetriever for keyword algorithm.")
                             raise TypeError("Retriever is not a KeywordRetriever for keyword algorithm.")
+                        if not isinstance(query_representation, list): # KeywordRetriever returns List[str]
+                             logging.error(f"Unexpected query representation format for keyword: {type(query_representation)}")
+                             raise TypeError("Unexpected query representation format for keyword.")
 
-                        # KeywordRetriever should have been initialized and indexed in run_tests
-                        # 1. "Vectorize" (tokenize) the query
-                        tokenized_query = retriever.vectorize_text(question)
-
-                        # 2. Retrieve relevant chunks using the internal BM25 index
-                        # We don't need document_representations or document_chunks_text here,
-                        # as the retriever holds the indexed corpus internally.
+                        # KeywordRetriever should have been indexed in _process_single_combination
+                        # Retrieve relevant chunks using the internal BM25 index
                         retrieved_chunks_text, scores = retriever.retrieve_relevant_chunks(
-                            query_representation=tokenized_query,
+                            query_representation=query_representation, # Pass tokenized query
                             top_k=self.num_retrieved_docs
+                            # document_chunks_text is not needed if index was built with internal corpus
                         )
 
                         if retrieved_chunks_text:
-                            context = "\n".join(retrieved_chunks_text)
                             logging.debug(f"      Keyword retrieval found {len(retrieved_chunks_text)} chunks with scores: {scores}") # Optional debug
                         else:
                             logging.warning(f"      Warning: Keyword retrieval returned no documents for query: '{question[:50]}...'")
-                            context = "No relevant context found via keyword search."
-                            # qa_error = False # Not finding context isn't necessarily an error
+                            # context = "No relevant context found via keyword search." # Set context later
+
+                    elif current_retrieval_algorithm == "hybrid":
+                        if not isinstance(retriever, HybridRetriever):
+                            logging.error("Type mismatch: Passed retriever is not a HybridRetriever for hybrid algorithm.")
+                            raise TypeError("Retriever is not a HybridRetriever for hybrid algorithm.")
+                        if not isinstance(query_representation, dict): # HybridRetriever returns Dict
+                             logging.error(f"Unexpected query representation format for hybrid: {type(query_representation)}")
+                             raise TypeError("Unexpected query representation format for hybrid.")
+
+                        # HybridRetriever should have had its keyword index built in _process_single_combination
+                        # and its Chroma collection set during initialization.
+                        # Retrieve relevant chunks using the internal combined logic (RRF)
+                        retrieved_chunks_text, scores = retriever.retrieve_relevant_chunks(
+                            query_representation=query_representation, # Pass dict with embedding and tokens
+                            top_k=self.num_retrieved_docs
+                            # document_chunks_text is not needed if index was built with internal corpus
+                        )
+                        if retrieved_chunks_text:
+                            logging.debug(f"      Hybrid retrieval found {len(retrieved_chunks_text)} chunks with RRF scores: {scores}") # Optional debug
+                        else:
+                            logging.warning(f"      Warning: Hybrid retrieval returned no documents for query: '{question[:50]}...'")
+                            # context = "No relevant context found via hybrid search." # Set context later
 
                     else:
                         logging.error(f"      Error: Unsupported retrieval algorithm '{current_retrieval_algorithm}' during QA.")
                         context = f"Error: Unsupported retrieval algorithm {current_retrieval_algorithm}."
                         qa_error = True
 
+                    # --- Build Context String ---
+                    if retrieved_chunks_text:
+                        context = "\n".join(retrieved_chunks_text)
+                    elif not qa_error: # If no error but no results
+                         context = f"No relevant context found via {current_retrieval_algorithm} search."
+                         logging.warning(f"      Context is empty for algorithm '{current_retrieval_algorithm}'.")
+                    else: # If there was a qa_error during retrieval
+                         context = f"Error during retrieval process for algorithm '{current_retrieval_algorithm}'."
+
+
                 except Exception as e:
-                    logging.error(f"      Error during RAG retrieval ({current_retrieval_algorithm}): {e}", exc_info=True)
-                    context = "Error during retrieval."
-                    model_answer = "Error: Failed during retrieval."
+                    logging.error(f"      Error during RAG retrieval phase ({current_retrieval_algorithm}): {e}", exc_info=True)
+                    context = "Error during retrieval execution."
+                    model_answer = "Error: Failed during retrieval execution."
                     qa_error = True
 
                 # --- LLM Question Answering ---
                 if not qa_error:
-                    llm_input_context = context if context else "No context available."
+                    llm_input_context = context # Use the context built above
                     try:
                         prompt = self.question_prompt_template.format(context=llm_input_context, question=question)
 
@@ -486,14 +522,15 @@ class RagTester:
         chunk_size: int,
         overlap_size: int,
         question_llm_connector: BaseLLMConnector, # Accept initialized connector
-        retriever: BaseRetriever # Accept initialized retriever (might need indexing for keyword)
+        retriever: BaseRetriever # Accept initialized retriever (might need indexing)
     ):
         """
         Processes a single combination of test parameters using pre-initialized components.
-        Handles specific setup for KeywordRetriever.
+        Handles specific setup for KeywordRetriever and HybridRetriever indexing.
         """
         language = language_config.get("language")
         base_collection_name = language_config.get("collection_base_name")
+        dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}" # Define dynamic name here
 
         logging.info(f"\n>>> Processing Combination: "
               f"Lang={language.upper()}, Model={question_model_name}, Algo={retrieval_algorithm}, "
@@ -510,50 +547,68 @@ class RagTester:
             return # Skip to the next combination
 
         # --- Components are already initialized and passed in ---
-        # Retriever instance is passed, but KeywordRetriever needs indexing here.
+        # Retriever instance is passed, but Keyword/Hybrid Retrievers need indexing here.
 
-        # --- Get Specific Chroma Collection & Index Keyword Retriever ---
-        # Collection is needed for embedding retrieval query AND for keyword indexing data.
+        # --- Get Specific Chroma Collection & Index Keyword/Hybrid Retriever ---
+        # Collection is needed for embedding retrieval query AND for keyword/hybrid indexing data.
         collection = self._get_chroma_collection(base_collection_name, chunk_size, overlap_size)
         if collection is None:
-             logging.warning(f"Skipping combination: Failed to get required ChromaDB collection '{base_collection_name}_cs{chunk_size}_os{overlap_size}'.")
+             logging.warning(f"Skipping combination: Failed to get required ChromaDB collection '{dynamic_collection_name}'.")
              return
 
-        # --- Specific setup for Keyword Retriever ---
-        if retrieval_algorithm == "keyword":
-            if not isinstance(retriever, KeywordRetriever):
-                 # This should ideally not happen if initialization in run_tests is correct
-                 logging.error(f"Type mismatch: Expected KeywordRetriever but got {type(retriever).__name__}. Skipping.")
-                 return
-
-            logging.info(f"Keyword Algorithm: Fetching documents from collection '{collection.name}' for indexing...")
+        # --- Specific setup for Keyword or Hybrid Retriever Indexing ---
+        # Check if the algorithm requires indexing based on ChromaDB documents
+        if retrieval_algorithm == "keyword" or retrieval_algorithm == "hybrid":
+            logging.info(f"{retrieval_algorithm.capitalize()} Algorithm: Fetching documents from collection '{collection.name}' for indexing...")
             try:
                 # Fetch all documents from the collection
                 results = collection.get(include=['documents']) # Fetch only documents
                 if results and results.get('documents'):
                     document_chunks = results['documents']
                     if document_chunks:
-                         logging.info(f"Building BM25 index for {len(document_chunks)} documents...")
-                         retriever.build_index(document_chunks) # Build the index now
-                         logging.info(f"BM25 index built successfully for collection '{collection.name}'.")
+                         logging.info(f"Building index for {len(document_chunks)} documents...")
+                         # Polymorphic call to build index (either KeywordRetriever or HybridRetriever)
+                         if isinstance(retriever, (KeywordRetriever, HybridRetriever)):
+                              # HybridRetriever has build_keyword_index, KeywordRetriever has build_index
+                              if hasattr(retriever, 'build_keyword_index'):
+                                   retriever.build_keyword_index(document_chunks) # Call HybridRetriever's method
+                              elif hasattr(retriever, 'build_index'):
+                                   retriever.build_index(document_chunks) # Call KeywordRetriever's method
+                              else:
+                                   # This case should ideally not be reached due to prior checks
+                                   logging.error(f"Retriever of type {type(retriever).__name__} does not have a recognized index building method.")
+                                   return # Skip combination if indexing fails
+
+                              logging.info(f"Index built successfully for collection '{collection.name}'.")
+                         else:
+                              # This case should not happen if initialization in run_tests is correct
+                              logging.error(f"Type mismatch: Expected KeywordRetriever or HybridRetriever but got {type(retriever).__name__}. Skipping.")
+                              return
+
                     else:
-                         logging.warning(f"Collection '{collection.name}' exists but contains no documents. Keyword retrieval will yield no results.")
-                         # Optionally build an empty index or handle as needed
-                         retriever.build_index([]) # Build empty index
+                         logging.warning(f"Collection '{collection.name}' exists but contains no documents. {retrieval_algorithm.capitalize()} retrieval will yield no results.")
+                         # Build empty index
+                         if isinstance(retriever, (KeywordRetriever, HybridRetriever)):
+                              if hasattr(retriever, 'build_keyword_index'):
+                                   retriever.build_keyword_index([])
+                              elif hasattr(retriever, 'build_index'):
+                                   retriever.build_index([])
+                         else:
+                              logging.error(f"Cannot build empty index for retriever type {type(retriever).__name__}.")
+                              return
                 else:
-                    logging.error(f"Failed to fetch documents from collection '{collection.name}' for keyword indexing. Skipping combination.")
-                    return # Cannot proceed with keyword retrieval without documents
+                    logging.error(f"Failed to fetch documents from collection '{collection.name}' for {retrieval_algorithm} indexing. Skipping combination.")
+                    return # Cannot proceed without documents
 
             except Exception as e:
-                logging.error(f"Error fetching documents or building index for KeywordRetriever from collection '{collection.name}': {e}. Skipping combination.", exc_info=True)
+                logging.error(f"Error fetching documents or building index for {retrieval_algorithm.capitalize()}Retriever from collection '{collection.name}': {e}. Skipping combination.", exc_info=True)
                 return # Cannot proceed
 
         # --- Run QA Phase ---
-        # The retriever instance (now indexed if keyword) is passed
-        # --- Run QA Phase ---
+        # The retriever instance (now indexed if keyword/hybrid) is passed
         intermediate_results, qa_duration, qa_count = self._run_qa_phase(
             retriever=retriever, # Pass initialized (and potentially indexed) retriever
-            collection=collection, # Pass collection (used by embedding, ignored by keyword retrieval logic now)
+            collection=collection, # Pass collection (used directly only by embedding logic in _run_qa_phase)
             question_llm_connector=question_llm_connector, # Pass initialized connector
             current_retrieval_algorithm=retrieval_algorithm,
             current_question_model_name=question_model_name,
@@ -611,7 +666,7 @@ class RagTester:
         iterating through all combinations with optimized loop order:
         model -> chunk -> overlap -> algo -> lang.
         Initializes components at the appropriate loop level.
-        Handles specific setup for KeywordRetriever.
+        Handles specific setup for KeywordRetriever and HybridRetriever.
         """
         logging.info("\n--- Starting Test Iterations ---")
         total_combinations = (
@@ -649,29 +704,73 @@ class RagTester:
                         logging.info(f"\n{'-'*10} Testing Retrieval Algorithm: {algorithm.upper()} (Model: {model_name}, CS={chunk_size}, OS={overlap_size}) {'-'*10}")
 
                         # --- Initialize Retriever (once per algorithm within chunk/overlap/model) ---
-                        # Note: KeywordRetriever is initialized here but indexed later in _process_single_combination
+                        # Note: Keyword/Hybrid Retrievers are initialized here but indexed later in _process_single_combination
                         current_retriever: Optional[BaseRetriever] = None # Use BaseRetriever or Any
                         try:
-                            # initialize_retriever is imported from rag_pipeline
-                            current_retriever = initialize_retriever(algorithm)
-                            logging.info(f"Initialized retriever: {type(current_retriever).__name__} for algorithm '{algorithm}'")
-                            # KeywordRetriever specific indexing happens inside _process_single_combination
+                            # Determine the dynamic collection name needed for Hybrid initialization
+                            # We need a language config to form the name, let's peek at the first one?
+                            # Or maybe initialize later inside the language loop?
+                            # Let's initialize here, but Hybrid will need client/collection passed.
+                            # If we initialize Hybrid here, it needs a collection name, but that depends on language.
+                            # --> Decision: Initialize retriever *inside* the language loop if it's hybrid.
+                            # --> Alternative: Pass client/collection name later? initialize_retriever now supports this.
+
+                            # Let's try initializing here, passing client. Collection name will be set in HybridRetriever later if needed?
+                            # No, HybridRetriever __init__ expects collection name now.
+                            # --> Revised Decision: Initialize non-hybrid here, initialize hybrid inside language loop.
+
+                            if algorithm != "hybrid":
+                                # Initialize embedding or keyword retriever (don't need client/collection name at init)
+                                current_retriever = initialize_retriever(algorithm)
+                                logging.info(f"Initialized retriever: {type(current_retriever).__name__} for algorithm '{algorithm}'")
+                            else:
+                                # Hybrid retriever initialization deferred to language loop below
+                                logging.info(f"Deferring HybridRetriever initialization until language loop (needs collection name).")
+                                pass # Placeholder, will be initialized later
+
                         except Exception as e:
-                            logging.error(f"Error initializing retriever for algorithm '{algorithm}': {e}. Skipping this algorithm for current chunk/overlap/model.", exc_info=True)
-                            continue # Skip to the next algorithm if retriever fails
+                            logging.error(f"Error initializing non-hybrid retriever for algorithm '{algorithm}': {e}. Skipping this algorithm for current chunk/overlap/model.", exc_info=True)
+                            continue # Skip to the next algorithm if non-hybrid retriever fails
 
                         # Innermost loop: Language (uses the collection defined by chunk/overlap)
                         for lang_config in self.language_configs:
                             language = lang_config.get("language")
-                            if not language:
+                            base_collection_name = lang_config.get("collection_base_name")
+                            if not language or not base_collection_name:
                                 logging.warning(f"Warning: Skipping invalid language config entry: {lang_config}")
                                 continue
+
+                            # --- Initialize Hybrid Retriever (if applicable) ---
+                            # This now happens *inside* the language loop because we need the collection name
+                            if algorithm == "hybrid" and current_retriever is None: # Check if not already initialized (e.g., from previous lang in this algo loop)
+                                try:
+                                    dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
+                                    current_retriever = initialize_retriever(
+                                        algorithm,
+                                        chroma_client=self.chroma_client,
+                                        collection_name=dynamic_collection_name
+                                    )
+                                    logging.info(f"Initialized retriever: {type(current_retriever).__name__} for algorithm '{algorithm}' using collection '{dynamic_collection_name}'")
+                                except ValueError as ve: # Catch missing client/collection name error from initialize_retriever
+                                     logging.error(f"Configuration error for HybridRetriever: {ve}. Skipping hybrid for this combination.")
+                                     # Break this inner language loop for hybrid if init fails? Or just skip lang? Let's skip lang.
+                                     continue # Skip this language for hybrid
+                                except Exception as e:
+                                    logging.error(f"Error initializing HybridRetriever for collection '{dynamic_collection_name}': {e}. Skipping hybrid for this language.", exc_info=True)
+                                    continue # Skip this language for hybrid
+
+                            # Check if retriever initialization failed in any path
+                            if current_retriever is None:
+                                 logging.error(f"Retriever for algorithm '{algorithm}' could not be initialized. Skipping combination.")
+                                 # If hybrid failed for one lang, it might work for another, so only 'continue' here.
+                                 continue # Skip to next language
+
 
                             combination_count += 1
                             logging.info(f"\n--- Running Combination {combination_count}/{total_combinations} ---")
 
                             # Process this specific combination, passing initialized components
-                            # _process_single_combination now handles KeywordRetriever indexing
+                            # _process_single_combination now handles Keyword/Hybrid Retriever indexing
                             self._process_single_combination(
                                 retrieval_algorithm=algorithm,
                                 question_model_name=model_name,
@@ -679,8 +778,13 @@ class RagTester:
                                 chunk_size=chunk_size,
                                 overlap_size=overlap_size,
                                 question_llm_connector=current_question_llm_connector, # Pass instance
-                                retriever=current_retriever # Pass instance (will be indexed if keyword)
+                                retriever=current_retriever # Pass instance (will be indexed if keyword/hybrid)
                             )
+
+                        # Reset retriever after finishing all languages for an algorithm,
+                        # especially important if hybrid was initialized inside the loop.
+                        current_retriever = None
+
 
         logging.info("\n--- All Test Combinations Completed ---")
 
@@ -741,7 +845,7 @@ if __name__ == "__main__":
             logging.info(f"           Ensure 'create_databases.py' or 'rag_pipeline.py' has been run with")
             logging.info(f"           combinations matching the 'chunk_sizes_to_test' and 'overlap_sizes_to_test'")
             logging.info(f"           defined in '{config_to_test}' under 'rag_parameters'.")
-            logging.info(f"           These collections are needed for BOTH embedding retrieval AND keyword indexing.") # Added keyword note
+            logging.info(f"           These collections are needed for embedding, keyword indexing, AND hybrid retrieval.") # Updated note
         except Exception as config_ex:
              logging.error(f"Error loading configuration for pre-check: {config_ex}", exc_info=True)
              # Decide if this should prevent the run or just be a warning
