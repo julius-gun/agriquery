@@ -30,6 +30,12 @@ The project uses a dataset designed to test both answerable and unanswerable que
 
 For manual installation, follow these steps:
 
+0. **Install VS Core**
+
+    Install VS Code
+    Extensions:
+    - Python
+
 1.  **Clone the repository:**
 
     ```bash
