@@ -24,12 +24,17 @@ class ResultManager:
         filepath = os.path.join(self.output_dir, filename)
         if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
             try:
-                with open(filepath, "r") as f:
+                with open(filepath, "r", encoding='utf-8') as f:
                     loaded_results = json.load(f)
                     # print(f"Loaded {len(loaded_results)} previous results from {filepath}")
                     return loaded_results
             except json.JSONDecodeError:
                 print(f"Error decoding JSON from {filepath}. Starting fresh.")
+                return []
+            except UnicodeDecodeError as e:
+                print(f"Encoding error reading {filepath}: {e}. The file might not be UTF-8 encoded. Starting fresh.")
+                # Optionally, you could try other encodings here, but it's usually better
+                # to ensure files are consistently written in UTF-8 (see next step).
                 return []
         return []
 
