@@ -120,10 +120,10 @@
   "output_dir": "results",
   "rag_parameters": {
     "retrieval_algorithms_to_test": [
-      "keyword"
+      "hybrid"
     ],
     "chunk_sizes_to_test": [ 200 ],
     "overlap_sizes_to_test": [ 100 ],
-    "num_retrieved_docs": 3
+    "num_retrieved_docs": 10
   }
 }
