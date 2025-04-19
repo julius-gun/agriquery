@@ -95,8 +95,7 @@
     "phi3_8B_q4_mini-128k",
     "llama3.1_8B-128k",
     "llama3.2_3B-128k",
-    "llama3.2_1B-128k",
-    "phi4_14B-16k"
+    "llama3.2_1B-128k"
   ],
   "evaluator_model_name": "gemma3_12B-128k",
   "prompt_paths": {
@@ -128,18 +127,15 @@
   "output_dir": "results",
   "rag_parameters": {
     "retrieval_algorithms_to_test": [
-      "embedding"
+      "keyword",
+      "hybrid"
     ],
     "chunk_sizes_to_test": [
       200,
-      500,
-      1000,
-      2000
+      500    
     ],
     "overlap_sizes_to_test": [
-      100,
-      200,
-      500
+      100
     ],
     "num_retrieved_docs": 3
   }
