@@ -30,6 +30,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 DEFAULT_LLM_TYPE = "ollama" # Define default LLM type
 SAVE_PROMPT_FREQUENCY = 100 # Save every Nth prompt
 CHROMA_PERSIST_DIR = "chroma_db" # Define persist directory path
+DATASET_METRIC_KEY = "dataset_self_evaluation_success" # Define the key name
 
 class RagTester:
     """
@@ -56,6 +57,12 @@ class RagTester:
         self.chunk_sizes_to_test = self.rag_params_dict.get("chunk_sizes_to_test", [])
         self.overlap_sizes_to_test = self.rag_params_dict.get("overlap_sizes_to_test", [])
         self.num_retrieved_docs = self.rag_params_dict.get("num_retrieved_docs", 3)
+
+        # Load target dataset names for metric calculation
+        self.target_dataset_names = list(self.config_loader.get_question_dataset_paths().keys())
+        if not self.target_dataset_names:
+            logging.warning("Warning: No 'question_dataset_paths' found in config. Dataset success rates cannot be calculated.")
+
 
         self._validate_config() # Validation uses logging now
 
@@ -493,6 +500,7 @@ class RagTester:
         logging.info(f"\n--- Phase 3: Calculating Overall Metrics ---")
         if not final_results_list_for_metrics:
             logging.warning("  No valid results (yes/no evaluations without errors) available for metrics calculation.")
+            # Return an empty dict, but ensure it's handled correctly later
             return {}
 
         # We already filtered for 'yes'/'no' and no eval_error when creating final_results_list_for_metrics
@@ -511,7 +519,49 @@ class RagTester:
             return overall_metrics
         except Exception as e:
              logging.error(f"  Error calculating metrics: {e}", exc_info=True)
+             # Return a dict indicating error, consistent type
              return {"metrics_calculation_error": str(e)}
+
+    def _calculate_dataset_success_rates(
+        self,
+        evaluated_results_by_dataset: Dict[str, Dict[str, Any]]
+    ) -> Dict[str, float]:
+        """Calculates the 'yes' success rate for each target dataset."""
+        dataset_metrics = {}
+        logging.debug("Calculating dataset self-evaluation success rates...")
+
+        # Use the dataset names loaded during initialization
+        for dataset_name in self.target_dataset_names:
+            if dataset_name in evaluated_results_by_dataset:
+                dataset_content = evaluated_results_by_dataset[dataset_name]
+                results_list = dataset_content.get("results", [])
+
+                if not isinstance(results_list, list):
+                    logging.warning(f"Dataset '{dataset_name}' has invalid 'results' format. Skipping rate calculation.")
+                    continue
+
+                total_count = 0
+                yes_count = 0
+                for result_item in results_list:
+                    if isinstance(result_item, dict):
+                        total_count += 1
+                        # Count only if evaluation was successful ('yes') and there was no evaluation error
+                        if result_item.get("self_evaluation") == "yes" and not result_item.get("eval_error"):
+                            yes_count += 1
+                    # else: # No need to log warnings here again
+
+                if total_count > 0:
+                    rate = yes_count / total_count
+                    dataset_metrics[dataset_name] = rate
+                    logging.debug(f"  Dataset '{dataset_name}' success rate: {yes_count}/{total_count} = {rate:.4f}")
+                else:
+                    # If dataset exists but has 0 results, store 0.0 rate
+                    dataset_metrics[dataset_name] = 0.0
+                    logging.debug(f"  Dataset '{dataset_name}': 0 results found, rate = 0.0")
+            # else: # Dataset from config not present in these results
+            #    logging.debug(f"  Dataset '{dataset_name}' not found in current results.")
+
+        return dataset_metrics
 
 
     def _process_single_combination(
@@ -625,6 +675,16 @@ class RagTester:
 
         # --- Calculate Overall Metrics ---
         overall_metrics = self._calculate_and_print_metrics(metric_results_list)
+
+        # --- Calculate Per-Dataset Success Rates ---
+        # Ensure overall_metrics is a dictionary before adding to it
+        if not isinstance(overall_metrics, dict):
+            logging.warning(f"Overall metrics calculation did not return a dictionary ({type(overall_metrics)}). Initializing empty dict.")
+            overall_metrics = {} # Initialize as dict if it wasn't
+
+        dataset_success_rates = self._calculate_dataset_success_rates(evaluated_results)
+        overall_metrics[DATASET_METRIC_KEY] = dataset_success_rates # Add the new metrics
+
 
         # --- Prepare Final Results Dictionary ---
         overall_duration = qa_duration + eval_duration
