@@ -5,8 +5,8 @@ import os
 
 # --- Configuration ---
 # Define the config file path (could be made dynamic later)
-# CONFIG_FILE = "config.json"
-CONFIG_FILE = "config_fast.json"
+CONFIG_FILE = "config.json"
+# CONFIG_FILE = "config_fast.json"
 
 # --- Import the main testing function ---
 # This assumes main.py is in the root directory alongside rag_tester.py
