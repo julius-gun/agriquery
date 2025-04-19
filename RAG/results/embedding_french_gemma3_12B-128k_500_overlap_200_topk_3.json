@@ -19,7 +19,12 @@
         "true_negatives": 23,
         "false_positives": 31,
         "false_negatives": 19,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.7272727272727273,
+            "table_questions": 0.3,
+            "unanswerable_questions": 0.42592592592592593
+        }
     },
     "timing": {
         "overall_duration_seconds": 136.3569576740265,
@@ -132,7 +137,7 @@
                 {
                     "question": "What determines the machine's working width?",
                     "expected_answer": "Spreading disc RPM",
-                    "model_answer": "The machine's working width is determined by: \u00b7 the correct connection point for the PTO shaft with the power take-off speed and \u00b7 the drop point.",
+                    "model_answer": "The machine's working width is determined by: · the correct connection point for the PTO shaft with the power take-off speed and · the drop point.",
                     "page": 46,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "30\u00b0 vers le haut et de 30 \u00b0 vers le bas.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "30° vers le haut et de 30 ° vers le bas.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30\u00b0 vers le haut et de 30 \u00b0 vers le bas.",
+                    "model_answer": "30° vers le haut et de 30 ° vers le bas.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -262,7 +267,7 @@
                 {
                     "question": "What materials are required to perform the tray test?",
                     "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-                    "model_answer": "\u00b7 m\u00e8tre \u00e0 ruban ou r\u00e8gle gradu\u00e9e,\n\u00b7 niveau \u00e0 bulle pour r\u00e9gler les bacs de collecte \u00e0 l'horizontale,\n\u00b7 7 bacs de collecte,\n\u00b7 7 tubes de mesure,\n\u00b7 1 entonnoir,\n\u00b7 bloc-notes, stylo et calculatrice,\n\u00b7 manuel d'utilisation.\n",
+                    "model_answer": "· mètre à ruban ou règle graduée,\n· niveau à bulle pour régler les bacs de collecte à l'horizontale,\n· 7 bacs de collecte,\n· 7 tubes de mesure,\n· 1 entonnoir,\n· bloc-notes, stylo et calculatrice,\n· manuel d'utilisation.\n",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -402,7 +407,7 @@
                 {
                     "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
                     "expected_answer": "Remove all fertilizer remnants.",
-                    "model_answer": "\u00c9loignez pour cela tous les r\u00e9sidus d'engrais des orifices, des angles, des manchons et des flexibles avant de souder, couper ou tailler sur la machine.",
+                    "model_answer": "Éloignez pour cela tous les résidus d'engrais des orifices, des angles, des manchons et des flexibles avant de souder, couper ou tailler sur la machine.",
                     "page": 123,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -412,7 +417,7 @@
                 {
                     "question": "How many grease nipples do the discharge bushings have?",
                     "expected_answer": "Two grease nipples per discharge bushing.",
-                    "model_answer": "2 graisseurs sur les deux bagues d'\u00e9coulement",
+                    "model_answer": "2 graisseurs sur les deux bagues d'écoulement",
                     "page": 126,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -479,7 +484,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "sph\u00e9ricit\u00e9 irr\u00e9guli\u00e8re",
+                    "model_answer": "sphéricité irrégulière",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -696,7 +701,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "D\u00e9brayez la prise de force juste apr\u00e8s avoir ferm\u00e9 les unit\u00e9s de dosage.",
+                    "model_answer": "Débrayez la prise de force juste après avoir fermé les unités de dosage.",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -866,7 +871,7 @@
                 {
                     "question": "What specific type of 'Delicia Schnecken Linsen' slug pellets were used for the spreading chart example?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Granul\u00e9s anti-limaces",
+                    "model_answer": "Granulés anti-limaces",
                     "page": 69,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1046,7 +1051,7 @@
                 {
                     "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Plaques d'une \u00e9paisseur de 1,0 mm",
+                    "model_answer": "Plaques d'une épaisseur de 1,0 mm",
                     "page": 138,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

@@ -19,7 +19,12 @@
         "true_negatives": 29,
         "false_positives": 25,
         "false_negatives": 20,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.6136363636363636,
+            "table_questions": 0.7,
+            "unanswerable_questions": 0.5370370370370371
+        }
     },
     "timing": {
         "overall_duration_seconds": 223.3706476688385,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "30 \u00b0 when raised and 30 \u00b0 when lowered.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "30 ° when raised and 30 ° when lowered.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 upwards and 30\u00b0 downwards.",
+                    "model_answer": "The maximum operating angle of the coupling shaft is 30° upwards and 30° downwards.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -212,7 +217,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "600 Ben\u00f6tigte Auslassgeschwindigkeit (kg/min) = 27 (m) x 8 (km/h) x 25 (kg/ha)",
+                    "model_answer": "600 Benötigte Auslassgeschwindigkeit (kg/min) = 27 (m) x 8 (km/h) x 25 (kg/ha)",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -262,7 +267,7 @@
                 {
                     "question": "What materials are required to perform the tray test?",
                     "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-                    "model_answer": "Bandma\u00df or measuring stick, spirit level to set containers horizontally, 7 containers, 7 measuring tubes, 1 funnel, notebook, pen and calculator, this manual, and the software manual.",
+                    "model_answer": "Bandmaß or measuring stick, spirit level to set containers horizontally, 7 containers, 7 measuring tubes, 1 funnel, notebook, pen and calculator, this manual, and the software manual.",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -479,7 +484,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "eckig, mit scharfen Kanten und R\u00e4ndern",
+                    "model_answer": "eckig, mit scharfen Kanten und Rändern",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Before you leave the tractor, you must:\n\u00b7 turn off the PTO,\n\u00b7 depressurize the hydraulic system,\n\u00b7 turn off the electronic control system,\n\u00b7 turn off the tractor engine,\n\u00b7 remove the ignition key from the ignition switch,\n\u00b7 apply the tractor parking brake.",
+                    "model_answer": "Before you leave the tractor, you must:\n· turn off the PTO,\n· depressurize the hydraulic system,\n· turn off the electronic control system,\n· turn off the tractor engine,\n· remove the ignition key from the ignition switch,\n· apply the tractor parking brake.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

@@ -19,7 +19,12 @@
         "true_negatives": 44,
         "false_positives": 10,
         "false_negatives": 25,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.6136363636363636,
+            "table_questions": 0.2,
+            "unanswerable_questions": 0.8148148148148148
+        }
     },
     "timing": {
         "overall_duration_seconds": 597.7960660457611,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30 \u00b0 both when lifted and lowered.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "The maximum operating angle of the coupling shaft is 30 ° both when lifted and lowered.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "The maximum permissible operating angle for the coupling shaft is 30 \u00b0 when lifted and 30 \u00b0 when lowered.",
+                    "model_answer": "The maximum permissible operating angle for the coupling shaft is 30 ° when lifted and 30 ° when lowered.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -342,7 +347,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "The two functions for border spreading are:\n1. One-sided boundary spreading with the hydraulic border spreading plate.\n2. Boundary track spreading with ExactLine.\n<context>\n    ================================================================================\nPage 106\n================================================================================\n\n===Page 106===\n\nUse in the field\nBorder spreading\nINDICATION\n106\nSpreading fertiliser up to the border of the property requires concentration. On the one hand you want to achieve maximum cover to the field edge to ensure a good crop, while on the other hand you want to minimise the loss over the field edge.\nThe spreader has 2 different functions and accessories to cater for border spreading.\n\u00b7 one-sided boundary spreading with the hydraulic border spreading plate,\n\u00b7 boundary track spreading with ExactLine.\nWhen one-sided boundary spreading, drive with the tractor along the field edge and spread from the border inwards. With boundary track spreading, drive down the first sprayer tramline from the field edge and spray in the direction of the border.\nWe advise you to spread the site first before you spread the borders. During border spreading, the control system does not perform any automatic calibration, so it cannot accurately determine the correct dosing setting for the required application rate. Consequently, the application rate can deviate from the required application rate during border spreading. By spreading the field first, the control system can determine the correct dosing setting and thus spread at the correct application rate, also during border spreading.\n</context>",
+                    "model_answer": "The two functions for border spreading are:\n1. One-sided boundary spreading with the hydraulic border spreading plate.\n2. Boundary track spreading with ExactLine.\n<context>\n    ================================================================================\nPage 106\n================================================================================\n\n===Page 106===\n\nUse in the field\nBorder spreading\nINDICATION\n106\nSpreading fertiliser up to the border of the property requires concentration. On the one hand you want to achieve maximum cover to the field edge to ensure a good crop, while on the other hand you want to minimise the loss over the field edge.\nThe spreader has 2 different functions and accessories to cater for border spreading.\n· one-sided boundary spreading with the hydraulic border spreading plate,\n· boundary track spreading with ExactLine.\nWhen one-sided boundary spreading, drive with the tractor along the field edge and spread from the border inwards. With boundary track spreading, drive down the first sprayer tramline from the field edge and spray in the direction of the border.\nWe advise you to spread the site first before you spread the borders. During border spreading, the control system does not perform any automatic calibration, so it cannot accurately determine the correct dosing setting for the required application rate. Consequently, the application rate can deviate from the required application rate during border spreading. By spreading the field first, the control system can determine the correct dosing setting and thus spread at the correct application rate, also during border spreading.\n</context>",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Before leaving the tractor:\n\u00b7 switch off the PTO shaft,\n\u00b7 release pressure from the hydraulic system,\n\u00b7 switch off the electronic control system,\n\u00b7 turn off the tractor engine,\n\u00b7 remove the key from the ignition,\n\u00b7 engage the parking brake of the tractor.",
+                    "model_answer": "Before leaving the tractor:\n· switch off the PTO shaft,\n· release pressure from the hydraulic system,\n· switch off the electronic control system,\n· turn off the tractor engine,\n· remove the key from the ignition,\n· engage the parking brake of the tractor.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

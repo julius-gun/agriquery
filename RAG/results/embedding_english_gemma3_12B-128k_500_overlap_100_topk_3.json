@@ -19,7 +19,12 @@
         "true_negatives": 23,
         "false_positives": 31,
         "false_negatives": 14,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.7727272727272727,
+            "table_questions": 0.6,
+            "unanswerable_questions": 0.42592592592592593
+        }
     },
     "timing": {
         "overall_duration_seconds": 129.5095932483673,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "30 \u00b0 when lifted and 30 \u00b0 when lowered.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "30 ° when lifted and 30 ° when lowered.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 \u00b0 when lifted and 30 \u00b0 when lowered.",
+                    "model_answer": "30 ° when lifted and 30 ° when lowered.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -342,7 +347,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "\u00b7 one-sided boundary spreading with the hydraulic border spreading plate,\n\u00b7 boundary track spreading with ExactLine.",
+                    "model_answer": "· one-sided boundary spreading with the hydraulic border spreading plate,\n· boundary track spreading with ExactLine.",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -569,7 +574,7 @@
                 {
                     "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
                     "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
-                    "model_answer": "Page 115: \"\uf034 Pass an object such as a screwdriver through the discharge opening and carefully feel if you can find an object in or damage to the dosing openings or agitator.\"",
+                    "model_answer": "Page 115: \" Pass an object such as a screwdriver through the discharge opening and carefully feel if you can find an object in or damage to the dosing openings or agitator.\"",
                     "page": 152,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -696,7 +701,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Close the hopper cover and follow the working method as described in the previous paragraph \u00bbDamage\u00ab until emptying the hopper.",
+                    "model_answer": "Close the hopper cover and follow the working method as described in the previous paragraph »Damage« until emptying the hopper.",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Take all appropriate measures for road transport. \uf0ae See paragraph \u00bbPreparing the machine to be transported\u00ab on page 93.",
+                    "model_answer": "Take all appropriate measures for road transport.  See paragraph »Preparing the machine to be transported« on page 93.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

@@ -19,7 +19,12 @@
         "true_negatives": 24,
         "false_positives": 30,
         "false_negatives": 18,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.7272727272727273,
+            "table_questions": 0.4,
+            "unanswerable_questions": 0.4444444444444444
+        }
     },
     "timing": {
         "overall_duration_seconds": 168.2091851234436,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "30\u00b0 vers le haut et de 30 \u00b0 vers le bas.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "30° vers le haut et de 30 ° vers le bas.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -172,7 +177,7 @@
                 {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
-                    "model_answer": "Yes, the tractor's parking brake should be engaged. The instructions state: \"\uf034 Serrez le frein \u00e0 main sur le tracteur.\"",
+                    "model_answer": "Yes, the tractor's parking brake should be engaged. The instructions state: \" Serrez le frein à main sur le tracteur.\"",
                     "page": 52,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30\u00b0 vers le haut et de 30 \u00b0 vers le bas.",
+                    "model_answer": "30° vers le haut et de 30 ° vers le bas.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -362,7 +367,7 @@
                 {
                     "question": "What should you do if a spreading disc spreads irregularly?",
                     "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-                    "model_answer": "Tracez \u00e0 chaque fois des orni\u00e8res avant de proc\u00e9der \u00e0 l'\u00e9pandage.",
+                    "model_answer": "Tracez à chaque fois des ornières avant de procéder à l'épandage.",
                     "page": 113,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -479,7 +484,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "sph\u00e9ricit\u00e9 irr\u00e9guli\u00e8re",
+                    "model_answer": "sphéricité irrégulière",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -616,7 +621,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The IM Tellus Input cable can be used to connect the tractor\u2019s speed sensor or radar to the IsoMatch Tellus control unit.",
+                    "model_answer": "The IM Tellus Input cable can be used to connect the tractor’s speed sensor or radar to the IsoMatch Tellus control unit.",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "\u00b7 d\u00e9brayant la prise de force,\n\u00b7 coup\u00e9 le syst\u00e8me de commande \u00e9lectronique,\n\u00b7 mis hors pression le syst\u00e8me hydraulique,\n\u00b7 coup\u00e9 le moteur du tracteur,\n\u00b7 retir\u00e9 la cl\u00e9 du contact,\n\u00b7 serrer le frein \u00e0 main sur le tracteur.",
+                    "model_answer": "· débrayant la prise de force,\n· coupé le système de commande électronique,\n· mis hors pression le système hydraulique,\n· coupé le moteur du tracteur,\n· retiré la clé du contact,\n· serrer le frein à main sur le tracteur.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -866,7 +871,7 @@
                 {
                     "question": "What specific type of 'Delicia Schnecken Linsen' slug pellets were used for the spreading chart example?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Granul\u00e9s anti-limaces",
+                    "model_answer": "Granulés anti-limaces",
                     "page": 69,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -906,7 +911,7 @@
                 {
                     "question": "What type of 'active carbon filters' are recommended for closed tractor cabin to filter fertilizer dust?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Filtres de carbone actif au niveau des arriv\u00e9es d'air.",
+                    "model_answer": "Filtres de carbone actif au niveau des arrivées d'air.",
                     "page": 94,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1046,7 +1051,7 @@
                 {
                     "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Plaques d'une \u00e9paisseur de 1,0 mm",
+                    "model_answer": "Plaques d'une épaisseur de 1,0 mm",
                     "page": 138,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

@@ -19,7 +19,12 @@
         "true_negatives": 23,
         "false_positives": 31,
         "false_negatives": 17,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.8181818181818182,
+            "table_questions": 0.1,
+            "unanswerable_questions": 0.42592592592592593
+        }
     },
     "timing": {
         "overall_duration_seconds": 110.78049898147583,
@@ -92,7 +97,7 @@
                 {
                     "question": "How long should the main switch button be pressed to turn the control box on or off?",
                     "expected_answer": "At least 1 second.",
-                    "model_answer": "Halten Sie die Schaltfl\u00e4che mindestens 1 Sekunde gedr\u00fcckt.\n",
+                    "model_answer": "Halten Sie die Schaltfläche mindestens 1 Sekunde gedrückt.\n",
                     "page": 34,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "30 \u00b0 nach oben and 30 \u00b0 nach unten.\n",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "30 ° nach oben and 30 ° nach unten.\n",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30\u00b0",
+                    "model_answer": "30°",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -262,7 +267,7 @@
                 {
                     "question": "What materials are required to perform the tray test?",
                     "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-                    "model_answer": "[Carefully extract the EXACT information that directly answers the question, keeping it as brief as possible]\nBandma\u00df oder Messlatte, Wasserwaage.",
+                    "model_answer": "[Carefully extract the EXACT information that directly answers the question, keeping it as brief as possible]\nBandmaß oder Messlatte, Wasserwaage.",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -272,7 +277,7 @@
                 {
                     "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
                     "expected_answer": "3 m/s)",
-                    "model_answer": "3 m/s (Windst\u00e4rke 2)",
+                    "model_answer": "3 m/s (Windstärke 2)",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -282,7 +287,7 @@
                 {
                     "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
                     "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "75 cm oberhalb der Auffangbeh\u00e4lter",
+                    "model_answer": "75 cm oberhalb der Auffangbehälter",
                     "page": 84,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -342,7 +347,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "\u00b7 Einscheiben-Grenzstreuen mit dem hydraulischen Grenzstreublech,\n\u00b7 Zweischeiben-Grenzstreuen mit ExactLine.",
+                    "model_answer": "· Einscheiben-Grenzstreuen mit dem hydraulischen Grenzstreublech,\n· Zweischeiben-Grenzstreuen mit ExactLine.",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -362,7 +367,7 @@
                 {
                     "question": "What should you do if a spreading disc spreads irregularly?",
                     "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-                    "model_answer": "\uf034 \u00dcberpr\u00fcfen Sie, ob die Maschine in L\u00e4nge und Breite horizontal hinter dem Schlepper h\u00e4ngt.\n\uf034 F\u00fchren Sie die \u00bbKontrolle und Einstellung Dosiermechanismus\u00ab aus, wie auf Seite 133 beschrieben und wiederholen Sie diesen Test.\n\uf034 F\u00fchren Sie die \u00bbKontrolle und Einstellung Einstellmechanismus Auslauf\u00f6ffnung\u00ab aus, wie auf Seite 136 beschrieben und wiederholen Sie diesen Test.",
+                    "model_answer": " Überprüfen Sie, ob die Maschine in Länge und Breite horizontal hinter dem Schlepper hängt.\n Führen Sie die »Kontrolle und Einstellung Dosiermechanismus« aus, wie auf Seite 133 beschrieben und wiederholen Sie diesen Test.\n Führen Sie die »Kontrolle und Einstellung Einstellmechanismus Auslauföffnung« aus, wie auf Seite 136 beschrieben und wiederholen Sie diesen Test.",
                     "page": 113,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -479,7 +484,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "eckig, mit scharfen Kanten und R\u00e4ndern",
+                    "model_answer": "eckig, mit scharfen Kanten und Rändern",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "\u00b7 die Zapfwelle ausschalten,",
+                    "model_answer": "· die Zapfwelle ausschalten,",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -786,7 +791,7 @@
                 {
                     "question": "What is the curriculum of the training program agrarians need to complete to be considered competent to operate this machine?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The training program is for \"ausgebildete Landwirte und andere Personen, die f\u00fcr die Arbeit in der Landwirtschaft geschult wurden, die gem\u00e4\u00df der nationalen Gesetzgebung f\u00fcr den Gebrauch dieser Maschine befugt sind und \u00fcber Kenntnisse bei Montagearbeiten verf\u00fcgen.\"",
+                    "model_answer": "The training program is for \"ausgebildete Landwirte und andere Personen, die für die Arbeit in der Landwirtschaft geschult wurden, die gemäß der nationalen Gesetzgebung für den Gebrauch dieser Maschine befugt sind und über Kenntnisse bei Montagearbeiten verfügen.\"",
                     "page": 4,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1046,7 +1051,7 @@
                 {
                     "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Pl\u00e4ttchen with a thickness of 1.0 mm.",
+                    "model_answer": "Plättchen with a thickness of 1.0 mm.",
                     "page": 138,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

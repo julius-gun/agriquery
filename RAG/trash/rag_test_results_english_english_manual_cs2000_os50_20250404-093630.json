@@ -26,7 +26,12 @@
         "true_negatives": 33,
         "false_positives": 21,
         "false_negatives": 20,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.7272727272727273,
+            "table_questions": 0.2,
+            "unanswerable_questions": 0.6111111111111112
+        }
     },
     "overall_duration_seconds": 933.0421566963196,
     "duration_qa_phase_seconds": 914.5705811977386,
@@ -166,8 +171,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30 \u00b0 when lifted and 30 \u00b0 when lowered.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "The maximum operating angle of the coupling shaft is 30 ° when lifted and 30 ° when lowered.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -187,7 +192,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "The maximum permissible operating angle of the coupling shaft is 30 \u00b0 when lifted and 30 \u00b0 when lowered.",
+                    "model_answer": "The maximum permissible operating angle of the coupling shaft is 30 ° when lifted and 30 ° when lowered.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -377,7 +382,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "Maximum allowable temperature: 40\u00b0C.",
+                    "model_answer": "Maximum allowable temperature: 40°C.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -701,7 +706,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "<answer>\n    Proceed by:\n    \uf034 Disconnecting the PTO shaft immediately!\n    \uf034 Switching off the electronic control system.\n    \uf034 Switching the tractor off, removing the key from the ignition, and engaging the handbrake of the tractor.\n</answer>",
+                    "model_answer": "<answer>\n    Proceed by:\n     Disconnecting the PTO shaft immediately!\n     Switching off the electronic control system.\n     Switching the tractor off, removing the key from the ignition, and engaging the handbrake of the tractor.\n</answer>",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -731,7 +736,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "\"Take all appropriate measures for road transport. See paragraph \u00bbPreparing the machine to be transported\u00ab on page 93.\"",
+                    "model_answer": "\"Take all appropriate measures for road transport. See paragraph »Preparing the machine to be transported« on page 93.\"",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

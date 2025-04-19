@@ -19,7 +19,12 @@
         "true_negatives": 47,
         "false_positives": 7,
         "false_negatives": 35,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.4318181818181818,
+            "table_questions": 0.0,
+            "unanswerable_questions": 0.8703703703703703
+        }
     },
     "timing": {
         "overall_duration_seconds": 82.71958422660828,

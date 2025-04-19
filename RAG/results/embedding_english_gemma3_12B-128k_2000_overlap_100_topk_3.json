@@ -19,7 +19,12 @@
         "true_negatives": 31,
         "false_positives": 23,
         "false_negatives": 17,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.7272727272727273,
+            "table_questions": 0.5,
+            "unanswerable_questions": 0.5740740740740741
+        }
     },
     "timing": {
         "overall_duration_seconds": 261.7616515159607,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30 \u00b0 when lifted and 30 \u00b0 when lowered.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "The maximum operating angle of the coupling shaft is 30 ° when lifted and 30 ° when lowered.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30\u00b0",
+                    "model_answer": "30°",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -342,7 +347,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "\u00b7 one-sided boundary spreading with the hydraulic border spreading plate,\n\u00b7 boundary track spreading with ExactLine.",
+                    "model_answer": "· one-sided boundary spreading with the hydraulic border spreading plate,\n· boundary track spreading with ExactLine.",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -362,7 +367,7 @@
                 {
                     "question": "What should you do if a spreading disc spreads irregularly?",
                     "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-                    "model_answer": "Check if the machine is hanging horizontally and vertically behind the tractor in length and width. Perform the \u00bbChecking and setting the dosing mechanism\u00ab and repeat the test. Perform the \u00bbChecking and setting the discharge point setting mechanism\u00ab and repeat the test.",
+                    "model_answer": "Check if the machine is hanging horizontally and vertically behind the tractor in length and width. Perform the »Checking and setting the dosing mechanism« and repeat the test. Perform the »Checking and setting the discharge point setting mechanism« and repeat the test.",
                     "page": 113,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "\u00b7 switch the PTO shaft off,\n\u00b7 release the pressure from the hydraulic system,\n\u00b7 switch the electronic control system off,\n\u00b7 switch the tractor off,\n\u00b7 remove the key from the ignition,\n\u00b7 engage the parking brake of the tractor.",
+                    "model_answer": "· switch the PTO shaft off,\n· release the pressure from the hydraulic system,\n· switch the electronic control system off,\n· switch the tractor off,\n· remove the key from the ignition,\n· engage the parking brake of the tractor.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

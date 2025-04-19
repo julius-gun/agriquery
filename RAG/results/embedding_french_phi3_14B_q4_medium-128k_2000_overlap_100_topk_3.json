@@ -19,7 +19,12 @@
         "true_negatives": 45,
         "false_positives": 9,
         "false_negatives": 25,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.6363636363636364,
+            "table_questions": 0.1,
+            "unanswerable_questions": 0.8333333333333334
+        }
     },
     "timing": {
         "overall_duration_seconds": 557.3311388492584,
@@ -92,7 +97,7 @@
                 {
                     "question": "How long should the main switch button be pressed to turn the control box on or off?",
                     "expected_answer": "At least 1 second.",
-                    "model_answer": "Maintenir le bouton enfonc\u00e9 pendant au moins 1 seconde.",
+                    "model_answer": "Maintenir le bouton enfoncé pendant au moins 1 seconde.",
                     "page": 34,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -112,7 +117,7 @@
                 {
                     "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
                     "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
-                    "model_answer": "Montez le tube servant de pied \u00e0 la console sur une base solide. Si l'emplacement de montage dans la cabine n'a pas \u00e9t\u00e9 d\u00e9termin\u00e9 auparavant, vous devez r\u00e9aliser un socle dans lequel ins\u00e9rer le tube.",
+                    "model_answer": "Montez le tube servant de pied à la console sur une base solide. Si l'emplacement de montage dans la cabine n'a pas été déterminé auparavant, vous devez réaliser un socle dans lequel insérer le tube.",
                     "page": 40,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -161,7 +166,7 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
                     "model_answer": "The maximum operating angle of the coupling shaft is 30 degrees upwards and 30 degrees downwards.",
                     "page": 51,
                     "dataset": "general_questions",
@@ -172,7 +177,7 @@
                 {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
-                    "model_answer": "Yes, the parking brake of the tractor should be engaged before connecting the machine. This is mentioned in the context under \"Attelage au tracteur\" on Page 56: \"Coupez le moteur du tracteur, retirez la cl\u00e9 du contact et serrez le frein \u00e0 main sur le tracteur.\"",
+                    "model_answer": "Yes, the parking brake of the tractor should be engaged before connecting the machine. This is mentioned in the context under \"Attelage au tracteur\" on Page 56: \"Coupez le moteur du tracteur, retirez la clé du contact et serrez le frein à main sur le tracteur.\"",
                     "page": 52,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -342,7 +347,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "1. Epandage unilat\u00e9ral en bordure avec le d\u00e9flecteur de bordure hydraulique (mode environnement)\n2. \u00c9pandage des bordures avec ExactLine (mode rendement)\n\n================================================================================\nPage 106\n================================================================================\n\n\n===Page 106===\n\nUtilisation dans les champs\n\u00c9pandage de bordure\nINDICATION\n106\nLa dispersion d'engrais sur le bord de la parcelle n\u00e9cessite une attention sp\u00e9cifique. D'une part, vous voulez une dose compl\u00e9mentaire maximale apr\u00e8s la bordure pour un bon rendement, d'autre part, vous voulez minimiser les pertes de l'autre c\u00f4t\u00e9 de la bordure de parcelle.\nL'\u00e9pandeur a 2 fa\u00e7ons diff\u00e9rentes de travailler et autant d'adaptations correspondantes pour l'\u00e9pandage de bordure.\n\u00b7 \u00c9pandage unilat\u00e9ral en bordure \u00e0 l'aide du d\u00e9flecteur de bordure hydraulique,\n\u00b7 \u00c9pandage des bordures avec ExactLine.\nPour l'\u00e9pandage unilat\u00e9ral en bordure, vous passez avec le tracteur le long de la bordure de parcelle et vous \u00e9pandez dans la parcelle \u00e0 partir de cette bordure. Pour l'\u00e9pandage de bordure, vous passez dans la premi\u00e8re voie de pulv\u00e9risation \u00e0 partir de la bordure de parcelle et vous \u00e9pandez en direction de la bordure de parcelle.\nNous vous recommandons d'\u00e9pandre en premier lieu sur la parcelle avant d'\u00e9pandre sur les bordures. Au cours de l'\u00e9pandage de bordure, le syst\u00e8me de commande n'effectue aucun \u00e9talonnage automatique et ne peut ainsi pas d\u00e9terminer avec pr\u00e9cision le bon r\u00e9glage des ouvertures correspondant au d\u00e9bit souhait\u00e9. Par cons\u00e9quent, le d\u00e9bit peut diff\u00e9rer par rapport au d\u00e9bit souhait\u00e9 au cours de l'\u00e9pandage de bordure. En proc\u00e9dant d'abord \u00e0 l'\u00e9pandage sur la parcelle, le syst\u00e8me de commande peut d\u00e9terminer le bon r\u00e9glage des ouvertures et \u00e9pandre avec le d\u00e9bit ad\u00e9quat, m\u00eame au cours de l'\u00e9pandage de bordure.\n\uf0ae Reportez-vous \u00e9galement au paragraphe \u00bb\u00c9pandage de bordure\u00ab de la page 106.",
+                    "model_answer": "1. Epandage unilatéral en bordure avec le déflecteur de bordure hydraulique (mode environnement)\n2. Épandage des bordures avec ExactLine (mode rendement)\n\n================================================================================\nPage 106\n================================================================================\n\n\n===Page 106===\n\nUtilisation dans les champs\nÉpandage de bordure\nINDICATION\n106\nLa dispersion d'engrais sur le bord de la parcelle nécessite une attention spécifique. D'une part, vous voulez une dose complémentaire maximale après la bordure pour un bon rendement, d'autre part, vous voulez minimiser les pertes de l'autre côté de la bordure de parcelle.\nL'épandeur a 2 façons différentes de travailler et autant d'adaptations correspondantes pour l'épandage de bordure.\n· Épandage unilatéral en bordure à l'aide du déflecteur de bordure hydraulique,\n· Épandage des bordures avec ExactLine.\nPour l'épandage unilatéral en bordure, vous passez avec le tracteur le long de la bordure de parcelle et vous épandez dans la parcelle à partir de cette bordure. Pour l'épandage de bordure, vous passez dans la première voie de pulvérisation à partir de la bordure de parcelle et vous épandez en direction de la bordure de parcelle.\nNous vous recommandons d'épandre en premier lieu sur la parcelle avant d'épandre sur les bordures. Au cours de l'épandage de bordure, le système de commande n'effectue aucun étalonnage automatique et ne peut ainsi pas déterminer avec précision le bon réglage des ouvertures correspondant au débit souhaité. Par conséquent, le débit peut différer par rapport au débit souhaité au cours de l'épandage de bordure. En procédant d'abord à l'épandage sur la parcelle, le système de commande peut déterminer le bon réglage des ouvertures et épandre avec le débit adéquat, même au cours de l'épandage de bordure.\n Reportez-vous également au paragraphe »Épandage de bordure« de la page 106.",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -352,7 +357,7 @@
                 {
                     "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
                     "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-                    "model_answer": "1. D\u00e9brayez imm\u00e9diatement la prise de force.\n2. Coupez le moteur du tracteur, retirez la cl\u00e9 du contact et serrez le frein \u00e0 main sur le tracteur.",
+                    "model_answer": "1. Débrayez immédiatement la prise de force.\n2. Coupez le moteur du tracteur, retirez la clé du contact et serrez le frein à main sur le tracteur.",
                     "page": 108,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -362,7 +367,7 @@
                 {
                     "question": "What should you do if a spreading disc spreads irregularly?",
                     "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-                    "model_answer": "If a spreading disc spreads irregularly, you should perform a distribution check on bins to control the spread. This is mentioned in the context under \"Contr\u00f4le du profil d'\u00e9pandage (test sur bacs)\" on page 76. If the issue persists or if there are visible defects, it may be necessary to adjust the spreading disc and perform maintenance as per the guidelines provided for troubleshooting obstructions in the context under \"En cas de dommage\" on pages 115-116.",
+                    "model_answer": "If a spreading disc spreads irregularly, you should perform a distribution check on bins to control the spread. This is mentioned in the context under \"Contrôle du profil d'épandage (test sur bacs)\" on page 76. If the issue persists or if there are visible defects, it may be necessary to adjust the spreading disc and perform maintenance as per the guidelines provided for troubleshooting obstructions in the context under \"En cas de dommage\" on pages 115-116.",
                     "page": 113,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -372,7 +377,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "Maximum allowable temperature: 40\u00b0C.",
+                    "model_answer": "Maximum allowable temperature: 40°C.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -382,7 +387,7 @@
                 {
                     "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
                     "expected_answer": "80 bar",
-                    "model_answer": "The context does not provide a specific maximum allowable pressure in bar for cleaning the machine with water or steam. The instructions mention using \"une pression et une temp\u00e9rature peu \u00e9lev\u00e9es,\" but do not specify exact values, so the answer is \"Not found in context.\"",
+                    "model_answer": "The context does not provide a specific maximum allowable pressure in bar for cleaning the machine with water or steam. The instructions mention using \"une pression et une température peu élevées,\" but do not specify exact values, so the answer is \"Not found in context.\"",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -716,7 +721,7 @@
                 {
                     "question": "What is seven-sided boundary spreading with the hydraulicborder spreading plate?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Page 107 describes \"\u00c9pandage unilat\u00e9ral en bordure avec le d\u00e9flecteur de bordure hydraulique\" (Unilateral spreading at the edge with the hydraulic border spreader plate). It involves rolling along the edge of a field and using the hydraulic border spreader to control the flow of fertilizer. The width of work at the edge is adjusted by changing the position of the hydraulic border spreader.",
+                    "model_answer": "Page 107 describes \"Épandage unilatéral en bordure avec le déflecteur de bordure hydraulique\" (Unilateral spreading at the edge with the hydraulic border spreader plate). It involves rolling along the edge of a field and using the hydraulic border spreader to control the flow of fertilizer. The width of work at the edge is adjusted by changing the position of the hydraulic border spreader.",
                     "page": 107,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Before leaving the tractor:\n- D\u00e9bray the power take-off (PTO)\n- Release hydraulic pressure in the system\n- Disconnect the control unit\n- Cut off the tractor's ignition key\n- Engage the handbrake on the tractor",
+                    "model_answer": "Before leaving the tractor:\n- Débray the power take-off (PTO)\n- Release hydraulic pressure in the system\n- Disconnect the control unit\n- Cut off the tractor's ignition key\n- Engage the handbrake on the tractor",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -916,7 +921,7 @@
                 {
                     "question": "What is the tolerance for 'measured distance from the bottom of the vanes, the distance to the ground or the crop' in cm?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The tolerance for 'measured distance from the bottom of the vanes, the distance to the ground or the crop' is not specified in cm. The context only states that \"La distance entre la bague d'\u00e9coulement et le disque d'\u00e9pandage doit \u00eatre de 1,0 mm.\"",
+                    "model_answer": "The tolerance for 'measured distance from the bottom of the vanes, the distance to the ground or the crop' is not specified in cm. The context only states that \"La distance entre la bague d'écoulement et le disque d'épandage doit être de 1,0 mm.\"",
                     "page": 95,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

@@ -19,7 +19,12 @@
         "true_negatives": 46,
         "false_positives": 8,
         "false_negatives": 31,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.5227272727272727,
+            "table_questions": 0.0,
+            "unanswerable_questions": 0.8518518518518519
+        }
     },
     "timing": {
         "overall_duration_seconds": 570.1213901042938,
@@ -112,7 +117,7 @@
                 {
                     "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
                     "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
-                    "model_answer": "Schwei\u00dfen Sie eine Fu\u00dfplatte vor der Montage auf einer ausgew\u00e4hlten Fl\u00e4che in der Kabine.",
+                    "model_answer": "Schweißen Sie eine Fußplatte vor der Montage auf einer ausgewählten Fläche in der Kabine.",
                     "page": 40,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 both when lifted and lowered.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "The maximum operating angle of the coupling shaft is 30° both when lifted and lowered.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -212,7 +217,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "600 Ben\u00f6tigte Auslassgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x gew\u00fcnschte Dosis (kg/ha).",
+                    "model_answer": "600 Benötigte Auslassgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x gewünschte Dosis (kg/ha).",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -292,7 +297,7 @@
                 {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
-                    "model_answer": "75 cm over the Auffangbeh\u00e4ltern.",
+                    "model_answer": "75 cm over the Auffangbehältern.",
                     "page": 89,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -372,7 +377,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "The maximum allowable temperature for cleaning the machine with water or steam is 40\u00b0C.",
+                    "model_answer": "The maximum allowable temperature for cleaning the machine with water or steam is 40°C.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -382,7 +387,7 @@
                 {
                     "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
                     "expected_answer": "80 bar",
-                    "model_answer": "The context does not provide a specific maximum allowable pressure in bar for cleaning the machine with water or steam. The instructions mention using \"only low pressure at a temperature of up to 80\u00b0C\" but do not specify an exact value in bars. Therefore, the answer is: Not found in context.",
+                    "model_answer": "The context does not provide a specific maximum allowable pressure in bar for cleaning the machine with water or steam. The instructions mention using \"only low pressure at a temperature of up to 80°C\" but do not specify an exact value in bars. Therefore, the answer is: Not found in context.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "1. Schlepper ausschalten,\n2. Hydrauliksystem drucklos machen,\n3. elektronisches Steuersystem ausschalten,\n4. Z\u00fcndschl\u00fcssel vom Z\u00fcndschloss abziehen,\n5. Feststellbremse des Schleppers anziehen.",
+                    "model_answer": "1. Schlepper ausschalten,\n2. Hydrauliksystem drucklos machen,\n3. elektronisches Steuersystem ausschalten,\n4. Zündschlüssel vom Zündschloss abziehen,\n5. Feststellbremse des Schleppers anziehen.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -746,7 +751,7 @@
                 {
                     "question": "Why is damage to the vanes, spreading disc or discharge bushing, most likely caused by a hard object?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The context suggests that damage to the vanes, spreading disc or discharge bushing is most likely caused by a hard object because if these components are found damaged during inspection, it indicates that they were struck by something hard. The text states: \"Wenn Sie feststellen sollten, dass die Schaufeln, die Streuscheibe oder die Auslaufrohre besch\u00e4digt sind, dann wurde die St\u00f6rung h\u00f6chstwahrscheinlich durch einen harten Gegenstand verursacht.\"",
+                    "model_answer": "The context suggests that damage to the vanes, spreading disc or discharge bushing is most likely caused by a hard object because if these components are found damaged during inspection, it indicates that they were struck by something hard. The text states: \"Wenn Sie feststellen sollten, dass die Schaufeln, die Streuscheibe oder die Auslaufrohre beschädigt sind, dann wurde die Störung höchstwahrscheinlich durch einen harten Gegenstand verursacht.\"",
                     "page": 115,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1026,7 +1031,7 @@
                 {
                     "question": "What is the typical agitator 'seal ring' lifespan in operational hours before requiring replacement?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The typical agitator 'seal ring' requires replacement after each season or every 100 operational hours.\n\n<context>\n    ================================================================================\nPage 140\n================================================================================\n\n===Page 140===\nVermeiden Sie den Kontakt mit Kunstd\u00fcnger und anderen Mitteln\nBeim F\u00fcllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstd\u00fcnger und anderen Mitteln, die Sie ausstreuen m\u00f6chten. Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie die zus\u00e4tzliche Hinweise. Der Kontakt kann K\u00f6rperverletzungen verursachen.\nAchtung Quetschgefahr\nBei der \u00dcberpr\u00fcfung und Einstellung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher w\u00e4hrend der \u00dcberpr\u00fcfung und Einstellung, indem Sie:\n\u00b7 das elektronische Steuersystem ausschalten,\n\u00b7 den Schlepper ausschalten und den Z\u00fcndschl\u00fcssel vom Z\u00fcndschloss abziehen,\n\u00b7 die Feststellbremse des Schleppers anziehen,\n\u00b7 warten, bis alle Teile der Maschine still stehen, bevor Sie mit der Wartung beginnen.\n\u00b7 sch\u00fctzende Kleidung, wie z. B. Sicherheitshandschuhe und Sicherheitsschuhe tragen,\n\u00b7 die beschriebenen Handlungen alleine und vorsichtig ausf\u00fchren.\nDie R\u00fchrerwelle ist mit einer Kunststoffdichtung versehen, um zu vermeiden, dass Sie Kunstd\u00fcngerk\u00f6rner entlang der R\u00fchrerwelle verlieren. Die Dichtung muss jede Saison und nach jeweils einer hundert Betriebsstunden der Maschine ausgetauscht werden. Arbeiten Sie nur an einer sauberen Maschine mit geleertem K\u00fcbel.\n\uf034 Stellen Sie den Feindosierhebel auf die Stellung f\u00fcr Normaldosierung.\n\uf034 Starten Sie den Schlepper und schalten Sie das Bedienpult ein.\n\uf0ae Siehe die Bedienungsanleitung der Software\n\uf034 Warten Sie, bis die beiden Stellglieder vollkommen herausgeschoben und die Dosiereinheiten ganz ge\u00f6ffnet sind.\n\uf034 Schalten Sie die Maschine auf den Boden auf feste St\u00fctzen auf einem flachen, festen Untergrund.\n\uf034 Schalten Sie das elektronische Bediensystem und den Schlepper aus, ziehen Sie den Schl\u00fcssel aus dem Z\u00fcndschloss ab und bet\u00e4tigen Sie die Feststellbremse des Schleppers.\n\n================================================================================\nPage 141\n================================================================================\n\n===Page 141===\n[Image]\n[Image]\n[Image]\nWartung\n[Image]\n\uf034 \u00d6ffnen Sie die Siebe mit dem mitgelieferten Zubeh\u00f6rteil und sichern diese.\n\uf034 Nehmen Sie den R\u00fchrer von der R\u00fchrerwelle ab.\n\uf034 St\u00fctzen Sie den Kunststofflagerring durch eine Dosier\u00f6ffnung, so dass dieser nicht nach unten f\u00e4llt.\n\uf034 Schrauben Sie die 3 Befestigungsschrauben von den Dichtungsringen ab.\n\uf034 Nehmen Sie die Metalldichtringe ab.\n\uf034 Kontrollieren Sie den Zustand der R\u00fchrerwelle.\n\uf034 Tauschen Sie die Kunststoffdichtring aus.\n\uf034 Platzieren Sie wieder die Metalldichtringe.\n\uf034 Montieren Sie wieder die 3 Befestigungsschrauben.\nTIPP Nach dem Anziehen der ersten Befestigungsschraube k\u00f6nnen Sie den Kunststofflagerring wieder loslassen.\n\uf034 Montieren Sie den R\u00fchrer wieder an der R\u00fchrerwelle.\nF\u00fchren sie anschlie\u00dfend die Kontrolle aus, wie beschrieben ist in \uf0ae Absatz \u00bbKontrolle und Einstellung Dosiermechanismus\u00ab auf Seite 133.\n141\n\n================================================================================\nPage 142\n================================================================================\n\n===Page 142===\nZubeh\u00f6r\nZusatzausr\u00fcstungen f\u00fcr Ihre Mas",
+                    "model_answer": "The typical agitator 'seal ring' requires replacement after each season or every 100 operational hours.\n\n<context>\n    ================================================================================\nPage 140\n================================================================================\n\n===Page 140===\nVermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln\nBeim Füllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstdünger und anderen Mitteln, die Sie ausstreuen möchten. Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie die zusätzliche Hinweise. Der Kontakt kann Körperverletzungen verursachen.\nAchtung Quetschgefahr\nBei der Überprüfung und Einstellung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher während der Überprüfung und Einstellung, indem Sie:\n· das elektronische Steuersystem ausschalten,\n· den Schlepper ausschalten und den Zündschlüssel vom Zündschloss abziehen,\n· die Feststellbremse des Schleppers anziehen,\n· warten, bis alle Teile der Maschine still stehen, bevor Sie mit der Wartung beginnen.\n· schützende Kleidung, wie z. B. Sicherheitshandschuhe und Sicherheitsschuhe tragen,\n· die beschriebenen Handlungen alleine und vorsichtig ausführen.\nDie Rührerwelle ist mit einer Kunststoffdichtung versehen, um zu vermeiden, dass Sie Kunstdüngerkörner entlang der Rührerwelle verlieren. Die Dichtung muss jede Saison und nach jeweils einer hundert Betriebsstunden der Maschine ausgetauscht werden. Arbeiten Sie nur an einer sauberen Maschine mit geleertem Kübel.\n Stellen Sie den Feindosierhebel auf die Stellung für Normaldosierung.\n Starten Sie den Schlepper und schalten Sie das Bedienpult ein.\n Siehe die Bedienungsanleitung der Software\n Warten Sie, bis die beiden Stellglieder vollkommen herausgeschoben und die Dosiereinheiten ganz geöffnet sind.\n Schalten Sie die Maschine auf den Boden auf feste Stützen auf einem flachen, festen Untergrund.\n Schalten Sie das elektronische Bediensystem und den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss ab und betätigen Sie die Feststellbremse des Schleppers.\n\n================================================================================\nPage 141\n================================================================================\n\n===Page 141===\n[Image]\n[Image]\n[Image]\nWartung\n[Image]\n Öffnen Sie die Siebe mit dem mitgelieferten Zubehörteil und sichern diese.\n Nehmen Sie den Rührer von der Rührerwelle ab.\n Stützen Sie den Kunststofflagerring durch eine Dosieröffnung, so dass dieser nicht nach unten fällt.\n Schrauben Sie die 3 Befestigungsschrauben von den Dichtungsringen ab.\n Nehmen Sie die Metalldichtringe ab.\n Kontrollieren Sie den Zustand der Rührerwelle.\n Tauschen Sie die Kunststoffdichtring aus.\n Platzieren Sie wieder die Metalldichtringe.\n Montieren Sie wieder die 3 Befestigungsschrauben.\nTIPP Nach dem Anziehen der ersten Befestigungsschraube können Sie den Kunststofflagerring wieder loslassen.\n Montieren Sie den Rührer wieder an der Rührerwelle.\nFühren sie anschließend die Kontrolle aus, wie beschrieben ist in  Absatz »Kontrolle und Einstellung Dosiermechanismus« auf Seite 133.\n141\n\n================================================================================\nPage 142\n================================================================================\n\n===Page 142===\nZubehör\nZusatzausrüstungen für Ihre Mas",
                     "page": 134,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

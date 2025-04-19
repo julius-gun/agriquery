@@ -19,7 +19,12 @@
         "true_negatives": 33,
         "false_positives": 21,
         "false_negatives": 17,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.75,
+            "table_questions": 0.4,
+            "unanswerable_questions": 0.6111111111111112
+        }
     },
     "timing": {
         "overall_duration_seconds": 3668.8418538570404,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "30\u00b0 when lifted and 30\u00b0 when lowered.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "30° when lifted and 30° when lowered.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30\u00b0",
+                    "model_answer": "30°",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]\n\uf034 Close the dosing units.\n\uf034 Switch off the pto shaft.\n\uf034 Switch the electronic control system off.\n\uf034 Switch the tractor off and remove the keys from the ignition.\n\uf034 Engage the parking brake of the tractor.\n\uf034 Remove remains from the crop, dirt and stones from the machine.\n\uf034 Fix the hopper cover.\n\uf034 Take all appropriate measures for road transport.",
+                    "model_answer": "[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]\n Close the dosing units.\n Switch off the pto shaft.\n Switch the electronic control system off.\n Switch the tractor off and remove the keys from the ignition.\n Engage the parking brake of the tractor.\n Remove remains from the crop, dirt and stones from the machine.\n Fix the hopper cover.\n Take all appropriate measures for road transport.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

@@ -19,7 +19,12 @@
         "true_negatives": 26,
         "false_positives": 28,
         "false_negatives": 20,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.75,
+            "table_questions": 0.1,
+            "unanswerable_questions": 0.48148148148148145
+        }
     },
     "timing": {
         "overall_duration_seconds": 107.1999740600586,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "30\u00b0 vers le haut et de 30 \u00b0 vers le bas.\n",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "30° vers le haut et de 30 ° vers le bas.\n",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30\u00b0 vers le haut et de 30 \u00b0 vers le bas.\n",
+                    "model_answer": "30° vers le haut et de 30 ° vers le bas.\n",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -212,7 +217,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "Vitesse d'\u00e9coulement requise = (kg/min)\nLargeur de travail (m) x vitesse d'avancement (km/h) x d\u00e9bit (kg/ha)\n",
+                    "model_answer": "Vitesse d'écoulement requise = (kg/min)\nLargeur de travail (m) x vitesse d'avancement (km/h) x débit (kg/ha)\n",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -342,7 +347,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]\n\u00b7 \u00c9pandage unilat\u00e9ral en bordure \u00e0 l'aide du d\u00e9flecteur de bordure hydraulique,\n\u00b7 \u00c9pandage des bordures avec ExactLine.",
+                    "model_answer": "[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]\n· Épandage unilatéral en bordure à l'aide du déflecteur de bordure hydraulique,\n· Épandage des bordures avec ExactLine.",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -479,7 +484,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "sph\u00e9ricit\u00e9 irr\u00e9guli\u00e8re",
+                    "model_answer": "sphéricité irrégulière",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -616,7 +621,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "For connecting the tractor\u2019s speed sensor or radar.",
+                    "model_answer": "For connecting the tractor’s speed sensor or radar.",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -696,7 +701,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Refermez la b\u00e2che de tr\u00e9mie.",
+                    "model_answer": "Refermez la bâche de trémie.",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "\u00b7 d\u00e9brayer la prise de force,\n\u00b7 mettre hors pression le syst\u00e8me hydraulique,\n\u00b7 d\u00e9brancher le syst\u00e8me de commande \u00e9lectronique,\n\u00b7 couper le contact sur le tracteur,\n\u00b7 retirer la cl\u00e9 du contact,\n\u00b7 serrer le frein \u00e0 main sur le tracteur.",
+                    "model_answer": "· débrayer la prise de force,\n· mettre hors pression le système hydraulique,\n· débrancher le système de commande électronique,\n· couper le contact sur le tracteur,\n· retirer la clé du contact,\n· serrer le frein à main sur le tracteur.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1046,7 +1051,7 @@
                 {
                     "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Plaques d'une \u00e9paisseur de 1,0 mm.",
+                    "model_answer": "Plaques d'une épaisseur de 1,0 mm.",
                     "page": 138,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

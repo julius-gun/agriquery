@@ -19,7 +19,12 @@
         "true_negatives": 28,
         "false_positives": 26,
         "false_negatives": 17,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.75,
+            "table_questions": 0.4,
+            "unanswerable_questions": 0.5185185185185185
+        }
     },
     "timing": {
         "overall_duration_seconds": 260.23851227760315,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30 \u00b0 when lifted and 30 \u00b0 when lowered.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "The maximum operating angle of the coupling shaft is 30 ° when lifted and 30 ° when lowered.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -172,7 +177,7 @@
                 {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
-                    "model_answer": "Never leave the tractor without: \u00b7 engage the parking brake of the tractor.",
+                    "model_answer": "Never leave the tractor without: · engage the parking brake of the tractor.",
                     "page": 52,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30\u00b0",
+                    "model_answer": "30°",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -342,7 +347,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "\u00b7 one-sided boundary spreading with the hydraulic border spreading plate,\n\u00b7 boundary track spreading with ExactLine.",
+                    "model_answer": "· one-sided boundary spreading with the hydraulic border spreading plate,\n· boundary track spreading with ExactLine.",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "\u00b7 switch the PTO shaft off,\n\u00b7 release the pressure from the hydraulic system,\n\u00b7 switch the electronic control system off,\n\u00b7 switch the tractor off,\n\u00b7 remove the key from the ignition,\n\u00b7 engage the parking brake of the tractor.",
+                    "model_answer": "· switch the PTO shaft off,\n· release the pressure from the hydraulic system,\n· switch the electronic control system off,\n· switch the tractor off,\n· remove the key from the ignition,\n· engage the parking brake of the tractor.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

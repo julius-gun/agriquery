@@ -24,7 +24,12 @@
         "true_negatives": 39,
         "false_positives": 15,
         "false_negatives": 16,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.75,
+            "table_questions": 0.5,
+            "unanswerable_questions": 0.7222222222222222
+        }
     },
     "timing": {
         "overall_duration_seconds": 1025.7446088790894,
@@ -166,8 +171,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered. \n\nThis information can be found in two places within the context:\n\n1. \"Put the machine on a supporting beam with the power lift in the highest position... Check if the furthest working angle is less than 30 \u00b0.\"\n2. \"The maximum operating angle of the coupling shaft is 30 \u00b0 when lifted and 30 \u00b0 when lowered.\"\n\nThese excerpts confirm that the specified angles are consistent for both lifting and lowering actions.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered. \n\nThis information can be found in two places within the context:\n\n1. \"Put the machine on a supporting beam with the power lift in the highest position... Check if the furthest working angle is less than 30 °.\"\n2. \"The maximum operating angle of the coupling shaft is 30 ° when lifted and 30 ° when lowered.\"\n\nThese excerpts confirm that the specified angles are consistent for both lifting and lowering actions.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -187,7 +192,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "The maximum permissible operating angle for the coupling shaft is 30\u00b0 when both lifted and lowered. \n\n(Note: This answer is extracted from multiple mentions in the context regarding the operating angles of the coupling shaft.)",
+                    "model_answer": "The maximum permissible operating angle for the coupling shaft is 30° when both lifted and lowered. \n\n(Note: This answer is extracted from multiple mentions in the context regarding the operating angles of the coupling shaft.)",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -377,7 +382,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "The maximum allowable temperature for cleaning the machine with water or steam is 40 degrees Celsius. \n\nThis information can be found in the section \"Be careful while cleaning with high pressure cleaners\" on page 117 of the context provided. The instruction specifies to use low pressure and temperature, specifically stating a maximum of 40\u00b0C.",
+                    "model_answer": "The maximum allowable temperature for cleaning the machine with water or steam is 40 degrees Celsius. \n\nThis information can be found in the section \"Be careful while cleaning with high pressure cleaners\" on page 117 of the context provided. The instruction specifies to use low pressure and temperature, specifically stating a maximum of 40°C.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -387,7 +392,7 @@
                 {
                     "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
                     "expected_answer": "80 bar",
-                    "model_answer": "The maximum allowable pressure when cleaning the machine with water or steam is 80 bars.\n\n**Explanation:**\n- The context specifies using a low-pressure cleaner at \"only low pressure and temperature; 80 bar and maximum 40 \u00b0C.\"\n- This directly answers the question regarding the maximum allowable pressure in bar.",
+                    "model_answer": "The maximum allowable pressure when cleaning the machine with water or steam is 80 bars.\n\n**Explanation:**\n- The context specifies using a low-pressure cleaner at \"only low pressure and temperature; 80 bar and maximum 40 °C.\"\n- This directly answers the question regarding the maximum allowable pressure in bar.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,

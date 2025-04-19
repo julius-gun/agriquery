@@ -19,7 +19,12 @@
         "true_negatives": 44,
         "false_positives": 10,
         "false_negatives": 24,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.5909090909090909,
+            "table_questions": 0.4,
+            "unanswerable_questions": 0.8148148148148148
+        }
     },
     "timing": {
         "overall_duration_seconds": 247.0247871875763,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30 \u00b0 both when lifted and lowered.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "The maximum operating angle of the coupling shaft is 30 ° both when lifted and lowered.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "The maximum permissible operating angle for the coupling shaft is 30 \u00b0 when lifted and 30 \u00b0 when lowered.",
+                    "model_answer": "The maximum permissible operating angle for the coupling shaft is 30 ° when lifted and 30 ° when lowered.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -352,7 +357,7 @@
                 {
                     "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
                     "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-                    "model_answer": "1. Try to reduce the size of the lump or encrusted layer with an object such as a stick, screwdriver or vane.\n2. If you have not managed to reduce the lump or encrusted layer because it is out of reach or there is no tool at your disposal: Close the hopper cover and follow the working method as described in the previous paragraph \u00bbDamage\u00ab until emptying the hopper.",
+                    "model_answer": "1. Try to reduce the size of the lump or encrusted layer with an object such as a stick, screwdriver or vane.\n2. If you have not managed to reduce the lump or encrusted layer because it is out of reach or there is no tool at your disposal: Close the hopper cover and follow the working method as described in the previous paragraph »Damage« until emptying the hopper.",
                     "page": 108,
                     "dataset": "general_questions",
                     "qa_error": false,

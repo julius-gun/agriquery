@@ -19,7 +19,12 @@
         "true_negatives": 24,
         "false_positives": 30,
         "false_negatives": 22,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.6363636363636364,
+            "table_questions": 0.4,
+            "unanswerable_questions": 0.4444444444444444
+        }
     },
     "timing": {
         "overall_duration_seconds": 130.41382575035095,
@@ -152,7 +157,7 @@
                 {
                     "question": "What specific precaution should be taken before working between the tractor and machine to check the coupling shaft length?",
                     "expected_answer": "Place the machine on a supporting beam.",
-                    "model_answer": "\uf034 Setzen Sie die Maschine auf einen St\u00fctzbock, wobei der Kraftheber im h\u00f6chsten Stand bleibt.\n\uf034 Schalten Sie den Schlepper aus und ziehen Sie den Z\u00fcndschl\u00fcssel aus dem Z\u00fcndschloss.\n\uf034 Bet\u00e4tigen Sie die Feststellbremse des Schleppers.",
+                    "model_answer": " Setzen Sie die Maschine auf einen Stützbock, wobei der Kraftheber im höchsten Stand bleibt.\n Schalten Sie den Schlepper aus und ziehen Sie den Zündschlüssel aus dem Zündschloss.\n Betätigen Sie die Feststellbremse des Schleppers.",
                     "page": 50,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "30 \u00b0 nach oben and 30 \u00b0 nach unten.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "30 ° nach oben and 30 ° nach unten.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30\u00b0",
+                    "model_answer": "30°",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -212,7 +217,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "600 Ben\u00f6tigte Auslassgeschwindigkeit (kg/min) = 27 (m) x 8 (km/h) x 25 (kg/ha)",
+                    "model_answer": "600 Benötigte Auslassgeschwindigkeit (kg/min) = 27 (m) x 8 (km/h) x 25 (kg/ha)",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -262,7 +267,7 @@
                 {
                     "question": "What materials are required to perform the tray test?",
                     "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-                    "model_answer": "Bandma\u00df oder Messlatte, Wasserwaage, 7 Auffangbeh\u00e4lter, 7 Messrohre, 1 Trichter, Notizblock, Stift und Taschenrechner, diese Bedienungsanleitung, der Bedienungsanleitung der Software.",
+                    "model_answer": "Bandmaß oder Messlatte, Wasserwaage, 7 Auffangbehälter, 7 Messrohre, 1 Trichter, Notizblock, Stift und Taschenrechner, diese Bedienungsanleitung, der Bedienungsanleitung der Software.",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -282,7 +287,7 @@
                 {
                     "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
                     "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "75 cm oberhalb der Auffangbeh\u00e4lter",
+                    "model_answer": "75 cm oberhalb der Auffangbehälter",
                     "page": 84,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -352,7 +357,7 @@
                 {
                     "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
                     "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-                    "model_answer": "\uf034 Die Zapfwelle sofort abstellen!\n\uf034 Schalten Sie das elektronische Bediensystem aus.",
+                    "model_answer": " Die Zapfwelle sofort abstellen!\n Schalten Sie das elektronische Bediensystem aus.",
                     "page": 108,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -479,7 +484,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "eckig, mit scharfen Kanten und R\u00e4ndern",
+                    "model_answer": "eckig, mit scharfen Kanten und Rändern",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -696,7 +701,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "\uf034 Die Zapfwelle sofort abstellen!\n\uf034 Schalten Sie das elektronische Bediensystem aus.",
+                    "model_answer": " Die Zapfwelle sofort abstellen!\n Schalten Sie das elektronische Bediensystem aus.",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Schalten Sie das Bedienpult aus.\n\u00dcberpr\u00fcfen Sie, ob die Dosiereinheiten geschlossen sind.\n",
+                    "model_answer": "Schalten Sie das Bedienpult aus.\nÜberprüfen Sie, ob die Dosiereinheiten geschlossen sind.\n",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -746,7 +751,7 @@
                 {
                     "question": "Why is damage to the vanes, spreading disc or discharge bushing, most likely caused by a hard object?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Wenn Sie feststellen sollten, dass die Schaufeln, die Streuscheibe oder die Auslaufrohre besch\u00e4digt sind, dann wurde die St\u00f6rung h\u00f6chstwahrscheinlich durch einen harten Gegenstand verursacht.",
+                    "model_answer": "Wenn Sie feststellen sollten, dass die Schaufeln, die Streuscheibe oder die Auslaufrohre beschädigt sind, dann wurde die Störung höchstwahrscheinlich durch einen harten Gegenstand verursacht.",
                     "page": 115,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -976,7 +981,7 @@
                 {
                     "question": "What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The R\u00fchrerwelle is fitted with a plastic seal to prevent fertilizer grains from being lost along the stirrer shaft, and this seal must be replaced each season and after every 100 operating hours of the machine.",
+                    "model_answer": "The Rührerwelle is fitted with a plastic seal to prevent fertilizer grains from being lost along the stirrer shaft, and this seal must be replaced each season and after every 100 operating hours of the machine.",
                     "page": 121,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1046,7 +1051,7 @@
                 {
                     "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Pl\u00e4ttchen mit einer Dicke von 1,0 mm.",
+                    "model_answer": "Plättchen mit einer Dicke von 1,0 mm.",
                     "page": 138,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

@@ -19,7 +19,12 @@
         "true_negatives": 47,
         "false_positives": 7,
         "false_negatives": 29,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.4772727272727273,
+            "table_questions": 0.4,
+            "unanswerable_questions": 0.8703703703703703
+        }
     },
     "timing": {
         "overall_duration_seconds": 194.49227476119995,
@@ -42,7 +47,7 @@
                 {
                     "question": "What is the overlap percentage for the full field spreading pattern?",
                     "expected_answer": "100% overlap",
-                    "model_answer": "[Image]\nNormalerweise ist das Streubild ein Dreieck mit vollst\u00e4ndiger \u00dcberlappung.\n100 %",
+                    "model_answer": "[Image]\nNormalerweise ist das Streubild ein Dreieck mit vollständiger Überlappung.\n100 %",
                     "page": 28,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -112,7 +117,7 @@
                 {
                     "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
                     "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
-                    "model_answer": "[Schwei\u00dfen Sie eine Fu\u00dfplatte vor der Montage auf eine ausgew\u00e4hlte Fl\u00e4che in der Kabine.]",
+                    "model_answer": "[Schweißen Sie eine Fußplatte vor der Montage auf eine ausgewählte Fläche in der Kabine.]",
                     "page": 40,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 upwards and 30\u00b0 downwards.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "The maximum operating angle of the coupling shaft is 30° upwards and 30° downwards.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 \u00b0",
+                    "model_answer": "30 °",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -192,7 +197,7 @@
                 {
                     "question": "What must be ensured with decoupling ropes during power lift connection?",
                     "expected_answer": "Decoupling ropes must never be tense.",
-                    "model_answer": "The Schutzrohre, die \u00fcber Ketten an einem festen Punkt gegen Mitdrehen gesichert sind.",
+                    "model_answer": "The Schutzrohre, die über Ketten an einem festen Punkt gegen Mitdrehen gesichert sind.",
                     "page": 56,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -212,7 +217,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "600 Ben\u00f6tigte Auslassgeschwindigkeit (kg/min) = 27 (m) x 8 (km/h) x 25 (kg/ha)",
+                    "model_answer": "600 Benötigte Auslassgeschwindigkeit (kg/min) = 27 (m) x 8 (km/h) x 25 (kg/ha)",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -252,7 +257,7 @@
                 {
                     "question": "What does a tray test check on a fertilizer spreader?",
                     "expected_answer": "Fertilizer distribution pattern of the spreader.",
-                    "model_answer": "[Image]\nArbeiten vor dem Streuen\nStreubildkontrolle (Streumengentest)\nBeurteilung\nNotieren Sie die Werte, die Sie in den Messr\u00f6hrchen von der linken und der rechten Streuscheibe ablesen.\nVergleichen Sie die Werte, rechnen Sie je R\u00f6hrchen die prozentuale Differenz zwischen der linken und der rechten Seite aus.",
+                    "model_answer": "[Image]\nArbeiten vor dem Streuen\nStreubildkontrolle (Streumengentest)\nBeurteilung\nNotieren Sie die Werte, die Sie in den Messröhrchen von der linken und der rechten Streuscheibe ablesen.\nVergleichen Sie die Werte, rechnen Sie je Röhrchen die prozentuale Differenz zwischen der linken und der rechten Seite aus.",
                     "page": 76,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -262,7 +267,7 @@
                 {
                     "question": "What materials are required to perform the tray test?",
                     "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-                    "model_answer": "Bandma\u00df oder Messlatte, Wasserwaage, 7 Auffangbeh\u00e4lter, 7 Messrohre, 1 Trichter.",
+                    "model_answer": "Bandmaß oder Messlatte, Wasserwaage, 7 Auffangbehälter, 7 Messrohre, 1 Trichter.",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -352,7 +357,7 @@
                 {
                     "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
                     "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-                    "model_answer": "[The Streuer unverz\u00fcglich einstellen! Die Zapfwelle sofort abstellen!]",
+                    "model_answer": "[The Streuer unverzüglich einstellen! Die Zapfwelle sofort abstellen!]",
                     "page": 108,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -392,7 +397,7 @@
                 {
                     "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
                     "expected_answer": "Preservative grease or preserving liquid.",
-                    "model_answer": "[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]\n\nVersehen Sie blanke Teile, wie Kolbenstangen der Hydraulikzylinder mit konservierendem Fett oder spr\u00fchen (blanke) Metallteile der Maschine mit Konservierungsmittel (mitgeliefert) zum Schutz vor Korrosion der Maschine ein.",
+                    "model_answer": "[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]\n\nVersehen Sie blanke Teile, wie Kolbenstangen der Hydraulikzylinder mit konservierendem Fett oder sprühen (blanke) Metallteile der Maschine mit Konservierungsmittel (mitgeliefert) zum Schutz vor Korrosion der Maschine ein.",
                     "page": 121,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -479,7 +484,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "[Image: Mineralisch]  \neckig, mit scharfen Kanten und R\u00e4ndern  \n                                                                                                          sehr rau",
+                    "model_answer": "[Image: Mineralisch]  \neckig, mit scharfen Kanten und Rändern  \n                                                                                                          sehr rau",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -616,7 +621,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The IM Tellus input cable can also be used for other connections such as:\n- Beleuchtung und Z\u00fcndschloss\n- Schlepper CAN (optional)\n- Videoeingang.",
+                    "model_answer": "The IM Tellus input cable can also be used for other connections such as:\n- Beleuchtung und Zündschloss\n- Schlepper CAN (optional)\n- Videoeingang.",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

@@ -19,7 +19,12 @@
         "true_negatives": 37,
         "false_positives": 17,
         "false_negatives": 21,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.6590909090909091,
+            "table_questions": 0.4,
+            "unanswerable_questions": 0.6851851851851852
+        }
     },
     "timing": {
         "overall_duration_seconds": 107.38693737983704,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "[Answer]\nThe maximum operating angle of the coupling shaft is 30 \u00b0 when lifted and 30 \u00b0 when lowered.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "[Answer]\nThe maximum operating angle of the coupling shaft is 30 ° when lifted and 30 ° when lowered.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 \u00b0",
+                    "model_answer": "30 °",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -262,7 +267,7 @@
                 {
                     "question": "What materials are required to perform the tray test?",
                     "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-                    "model_answer": "[Answer]\n\u00b7 measuring tape or ruler,\n\u00b7 spirit level to set the troughs horizontal,\n\u00b7 7 troughs,\n\u00b7 7 graduated tubes,\n\u00b7 1 funnel,\n\u00b7 notebook, pen and calculator.",
+                    "model_answer": "[Answer]\n· measuring tape or ruler,\n· spirit level to set the troughs horizontal,\n· 7 troughs,\n· 7 graduated tubes,\n· 1 funnel,\n· notebook, pen and calculator.",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -372,7 +377,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "<answer>\n80\u00b0C\n</answer>",
+                    "model_answer": "<answer>\n80°C\n</answer>",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "[Answer]\n\u00b7 switch the PTO shaft off,\n\u00b7 release the pressure from the hydraulic system,\n\u00b7 switch the electronic control system off,\n\u00b7 switch the tractor off,\n\u00b7 remove the key from the ignition,\n\u00b7 engage the parking brake of the tractor.",
+                    "model_answer": "[Answer]\n· switch the PTO shaft off,\n· release the pressure from the hydraulic system,\n· switch the electronic control system off,\n· switch the tractor off,\n· remove the key from the ignition,\n· engage the parking brake of the tractor.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

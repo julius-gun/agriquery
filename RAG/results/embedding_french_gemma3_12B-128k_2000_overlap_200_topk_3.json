@@ -19,7 +19,12 @@
         "true_negatives": 26,
         "false_positives": 28,
         "false_negatives": 17,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.7954545454545454,
+            "table_questions": 0.2,
+            "unanswerable_questions": 0.48148148148148145
+        }
     },
     "timing": {
         "overall_duration_seconds": 242.88743090629578,
@@ -72,7 +77,7 @@
                 {
                     "question": "How can the tractor's driving speed be transmitted to the IsoMatch if the tractor lacks ISOBUS communication?",
                     "expected_answer": "By adding the IsoMatch power cable set to the tractor.",
-                    "model_answer": "If the tractor lacks ISOBUS communication, the tractor's driving speed can be transmitted to the IsoMatch by connecting a speed sensor and cable from the tractor\u2019s electronics to the IsoMatch.",
+                    "model_answer": "If the tractor lacks ISOBUS communication, the tractor's driving speed can be transmitted to the IsoMatch by connecting a speed sensor and cable from the tractor’s electronics to the IsoMatch.",
                     "page": 32,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "30\u00b0 vers le haut et de 30\u00b0 vers le bas.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "30° vers le haut et de 30° vers le bas.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30\u00b0 vers le haut et de 30\u00b0 vers le bas.",
+                    "model_answer": "30° vers le haut et de 30° vers le bas.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -212,7 +217,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "600 Vitesse d'\u00e9coulement requise (kg/min) = 27 (m) x 8 (km/h) x 25 (kg/ha)\n",
+                    "model_answer": "600 Vitesse d'écoulement requise (kg/min) = 27 (m) x 8 (km/h) x 25 (kg/ha)\n",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -342,7 +347,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "\u00b7 \u00c9pandage unilat\u00e9ral en bordure \u00e0 l'aide du d\u00e9flecteur de bordure hydraulique,\n\u00b7 \u00c9pandage des bordures avec ExactLine.",
+                    "model_answer": "· Épandage unilatéral en bordure à l'aide du déflecteur de bordure hydraulique,\n· Épandage des bordures avec ExactLine.",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -479,7 +484,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "sph\u00e9ricit\u00e9 irr\u00e9guli\u00e8re, tr\u00e8s in\u00e9gale",
+                    "model_answer": "sphéricité irrégulière, très inégale",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "\u00b7 d\u00e9brayer la prise de force,\n\u00b7 mettre hors pression le syst\u00e8me hydraulique,\n\u00b7 d\u00e9brancher le syst\u00e8me de commande \u00e9lectronique,\n\u00b7 couper le contact sur le tracteur,\n\u00b7 retirer la cl\u00e9 du contact,\n\u00b7 serrer le frein \u00e0 main sur le tracteur.",
+                    "model_answer": "· débrayer la prise de force,\n· mettre hors pression le système hydraulique,\n· débrancher le système de commande électronique,\n· couper le contact sur le tracteur,\n· retirer la clé du contact,\n· serrer le frein à main sur le tracteur.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1076,7 +1081,7 @@
                 {
                     "question": "What specific 'extension cable' length in meters is optimal for ISO 11786 in cab tractor connection?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The context does not specify a length in meters. It mentions a \"rallonge de c\u00e2ble (option)\" which is an optional extension cable for the ISO 11786 connection in the tractor cab.",
+                    "model_answer": "The context does not specify a length in meters. It mentions a \"rallonge de câble (option)\" which is an optional extension cable for the ISO 11786 connection in the tractor cab.",
                     "page": 144,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

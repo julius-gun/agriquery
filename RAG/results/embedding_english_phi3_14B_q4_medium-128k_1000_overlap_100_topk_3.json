@@ -19,7 +19,12 @@
         "true_negatives": 47,
         "false_positives": 7,
         "false_negatives": 22,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.6363636363636364,
+            "table_questions": 0.4,
+            "unanswerable_questions": 0.8703703703703703
+        }
     },
     "timing": {
         "overall_duration_seconds": 347.84101009368896,
@@ -102,7 +107,7 @@
                 {
                     "question": "After initial setup of the machine and after any maintenance or repairs, how long should the machine be operated before re-checking all nuts and bolts?",
                     "expected_answer": "1 hour",
-                    "model_answer": "After initial setup of the machine and after any maintenance or repairs, all nuts and bolts should be checked:\n\u00b7 after the first operating hour,\n\u00b7 regularly (at least weekly).\nUnknown. The context does not specify a time frame for re-checking nuts and bolts specifically after maintenance or repairs.",
+                    "model_answer": "After initial setup of the machine and after any maintenance or repairs, all nuts and bolts should be checked:\n· after the first operating hour,\n· regularly (at least weekly).\nUnknown. The context does not specify a time frame for re-checking nuts and bolts specifically after maintenance or repairs.",
                     "page": 38,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30 \u00b0 both when lifted and lowered.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "The maximum operating angle of the coupling shaft is 30 ° both when lifted and lowered.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "The maximum permissible operating angle for the coupling shaft is 30 \u00b0 when lifted and 30 \u00b0 when lowered.",
+                    "model_answer": "The maximum permissible operating angle for the coupling shaft is 30 ° when lifted and 30 ° when lowered.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Before leaving the tractor:\n\u00b7 switch the PTO shaft off,\n\u00b7 release the pressure from the hydraulic system,\n\u00b7 switch the electronic control system off,\n\u00b7 switch the tractor off,\n\u00b7 remove the key from the ignition,\n\u00b7 engage the parking brake of the tractor.",
+                    "model_answer": "Before leaving the tractor:\n· switch the PTO shaft off,\n· release the pressure from the hydraulic system,\n· switch the electronic control system off,\n· switch the tractor off,\n· remove the key from the ignition,\n· engage the parking brake of the tractor.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

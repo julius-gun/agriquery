@@ -19,7 +19,12 @@
         "true_negatives": 23,
         "false_positives": 31,
         "false_negatives": 17,
-        "total_questions": 108
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.75,
+            "table_questions": 0.4,
+            "unanswerable_questions": 0.42592592592592593
+        }
     },
     "timing": {
         "overall_duration_seconds": 174.98271656036377,
@@ -161,8 +166,8 @@
                 },
                 {
                     "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "30\u00b0 vers le haut et de 30 \u00b0 vers le bas.",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "30° vers le haut et de 30 ° vers le bas.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -172,7 +177,7 @@
                 {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
-                    "model_answer": "Yes, the tractor's parking brake should be engaged. The instructions state: \"\uf034 Serrez le frein \u00e0 main sur le tracteur.\"",
+                    "model_answer": "Yes, the tractor's parking brake should be engaged. The instructions state: \" Serrez le frein à main sur le tracteur.\"",
                     "page": 52,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -182,7 +187,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30\u00b0 vers le haut et de 30 \u00b0 vers le bas.",
+                    "model_answer": "30° vers le haut et de 30 ° vers le bas.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -212,7 +217,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "600 Vitesse d'\u00e9coulement requise (kg/min) = 27 (m) x 8 (km/h) x 25 (kg/ha)",
+                    "model_answer": "600 Vitesse d'écoulement requise (kg/min) = 27 (m) x 8 (km/h) x 25 (kg/ha)",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -342,7 +347,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "\u00b7 \u00c9pandage unilat\u00e9ral en bordure \u00e0 l'aide du d\u00e9flecteur de bordure hydraulique,\n\u00b7 \u00c9pandage des bordures avec ExactLine.",
+                    "model_answer": "· Épandage unilatéral en bordure à l'aide du déflecteur de bordure hydraulique,\n· Épandage des bordures avec ExactLine.",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -479,7 +484,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "sph\u00e9ricit\u00e9 irr\u00e9guli\u00e8re",
+                    "model_answer": "sphéricité irrégulière",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -696,7 +701,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "D\u00e9brayez la prise de force.",
+                    "model_answer": "Débrayez la prise de force.",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -726,7 +731,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "\u00b7 d\u00e9brayer la prise de force,\n\u00b7 mettre hors pression le syst\u00e8me hydraulique,\n\u00b7 d\u00e9brancher le syst\u00e8me de commande \u00e9lectronique,\n\u00b7 couper le contact sur le tracteur,\n\u00b7 retirer la cl\u00e9 du contact,\n\u00b7 serrer le frein \u00e0 main sur le tracteur.",
+                    "model_answer": "· débrayer la prise de force,\n· mettre hors pression le système hydraulique,\n· débrancher le système de commande électronique,\n· couper le contact sur le tracteur,\n· retirer la clé du contact,\n· serrer le frein à main sur le tracteur.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -866,7 +871,7 @@
                 {
                     "question": "What specific type of 'Delicia Schnecken Linsen' slug pellets were used for the spreading chart example?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Granul\u00e9s anti-limaces",
+                    "model_answer": "Granulés anti-limaces",
                     "page": 69,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -906,7 +911,7 @@
                 {
                     "question": "What type of 'active carbon filters' are recommended for closed tractor cabin to filter fertilizer dust?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Filtres de carbone actif au niveau des arriv\u00e9es d'air.",
+                    "model_answer": "Filtres de carbone actif au niveau des arrivées d'air.",
                     "page": 94,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1046,7 +1051,7 @@
                 {
                     "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Plaques d'une \u00e9paisseur de 1,0 mm",
+                    "model_answer": "Plaques d'une épaisseur de 1,0 mm",
                     "page": 138,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
