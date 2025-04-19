@@ -45,8 +45,6 @@ RUN pip install -r requirements.txt
 # **Start ollama server in the background within a RUN command, wait, then pull models**
 RUN ollama serve & sleep 10 && \
     ollama pull gemma3:12b && \
-    ollama pull phi4:latest && \    
-    ollama pull qwq && \    
     ollama pull llama3.2:1b && \
     ollama pull llama3.2 && \
     ollama pull llama3.1 && \
