@@ -189,7 +189,10 @@ def create_f1_boxplot(
 def create_dataset_success_boxplot(
     data: pd.DataFrame,
     output_path: str,
-    retrieval_algorithm: str, # Added parameter for title
+    retrieval_algorithm: str,
+    language: str, # Added parameter
+    chunk_size: int, # Added parameter
+    overlap_size: int, # Added parameter
     sort_by_median_score: bool = True,
     title: Optional[str] = None,
     xlabel: Optional[str] = None,
@@ -199,7 +202,8 @@ def create_dataset_success_boxplot(
 ):
     """
     Creates a box plot of dataset success rates grouped by question model,
-    with individual points colored by dataset type.
+    with individual points colored by dataset type. Includes specific run
+    parameters in the title.
 
     Assumes input data is pre-filtered for a specific retrieval algorithm,
     language, chunk size, overlap size, and metric_type='dataset_success'.
@@ -208,7 +212,10 @@ def create_dataset_success_boxplot(
         data: Pandas DataFrame containing the filtered data. Must include
               'question_model', 'metric_value', and 'dataset_type' columns.
         output_path: The full path where the plot image will be saved.
-        retrieval_algorithm: The retrieval algorithm used (for the plot title).
+        retrieval_algorithm: The retrieval algorithm used.
+        language: The language used for this data.
+        chunk_size: The chunk size used.
+        overlap_size: The overlap size used.
         sort_by_median_score: If True (default), order models on the x-axis
                               by their median success rate (ascending).
         title: Optional title for the plot. If None, a default is generated.
@@ -293,8 +300,15 @@ def create_dataset_success_boxplot(
     plt.xticks(rotation=45, ha='right')
 
     # Set title and labels
-    title_suffix = " (Ordered by Median Success Rate)" if sort_by_median_score and ordered_groups else ""
-    plot_title = title or f'Dataset Success Rate by Model ({retrieval_algorithm.capitalize()} Algorithm){title_suffix}'
+    # title_suffix = " (Ordered by Median Success Rate)" if sort_by_median_score and ordered_groups else ""
+    title_suffix = ""
+    # Include algo, lang, chunk, overlap in the default title
+    default_title = (
+        f'Dataset Success Rate by Model\n'
+        f'({retrieval_algorithm.capitalize()} Algorithm, Language: {language.title()}, Chunk Size: {chunk_size}, Overlap: {overlap_size}){title_suffix}'
+    )
+    plot_title = title or default_title
+
     x_axis_label = xlabel or group_by_column.replace("_", " ").title()
     y_axis_label = ylabel or "Dataset Success Rate" # Use specific label
 
@@ -314,6 +328,7 @@ def create_dataset_success_boxplot(
     except AttributeError:
         pass # No legend generated
 
+    # Use tight_layout *before* potentially moving legend if bbox_inches='tight' is used in savefig
     plt.tight_layout()
 
     # Save the plot

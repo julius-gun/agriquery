@@ -104,19 +104,18 @@ def main():
         ],
         help="Parameter to group the F1 box plots by (used if plot-type is 'boxplot' or 'all').",
     )
-
-    # --- Arguments for dataset_boxplot (fixed parameters) ---
-    # Define the fixed parameters here or make them arguments if more flexibility is needed later
-    DATASET_BOXPLOT_LANG = 'english'
-    DATASET_BOXPLOT_CHUNK = 200
-    DATASET_BOXPLOT_OVERLAP = 100
-
     parser.add_argument(
         "--output-filename-prefix",
         type=str,
         default="",
         help="Optional prefix for all generated plot filenames (e.g., 'run1_').",
     )
+
+
+    # --- Constants for dataset_boxplot ---
+    DATASET_BOXPLOT_LANG = 'english'
+    DATASET_BOXPLOT_CHUNK = 200
+    DATASET_BOXPLOT_OVERLAP = 100
 
     args = parser.parse_args()
 
@@ -461,8 +460,11 @@ def main():
                 create_dataset_success_boxplot(
                     data=df_algo_specific,
                     output_path=output_filepath,
-                    retrieval_algorithm=algo # Pass algorithm name for title
-                    # Other arguments like sort_by_median_score use defaults
+                    retrieval_algorithm=algo,
+                    language=DATASET_BOXPLOT_LANG,
+                    chunk_size=DATASET_BOXPLOT_CHUNK,
+                    overlap_size=DATASET_BOXPLOT_OVERLAP
+                    # sort_by_median_score uses default True
                 )
 
     print("\n--- Visualization Generation Finished ---")
