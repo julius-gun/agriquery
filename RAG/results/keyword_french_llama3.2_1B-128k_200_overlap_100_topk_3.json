@@ -1,0 +1,1137 @@
+{
+    "test_run_parameters": {
+        "language_tested": "french",
+        "question_model": "llama3.2_1B-128k",
+        "evaluator_model": "gemma3_12B-128k",
+        "retrieval_algorithm": "keyword",
+        "chunk_size": 200,
+        "overlap_size": 100,
+        "num_retrieved_docs": 3,
+        "chroma_collection_used": "french_manual_cs200_os100"
+    },
+    "overall_metrics": {
+        "accuracy": 0.19444444444444445,
+        "precision": 0.17647058823529413,
+        "recall": 0.16666666666666666,
+        "specificity": 0.2222222222222222,
+        "f1_score": 0.17142857142857143,
+        "true_positives": 9,
+        "true_negatives": 12,
+        "false_positives": 42,
+        "false_negatives": 45,
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.20454545454545456,
+            "table_questions": 0.0,
+            "unanswerable_questions": 0.2222222222222222
+        }
+    },
+    "timing": {
+        "overall_duration_seconds": 40.084707498550415,
+        "duration_qa_phase_seconds": 27.12976098060608,
+        "duration_eval_phase_seconds": 12.954946517944336
+    },
+    "per_dataset_details": {
+        "general_questions": {
+            "results": [
+                {
+                    "question": "How many dosing openings are closed during fine application?",
+                    "expected_answer": "Two of three dosing openings are closed.",
+                    "model_answer": "0.",
+                    "page": 24,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the overlap percentage for the full field spreading pattern?",
+                    "expected_answer": "100% overlap",
+                    "model_answer": "L'overlap percentage pour le mod\u00e8le de drainage complet est de 100%.",
+                    "page": 28,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What system continuously measures fertilizer quantity being spread?",
+                    "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
+                    "model_answer": "Unknown.",
+                    "page": 30,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often does the spreader carry out automatic calibration tests?",
+                    "expected_answer": "Every 75 kg or every minute.",
+                    "model_answer": "Le spreader utilise des tests automatiques de calibration toutes les 10 heures.",
+                    "page": 31,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How can the tractor's driving speed be transmitted to the IsoMatch if the tractor lacks ISOBUS communication?",
+                    "expected_answer": "By adding the IsoMatch power cable set to the tractor.",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question : Si le tracteur n'est pas \u00e9quip\u00e9 de communication ISOBUS, il est possible d'utiliser un c\u00e2ble ISO 11786 pour transmettre les informations de conduite du tracteur au terminal IsoMatch Tellus.</p>",
+                    "page": 32,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "Where is the main switch button to turn the control box on or off located?",
+                    "expected_answer": "The main switch button is located on the upper left in the red extension.",
+                    "model_answer": "The main switch button to turn the control box on or off is located at the top of the machine.",
+                    "page": 34,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How long should the main switch button be pressed to turn the control box on or off?",
+                    "expected_answer": "At least 1 second.",
+                    "model_answer": "11.",
+                    "page": 34,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "After initial setup of the machine and after any maintenance or repairs, how long should the machine be operated before re-checking all nuts and bolts?",
+                    "expected_answer": "1 hour",
+                    "model_answer": "Le nombre de minutes avant d'op\u00e9rer la machine apr\u00e8s l'ex\u00e9cution de la maintenance par un personnel qualifi\u00e9 est de 50.",
+                    "page": 38,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
+                    "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
+                    "model_answer": "La console assembly foot peut \u00eatre mont\u00e9e \u00e0 l'aide des \u00e9l\u00e9ments de fixation fournis sur la face arri\u00e8re du bo\u00eetier de commande.",
+                    "page": 40,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What torque (in NM) should be applied to the vane lock nuts?",
+                    "expected_answer": "50NM",
+                    "model_answer": "0.9 Nm",
+                    "page": 43,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What determines the machine's working width?",
+                    "expected_answer": "Spreading disc RPM",
+                    "model_answer": "Le machine est d\u00e9termin\u00e9e par le num\u00e9ro de s\u00e9rie.",
+                    "page": 46,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Where should the position sensor for the hydraulic border spreading plate be connected?",
+                    "expected_answer": "In the electronic box on the spreader.",
+                    "model_answer": "Le position sensor pour la plate de d\u00e9p\u00f4t hydraulique doit \u00eatre connect\u00e9 \u00e0 l'orifice de dosage.",
+                    "page": 47,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What specific precaution should be taken before working between the tractor and machine to check the coupling shaft length?",
+                    "expected_answer": "Place the machine on a supporting beam.",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question \"Quelle pr\u00e9caution devriez-vous prendre avant de travailler entre le tracteur et la machine pour v\u00e9rifier la longueur du couplage shaft?\" </p>\n\n<instruction>Ne vous approchez pas de la machine tant que toutes les pi\u00e8ces en mouvement de celle-ci ne se sont pas compl\u00e8tement arr\u00eat\u00e9es.</instruction>\n\n<pour r\u00e9pondre \u00e0 la question pr\u00e9cis\u00e9ment, il faut prendre une pr\u00e9caution suppl\u00e9mentaire avant de travailler entre le tracteur et la machine. </p>",
+                    "page": 50,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
+                    "model_answer": "L'angle de travail maximum pour le couplage est de 30\u00ba.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
+                    "expected_answer": "Yes.",
+                    "model_answer": "La r\u00e9ponse exacte \u00e0 la question \"Should the parking brake of the tractor be engaged before connecting the machine?\" est :\n\nNon.",
+                    "page": 52,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
+                    "expected_answer": "30 degrees",
+                    "model_answer": "Le maximum permissible operating angle en degr\u00e9s pour le couplage du chariot est de 51.",
+                    "page": 54,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What must be ensured with decoupling ropes during power lift connection?",
+                    "expected_answer": "Decoupling ropes must never be tense.",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question \"Quel doit \u00eatre garanti lors de la d\u00e9couplage des cordons d'attache pendant le connectivit\u00e9 du levier en puissance ?\", il faut garantir que les cordons d'attache soient d\u00e9coupl\u00e9s correctement et sans dommage.</p>",
+                    "page": 56,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Below which application rate in kg/min is it advised to use the fine application?",
+                    "expected_answer": "Below 40 kg/min.",
+                    "model_answer": "Based on the context, the exact answer to the question \"Below which application rate in kg/min is it advised to use the fine application?\" is:\n\n0.21 kg/min",
+                    "page": 66,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
+                    "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
+                    "model_answer": "Le calcul du flux requis en fertilisant est d\u00e9termin\u00e9 par la formule : \n\nF = (Q / 1000) * 10",
+                    "page": 68,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What type of serial connection does the IsoMatch control box use for communication?",
+                    "expected_answer": "RS 232",
+                    "model_answer": "Le type de connexion s\u00e9rie utilis\u00e9e par le controle box IsoMatch est GEOSPREAD.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "When loading manually, what's the maximum distance in mm between the hopper rim and the ground before a platform is mandatory?",
+                    "expected_answer": "1250 mm",
+                    "model_answer": "0.1",
+                    "page": 74,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum distance in mm between spreader and loading platform?",
+                    "expected_answer": "200 mm maximum distance between them.",
+                    "model_answer": "La distance maximale entre le spreader et la plateforme de chargement est de 1,0 mm.",
+                    "page": 74,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What does a tray test check on a fertilizer spreader?",
+                    "expected_answer": "Fertilizer distribution pattern of the spreader.",
+                    "model_answer": "<p>La r\u00e9ponse exacte \u00e0 la question \"Qu'est-ce que fait un test de nappe d'\u00e9pandage sur une pinc\u00e9e de fertilisant?\" est :</p>\n\n<question>\n    What does a tray test check on a fertilizer spreader?\n</question>\n<answer>\n    <p>A nappe d&#39;\u00e9pandage r\u00e9guli\u00e8re, l&#39;\u00e9pandeur est bien r\u00e9gl\u00e9. L&#39;\u00e9pandage est trop \u00e9troit. R\u00e9glez l&#39;ouverture d&#39;\u00e9coulement de 2 lettres vers le A.</p>\n</answer>",
+                    "page": 76,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What materials are required to perform the tray test?",
+                    "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
+                    "model_answer": "Unknown.",
+                    "page": 77,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
+                    "expected_answer": "3 m/s)",
+                    "model_answer": "0. 3 m/s.",
+                    "page": 77,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
+                    "expected_answer": "75 cm above the troughs.",
+                    "model_answer": "Le required height of the spreading disc above the troughs for one-sided boundary spreading is 0.5 m.",
+                    "page": 84,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
+                    "expected_answer": "75 cm",
+                    "model_answer": "1. 75",
+                    "page": 89,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "<pour une bonne r\u00e9partition de l'engrais, le disque d'\u00e9pandage gauche doit \u00e9pandre autant que le disque d'\u00e9pandage droit. V\u00e9rifiez ce point une fois par an !</p>\n\n<unknown>Unknown</unknown>",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
+                    "expected_answer": "Inertia causes continued rotation.",
+                    "model_answer": "L'\u00e9pandage est trop \u00e9troit.",
+                    "page": 94,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "According to the last setting check, what is the recommended height in centimeter of the spreader over the ground or crops?",
+                    "expected_answer": "75 cm",
+                    "model_answer": "Le recommand\u00e9 height de la machine Spreader control (ou IsoMatch Grip) est de 0,45 m\u00e8tres.",
+                    "page": 96,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What happens when hopper content falls below 100 kg?",
+                    "expected_answer": "Automatic calibration switches off.",
+                    "model_answer": "The answer to the question \"What happens when hopper content falls below 100 kg?\" is:\n\nHopper content falls below 100 kg causes a reduction in the amount of granular material applied.",
+                    "page": 101,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What are the two functions for border spreading?",
+                    "expected_answer": "Hydraulic border spreading plate and ExactLine.",
+                    "model_answer": "Le deuxi\u00e8me fonction de border spreadage est la \"d\u00e9marrage\" ou \"initialisation\".",
+                    "page": 106,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
+                    "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
+                    "model_answer": "Unknown.",
+                    "page": 108,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What should you do if a spreading disc spreads irregularly?",
+                    "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
+                    "model_answer": "Si la nappe d'\u00e9pandage r\u00e9guli\u00e8re est bien r\u00e9gl\u00e9e, vous devez ajuster l'ouverture de l'\u00e9coulement pour obtenir un r\u00e9sultat r\u00e9gulier.",
+                    "page": 113,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
+                    "expected_answer": "40 degrees Celsius",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question \"Quelle est la temp\u00e9rature maximale autoris\u00e9e pour nettoyer le tracteur avec eau ou vapeur ?\", il n'y a pas d'information sp\u00e9cifique mentionn\u00e9e dans le contexte fournie.</p>\n\n<response>\n    < Unknown > </response>",
+                    "page": 117,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
+                    "expected_answer": "80 bar",
+                    "model_answer": "L'indication de s\u00e9curit\u00e9 du fabricant indique que la pression maximale pour nettoyer la machine \u00e0 l'eau ou \u00e0 la vapeur est de 80 bar.",
+                    "page": 117,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
+                    "expected_answer": "Preservative grease or preserving liquid.",
+                    "model_answer": "Lorsque les flexibles de rechange sont utilis\u00e9s pour remplacer les flexibles, il est essentiel d'utiliser des pi\u00e8ces de rechange d'origine pour garantir que la pression et les sollicitations chimiques, m\u00e9caniques et thermiques sont support\u00e9es correctement.",
+                    "page": 121,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
+                    "expected_answer": "Remove all fertilizer remnants.",
+                    "model_answer": "Unknown.",
+                    "page": 123,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How many grease nipples do the discharge bushings have?",
+                    "expected_answer": "Two grease nipples per discharge bushing.",
+                    "model_answer": "Le nombre de grebes niptes sur les discharges des bussements est indiqu\u00e9 comme 4.",
+                    "page": 126,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the required grease level in mm below the filler opening for spreading disc gearboxes after the machine has stood still?",
+                    "expected_answer": "35 mm",
+                    "model_answer": "127 mm.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum hydraulic pressure allowed for the hydaulic system in bars?",
+                    "expected_answer": "210 bars.",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question \"Quel est le maximum de pression hydraulique autoris\u00e9 dans l'ensemble du syst\u00e8me hydrique ?\" </p>\n\n<instruction>Read the entire context carefully</instruction>\n\n<instruction>Focus ONLY on the specific information related to the question</instruction>\n\n<instruction>Provide an extremely precise answer</instruction>\n\n<instruction>Match the expected answer format exactly</instruction>\n\n<instruction>If unsure, respond with \"Unknown\" or \"Not found in context\"</instruction>\n\n<instruction>Answer in English</instruction>\n\n<pour r\u00e9pondre \u00e0 la question, il n'y a pas d'information sp\u00e9cifique mentionn\u00e9e dans le contexte qui indique le maximum de pression hydraulique autoris\u00e9. </p>\n\nLa r\u00e9ponse finale est 0.",
+                    "page": 131,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the required distance in mm between the rope and discharge bushing opening?",
+                    "expected_answer": "109 mm.",
+                    "model_answer": "1 mm.",
+                    "page": 136,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "0 m.",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "Le manuel d'utilisation indique que le seau de l'agitateur doit \u00eatre remplac\u00e9 toutes les 10 000 kilom\u00e8tres.",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                }
+            ],
+            "duration_qa_seconds": 12.95220136642456,
+            "total_questions_processed": 44,
+            "duration_eval_seconds": 6.5419652462005615
+        },
+        "table_questions": {
+            "results": [
+                {
+                    "question": "What is the pattern of the type 'mineral'?",
+                    "expected_answer": "angular, with sharp angles and edges",
+                    "model_answer": "<pour le type de min\u00e9ral</p>",
+                    "page": 58,
+                    "dataset": "table_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the hopper weight without hopper cover in kg of the Exacta-TLX GEOSPREAD 3225?",
+                    "expected_answer": "337.5 kg",
+                    "model_answer": "Le poids hors tout de la machine ou du poids attel\u00e9 \u00e0 l'avant est de 1 000 kg.",
+                    "page": 36,
+                    "dataset": "table_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the weight in kg of the Exacta-TLX GEOSPREAD 3900?",
+                    "expected_answer": "795 kg",
+                    "model_answer": "Le poids hors tout de la machine ou du poids attel\u00e9 \u00e0 l'avant est de 4 000 kg.",
+                    "page": 36,
+                    "dataset": "table_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the sound level in dB of a Tractor + spreading spreader (Kali 60) with its rear window opened?",
+                    "expected_answer": "84.6 dB",
+                    "model_answer": "0. 73.8",
+                    "page": 37,
+                    "dataset": "table_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often (in what interval) must the condition of the vanes be inspected?",
+                    "expected_answer": "daily",
+                    "model_answer": "La r\u00e9ponse exacte \u00e0 la question \"How often (in what interval) must the condition of the vanes be inspected?\" est :\n\n\"\u00c0 chaque 2 mois.\"",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often (in what interval) must the bushing height be checked and the discharge be set?",
+                    "expected_answer": "after the first 10 hours and every 100 hours, but a minimum of once per year",
+                    "model_answer": "Le bushing height doit \u00eatre v\u00e9rifi\u00e9 et la discharge ajust\u00e9e \u00e0 intervalles de 1 an.",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often (in what interval) must the agitator seal be replaced?",
+                    "expected_answer": "every 100 hours or if worn",
+                    "model_answer": "La machine Exacta-TLX-GEOSPREAD GS3 doit \u00eatre remplac\u00e9e tous les 6 mois.",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "With what torque in Nm must a M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened?",
+                    "expected_answer": "420 Nm",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question :</p>\n\n<instruction>Read the entire context carefully</instruction>\n<instruction>Focus ONLY on the specific information related to the question</instruction>\n<instruction>Provide an extremely precise answer</instruction>\n<instruction>Match the expected answer format exactly</instruction>\n<instruction>If unsure, respond with \"Unknown\" or \"Not found in context\"</instruction>\n\n<pour la r\u00e9ponse :</p>\n\nLa r\u00e9ponse est 25 Nm.",
+                    "page": 129,
+                    "dataset": "table_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "With what torque in Nm must a M6 hexagon stainless steel bolt with a 70 (A2) quality and with a 0.2 friction be fastened?",
+                    "expected_answer": "9.9 Nm",
+                    "model_answer": "Le torque requis pour fixer un M6 hexagon stainless steel bolt avec une qualit\u00e9 A2 et une friction de 0,2 Nm est de 70 Nm.",
+                    "page": 129,
+                    "dataset": "table_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
+                    "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
+                    "model_answer": "Si le flux du fertilisant est bloqu\u00e9, vous devriez consulter la page 10.",
+                    "page": 152,
+                    "dataset": "table_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                }
+            ],
+            "duration_qa_seconds": 1.4075393676757812,
+            "total_questions_processed": 10,
+            "duration_eval_seconds": 0.9159739017486572
+        },
+        "unanswerable_questions": {
+            "results": [
+                {
+                    "question": "How much extra diesel does the tractor consume to use the Exacta-TLX GEOSPREAD?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Unknown.",
+                    "page": 23,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "Is fine application more expensive than normal dosing?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<p>Une application conforme \u00e0 l'usage pr\u00e9vu comprend \u00e9galement la prise en compte des instructions r\u00e9dig\u00e9es par le fabricant pour l'utilisation, la maintenance et la r\u00e9paration de la machine. </p>",
+                    "page": 24,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Is one-sided boundary spreading suitable for small gardens?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "L'exacta-TLX-GEOSPREAD GS3 est un type de machine.",
+                    "page": 28,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "For what other kind of connections can the IM Tellus Input cable be used?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour utiliser le terminal IsoMatch Tellus sur un tracteur qui n'est pas \u00e9quip\u00e9 du syst\u00e8me de communication ISOBUS, il vous faut un faisceau d'adaptation suppl\u00e9mentaire. Vous pouvez le commander avec le terminal ou vous le procurer aupr\u00e8s de votre concessionnaire.</p>",
+                    "page": 32,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Can the IsoMatch universal ISOBUS terminal be used to check the weather?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Pour utiliser le terminal IsoMatch Tellus sur un tracteur qui n'est pas \u00e9quip\u00e9 du syst\u00e8me de communication ISOBUS, il vous faut un faisceau de raccordement suppl\u00e9mentaire. Vous pouvez commander ou procurer aupr\u00e8s de votre concessionnaire un faisceau d'adaptation pour tracteurs non ISOBUS.",
+                    "page": 33,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Can IsoMatch Tellus be connected to an external mouse?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question \"Can IsoMatch Tellus \u00eatre connect\u00e9 \u00e0 un ordinateur externe ?\" </p>\n\nLa r\u00e9ponse est non. Le terminal IsoMatch Tellus ne peut pas \u00eatre branch\u00e9 sur une prise CAN standard du tracteur avec le c\u00e2ble CAN fourni, car il n\u00e9cessite un c\u00e2ble avec 9 broches pour relier le tracteur au bo\u00eetier de commande ISOBUS compl\u00e8te.",
+                    "page": 34,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Is the Hydraulic border spreading plate made out of steel?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La r\u00e9ponse est : Non.",
+                    "page": 47,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Can the linkage pin for the tractor be made out of aluminium?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question \"Can the linkage pin for the tractor be made out of aluminium?\" </p>\n\n<instruction>Read the entire context carefully</instruction>\n<instruction>Focus ONLY on the specific information related to the question</instruction>\n<instruction>Provide an extremely precise answer</instruction>\n<instruction>Match the expected answer format exactly</instruction>\n<instruction>If unsure, respond with \"Unknown\" or \"Not found in context\"</instruction>\n\n<pour r\u00e9pondre \u00e0 la question \"Can the linkage pin for the tractor be made out of aluminium?\", il n'y a pas d'informations sp\u00e9cifiques dans le texte fournis qui sugg\u00e8rent que le pin de liaison pour le tracteur puisse \u00eatre fait d'aluminium.</p>",
+                    "page": 53,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Can the tray test be performed at 40 degrees Celsius?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question \"Can the tray test be performed at 40 degrees Celsius?\"</p>\n\nLa r\u00e9ponse est : Non.",
+                    "page": 77,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Can the hydraulic border spreading plate be actuated pneumatically?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question \"Can the hydraulic border spreading plate be actuated pneumatically?\"</p>\n\nLa r\u00e9ponse est : Non.",
+                    "page": 85,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "By which environmental standards is the maximum acceptable loss in the ditch is determined?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question \"By which environmental standards is the maximum acceptable loss in the ditch is determined?\"</p>\n\n<instruction>Read the entire context carefully</instruction>\n\n<instruction>Focus ONLY on the specific information related to the question</instruction>\n\n<instruction>Provide an extremely precise answer</instruction>\n\n<instruction>Match the expected answer format exactly</instruction>\n\n<instruction>If unsure, respond with \"Unknown\" or \"Not found in context\"</instruction>\n\n<instruction>Answer in English</instruction>\n\n<pour r\u00e9pondre \u00e0 la question, il s'agit de l'article 3 du Code de l'environnement (Loi sur les \u00e9missions de gaz \u00e0 effet de serre et le changement climatique), qui stipule que \"L'indicateur d'\u00e9mission est d\u00e9fini comme \u00e9tant le montant maximum d'\u00e9mission de gaz \u00e0 effet de serre ou de polluants atmosph\u00e9riques pouvant \u00eatre produite par un processus industriel, agricole ou manufacturier, dans une p\u00e9riode donn\u00e9e.\"</p>\n\n<pour d\u00e9terminer les standards environnementaux, il faut consid\u00e9rer les normes internationales telles que celles \u00e9tablies par l'Organisation des Nations Unies pour l'\u00e9limination, la r\u00e9duction et le remplacement des armes (ONU), ainsi que les directives nationales telles que celles de l'Union europ\u00e9enne.</p>\n\n<instruction>La r\u00e9ponse exacte est donc : \"L'indicateur d'\u00e9mission est d\u00e9fini comme \u00e9tant le montant maximum d'\u00e9mission de gaz \u00e0 effet de serre ou de polluants atmosph\u00e9riques pouvant \u00eatre produite par un processus industriel, agricole ou manufacturier, dans une p\u00e9riode donn\u00e9e.\"</p>",
+                    "page": 87,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How should one proceed to stop spreading the fertilizer?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le manuel d'utilisation indique que pour arr\u00eater la propagation du fertilisant Exacta-TLX-GEOSPREAD GS3, il faut suivre les instructions de s\u00e9curit\u00e9 et de pr\u00e9cautions sp\u00e9cifiques. Cependant, l'exacte proc\u00e9dure n'est pas mentionn\u00e9e dans le contexte fourni.",
+                    "page": 100,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum height the fertilizer flies when spreading without GEOCONTROL headland",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le syst\u00e8me ISOBUS permet de contr\u00f4ler la hauteur du fertilisant lorsqu'il est utilis\u00e9 sans capteur GEOCONTROL headland.",
+                    "page": 103,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is seven-sided boundary spreading with the hydraulicborder spreading plate?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Seven-sided boundary spreading with the hydraulic border spreading plate refers to a machine type used by Kverneland Group Nieuw-Vennep B.V. for geospatial applications.",
+                    "page": 107,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Which appropriate measures for road transport should be taken when stopping work?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Unknown.",
+                    "page": 112,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "Why do most types of fertiliser attract water?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "L'application mobile de tableaux d'\u00e9pandage de Kverneland Group permet de r\u00e9gler correctement le distributeur d'engrais en fonction des types d'engrais existants.",
+                    "page": 114,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Why is damage to the vanes, spreading disc or discharge bushing, most likely caused by a hard object?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "L'objectif d'un \u00e9pandeur est de r\u00e9duire la vitesse \u00e0 laquelle les disques se d\u00e9placent et de pr\u00e9venir des dommages aux vanes. Un hard objecte peut causer des dommages si il est trop proche du point de chute, entra\u00eenant une augmentation excessive de la vitesse des disques.",
+                    "page": 115,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What should a person do who fell into the fertilizer and no physician is available?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "A person should effectuez \u00e0 nouveau le test.",
+                    "page": 117,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What happens if the machine grease nipples are never lubricated?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question \"Qu'est-ce qui se passe si les n\u0153uds de greffage ne sont jamais lubrifi\u00e9s ?\" </p>\n\n<response>\n    Si les n\u0153uds de greffage ne sont jamais lubrifi\u00e9s, cela peut entra\u00eener des probl\u00e8mes de fonctionnement et potentiellement causer des dommages \u00e0 la machine.\n</response>",
+                    "page": 118,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What specific paint should be used to paint any damaged paintwork at the end of the season the machine in preparation for winter storage?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question : Un vernis de protection contre les d\u00e9g\u00e2ts. </p>",
+                    "page": 121,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the curriculum of the training program agrarians need to complete to be considered competent to operate this machine?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le programme de formation agraire n\u00e9cessite une formation sp\u00e9cifique qui comprend les principes fondamentaux du travail avec les machines agricoles. Cela inclut des cours sur la maintenance et l'entretien des machines, ainsi que des exercices pratiques pour am\u00e9liorer les comp\u00e9tences en mati\u00e8re d'utilisation et de conduite s\u00e9curitaire.",
+                    "page": 4,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "By which international standard are the pictograms used in this manual specified for agricultural machinery?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question</p>\n\nLa r\u00e9ponse est <strong>ISO 11786</strong>.",
+                    "page": 5,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How does the rate of corrosion on the Exacta-TLX GEOSPREAD compare between machines used in coastal vs. inland agricultural regions?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le rate de corrosion sur l'Exacta-TLX GEOSPREAD est inf\u00e9rieur \u00e0 celui des machines utilis\u00e9es dans les r\u00e9gions agricoles c\u00f4ti\u00e8res par rapport aux r\u00e9gions agricoles int\u00e9rieures.",
+                    "page": 21,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What kind of protective safety gloves are needed for cleaning fertiliser remnants from the Exacta-TLX GEOSPREAD before welding?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Unknown.",
+                    "page": 22,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What are the detailed technical specifications and bandwidth capabilities of different ISOBUS communication protocol versions compatible with the IsoMatch Tellus system?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question sp\u00e9cifique \"Quelles sont les sp\u00e9cifications techniques et les capacit\u00e9s de bande passante des diff\u00e9rentes versions de protocole ISOBUS compatibles avec le syst\u00e8me IsoMatch Tellus ?\", il n'y a pas d'information directe fournie dans le contexte fournie. Cependant, on peut d\u00e9duire certaines informations pertinentes :</p>\n\n*   Le terminal universel IsoMatch Tellus est compatible avec les tracteurs \u00e9quip\u00e9s de syst\u00e8mes de communication ISOBUS.\n*   Il est possible que certaines versions de protocole ISOBUS aient des sp\u00e9cifications techniques ou des capacit\u00e9s de bande passante diff\u00e9rentes, mais pas n\u00e9cessairement pour le syst\u00e8me IsoMatch Tellus.",
+                    "page": 32,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How many hours of continuous operation can the IsoMatch Tellus operate before flattening a typical tractor battery if left switched on with the engine off?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question, il faut d'abord identifier le type de batterie utilis\u00e9e par un tracteur. Selon l'index des acc\u00e8sors, les batteries de traction sont g\u00e9n\u00e9ralement de 12 volts. Ensuite, on peut trouver dans l'index des c\u00e2bles que le c\u00e2ble CAN fourni est de 7 broches et qu'il est utilis\u00e9 pour la communication avec le syst\u00e8me de batterie du tracteur. Il faut maintenant d\u00e9terminer combien d'heures de fonctionnement continu il peut y avoir avant que la batterie ne soit flottante, en fonction des conditions de charge et de consommation du moteur. Selon l'index des c\u00e2bles, les batteries de traction sont g\u00e9n\u00e9ralement de 12 volts. Ensuite, on peut trouver dans l'index des c\u00e2bles que le c\u00e2ble CAN fourni est de 7 broches et qu'il est utilis\u00e9 pour la communication avec le syst\u00e8me de batterie du tracteur. Il faut maintenant d\u00e9terminer combien d'heures de fonctionnement continu il peut y avoir avant que la batterie ne soit flottante, en fonction des conditions de charge et de consommation du moteur. </p>\n\nR\u00e9ponse: 12 heures",
+                    "page": 34,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What specific 'grease' type is recommended for 'profiled tubes' of the  coupling shaft?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le type de grease recommand\u00e9 pour les 'profiled tubes' du couplage de la t\u00eate est le cristallin.",
+                    "page": 51,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the 'hose coupling support' made of?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Not found in context.",
+                    "page": 55,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What specific type of 'Delicia Schnecken Linsen' slug pellets were used for the spreading chart example?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<personnel> 35                                       Tracteur ISOBUS        32\n36                                             Transport          \n37                             pr\u00e9paration de la machine        93\n38                                              s\u00e9curit\u00e9    20, 92\n39                              Triangle d'avertissement         5\n40                                        Type d'engrais          \n41                                            cristallin        58\n42                                              granul\u00e9s        58\n43                                 Granul\u00e9s anti-limaces        58\n44                                               m\u00e9lange        58\n45                                               min\u00e9ral        58\n46                                       Pellets  prill\u00e9        58\n47                                                              58\n48                                              Semences        58\n49                                       Type de graisse        36\n164\n[Image]\nSlugPellets\n[Image]\n[Image]\nSchnecken Linsen\nDelicia\n12 m\n</answer>\n<personnel> Delicia Schnecken Linsen pellets were used for the spreading chart example.",
+                    "page": 69,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the minimum 'baud rate' for 'RS 232 connection'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour obtenir une connexion \u00e0 la bonne fr\u00e9quence, il faut d\u00e9finir le baud rate de 115200. </p>",
+                    "page": 72,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum acceptable 'chunk' size of fertilizer in mm to prevent blockage?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le maximum acceptable 'chunk' size de fertilisant en mm est de 25 mm.",
+                    "page": 74,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the 'tap' material used for hydraulic border spreading plate tap?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le 'tap' material utilis\u00e9 pour le bord de s\u00e9paration des routes est le m\u00e9tal.",
+                    "page": 85,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What type of 'active carbon filters' are recommended for closed tractor cabin to filter fertilizer dust?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Unknown.",
+                    "page": 94,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the tolerance for 'measured distance from the bottom of the vanes, the distance to the ground or the crop' in cm?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le tol\u00e9rance pour la 'measured distance from the bottom of the vanes, the distance to the ground or the crop' est de 109 mm.",
+                    "page": 95,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le 'wind speed' limit sup\u00e9rieur \u00e0 5 m/sec est consid\u00e9r\u00e9 comme acceptable pour la qualit\u00e9 du produit.",
+                    "page": 96,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the recommended tire pressure 'range' for transport mode?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question \"Quel est le 'range de pression recommand\u00e9e' pour l'utilisation du tracteur ISOBUS dans le mode de transport ?\" </p>\n\n<instruction>Read the entire context carefully</instruction>\n\n<pour trouver exactement les informations n\u00e9cessaires, nous devons examiner attentivement le texte fourni.</p>\n\n<pour r\u00e9pondre \u00e0 la question, il faut identifier la mention sp\u00e9cifique concernant le 'range de pression recommand\u00e9e' pour l'utilisation du tracteur ISOBUS dans le mode de transport. </p>\n\n<pour ce faire, nous pouvons consulter les informations suivantes :</p>\n\n<p>La question n'a pas \u00e9t\u00e9 pos\u00e9e directement, mais on peut trouver des informations sur la s\u00e9curit\u00e9 et les pr\u00e9cautions \u00e0 prendre lors du transport.</p>\n\n<p>Il est mentionn\u00e9 que \"Les c\u00e2bles ne doivent jamais \u00eatre tendus et doivent avoir une libert\u00e9 de mouvement suffisante\" pour \u00e9viter les accidents. </p>\n\n<p>Il n'y a pas d'information sp\u00e9cifique sur le 'range de pression recommand\u00e9e' pour l'utilisation du tracteur ISOBUS dans le mode de transport.</p>\n\n<pour r\u00e9pondre \u00e0 la question, nous devons donc conclure que le 'range de pression recommand\u00e9e' n'est pas mentionn\u00e9 dans le texte fourni. </p>",
+                    "page": 93,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the optimal driving speed reduction percentage during border spreading to compensate for application rate?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour compenser l'application de la vitesse d'\u00e9pandage, il est recommand\u00e9 de r\u00e9duire la vitesse \u00e0 20%.</p>",
+                    "page": 106,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La distance tol\u00e9rance en m\u00e8tres de la bordure du champ lorsque l'on utilise le 'path 1' pour la dispersion des parcelles est de 109 mm.",
+                    "page": 109,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Can the parking support withstand storage on a slope of 10 degrees?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le parking support IsoMatch Grip peut \u00eatre raccord\u00e9 sur une prise CAN standard du tracteur au moyen du c\u00e2ble CAN 7 broches fourni.",
+                    "page": 119,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Unknown.",
+                    "page": 121,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How many operational hours can 'vanes' typically last before requiring replacement?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question \"Comment comptez-vous mesurer les heures d'op\u00e9rationnalit\u00e9 des 'vanes'\"</p>\n\n<instruction>Read the entire context carefully</instruction>\n<instruction>Focus ONLY on the specific information related to the question</instruction>\n<instruction>Provide an extremely precise answer</instruction>\n<instruction>Match the expected answer format exactly</instruction>\n<instruction>If unsure, respond with \"Unknown\" or \"Not found in context\"</instruction>\n\n<pour r\u00e9pondre \u00e0 la question \"Comment comptez-vous mesurer les heures d'op\u00e9rationnalit\u00e9 des 'vanes'\", il est possible de mesurer les heures d'op\u00e9rationnalit\u00e9 des 'vanes' en utilisant un syst\u00e8me de mesure de temps de fonctionnement, tel que le syst\u00e8me de mesure de temps de fonctionnement du tracteur. Cependant, la pr\u00e9cision exacte de cette m\u00e9thode d\u00e9pendra de divers facteurs tels que la qualit\u00e9 du syst\u00e8me de mesure de temps de fonctionnement et les conditions m\u00e9t\u00e9orologiques. Il est \u00e9galement possible de mesurer les heures d'op\u00e9rationnalit\u00e9 des 'vanes' en utilisant un syst\u00e8me de mesure de temps de fonctionnement plus pr\u00e9cis, tel que le syst\u00e8me de mesure de temps de fonctionnement du tracteur avec une r\u00e9solution de temps de fonctionnement de 1 second. Cependant, la pr\u00e9cision exacte de cette m\u00e9thode d\u00e9pendra \u00e9galement de divers facteurs tels que la qualit\u00e9 du syst\u00e8me de mesure de temps de fonctionnement et les conditions m\u00e9t\u00e9orologiques.</p>",
+                    "page": 125,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What type of 'universal grease' is recommended for all 'lubricating nipples'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Unknown.",
+                    "page": 126,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What type of 'suitable lubricant' is recommended for 'connectors' to prevent corrosion?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Unknown.",
+                    "page": 128,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What 'screwdriver' type (flathead/phillips) is optimal for adjusting 'dosing mechanism'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour ajuster le m\u00e9canisme de dosage, un tournevis \u00e0 aiguilles d'une \u00e9pingle est optimal.</p>",
+                    "page": 133,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the typical agitator 'seal ring' lifespan in operational hours before requiring replacement?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le seal ring d'une machine agricole (Exacta-TLX-GEOSPREAD GS3) a une dur\u00e9e de vie typique d'environ 1000 \u00e0 1500 heures avant n\u00e9cessit\u00e9 de son remplacement.",
+                    "page": 134,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the 'small crack of light' dimension in millimeters between 'dosing baffles' when closed?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le 'small crack of light' est de 1 mm.",
+                    "page": 135,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "<pour r\u00e9pondre \u00e0 la question \"Quel type de mat\u00e9riau recommand\u00e9 pour le 'feeler gauge' dans les 'discharge bushings' ?\" </p>\n\n<instruction>La r\u00e9ponse exacte est : cristallin</instruction>\n\n<answer>Le cristallin est un type de mat\u00e9riau recommand\u00e9 pour le 'feeler gauge' dans les 'discharge bushings'.",
+                    "page": 138,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the 'plastic seal' material specification for agitator axle seal?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le 'plastic seal' material specification pour le seau d'agitation est \"Exacta-TLX-GEOSPREAD GS3\".",
+                    "page": 140,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the material of the 'metal seal rings' for agitator axle seal?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Unknown.",
+                    "page": 141,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What specific 'extension cable' length in meters is optimal for ISO 11786 in cab tractor connection?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le c\u00e2ble de rallonge ISO est de 144 m\u00e8tres.",
+                    "page": 144,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the free 'test period' duration in days for 'GEOCONTROL software' user licence?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le \"test period\" est de 30 jours.",
+                    "page": 145,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What valve type and manufacturer is used for 'valve set' that comes with hopper empty sensor?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le type de valve utilis\u00e9 pour le 'valve set' qui arrive avec l'\u00e9pandage du hopper est un Bourdon valve.",
+                    "page": 148,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the drain rate in liters per minute of 'drain kit' for hopper emptying?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le drain rate de la machine Exacta-TLX-GEOSPREAD GS3 est de 0,5 L/min.",
+                    "page": 149,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What 'sail' material is used for hopper cover, and its UV resistance?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "L'acrylique.",
+                    "page": 150,
+                    "dataset": "unanswerable_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                }
+            ],
+            "duration_qa_seconds": 12.769112586975098,
+            "total_questions_processed": 54,
+            "duration_eval_seconds": 5.496582746505737
+        }
+    }
+}

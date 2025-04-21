@@ -1,0 +1,65 @@
+{
+    "test_run_parameters": {
+        "language_tested": "french",
+        "question_model": "phi3_8B_q4_mini-128k",
+        "evaluator_model": "gemma3_12B-128k",
+        "retrieval_algorithm": "keyword",
+        "chunk_size": 500,
+        "overlap_size": 100,
+        "num_retrieved_docs": 3,
+        "chroma_collection_used": "french_manual_cs500_os100"
+    },
+    "overall_metrics": {
+        "accuracy": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "specificity": 0.0,
+        "f1_score": 0.0,
+        "true_positives": 0,
+        "true_negatives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "total_questions": 1,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.0,
+            "table_questions": 0.0,
+            "unanswerable_questions": 0.0
+        }
+    },
+    "timing": {
+        "overall_duration_seconds": 93.6964898109436,
+        "duration_qa_phase_seconds": 86.05256247520447,
+        "duration_eval_phase_seconds": 7.643927335739136
+    },
+    "per_dataset_details": {
+        "general_questions": {
+            "results": [],
+            "duration_qa_seconds": 28.00692391395569,
+            "total_questions_processed": 0,
+            "duration_eval_seconds": 1.430511474609375e-06
+        },
+        "table_questions": {
+            "results": [
+                {
+                    "question": "What is the pattern of the type 'mineral'?",
+                    "expected_answer": "angular, with sharp angles and edges",
+                    "model_answer": "Unknown in context. The specific details about the mineral pattern are not provided in the given text.",
+                    "page": 58,
+                    "dataset": "table_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                }
+            ],
+            "duration_qa_seconds": 29.712204933166504,
+            "total_questions_processed": 1,
+            "duration_eval_seconds": 7.6436076164245605
+        },
+        "unanswerable_questions": {
+            "results": [],
+            "duration_qa_seconds": 28.333211660385132,
+            "total_questions_processed": 0,
+            "duration_eval_seconds": 2.6226043701171875e-06
+        }
+    }
+}

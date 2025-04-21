@@ -1,0 +1,44 @@
+{
+    "test_run_parameters": {
+        "language_tested": "german",
+        "question_model": "phi3_8B_q4_mini-128k",
+        "evaluator_model": "gemma3_12B-128k",
+        "retrieval_algorithm": "keyword",
+        "chunk_size": 500,
+        "overlap_size": 100,
+        "num_retrieved_docs": 3,
+        "chroma_collection_used": "german_manual_cs500_os100"
+    },
+    "overall_metrics": {
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.0,
+            "table_questions": 0.0,
+            "unanswerable_questions": 0.0
+        }
+    },
+    "timing": {
+        "overall_duration_seconds": 84.983323097229,
+        "duration_qa_phase_seconds": 84.98297214508057,
+        "duration_eval_phase_seconds": 0.0003509521484375
+    },
+    "per_dataset_details": {
+        "general_questions": {
+            "results": [],
+            "duration_qa_seconds": 28.637027263641357,
+            "total_questions_processed": 0,
+            "duration_eval_seconds": 2.6226043701171875e-06
+        },
+        "table_questions": {
+            "results": [],
+            "duration_qa_seconds": 28.316855669021606,
+            "total_questions_processed": 0,
+            "duration_eval_seconds": 1.6689300537109375e-06
+        },
+        "unanswerable_questions": {
+            "results": [],
+            "duration_qa_seconds": 28.028718948364258,
+            "total_questions_processed": 0,
+            "duration_eval_seconds": 1.430511474609375e-06
+        }
+    }
+}
