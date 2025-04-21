@@ -49,17 +49,21 @@ def get_known_languages(config_path: str = 'config.json') -> List[str]:
         return DEFAULT_LANGUAGES
 
 
-def extract_visualization_data(results_dir: str) -> Optional[pd.DataFrame]:
+# Rename function and modify logic
+def extract_detailed_visualization_data(results_dir: str) -> Optional[pd.DataFrame]:
     """
     Scans a directory for result JSON files, parses filenames and content
-    to extract test parameters and F1 scores, validating the language component.
+    to extract test parameters, F1 scores, and detailed dataset success rates.
 
     Args:
         results_dir: The path to the directory containing the result JSON files.
 
     Returns:
-        A pandas DataFrame containing the extracted data (parameters and f1_score),
-        or None if the directory doesn't exist or no valid files are found.
+        A pandas DataFrame containing the extracted data. Each row represents
+        either an overall F1 score or a specific dataset's success rate for a run.
+        Includes columns like 'metric_type' ('f1_score' or 'dataset_success')
+        and 'metric_value'. For dataset success, includes 'dataset_type'.
+        Returns None if the directory doesn't exist or no valid files are found.
     """
     if not os.path.isdir(results_dir):
         print(f"Error: Results directory not found at '{results_dir}'")
@@ -108,9 +112,7 @@ def extract_visualization_data(results_dir: str) -> Optional[pd.DataFrame]:
                 overlap_size_str = match.group('overlap')
                 num_retrieved_docs_str = match.group('topk')
 
-                # Corrected print statement reflecting the actual groups
-                print(f"  Extracted: algo='{retrieval_algorithm}', lang='{language}', model='{question_model_name}', chunk='{chunk_size_str}', overlap='{overlap_size_str}', topk='{num_retrieved_docs_str}'")
-
+                print(f"  Extracted Params: algo='{retrieval_algorithm}', lang='{language}', model='{question_model_name}', chunk='{chunk_size_str}', overlap='{overlap_size_str}', topk='{num_retrieved_docs_str}'")
 
                 # Proceed only if language is valid
                 with open(filepath, 'r', encoding='utf-8') as f:
@@ -122,26 +124,52 @@ def extract_visualization_data(results_dir: str) -> Optional[pd.DataFrame]:
                 overlap_size = int(overlap_size_str)
                 num_retrieved_docs = int(num_retrieved_docs_str)
 
-                # Extract F1 score safely from JSON content
-                overall_metrics = data.get('overall_metrics', {}) # Safer access
-                f1_score = overall_metrics.get('f1_score') # Safer access
-                print(f"  Attempting to get F1 score: Found overall_metrics={overall_metrics is not None}, f1_score={f1_score}") # Added print
+                base_record = {
+                    'retrieval_algorithm': retrieval_algorithm,
+                    'language': language,
+                    'question_model': question_model_name,
+                    'chunk_size': chunk_size,
+                    'overlap_size': overlap_size,
+                    'num_retrieved_docs': num_retrieved_docs,
+                    'filename': filename # Add filename for easier debugging
+                }
 
+                overall_metrics = data.get('overall_metrics', {})
 
+                # 1. Extract F1 Score (as before, but add metric type info)
+                f1_score = overall_metrics.get('f1_score')
                 if f1_score is not None:
-                    extracted_data.append({
-                        'retrieval_algorithm': retrieval_algorithm,
-                        'language': language,
-                        'question_model': question_model_name, # Use the correctly extracted model name
-                        'chunk_size': chunk_size,
-                        'overlap_size': overlap_size,
-                        'num_retrieved_docs': num_retrieved_docs,
-                        'f1_score': float(f1_score) # Ensure it's a float
+                    f1_record = base_record.copy()
+                    f1_record.update({
+                        'metric_type': 'f1_score',
+                        'metric_value': float(f1_score),
+                        'dataset_type': None # Not applicable for F1
                     })
-                    print(f"  Successfully extracted data point: f1={f1_score:.4f}") # Added print
+                    extracted_data.append(f1_record)
+                    print(f"  Extracted F1 score: {f1_score:.4f}")
                 else:
-                    print(f"  Warning: 'f1_score' not found or is null in overall_metrics. Skipping data point.") # Modified print
-                    skipped_files.append(filename + " (missing f1_score)")
+                    print(f"  Warning: 'f1_score' not found or is null in overall_metrics.")
+
+                # 2. Extract Dataset Success Rates
+                dataset_success = overall_metrics.get('dataset_self_evaluation_success', {})
+                if isinstance(dataset_success, dict) and dataset_success:
+                    print(f"  Found dataset success rates: {list(dataset_success.keys())}")
+                    for dataset_name, success_rate in dataset_success.items():
+                        if success_rate is not None:
+                            dataset_record = base_record.copy()
+                            dataset_record.update({
+                                'metric_type': 'dataset_success',
+                                'metric_value': float(success_rate),
+                                'dataset_type': dataset_name # Store the dataset name
+                            })
+                            extracted_data.append(dataset_record)
+                            print(f"    Extracted '{dataset_name}': {success_rate:.4f}")
+                        else:
+                            print(f"    Warning: Success rate for '{dataset_name}' is null. Skipping.")
+                elif not dataset_success:
+                     print(f"  Info: 'dataset_self_evaluation_success' dictionary is empty or missing.")
+                else:
+                     print(f"  Warning: 'dataset_self_evaluation_success' is not a dictionary or is invalid. Skipping dataset rates.")
 
 
             except json.JSONDecodeError:
@@ -175,16 +203,17 @@ def extract_visualization_data(results_dir: str) -> Optional[pd.DataFrame]:
         return None
 
     df = pd.DataFrame(extracted_data)
-    print(f"\nSuccessfully extracted data from {len(df)} valid files.")
+    print(f"\nSuccessfully extracted {len(extracted_data)} data points (including F1 and dataset metrics) into DataFrame.")
     return df
 
 if __name__ == '__main__':
     # Example usage: Assuming this script is in 'visualization' and 'results' is in the parent directory ('RAG')
     default_results_dir = os.path.join(project_root_dir, 'results')
 
-    print(f"\n--- Testing Data Extractor ---")
+    print(f"\n--- Testing Detailed Data Extractor ---")
     print(f"Looking for results in: {default_results_dir}")
-    df_results = extract_visualization_data(default_results_dir)
+    # Call the renamed function
+    df_results = extract_detailed_visualization_data(default_results_dir)
 
     if df_results is not None:
         print("\n--- Extracted DataFrame Head ---")
@@ -195,8 +224,13 @@ if __name__ == '__main__':
         print(df_results['question_model'].unique()) # Verify model names look correct
         print("\n--- DataFrame Info ---")
         df_results.info()
-        # print("\n--- Basic Description ---")
-        # print(df_results.describe())
+        print("\n--- Value Counts for 'metric_type' ---")
+        print(df_results['metric_type'].value_counts())
+        print("\n--- Value Counts for 'dataset_type' (where metric_type is dataset_success) ---")
+        print(df_results[df_results['metric_type'] == 'dataset_success']['dataset_type'].value_counts())
+        print("\n--- Example rows for dataset_success ---")
+        print(df_results[df_results['metric_type'] == 'dataset_success'].head())
+
     else:
         print("\nNo DataFrame generated.")
-    print(f"--- Data Extractor Test Finished ---")
+    print(f"--- Detailed Data Extractor Test Finished ---")

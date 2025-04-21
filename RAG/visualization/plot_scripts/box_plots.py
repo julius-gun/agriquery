@@ -69,10 +69,14 @@ def create_f1_boxplot(
     ordered_groups = None # Default to no specific order
     if sort_by_median_score:
         try:
-            median_scores = data.groupby(group_by_column)[score_column].median()
-            # Sort the groups based on median score in ascending order
-            ordered_groups = median_scores.sort_values(ascending=True).index.tolist()
-            print(f"Ordering '{group_by_column}' by median '{score_column}' (ascending): {ordered_groups}")
+            # Ensure score_column is numeric before calculating median
+            if pd.api.types.is_numeric_dtype(data[score_column]):
+                median_scores = data.groupby(group_by_column)[score_column].median()
+                # Sort the groups based on median score in ascending order
+                ordered_groups = median_scores.sort_values(ascending=True).index.tolist()
+                print(f"Ordering '{group_by_column}' by median '{score_column}' (ascending): {ordered_groups}")
+            else:
+                print(f"Warning: Score column '{score_column}' is not numeric. Cannot sort by median. Plotting in default order.")
         except KeyError:
             print(f"Warning: Could not group by '{group_by_column}' or find score column '{score_column}' for ordering. Plotting in default order.")
         except Exception as e:
@@ -104,7 +108,7 @@ def create_f1_boxplot(
         "x": group_by_column,
         "y": score_column,
         "data": data,
-        "size": 4,
+        "size": 5, # Slightly larger points might be good
         "jitter": True,
         "ax": ax,
         "order": ordered_groups, # Apply the same order (or None) to stripplot
@@ -160,7 +164,11 @@ def create_f1_boxplot(
          try:
              current_legend = ax.get_legend()
              if current_legend:
-                 current_legend.set_title(hue_column.replace("_", " ").title())
+                 # Make legend title more readable
+                 legend_title = hue_column.replace("_", " ").title()
+                 current_legend.set_title(legend_title)
+                 # Optionally move legend outside
+                 # plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', title=legend_title)
          except AttributeError:
              pass # No legend to modify
 
@@ -168,9 +176,151 @@ def create_f1_boxplot(
 
     # Save the plot
     try:
-        plt.savefig(output_path, dpi=300, bbox_inches='tight') # Added bbox_inches='tight' to help fit legend
+        # Use bbox_inches='tight' to try and fit legend if moved outside
+        plt.savefig(output_path, dpi=300, bbox_inches='tight')
         print(f"Box plot saved successfully to: {output_path}")
     except Exception as e:
         print(f"Error saving plot to {output_path}: {e}")
 
     plt.close() # Close the plot figure to free memory
+
+
+# --- New Function ---
+def create_dataset_success_boxplot(
+    data: pd.DataFrame,
+    output_path: str,
+    retrieval_algorithm: str, # Added parameter for title
+    sort_by_median_score: bool = True,
+    title: Optional[str] = None,
+    xlabel: Optional[str] = None,
+    ylabel: Optional[str] = None,
+    figure_width: int = 12,
+    figure_height: int = 7
+):
+    """
+    Creates a box plot of dataset success rates grouped by question model,
+    with individual points colored by dataset type.
+
+    Assumes input data is pre-filtered for a specific retrieval algorithm,
+    language, chunk size, overlap size, and metric_type='dataset_success'.
+
+    Args:
+        data: Pandas DataFrame containing the filtered data. Must include
+              'question_model', 'metric_value', and 'dataset_type' columns.
+        output_path: The full path where the plot image will be saved.
+        retrieval_algorithm: The retrieval algorithm used (for the plot title).
+        sort_by_median_score: If True (default), order models on the x-axis
+                              by their median success rate (ascending).
+        title: Optional title for the plot. If None, a default is generated.
+        xlabel: Optional label for the x-axis. Defaults to 'Question Model'.
+        ylabel: Optional label for the y-axis. Defaults to 'Dataset Success Rate'.
+        figure_width: Width of the plot figure in inches.
+        figure_height: Height of the plot figure in inches.
+    """
+    group_by_column = 'question_model'
+    score_column = 'metric_value' # From the new data extractor structure
+    hue_column = 'dataset_type' # Color points by dataset type
+
+    if data is None or data.empty:
+        print(f"Error: Cannot create plot for {retrieval_algorithm}. Input data is None or empty.")
+        return
+    required_columns = [group_by_column, score_column, hue_column]
+    if not all(col in data.columns for col in required_columns):
+        print(f"Error: Data for {retrieval_algorithm} is missing one or more required columns: {required_columns}.")
+        return
+    if not pd.api.types.is_numeric_dtype(data[score_column]):
+        print(f"Error: Score column '{score_column}' is not numeric for {retrieval_algorithm}. Cannot plot.")
+        return
+
+    # Ensure the output directory exists
+    output_dir = os.path.dirname(output_path)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
+
+    # --- Determine order of models based on median score (optional) ---
+    ordered_groups = None
+    if sort_by_median_score:
+        try:
+            # Group by model, calculate median success rate across all its dataset points
+            median_scores = data.groupby(group_by_column)[score_column].median()
+            ordered_groups = median_scores.sort_values(ascending=True).index.tolist()
+            print(f"Ordering '{group_by_column}' by median '{score_column}' (ascending) for {retrieval_algorithm}: {ordered_groups}")
+        except Exception as e:
+             print(f"Warning: An error occurred during group ordering for {retrieval_algorithm}: {e}. Plotting in default order.")
+    else:
+        print(f"Plotting '{group_by_column}' in default order for {retrieval_algorithm} (sorting by score disabled).")
+    # --- End order calculation ---
+
+    # --- Determine hue order for datasets (optional but good for consistency) ---
+    # Get unique dataset types present in the data and sort them alphabetically
+    hue_order = sorted(data[hue_column].unique())
+    print(f"Using dataset types for hue (legend order): {hue_order}")
+    # --- End hue order ---
+
+    # Set plot style
+    sns.set_theme(style="whitegrid")
+
+    # Create the plot
+    plt.figure(figsize=(figure_width, figure_height))
+
+    # 1. Generate the boxplot (boxes colored by model)
+    ax = sns.boxplot(
+        x=group_by_column,
+        y=score_column,
+        hue=group_by_column, # Color boxes by model
+        data=data,
+        palette="viridis", # Or another palette
+        order=ordered_groups,
+        legend=False # No legend for the boxes
+    )
+
+    # 2. Add individual data points (colored by dataset_type)
+    sns.stripplot(
+        x=group_by_column,
+        y=score_column,
+        hue=hue_column, # Color points by dataset type
+        hue_order=hue_order, # Use consistent dataset order
+        data=data,
+        size=5,
+        jitter=True,
+        dodge=True, # Separate points by dataset type
+        order=ordered_groups,
+        ax=ax,
+        legend="auto" # Create legend for dataset types
+    )
+
+    # Improve layout and labels
+    plt.xticks(rotation=45, ha='right')
+
+    # Set title and labels
+    title_suffix = " (Ordered by Median Success Rate)" if sort_by_median_score and ordered_groups else ""
+    plot_title = title or f'Dataset Success Rate by Model ({retrieval_algorithm.capitalize()} Algorithm){title_suffix}'
+    x_axis_label = xlabel or group_by_column.replace("_", " ").title()
+    y_axis_label = ylabel or "Dataset Success Rate" # Use specific label
+
+    plt.title(plot_title, fontsize=16)
+    plt.xlabel(x_axis_label, fontsize=12)
+    plt.ylabel(y_axis_label, fontsize=12)
+    plt.ylim(0, 1.05) # Success rate is between 0 and 1
+
+    # Adjust legend
+    try:
+        current_legend = ax.get_legend()
+        if current_legend:
+            legend_title = hue_column.replace("_", " ").title()
+            current_legend.set_title(legend_title)
+            # Optional: Move legend outside if it overlaps
+            # plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', title=legend_title)
+    except AttributeError:
+        pass # No legend generated
+
+    plt.tight_layout()
+
+    # Save the plot
+    try:
+        plt.savefig(output_path, dpi=300, bbox_inches='tight')
+        print(f"Dataset success box plot saved successfully to: {output_path}")
+    except Exception as e:
+        print(f"Error saving plot to {output_path}: {e}")
+
+    plt.close()
