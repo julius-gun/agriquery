@@ -12,7 +12,7 @@
 *Embedding retrieval also performs poorly on table-based questions in English, but better then Hybrid.*
 
 ![Success Heatmap Keyword (English, Unanswerable Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_keyword_dataset_unanswerable_questions.png)
-*Keyword retrieval yields the worst results when attempting to identify unanswerable questions in English.*
+*Keyword retrieval yields the worst results when attempting to identify unanswerable questions in English. But the high success rate shows that the questions in the dataset are very close to the manual source text.*
 
 ![Success Heatmap Keyword (English, Table Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_keyword_dataset_table_questions.png)
 *Keyword retrieval performs the worst among the algorithms for table-based questions in English.*
