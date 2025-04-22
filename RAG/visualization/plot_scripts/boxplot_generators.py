@@ -31,10 +31,24 @@ def generate_f1_boxplot(
         print("Warning: No F1 score data found. Skipping F1 boxplot.")
         return
 
+    # --- Construct Title ---
+    # We explicitly set the title here, overriding the default in create_f1_boxplot
+    group_by_title = group_by.replace("_", " ").title()
+    # NOTE: We assume the default sort_by_median_score=True for the suffix,
+    # as this generator doesn't expose that option. If sorting is disabled
+    # elsewhere, this suffix might be inaccurate, but it matches the previous default behavior.
+    # A more robust solution might involve returning the sort status from create_f1_boxplot,
+    # but that adds complexity.
+    title_suffix = ""
+    plot_title = f'F1 Score Distribution by {group_by_title}{title_suffix}'
+
+
     boxplot_args: Dict[str, Any] = {
         "data": df_f1,
         "group_by_column": group_by,
-        "score_column": "metric_value",
+        "score_column": "metric_value", # Still needed for y-axis data
+        "ylabel": "F1 Score",           # Set y-axis label explicitly
+        "title": plot_title,            # Set title explicitly
         "hue_column": None, # Default
         "hue_order": None, # Default
         # output_path will be set below
