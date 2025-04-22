@@ -1,4 +1,8 @@
 # RAG Testing Framework
+
+![Success Boxplot Hybrid (English, CS:200 OS:100)](visualization/plots/dataset_success_boxplot_model_vs_dataset_hybrid_lang_english_cs_200_os_100.png)
+*This boxplot illustrates the variability in success rates across different datasets for various models using the hybrid retrieval method in English (Chunk Size 200, Overlap 100).*
+
 ![Success Heatmap Hybrid (English, General Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_hybrid_dataset_general_questions.png)
 *Hybrid retrieval demonstrates very good success rates for general questions in English across different models and chunk/overlap configurations.*
 
