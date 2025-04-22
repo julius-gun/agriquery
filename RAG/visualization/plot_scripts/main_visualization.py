@@ -9,39 +9,52 @@ import pandas as pd
 
 # --- Adjust Python Path (using the helper) ---
 from plot_utils import add_project_paths
-add_project_paths() # Ensure project paths are set
+
+add_project_paths()  # Ensure project paths are set
 
 # --- Imports ---
 try:
     from utils.config_loader import ConfigLoader
-    from visualization.visualization_data_extractor import extract_detailed_visualization_data
+    from visualization.visualization_data_extractor import (
+        extract_detailed_visualization_data,
+    )
     from visualization.plot_scripts.boxplot_generators import (
         generate_f1_boxplot,
-        generate_dataset_success_boxplot
+        generate_dataset_success_boxplot,
     )
+
     # Import the new heatmap generator functions
     from visualization.plot_scripts.heatmap_generators import (
         generate_language_vs_model_heatmap,
         generate_chunk_vs_overlap_heatmap,
-        generate_model_vs_chunk_overlap_heatmap
+        generate_model_vs_chunk_overlap_heatmap,
+        generate_dataset_success_heatmaps,  # <-- Import the new function
     )
+
     # Removed direct imports from heatmaps.py
-    from visualization.plot_scripts.plot_utils import sanitize_filename # Keep for now, might not be needed here anymore
+    from visualization.plot_scripts.plot_utils import (
+        sanitize_filename,
+    )  # Keep for now, might not be needed here anymore
 except ImportError as e:
     print("Error importing required modules.")
     print(f"Please ensure the script is run from a location where Python can find:")
-    print(f"  - '{os.path.dirname(os.path.dirname(os.path.dirname(__file__)))}/utils/config_loader.py'") # Adjusted path example
-    print(f"  - '{os.path.dirname(os.path.dirname(os.path.dirname(__file__)))}/visualization/visualization_data_extractor.py'")
+    print(
+        f"  - '{os.path.dirname(os.path.dirname(os.path.dirname(__file__)))}/utils/config_loader.py'"
+    )  # Adjusted path example
+    print(
+        f"  - '{os.path.dirname(os.path.dirname(os.path.dirname(__file__)))}/visualization/visualization_data_extractor.py'"
+    )
     print(f"  - '{os.path.dirname(__file__)}/box_plots.py'")
     print(f"  - '{os.path.dirname(__file__)}/boxplot_generators.py'")
     print(f"  - '{os.path.dirname(__file__)}/heatmaps.py'")
-    print(f"  - '{os.path.dirname(__file__)}/heatmap_generators.py'") # Added
+    print(f"  - '{os.path.dirname(__file__)}/heatmap_generators.py'")  # Added
     print(f"  - '{os.path.dirname(__file__)}/plot_utils.py'")
     print(f"Current sys.path: {sys.path}")
     print(f"Original Error: {e}")
     sys.exit(1)
 
 # sanitize_filename function removed from here
+
 
 def main():
     # Get project root and visualization dir for default paths
@@ -80,15 +93,19 @@ def main():
         type=str,
         default="all",
         choices=["boxplot", "heatmap", "dataset_boxplot", "all"],
-         help="Type of plot(s) to generate. 'dataset_boxplot' generates dataset success plots for specific params. 'all' generates default boxplot, heatmaps, and dataset_boxplot.",
+        help="Type of plot(s) to generate. 'dataset_boxplot' generates dataset success plots for specific params. 'all' generates default boxplot, heatmaps, and dataset_boxplot.",
     )
     parser.add_argument(
-        "--group-by", # Only used by F1 boxplot now
+        "--group-by",  # Only used by F1 boxplot now
         type=str,
         default="question_model",
         choices=[
-            "retrieval_algorithm", "language", "question_model",
-            "chunk_size", "overlap_size", "num_retrieved_docs",
+            "retrieval_algorithm",
+            "language",
+            "question_model",
+            "chunk_size",
+            "overlap_size",
+            "num_retrieved_docs",
         ],
         help="Parameter to group the F1 box plots by (used if plot-type includes 'boxplot').",
     )
@@ -100,7 +117,7 @@ def main():
     )
 
     # --- Constants for dataset_boxplot ---
-    DATASET_BOXPLOT_LANG = 'english'
+    DATASET_BOXPLOT_LANG = "english"
     DATASET_BOXPLOT_CHUNK = 200
     DATASET_BOXPLOT_OVERLAP = 100
 
@@ -110,8 +127,10 @@ def main():
     print(f"Results directory: {args.results_dir}")
     print(f"Output directory: {args.output_dir}")
     print(f"Requested plot type(s): {args.plot_type}")
-    if args.plot_type == 'dataset_boxplot' or args.plot_type == 'all':
-        print(f"Dataset Boxplot Params: Lang={DATASET_BOXPLOT_LANG}, Chunk={DATASET_BOXPLOT_CHUNK}, Overlap={DATASET_BOXPLOT_OVERLAP}")
+    if args.plot_type == "dataset_boxplot" or args.plot_type == "all":
+        print(
+            f"Dataset Boxplot Params: Lang={DATASET_BOXPLOT_LANG}, Chunk={DATASET_BOXPLOT_CHUNK}, Overlap={DATASET_BOXPLOT_OVERLAP}"
+        )
     if args.output_filename_prefix:
         print(f"Filename prefix: {args.output_filename_prefix}")
 
@@ -120,16 +139,26 @@ def main():
     try:
         config_loader = ConfigLoader(args.config_path)
         language_configs = config_loader.config.get("language_configs", [])
-        loaded_languages = [lc.get("language") for lc in language_configs if lc.get("language")]
+        loaded_languages = [
+            lc.get("language") for lc in language_configs if lc.get("language")
+        ]
         if loaded_languages:
             all_languages_list = loaded_languages
-            print(f"Found languages in config for consistent plot elements: {all_languages_list}")
+            print(
+                f"Found languages in config for consistent plot elements: {all_languages_list}"
+            )
         else:
-            print(f"Warning: No languages found in 'language_configs' in {args.config_path}. Plot elements order may vary.")
+            print(
+                f"Warning: No languages found in 'language_configs' in {args.config_path}. Plot elements order may vary."
+            )
     except FileNotFoundError:
-        print(f"Warning: Config file not found at '{args.config_path}'. Cannot determine full language list for consistent plot elements.")
+        print(
+            f"Warning: Config file not found at '{args.config_path}'. Cannot determine full language list for consistent plot elements."
+        )
     except Exception as e:
-        print(f"Warning: Error loading config file '{args.config_path}': {e}. Proceeding without full language list.")
+        print(
+            f"Warning: Error loading config file '{args.config_path}': {e}. Proceeding without full language list."
+        )
 
     # 1. Extract Data
     print(f"\nExtracting detailed data from: {args.results_dir}")
@@ -141,7 +170,7 @@ def main():
 
     print(f"\nExtracted {len(df_data)} data points (rows).")
     print("Columns found:", df_data.columns.tolist())
-    print("Metric types found:", df_data['metric_type'].unique())
+    print("Metric types found:", df_data["metric_type"].unique())
 
     # 2. Prepare for Plotting
     os.makedirs(args.output_dir, exist_ok=True)
@@ -167,34 +196,38 @@ def main():
                 group_by=args.group_by,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
-                all_languages_list=all_languages_list
+                all_languages_list=all_languages_list,
             )
 
         elif plot_type == "heatmap":
-            # --- Call the Heatmap Generators ---
+            # --- Call the F1 Score Heatmap Generators ---
             print("\nGenerating F1 Score Heatmaps")
-            # Filter data specifically for F1 scores for heatmaps
-            df_f1_heatmap = df_data[df_data['metric_type'] == 'f1_score'].copy()
+            # Filter data specifically for F1 scores for these heatmaps
+            df_f1_heatmap = df_data[df_data["metric_type"] == "f1_score"].copy()
             if df_f1_heatmap.empty:
-                print("Warning: No F1 score data found. Skipping heatmaps.")
-                continue
-
-            # Call each heatmap generator function
-            generate_language_vs_model_heatmap(
-                df_f1_heatmap=df_f1_heatmap,
+                print("Warning: No F1 score data found. Skipping F1 heatmaps.")
+            else:
+                # Call each F1 heatmap generator function
+                generate_language_vs_model_heatmap(
+                    df_f1_heatmap=df_f1_heatmap,
+                    output_dir=args.output_dir,
+                    output_filename_prefix=args.output_filename_prefix,
+                    all_languages_list=all_languages_list,  # Pass language list
+                )
+                generate_chunk_vs_overlap_heatmap(
+                    df_f1_heatmap=df_f1_heatmap,
+                    output_dir=args.output_dir,
+                    output_filename_prefix=args.output_filename_prefix,
+                )
+                generate_model_vs_chunk_overlap_heatmap(
+                    df_f1_heatmap=df_f1_heatmap,
+                    output_dir=args.output_dir,
+                    output_filename_prefix=args.output_filename_prefix,
+                )
+            generate_dataset_success_heatmaps(
+                df_data=df_data,  # Pass the full dataframe
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
-                all_languages_list=all_languages_list # Pass language list
-            )
-            generate_chunk_vs_overlap_heatmap(
-                df_f1_heatmap=df_f1_heatmap,
-                output_dir=args.output_dir,
-                output_filename_prefix=args.output_filename_prefix
-            )
-            generate_model_vs_chunk_overlap_heatmap(
-                df_f1_heatmap=df_f1_heatmap,
-                output_dir=args.output_dir,
-                output_filename_prefix=args.output_filename_prefix
             )
 
         elif plot_type == "dataset_boxplot":
@@ -205,7 +238,7 @@ def main():
                 output_filename_prefix=args.output_filename_prefix,
                 lang=DATASET_BOXPLOT_LANG,
                 chunk=DATASET_BOXPLOT_CHUNK,
-                overlap=DATASET_BOXPLOT_OVERLAP
+                overlap=DATASET_BOXPLOT_OVERLAP,
             )
 
     print("\n--- Visualization Generation Finished ---")

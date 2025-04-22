@@ -205,6 +205,107 @@ def generate_model_vs_chunk_overlap_heatmap(
             index_col_overlap='overlap_size',
             columns_col='question_model'
         )
+def generate_dataset_success_heatmaps(
+    df_data: pd.DataFrame, # Takes the full dataframe
+    output_dir: str,
+    output_filename_prefix: str
+):
+    """
+    Generates heatmaps for Dataset Success Rate: Model vs Chunk/Overlap
+    (English Only, per Algo/Dataset Type).
+    """
+    print("\nGenerating Heatmaps: Dataset Success Rate - Model vs Chunk/Overlap (English Only, per Algo/Dataset)")
+    target_language = 'english'
+    target_metric = 'dataset_success'
+    required_cols = [
+        'language', 'metric_type', 'retrieval_algorithm', 'dataset_type',
+        'question_model', 'chunk_size', 'overlap_size', 'metric_value'
+    ]
+
+    if not all(col in df_data.columns for col in required_cols):
+         print(f"Warning: Input DataFrame is missing one or more required columns for Dataset Success heatmaps: {required_cols}. Skipping this heatmap type.")
+         return
+
+    # Filter for English language and dataset_success metric
+    df_filtered = df_data[
+        (df_data['language'] == target_language) &
+        (df_data['metric_type'] == target_metric)
+    ].copy()
+
+    if df_filtered.empty:
+        print(f"No data found for language '{target_language}' and metric '{target_metric}'. Skipping Dataset Success heatmaps.")
+        return
+
+    # Get unique algorithms and dataset types from the filtered data
+    try:
+        unique_algos = df_filtered['retrieval_algorithm'].unique().tolist()
+        unique_datasets = df_filtered['dataset_type'].unique().tolist()
+    except KeyError as e:
+        print(f"Error: Missing expected column '{e}' in filtered data. Skipping Dataset Success heatmaps.")
+        return
+
+    if not unique_algos:
+        print("No unique retrieval algorithms found in the filtered data.")
+        return
+    if not unique_datasets:
+        print("No unique dataset types found in the filtered data.")
+        return
+
+    print(f"Found {len(unique_algos)} algorithms and {len(unique_datasets)} dataset types for English Dataset Success heatmaps.")
+    print(f"  Algorithms: {unique_algos}")
+    print(f"  Dataset Types: {unique_datasets}")
+
+    total_plots = len(unique_algos) * len(unique_datasets)
+    plot_counter = 0
+
+    # Iterate through each algorithm and dataset type
+    for algo in unique_algos:
+        for dataset in unique_datasets:
+            plot_counter += 1
+            print(f"\n[{plot_counter}/{total_plots}] Generating Dataset Success Heatmap for: Lang={target_language}, Algo={algo}, Dataset={dataset}")
+
+            # Filter further for the specific algorithm and dataset type
+            df_combo = df_filtered[
+                (df_filtered['retrieval_algorithm'] == algo) &
+                (df_filtered['dataset_type'] == dataset)
+            ].copy()
+
+            # Check if data exists and has variation for this specific combination
+            if df_combo.empty or \
+               df_combo['chunk_size'].nunique() < 1 or \
+               df_combo['overlap_size'].nunique() < 1 or \
+               df_combo['question_model'].nunique() < 1:
+                print("  Skipping: Not enough data or variation (models, chunk/overlap) for this specific combination.")
+                continue
+
+            print(f"  Data points for this combination: {len(df_combo)}")
+
+            # Prepare parameters for the plotting function
+            fixed_params_combo = {
+                'language': target_language,
+                'retrieval_algorithm': algo,
+                'dataset_type': dataset
+            }
+
+            # Construct filename
+            sanitized_algo = sanitize_filename(str(algo))
+            sanitized_dataset = sanitize_filename(str(dataset))
+            fixed_param_str = f"lang_{target_language}_algo_{sanitized_algo}_dataset_{sanitized_dataset}"
+            output_filename = f"{output_filename_prefix}dataset_success_heatmap_model_vs_chunk_overlap_{fixed_param_str}.png"
+            output_filepath = os.path.join(output_dir, output_filename)
+
+            # Call the existing heatmap function
+            create_model_vs_chunk_overlap_heatmap(
+                data=df_combo,
+                output_path=output_filepath,
+                fixed_params=fixed_params_combo,
+                values_col='metric_value',       # The actual data column name
+                value_label="Success Rate",     # Specific label for this metric
+                index_col_chunk='chunk_size',
+                index_col_overlap='overlap_size',
+                columns_col='question_model',
+                sort_columns_by_value=True # Keep sorting models by performance
+            )
 
 
 # --- Standalone Execution ---
@@ -243,7 +344,7 @@ if __name__ == "__main__":
         "--plot-subtype",
         type=str,
         required=True,
-        choices=["lang_vs_model", "chunk_vs_overlap", "model_vs_chunk_overlap", "all"],
+        choices=["lang_vs_model", "chunk_vs_overlap", "model_vs_chunk_overlap", "dataset_success", "all"], # Added 'dataset_success'
         help="Type of heatmap(s) to generate.",
     )
     parser.add_argument(
@@ -299,7 +400,8 @@ if __name__ == "__main__":
     # 2. Generate the requested plot subtype(s)
     subtypes_to_generate = []
     if args.plot_subtype == "all":
-        subtypes_to_generate = ["lang_vs_model", "chunk_vs_overlap", "model_vs_chunk_overlap"]
+        # Added 'dataset_success' to 'all'
+        subtypes_to_generate = ["lang_vs_model", "chunk_vs_overlap", "model_vs_chunk_overlap", "dataset_success"]
     else:
         subtypes_to_generate = [args.plot_subtype]
 
@@ -320,6 +422,12 @@ if __name__ == "__main__":
         elif subtype == "model_vs_chunk_overlap":
             generate_model_vs_chunk_overlap_heatmap(
                 df_f1_heatmap=df_f1_heatmap,
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix
+            )
+        elif subtype == "dataset_success": # Add the new call
+            generate_dataset_success_heatmaps(
+                df_data=df_data, # Pass the full dataframe extracted earlier
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix
             )
