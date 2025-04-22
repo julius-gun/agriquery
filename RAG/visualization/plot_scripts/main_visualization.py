@@ -1,4 +1,7 @@
 # visualization/plot_scripts/main_visualization.py
+
+# python visualization\plot_scripts\main_visualization.py --plot-type=heatmap
+
 import os
 import sys
 import argparse

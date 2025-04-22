@@ -76,7 +76,8 @@ def generate_language_vs_model_heatmap(
             all_indices=all_languages_list, # Pass the full language list
             index_col="language",
             columns_col="question_model",
-            values_col="metric_value",
+            values_col="metric_value", # The actual data column name
+            value_label="F1 Score",   # NEW: Explicit label for the title
             current_params=combo
         )
 
@@ -135,7 +136,8 @@ def generate_chunk_vs_overlap_heatmap(
             data=filtered_df_chunk_combo,
             output_path=output_filepath,
             fixed_params=fixed_params,
-            values_col='metric_value',
+            values_col='metric_value', # The actual data column name
+            value_label="F1 Score",   # NEW: Explicit label for the title
             index_col='chunk_size',
             columns_col='overlap_size'
         )
@@ -197,7 +199,8 @@ def generate_model_vs_chunk_overlap_heatmap(
             data=filtered_df_model_chunk_combo,
             output_path=output_filepath,
             fixed_params=fixed_params_model_chunk,
-            values_col='metric_value',
+            values_col='metric_value',       # The actual data column name
+            value_label="F1 Score",         # NEW: Explicit label for the title
             index_col_chunk='chunk_size',
             index_col_overlap='overlap_size',
             columns_col='question_model'
