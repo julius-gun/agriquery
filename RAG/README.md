@@ -1,4 +1,27 @@
 # RAG Testing Framework
+![Success Heatmap Hybrid (English, General Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_hybrid_dataset_general_questions.png)
+*Hybrid retrieval demonstrates very good success rates for general questions in English across different models and chunk/overlap configurations.*
+
+![Success Heatmap Hybrid (English, Table Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_hybrid_dataset_table_questions.png)
+*Hybrid retrieval shows poor performance when answering table-based questions in English.*
+
+![Success Heatmap Embedding (English, General Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_embedding_dataset_general_questions.png)
+*Embedding retrieval achieves good, though slightly lower than hybrid, success rates for general questions in English.*
+
+![Success Heatmap Embedding (English, Table Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_embedding_dataset_table_questions.png)
+*Embedding retrieval also performs poorly on table-based questions in English, but better then Hybrid.*
+
+![Success Heatmap Keyword (English, Unanswerable Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_keyword_dataset_unanswerable_questions.png)
+*Keyword retrieval yields the worst results when attempting to identify unanswerable questions in English.*
+
+![Success Heatmap Keyword (English, Table Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_keyword_dataset_table_questions.png)
+*Keyword retrieval performs the worst among the algorithms for table-based questions in English.*
+
+![F1 Score Box Plot by Model](visualization/plots/f1_boxplot_by_question_model_colored_by_language.png)
+*This box plot shows the distribution of F1 scores achieved by different question-answering LLM models across various tests.*
+
+![F1 Heatmap Model vs Chunk/Overlap (English, Embedding)](visualization/plots/f1_heatmap_model_vs_chunk_overlap_lang_english_algo_embedding.png)
+*F1 score heatmap comparing models vs. chunk/overlap combinations for English language using the embedding algorithm.*
 
 
 ![F1 Score Box Plot by Model](visualization/plots/f1_boxplot_by_question_model_colored_by_language.png)
