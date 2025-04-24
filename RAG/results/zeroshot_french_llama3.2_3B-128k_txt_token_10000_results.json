@@ -1,0 +1,909 @@
+{
+    "test_run_parameters": {
+        "language_tested": "french",
+        "question_model": "llama3.2_3B-128k",
+        "evaluator_model": "gemma2_9B-8k",
+        "retrieval_algorithm": "zeroshot",
+        "context_type": "token",
+        "noise_level": 10000,
+        "file_extension_tested": "txt"
+    },
+    "overall_metrics": {
+        "accuracy": 0.046296296296296294,
+        "precision": 0.07017543859649122,
+        "recall": 0.07407407407407407,
+        "specificity": 0.018518518518518517,
+        "f1_score": 0.07207207207207207,
+        "true_positives": 4,
+        "true_negatives": 1,
+        "false_positives": 53,
+        "false_negatives": 50,
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.09090909090909091,
+            "unanswerable_questions": 0.018518518518518517,
+            "table_questions": 0.0
+        }
+    },
+    "timing": {
+        "duration_qa_phase_seconds": 187.19999999999993
+    },
+    "per_dataset_details": {
+        "general_questions": {
+            "results": [
+                {
+                    "question": "How many dosing openings are closed during fine application?",
+                    "expected_answer": "Two of three dosing openings are closed.",
+                    "model_answer": "The final answer is: 100%",
+                    "page": 24,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the overlap percentage for the full field spreading pattern?",
+                    "expected_answer": "100% overlap",
+                    "model_answer": "The correct answer is: 100%",
+                    "page": 28,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What system continuously measures fertilizer quantity being spread?",
+                    "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
+                    "model_answer": "La réponse au sens des instructions du manuel.",
+                    "page": 30,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often does the spreader carry out automatic calibration tests?",
+                    "expected_answer": "Every 75 kg or every minute.",
+                    "model_answer": "La réponse au sens exactement.",
+                    "page": 31,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How can the tractor's driving speed be transmitted to the IsoMatch if the tractor lacks ISOBUS communication?",
+                    "expected_answer": "By adding the IsoMatch power cable set to the tractor.",
+                    "model_answer": "The machine est équipé d'un système de commande ISOBUS. Le système de commande ISOMatch Tellus permet la modulation de dose automatique du débit en fonction de la vitesse d'écoulement. Il s'assurez-vous que le tracteur dispose d'un système de commande ISOBUS, vous devez brancher sur une prise CAN standard du tracteur avec le câble CAN fourni.\nSi vous utilisez le boîtier de commande IsoMatch Tellus sur un tracteur qui n'est pas équipé du système de communication ISOBUS, il faut un faisceau de raccordement supplémentaire.",
+                    "page": 32,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the main switch button to turn the control box on or off located?",
+                    "expected_answer": "The main switch button is located on the upper left in the red extension.",
+                    "model_answer": "The correct answer is: 1000",
+                    "page": 34,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How long should the main switch button be pressed to turn the control box on or off?",
+                    "expected_answer": "At least 1 second.",
+                    "model_answer": "La réponse à la question est : \"Comment déterminer le rapport de dosage des roues de stationnement\"",
+                    "page": 34,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "After initial setup of the machine and after any maintenance or repairs, how long should the machine be operated before re-checking all nuts and bolts?",
+                    "expected_answer": "1 hour",
+                    "model_answer": "The system de la machine est équipé d'un système de relevage à trois points de cat. Le réglage du disque de la barre inférieure doit être effectué par un tracteur qui satisfait aux exigences suivantes :\n· puissances de portée, de levage et moteur suffisantes,\n· dispositif de relevage approprié et aisément réglable, éventuellement avec un chevalet d'attelage (accessoires) pour les tracteurs avec dispositif de relevage de cat. 3 / 4.\nLe tracteur doit être équipé d'un dispositif de relevage à trois points de cat. 2 ou d'un chevalet d'attelage (accessoires) pour les tracteurs avec dispositif de relevage de cat. 3 / 4.\nLa barre supérieure et le réglage de la barre inférieure doit être effectué par un tracteur qui satisfait aux exigences suivantes :\n· puissances de portée, de levage et moteur suffisantes,\n· système de communication ISOBUS et prise ISOBUS ou\n· terminal de commande ISO intégré pour actionner le distributeur d'engrais,\n· GPS pour la fonction GEO CONTROL.\nLe tracteur doit être équipé d'un dispositif de relevage à trois points de cat. 2 ou d'un chevalet d'attelage (accessoires) pour les tracteurs avec dispositif de relevage de cat. 3 / 4.\nLa barre supérieure et le réglage de la barre inférieure doit être effectué par un tracteur qui satisfait aux exigences suivantes :\n· puissances de portée, de levage et moteur suffisantes,\n· système de communication ISOBUS et prise ISOBUS ou\n· terminal de commande ISO intégré pour actionner le distributeur d'engrais,\n· GPS pour la fonction GEO CONTROL.\nLe tracteur doit être équipé d'un dispositif de relevage à trois points de cat. 2 ou d'un chevalet d'attelage (accessoires) pour les tracteurs avec dispositif de relevage de cat. 3 / 4.\nLa barre supérieure et le réglage de la barre inférieure doit être effectué par un tracteur qui satisfait aux exigences suivantes :\n· puissances de portée, de levage et moteur suffisantes,\n· système de communication ISOBUS et prise ISOBUS ou\n· terminal de commande ISO intégré pour actionner le distributeur d'engrais,\n· GPS pour la fonction GEO CONTROL.\nLe tracteur doit être équipé d'un dispositif de relevage à trois points de cat. 2 ou d'un chevalet d'attelage (accessoires) pour les tracteurs avec dispositif de relevage de cat. 3 / 4.\nLa barre supérieure et le réglage de la barre inférieure doit être effectué par un tracteur qui satisfait aux exigences suivantes :\n· puissances de portée, de levage et moteur suffisantes,\n· système de communication ISOBUS et prise ISOBUS ou\n· terminal de commande ISO intégré pour actionner le distributeur d'engrais,\n· GPS pour la fonction GEO CONTROL.\nLe tracteur doit être équipé d'un dispositif de relevage à trois points de cat. 2 ou d'un chevalet d'attelage (accessoires) pour les tracteurs avec dispositif de relevage de cat. 3 / 4.\nLa barre supérieure et le réglage de la barre inférieure doit être effectué par un tracteur qui satisfait aux exigences suivantes :\n· puissances de portée, de levage et moteur suffisantes,\n· système de communication ISOBUS et prise ISOBUS ou\n· terminal de commande ISO intégré pour actionner le distributeur d'engrais,\n· GPS pour la fonction GEO CONTROL.\nLe tracteur doit être équipé d'un dispositif de relevage à trois points de cat. 2 ou d'un chevalet d'attelage (accessoires) pour les tracteurs avec dispositif de relevage de cat. 3 / 4.\nLa barre supérieure et le réglage de la barre inférieure doit être effectué par un tracteur qui satisfait aux exigences suivantes :\n· puissances de portée, de levage et moteur suffisantes,\n· système de communication ISOBUS et prise ISOBUS ou\n· terminal de commande ISO intégré pour actionner le distributeur d'engrais,\n· GPS pour la fonction GEO CONTROL.\nLe tracteur doit être équipé d'un disposit",
+                    "page": 38,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
+                    "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
+                    "model_answer": "La réponse à la question \"Extrait de la machine\" est : La vitesse d'écoulement requise pour l'épandage des machines.",
+                    "page": 40,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What torque (in NM) should be applied to the vane lock nuts?",
+                    "expected_answer": "50NM",
+                    "model_answer": "The correct answer is: 10-540.",
+                    "page": 43,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What determines the machine's working width?",
+                    "expected_answer": "Spreading disc RPM",
+                    "model_answer": "The maximum height of the transmission shaft.",
+                    "page": 46,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where should the position sensor for the hydraulic border spreading plate be connected?",
+                    "expected_answer": "In the electronic box on the spreader.",
+                    "model_answer": "La réponse au sens de la question.",
+                    "page": 47,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific precaution should be taken before working between the tractor and machine to check the coupling shaft length?",
+                    "expected_answer": "Place the machine on a supporting beam.",
+                    "model_answer": "The answer is: 80-30.",
+                    "page": 50,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "The maximum operating angle of the coupling shaft.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
+                    "expected_answer": "Yes.",
+                    "model_answer": "La réponse à la question \"Extrait de la précise et concise. La réponse est : \n\nL'arbre de transmission doit être réglé à la bonne longueur avant d'être attelé au tracteur. L'arbre de transmission trop long peut endommager sérieusement la machine et le tracteur.",
+                    "page": 52,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
+                    "expected_answer": "30 degrees",
+                    "model_answer": "The maximum permissible operating angle for the coupler is 30.",
+                    "page": 54,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What must be ensured with decoupling ropes during power lift connection?",
+                    "expected_answer": "Decoupling ropes must never be tense.",
+                    "model_answer": "The text of the relevant section is: \"L'arbre de transmission doit être réglé à la bonne longueur avant d'être attelé au tracteur.\"\n\n(Translation: The transmission shaft must be adjusted to the correct length before being attached to the tractor.)",
+                    "page": 56,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Below which application rate in kg/min is it advised to use the fine application?",
+                    "expected_answer": "Below 40 kg/min.",
+                    "model_answer": "The recommended application rate for the fine application is 3 times the calculated flow rate.",
+                    "page": 66,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
+                    "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
+                    "model_answer": "The formula to calculate the required flow rate of fertilizer in kg/min is:\n\nVitesse d'écoulement requise (kg/min) = Largeur de travail (m) x vitesse d'avancement (km/h)\n\nThis can be calculated by multiplying the width of work (in meters) and the speed of advancement (in km/h).",
+                    "page": 68,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of serial connection does the IsoMatch control box use for communication?",
+                    "expected_answer": "RS 232",
+                    "model_answer": "The system de commande utilise un port série RS232 pour communiquer avec le système externe.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "When loading manually, what's the maximum distance in mm between the hopper rim and the ground before a platform is mandatory?",
+                    "expected_answer": "1250 mm",
+                    "model_answer": "The text states \"le poids total autorisé\"",
+                    "page": 74,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum distance in mm between spreader and loading platform?",
+                    "expected_answer": "200 mm maximum distance between them.",
+                    "model_answer": "The maximum distance between spreader and loading platform is 4 meters.",
+                    "page": 74,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What does a tray test check on a fertilizer spreader?",
+                    "expected_answer": "Fertilizer distribution pattern of the spreader.",
+                    "model_answer": "The text states \"Si le poids augmente, l'épandeur rempli peut pencher en arrière!\"",
+                    "page": 76,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What materials are required to perform the tray test?",
+                    "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
+                    "model_answer": "The required material for performing a tray test is not explicitly stated in the context. However, based on the provided text, the following materials are implied to be used:\n\n* Mètre à ruban or règle graduée\n* Niveau à bulle\n* 7 bacs de collecte\n* Tubes de mesure\n* Bloc-notes\n* Stylophone\n* Manuel d'utilisation",
+                    "page": 77,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
+                    "expected_answer": "3 m/s)",
+                    "model_answer": "The maximum wind speed for both the tray test and actual spreading?",
+                    "page": 77,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
+                    "expected_answer": "75 cm above the troughs.",
+                    "model_answer": "La réponse de la question est : \"Extrait d'un débit de 250 kg/ha\". La réponse.",
+                    "page": 84,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
+                    "expected_answer": "75 cm",
+                    "model_answer": "The correct answer is: 4",
+                    "page": 89,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "The correct answer is: 250 kg/hauteur de la nappe d'épandage.",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
+                    "expected_answer": "Inertia causes continued rotation.",
+                    "model_answer": "The correct answer is: 10%",
+                    "page": 94,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "According to the last setting check, what is the recommended height in centimeter of the spreader over the ground or crops?",
+                    "expected_answer": "75 cm",
+                    "model_answer": "The maximum capacity of the spreaders de dosage.",
+                    "page": 96,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What happens when hopper content falls below 100 kg?",
+                    "expected_answer": "Automatic calibration switches off.",
+                    "model_answer": "La réponse au bout de champ.",
+                    "page": 101,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What are the two functions for border spreading?",
+                    "expected_answer": "Hydraulic border spreading plate and ExactLine.",
+                    "model_answer": "La réponse de la question est : \"Qu'est-ce que le système ExactLine permet d'éliminer les erreurs de dosage?\" La réponse.",
+                    "page": 106,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
+                    "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
+                    "model_answer": "La réponse à la question. Le système ExactLine est utilisé pour l'épandage de bordure avec le déflecteur de bordure hydraulique.",
+                    "page": 108,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should you do if a spreading disc spreads irregularly?",
+                    "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
+                    "model_answer": "La réponse de la machine est dépend de la position de la zone de travail.",
+                    "page": 113,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
+                    "expected_answer": "40 degrees Celsius",
+                    "model_answer": "The maximum allowable temperature in degrees Celsius.",
+                    "page": 117,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
+                    "expected_answer": "80 bar",
+                    "model_answer": "The maximum allowable pressure.",
+                    "page": 117,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
+                    "expected_answer": "Preservative grease or preserving liquid.",
+                    "model_answer": "The correct answer is: \"Avoid using high-pressure.",
+                    "page": 121,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
+                    "expected_answer": "Remove all fertilizer remnants.",
+                    "model_answer": "The use of nitrate-containing fertilizers is not mentioned in the context.",
+                    "page": 123,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many grease nipples do the discharge bushings have?",
+                    "expected_answer": "Two grease nipples per discharge bushing.",
+                    "model_answer": "The text of \"Les instructions du manuel de maintenance de la machine\"",
+                    "page": 126,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required grease level in mm below the filler opening for spreading disc gearboxes after the machine has stood still?",
+                    "expected_answer": "35 mm",
+                    "model_answer": "The answer is: 1.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum hydraulic pressure allowed for the hydaulic system in bars?",
+                    "expected_answer": "210 bars.",
+                    "model_answer": "The maximum hydraulic pressure allowed for the hydraulic system is 210 bars.",
+                    "page": 131,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the required distance in mm between the rope and discharge bushing opening?",
+                    "expected_answer": "109 mm.",
+                    "model_answer": "The distance between the rope and discharge bushing.",
+                    "page": 136,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "The required distance between the discharge bushing and spreading disc.",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "The correct answer is: 3.6",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                }
+            ]
+        },
+        "table_questions": {
+            "results": [
+                {
+                    "question": "What is the pattern of the type 'mineral'?",
+                    "expected_answer": "angular, with sharp angles and edges",
+                    "model_answer": "The correct answer is: mineral.",
+                    "page": 58,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the hopper weight without hopper cover in kg of the Exacta-TLX GEOSPREAD 3225?",
+                    "expected_answer": "337.5 kg",
+                    "model_answer": "La réponse de la question est : \"Qu'est-ce que le système de commande ISOMatch Tellus permet d'épandage des machines avec un tracteur ISOBUS?\"",
+                    "page": 36,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the weight in kg of the Exacta-TLX GEOSPREAD 3900?",
+                    "expected_answer": "795 kg",
+                    "model_answer": "La réponse de la largeur de travail est déterminée par le régime du disque d'épandage. Le système ExactLine permet un épandage de bordure à gauche ou à droite.\nLe réglage des lettres de l'arbre de transmission.\nLa machine Exacte de point de jonction pour l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLe système Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le système Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du régime de la prise de force et du point de jonction choisi sur l'arbre de transmission.\nLa machine Exacte de point de jonction pour le disque d'épandage. Le régime du disque d'épandage dépend du",
+                    "page": 36,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the sound level in dB of a Tractor + spreading spreader (Kali 60) with its rear window opened?",
+                    "expected_answer": "84.6 dB",
+                    "model_answer": "La réponse à la question \"Quelle est le niveau de travail du débit d'un tracteur avec un système de communication ISOBUS?\"",
+                    "page": 37,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often (in what interval) must the condition of the vanes be inspected?",
+                    "expected_answer": "daily",
+                    "model_answer": "The text.",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often (in what interval) must the bushing height be checked and the discharge be set?",
+                    "expected_answer": "after the first 10 hours and every 100 hours, but a minimum of once per year",
+                    "model_answer": "The frequency of use de la graisse est de 1 à 2 litres.",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often (in what interval) must the agitator seal be replaced?",
+                    "expected_answer": "every 100 hours or if worn",
+                    "model_answer": "The text \"dételage de la machine\"",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "With what torque in Nm must a M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened?",
+                    "expected_answer": "420 Nm",
+                    "model_answer": "The text of \"Les instructions de sécurité du fournisseur et conformez-vous aux instructions supplémentaires. Le contact avec des produits peut être à l'origine de blessures corporelles.\nAttention à ne pas vous coincer!\nLorsque vous remplissez, réglez et testez l'épandeur, il se peut que vous entriez en contact avec l'engrais ou d'autres produits d'épandage. Portez des vêtements de protection et des gants protecteurs, lisez les instructions de sécurité du fournisseur et conformez-vous aux instructions supplémentaires. Le contact avec des produits peut être à l'origine de blessures corporelles.\nAttention à ne pas vous coincer!\nLorsque vous remplissez, réglez et testez l'épandeur, il se peut que vous entriez en contact avec l'engrais ou d'autres produits d'épandage.",
+                    "page": 129,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "With what torque in Nm must a M6 hexagon stainless steel bolt with a 70 (A2) quality and with a 0.2 friction be fastened?",
+                    "expected_answer": "9.9 Nm",
+                    "model_answer": "The text of \"Les flexibles hydrauliques doivent être régulièrement contrôlés et testés avant de l'utilisation.",
+                    "page": 129,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
+                    "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
+                    "model_answer": "The text de l'isolement du tracteur est un élément essentiel qui permet de contrôler les machines. Le système IsoMatch Tellus GO est conçu pour être utilisé avec le système ISOMatch Tellus, mais il n'est également utilisé pour d'autres applications.",
+                    "page": 152,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                }
+            ]
+        },
+        "unanswerable_questions": {
+            "results": [
+                {
+                    "question": "How much extra diesel does the tractor consume to use the Exacta-TLX GEOSPREAD?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The minimum weight of the front axle must be below 100 kg.",
+                    "page": 23,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Is fine application more expensive than normal dosing?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The charge minimale de la charge maximale par essieu est de 100 kg.",
+                    "page": 24,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Is one-sided boundary spreading suitable for small gardens?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse au sens de la question, le système de contrôle des freins et des tracteurs est utilisé pour les tracteurs. Il est interdit aux opérations dangereuses et aux opérations dangereuses. Le système de contrôle des freins et des tracteurs est également destiné à l'entretien et au nettoyage.",
+                    "page": 28,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "For what other kind of connections can the IM Tellus Input cable be used?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le système de commande ISOMatch Tellus est utilisé pour les tracteurs ISOBUS.",
+                    "page": 32,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the IsoMatch universal ISOBUS terminal be used to check the weather?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The machine est équipé d'un système de commande ISOBUS. Le système de commande ISOMatch Tellus permet de contrôler la vitesse d'écoulement et de la trémie de la nappe. Il s'agit également une fonctionnalité de protection des machines, les roues de stationnement sont conçues pour un chargement important. Les roues de stationnement peuvent être utilisées pour déplacer aisément une machine déteinte.",
+                    "page": 33,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can IsoMatch Tellus be connected to an external mouse?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse au système de dosage et de la réglage du débit et de l'ouverture des orifices. Le système de dosage est configuré pour une largeur de travail de 24 mètres. La machine peut être ajusté en fonction de la vitesse d'écoulement, qui est calculée à partir de la formule : Vitesse d'écoulement = débit x kg/minutumètre de la largeur de travail.\nLa machine est équipée avec un système de dosage automatique. Le système de dosage est configuré pour une largeur de travail de 24 mètres. La machine peut être ajusté en fonction de la vitesse d'écoulement, qui est calculée à partir de la formule : Vitesse d'écoulement = débit x kg/minutumètre de la largeur de travail.\nLa machine est équipée avec un système de dosage automatique. Le système de dosage est configuré pour une largeur de travail de 24 mètres. La machine peut être ajusté en fonction de la vitesse d'écoulement, qui est calculée à partir de la formule : Vitesse d'écoulement = débit x kg/minutumètre de la largeur de travail.\nLa machine est équipée avec un système de dosage automatique. Le système de dosage est configuré pour une largeur de travail de 24 mètres. La machine peut être ajusté en fonction de la vitesse d'écoulement, qui est calculée à partir de la formule : Vitesse d'écoulement = débit x kg/minutumètre de la largeur de travail.\nLa machine est équipée avec un système de dosage automatique. Le système de dosage est configuré pour une largeur de travail de 24 mètres. La machine peut être ajusté en fonction de la vitesse d'écoulement, qui est calculée à partir de la formule : Vitesse d'écoulement = débit x kg/minutumètre de la largeur de travail.\nLa machine est équipée avec un système de dosage automatique. Le système de dosage est configuré pour une largeur de travail de 24 mètres. La machine peut être ajusté en fonction de la vitesse d'écoulement, qui est calculée à partir de la formule : Vitesse d'écoulement = débit x kg/minutumètre de la largeur de travail.\nLa machine est équipée avec un système de dosage automatique. Le système de dosage est configuré pour une largeur de travail de 24 mètres. La machine peut être ajusté en fonction de la vitesse d'écoulement, qui est calculée à partir de la formule : Vitesse d'écoulement = débit x kg/minutumètre de la largeur de travail.\nLa machine est équipée avec un système de dosage automatique. Le système de dosage est configuré pour une largeur de travail de 24 mètres. La machine peut être ajusté en fonction de la vitesse d'écoulement, qui est calculée à partir de la formule : Vitesse d'écoulement = débit x kg/minutumètre de la largeur de travail.\nLa machine est équipée avec un système de dosage automatique. Le système de dosage est configuré pour une largeur de travail de 24 mètres. La machine peut être ajusté en fonction de la vitesse d'écoulement, qui est calculée à partir de la formule : Vitesse d'écoulement = débit x kg/minutumètre de la largeur de travail.\nLa machine est équipée avec un système de dosage automatique. Le système de dosage est configuré pour une largeur de travail de 24 mètres. La machine peut être ajusté en fonction de la vitesse d'écoulement, qui est calculée à partir de la formule : Vitesse d'écoulement = débit x kg/minutumètre de la largeur de travail.\nLa machine est équipée avec un système de dosage automatique. Le système de dosage est configuré pour une largeur de travail de 24 mètres. La machine peut être ajusté en fonction de la vitesse d'écoulement, qui est calculée à partir de la formule : Vitesse d'écoulement = débit x kg/minutumètre de la largeur de travail.\nLa machine est équipée avec un système de dosage automatique. Le système de dosage est configuré pour une largeur de travail de 24 mètres. La machine peut être ajusté en fonction de la vitesse d'écoulement, qui est calculée à partir de la formule : Vitesse d'écoulement = débit x kg/minutumètre de la largeur de travail.\nLa machine est",
+                    "page": 34,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Is the Hydraulic border spreading plate made out of steel?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse à la question \"Est-ce que le tracteur doit être équipé d'un dispositif de relevage?\" La réponse est : Non, le tracteur ne doit pas avoir un dispositif de relevage.",
+                    "page": 47,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the linkage pin for the tractor be made out of aluminium?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse à la question est : \"Can the linkage pin for the tractor be made out of aluminum?\"\n\nLa réponse est : Non, les pines de liaison (ou \"pin\" ou \"linkage\") sont généralement fabriqués en métal, mais pas nécessairement en aluminium.",
+                    "page": 53,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the tray test be performed at 40 degrees Celsius?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The answer is: No, the temperature of 40 degrees Celsius.",
+                    "page": 77,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the hydraulic border spreading plate be actuated pneumatically?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse à la question \"Extrait de la nappe d'épandage\" est trop étroit. La solution le déflecteur de bordure hydraulique doit être réglé pour éviter les pertes de surface et des dommages corporels graves.",
+                    "page": 85,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "By which environmental standards is the maximum acceptable loss in the ditch is determined?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse de la nappe d'épandage est trop étroite. La dose maximale autorisée dans le système de commande est de 75 cm.\nLa réglage de la hauteur au-dessus du sol ou de la végétation est défini pour une machine, et/ou\nLa position la hauteur de la chandelle et du bras supérieur.\nLa perte de la nappe d'épandage est de 75 cm.\nLa réglage de la hauteur au-dessus du sol ou de la végétation est défini pour une machine, et/ou\nLa limitation de la hauteur dans le système de commande est correcte.\nLa fixation des contrôle de répartition sur bacs est déterminée par les conditions suivant :\n· la granulométrie,\n· poids spécifique,\n· la largeur de travail souhaitée,\n· la vitesse d'avancement souhaitée?\nAvez-vous réglé le bon régime de prise de force?\nLa hauteur de la nappe d'épandage est trop basse. La dose maximale autorisée dans le système de commande est correcte.\nLa fixation des contrôle de répartition sur bacs est déterminée par les conditions suivant :\n· la granulométrie,\n· poids spécifique,\n· le type d'engrais,\n· la largeur de travail souhaitée,\n· la vitesse d'avancement souhaitée?\nAvez-vous correctement réglé l'épandeur?\nLa fixation des contrôle de répartition sur bacs est déterminée par les conditions suivant :\n· la granulométrie,\n· poids spécifique,\n· le type d'engrais,\n· la largeur de travail souhaitée,\n· la vitesse d'avancement souhaitée?\nAvez-vous réglé le bon régime de prise de force?\nLa fixation des contrôle de répartition sur bacs est déterminée par les conditions suivant :\n· la granulométrie,\n· poids spécifique,\n· le type d'engrais,\n· la largeur de travail souhaitée,\n· la vitesse d'avancement souhaitée?\nAvez-vous réglé le bon régime de prise de force?\nLa fixation des contrôle de répartition sur bacs est déterminée par les conditions suivant :\n· la granulométrie,\n· poids spécifique,\n· le type d'engrais,\n· la largeur de travail souhaitée,\n· la vitesse d'avancement souhaitée?\nAvez-vous réglé le bon régime de prise de force?\nLa fixation des contrôle de répartition sur bacs est déterminée par les conditions suivant :\n· la granulométrie,\n· poids spécifique,\n· le type d'engrais,\n· la largeur de travail souhaitée,\n· la vitesse d'avancement souhaitée?\nAvez-vous réglé le bon régime de prise de force?\nLa fixation des contrôle de répartition sur bacs est déterminée par les conditions suivant :\n· la granulométrie,\n· poids spécifique,\n· le type d'engrais,\n· la largeur de travail souhaitée,\n· la vitesse d'avancement souhaitée?\nAvez-vous réglé le bon régime de prise de force?\nLa fixation des contrôle de répartition sur bacs est déterminée par les conditions suivant :\n· la granulométrie,\n· poids spécifique,\n· le type d'engrais,\n· la largeur de travail souhaitée,\n· la vitesse d'avancement souhaitée?\nAvez-vous réglé le bon régime de prise de force?\nLa fixation des contrôle de répartition sur bacs est déterminée par les conditions suivant :\n· la granulométrie,\n· poids spécifique,\n· le type d'engrais,\n· la largeur de travail souhaitée,\n· la vitesse d'avancement souhaitée?\nAvez-vous réglé le bon régime de prise de force?\nLa fixation des contrôle de répartition sur bacs est déterminée par les conditions suivant :\n· la granulométrie,\n· poids spécifique,\n· le type d'engrais,\n· la largeur de travail souhaitée,\n· la vitesse d'avancement souhaitée?\nAvez-vous réglé le bon régime de prise de force?\nLa fixation des contrôle de répartition sur bacs est déterminée par les conditions suivant :\n· la granulométrie,\n· poids spécifique,\n· le type d'engrais,\n· la largeur de travail souhaitée,\n· la vitesse d'avancement souhaitée?\nAvez-vous réglé le bon rég",
+                    "page": 87,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How should one proceed to stop spreading the fertilizer?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The correct answer is: 75%",
+                    "page": 100,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum height the fertilizer flies when spreading without GEOCONTROL headland",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse de la question est : \"Qu'est-ce que le système ExactLine ?\"",
+                    "page": 103,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is seven-sided boundary spreading with the hydraulicborder spreading plate?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse à la question \"Qu'est-ce que le système de commande électronique du tracteur permet d'ajuster automatiquement les doses de dosage?\" La réponse à cette question, il est important de prendre en compte les deux types de dosage qui sont mentionnés dans le texte. Le système de commande électronique du tracteur permet de déterminer la quantité d'engrais utilisée pour l'épandage.",
+                    "page": 107,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Which appropriate measures for road transport should be taken when stopping work?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse de la machine est dépend de la position de la zone de travail.",
+                    "page": 112,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Why do most types of fertiliser attract water?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The correct answer is: 10%",
+                    "page": 114,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Why is damage to the vanes, spreading disc or discharge bushing, most likely caused by a hard object?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The correct answer is: \"10%\".",
+                    "page": 115,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should a person do who fell into the fertilizer and no physician is available?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The correct answer is: \"No\"",
+                    "page": 117,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What happens if the machine grease nipples are never lubricated?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The system de graisse est appliqué sur les deux bagues d'écoulement.",
+                    "page": 118,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific paint should be used to paint any damaged paintwork at the end of the season the machine in preparation for winter storage?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The correct answer is: 0.",
+                    "page": 121,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the curriculum of the training program agrarians need to complete to be considered competent to operate this machine?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The user must be qualified to operate the machine.",
+                    "page": 4,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "By which international standard are the pictograms used in this manual specified for agricultural machinery?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The International Organization for Standardization (ISO 9001:2000)",
+                    "page": 5,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How does the rate of corrosion on the Exacta-TLX GEOSPREAD compare between machines used in coastal vs. inland agricultural regions?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The charge de la zone de travail doit être inférieur à 100% du poids brut de la machine.",
+                    "page": 21,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What kind of protective safety gloves are needed for cleaning fertiliser remnants from the Exacta-TLX GEOSPREAD before welding?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le système de protection des mains nécessite des gants de sécurité pour protéinisation. Il est recommandé d'utiliser des gants de protection des mains en silicone ou en cuirassier, comme les gants de protection des mains à résistance aux produits chimiques, pour éviter l'admission de substances dangereuses et prévenir les brûlures.",
+                    "page": 22,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What are the detailed technical specifications and bandwidth capabilities of different ISOBUS communication protocol versions compatible with the IsoMatch Tellus system?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The machine est équipé d'un système de commande ISOBUS. Le système de communication ISOBUS permet la modulation de dose automatique du débit en fonction de la vitesse d'écoulement. Il s'assurent les deux vérins de dosage et de contrôle des données de dosage, le système de commande ISOMatch Tellus permet une modélisation continue de la vitesse de l'épandeur.",
+                    "page": 32,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many hours of continuous operation can the IsoMatch Tellus operate before flattening a typical tractor battery if left switched on with the engine off?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse à la question \"Comment déterminer le débit d'écoulement de l'épandeur\" est-ce que la machine peut être réglé avec un système de dosage automatique?",
+                    "page": 34,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific 'grease' type is recommended for 'profiled tubes' of the  coupling shaft?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le poids spécifique correspondant est le récipient gradué.",
+                    "page": 51,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'hose coupling support' made of?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The answer is: The machine.",
+                    "page": 55,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific type of 'Delicia Schnecken Linsen' slug pellets were used for the spreading chart example?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The type of \"Delicia\" pellets used in the context is not explicitly stated. However, based on the table provided, the correct answer can be inferred from the entry for the \"Slug Pellets\" row:\n\n* 12 mètres, 5.0 kg/min, 6.0 km/h, 7.0 kg/ha, 8.0 kg/ha, 9.0 kg/ha, 10.0 kg/ha, 11.0",
+                    "page": 69,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the minimum 'baud rate' for 'RS 232 connection'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The text does not contain a direct answer to the question \"What is the minimum baud rate for 'RS 232 connection?\"",
+                    "page": 72,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the maximum acceptable 'chunk' size of fertilizer in mm to prevent blockage?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The maximum acceptable \"chunk\" size of fertilizer to prevent blockage is 3.",
+                    "page": 74,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'tap' material used for hydraulic border spreading plate tap?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse à la question \"Quand faut-il falloper le tracteur avec un déflecteur de bordure hydraulique?\" La réponse à la question.",
+                    "page": 85,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'active carbon filters' are recommended for closed tractor cabin to filter fertilizer dust?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse de la question est : \"Qu'est-ce que le déflecteur de bordure hydraulique ?\"",
+                    "page": 94,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the tolerance for 'measured distance from the bottom of the vanes, the distance to the ground or the crop' in cm?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The correct answer is: 400",
+                    "page": 95,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse à la question \"What is the typical 'wind speed\" est-elle limitée?",
+                    "page": 96,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the recommended tire pressure 'range' for transport mode?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse à la question \"Quelle est la pression de la nappe d'épandage?\"",
+                    "page": 93,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the optimal driving speed reduction percentage during border spreading to compensate for application rate?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse à la question \"Utilisation dans les champs\" est : La réduction de la taille du bloc ou de cette couche avec un objet, par exemple un bâton, un tournevis ou une pale.",
+                    "page": 106,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse de la question est : \"Qu'est-ce que vous devez faire pour éviter les pertes d'engrais au cours du nettoyage ?\"",
+                    "page": 109,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the parking support withstand storage on a slope of 10 degrees?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse à la question \"Extrait de la machine\" est : \"Utilisation dans les champs.",
+                    "page": 119,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The correct answer is: \"Use a lubricant.\"",
+                    "page": 121,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many operational hours can 'vanes' typically last before requiring replacement?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The text \"Si vous n'avez pas de réparation de la machine, veuillez les boulons et les écrous. Si vous avez déjà remplacé le tamis, vous devez bloquer pour éviter qu'il ne se referme accidentellement.\"",
+                    "page": 125,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'universal grease' is recommended for all 'lubricating nipples'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Le type de graisse recommandé pour les boulons et les écrous est indiqué dans le texte : \"Graisse pour les boulons et les écrous\" (point 10).",
+                    "page": 126,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'suitable lubricant' is recommended for 'connectors' to prevent corrosion?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La graisse est recommandée pour les connexions de la machine.",
+                    "page": 128,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What 'screwdriver' type (flathead/phillips) is optimal for adjusting 'dosing mechanism'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The correct answer is: 4.",
+                    "page": 133,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the typical agitator 'seal ring' lifespan in operational hours before requiring replacement?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The intervalles de maintenance recommandés sont les suivants :\n\n*   Tous les 10 premières heures d'utilisation\n*   Au bout de la première heure d'utilisation\n*   Une fois par semaine\n*   Après chaque saison",
+                    "page": 134,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'small crack of light' dimension in millimeters between 'dosing baffles' when closed?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The distance de la bague d'étanchéité doit être de 1,0 mm.",
+                    "page": 135,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The recommended torque value for a bolt is 10 Nm.",
+                    "page": 138,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'plastic seal' material specification for agitator axle seal?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The correct answer is: 3.6",
+                    "page": 140,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the material of the 'metal seal rings' for agitator axle seal?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse au sens de la question.",
+                    "page": 141,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific 'extension cable' length in meters is optimal for ISO 11786 in cab tractor connection?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse au contrôle de la question, le mot \"IsoMatch\" est un nom de marqueur pour les tracteurs ISOBUS.",
+                    "page": 144,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the free 'test period' duration in days for 'GEOCONTROL software' user licence?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The distance entre les deux valeurs de la distance entre 1 et 3 sont : \n\n*   La distance entre les deux valeurs de la distance entre 1 et 3 est de 1.",
+                    "page": 145,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What valve type and manufacturer is used for 'valve set' that comes with hopper empty sensor?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "La réponse à l'écran de la bague d'écoulement est défectueux. Le système de commande du tracteur est branché et le point de chute est fixe.",
+                    "page": 148,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the drain rate in liters per minute of 'drain kit' for hopper emptying?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The texté de la bague d'épandage est fixée à 1. Le système de dosage des disques d'engrais doit être ajusté en fonction du débit de dosage et de la largeur de travail, qui sont les deux valeurs de dosage et de charge.",
+                    "page": 149,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What 'sail' material is used for hopper cover, and its UV resistance?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The joint de l'arbre de transmission est utilisé pour les tracteurs agricoles.",
+                    "page": 150,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                }
+            ]
+        }
+    }
+}

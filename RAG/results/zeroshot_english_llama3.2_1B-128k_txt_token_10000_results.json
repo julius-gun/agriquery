@@ -1,0 +1,909 @@
+{
+    "test_run_parameters": {
+        "language_tested": "english",
+        "question_model": "llama3.2_1B-128k",
+        "evaluator_model": "gemma2_9B-8k",
+        "retrieval_algorithm": "zeroshot",
+        "context_type": "token",
+        "noise_level": 10000,
+        "file_extension_tested": "txt"
+    },
+    "overall_metrics": {
+        "accuracy": 0.09259259259259259,
+        "precision": 0.041666666666666664,
+        "recall": 0.037037037037037035,
+        "specificity": 0.14814814814814814,
+        "f1_score": 0.03921568627450981,
+        "true_positives": 2,
+        "true_negatives": 8,
+        "false_positives": 46,
+        "false_negatives": 52,
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.045454545454545456,
+            "unanswerable_questions": 0.14814814814814814,
+            "table_questions": 0.0
+        }
+    },
+    "timing": {
+        "duration_qa_phase_seconds": 149.80000000000007
+    },
+    "per_dataset_details": {
+        "general_questions": {
+            "results": [
+                {
+                    "question": "How many dosing openings are closed during fine application?",
+                    "expected_answer": "Two of three dosing openings are closed.",
+                    "model_answer": "I can't find this response.",
+                    "page": 24,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the overlap percentage for the full field spreading pattern?",
+                    "expected_answer": "100% overlap",
+                    "model_answer": "I can't find this answer",
+                    "page": 28,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What system continuously measures fertilizer quantity being spread?",
+                    "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
+                    "model_answer": "I can't find this response.",
+                    "page": 30,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often does the spreader carry out automatic calibration tests?",
+                    "expected_answer": "Every 75 kg or every minute.",
+                    "model_answer": "I can't find the ISO CONTROL system\nThe machine is equipped with a control box.\nIf you want to use the IsoMatch control box with an ISOBUS communication system, you must first check the instruction manual for the correct installation. You should also refer to the GPS signal on the control box.\n    <answer>\n 1. Check the hopper cover and position of the vane in the hopper is not only by the tractor wheels.\n 2. Check the hopper cover with the spout of the hopper is used for the correct installation.\n 3. Check the hopper cover with the spreader to ensure that it is properly installed.\n 4. Check the hopper cover with the vane in the hopper and check the position of the vane.\n 5. Check the hopper cover with the spout of the hopper, and check the position of the hopper.\n 6. Check the hopper cover with the spreader to ensure that it is properly installed.\n 7. Check the hopper cover with the vanes in the hopper and check the position of the vane.\n 8. Check the hopper cover with the spout of the hopper, and check the position of the hopper.\n",
+                    "page": 31,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How can the tractor's driving speed be transmitted to the IsoMatch if the tractor lacks ISOBUS communication?",
+                    "expected_answer": "By adding the IsoMatch power cable set to the tractor.",
+                    "model_answer": "## Step 48===\n\nI can only use the ISO control box with a tractor\nThe IsoMatch terminal on the control box is used for the spreader.\nBefore using the IsoMatch control box with the tractor that has an ISOB communication system, you must have access to the ISO control box.\n    The IsoMatch terminal on the control box is connected to the tractor and the PTO shaft.\n﹟\nThe IsoMatch terminal on the control box is used for the hopper of the spreader.\n    Before using the IsoMatch control box with a tractor that has an ISOB communication system, you can use the ISO coupler.\n    The IsoMatch terminal on the control box is connected to the coupling shaft.\n    The IsoMatch terminal on the control box is used for the PTO shaft.\n    The IsoMatch terminal on the control box is used for the hopper of the spreader.\n    Before using the IsoMatch terminal on the control box is connected to the tractor that has an ISOB communication system, you can use the ISO coupler.\n\nThe IsoMatch terminal on the control box is connected to the coupling shaft.\n    The IsoMatch terminal on the control box is used for the hopper of the spreader.\n    Before using the Iso",
+                    "page": 32,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the main switch button to turn the control box on or off located?",
+                    "expected_answer": "The main switch button is located on the upper left in the red extension.",
+                    "model_answer": "## Step 1: IsoMatch terminal\n[Image]\nIsoMatch terminal for the tractor is used to control the spreader.\nThe ISO Match system\nBefore use of the machine\nIsoMatch terminal on the tractor must be connected with the following:\n· sufficient power supply and lubrication, \n• The tractor that has a suitable lubricant and linkage for tractors with power supply of Cat. 3 / 4,\n· IsoMatch control terminal to operate the spreader.\nThe ISO Match system\nIsoMatch terminal on the tractor must be connected to the following:\n1/2/4 connection point, \n• The tractor that has a suitable lubricant and linkage for tractors with power supply of Cat. 3 / 4,\nIsoMatch terminal on the tractor is used in the control box.\nThe ISO Match system\n IsoMatch terminal on the tractor must be connected to the following:\n1/2/4 connection point, \n• The tractor that has a suitable lubricant and linkage for tractors with power supply of Cat.",
+                    "page": 34,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How long should the main switch button be pressed to turn the control box on or off?",
+                    "expected_answer": "At least 1 second.",
+                    "model_answer": "## Step 1: To get familiar with the machine\nThe tractor is ready for use by the ISO control box.\nBefore using the IsoMatch terminal on the tractor.\n\nAnswer:\nTo get familiar with the machine\n*   Isolator\n*   IsoMatch terminal on the tractor.",
+                    "page": 34,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "After initial setup of the machine and after any maintenance or repairs, how long should the machine be operated before re-checking all nuts and bolts?",
+                    "expected_answer": "1 hour",
+                    "model_answer": "## Step 1: Selecting linkage\n[Image]\nSelecting the coupling\nConnecting to the tractor\nBefore selecting the coupling\nThe machine is connected with a control system\n    • The machine must be controlled by the control box.\n• The control box is mounted on the tractor, and the coupling is attached to it.",
+                    "page": 38,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
+                    "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
+                    "model_answer": "## Step 1: The machine is connected to the tractor\nThe correct answer\nConnecting to the tractor\n[Image]\nThe control box\n[Image]\nBefore mounting the coupling shaft\n﹟\nMounting the coupling shaft\n﹝\nConnecting the coupling shaft\n﹟\nThe connection of the coupling shaft\n﹟\nThe coupling shaft provided is too long for most types of tractors\nThe coupling shaft must be cut to the correct length before connecting it to the tractor. A coupling shaft that is too long could lead to serious damage to the machine and the tractor.\n‹\n\n## Step 2: Connecting the coupling shaft\n[Image]\nThe control box\n[Image]\nBefore mounting the coupling shaft\n﹟\nMounting the coupling shaft\n﹝\nConnecting the coupling shaft\n﹟\nThe connection of the coupling shaft\n﹟\nThe coupling shaft provided is cut to the correct length before connecting it to the tractor. A coupling shaft that is too long could lead to serious damage to the machine and the tractor.\n‹\n\n## Step 3: Connecting the coupling shaft\n[Image]\nThe control box\n[Image]\nBefore mounting the coupling shaft\n﹟\nMounting",
+                    "page": 40,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What torque (in NM) should be applied to the vane lock nuts?",
+                    "expected_answer": "50NM",
+                    "model_answer": "## Step 1: To determine the correct answer\nTo determine the type of fertilizer (turfertilizer) when determining the characteristics of a fertilizer is done by checking the characteristics of the fertilizer.\n\nThe best answer\n<font> The tractor's power source for spreading, which is determined by checking the specifications of the tractor and selecting the appropriate type of fertilizer that you are using.",
+                    "page": 43,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What determines the machine's working width?",
+                    "expected_answer": "Spreading disc RPM",
+                    "model_answer": "I can't find this response to your question.",
+                    "page": 46,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where should the position sensor for the hydraulic border spreading plate be connected?",
+                    "expected_answer": "In the electronic box on the spreader.",
+                    "model_answer": "## Step 1: Determine the type of fertiliser based on the characteristics of the granules\nThe correct answer is 0.5 mm.\nThe following are not required to determine the density:\n· The diameter of 10 kg/litre, which is less than 1000 mm.\n﹗\n• The best match for the weight of 1 tonne.\nThe following should be greater than 2.75 kg/m3.\n﹗\n\n## Step 2: Determine the type of fertiliser based on the characteristics of the granules\nThe correct is 10 kg/litre, which is less than 4.75 mm.\n\n## Step 3: To determine the density of the granules\nThe best match for the weight of 1 tonne.\nThe following are not required to determine the flow rate:\n· The diameter of 2.5 mm.\n﹗\n\n## Step 4: Determine the type of fertiliser based on the characteristics of the granules\nThe correct is 3 kg/litre, which is less than 4.75 mm.\n\n## Step 5: To determine the density of the granules\nThe best match for the weight of 2.5 kg.\nThe following are not required to",
+                    "page": 47,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific precaution should be taken before working between the tractor and machine to check the coupling shaft length?",
+                    "expected_answer": "Place the machine on a supporting beam.",
+                    "model_answer": "## Step 1: Determine the correct distribution of granules with respect to the spreader\nThe correct answer is 4.75 mm.\n\nThe best answer for a good distribution of the fertiliser.\nThe correct answer is 2.0 kg/litre.\n\nThe best answer is 10 kg/ha.\n\nThe best answer is 1.0 L/kg",
+                    "page": 50,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "## Step 1: Determine the correct answer to the question\nTo determine the maximum operating angle of the coupling shaft when lifted and lowered.\n\nThe correct answer is 30°.\n\n\nThe best answer for determining the distribution of the fertiliser with respect to your spreader:\n• The spreading chart indicates that the desired application rate (kg/ha) is 1.5 kg/h.\n• The working speed is 10 m3/h.\n• The setting method is to set the correct settings for your spreader: \n- To determine the correct settings, you must adjust the tractor's engine power and linkage from the manual.\n- The desired application rate (kg/ha) can be found in the spreading chart.\n- The driving speed is 5 km/h.\n\nThe best answer for determining the distribution of the fertiliser with respect to your spreader:\n• The instruction manual provides that this information is not available.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
+                    "expected_answer": "Yes.",
+                    "model_answer": "## Step 1: To determine the correct settings for spreading\nTo determine the correct settings for the spreader, you must first check the following:\n- The working width of the spreader is less than 25 mm.\nThe correct answer to this question is 2.0 mm.\n\nThe best answer to this question is 2.0 mm",
+                    "page": 52,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
+                    "expected_answer": "30 degrees",
+                    "model_answer": "## Step 1: Determine the correct working width of the spreader\nThe correct answer to determine the working width of the spreader is determined by using the spreading chart book or online application (App) for mobile phones. The actual working width can be found in the control system, which depends on the desired working width.\n\n## Step 2: Selecting the setting of the discharge point\nTo select the correct settings for the discharge point it is done by conducting a test to obtain the desired pattern and the correct working width.\nThe position of the discharge point combined with the position of the coupling shaft on the central gearbox, which determines the best spreading pattern.\n\n## Step 3: Determining the accuracy of the discharge point\nTo determine the accuracy of the discharge point it is done by conducting a test to get the desired pattern and the correct working width.\nThe position that would most likely provide the best pattern is given in the third column, which depends on the selected application rate.\n\n## Step 4: Determining the settings for the PTO shaft\nTo determine the setting are determined by conducting a test to obtain the driving speed and the connection point.\nThe position of the TPO shaft determines the best spreading pattern it is done by using the control system or online application (",
+                    "page": 54,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What must be ensured with decoupling ropes during power lift connection?",
+                    "expected_answer": "Decoupling ropes must never be tense.",
+                    "model_answer": "## Step 1: To determine the correct setting for spreading\nTo determine the correct settings for the spreader before spreading, you must select the desired working width. The actual working width is determined by the connection point of the coupling shaft on the tractor.\n\nThe correct answer to this question is:\n• The working width should be selected to set the spreader.\nThis can be done in the online chart that shows the settings for the preset application rate and driving speed, which are given in the third column of the spreading chart.",
+                    "page": 56,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Below which application rate in kg/min is it advised to use the fine application?",
+                    "expected_answer": "Below 40 kg/min.",
+                    "model_answer": "## Step 1: Determine the correct dosing setting for a given working width\nTo determine the correct dosing setting for a specific working width, you need to follow these steps:\n\n*   *Select the desired application rate from the spreading chart.\n*   Read the flowrate in the appropriate column of the spreading chart.",
+                    "page": 66,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
+                    "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
+                    "model_answer": "## Step 1: To determine the distribution rate of fertiliser\nThe formula for calculating the required flowrate of fertilizer in kg/min is:\n\\[ \\frac{flowrate (kg/ha) x working width (m) = 0.25\\* \\\\( \\text { 1000}",
+                    "page": 68,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of serial connection does the IsoMatch control box use for communication?",
+                    "expected_answer": "RS 232",
+                    "model_answer": "## Step 1: To be done before spreading\nThe correct answer\nTo be done before spreading\n[Image]\nTo be done before spreading\n﹗\nSwitching off the tractor.\n ﹔\nEngaging the parking brake of the tractor. ﹔\n﹔\nDisconnecting the key from the ignition. ﹔\n﹔\nSetting the PTO shaft and set the RPM of the spreader as given in the relevant spreading chart. ﹔\n﹔\nOpening the right dosing unit.\n ﹔\nPutting on the troughs.\n ﹔\nEmptying the funnel into the graduated tubes and put the buckets at a maximum distance of 4 metres. ﹔\n\n## Step 2: To be done before spreading\nTo be done before spreading\n﹗\nSwitching off the control box.\n ﹔\nEntering the required rate.\n ﹔\nKey in the new width.\n ﹔\nEntering the working width.\n ﹔\nIt is recommended that an application rate at least 250 kg/ha is entered with the selected driving speed. ﹔\n\n## Step 3: To be done before spreading\nTo be done before spreading\n",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "When loading manually, what's the maximum distance in mm between the hopper rim and the ground before a platform is mandatory?",
+                    "expected_answer": "1250 mm",
+                    "model_answer": "## Step 1: To be done before spreading\nThe correct answer\nTo be done before spreading\n[Image]\nWhen to do this\n Start the tractor again.\n Close all doors in the cabin.\n Switch on the control box.\n Engage the PTO shaft and set the RPM of the spreader as given in the relevant chart.\n Drive along with the same speed as the desired flow rate.\n  Stop the dosing unit.\n Only stop the tractor after the first hopper in the middle by pressing the key on the connector to the right or left disc.\n Secure the connector with a clip.\n[/answer]\nTo be done before spreading\n[Image]\n\n## Step 2: To be done before spreading\nWhen to do this\n Start the tractor off, remove the key from the ignition and engage the parking brake of the tractor.\n  Disconnect the right or spreader by sliding the connector to the left or right disc.\n Secure the dosing unit.\n[/answer]\n## Step 3: To be done before spreading\nWhen to do this\n Start the tractor again.\n  Close all doors in the cabin.\n ",
+                    "page": 74,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum distance in mm between spreader and loading platform?",
+                    "expected_answer": "200 mm maximum distance between them.",
+                    "model_answer": "## Step 1: To be done before spreading\nThe correct answer to the spreader is not in the right-hand side of the trough.\nThe correct answer to the spreader is on the left-hand side of the trough.\n\n## Step 2: Indicate the correct distance from each other than the troughs.\nThe correct distance between the troughs is 7 meters.\n\n## Step 3: Check that    The correct width of the spreading pattern is less than 24 metres.\nThe correct width for the working width is 4 meters.\n\n## Step 4: To be done before spreading\nCheck the spreader has been adjusted to a minimum of 1 meter over the troughs.\nThe correct distance between the troughs is 10 cm.\n\n## Step 5: Check that the dosing unit is not in the left-hand side of the trough.\nThe correct position for the discharge point is at the right-hand side of the trough.\n\n## Step 6: Indicate the spreader has been adjusted to a good distance from each other than the troughs.\nThe correct distance between the troughs is 18 meters.\n\n## Step 7: Check that\nCheck the spreader is not in the left-hand side of the trough.\nThe correct position for the",
+                    "page": 74,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What does a tray test check on a fertilizer spreader?",
+                    "expected_answer": "Fertilizer distribution pattern of the spreader.",
+                    "model_answer": "## Step 1: To be done before spreading\nThe correct answer to the spreader is not in the right direction of the ditch.\nThe correct answer is:\nThe correct answer is: The correct answer is: \nThe correct answer is: The correct answer is: The correct answer is: The correct answer is: The correct answer is: The correct answer is: The correct answer is: The correct answer is: The correct answer is:",
+                    "page": 76,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What materials are required to perform the tray test?",
+                    "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
+                    "model_answer": "## Step 1: To be done before spreading\nThe correct answer is not found in the spreader.\nThe correct answer is 0.",
+                    "page": 77,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
+                    "expected_answer": "3 m/s)",
+                    "model_answer": "## Step 1: To be done before spreading\nThe correct answer to the spreader is set at a speed of 25 rpm.\nThe spreader has been adjusted for the left side of the spreader. The PTO shaft rpm should also be increased by 10% as the standard value.\n\n## Step 2: Review and adaptation\nTo be done before spreading\nThe maximum acceptable loss in the ditch is determined by a level of 100%.\nThe trough on the land next to the fictive ditch provides an insight into the topping.\n1\n   The spreader has been adjusted for the right side of the spreader. The PTO shaft rpm should also increased by 25% as the standard value.\n\n## Step 3: Testing the full spreading pattern with the hydraulic border plate\nThe maximum acceptable loss in the ditch is determined by a level of 10%.\n1\n   The spreader has been adjusted for the left side of the spreader. The PTO shaft rpm should also increased by 25% as the standard value.\n\n## Step 4: Testing the full spreading pattern with the border plate\nThe maximum acceptable loss in the ditch is determined by a level of 100%.\n1\n   The spreader has been adjusted for the right side",
+                    "page": 77,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
+                    "expected_answer": "75 cm above the troughs.",
+                    "model_answer": "## Step 1: To be done before spreading\nThe correct answer is to be used in the spreader.\nA. The correct setting of the spreader is to be set on the troughs for one-sided boundary spreading.\n\nThe correct answer is to be used in the spreader.\n\nThe correct answer is to be used in the spreader.\n\n## Step 2: To be done before spreading\nThe correct adjustment of the linkage is to be selected in the spreading chart.\n\nThe correct setting of the linkage is to be set.\nB. The correct setting of the linkage is to be selected in the spreading chart.\n\n## Step 3: To be done before spreading\nThe correct method of the spreader is to be used in the spread.\n\nThe correct method of the spread is to be used in the spread.\n\n## Step 4: To be done before spreading\nThe correct adjustment of the linkage is to be selected in the spreading chart.\n\nThe correct setting of the linkage is to be selected in the spreading chart.\n\n## Step 5: To be done before spreading\nThe correct method of the spreader is to be used in the spread.\n\nThe correct method of the spread is to be used in the spread.\n\n## Step 6: To be done before spreading\n",
+                    "page": 84,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
+                    "expected_answer": "75 cm",
+                    "model_answer": "## Step 107===\n\n## Step 1: To determine the correct answer for spreading\nTo determine the correct setting of the spreader in the field.\nThe correct answer is to be set on the headland while driving the tramline with ExactLine, and the left side of the border plate.\n\n## Step 2: The correct method of the spreader from the sprayer tramline with one-sided boundary spreading\nTo determine the correct setting of the spreader in the field.\nThe correct answer is to be filled by the dosing units while driving the right side of the border plate and the left edge of the headland.\n\n## Step 3: The correct method of the spreader from the sprayer tramline with ExactLine, and the right side of the border plate\n\n## Step 4: To determine the correct setting of the spreader in the field.\nThe correct answer\nTo determine the correct setting of the spreader in the field.\n\n## Step 5: The correct method of the spreader from the sprayer tramline with one-sided boundary spreading\n\n## Step 6: To determine the correct setting of the spreader in the field\nThe correct answer is to be filled by the dosing units while driving the left side of the border",
+                    "page": 89,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "## Step 108===\n\n## Step 109===\n\n## Step 110===\n\n## Step 111===\n\nThe final answer is correct\n### Step 112===\n\n## Step 113===\n\n## Step 114===\n\n## Step 115===\n\n## Step 116===\n\n## Step 117===",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
+                    "expected_answer": "Inertia causes continued rotation.",
+                    "model_answer": "## Step 110===\n\nI can’t\nTo determine the correct answer to be done before the spreader.\nThe correct answer is not in the field of the tractor’s\n1. The correct answer is not in the right-hand side of the tractor’s\n2. The correct answer is not in the left-hand side of the tractor’s",
+                    "page": 94,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "According to the last setting check, what is the recommended height in centimeter of the spreader over the ground or crops?",
+                    "expected_answer": "75 cm",
+                    "model_answer": "## Step 113===\n\n## Step 1: To determine the correct answer\nTo determine the spreader's position in the field.\nThe tractor is to be set at the desired width of the sprayer.\n\n## Step 2: Determine the type of the spreading pattern, as described in the chart.\nThe exacting the setting for the PTO shaft and the spreading discs.\n\n## Step 3: If you want to determine the correct settings for the spreader's position in the field.\nThe ExactLine is not set at the desired width of the sprayer.\n\n## Step 4: Determine the type of the spreader, as described in the chart.\nThe exacting the setting for the PTO shaft and the spreading discs.\n\n## Step 5: To determine the correct settings for the spreader's position in the field.\nThe ExactLine is at the desired width of the sprayer.\n\n## Step 6: Determine the type of the spreader, as described in the chart.\nThe exacting the setting for the PTO shaft and the spreading discs.\n\n## Step 7: To determine the correct settings for the spreader's position in the field.\nThe ExactLine is at the desired width of the sprayer.\n\n## Step 8: Determine the",
+                    "page": 96,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What happens when hopper content falls below 100 kg?",
+                    "expected_answer": "Automatic calibration switches off.",
+                    "model_answer": "## Step 1: To determine the correct answer to be done\nThe tractor is not in the field.\n﹗\nTo determine the correct setting of the hopper.\n\nThe tractor is not in the field.",
+                    "page": 101,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What are the two functions for border spreading?",
+                    "expected_answer": "Hydraulic border spreading plate and ExactLine.",
+                    "model_answer": "## Step 1: To determine the correct method of spreading\nTo determine the correct method of spreading\nThe machine is to be used for storage.\nThe machine must be prepared for storage.\nIt is advisable to lubricate, clean and again lubricate the machine before storing it for a short period of time. If it is lubricated first you will prevent dirt, fertiliser and water from entering the bearings.\n\n## Step 2: To determine the method of spreading\nTo determine the correct method of spreading\nThe machine must be stored in storage.\nIt is advisable to lubricate, clean and again lubricate the machine before storing it for a short period of time. If it is lubricated first you will prevent dirt, fertiliser and water from entering the bearings.\n\n## Step 3: To determine the method of spreading\nTo determine the correct method of spreading\nThe machine must be stored in storage.\nIt is advisable to lubricate, clean and again lubricate the machine before storing it for a short period of time. If it is lubricated first you will prevent dirt, fertiliser and water from entering the bearings.\n\n## Step 4: To determine the method of spreading\nTo determine the correct method of spreading\nThe machine must be stored in storage.\nIt is",
+                    "page": 106,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
+                    "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
+                    "model_answer": "## Step 1: Preparation for storage\nTo prepare the machine for winter storage.\n• Ensure all parts are stored in a safe condition. \n• The machine is prepared for storage.\n• The machine must be protected by proper maintenance.\n\nThe correct answer\n• The machine is ready to transport.\n• The machine is properly maintained and kept in good working order.\n• The machine is not damaged or under the storage.\n    • The machine is stored safely, with all parts that are securely fastened.",
+                    "page": 108,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should you do if a spreading disc spreads irregularly?",
+                    "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
+                    "model_answer": "## Step 1: Lubricating points\nLubricate the pistons with grease.\n﹝\n   • Check the condition of the piston and connecting the pistons to ensure they are lubricated. Lubricate the pistons by using a suitable grease type.\n• Lubricate the pistons in both sides of the gearboxes.\n    • Apply the lubricating nipples on the axles and connectors.\n 1 grease the connectors between the gears and the spreading pattern with the piston test. Lubricate the pistons when checking the connection\n   • Lubricate the pistons by using a suitable grease type.\n   • Check the condition of the pistons in both sides of the gearboxes.\n    • Apply lubricating nipples on the axles and connectors.\n 1 grease the connecting the gears to the piston. Lubricate the pistons when checking the connection pattern with the piston.\n\nThe correct answer\n Lubricating points\nLubrication for the pistons\n• Lubricate the pistons in both sides of the gearboxes.\n    • Apply lubricating nipples on the axles and connectors.\n 1 grease the connecting the gears to the piston. Lubricate the pistons when checking the connection pattern with the piston",
+                    "page": 113,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
+                    "expected_answer": "40 degrees Celsius",
+                    "model_answer": "## Step 132===\n\nThe final answer is not permitted to carry out repairs on hydraulic hoses\n[Image]\nReplacing instructions for leaks in the system! Replace the hose if the following is detected during inspection:\n· damage to the exterior of the machine.\n﹟\n    • Check the pressure and leakage with the hoses, pipes, connections. \n• check the condition of the hoses, piping, valves, etc. that are checked regularly, but at least once a year, by an expert for leakages or visible damage! \n\nThe lifetime of a hose should be replaced if it is detected during inspection\n    • Check the pressure and leakage in the system.\n    • Check the condition of the pipes, connections, valves, etc. that are checked regularly, by an expert \n 1. Lubrication of hoses, pipes, connections, and joints.\n• check the condition of the hydraulic system, leaks, piping, valves, etc. that are checked regularly, but at least once a year, by an expert for leakages or visible damage!",
+                    "page": 117,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
+                    "expected_answer": "80 bar",
+                    "model_answer": "## Step 132===\n\nThe final answer to the correct answer is not found in the instructions\n1. Lubrication of the hydraulic system.\n﹝\n    • Check the pressure in the hydraulic system when checking the machine with water or steam.\n    • Lubricate the hoses and pipes, connections.\n    • Check the condition of the hydraulic system when inspecting it.\n    • Check the condition of the hydraulic system when checking the machine.\n\nThe correct answer is not found in the instructions\n1. Lubrication of the hydraulic system.\n    • Check the pressure in the hydraulic system when checking the machine with water or steam.\n    • Lubricate the hoses and pipes, connections.\n    • Check the condition of the hydraulic system when inspecting it.\n    • Check the condition of the hydraulic system when checking the machine.\n\nThe correct answer is not found in the instructions\n1. Lubrication of the hydraulic system.\n    • Check the pressure in the hydraulic system when checking the machine with water or steam.\n    • Lubricate the hoses and pipes, connections.\n    • Check the condition of the hydraulic system when inspecting it.\n    • Check the condition of the hydraulic system when checking the machine.\n\nThe correct answer is not found in the",
+                    "page": 117,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
+                    "expected_answer": "Preservative grease or preserving liquid.",
+                    "model_answer": "## Step 1: Lubrication\nLubricating points for the hydraulic system\nThe lubricant in the system must be sufficient to prevent damage. If not enough is used in the system will lead to damage.\n• Check that all hoses are properly connected and maintained regularly, but only if they are loose or damaged.\n• The pressure of the system should be within normal range.\n• Do not use high-pressure fluid (e.g., water) when checking the system.\n• Switching off the electronic control system,\n· Engaging the tractor off,\n• Wear protective clothing and safety gloves, such as safety glasses and shoes.\n• Check that all hoses are properly attached to the correct position of the dosing mechanism.\n• The agitator must be turned freely from seal ring.\n• After checking the distance between the agitator axle and seal ring is not equal to expected.\n• Do not open the filter or close it when in case of a leak.\n\nThe best answer\n Lubrication for the hydraulic system\nLubricating points that are mounted on the dosing plates to ensure correct positions to each other. If the dosing openings do not loose, and if they are damaged.\n• The agitator must be turned from seal ring.\n• After",
+                    "page": 121,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
+                    "expected_answer": "Remove all fertilizer remnants.",
+                    "model_answer": "## Step 1: Check the dosing mechanism\nThe dosing mechanism must be checked before starting the tractor.\n• The dosing mechanism is mounted on the agitator axle.\n• The agitator axle should turn freely from seal ring.\n• The seal ring must be in position.\n\nThe correct answer to ensure that the dosing openings are not close.",
+                    "page": 123,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many grease nipples do the discharge bushings have?",
+                    "expected_answer": "Two grease nipples per discharge bushing.",
+                    "model_answer": "## Step 1: Lubrication of the dosing mechanism\nThe lubricating points are used to ensure correct operation.\nThe lubricating points must be in good condition to prevent damage. If they do not have a gap between them, you will cause problems with the spreading pattern and the agitator axle.\n\nThe lubricating points should be turned on the agitator axle so that it moves freely.\nIf they are too far apart, the dosing mechanism may not move properly.\n    Lubrication of the dosing mechanism is higher than the discharging bushing. If they do not have a gap between them and the spreading disc.\n\nThe lubricating points should be turned upwards to the agitator axle so that it moves upward.\nIf they are too close together, the dosing mechanism may not move properly.\n\n## Step 2: Lubrication of the dosing mechanism\nThe lubricating points must be loosened on the agitator axle so that it is free.\nIf they do not have a gap between them and the discharging bushing.\n\nThe lubricating points should be turned downwards to the agitator axle so that it moves downward.\nIf they are too far apart, the dosing mechanism may not move properly.\n\n## Step 3",
+                    "page": 126,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required grease level in mm below the filler opening for spreading disc gearboxes after the machine has stood still?",
+                    "expected_answer": "35 mm",
+                    "model_answer": "## Step 1: To determine the correct grease level in mm below the filler opening for spreading disc gearboxes after the machine has stood still\nThe correct answer\nA. The correct answer is 0.25 mm.\nB. The correct answer is 2.25 mm.\n\nThe best answer\nC. The correct answer is 1.25 mm.\nD. The correct answer is 1.25 mm.\nE. The correct answer is 1.25 mm.\nF. The correct answer is 1.25 mm.\nG. The correct answer is 0.25 mm.\nH. The correct answer is 2.25 mm.\nI. The correct answer is 1.25 mm.\nJ. The correct answer is 1.25 mm.\nK. The correct answer is 1.25 mm.\nL. The correct answer is 1.25 mm.\nM. The correct answer is 0.25 mm.\nN. The correct answer is 2.25 mm.\nP. The correct answer is 1.25 mm.\nQ. The correct answer is 1.25 mm.\nR. The correct answer is 1.25 mm.\nS. The correct answer is 1.25 mm.\nT. The",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum hydraulic pressure allowed for the hydaulic system in bars?",
+                    "expected_answer": "210 bars.",
+                    "model_answer": "## Step 1: Storing the machine\nStoring the machine is necessary to prevent damage from the hydraulic pressure. The maximum allowed pressure in the hydraul system is 210 bar.\nThe ISO 11786 In cab connection is required for the tractor, and it can be used with the IsoMatch control box.\n\n## Step 2: Accessory accessories are available\nAccessories are available for the machine, including the ISOBUS cable. The ISO 11786 in the cab connection is optional to the IsoMatch control box.\nThe ISO 11786 In cab connection is required for the tractor and it can be used with the IsoMatch control.\n\n## Step 3: Accessory accessories are available\nAccessories are available for the machine, including the ISOBUS cable. The ISO 11786 in the cab connection is optional to the IsoMatch control box.\nThe ISO 11786 In cab connection is required for the tractor and it can be used with the IsoMatch control.\n\n## Step 4: Accessory accessories are available\nAccessories are available for the machine, including the ISOBUS cable. The ISO 11786 in the cab connection is optional to the IsoMatch control box.\nThe ISO 11786 In cab connection is required for the",
+                    "page": 131,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the required distance in mm between the rope and discharge bushing opening?",
+                    "expected_answer": "109 mm.",
+                    "model_answer": "## Step 1: **Accessories\nThe correct answer\n[Image]\nIsoMatch Iso\n[Image]\nISO 11786 is a control unit for the ISO 11786 in the steering system.\n﹝\nAccessories\nIsoMatch Iso\n[Image]\nISO 11786 is connected to the ISO 11786 and IsoMatch Tellus connection\n﹝\nIsoMatch Iso\n[Image]\nISO 11786 is connected to the ISO 11786 and IsoMatch Tellus GO terminal.\n﹝\nIsoMatch Iso\n[Image]\nISO 11786 is connected to the ISO 11786 and IsoMatch Tellus GO cable\n﹝\nIsoMatch Iso\n[Image]\nISO 11786 is used for the ISO 11786 in the steering system.\n‹\n\n## Step 2: **Accessories**\nThe correct answer\b\nIsoMatch Iso\n[Image]\nISO 11786 is connected to the ISO 11786 and IsoMatch Tellus cable\n﹝\nIsoMatch Iso\n[Image]\nISO 11786 is connected to the ISO 11786 and IsoMatch Tellus connection\n‹\n\n## Step 3: **Accessories**\nThe correct accessories for the ISO",
+                    "page": 136,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "## Step 1: To determine the correct answer\nTo determine the position of the dosing mechanism in the spreaders.\n\nThe correct answer  is not a key to the correct setting for the dosing mechanism. The correct answer is the one that allows the correct distance between the discharge bushing and spreading disc.\n\nThe correct answer is the same as the previous type of the dosing plate.\n\nThe correct answer\b\n\n## Step 2: To determine the characteristics of the fertiliser in the spreaders.\n\nThe correct information is the relevant to the relevant chart, which shows the correct characteristics of the spreader.\n\nThe correct answer\nTo determine the distance between the discharge bushing and spreading disc.\n\nThe correct answer is the same as the type of the dosing plate.\n\n## Step 3: To determine the calibration of the speed signal in the control system.\n\nThe correct information is the one that allows the correct setting for the speed signal.\n\nThe correct answer\nTo determine the distance between the driving speed and spreading disc.\n\nThe correct answer\b\n\n## Step 4: To determine the type of the dosing plate.\n\nThe correct information is the relevant to the previous type of the dosing plate.\n\nThe correct answer\b\n\n## Step 5: To determine the calibration of",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "I can't find\b",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                }
+            ]
+        },
+        "table_questions": {
+            "results": [
+                {
+                    "question": "What is the pattern of the type 'mineral'?",
+                    "expected_answer": "angular, with sharp angles and edges",
+                    "model_answer": "## Step 1: Determine the correct answer to the question\nTo determine the type of fertilizer based on the characteristics of the fertiliser.\n\nThe best answer is: The correct answer is not found in the text.",
+                    "page": 58,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the hopper weight without hopper cover in kg of the Exacta-TLX GEOSPREAD 3225?",
+                    "expected_answer": "337.5 kg",
+                    "model_answer": "## Step 1: The machine is mounted on the hopper\nThe hopper must be adjusted to the tractor.\nBefore use of the hopper for the tractor. \n*   • 2.5 mm\n• 3.0\n• 4.0\n• 6.0\n• 8.0\n• 10.0\n• 12.0\n• 15.0\n• 18.0\n• 24.0\n• 30.0\n• 36.0\n• 45.0\n• 60.0\n• 90.0\n• 120.0\n• 150.0\n• 180.0\n• 240.0\n• 270.0\n• 300.0\n• 360.0\n• 450.0\n• 540.0\n• 630.0\n• 720.0\n• 9000.0\n**Answer**\n\nThe final answer",
+                    "page": 36,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the weight in kg of the Exacta-TLX GEOSPREAD 3900?",
+                    "expected_answer": "795 kg",
+                    "model_answer": "## Step-by-step instructions for the correct answer\nTo operate the ISO control box\nThe IsoMatch terminal on the tractor is used to control the spreader.\n1.  The IsoMatch terminal is connected to the machine with the ISOUS connection point.\n2.  The IsoMatch terminal is not connected to the tractor, and the PTO shaft.\n3.  The IsoMatch terminal is operated by the engine.\n4.  The IsoMatch terminal is used for the power supply of the tractor.\n5.  The IsoMatch terminal is carried on the machine with the coupling shaft.\n\nThe ISOUS connection point is not connected to the tractor, and the PTO shaft.\n6.  The IsoMatch terminal is attached to the engine.\n7.  The IsoMatch terminal is used for the control system.\n8.  The IsoMatch terminal is used for the steering wheel of the tractor.\n9.  The IsoMatch terminal is carried on the coupling shaft.\n\nThe ISOUS connection point is not connected to the tractor, and the PTO shaft.\n10.  The IsoMatch terminal is attached to the engine.\n11.  The IsoMatch terminal is used for the control system.\n12.  The IsoMatch terminal is used for the steering wheel of the tractor.\n",
+                    "page": 36,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the sound level in dB of a Tractor + spreading spreader (Kali 60) with its rear window opened?",
+                    "expected_answer": "84.6 dB",
+                    "model_answer": "I can’t find\nThe correct answer\nBefore use\nConnecting to the tractor\n   1. \n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n",
+                    "page": 37,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often (in what interval) must the condition of the vanes be inspected?",
+                    "expected_answer": "daily",
+                    "model_answer": "## Step 1: Check the dosing mechanism\nThe dosing mechanism is not in the correct position.\nIf you do not check the distance between the agitator axle and the seal ring.\n\n## Step 2: Check the actuator\nThe actuator is not attached to the hopper.\n\n## Step 3: Check the disconnection of the dosing bush\n\n## Step 4: Check the discharge bushing height.\nIf the distance is less than 109 mm, do you check the following:\n* The distance between the agitator axle and the seal ring is more than 109 mm.\n\n## Step 5: Check the actuator plate\nThe actuator plate is not attached to the hopper\n\n## Step 6: Check the dosing mechanism moves upward.\nIf the disconnection of the actuator is lower than 1.0 mm, do you check the following:\n* The distance between the agitator axle and the seal ring.\n\n## Step 7: Check the actuator plate\nThe actuator plate is not attached to the hopper\n\n## Step 8: Check the dosing mechanism moves downwards.\nIf the disconnection of the actuator is upwards, do you check the following:\n* The distance between the ag",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often (in what interval) must the bushing height be checked and the discharge be set?",
+                    "expected_answer": "after the first 10 hours and every 100 hours, but a minimum of once per year",
+                    "model_answer": "## Step 1: Checking the dosing mechanism\nThe dosing mechanism must be adjusted to ensure correct position.\n• The dosing mechanism is not in the middle of the agitator axle. If the distance between the inside of the discharge bush is more than 109 mm, do the following:\n    • Loosen the actuator plate slightly.\n    • Slide the actuator plate until the distance between the inside of the rope and opening of the discharging bushing is less than 109 mm.\n    • Turn on the dosing mechanism upwards to access the discharge bushing to the agitator axle\n    • Unscrew the attaching the discharge bush to the star a few times.\n\n## Step 2: Checking the dosing mechanism\nThe dosing mechanism must be adjusted to ensure correct position.\n• The dosing mechanism is not in the top of the discharging bush. If the distance between the inside of the agitator axle is less than 109 mm, do the following:\n    • Turn on the actuator plate downwards to access the discharge bushing to the agitator axle\n    • Screw the actuator plate slightly.\n\n## Step 3: Checking and setting the dosing mechanism.\nThe dosing mechanism must be adjusted to correct position",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often (in what interval) must the agitator seal be replaced?",
+                    "expected_answer": "every 100 hours or if worn",
+                    "model_answer": "## Step 1: Check the dosing mechanism\nThe dosing mechanism is not in the correct position.\nIf you do not check the distance between the agitator axle and the seal ring.\n\n## Step 2: Check the disconnection of the dosing bush to the discharge bushing.",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "With what torque in Nm must a M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened?",
+                    "expected_answer": "420 Nm",
+                    "model_answer": "## Step 1: Checking and setting the dosing mechanism\nThe dosing mechanism is not in position.\n• Check the agitator axle to the control system.\n• Turn on the electronic control system.\n• Switch off the tractor from ignition, engage the parking brake of the tractor,\n• Wait for all machine parts to come into the cab.\n• Remove the 3 fastening from the seal rings.\n• Put back in position the metal seal ring.\n\nThe correct answer\n IsoMatch Go, as a handy and more compact version of the double screen with ISO control is not in the cab.\n• Check the dosing mechanism.\n• Replace the agitator axle to the control system.\n• Remove the 3 fastening from the seal rings.\n• Put back in position the metal seal ring.\n\nThe correct answer\n IsoMatch Go, as a handy and more compact version of the double screen with ISO connection is sufficient for the cab.\n• Put back in position the seal ring.\n• Put in place the control box.\n• Replace the 3 fastening from the seal rings.\n• Check the agitator axle to the control system.\n\nThe correct answer\n IsoMatch Go, as a handy and more compact version of the double screen with ISO connection is sufficient for the",
+                    "page": 129,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "With what torque in Nm must a M6 hexagon stainless steel bolt with a 70 (A2) quality and with a 0.2 friction be fastened?",
+                    "expected_answer": "9.9 Nm",
+                    "model_answer": "## Step 1: Checking and setting the dosing mechanism\nThe dosing mechanism is not in position.\n• Check the agitator axle to the control system.\n• Turn on the electronic control system.\n• Switch off the tractor from ignition, engage the parking brake of the tractor.\n• Remove the key from the ignition.\n• Place the machine on the ground or firm supports on a firm.\n• Check the dosing mechanism.\n\nThe correct answer 1.0 mm to the agitator axle.\n• Put the agitator back in position.\n• Replace the dosing mechanism with the seal ring.\n• Put the metal seal rings.\n• Check the condition of the agitator axle.\n• Remove the seal rings.\n• Put the control box.\n\nThe correct answer\b\n### 2.0 mm to the dosing mechanism.\n• Put the dosing mechanism back in position.\n• Replace the dosing mechanism with the seal ring.\n• Put the metal seal rings.\n• Check the condition of the agitator axle.\n• Remove the seal rings.\n• Put the control box.\n\nThe correct answer\n### 3.0 mm to the dosing mechanism.\n• Put the dosing mechanism back in position.\n• Replace the dosing mechanism with the seal",
+                    "page": 129,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
+                    "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
+                    "model_answer": "I can't find\nThe amount of fertilizer (in kg) in a hopper is not being blocked by the spreader.",
+                    "page": 152,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                }
+            ]
+        },
+        "unanswerable_questions": {
+            "results": [
+                {
+                    "question": "How much extra diesel does the tractor consume to use the Exacta-TLX GEOSPREAD?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can't find any further assistance with the answer.",
+                    "page": 23,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "Is fine application more expensive than normal dosing?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can't find this document.",
+                    "page": 24,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Is one-sided boundary spreading suitable for small gardens?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can't find this answer",
+                    "page": 28,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "For what other kind of connections can the IM Tellus Input cable be used?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 48===\n\nI apologize, I am unable to provide a response to this question.\n\nThe correct answer is not found in the manual.\n**Answer**\n\nThere is no solution for the problem.",
+                    "page": 32,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "Can the IsoMatch universal ISOBUS terminal be used to check the weather?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 49===\n\nI can’t\nThe ISO control system is not connected with the tractor’s power supply.\n﹝\nBefore use of the IsoMatch terminal on the control box\n﹝ Mounting the control to the tractor’s frame in the cab.\n﹝ Connect the cable to which plug is attached to the tractor’s CAN connection.\n﹝ Connect the side of the cable to which plug is attached to the tractor’s CAN connection.\n﹝ Attach the nut on the left-hand side of the gear shaft to the control box.\n﹝ Attach the nut to the right-hand side of the gear shaft to the control box.\n﹝ Fixing the nut in the top of the gear shaft to the control box\n﹝ Place the cable to which plug is attached to the tractor’s CAN connection.\n﹝ Connect the cable to which plug is attached to the tractor’s CAN connection.\n### 50===\n\n## Step 51===\n\nThe ISO control system is not connected with the tractor’s power supply\n﹝ Mounting the control to the tractor’s frame in the cab.\n﹝ Connect the cable to which plug is attached to the tractor’s CAN connection.\n﹝ Attach the nut on",
+                    "page": 33,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can IsoMatch Tellus be connected to an external mouse?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can’t provide a tractor with ISO control system\nThe correct answer is used for the IsoMatch terminal on the tractor.\nThe ISO control box must be connected to the machine.\nThe ISO control box must have a connection to the tractor.",
+                    "page": 34,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Is the Hydraulic border spreading plate made out of steel?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: Determine the type of granules with diameters\nThe diameter of the granules is less than 2.0 mm.\nThe following are the characteristics of the fertiliser that have a diameter of 4.75 mm, which is greater than 3.5 mm.\n\nThe best answer\nTo determine the density of the granules with respect to the desired weight.\n1. Fill the beaker and dry measuring beaker on the side.\n﹗\n\n## Step 2: Determine the type of granules that are similar in terms of the spreaders\nThe diameter of the granules is less than 3.5 mm.\n\n## Step 3: Determining the density of the granules with respect to the desired weight.\n1. Fill the beaker and dry measuring beaker on the side.\n\n## Step 4: Determine the type of granules that are comparable in terms of the spreaders\nThe diameter of the granules is greater than 2.5 mm.\n\n## Step 5: Determining the density of the granules with respect to the desired weight.\n1. Fill the beaker and dry measuring beaker on the side.\n\n## Step 6: Determine the type of granules that are best suited for",
+                    "page": 47,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the linkage pin for the tractor be made out of aluminium?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can’t find this answer.",
+                    "page": 53,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "Can the tray test be performed at 40 degrees Celsius?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: To determine the correct setting of the spreader\nTo determine the correct setting of the spreading pattern, you should follow these steps:\n\n1. Check the PTO shaft speed in the left side of the spreader.\n2. Check the driving speed of the right side of the spreader.\n3. Set the TPL (Traction Power Load) to be equal to 25% and less than 40 rpm.\n4. Check the flow rate of the spreading pattern.\n\n## Step 1: Check the PTO shaft speed in the left side of the spreader\nTo determine the correct setting of the spreading pattern, you should check the PTO shaft speed in the left side of the spreader.\n\n## Step 2: Check the TPL (Traction Power Load) to be equal to 25% and less than 40 rpm.\nTo determine the correct setting of the spreading pattern, you should check the flow rate of the spreading pattern.\n\nThe final answer is\n\n## Step 1: Check the PTO shaft speed in the left side of the spreader\nTo determine the correct setting of the spreading pattern, you should check the TPL (Traction Power Load) to be equal to 25% and less than 40",
+                    "page": 77,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the hydraulic border spreading plate be actuated pneumatically?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can't find this answer\n 1.",
+                    "page": 85,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "By which environmental standards is the maximum acceptable loss in the ditch is determined?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 103===\n\nI can't find the correct answer\nTo be done before spreading\nIndication of the spreader with the control system is to be set in the headland.\nIndication of the spreader on the tramline\nIndication of the field\nIndication of the spreader\nIndication of the field\nIndication of the spreader\n\nThe correct answer\nIndication of the spreader\nIndication of the field\nIndication of the spreader",
+                    "page": 87,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How should one proceed to stop spreading the fertilizer?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: To determine the correct method for the spreader\nTo determine the correct method of the spreader\nThe tractor is not in the field.\n﹝\n    • The tractor is not in the field.",
+                    "page": 100,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum height the fertilizer flies when spreading without GEOCONTROL headland",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 119\n\n## Step 1: To determine the correct method for spreading\nTo determine the spreader's position in the field.\nThe machine is to be used with the tractor.\n\n## Step 2: If you have found that it is not a good fit, lubricate the hopper and disengage the PTO shaft.\n\n## Step 3: The hopper is not open the dosing units.\n\n## Step 4: You can do this in the hopper to prevent the flow of water.\nThe hopper from the machine.\n\n## Step 5: If it is not a good fit, lubricate the hopper and disengage the PTO shaft.\n\n## Step 6: The hopper is open the dosing units.\n\n## Step 7: You can do this in the hopper to prevent the flow of fertilizer.\nThe hopper from the machine.\n\n## Step 8: If it is not a good fit, lubricate the hopper and disengage the PTO shaft.\n\n## Step 9: The hopper is open the dosing units.\n\n## Step 10: You can do this in the hopper to prevent the flow of water.\nThe hopper from the machine.\n\n## Step 11: If it is",
+                    "page": 103,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is seven-sided boundary spreading with the hydraulicborder spreading plate?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: \n\nThe correct answer\nTo determine the spreader's position for a tractor.\nThe machine is in the field with the desired distance of the hopper.\n\nThe correct answer is 2.75 meters.\n\nThe correct answer is 0.75 meters.\n\nThe correct answer is 2.5 meters.\n\nThe correct answer is 1 meter.\n\nThe correct answer is 1/2 meters.\n\nThe correct answer is 1 meter",
+                    "page": 107,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Which appropriate measures for road transport should be taken when stopping work?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The final answer\n 1.",
+                    "page": 112,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Why do most types of fertiliser attract water?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 130===\n\nThe correct answer to the lubrication\n Lubricating points for the coupling with gearboxes\n﹝ Lubricate the couplings of the gears.\n    • Lubricate the couplings of the shafts.\n    • Lubricate the couplings of the couplings",
+                    "page": 114,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Why is damage to the vanes, spreading disc or discharge bushing, most likely caused by a hard object?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: Lubricating points for torques (in Nm) for self-locking nuts\nThe lubrication of the torque is applied to ensure that they are sufficient.\nThe correct answer is not found in page 126.\n\nThe correct answer is not found in page 125.",
+                    "page": 115,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should a person do who fell into the fertilizer and no physician is available?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 132.",
+                    "page": 117,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What happens if the machine grease nipples are never lubricated?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can't find this document.",
+                    "page": 118,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific paint should be used to paint any damaged paintwork at the end of the season the machine in preparation for winter storage?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: Check the dosing mechanism\nThe dosing mechanism must be adjusted to ensure correct dosing. If you do not check the dosing openings are loose or damaged.\n    • The dosing plates should be tightened securely in the middle of the agitator axle.\n    • Agitator axle\n[Image]\n   [Image]\n 1. Check the dosing mechanism\n 1. Adjust the dosing mechanism to ensure correct dosing. If you do not check the dosing openings are loose or damaged.\n\nThe best answer",
+                    "page": 121,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the curriculum of the training program agrarians need to complete to be considered competent to operate this machine?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: **Understanding the system\nThe system is designed for the tractor with ISO control system.\n**Answer:** The correct answer to be able to operate this machine.\n\nANSWER\n\nThe system is designed for the tractor with IsoMatch control system.",
+                    "page": 4,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "By which international standard are the pictograms used in this manual specified for agricultural machinery?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: **Safety\nThe machine is equipped with ISO control system.\n**Answer:** The tractor is equipped with ISO control system.\n\nThe correct answer is not required by the ISO standard.",
+                    "page": 5,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How does the rate of corrosion on the Exacta-TLX GEOSPREAD compare between machines used in coastal vs. inland agricultural regions?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can't find this answer\nThe ISO 1/2\nGetting familiar with the machine\nISO 1/2\nIsoMatch IsoMatch control\n[Image]\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control\nIsoMatch IsoMatch control",
+                    "page": 21,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What kind of protective safety gloves are needed for cleaning fertiliser remnants from the Exacta-TLX GEOSPREAD before welding?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can't find any further assistance with ISO Match IsoMatch control box.",
+                    "page": 22,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What are the detailed technical specifications and bandwidth capabilities of different ISOBUS communication protocol versions compatible with the IsoMatch Tellus system?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 48===\n\nThe machine\nBefore use of the ISO control box\n[Image]\n49\nThe ISO control system is used for the tractor with a fixed position.\nIsolator\n[Image]\n50\nISOB connection point\nThe Isolator\n[Image]\n51\nISO control system\nThe IsoMatch terminal on the tractor with the ISOB cable\nBefore use of the control box\nThe IsoMatch terminal on the tractor is used for the ISO connection\n52\nIsoMatch terminal on the tractor with the CAN cable\nThe IsoMatch terminal on the tractor is used for the ISOB communication system\n53\nISO control system\nThe IsoMatch terminal on the tractor with the CAN cable\nThe IsoMatch terminal on the tractor is used for the ISOB communication system\n54\n\n## Step 49===\n\nIsoMatch terminal on the tractor with the ISO connection\n[Image]\n55\nISO control box\nThe IsoMatch terminal on the tractor with the ISOB cable\nBefore use of the control box\nThe IsoMatch terminal on the tractor is used for the ISOB communication system\n56 IsoMatch terminal on the tractor with the CAN cable\nThe IsoMatch terminal on the tractor is used for the ISOB communication system\n\nISO control system",
+                    "page": 32,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many hours of continuous operation can the IsoMatch Tellus operate before flattening a typical tractor battery if left switched on with the engine off?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1\nThe machine is equipped with the ISO control system.\n**Answer:** The tractor is equipped with a tractor.\n\nThe correct answer to be used for the IsoMatch terminal on the control box.",
+                    "page": 34,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific 'grease' type is recommended for 'profiled tubes' of the  coupling shaft?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: Determine the correct answer to determine the type of granules for 'profiled tubes\nThe correct answer is 2.0 mm.\n\nThe best answer is 2.0 mm.\n\nExplanation:\nThe correct answer is 2.0 mm, which indicates that the diameter of the granules is less than 2.0 mm",
+                    "page": 51,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'hose coupling support' made of?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: To determine the correct hose coupling type for spreading\nThe hose coupling is a critical component in the spreader. The hose connection must be adjusted to ensure that the machine can operate correctly.\nThe hose connection point of the coupling shaft on the tractor is determined by the desired working width and the PTO speed.\n\n## Step 2: To determine the correct hose type for spreading\nThe hose connection point of the coupling shaft on the tractor is determined by the desired application rate, driving speed, and the flow rate.\nThe hose must be adjusted to ensure that the machine can operate correctly.\n\n## Step 3: Determine the correct hose type for spreading\nThe hose connection point of the coupling shaft on the tractor is determined by the desired working width and the PTO speed.",
+                    "page": 55,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific type of 'Delicia Schnecken Linsen' slug pellets were used for the spreading chart example?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: Determine the type of fertilizer\nThe type of fertilizer is not specified in the provided text. However, I can tell you that Schnecken Linsen are a type of spreader used for spreading.\n\nThe correct answer is: \n\n*   • Pellet (L)",
+                    "page": 69,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the minimum 'baud rate' for 'RS 232 connection'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: To be done before spreading\nThe correct answer to be done before spreading is to check the dosing setting.\nThe correct dosing setting for a spreader should be set\n[Image]\nTo be done before spreading\n﹗\nSwitch off, remove the key from the ignition and engage the parking brake of the tractor. ﹗\n\n## Step 2: To be done before spreading\nCheck the PTO shaft RPM.\nThe correct PTO speed for a spreader should be set to in the relevant chart.\n\n## Step 3: To be done before spreading\nSwitch off, enter the control box.\n## Step 4: To be done before spreading\nEnter the required application rate.\n## Step 5: To be done before spreading\nKey in the right-hand side of the spreader.\n## Step 6: To be done before spreading\nEnter the working width.\n\nThe correct width for a spreader should be at least 24 metres.\n\n## Step 7: To be done before spreading\nPlace the buckets on the left-hand side of the tractor track.\n## Step 8: To be done before spreading\nDrive the PTO shaft and stop after it has been driven at least 20 meters.",
+                    "page": 72,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum acceptable 'chunk' size of fertilizer in mm to prevent blockage?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: To be done before spreading\nThe correct answer is 250 kg/ha.\nThe recommended application rate of at least 250 kg/ha is entered with the selected driving speed.\n\n## Step 2: Check the PTO shaft RPM and set the spreader discs as given in the relevant chart\n\n## Step 3: To be done before spreading\nTo check the dosing setting will also have an influence on the spreading pattern\n\n## Step 4: Test the discharge point\n\n## Step 5: Check the correct position of the spreader\n\n## Step 6: Check the flowrate\n\n## Step 7: Check the distance from the troughs\n\n## Step 8: Maintain the same width and PTO shaft rpm\n\n## Step 9: If you set an application rate less than 250 kg/ha, to and over the troughs (e.g. 18 or 24 metres)\n\n## Step 10: Maintain the same distance with opening the dosing unit\n\n## Step 11: Check that\b\n\n## Step 12: Check the correct flowrate\n\n## Step 13: Check the spreader in accordance with the spreading chart\n\n## Step 14: Check the vanes do not touch the border",
+                    "page": 74,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'tap' material used for hydraulic border spreading plate tap?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: To be done before spreading\nThe correct answer is to be filled with the spreader in the field.\nA tractor's direction of the spreader tramlines and the spreader's position on the headland.\n\nANSWER 1\nTo be used for the spreader in the field.\nThe correct answer is to be filled with the spreader in the field.\n\nANSWER 2\nTo be done before spreading\n\n## Step 2: To be checked by the control system of the spreader tramlines and the spreader's position on the headland.\n\nANSWER 3\nTo be used for the spreader in the field.\nThe correct answer is to be filled with the spreader in the field\n\nANSWER 4\nTo be done before spreading\n\n## Step 4: To be checked by the control system of the spreader tramlines and the spreader's position on the headland.\n\nANSWER 5\nTo be used for the spreader in the field\nThe correct answer is to be filled with the spreader in the field.\nANSWER 6\nTo be done before spreading\n\n## Step 6: To be checked by the control system of the spreader tramlines and the spreader's position on",
+                    "page": 85,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'active carbon filters' are recommended for closed tractor cabin to filter fertilizer dust?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 109===\n\n## Step 110===\n\n## Step 111===\n\n## Step 112===\n\nThe final answer\nTo determine the correct settings for the spreader in the field.\n### Step 113===\n\n## Step 114===\n\n## Step 115===\n\n## Step 116===\n\n## Step 117===\n\n## Step 118===\n\n## Step 119===\n\n## Step 120===\n\n## Step 121===\n\n## Step 122===\n\n## Step 123===",
+                    "page": 94,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the tolerance for 'measured distance from the bottom of the vanes, the distance to the ground or the crop' in cm?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: To determine the correct answer\nTo determine the spreader's position from the side of the tractor.\nThe correct answer is to be set in the field or left-hand side. The correct answer is to be used when the right-hand side.\n\nThe correct answer is to be done with the left-hand side.",
+                    "page": 95,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 113===\n\n## Step 1: To determine the correct answer\nTo determine the spreader's speed in m/s.\nThe correct answer is 1000.",
+                    "page": 96,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the recommended tire pressure 'range' for transport mode?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: \n\nThe correct answer\nTo determine the spreader pattern of the border with the left side of the tractor.\n﹗\nDrive the PTO shaft to the right edge.\n\nANSWER is not the desired rate of the tractor.",
+                    "page": 93,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the optimal driving speed reduction percentage during border spreading to compensate for application rate?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: To determine the correct answer\nThe machine is not ready for use in the field.\n﹗\nIt is advisable to lubricate, clean the hopper before storing it for a short period of time. If it is lubricated first you will prevent dirt and moisture from entering the bearingings.\n    <answer>\n 1. Lubricating the piston rods with grease or oil all points once again to ensure conservation against corrosion that would damage the cylinder seals.\n 2. See page 122\n 1. Maintain the piston in the top of the cylinders with preservative grease or inject the (white) metal parts of the machine with preserving liquid for protection against corrosion.\n 2. Provide that you prevent damage to cylinder oil seals.\n 3. Check the piston and sealings once again to ensure that it is no longer than the bearing the pistons in the top of the cylinders with preservative grease or dry the fluid (supplied) for protection against corrosion.\n\nThe final answer\n 1. Lubricate and oil all points once again to ensure conservation that would damage the cylinder seals.\n 2. Check the piston in the top of the cylinders with preservative grease or inject the (white) metal parts of the machine with preserving",
+                    "page": 106,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 125===\n\n## Step 1: Check the machine\nCheck the hopper with a secure position for storage.\n• Switch off the PTO shaft,\n· Release the pressure from the hydraulic system,\n· Switching on the electronic control system,\n· Engaging the tractor, and remove the key from the ignition,\n· Do not engage the parking brake of the tractor,\n· Disconnect the tractor if possible,\n· Wait until all parts have stopped moving.\n• Place the hopper in a firm surface,\n· Use the correct tools,\n· Wear protective clothing, such as safety gloves and shoes,\n· Follows on the instructions given,\n· Use the correct tools,\n    • Lubricate with grease\n 1.5 litres of lubricant\n   0.25 litre of oil\n 1.0L\n 0.00L\n 0.0000L\n\nThe final answer is not only in the hopper when it is used for storage.\n 0.0L\n 0.00L\n 0.00L\n 0.00L\n 0.00L\n 0.00L\n 0.00L\n 0.00L\n\nThe final answer is not only in the hopper when",
+                    "page": 109,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the parking support withstand storage on a slope of 10 degrees?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: To determine the correct answer to the problem\nTo determine the correct answer to the question:\n\nThe problem is about lubricating the hoses.\n\nA. The machine has a leak in the hose that can be detected by using a pressure sensor.\nB. The machine has a leak in the hose that needs to be checked and corrected.\nC. The machine has a leak in the hose that should be removed from the system before it can be repaired or replaced.\nD. The machine has a leak in the hose that is not detected by using a leak test.\n\nThe correct answer to the question:\n\nA. A leak in the hoses that needs to be checked and corrected.\nB. A leak in the hoses that should be removed from the system before it can be repaired or replaced.\nC. Leak in the hoses that are not detected by using a leak test.\nD. Leak in the hoses that is not detected by using a leak test.\n\nThe correct answer to the question:\n\nA. The machine has a leak in the hose that needs to be checked and corrected.\nB. A leak in the hoses that should be removed from the system before it can be repaired or replaced.\nC. Leak in the hoses that are not detected by using a leak test.\nD.",
+                    "page": 119,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: Lubricating points\nLubricate the dosing plates to ensure that they are properly installed.\nThe lubrication of the dosing mechanism is done by using a suitable grease or oil. The amount of lubricant used should be sufficient for the machine, as specified in the manufacturer's specifications.\n\n## Step 2: Lubricating points\nLubricate the dosing plates to ensure that they are properly installed.\nThe lubrication of the dosing mechanism is done by using a suitable grease or oil. The amount of lubricant used should be sufficient for the machine, as specified in the manufacturer's specifications.\n\n## Step 3: Lubricating points\nLubricate the dosing plates to ensure that they are properly installed.\nThe lubrication of the dosing mechanism is done by using a suitable grease or oil. The amount of lubricant used should be sufficient for the machine, as specified in the manufacturer's specifications.\n\n## Step 4: Lubricating points\nLubricate the dosing plates to ensure that they are properly installed.\nThe lubrication of the dosing mechanism is done by using a suitable grease or oil. The amount of lubricant used should be sufficient for the machine, as specified in the",
+                    "page": 121,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many operational hours can 'vanes' typically last before requiring replacement?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: Check the dosing mechanism\nThe dosing mechanism must be adjusted to ensure correct position.\nThe dosing openings are not open well you will loose. If the distance is more than 109 mm, do the following:\n﹗ Loosen the nuts on the actuator plate until it moves slightly.\n  Slide the actuator plate until the distance between the agitator and opening of the discharge bushing is less than 109 mm.\n  Secure the actuator plate again until you can loosen them.\n\nThe dosing mechanism is not too loose. If the distance is more than 1.0 mm, do the following:\n﹗ Turn on the actuator plate to attach it downwards.\n  Move the actuator plate upwards or downwards until the distance to the agitator and opening of the discharge bush is less than 109 mm.\n\n## Step 2: Check the dosing mechanism\nThe dosing openings are not open. If the distance is more than 1.0 mm, do the following:\n﹗ Loosen the nuts on the actuator plate until it moves.\n  Slide the actuator plate until the distance between the agitator and opening of the discharge bushing",
+                    "page": 125,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'universal grease' is recommended for all 'lubricating nipples'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: Lubrication\nThe lubricant used in the system is usually a type of grease.\nA. Grease\nB. Oil\nC. Silicone grease\nD. White grease\nE. Motor oil\nF. Gear oil\nG. Molybdenum grease\nH. Synthetic grease\n\nThe correct answer to the lubricating nipple is:\n1. Lubricant\n2. Grease\n3. Oil\n4. Silicone grease\n5. Molybdenum grease\n6. Mineral oil",
+                    "page": 126,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'suitable lubricant' is recommended for 'connectors' to prevent corrosion?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: Lubrication\nThe machine must be lubricated with sufficient grease or oil for all moving parts to prevent damage.\n• Lubricate the dosing mechanism to ensure proper operation of the agitator axle.\n• Lubricate the agitator axle and seal ring.\n• Lubricate the dosing mechanism as well as the sealing the seal ring.\n• Lubricate the dosing mechanism with a plastic seal to prevent corrosion.\n\nThe correct answer\n Lubrication is required for all moving parts of the machine, including the actuator and the dosing unit.\n• Lubricate the agitator axle and seal ring.\n• Lubricate the dosing mechanism as well as the sealing the seal ring.\n• Lubricate the dosing mechanism with a plastic seal to prevent corrosion.\n\nThe correct answer\n Lubrication is required for all moving parts of the machine, including the actuator and dosing unit.\n• Lubricate the agitator axle and seal ring.\n• Lubricate the dosing mechanism as well as the sealing the seal ring.\n• Lubricate the dosing mechanism with a plastic seal to prevent corrosion.\n\nThe correct answer\n Lubrication is required for all moving parts of the machine, including",
+                    "page": 128,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What 'screwdriver' type (flathead/phillips) is optimal for adjusting 'dosing mechanism'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: Check the dosing mechanism\nThe dosing mechanism is connected to the ISO 11786 in the IsoMatch Tellus cable.\n• The IsoMatch Tellus cable with a plug for the IsoMatch control box which can be used on the tractor and ISOBUS connection.\n• The IsoMatch Tellus cable with an RS232 cable to connect the signal from the IsoMatch system to the IsoMatch controller.",
+                    "page": 133,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the typical agitator 'seal ring' lifespan in operational hours before requiring replacement?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: The machine has a lubrication system\nThe ISO 11786 is used for the IsoMatch control box.\nThe ISO 11786 is used in the IsoMatch terminal.\n\nThe ISO 11786 is used in the IsoMatch cable connection.\n\nThe ISO 11786 is used in the IsoMatch cable connection.\n\n## Step 2: The ISO 11786 is used in the IsoMatch system\nThe ISO 11786 is used in the IsoMatch control box.\nThe ISO 11786 is used in the IsoMatch terminal.\n\n## Step 3: The ISO 11786 is used in the IsoMatch cable connection\n\nThe ISO 11786 is used in the IsoMatch cable connection.\n\n## Step 4: The ISO 11786 is used in the IsoMatch system\nThe ISO 11786 is used in the IsoMatch control box.\nThe ISO 11786 is used in the IsoMatch terminal.\n\n## Step 5: The ISO 11786 is used in the IsoMatch cable connection\n\nThe ISO 11786 is used in the IsoMatch cable connection.\n\n## Step 6: The ISO 11786 is used in the IsoMatch system\nThe ISO 11786 is used in the IsoMatch control box.\n",
+                    "page": 134,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'small crack of light' dimension in millimeters between 'dosing baffles' when closed?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: **Check the dosing mechanism\nThe dosing mechanism is mounted on the hopper.\n**Answer:** The dosing mechanism is mounted on the hopper.\n\nThe correct answer\n**Answer:** The dosing mechanism is mounted on the hopper.",
+                    "page": 135,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: **Accessories**\nThe correct answer\b\n**ISO 11786 is a type of hopper for the tractor. IsoMatch control system.\nThe ISO 11786 is used in the machine for the hopper.\n\nThe ISO 11786 is not used in the machine for the hopper.\n\nThe ISO 11786 is used in the machine for the hopper.\n\n**Answer:** The correct answer\b\nISO 11786 is a type of hopper for the tractor. IsoMatch control system.\nISO 11786 is not used in the machine for the hopper.\n\nThe ISO 11786 is used in the machine for the hopper.\n\n## Step 2: **Accessories**\nISO 11786 is used in the machine for the hopper.\n\nISO 11786 is not used in the machine for the hopper.\n\n**Answer:** The correct answer\b\nISO 11786 is used in the machine for the hopper.\n\nThe ISO 11786 is used in the machine for the hopper.\n\n## Step 3: **Accessories**\nISO 11786 is used in the machine for the hopper.\n\nISO 11786 is not used in the machine for the hopper.\n\n**Answer:** The correct answer",
+                    "page": 138,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'plastic seal' material specification for agitator axle seal?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can't find\b\n```\n\n\n## Step 1: Lubrication of the agitator axle is not clear",
+                    "page": 140,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the material of the 'metal seal rings' for agitator axle seal?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: To determine the correct answer\b\nTo determine the correct setting of the dosing mechanism on the spreader axle, we need to check the agitator seal.\n\nThe agitator seal is a critical component that connects the spreading disc and the hopper. The agitator seal is typically made from the 1/4 inch (3.0 mm thickening or not the same as the 2.0 mm thickness of the spreader axle.\nTherefore, to determine the correct setting of the dosing mechanism on the spreader axle, we need to check the agitator seal.\n\nThe agitator seal is typically made from a 1/4 inch (3.0 mm thickening or not the same as the 2.0 mm thickness of the spreader axle.\nTherefore, to determine the correct setting of the dosing mechanism on the spreader axle, we need to check the agitator seal.\n\nThe answer is that the agitator seal is made from a 1/4 inch (3.0 mm thickening or not the same as the 2.0 mm thickness of the spreader axle.\nTherefore, to determine the correct setting of the dosing mechanism on the spreader axle, we need",
+                    "page": 141,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific 'extension cable' length in meters is optimal for ISO 11786 in cab tractor connection?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "## Step 1: Check all the hopper\nThe hopper must be checked for the correct use of the hopper.\nThe hopper is not checked on the side of the hopper. The hopper should be checked before the hopper.\n\nThe hopper and agitator are checked as they are in good working condition.\nThe hopper and agitator should be checked before the hopper.\n\n## Step 2: Check the dosing\nDosing mechanism is not checked on the side of the dosing.\nThe dosing must be checked for the correct use of the dosing.\n\nThe dosing should be checked before the dosing.\n\n## Step 3: Check the agitator\nThe agitator and discharging system is checked as they are in good working condition.\nThe agitator and dosing should be checked before the agitator.\n\n## Step 4: Check the hopper\nThe hopper must be checked for the correct use of the hopper.\nThe hopper is not checked on the side of the hopper.\n\n## Step 5: Check the dosing\nDosing mechanism is checked as they are in good working condition.\nThe dosing should be checked before the dosing.\n\n## Step 6:",
+                    "page": 144,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the free 'test period' duration in days for 'GEOCONTROL software' user licence?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can't find this response format is not correct\n 1. The machine has been damaged or faulty in its operation.\n2. The user must check the equipment before use.\n3. The buyer reports that are required for transport delivery of goods.\n4. The seller will only consider complaints if the buyer's claims are reported within fourteen days after delivery by the seller.\n5. The legal period of limitation on the machine's warranty.\n6. You can obtain the replacement parts in case of damage to the machine.\n7. The liability is stored or not disposed of in accordance with regulations for chemicals.\n8. The product has been sold or damaged in accordance with the relevant legislation.\n9. The stipulations that are applicable to the contract and the requirements of the product.\n\nThe following stipulations have been met by the seller\n 1. He/she is responsible for damage caused by culpable breach of contract.\n2. The liability is not due to gross negligence of his/her own actions or through each culpable act of his/her legal representatives.\n3. The seller can be held responsible for intentional and gross neglect caused by him/her supervision for so far as responsibility has not been determined under point 1.\n\nThe seller is also responsible for intentional and gross negligence caused by someone under his",
+                    "page": 145,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What valve type and manufacturer is used for 'valve set' that comes with hopper empty sensor?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can't find this response format.",
+                    "page": 148,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the drain rate in liters per minute of 'drain kit' for hopper emptying?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can't find  found any answer to the correct answer. The final answer is not available.\n\nThe best answer\nTo determine the drain rate of hopper emptying in liters per minute for hopper emptying:\n\nA. 1/2\nB. 3/4\nC. 5/6\nD. 7/10\n\nThe best answer is B",
+                    "page": 149,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What 'sail' material is used for hopper cover, and its UV resistance?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "I can't find the correct answer to the problem. The text appears to be incomplete or unclear.\n\nThe final answer is not found in the provided context.",
+                    "page": 150,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                }
+            ]
+        }
+    }
+}

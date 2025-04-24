@@ -1,0 +1,909 @@
+{
+    "test_run_parameters": {
+        "language_tested": "german",
+        "question_model": "llama3.1_8B-128k",
+        "evaluator_model": "gemma2_9B-8k",
+        "retrieval_algorithm": "zeroshot",
+        "context_type": "token",
+        "noise_level": 59000,
+        "file_extension_tested": "txt"
+    },
+    "overall_metrics": {
+        "accuracy": 0.19444444444444445,
+        "precision": 0.24615384615384617,
+        "recall": 0.2962962962962963,
+        "specificity": 0.09259259259259259,
+        "f1_score": 0.2689075630252101,
+        "true_positives": 16,
+        "true_negatives": 5,
+        "false_positives": 49,
+        "false_negatives": 38,
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.3409090909090909,
+            "unanswerable_questions": 0.09259259259259259,
+            "table_questions": 0.1
+        }
+    },
+    "timing": {
+        "duration_qa_phase_seconds": 2667.000000000001
+    },
+    "per_dataset_details": {
+        "general_questions": {
+            "results": [
+                {
+                    "question": "How many dosing openings are closed during fine application?",
+                    "expected_answer": "Two of three dosing openings are closed.",
+                    "model_answer": "The correct answer is: 2.",
+                    "page": 24,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the overlap percentage for the full field spreading pattern?",
+                    "expected_answer": "100% overlap",
+                    "model_answer": "The overlap percentage for the full field spreading pattern is 50%.",
+                    "page": 28,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What system continuously measures fertilizer quantity being spread?",
+                    "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
+                    "model_answer": "The exact amount of fertilizer being spread is measured by the ExactLine function. The ExactLine function measures the amount of fertilizer being spread in a field.",
+                    "page": 30,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often does the spreader carry out automatic calibration tests?",
+                    "expected_answer": "Every 75 kg or every minute.",
+                    "model_answer": "The spreader carries out automatic calibration tests.",
+                    "page": 31,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How can the tractor's driving speed be transmitted to the IsoMatch if the tractor lacks ISOBUS communication?",
+                    "expected_answer": "By adding the IsoMatch power cable set to the tractor.",
+                    "model_answer": "The tractor's driving speed can be transmitted to the IsoMatch via the CAN bus.",
+                    "page": 32,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the main switch button to turn the control box on or off located?",
+                    "expected_answer": "The main switch button is located on the upper left in the red extension.",
+                    "model_answer": "The main switch button to turn the control box on or off is usually located at the top right corner of the control panel.",
+                    "page": 34,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How long should the main switch button be pressed to turn the control box on or off?",
+                    "expected_answer": "At least 1 second.",
+                    "model_answer": "The main switch button should be pressed to turn the control box on or off.",
+                    "page": 34,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "After initial setup of the machine and after any maintenance or repairs, how long should the machine be operated before re-checking all nuts and bolts?",
+                    "expected_answer": "1 hour",
+                    "model_answer": "The machine should not be operated until after any maintenance or repairs have been performed.",
+                    "page": 38,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
+                    "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
+                    "model_answer": "The console assembly foot can be mounted on a suitable location in the cabine if there is no suitable mounting location available.",
+                    "page": 40,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What torque (in NM) should be applied to the vane lock nuts?",
+                    "expected_answer": "50NM",
+                    "model_answer": "The correct answer is: 25 Nm.",
+                    "page": 43,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What determines the machine's working width?",
+                    "expected_answer": "Spreading disc RPM",
+                    "model_answer": "The machine's working width is determined by the distance between the two wheels.",
+                    "page": 46,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where should the position sensor for the hydraulic border spreading plate be connected?",
+                    "expected_answer": "In the electronic box on the spreader.",
+                    "model_answer": "The position of the sensor for the hydraulic border spreading plate is on the right side of the machine.",
+                    "page": 47,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific precaution should be taken before working between the tractor and machine to check the coupling shaft length?",
+                    "expected_answer": "Place the machine on a supporting beam.",
+                    "model_answer": "Die Maschine muss mit der Gelenkwelle auf die richtige Länge gekürzt werden. Eine zu lange Gelenkwelle verursacht ernsthafte Sachschäden an der Maschine und dem Schlepper.\n[Image]\n113\n===Page 114===\n\nArbeiten vor dem Streuen\nVermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln\nBeim Füllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstdünger und anderen Mitteln, die Sie ausstreuen möchten. Tragen Sie Schutzkleidung und Handschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie diese zusätzliche Hinweise. Der Kontakt mit schädlichen Mitteln kann Körperverletzungen verursachen.\nAchtung Quetschgefahr\nBei der Justierung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher während der Justierung, indem Sie:\n· den Schlepper aus und ziehen Sie den Zündschlüssel aus dem Zündschloss,\n· die Feststellbremse des Schleppers anziehen,\n· warten Sie, bis alle Teile der Maschine still stehen, bevor Sie mit dem Füllen, Justieren und Testen beginnen,\n· begeben Sie sich niemals unter einem ungesicherten, angehobenen Streuer,\n· führen Sie die beschriebenen Handlungen alleine und vorsichtig ausführen.\nEinklemmen kann Körperverletzungen verursachen!\nSchonen Sie die Umwelt\nEine zu hohe Dosierung und Verteilung von Mitteln außerhalb des Feldrands, insbesondere bei Oberflächenwasser, stellen eine schwere Belastung für die Umwelt dar. Schonen Sie die Umwelt durch eine richtige Dosis und genaue Arbeitsweise.\nArbeiten Sie in einer geschlossenen Kabine\nDurch offene Fenster, Türen oder andere Öffnungen kann Kunstdüngerstaub hineingelangen. In einer offenen Kabine ist zudem der Geräuschpegel höher. Arbeiten Sie daher in einer geschlossenen Kabine mit einem Aktivkohlefilter in den Lufteinlässen. Kunstdüngerstaub und eine dauerhafte hohe Geräuschbelastung können Körperverletzungen verursachen.\n115\n===Page 116===\n\nArbeiten vor dem Streuen\nHINWEIS\nDie meisten Sorten Kunstdünger ziehen Wasser an und können dann große Brocken bilden. Diese Brocken können den Streuer verstopfen oder das Streubild stören.\n· Arbeiten Sie bei feuchtem Wetter mit einer gut geschlossenen Abdeckplane.\n· Streuen Sie ohne Abdeckplane nicht bei feuchtem Wetter.\n· Lassen Sie Kunstdünger nie lange im Streuer. Durch Feuchtigkeit in der Luft können ebenfalls Brocken entstehen.\n· Reinigen Sie den Streuer immer gründlich, auch die Dosieröffnungen und Auslaufrohre.\nNach der Justierung des Streuers können Sie diesen bis zum gewünschten Niveau füllen. Wir empfehlen Ihnen, die Maschine zu laden, wenn diese 10 cm über den Boden gehoben ist. Wenn Sie keine Arbeiten über dem Behälter ausführen müssen, kann die Höhe an das automatische Füllsystem angepasst werden.\nWenn während des Befüllens, manuell oder mit großen Säcken, der Abstand zwischen Behälterrand und Boden größer als 1250 mm ist, müssen Sie die Ladeplattform verwenden. Die Füllhöhe ist angegeben in\n Absatz »Technische Daten« auf Seite 36.\n Fahren Sie die Maschine, bei einer festen Ladeplattform, auf die Plattform. Der Abstand zwischen der Maschine und der Plattform darf maximal 200 mm betragen.\n Lassen Sie die Maschine bis zur gewünschten Höhe ab. Die Maschine darf sich nicht auf dem Boden befinden, sondern muss mindestens 10 cm angehoben sein.\n Überprüfen Sie, ob die Dosiereinheiten geschlossen sind und schließen diese ggf., indem Sie im Hauptbildschirm auf die StopTaste drücken.\nDie Position der Dosiereinheiten wird im Hauptbildschirm des Bedienpults des Steuersystems wiedergegeben.\n Schalten Sie das elektronische Steuersystem aus.\n Schalten Sie den Schlepper aus und ziehen Sie den Zündschlüssel",
+                    "page": 50,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "The maximum operating angle of the coupling shaft when lifted and when lowered is 30 degrees.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
+                    "expected_answer": "Yes.",
+                    "model_answer": "The parking brake of the tractor should not be engaged when connecting the machine.",
+                    "page": 52,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
+                    "expected_answer": "30 degrees",
+                    "model_answer": "The maximum permissible operating angle in degrees for the coupling shaft is 30°.",
+                    "page": 54,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What must be ensured with decoupling ropes during power lift connection?",
+                    "expected_answer": "Decoupling ropes must never be tense.",
+                    "model_answer": "The correct answer is: \nBeim Gebrauch des hydraulischen Grenzstreublechs müssen Sie die Dosiereinheiten vor dem Wenden auf dem Vorgewende nicht abkoppeln. \n\nDie richtige Einstellung ist 50 %.\n\nSie können den Streuer einstellen, indem Sie den Test ausführen und stellen Sie die korrekte Zapfwellenund Streuscheibendrehzahl anhand der (Online-)Streutabelle oder der Tabelle auf der vorstehenden Seite ein. \n\nDie Einstellung der ExactLine ist nicht in der entsprechenden Streutabelle angegeben, können Sie diese:\n· mit dem Online-Streutabellenservice auf der Website oder über die kostenlose App für Mobiltelefone mit einem iOs und/oder Android Betriebssystem finden.\n siehe Absatz »Online-Streutabellenservice« auf Seite 61.\n\nSie können den Streuer einstellen, indem Sie den Test ausführen und stellen Sie die korrekte Zapfwellenund Streuscheibendrehzahl anhand der (Online-)Streutabelle oder der Tabelle auf der vorstehenden Seite ein. \n\nDie Einstellung der ExactLine ist nicht in der entsprechenden Streutabelle angegeben, können Sie diese:\n· mit dem Online-Streutabellenservice auf der Website oder über die kostenlose App für Mobiltelefone mit einem iOs und/oder Android Betriebssystem finden.\n siehe Absatz »Online-Streutabellenservice« auf Seite 61.\n\nSie können den Streuer einstellen, indem Sie den Test ausführen und stellen Sie die korrekte Zapfwellenund Streuscheibendrehzahl anhand der (Online-)Streutabelle oder der Tabelle auf der vorstehenden Seite ein. \n\nDie Einstellung der ExactLine ist nicht in der entsprechenden Streutabelle angegeben, können Sie diese:\n· mit dem Online-Streutabellenservice auf der Website oder über die kostenlose App für Mobiltelefone mit einem iOs und/oder Android Betriebssystem finden.\n siehe Absatz »Online-Streutabellenservice« auf Seite 61.\n\nSie können den Streuer einstellen, indem Sie den Test ausführen und stellen Sie die korrekte Zapfwellenund Streuscheibendrehzahl anhand der (Online-)Streutabelle oder der Tabelle auf der vorstehenden Seite ein. \n\nDie Einstellung der ExactLine ist nicht in der entsprechenden Streutabelle angegeben, können Sie diese:\n· mit dem Online-Streutabellenservice auf der Website oder über die kostenlose App für Mobiltelefone mit einem iOs und/oder Android Betriebssystem finden.\n siehe Absatz »Online-Streutabellenservice« auf Seite 61.\n\nSie können den Streuer einstellen, indem Sie den Test ausführen und stellen Sie die korrekte Zapfwellenund Streuscheibendrehzahl anhand der (Online-)Streutabelle oder der Tabelle auf der vorstehenden Seite ein. \n\nDie Einstellung der ExactLine ist nicht in der entsprechenden Streutabelle angegeben, können Sie diese:\n· mit dem Online-Streutabellenservice auf der Website oder über die kostenlose App für Mobiltelefone mit einem iOs und/oder Android Betriebssystem finden.\n siehe Absatz »Online-Streutabellenservice« auf Seite 61.\n\nSie können den Streuer einstellen, indem Sie den Test ausführen und stellen Sie die korrekte Zapfwellenund Streuscheibendrehzahl anhand der (Online-)Streutabelle oder der Tabelle auf der vorstehenden Seite ein. \n\nDie Einstellung der ExactLine ist nicht in der entsprechenden Streutabelle angegeben, können Sie diese:\n· mit dem Online-Streutabellenservice auf der Website oder über die kostenlose App für Mobiltelefone mit einem iOs und/oder Android Betriebssystem finden.\n siehe Absatz »Online-Streutabellenservice« auf Seite 61.\n\nSie können den Streuer einstellen, indem Sie den Test ausführen und stellen Sie die korrekte Zapfwellenund Streuscheibendrehzahl anhand der (Online-)Streutabelle oder der Tabelle auf der vorstehenden Seite ein. \n\nDie Einstellung der ExactLine ist nicht in der entsprechenden Streutabelle angegeben, können Sie diese:\n· mit dem Online-Streutabellenservice auf der Website oder über die kostenlose App für Mobiltelefone mit einem iOs und/oder Android Betriebssystem finden.\n siehe Absatz »Online-Streutabellenservice« auf Seite 61.\n\nSie können den",
+                    "page": 56,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Below which application rate in kg/min is it advised to use the fine application?",
+                    "expected_answer": "Below 40 kg/min.",
+                    "model_answer": "The exact dosage of Kunstdünger for a given application rate in kg/min is 600.",
+                    "page": 66,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
+                    "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
+                    "model_answer": "The general formula to calculate the required flow rate of fertilizer is:\n\nkg/min = (Arbeitsbreite x Fahrgeschwindigkeit x Ausbringmenge) / 600\n\nWhere:\n- Arbeitsbreite is the working width in meters\n- Fahrgeschwindigkeit is the speed in km/h\n- Ausbringmenge is the application rate in kg/ha\n\nThis formula can be used to calculate the required flowrate of fertilizer for a given set of parameters.",
+                    "page": 68,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What type of serial connection does the IsoMatch control box use for communication?",
+                    "expected_answer": "RS 232",
+                    "model_answer": "The IsoMatch control box uses a 9-polige RS-232-Anschluss (RS-232) for communication.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "When loading manually, what's the maximum distance in mm between the hopper rim and the ground before a platform is mandatory?",
+                    "expected_answer": "1250 mm",
+                    "model_answer": "The maximum distance in millimeters (mm) between the hopper rim and the ground before a platform is 200 mm.",
+                    "page": 74,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum distance in mm between spreader and loading platform?",
+                    "expected_answer": "200 mm maximum distance between them.",
+                    "model_answer": "The maximum distance between spreader and loading platform is 200mm.",
+                    "page": 74,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What does a tray test check on a fertilizer spreader?",
+                    "expected_answer": "Fertilizer distribution pattern of the spreader.",
+                    "model_answer": "A tray test is checked on a fertilizer spreader by carefully extracting the exact information that directly answers the question.",
+                    "page": 76,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What materials are required to perform the tray test?",
+                    "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
+                    "model_answer": "The materials required for the tray test are:\n1. Fett (Oil)\n2. Schmieröl\n3. Kupplungsstücke\n4. Getriebe\n5. Zapfwelle\n6. Dosiereinheit\n7. Abdeckplane\n8. Stellglieder\n9. Verstellspindel\n10. Unterlenkeranschluss\n11. Kraftheber\n12. Schlepper\n13. Zündschlüssel\n14. Feststellbremse\n\nThese materials are required to perform the tray test:\n1. Oil (Fett)\n2. Hydraulic oil\n3. Piston cup\n4. Gearbox\n5. Pumpen\n6. Cylinders\n7. Valves\n8. Hoses\n9. Fittings\n10. Gaskets\n11. Seals\n\nThese materials are required to perform the tray test:\n1. Oil (Fett)\n2. Schmieröl\n3. Kupplungsstücke\n4. Getriebe\n5. Zapfwelle\n6. Dosiereinheit\n7. Abdeckplane\n8. Stellglieder\n9. Verstellspindel\n10. Unterlenkeranschluss\n11. Kraftheber\n12. Schlepper\n13. Zündschlüssel\n14. Feststellbremse\n\nThese materials are required to perform the tray test:\n1. Oil (Fett)\n2. Hydraulic oil\n3. Piston cup\n4. Gearbox\n5. Pumpen\n6. Cylinders\n7. Valves\n8. Hoses\n9. Fittings\n10. Gaskets\n11. Seals\n\nThese materials are required to perform the tray test:\n1. Oil (Fett)\n2. Schmieröl\n3. Kupplungsstücke\n4. Getriebe\n5. Zapfwelle\n6. Dosiereinheit\n7. Abdeckplane\n8. Stellglieder\n9. Verstellspindel\n10. Unterlenkeranschluss\n11. Kraftheber\n12. Schlepper\n13. Zündschlüssel\n14. Feststellbremse",
+                    "page": 77,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
+                    "expected_answer": "3 m/s)",
+                    "model_answer": "The maximum wind speed in m/s is 3.0 m/s for the tray test and actual spreading.",
+                    "page": 77,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
+                    "expected_answer": "75 cm above the troughs.",
+                    "model_answer": "The height of the spreading disc above the troughs for one-sided boundary spreading is 1.0 mm.",
+                    "page": 84,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
+                    "expected_answer": "75 cm",
+                    "model_answer": "The exact height of the spreading disc is 75 cm.",
+                    "page": 89,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "The maximum fertilizer loss of the quantity in the middle trough is 10% of the total quantity.",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
+                    "expected_answer": "Inertia causes continued rotation.",
+                    "model_answer": "Die Antwort ist:\nDer Ablass-Satz ist ein Hilfsmittel für die Abdrehprobe. Die Abdrehprobe wird benötigt, um eine genaue Einstellung einer manuell eingestellten Dosis zu verstreuen.\n150\n===Page 151===\n\nAbdrehprobe\n[Image]\nAuffangbehälter\n[Image]\nZubehör\nDer Ablass-Satz ist ein Hilfsmittel für die Abdrehprobe. Die Abdrehprobe wird benötigt, um eine genaue Einstellung einer manuell eingestellten Dosis zu verstreuen.\nAbdrehprobe\n[Image]\n151\n===Page 152===\n\nAuffangbehälter\n[Image]\nZubehör\nDer Ablass-Satz ist ein Hilfsmittel für die Abdrehprobe. Die Abdrehprobe wird benötigt, um eine genaue Einstellung einer manuell eingestellten Dosis zu verstreuen.\nAbdrehprobe\n[Image]\n153\n===Page 154===\n\nAuffangbehälter\n[Image]\nZubehör\nDer Ablass-Satz ist ein Hilfsmittel für die Abdrehprobe. Die Abdrehprobe wird benötigt, um eine genaue Einstellung einer manuell eingestellten Dosis zu verstreuen.\nAbdrehprobe\n[Image]\n155\n===Page 156===\n\nAuffangbehälter\n[Image]\nZubehör\nDer Ablass-Satz ist ein Hilfsmittel für die Abdrehprobe. Die Abdrehprobe wird benötigt, um eine genaue Einstellung einer manuell eingestellten Dosis zu verstreuen.\nAbdrehprobe\n[Image]\n157\n===Page 158===\n\nAuffangbehälter\n[Image]\nZubehör\nDer Ablass-Satz ist ein Hilfsmittel für die Abdrehprobe. Die Abdrehprobe wird benötigt, um eine genaue Einstellung einer manuell eingestellten Dosis zu verstreuen.\nAbdrehprobe\n[Image]\n159\n===Page 160===\n\nAuffangbehälter\n[Image]\nZubehör\nDer Ablass-Satz ist ein Hilfsmittel für die Abdrehprobe. Die Abdrehprobe wird benötigt, um eine genaue Einstellung einer manuell eingestellten Dosis zu verstreuen.\nAbdrehprobe\n[Image]\n161\n===Page 162===\n\nAuffangbehälter\n[Image]\nZubehör\nDer Ablass-Satz ist ein Hilfsmittel für die Abdrehprobe. Die Abdrehprobe wird benötigt, um eine genaue Einstellung einer manuell eingestellten Dosis zu verstreuen.\nAbdrehprobe\n[Image]\n163\n===Page 164===\n\nAuffangbehälter\n[Image]\nZubehör\nDer Ablass-Satz ist ein Hilfsmittel für die Abdrehprobe. Die Abdrehprobe wird benötigt, um eine genaue Einstellung einer manuell eingestellten Dosis zu verstreuen.\nAbdrehprobe\n[Image]\n165\n===Page 166===\n\nAuffangbehälter\n[Image]\nZubehör\nDer Ablass-Satz ist ein Hilfsmittel für die Abdrehprobe. Die Abdrehprobe wird benötigt, um eine genaue Einstellung einer manuell eingestellten Dosis zu verstreuen.\nAbdrehprobe\n[Image]\n167\n===Page 168===\n\nAuffangbehälter\n[Image]\nZubehör\nDer Ablass-Satz ist ein Hilfsmittel für die Abdrehprobe. Die Abdrehprobe wird benötigt, um eine genaue Einstellung einer manuell eingestellten Dosis zu verstreuen.\nAbdrehprobe\n[Image]\n169\n===Page 170===\n\nAuffangbehälter\n[Image]\nZubehör\nDer Ablass-Satz ist ein Hilfsmittel für die Abdrehprobe. Die Abdrehprobe wird benötigt, um eine genaue Einstellung einer manuell eingestellten Dosis zu verstreuen.\nAbdrehprobe\n[Image]\n171\n===Page 172===\n\nAuffangbehälter\n[Image]\nZubehör\nDer Ablass-Satz ist ein Hilfsmittel für die Abdrehprobe. Die Abdrehprobe wird benötigt, um eine genaue Einstellung einer manuell eingestellten Dosis zu verstreuen.\nAbdrehprobe\n[Image]\n173\n===Page 174===\n\nAuffangbehälter\n[Image]\nZubehör\nDer Ablass-Satz ist",
+                    "page": 94,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "According to the last setting check, what is the recommended height in centimeter of the spreader over the ground or crops?",
+                    "expected_answer": "75 cm",
+                    "model_answer": "The recommended height for the spreader over the ground or crops is 75 cm.",
+                    "page": 96,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What happens when hopper content falls below 100 kg?",
+                    "expected_answer": "Automatic calibration switches off.",
+                    "model_answer": "If the hopper contents are below 100 kg, the system will automatically shut down.",
+                    "page": 101,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What are the two functions for border spreading?",
+                    "expected_answer": "Hydraulic border spreading plate and ExactLine.",
+                    "model_answer": "The two functions for border spreading are:\n\n1. **Drehen Sie die Muttern an den 4 Befestigungsschrauben fest, ohne dabei den Dosiermechanismus zu verschieben.**\n2. **Schalten Sie das elektronische Bediensystem und den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss und betätigen Sie die Feststellbremse des Schleppers.**\n\nThese two functions are the ones that need to be performed for border spreading:\n\n1. Turn the dosiermechanismus so that it is in line with the dosierplatten.\n2. Shut down the electronic control system and the spreader.\n\nNote: The answer is a list of actions, not a detailed explanation.",
+                    "page": 106,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
+                    "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
+                    "model_answer": "The two actions to be taken are:\n\n1. The Dosiermechanismus must be precisely positioned in the middle over the Streuscheibe.\n2. The Rührerwelle must be free from the Dichtungsring.\n\nThese instructions provide a clear and precise answer to the question, avoiding any unnecessary information.",
+                    "page": 108,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should you do if a spreading disc spreads irregularly?",
+                    "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
+                    "model_answer": "If a spreading disc is spread irregularly, you should:\n1. Check the dosing mechanism to ensure it's working properly.\n2. Check if the dosing system is set up correctly.\n3. Make sure the doseroller is not clogged with debris or dirt.\n4. Check if the dosing system is functioning as expected.\n5. If necessary, clean the dosing system and doseroller.\n6. Check the dosing mechanism to ensure it's working properly.\n7. Check if the dosing system is set up correctly.\n8. Make sure the doseroller is not clogged with debris or dirt.\n9. Check if the dosing system is functioning as expected.\n10. If necessary, clean the dosing system and doseroller.\n11. Check the dosing mechanism to ensure it's working properly.\n12. Check if the dosing system is set up correctly.\n13. Make sure the doseroller is not clogged with debris or dirt.\n14. Check if the dosing system is functioning as expected.\n15. If necessary, clean the dosing system and doseroller.\n16. Check the dosing mechanism to ensure it's working properly.\n17. Check if the dosing system is set up correctly.\n18. Make sure the doseroller is not clogged with debris or dirt.\n19. Check if the dosing system is functioning as expected.\n20. If necessary, clean the dosing system and doseroller.\n21. Check the dosing mechanism to ensure it's working properly.\n22. Check if the dosing system is set up correctly.\n23. Make sure the doseroller is not clogged with debris or dirt.\n24. Check if the dosing system is functioning as expected.\n25. If necessary, clean the dosing system and doseroller.\n26. Check the dosing mechanism to ensure it's working properly.\n27. Check if the dosing system is set up correctly.\n28. Make sure the doseroller is not clogged with debris or dirt.\n29. Check if the dosing system is functioning as expected.\n30. If necessary, clean the dosing system and doseroller.\n31. Check the dosing mechanism to ensure it's working properly.\n32. Check if the dosing system is set up correctly.\n33. Make sure the doseroller is not clogged with debris or dirt.\n34. Check if the dosing system is functioning as expected.\n35. If necessary, clean the dosing system and doseroller.\n36. Check the dosing mechanism to ensure it's working properly.\n37. Check if the dosing system is set up correctly.\n38. Make sure the doseroller is not clogged with debris or dirt.\n39. Check if the dosing system is functioning as expected.\n40. If necessary, clean the dosing system and doseroller.\n41. Check the dosing mechanism to ensure it's working properly.\n42. Check if the dosing system is set up correctly.\n43. Make sure the doseroller is not clogged with debris or dirt.\n44. Check if the dosing system is functioning as expected.\n45. If necessary, clean the dosing system and doseroller.\n46. Check the dosing mechanism to ensure it's working properly.\n47. Check if the dosing system is set up correctly.\n48. Make sure the doseroller is not clogged with debris or dirt.\n49. Check if the dosing system is functioning as expected.\n50. If necessary, clean the dosing system and doseroller.\n51. Check the dosing mechanism to ensure it's working properly.\n52. Check if the dosing system is set up correctly.\n53. Make sure the doseroller is not clogged with debris or dirt.\n54. Check if the dosing system is functioning as expected.\n55. If necessary, clean the dosing system and doseroller.\n56. Check the dosing mechanism to ensure it's working properly.\n57. Check if the dosing system is set up correctly.\n58. Make sure the doseroller is not clogged with debris or dirt.\n59. Check if the dosing system is functioning as expected.\n60. If necessary, clean the dosing system and doseroller.\n61. Check the dosing mechanism to ensure it's working properly.\n62. Check if the dosing system is set up correctly.\n63. Make sure the doseroller is not clogged with debris or dirt.\n64. Check if the dosing system is functioning as expected.\n65. If necessary, clean the dosing system and doseroller.\n66. Check the dosing mechanism to ensure it's working properly.\n67. Check if the dosing system is set up correctly.\n68. Make sure the doseroller is not clogged with debris or dirt.\n69. Check if the dosing system is functioning as expected.\n70. If necessary, clean the dosing system and doseroller.\n71. Check the",
+                    "page": 113,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
+                    "expected_answer": "40 degrees Celsius",
+                    "model_answer": "The maximum allowable temperature for cleaning a machine with water or steam is 100°C.",
+                    "page": 117,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
+                    "expected_answer": "80 bar",
+                    "model_answer": "The maximum allowable pressure for cleaning a machine with water or steam is 210 bar.",
+                    "page": 117,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
+                    "expected_answer": "Preservative grease or preserving liquid.",
+                    "model_answer": "The exact answer is: Be sure to remove any white metal parts from the machine before storing it for the winter.",
+                    "page": 121,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
+                    "expected_answer": "Remove all fertilizer remnants.",
+                    "model_answer": "The following precautions should be taken when working with a machine that has used nitrate-containing fertilizer:\n\n1. The machine must be thoroughly cleaned to remove any remaining nitrate from the equipment.\n2. The machine should not be operated without proper safety measures, such as wearing protective gloves and safety glasses.\n3. The operator should be trained on how to handle the machine safely and efficiently.\n4. The machine should be regularly maintained and serviced to prevent accidents caused by wear and tear.\n5. The use of nitrate-containing fertilizer is strictly forbidden in certain areas, such as near water sources or in areas with high risk of explosion.\n\nThese precautions are necessary to ensure safe handling of the machine when using nitrate-containing fertilizer.",
+                    "page": 123,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "How many grease nipples do the discharge bushings have?",
+                    "expected_answer": "Two grease nipples per discharge bushing.",
+                    "model_answer": "The answer is 2.",
+                    "page": 126,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the required grease level in mm below the filler opening for spreading disc gearboxes after the machine has stood still?",
+                    "expected_answer": "35 mm",
+                    "model_answer": "The required grease level is 35mm.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the maximum hydraulic pressure allowed for the hydaulic system in bars?",
+                    "expected_answer": "210 bars.",
+                    "model_answer": "The maximum hydraulic pressure allowed for the hydraulic system is 210 bar.",
+                    "page": 131,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the required distance in mm between the rope and discharge bushing opening?",
+                    "expected_answer": "109 mm.",
+                    "model_answer": "The required distance is 109mm.",
+                    "page": 136,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "The required distance in meters between the discharge bushing and spreading disc is 109 mm.",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "The agitator axle seal should be replaced every 10 years.",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                }
+            ]
+        },
+        "table_questions": {
+            "results": [
+                {
+                    "question": "What is the pattern of the type 'mineral'?",
+                    "expected_answer": "angular, with sharp angles and edges",
+                    "model_answer": "The pattern for the type \"mineral\" is not explicitly mentioned in the text.",
+                    "page": 58,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the hopper weight without hopper cover in kg of the Exacta-TLX GEOSPREAD 3225?",
+                    "expected_answer": "337.5 kg",
+                    "model_answer": "The hopper weight is 3225 kg.",
+                    "page": 36,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the weight in kg of the Exacta-TLX GEOSPREAD 3900?",
+                    "expected_answer": "795 kg",
+                    "model_answer": "The weight of the Exacta-TLX-GEOSPREAD is 3900 kg.",
+                    "page": 36,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the sound level in dB of a Tractor + spreading spreader (Kali 60) with its rear window opened?",
+                    "expected_answer": "84.6 dB",
+                    "model_answer": "The sound level in dB of a Tractor + spreading spreader (Kali 60) is 73.8 dB.\n[Image]\n112\n===Page 113===\n\nArbeiten vor dem Streuen\nBeurteilung und Anpassung\nDer maximal zulässige Verlust im Graben ist in der Umweltnorm festgelegt. Um der Norm zu entsprechen, darf die Menge Düngemittel im 1. Auffangbehälter, der in dem fiktiven Graben steht, maximal 10 % der Menge des Auffangbehälters betragen, der in der Mitte der Fahrspur ist (= 100 %).\nDer Auffangbehälter auf dem Land entlang dem fiktiven Grabenrand gibt Ihnen ein Bild von der Anfüllung. Die Anfüllung darf niemals 100 % betragen.\n   0                                                                                                                                                      1\n0  A                                                                                                     Gutes Streubild, die ExactLine ist gut eingestellt\n1  B  Das Grenzstreublech streut zu schmal.  Stellen Sie ihn 1 Stellung breiter (z. B. von 3 auf 4 oder 7 auf Transportstellung)  Wiederholen Sie den Test\n2  C  Die ExactLine streut zu breit:  Stellen Sie ihn 1 Stellung schmaler (z. B. von 5 auf 4  oder von Transportstellung auf 7)  Wiederholen Sie den Test\nWenn Sie die ExactLine 1 Stellung höher oder niedriger (z. B. von 1 auf 2, oder 3 auf 2) setzen, verändert sich die Arbeitsbreite am Grabenrand ungefähr 0,3 Meter.\nZurückstellen der Scheibenhöhe nach dem Streumengentest\nWährend des Streumengentests haben Sie die Scheibenhöhe über den Auffangbehältern auf 75 cm eingestellt.\n Stellen Sie vor dem Streuen die Scheibenhöhe auf 75 cm über dem Boden oder dem Erntegut ein!\n Siehe Absatz »Streuhöhe« auf Seite 95.\n113\n===Page 114===\n\nArbeiten vor dem Streuen\nStraßenfahrt\nStraßenfahrt\nVor dem Straßentransport\n114\n[Image]\nÜberschreiten Sie nicht die zulässige und sichere Höhe in Bezug auf\n· die laut Straßenverkehrsordnung vorgeschriebene maximale Höhe für Fahrzeuge;\n· Hochspannungsleitungen oder andere Kabel, die über die Straße führen;\n· voraussichtliche Beschränkungen der Durchfahrthöhe.\nDurch sorgfältige Beachtung diesbezüglicher Hindernisse vermeidet man gefährliche Situationen, die zu teuren Schäden und möglicherweise zu schweren Verletzungen führen können.\nBevor Sie den Schlepper verlassen, müssen Sie:\n· die Zapfwelle ausschalten,\n· das Hydrauliksystem drucklos machen,\n· das elektronische Bediensystem ausschalten,\n· den Schlepper aus schalten,\n· den Zündschlüssel vom Zündschloss abziehen,\n· die Feststellbremse des Schleppers anziehen.\nSo vermeidet man, dass der Schlepper angelassen werden kann, während jemand an der Maschine arbeitet; auf diese Weise könnten Personen schwer verletzt werden.\nBevor Sie den Schlepper verlassen, müssen Sie\n· die Zapfwelle ausschalten,\n· das Hydrauliksystem drucklos machen,\n· das elektronische Bediensystem ausschalten,\n· den Schlepper aus schalten,\n· den Zündschlüssel vom Zündschloss abziehen.\nSo vermeidet man, dass der Schlepper angelassen werden kann, während jemand an der Maschine arbeitet; auf diese Weise könnten Personen schwer verletzt werden.\nZapfwelle läuft nach Ausschalten nach\nNach dem Ausschalten der Zapfwelle kann Gefahr durch das Nachdrehen der Maschine aufgrund ihre Massenträgheit entstehen. Halten Sie sich von der Maschine fern, bis dass alle bewegenden Teile wirklich still stehen. Der Kontakt zu einer laufenden Maschine kann ernsthafte oder tödliche Verletzungen verursachen.\nSchonen Sie die Umwelt\nEine zu hohe Dosierung und Verteilung von Mitteln außer",
+                    "page": 37,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often (in what interval) must the condition of the vanes be inspected?",
+                    "expected_answer": "daily",
+                    "model_answer": "The condition of the vanes should be inspected every 10 working hours.",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often (in what interval) must the bushing height be checked and the discharge be set?",
+                    "expected_answer": "after the first 10 hours and every 100 hours, but a minimum of once per year",
+                    "model_answer": "The bushing height should be checked every 10 minutes after the machine is turned off.",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often (in what interval) must the agitator seal be replaced?",
+                    "expected_answer": "every 100 hours or if worn",
+                    "model_answer": "The agitator seal should be replaced every 10 years.",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "With what torque in Nm must a M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened?",
+                    "expected_answer": "420 Nm",
+                    "model_answer": "The torque in Nm must be applied to an M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened is 100 Nm.",
+                    "page": 129,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "With what torque in Nm must a M6 hexagon stainless steel bolt with a 70 (A2) quality and with a 0.2 friction be fastened?",
+                    "expected_answer": "9.9 Nm",
+                    "model_answer": "The torque in Nm must be applied to an M6 hexagon stainless steel bolt with a 70 (A2) quality and with a 0.2 friction be fastened is 10 Nm.",
+                    "page": 129,
+                    "dataset": "table_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
+                    "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
+                    "model_answer": "If the flow of the fertilizer is blocked, you can check the following:\n1. Check if the fertiliser is stuck in the dosing system.\n2. Check if the fertiliser is clogged or blocked by a blockage.\n3. Check if the fertiliser is not flowing freely through the dosing system.\n4. Check if the fertiliser is being diverted to another part of the machine, such as the tank or the pump.\n5. Check if the fertiliser is being diverted from its intended path.\n\nIf you are unsure about what page to look at, check the page number mentioned in the answer, which should be 100.",
+                    "page": 152,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                }
+            ]
+        },
+        "unanswerable_questions": {
+            "results": [
+                {
+                    "question": "How much extra diesel does the tractor consume to use the Exacta-TLX GEOSPREAD?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The Exacta-TLX-GEOSPREAD is a system used for dosing and spreading of seeds. It is not clear how much diesel is consumed by this system.\n[Image]\n113\n===Page 114===\n\nArbeiten vor dem Streuen\nEinsatz auf dem Feld\nDie Dosierungsanlagen des Exacta-TLX-GEOSPREAD sind für die Dosierung und Verteilung von Kunstdünger. Die Dosierungsanlagen bestimmen Sie, wie beschrieben ist in\n Absatz »Dosierungsanlagen« auf Seite 36.\n[Image]\nEinsatz auf dem Feld\nDie Dosierungsanlagen des Exacta-TLX-GEOSPREAD sind für die Dosierung und Verteilung von Kunstdünger. Die Dosierungsanlagen bestimmen Sie, wie beschrieben ist in\n Absatz »Dosierungsanlagen« auf Seite 36.\n[Image]\n114\n===Page 115===\n\nArbeiten vor dem Streuen\nEinsatz auf dem Feld\nDie Dosierungsanlagen des Exacta-TLX-GEOSPREAD sind für die Dosierung und Verteilung von Kunstdünger. Die Dosierungsanlagen bestimmen Sie, wie beschrieben ist in\n Absatz »Dosierungsanlagen« auf Seite 36.\n[Image]\n116\n===Page 117===\n\nArbeiten vor dem Streuen\nEinsatz auf dem Feld\nDie Dosierungsanlagen des Exacta-TLX-GEOSPREAD sind für die Dosierung und Verteilung von Kunstdünger. Die Dosierungsanlagen bestimmen Sie, wie beschrieben ist in\n Absatz »Dosierungsanlagen« auf Seite 36.\n[Image]\n118\n===Page 119===\n\nArbeiten vor dem Streuen\nEinsatz auf dem Feld\nDie Dosierungsanlagen des Exacta-TLX-GEOSPREAD sind für die Dosierung und Verteilung von Kunstdünger. Die Dosierungsanlagen bestimmen Sie, wie beschrieben ist in\n Absatz »Dosierungsanlagen« auf Seite 36.\n[Image]\n120\n===Page 121===\n\nArbeiten vor dem Streuen\nEinsatz auf dem Feld\nDie Dosierungsanlagen des Exacta-TLX-GEOSPREAD sind für die Dosierung und Verteilung von Kunstdünger. Die Dosierungsanlagen bestimmen Sie, wie beschrieben ist in\n Absatz »Dosierungsanlagen« auf Seite 36.\n[Image]\n122\n===Page 123===\n\nArbeiten vor dem Streuen\nEinsatz auf dem Feld\nDie Dosierungsanlagen des Exacta-TLX-GEOSPREAD sind für die Dosierung und Verteilung von Kunstdünger. Die Dosierungsanlagen bestimmen Sie, wie beschrieben ist in\n Absatz »Dosierungsanlagen« auf Seite 36.\n[Image]\n124\n===Page 125===\n\nArbeiten vor dem Streuen\nEinsatz auf dem Feld\nDie Dosierungsanlagen des Exacta-TLX-GEOSPREAD sind für die Dosierung und Verteilung von Kunstdünger. Die Dosierungsanlagen bestimmen Sie, wie beschrieben ist in\n Absatz »Dosierungsanlagen« auf Seite 36.\n[Image]\n126\n===Page 127===\n\nArbeiten vor dem Streuen\nEinsatz auf dem Feld\nDie Dosierungsanlagen des Exacta-TLX-GEOSPREAD sind für die Dosierung und Verteilung von Kunstdünger. Die Dosierungsanlagen bestimmen Sie, wie beschrieben ist in\n Absatz »Dosierungsanlagen« auf Seite 36.\n[Image]\n128\n===Page 129===\n\nArbeiten vor dem Streuen\nEinsatz auf dem Feld\nDie Dosierungsanlagen des Exacta-TLX-GEOSPREAD sind für die Dosierung und Verteilung von Kunstdünger. Die Dosierungsanlagen bestimmen Sie, wie beschrieben ist in\n Absatz »Dosierungsanlagen« auf Seite 36.\n[Image]\n130\n===Page 131===\n\nArbeiten vor dem Streuen\nEinsatz auf dem Feld\nDie Dosierungsanlagen des Exacta-TLX-GEOSPREAD sind für die Dosierung und Verteilung von Kunstdünger. Die Dosierungsanlagen bestimmen Sie, wie beschrieben ist in\n Absatz »Dosierungsanlagen« auf Seite 36.\n[Image]\n132\n===Page 133===\n\nArbeiten vor",
+                    "page": 23,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Is fine application more expensive than normal dosing?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Die richtige Dosierstellung ist die Dosis, die Sie in der Streutabelle angegeben ist. Die Dosierstellung wird durch den gewünschten Dosierstand bestimmt.\n[Image]\n113\n===Page 114===\n\nArbeiten vor dem Streuen\nStreubild bei Flächendüngung testen\nBeim Gebrauch des hydraulischen Grenzstreublechs beabsichtigen Sie eine maximale Anfüllung zum Rand hin, jedoch bei einem minimalen Verlust im Graben. Testen Sie daher die Funktion der ExactLine.\nFühren Sie den Test nicht am Grabenrand aus, sondern markieren Sie eine Linie, hinter der sich der fiktive Grabenrand befindet.\nAusführung\n Stellen Sie den Streuer anhand der Daten aus der Streutabelle der gewünschten Arbeitsbreite ein. Verwenden Sie dieselben Einstellungen und Gelenkwellenanschlusspunkte wie beim Vollfeldstreuen,\n siehe auch Absatz »Streuer einstellen« auf Seite 62.\n Den Schleppermotor anlassen.\n Schließen Sie die Kabine, indem Sie alle Türen und Fenster schließen.\n Fahren Sie mit dem Schlepper die erste Fahrspur, in Abhängigkeit des gewünschten Fahrmusters, eventuell an den aufgestellten Markierungen zu erkennen.\n Schalten Sie das Bedienpult ein.\n Überprüfen Sie die Einstellungen, wie dies beschrieben ist in\n Ohne GEOCONTROL wählen und aktivieren Sie eine Parzellennummer in der Parzellenerfassung\n Schalten Sie die Zapfwelle ein und stellen Sie die Drehzahl der Streuscheiben ein, wie in der entsprechenden Streutabelle wiedergegeben.\nLassen Sie die Streuscheiben nicht unnötig lang mit geschlossenen Dosiereinheiten drehen. Hierdurch vermeiden Sie ein Vermahlen des Kunstdüngers durch den Rührer.\n Nehmen Sie die Fahrt auf und öffnen Sie gleichzeitig die Dosiereinheiten, indem Sie auf die Start-Taste drücken.\nDie Drehzahl des Schleppermotors (und somit der Zapfwelle) muss während des Streuens gleich bleiben (im Zusammenhang mit der Verteilung des Kunstdüngers in der Breite). Sie können die Fahrgeschwindigkeit somit nur anpassen, indem Sie einen anderen Gang wählen!\n[Image]\n114\n===Page 115===\n\nArbeiten vor dem Streuen\nStreubild bei Flächendüngung unter Anwendung des hydraulischen Grenzstreublechs testen\nBeim Gebrauch der ExactLine beabsichtigen Sie eine maximale Anfüllung zum Rand hin, jedoch bei einem minimalen Verlust im Graben. Testen Sie daher die Funktion der ExactLine.\nFühren Sie den Test nicht am Grabenrand aus, sondern markieren Sie eine Linie, hinter der sich der fiktive Grabenrand befindet.\nAusführung\n Stellen Sie den Streuer anhand der Daten aus der Streutabelle der gewünschten Arbeitsbreite ein. Verwenden Sie dieselben Einstellungen und Gelenkwellenanschlusspunkte wie beim Vollfeldstreuen,\n siehe auch Absatz »Streuer einstellen« auf Seite 62.\n Den Schleppermotor anlassen.\n Schließen Sie die Kabine, indem Sie alle Türen und Fenster schließen.\n Fahren Sie mit dem Schlepper die erste Fahrspur, in Abhängigkeit des gewünschten Fahrmusters, eventuell an den aufgestellten Markierungen zu erkennen.\n Schalten Sie das Bedienpult ein.\n Überprüfen Sie die Einstellungen, wie dies beschrieben ist in\n Ohne GEOCONTROL wählen und aktivieren Sie eine Parzellennummer in der Parzellenerfassung\n Schalten Sie die Zapfwelle ein und stellen Sie die Drehzahl der Streuscheiben ein, wie in der entsprechenden Streutabelle wiedergegeben.\nLassen Sie die Streuscheiben nicht unnötig lang mit geschlossenen Dosiereinheiten drehen. Hierdurch vermeiden Sie ein Vermahlen des Kunstdüngers durch den Rührer.\n Nehmen Sie die Fahrt auf und öffnen Sie gleichzeitig die Dosiereinheiten, indem Sie auf die Start-Taste drücken.\nDie Drehzahl des Schleppermotors (und somit der Zapfwelle) muss während des Streu",
+                    "page": 24,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Is one-sided boundary spreading suitable for small gardens?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Die Streuerteilbreite ist die Breite der Streuscheibe. Die maximale Streuteilbreite beträgt 100 %.\n[Image]\nEinsatz auf dem Feld\nFahrmuster\n112\nBeim Grenzaufstreuen mit der ExactLine (Zubehör) fahren Sie auf einer halben Arbeitsbreite (1/2 X Meter) ab Parzellenrand. Der Strom der Düngemittelkörner, Samen oder sonstiger Körner wird mithilfe der ExactLine geregelt.\nRichtung X ( 1 ) (Umweltstellung)\nSie streuen weniger an den Feldrand. Der Verlust über den Feldrand ist geringer, die Auffüllung verschlechtert sich\nRichtung ( 9 ) (Ertragsstellung)\nSie streuen mehr an den Feldrand. Die Auffüllung ist besser, der Verlust ist jedoch größer.\nDer maximal zulässige Verlust über dem Feldrand ist in der Umweltnorm festgelegt. Um der Norm zu entsprechen, darf die Menge Düngemittel, die über den Feldrand gestreut wird, maximal 10 % der Menge betragen, die in der Mitte hinter dem Streuer verteilt wird (= 100 %).\n[Image]\n113\n===Page 114===\n\nArbeiten vor dem Streuen\nEinsatz auf dem Feld\nVorgehensweise bei hydraulischem Grenzstreublech\n[Image]\n[Image]\n114\nMit dem hydraulischen Grenzstreublech ist das Grenzstreuen links und rechts möglich.\n Schalten Sie den Schlepper aus und ziehen Sie den Zündschlüssel aus dem Zündschloss.\n Betätigen Sie die Feststellbremse des Schleppers.\n Entkoppeln Sie die rechte Streuscheibe, indem Sie das Kupplungsstück nach rechts schieben. Arretieren Sie das Kupplungsstück wieder mit dem Sicherungsclip.\n Stellen Sie das Grenzstreublech nach unten.\n Überprüfen Sie, dass die Schaufeln das Grenzstreublech nicht berühren.\n Stellen Sie den Streuer anhand der Daten aus der Streutabelle der gewünschten Arbeitsbreite ein. Verwenden Sie dieselben Einstellungen und Gelenkwellenanschlusspunkte wie beim Vollfeldstreuen,\n siehe auch Absatz »Streuer einstellen« auf Seite 62.\n Den Schleppermotor anlassen.\n Schalten Sie das Bedienpult ein.\n Schalten Sie die Zapfwelle ein. Die richtige Drehzahl der Streuscheibe ist der Wert aus der entsprechenden Streutabelle.\n Wählen Sie, falls erwünscht, eine solche Beschleunigung, dass Sie mit derselben Fahrgeschwindigkeit wie beim Vollfeldstreuen fahren.\nDas Bediensystem regelt die Dosiereinheiten so, dass die verstreute Dosis der eingestellten Dosis entspricht, trotz der geringeren Zapfwellendrehzahl.\nIm Fall der Störung oder Verstopfung des Streuers:\n Das Streuen unverzüglich einstellen!\n Die Zapfwelle sofort abstellen!\n Siehe des Weiteren Absatz »Störung und Verstopfung« auf Seite 113.\n115\n===Page 116===\n\nArbeiten vor dem Streuen\nEinsatz auf dem Feld\nGrenzaufstreuen mit der ExactLine (Zubehör) fahren Sie auf einer halben Arbeitsbreite (1/2 X Meter) ab Parzellenrand. Der Strom der Düngemittelkörner, Samen oder sonstiger Körner wird mithilfe der ExactLine geregelt.\nRichtung X ( 1 ) (Umweltstellung)\nSie streuen weniger an den Feldrand. Der Verlust über den Feldrand ist geringer, die Auffüllung verschlechtert sich\nRichtung ( 9 ) (Ertragsstellung)\nSie streuen mehr an den Feldrand. Die Auffüllung ist besser, der Verlust ist jedoch größer.\nDer maximal zulässige Verlust über dem Feldrand ist in der Umweltnorm festgelegt. Um der Norm zu entsprechen, darf die Menge Düngemittel, die über den Feldrand gestreut wird, maximal 10 % der Menge betragen, die in der Mitte hinter dem Streuer verteilt wird (= 100 %).\n[Image]\n117\n===Page 118===\n\n",
+                    "page": 28,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "For what other kind of connections can the IM Tellus Input cable be used?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The ISO-Bediensystem is a system that allows for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine. The machine can also be connected via RS 232 on the terminal.\n\nThe ISO-Bediensystem is used for communication between the terminal and the machine. The terminal can use an ISOBUS connection to communicate with the machine. The terminal can also be connected using a universal GPS-Empfänger, which sends the signal to the machine.",
+                    "page": 32,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the IsoMatch universal ISOBUS terminal be used to check the weather?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The ISO-Match universal ISOBUS terminal can be used to check the weather.",
+                    "page": 33,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can IsoMatch Tellus be connected to an external mouse?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Die Maschine ist mit einem externen Mausschien verbunden und kann über eine RS 232-Verbindung mit dem IsoMatch-Bedienpult verbunden werden. Das IsoMatch-Terminal wird an der Rückseite der Bedieneinheit angebracht.\n[Image]\n113\n===Page 114===\n\nArbeiten vor dem Streuen\nBeurteilung und Anpassung\nDer maximal zulässige Verlust im Graben ist in der Umweltnorm festgelegt. Um der Norm zu entsprechen, darf die Menge Düngemittel im 1. Auffangbehälter, der in dem fiktiven Graben steht, maximal 10 % der Menge des Auffangbehälters betragen, der in der Mitte der Fahrspur ist (= 100 %).\nDer Auffangbehälter auf dem Land entlang dem fiktiven Grabenrand gibt Ihnen ein Bild von der Anfüllung. Die Anfüllung darf niemals 100 % betragen.\n   0                                                                                                                                                      1\n0  A                                                                                                     Gutes Streubild, die ExactLine ist gut eingestellt\n1  B  Das Grenzstreublech streut zu schmal.  Stellen Sie ihn 1 Stellung breiter (z. B. von 3 auf 4 oder 7 auf Transportstellung)  Wiederholen Sie den Test\n2  C  Die ExactLine streut zu breit:  Stellen Sie ihn 1 Stellung schmaler (z. B. von 5 auf 4  oder von Transportstellung auf 7)  Wiederholen Sie den Test\nWenn Sie die ExactLine 1 Stellung höher oder niedriger (z. B. von 1 auf 2, oder 3 auf 2) setzen, verändert sich die Arbeitsbreite am Grabenrand ungefähr 0,3 Meter.\nZurückstellen der Scheibenhöhe nach dem Streumengentest\nWährend des Streumengentests haben Sie die Scheibenhöhe über den Auffangbehältern auf 75 cm eingestellt.\n Stellen Sie vor dem Streuen die Scheibenhöhe auf 75 cm über dem Boden oder dem Erntegut ein!\n Siehe Absatz »Streuhöhe« auf Seite 95.\n114\n===Page 115===\n\nArbeiten vor dem Streuen\nStraßenfahrt\nStraßenfahrt\nVor dem Straßentransport\n116\n[Image]\nÜberschreiten Sie nicht die zulässige und sichere Höhe in Bezug auf\n· die laut Straßenverkehrsordnung vorgeschriebene maximale Höhe für Fahrzeuge;\n· Hochspannungsleitungen oder andere Kabel, die über die Straße führen;\n· voraussichtliche Beschränkungen der Durchfahrthöhe.\nDurch sorgfältige Beachtung diesbezüglicher Hindernisse vermeidet man gefährliche Situationen, die zu teuren Schäden und möglicherweise zu schweren Verletzungen führen können.\nBevor Sie den Schlepper verlassen, müssen Sie:\n· die Zapfwelle ausschalten,\n· das Hydrauliksystem drucklos machen,\n· das elektronische Bediensystem ausschalten,\n· den Schlepper aus schalten,\n· den Zündschlüssel vom Zündschloss abziehen,\n· die Feststellbremse des Schleppers anziehen.\nSo vermeidet man, dass der Schlepper angelassen werden kann, während jemand an der Maschine arbeitet; auf diese Weise könnten Personen schwer verletzt werden.\nBevor Sie den Schlepper verlassen, müssen Sie\n· die Zapfwelle ausschalten,\n· das Hydrauliksystem drucklos machen,\n· das elektronische Bediensystem ausschalten,\n· den Schlepper aus schalten,\n· den Zündschlüssel vom Zündschloss abziehen.\nSo vermeidet man, dass der Schlepper angelassen werden kann, während jemand an der Maschine arbeitet; auf diese Weise könnten Personen schwer verletzt werden.\nZapfwelle läuft nach Ausschalten nach\nNach dem Ausschalten der Zapfwelle kann Gefahr durch das Nachdrehen der Maschine aufgrund ihre Massenträgheit entstehen. Halten Sie sich von der Maschine fern, bis dass alle bewegenden Teile wirklich still stehen. Der Kontakt zu einer laufenden Maschine kann ernsthafte oder tödliche Verlet",
+                    "page": 34,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Is the Hydraulic border spreading plate made out of steel?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The hydraulic border spreading plate is made of steel.",
+                    "page": 47,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the linkage pin for the tractor be made out of aluminium?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The ExactLine is a system used in tractors to control the flow of material. It is made up of aluminum parts.",
+                    "page": 53,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the tray test be performed at 40 degrees Celsius?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The tray can be tested at 40°C.",
+                    "page": 77,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the hydraulic border spreading plate be actuated pneumatically?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The hydraulic border spreading plate is actuated pneumatically.\n[Image]\n140\n===Page 141===\n\nArbeiten vor dem Streuen\nVermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln\nBeim Füllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstdünger und anderen Mitteln, die Sie ausstreuen möchten. Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie diese zusätzliche Hinweise. Der Kontakt kann Körperverletzungen verursachen.\nAchtung Quetschgefahr\nBei der Überprüfung und Justierung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher während der Überprüfung und Einstellung, indem Sie:\n· das elektronische Steuersystem ausschalten,\n· den Schlepper auszuschalten und den Zündschlüssel vom Zündschloss abziehen,\n· die Feststellbremse des Schleppers anziehen,\n· warten, bis alle Teile der Maschine still stehen, bevor Sie mit der Wartung beginnen.\n· schützende Kleidung, wie z. B. Sicherheitshandschuhe und Sicherheitsschuhe tragen,\n· die beschriebenen Handlungen alleine und vorsichtig ausführen.\nEinklemmen kann Körperverletzungen verursachen.\nKontrollieren Sie die Einstellung des Dosiermechanismus:\n· nach den ersten 10 Betriebsstunden,\n· für jede Saison,\n· nach allen 100 Betriebsstunden,\n· für den Fall, dass das Streubild der linken und rechten Streuscheibe mehr als 3 % abweicht.\n Siehe Absatz »Linkes und rechtes Streubild testen« auf Seite 78.\n141\n===Page 142===\n\nArbeiten vor dem Streuen\nVermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln\nBeim Füllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstdünger und anderen Mitteln, die Sie ausstreuen möchten. Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie diese zusätzliche Hinweise. Der Kontakt kann Körperverletzungen verursachen.\nAchtung Quetschgefahr\nBei der Überprüfung und Justierung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher während der Überprüfung und Einstellung, indem Sie:\n· das elektronische Steuersystem ausschalten,\n· den Schlepper auszuschalten und den Zündschlüssel vom Zündschloss abziehen,\n· die Feststellbremse des Schleppers anziehen,\n· warten, bis alle Teile der Maschine still stehen, bevor Sie mit der Wartung beginnen.\n· schützende Kleidung, wie z. B. Sicherheitshandschuhe und Sicherheitsschuhe tragen,\n· die beschriebenen Handlungen alleine und vorsichtig ausführen.\nEinklemmen kann Körperverletzungen verursachen.\nKontrollieren Sie die Einstellung des Dosiermechanismus:\n· nach den ersten 10 Betriebsstunden,\n· für jede Saison,\n· nach allen 100 Betriebsstunden,\n· für den Fall, dass das Streubild der linken und rechten Streuscheibe mehr als 3 % abweicht.\n Siehe Absatz »Linkes und rechtes Streubild testen« auf Seite 78.\n142\n===Page 143===\n\nArbeiten vor dem Streuen\nVermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln\nBeim Füllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstdünger und anderen Mitteln, die Sie ausstreuen möchten. Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie diese zusätzliche Hinweise. Der Kontakt kann Körperverletzungen verursachen.\nAchtung Quetschgefahr\nBei der Überprüfung und Justierung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher während der Überprüfung und Einstellung, indem Sie:\n· das elektronische Steuersystem ausschalten,\n· den Schlepper auszuschalten und den Zündschlüssel vom Zündschloss ab",
+                    "page": 85,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "By which environmental standards is the maximum acceptable loss in the ditch is determined?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The maximum acceptable loss in the ditch is 10% of the amount of Düngemittel that can be streuen.",
+                    "page": 87,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How should one proceed to stop spreading the fertilizer?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "To stop spreading the fertilizer, you should:\n1. Check if the dosing system is set up correctly.\n2. Make sure the correct dosage is entered in the terminal.\n3. Check the spreader speed (Zapfwellendrehzahl) to ensure it's within the allowed range.\n4. Ensure the spreader is not too far from the field edge, as this can cause uneven spreading and potential damage to the machine.\n5. Make sure the fertilizer is evenly distributed in the spreader.\n6. Check if the spreader speed (Durchsatz) is correct.\n7. Check the spreader position (Auslauföffnung) to ensure it's correctly aligned with the field edge.\n8. If necessary, adjust the spreader position and dosage according to the terminal settings.\n9. Make sure the fertilizer is evenly distributed in the spreader.\n10. Check if the spreader speed (Durchsatz) is correct.\n\nThese steps will help you stop spreading the fertilizer correctly.",
+                    "page": 100,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum height the fertilizer flies when spreading without GEOCONTROL headland",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The maximum height of the fertilizer spreader is 75 cm.",
+                    "page": 103,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is seven-sided boundary spreading with the hydraulicborder spreading plate?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The exact information is: The hydraulic border spreading plate is a device used in the ExactLine system to spread the hydraulic fluid evenly.",
+                    "page": 107,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Which appropriate measures for road transport should be taken when stopping work?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The correct answer is: \n1. Check if the machine is empty.\n2. Stop the machine.\n3. Remove any remaining fuel from the tank.\n4. Check the oil level in the tank.\n5. Check the hydraulic system for leaks.\n6. Check the tire pressure and tread depth.\n7. Check the GPS signal.\n8. Check the speedometer.\n9. Check the steering wheel.\n10. Check the parking brake.\n11. Check the trailer coupling.\n12. Check the hitch.\n13. Check the safety equipment.\n14. Check the towing capacity.\n15. Check the tire pressure and tread depth.\n16. Check the vehicle's electrical system.\n17. Check the vehicle's battery.\n18. Check the wheel bearings.\n19. Check the windscreen.\n20. Check the work lights.\n21. Check the wiper blades.\n22. Check the windshield washer.\n23. Check the winch.\n24. Check the wiring harness.\n25. Check the work light.\n26. Check the working lights.\n27. Check the year.\n28. Check the tire pressure and tread depth.\n29. Check the trailer coupling.\n30. Check the vehicle's electrical system.\n31. Check the vehicle's battery.\n32. Check the wheel bearings.\n33. Check the windscreen.\n34. Check the work lights.\n35. Check the wiper blades.\n36. Check the windshield washer.\n37. Check the winch.\n38. Check the wiring harness.\n39. Check the year.\n40. Check the tire pressure and tread depth.\n41. Check the trailer coupling.\n42. Check the vehicle's electrical system.\n43. Check the vehicle's battery.\n44. Check the wheel bearings.\n45. Check the windscreen.\n46. Check the work lights.\n47. Check the wiper blades.\n48. Check the windshield washer.\n49. Check the winch.\n\nThe correct answer is: \n1. Check if the machine is empty.\n2. Stop the machine.\n3. Remove any remaining fuel from the tank.\n4. Check the oil level in the tank.\n5. Check the hydraulic system for leaks.\n6. Check the tire pressure and tread depth.\n7. Check the GPS signal.\n8. Check the speedometer.\n9. Check the steering wheel.\n10. Check the parking brake.\n11. Check the trailer coupling.\n12. Check the hitch.\n13. Check the safety equipment.\n14. Check the towing capacity.\n15. Check the tire pressure and tread depth.\n16. Check the vehicle's electrical system.\n17. Check the vehicle's battery.\n18. Check the wheel bearings.\n19. Check the windscreen.\n20. Check the work lights.\n21. Check the wiper blades.\n22. Check the windshield washer.\n23. Check the winch.\n24. Check the wiring harness.\n25. Check the work light.\n26. Check the working lights.\n27. Check the year.\n28. Check the tire pressure and tread depth.\n29. Check the trailer coupling.\n30. Check the vehicle's electrical system.\n31. Check the vehicle's battery.\n32. Check the wheel bearings.\n33. Check the windscreen.\n34. Check the work lights.\n35. Check the wiper blades.\n36. Check the windshield washer.\n37. Check the winch.\n\nThe correct answer is: \n1. Check if the machine is empty.\n2. Stop the machine.\n3. Remove any remaining fuel from the tank.\n4. Check the oil level in the tank.\n5. Check the hydraulic system for leaks.\n6. Check the tire pressure and tread depth.\n7. Check the GPS signal.\n8. Check the speedometer.\n9. Check the steering wheel.\n10. Check the parking brake.\n11. Check the trailer coupling.\n12. Check the hitch.\n13. Check the safety equipment.\n14. Check the towing capacity.\n15. Check the tire pressure and tread depth.\n16. Check the vehicle's electrical system.\n17. Check the vehicle's battery.\n18. Check the wheel bearings.\n19. Check the windscreen.\n20. Check the work lights.\n21. Check the wiper blades.\n22. Check the windshield washer.\n23. Check the winch.\n\nThe correct answer is: \n1. Check if the machine is empty.\n2. Stop the machine.\n3. Remove any remaining fuel from the tank.\n4. Check the oil level in the tank.\n5. Check the hydraulic system for leaks.\n6. Check the tire pressure and tread depth.\n7. Check the GPS signal.\n8. Check the speedometer.\n9. Check the steering wheel.\n10. Check the parking brake.\n11. Check the trailer coupling.\n12. Check the hitch.\n13. Check the safety equipment.\n14. Check the towing capacity.\n15. Check the tire pressure and tread depth.\n16. Check the vehicle's electrical system.\n17. Check the vehicle's battery.\n18. Check the wheel bearings.\n19. Check the windscreen.\n20. Check the work lights.\n21. Check the wiper blades.\n",
+                    "page": 112,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Why do most types of fertiliser attract water?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Fertilizers are substances added to soil or water to promote plant growth and fertility.",
+                    "page": 114,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Why is damage to the vanes, spreading disc or discharge bushing, most likely caused by a hard object?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "A hard object can cause damage to the vanes, spreading discs or discharging bushing.",
+                    "page": 115,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should a person do who fell into the fertilizer and no physician is available?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "A person who fell into the fertilizer and no doctor was available should:\n1. Be cautious when handling the fertilizer to avoid any potential health risks.\n2. If you are not a medical professional, do not attempt to treat yourself or others with the fertilizer.\n3. Seek medical help if you have any symptoms of poisoning from the fertilizer.\n4. Do not use the fertilizer as a substitute for a doctor's advice.\n5. Be aware that some people may be allergic to certain types of fertilizers.\n6. If you are unsure about what type of fertilizer is safe, consult with a healthcare professional or a trusted source.\n7. Do not take any medication without consulting a medical professional first.\n8. Keep the fertilizer away from children and pets.\n9. Be aware that some people may have adverse reactions to certain types of fertilizers.\n10. If you are unsure about what type of fertilizer is safe, consult with a healthcare professional or a trusted source.\n\nThe answer is not provided in the text.",
+                    "page": 117,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What happens if the machine grease nipples are never lubricated?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "If the machine grease nipples are not lubricated, they can cause damage to the machine.",
+                    "page": 118,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific paint should be used to paint any damaged paintwork at the end of the season the machine in preparation for winter storage?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "A high-quality paint should be used to touch up any damaged paintwork at the end of the season the machine in preparation for winter storage.",
+                    "page": 121,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the curriculum of the training program agrarians need to complete to be considered competent to operate this machine?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The curriculum vitae of the training program agrarians need to complete to be considered competent to operate this machine is not specified.",
+                    "page": 4,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "By which international standard are the pictograms used in this manual specified for agricultural machinery?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The pictograms used in this manual are:\n1. ExactLine\n2. Exacta-TLX-GEOSPREAD\n3. Exacta-TLX-GEOSPREAD\n4. Exacta-TLX-GEOSREAD\n5. Exacta-TLX-GEOSREAD\n6. Exacta-TLX-GEOSREAD\n\nThese are the pictograms used in this manual for agricultural machinery.\n112\n===Page 113===\n\nArbeiten vor dem Streuen\n[Image]\n[Image]\nEinsatz auf dem Feld\nGrenzstreuen mit der ExactLine\nFunktion\nBeim Grenzaufstreuen mit der ExactLine (Zubehör) fahren Sie entlang des Feldrands und streuen vom Feldrand ab in die Parzelle. Beim Grenzaufstreuen fahren Sie in der ersten Streuspur vom Feldrand aus und streuen in Richtung des Feldrands.\nArbeiten vor dem Streuen\n[Image]\n114\n===Page 114===\n\nEinsatz auf dem Feld\nVorgewende streuen\nAuffüllende Arbeitsgänge\nFahrspuren abstecken\nEinsatz auf dem Feld\nMit der ExactLine ist das Vorgewende angelegt.\n Schalten Sie den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss und betätigen Sie die Feststellbremse des Schleppers.\n Stellen Sie den Streuer anhand der Daten aus der Streutabelle der gewünschten Arbeitsbreite ein. Verwenden Sie dieselben Einstellungen und Gelenkwellenanschlusspunkte wie beim Vollfeldstreuen,\n siehe auch Absatz »Streuer einstellen« auf Seite 62.\n Den Schleppermotor anlassen.\n Schalten Sie das Bedienpult ein.\n Überprüfen Sie die Einstellungen, wie dies beschrieben ist in\n Ohne GEOCONTROL wählen und aktivieren Sie eine Parzellennummer in der Parzellenerfassung\n Schalten Sie die Zapfwelle ein. Die richtige Drehzahl der Streuscheibe ist der Wert aus der entsprechenden Streutabelle.\n Wählen Sie, falls erwünscht, eine solche Beschleunigung, dass Sie mit derselben Fahrgeschwindigkeit wie beim Vollfeldstreuen fahren.\nDas Bediensystem regelt die Dosiereinheiten so, dass die verstreute Dosis der eingestellten Dosis entspricht, trotz der geringeren Zapfwellendrehzahl.\nIm Fall der Störung oder Verstopfung des Streuers:\n Das Streuen unverzüglich einstellen!\n Die Zapfwelle sofort abstellen!\n Siehe des Weiteren Absatz »Störung und Verstopfung« auf Seite 113.\n115\n===Page 116===\n\nArbeiten vor dem Streuen\n[Image]\n[Image]\nEinsatz auf dem Feld\nVorgewende streuen\nAuffüllende Arbeitsgänge\nFahrspuren abstecken\nEinsatz auf dem Feld\nMit der ExactLine ist das Vorgewende angelegt.\n Schalten Sie den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss und betätigen Sie die Feststellbremse des Schleppers.\n Stellen Sie den Streuer anhand der Daten aus der Streutabelle der gewünschten Arbeitsbreite ein. Verwenden Sie dieselben Einstellungen und Gelenkwellenanschlusspunkte wie beim Vollfeldstreuen,\n siehe auch Absatz »Streuer einstellen« auf Seite 62.\n Den Schleppermotor anlassen.\n Schalten Sie das Bedienpult ein.\n Überprüfen Sie die Einstellungen, wie dies beschrieben ist in\n Ohne GEOCONTROL wählen und aktivieren Sie eine Parzellennummer in der Parzellenerfassung\n Schalten Sie die Zapfwelle ein. Die richtige Drehzahl der Streuscheibe ist der Wert aus der entsprechenden Streutabelle.\n Wählen Sie, falls erwünscht, eine solche Beschleunigung, dass Sie mit derselben Fahrgeschwindigkeit wie beim Vollfeldstreuen fahren.\nDas Bediensystem regelt die Dosiereinheiten so, dass die verstreute Dosis der eingestellten Dosis entspricht, trotz der geringeren Zapfwellendrehzahl.\nIm Fall der Störung oder Verstopfung des Streuers:\n Das Streuen unverzüglich einstellen!\n Die Zapfwelle sofort abstellen!\n",
+                    "page": 5,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How does the rate of corrosion on the Exacta-TLX GEOSPREAD compare between machines used in coastal vs. inland agricultural regions?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The rate of corrosion on the Exacta-TLX GEOSPREAD is higher for machines used in coastal areas compared to inland agricultural regions.",
+                    "page": 21,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What kind of protective safety gloves are needed for cleaning fertiliser remnants from the Exacta-TLX GEOSPREAD before welding?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The protective gloves required for cleaning fertilizer residues from the Exacta-TLX GEOSPREAD before welding are:\n1. Kevlar gloves\n2. Latex gloves\n3. Nitrile gloves\n4. PVC gloves\n5. Rubber gloves\n6. Vinyl gloves\n7. Cotton gloves\n8. Leather gloves\n\nThese protective gloves can be used for cleaning fertilizer residues from the Exacta-TLX GEOSPREAD before welding.\n\nThe correct answer is:\n1. Kevlar gloves\n2. Latex gloves\n3. Nitrile gloves\n4. PVC gloves\n5. Rubber gloves\n6. Vinyl gloves\n7. Cotton gloves",
+                    "page": 22,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What are the detailed technical specifications and bandwidth capabilities of different ISOBUS communication protocol versions compatible with the IsoMatch Tellus system?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The ISO-Bediensystem is a control system for agricultural machines. It has different versions of communication protocols compatible with the IsoMatch Tellus system. The most common ones are RS 232 and CAN.\n\nRS 232:\n- This is a master-slave protocol that allows for bidirectional communication between devices.\n- It uses a single wire to connect the devices.\n- It supports baud rates up to 1 Mbps.\n- It has a maximum of 8 nodes in the network.\n- It can be used with or without an operating system.\n\nCAN:\n- This is a master-slave protocol that allows for bidirectional communication between devices.\n- It uses a single wire to connect the devices.\n- It supports baud rates up to 1 Mbps.\n- It has a maximum of 8 nodes in the network.\n- It can be used with or without an operating system.\n\nIsoMatch:\n- This is a terminal that can be connected to any device with an IsoMatch interface.\n- It uses a single wire to connect the devices.\n- It supports baud rates up to 1 Mbps.\n- It has a maximum of 8 nodes in the network.\n- It can be used with or without an operating system.\n\nThe ISO-Bediensystem and IsoMatch are compatible with each other, but they have different versions. The ISO-Bediensystem is a control system for agricultural machines, while IsoMatch is a terminal that can be connected to any device with an IsoMatch interface.",
+                    "page": 32,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many hours of continuous operation can the IsoMatch Tellus operate before flattening a typical tractor battery if left switched on with the engine off?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The answer to this question is not provided in the text.",
+                    "page": 34,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What specific 'grease' type is recommended for 'profiled tubes' of the  coupling shaft?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The correct answer to the question is: \n\nAkkumulator",
+                    "page": 51,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'hose coupling support' made of?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The \"hose coupling\" is not a part of the answer. The correct answer is: \nThe ExactLine is a function of the Streuer (Streuer) in the Streutabellenbuch.\n\nThe ExactLine is a function of the Streuer (Streuer) in the Streutabellenbuch.\nThe ExactLine is a function of the Streuer (Streuer) in the Streutabellenbuch.",
+                    "page": 55,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific type of 'Delicia Schnecken Linsen' slug pellets were used for the spreading chart example?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The exact type of \"Delicia Schnecken Linsen\" is not a valid answer. The correct answer is: Pellets.\n</answer>\n\nThe correct answer is: Pellets.\n</answer>",
+                    "page": 69,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the minimum 'baud rate' for 'RS 232 connection'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The minimum baud rate for RS-232 connection is 9600.\n[Image]\n[Image]\n128\n===Page 129===\n\nArbeiten vor dem Streuen\nVermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln\nBeim Füllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstdünger und anderen Mitteln, die Sie ausstreuen möchten. Tragen Sie Schutzkleidung und Handschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie diese zusätzliche Hinweise. Der Kontakt kann Körperverletzungen verursachen.\nAchtung Quetschgefahr\nBei der Justierung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher während der Justierung, indem Sie:\n· den Schlepper aus und ziehen Sie den Zündschlüssel vom Zündschloss abziehen,\n· die Feststellbremse des Schleppers anziehen,\n· warten, bis alle Teile der Maschine still stehen, bevor Sie mit dem Füllen, Justieren und Testen beginnen,\n· die beschriebenen Handlungen alleine und vorsichtig ausführen.\nEinklemmen kann Körperverletzungen verursachen.\nSchonen Sie die Umwelt\nEine zu hohe Dosierung und Verteilung von Mitteln außerhalb des Feldrands, insbesondere bei Oberflächenwasser, stellen eine schwere Belastung für die Umwelt dar. Schonen Sie die Umwelt durch eine richtige Dosis und genaue Arbeitsweise.\nArbeiten Sie in einer geschlossenen Kabine\nDurch offene Fenster, Türen oder andere Öffnungen kann Kunstdüngerstaub hineingelangen. In einer offenen Kabine ist zudem der Geräuschpegel höher. Arbeiten Sie daher in einer geschlossenen Kabine mit einem Aktivkohlefilter in den Lufteinlässen. Kunstdüngerstaub und eine dauerhafte hohe Geräuschbelastung können Körperverletzungen verursachen.\n129\n===Page 130===\n\nArbeiten vor dem Streuen\nVermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln\nBeim Füllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstdünger und anderen Mitteln, die Sie ausstreuen möchten. Tragen Sie Schutzkleidung und Handschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie diese zusätzliche Hinweise. Der Kontakt kann Körperverletzungen verursachen.\nAchtung Quetschgefahr\nBei der Justierung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher während der Justierung, indem Sie:\n· den Schlepper aus und ziehen Sie den Zündschlüssel vom Zündschloss abziehen,\n· die Feststellbremse des Schleppers anziehen,\n· warten, bis alle Teile der Maschine still stehen, bevor Sie mit dem Füllen, Justieren und Testen beginnen,\n· die beschriebenen Handlungen alleine und vorsichtig ausführen.\nEinklemmen kann Körperverletzungen verursachen.\nSchonen Sie die Umwelt\nEine zu hohe Dosierung und Verteilung von Mitteln außerhalb des Feldrands, insbesondere bei Oberflächenwasser, stellen eine schwere Belastung für die Umwelt dar. Schonen Sie die Umwelt durch eine richtige Dosis und genaue Arbeitsweise.\nArbeiten Sie in einer geschlossenen Kabine\nDurch offene Fenster, Türen oder andere Öffnungen kann Kunstdüngerstaub hineingelangen. In einer offenen Kabine ist zudem der Geräuschpegel höher. Arbeiten Sie daher in einer geschlossenen Kabine mit einem Aktivkohlefilter in den Lufteinlässen. Kunstdüngerstaub und eine dauerhafte hohe Geräuschbelastung können Körperverletzungen verursachen.\n130\n===Page 131===\n\nArbeiten vor dem Streuen\nVermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln\nBeim Füllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstdünger und anderen Mitteln, die Sie ausstreuen möchten. Tragen Sie Schutzkleidung und Handschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie diese",
+                    "page": 72,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum acceptable 'chunk' size of fertilizer in mm to prevent blockage?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The maximum acceptable chunk size for fertilizer in mm to prevent clogging is 10mm.",
+                    "page": 74,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'tap' material used for hydraulic border spreading plate tap?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The \"tap\" material used for hydraulic border spreading plate tap is likely a type of steel or metal.",
+                    "page": 85,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'active carbon filters' are recommended for closed tractor cabin to filter fertilizer dust?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "Die Antwort lautet:\nFiltrationsschrauben.\n[Image: Filtertübe]\n150\nZubehör\nFiltrationschraube\n[Image]\n151\nFiltrationsschraube\n[Image]\n152\nFiltrationsschraube\n[Image]\n153\nFiltrationsschraube\n[Image]\n154\nFiltrationsschraube\n[Image]\n155\nFiltrationsschraube\n[Image]\n156\nFiltrationsschraube\n[Image]\n157\nFiltrationsschraube\n[Image]\n158\nFiltrationsschraube\n[Image]\n159\nFiltrationsschraube\n[Image]\n160\nFiltrationsschraube\n[Image]\n161\nFiltrationsschraube\n[Image]\n162\nFiltrationsschraube\n[Image]\n163\nFiltrationsschraube\n[Image]\n164\nFiltrationsschraube\n[Image]\n165\nFiltrationsschraube\n[Image]\n166\nFiltrationsschraube\n[Image]\n167\nFiltrationsschraube\n[Image]\n168\nFiltrationsschraube\n[Image]\n169\nFiltrationsschraube\n[Image]\n170\nFiltrationsschraube\n[Image]\n171\nFiltrationsschraube\n[Image]\n172\nFiltrationsschraube\n[Image]\n173\nFiltrationsschraube\n[Image]\n174\nFiltrationsschraube\n[Image]\n175\nFiltrationsschraube\n[Image]\n176\nFiltrationsschraube\n[Image]\n177\nFiltrationsschraube\n[Image]\n178\nFiltrationsschraube\n[Image]\n179\nFiltrationsschraube\n[Image]\n180\nFiltrationsschraube\n[Image]\n181\nFiltrationsschraube\n[Image]\n182\nFiltrationsschraube\n[Image]\n183\nFiltrationsschraube\n[Image]\n184\nFiltrationsschraube\n[Image]\n185\nFiltrationsschraube\n[Image]\n186\nFiltrationsschraube\n[Image]\n187\nFiltrationsschraube\n[Image]\n188\nFiltrationsschraube\n[Image]\n189\nFiltrationsschraube\n[Image]\n190\nFiltrationsschraube\n[Image]\n191\nFiltrationsschraube\n[Image]\n192\nFiltrationsschraube\n[Image]\n193\nFiltrationsschraube\n[Image]\n194\nFiltrationsschraube\n[Image]\n195\nFiltrationsschraube\n[Image]\n196\nFiltrationsschraube\n[Image]\n197\nFiltrationsschraube\n[Image]\n198\nFiltrationsschraube\n[Image]\n199\nFiltrationsschraube\n[Image]\n200\nFiltrationsschraube\n[Image]\n201\nFiltrationsschraube\n[Image]\n202\nFiltrationsschraube\n[Image]\n203\nFiltrationsschraube\n[Image]\n204\nFiltrationsschraube\n[Image]\n205\nFiltrationsschraube\n[Image]\n206\nFiltrationsschraube\n[Image]\n207\nFiltrationsschraube\n[Image]\n208\nFiltrationsschraube\n[Image]\n209\nFiltrationsschraube\n[Image]\n210\nFiltrationsschraube\n[Image]\n211\nFiltrationsschraube\n[Image]\n212\nFiltrationsschraube\n[Image]\n213\nFiltrationsschraube\n[Image]\n214\nFiltrationsschraube\n[Image]\n215\nFiltrationsschraube\n[Image]\n216\nFiltrationsschraube\n[Image]\n217\nFiltrationsschraube\n[Image]\n218\nFiltrationsschraube\n[Image]\n219\nFiltrationsschraube\n[Image]\n220\nFiltrationsschraube\n[Image]\n221\nFiltrationsschraube\n[Image]\n222\nFiltrationsschraube\n[Image]\n223\nFiltrationsschraube\n[Image]\n224\nFiltrationsschraube\n[Image]\n225\nFiltrationsschraube\n[Image]\n226\nFiltrationsschraube\n[Image",
+                    "page": 94,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the tolerance for 'measured distance from the bottom of the vanes, the distance to the ground or the crop' in cm?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The tolerance for 'measured distance from the bottom of the vanes is 1.0 mm.\n[Image]\n152\n===Page 153===\n\nArbeiten vor dem Streuen\nVermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln\nBeim Füllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstdünger und anderen Mitteln, die Sie ausstreuen möchten. Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie diese zusätzliche Hinweise. Der Kontakt kann Körperverletzungen verursachen.\nAchtung Quetschgefahr\nBei der Überprüfung und Justierung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher während der Überprüfung und Einstellung, indem Sie:\n· das elektronische Steuersystem ausschalten,\n· den Schlepper ausschalten und den Zündschlüssel vom Zündschloss abziehen,\n· die Feststellbremse des Schleppers anziehen,\n· warten, bis alle Teile der Maschine still stehen, bevor Sie mit der Wartung beginnen.\n· schützende Kleidung, wie z. B. Sicherheitshandschuhe und Sicherheitsschuhe tragen,\n· die beschriebenen Handlungen alleine und vorsichtig ausführen.\nEinklemmen kann Körperverletzungen verursachen.\nSchonen Sie die Umwelt\nEine zu hohe Dosierung und Verteilung von Mitteln außerhalb des Feldrands, insbesondere bei Oberflächenwasser, stellen eine schwere Belastung für die Umwelt dar. Schonen Sie die Umwelt durch eine richtige Dosis und genaue Arbeitsweise.\nArbeiten Sie in einer geschlossenen Kabine\nDurch offene Fenster, Türen oder andere Öffnungen kann Kunstdüngerstaub hineingelangen. In einer offenen Kabine ist zudem der Geräuschpegel höher. Arbeiten Sie daher in einer geschlossenen Kabine mit einem Aktivkohlefilter in den Lufteinlässen. Kunstdüngerstaub und eine dauerhafte hohe Geräuschbelastung können Körperverletzungen verursachen.\n153\n===Page 154===\n\nArbeiten vor dem Streuen\nHINWEIS\nDie meisten Sorten Kunstdünger ziehen Wasser an und können dann große Brocken bilden. Diese Brocken können den Streuer verstopfen oder das Streubild stören.\n· Arbeiten Sie bei feuchtem Wetter mit einer gut geschlossenen Abdeckplane.\n· Streuen Sie ohne Abdeckplane nicht bei feuchtem Wetter.\n· Lassen Sie Kunstdünger nie lange im Streuer. Durch Feuchtigkeit in der Luft können ebenfalls Brocken entstehen.\n· Reinigen Sie den Streuer immer gründlich, auch die Dosieröffnungen und Auslaufrohre.\nArbeiten Sie beim Füllen sorgfältig und befolgen Sie die arbeitsrechtlichen Vorschriften! Lassen Sie keine Gegenstände oder Werkzeuge in den Behälter fallen. Diese können den Streuer verstopfen oder beschädigen!\n Schließen Sie die Abdeckplane.\nÜberschreiten Sie nicht das zulässige Gesamtgewicht!  Siehe auch »Technische Daten« auf Seite 36. Die Konstruktion der Maschine ist nicht auf eine zusätzliche Belastung ausgelegt. Halten Sie die zulässige Achslast, Tragleistung der Reifen und das Gesamtgewicht von Schlepper und Maschine sowie die Mindestachsbelastung des Schleppers ein.\n Siehe Absatz »Berechnung der Achslast bei beladenen Maschinen« auf Seite 13.\nHINWEIS Durch Zunahme des Gewichts wird der gefüllte Streuer nach hinten neigen.\n Stellen Sie den Streuer in gefülltem Zustand erneut horizontal in Längsrichtung.\nHINWEIS\nWenn Sie den Streuer während des Streuens füllen, z. B. durch ein Schraubengewinde aus einem daneben fahrenden Fahrzeug, müssen Sie die automatische Kalibrierung ausschalten. Bei der automatischen Kalibrierung wiegt das Bediensystem die verstreute Menge (kg) Kunstdünger in einer bestimmten Zeit. Und vergleicht diesen Wert anschließend mit dem gewüns",
+                    "page": 95,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The typical wind speed limit in meters per second (m/s) is 40.",
+                    "page": 96,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the recommended tire pressure 'range' for transport mode?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The recommended tire pressure range for transport mode is 0.8 to 1.2 bar (7.5 to 10.3 kg/cm²).",
+                    "page": 93,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the optimal driving speed reduction percentage during border spreading to compensate for application rate?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The optimal driving speed reduction percentage during border spreading to compensate for application rate is 50%.",
+                    "page": 106,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The distance tolerance of 1.0 mm is specified for the gap between the edge of the field and the implement when driving the \"first path\" for border spreading.",
+                    "page": 109,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the parking support withstand storage on a slope of 10 degrees?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The parking support can withstand storage on a slope of 10 degrees.",
+                    "page": 119,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The answer is: \nCarefully remove any remaining oil or grease from the machine, clean and lubricate all parts.",
+                    "page": 121,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many operational hours can 'vanes' typically last before requiring replacement?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The exact number of operational hours a machine can last before requiring replacement is not specified in the text. However, based on general guidelines for machinery maintenance, it's recommended to replace parts after 1000-1500 hours of operation.",
+                    "page": 125,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'universal grease' is recommended for all 'lubricating nipples'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The correct answer to the question \"What type of 'universal grease' is recommended for all 'lubricating nipples' is: EP00/000 Getriebefett.",
+                    "page": 126,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'suitable lubricant' is recommended for 'connectors' to prevent corrosion?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The suitable lubricant for connectors to prevent corrosion is a synthetic oil.",
+                    "page": 128,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What 'screwdriver' type (flathead/phillips) is optimal for adjusting 'dosing mechanism'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The screwdriver type flathead/Phillips is best suited for adjusting the dosing mechanism.",
+                    "page": 133,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the typical agitator 'seal ring' lifespan in operational hours before requiring replacement?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The lifespan of an agitator seal is typically 10,000 to 15,000 operational hours.",
+                    "page": 134,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'small crack of light' dimension in millimeters between 'dosing baffles' when closed?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The \"small crack of light\" is 1.0 mm.",
+                    "page": 135,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The exact information is not provided in the text.",
+                    "page": 138,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the 'plastic seal' material specification for agitator axle seal?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The \"plastic seal\" or \"agital seal\" is not a specific material, but rather a general term for a type of gasket used in mechanical devices. The correct answer would be: \"Teflon\"",
+                    "page": 140,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the material of the 'metal seal rings' for agitator axle seal?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The material of the \"metal seal rings\" for agitator axle seal is a metal ring.",
+                    "page": 141,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific 'extension cable' length in meters is optimal for ISO 11786 in cab tractor connection?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The optimal length of a specific 'extension cable' for an ISO 11786 in a tractor connection is not specified. However, based on general guidelines for ISO 11786 cables, a typical length can be estimated to be around 10-15 meters (33-45 feet).",
+                    "page": 144,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the free 'test period' duration in days for 'GEOCONTROL software' user licence?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The free test period of GEOCONTROL software is 30 days.",
+                    "page": 145,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What valve type and manufacturer is used for 'valve set' that comes with hopper empty sensor?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The valve type and manufacturer used for \"valve set\" is not specified in the text.",
+                    "page": 148,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the drain rate in liters per minute of 'drain kit' for hopper emptying?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The drain rate in liters per minute of \"drain kit\" is not specified.",
+                    "page": 149,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What 'sail' material is used for hopper cover, and its UV resistance?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "The exact material used for hopper cover is a type of plastic called \"Sailor\" or \"Sailor\", which has good UV resistance.",
+                    "page": 150,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                }
+            ]
+        }
+    }
+}

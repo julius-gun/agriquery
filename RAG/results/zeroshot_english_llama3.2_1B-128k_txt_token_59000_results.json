@@ -1,0 +1,909 @@
+{
+    "test_run_parameters": {
+        "language_tested": "english",
+        "question_model": "llama3.2_1B-128k",
+        "evaluator_model": "gemma2_9B-8k",
+        "retrieval_algorithm": "zeroshot",
+        "context_type": "token",
+        "noise_level": 59000,
+        "file_extension_tested": "txt"
+    },
+    "overall_metrics": {
+        "accuracy": 0.009259259259259259,
+        "precision": 0.01818181818181818,
+        "recall": 0.018518518518518517,
+        "specificity": 0.0,
+        "f1_score": 0.018348623853211007,
+        "true_positives": 1,
+        "true_negatives": 0,
+        "false_positives": 54,
+        "false_negatives": 53,
+        "total_questions": 108,
+        "dataset_self_evaluation_success": {
+            "general_questions": 0.022727272727272728,
+            "unanswerable_questions": 0.0,
+            "table_questions": 0.0
+        }
+    },
+    "timing": {
+        "duration_qa_phase_seconds": 490.8999999999992
+    },
+    "per_dataset_details": {
+        "general_questions": {
+            "results": [
+                {
+                    "question": "How many dosing openings are closed during fine application?",
+                    "expected_answer": "Two of three dosing openings are closed.",
+                    "model_answer": "   1. on the load     122\n        to stopper in the signal of the tractor off, 1130\n   12\n        11             is act    13            1157\n 14               Isolate the cable with a switcher\n15           1200\n                  12         116. 126\n1.  13           to stop on the load     123\n       117\n   12 128\n        11. 130             is in the signal of the tractor off, 1137\n    14               119\n15           122\n    12 129\n16            Is it is not act with a handle on the steering system to stop the machine     13          1200\n   123\n       11. 130             121\n        124\n    12 126\n    12 125               122\n15 128           1131\n    13            is in the signal on the 127\n14. 12 129\n     12 1200\n   123\n       11. 130             1217\n        12 126\n    12",
+                    "page": 24,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the overlap percentage for the full field spreading pattern?",
+                    "expected_answer": "100% overlap",
+                    "model_answer": "   1. on the load\n    4        to stop the machine with a tractor off, in the signal of the control system     41\n    5               40\n        4.  42\n51             is actors and 43\n6           Load the cable\n  45\n 1. on the load   48\n   47              44\n   49\n  46\n  53\n  41\n    50               40, 4       42\n51             is in the signal     43\n  52\n  39\n   45\n  14\n  48\n   13\n  44\n   41\n  12\n   49\n  46\n    15               on the  to stop the machine with a tractor off,  4.  43\n\b\n  13             is 45\n  14\n  42\n   126\n  40\n  41\n  12\n     39\n  11\n    48\n  13           41\n  12               on the  to stop in the",
+                    "page": 28,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What system continuously measures fertilizer quantity being spread?",
+                    "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
+                    "model_answer": "   1. on the load     122\n        to stopper in the signal of the tractor off, 1137\n   12\n        11. 1300               1158\n    13             is actors 123\n14           112\n15. 1200\n    12\n                  116            Isolate and          to stop on a load     119       10, 1131\n   1177\n        11. 126               118\n 16              122\n 13             is the act of the tractor off, 123\n15. 12\n    14           1200\n    121\n    12     1190       1152\n    10            1177\n   11. 1261 128\n         to stop on the load on the 13             122\n    123\n15. 12, 118\n    12 1136\n    1219\n    1190               130       1273\n14. 1200   11. 1261 128\n        12 1247     10\n    13            ",
+                    "page": 30,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often does the spreader carry out automatic calibration tests?",
+                    "expected_answer": "Every 75 kg or every minute.",
+                    "model_answer": "   1. on the  to stopper in the signal\n        122\n  4               1150           1300\n        11.  12\n    13             is done with a tractor     1137\n15          12\n   14,  13            12\n 1. on 126\n   13                     Isolate the machine in the  to stop       123\n16           1300\n        11. 124\n    12               1150 128\n15. 13             is 1137\n14.  12\n     12\n    13            1190\n   13          10,  to the 9\n    12\n       1210\n        11. 12\n    12 122\n    12  13             is 123\n15. 12 1131\n     12 14\n    12 13            13. 126\n   12  to stop the 13. 13. 12 1240\n        13. 12 11. 12  12 13. 12 123",
+                    "page": 31,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How can the tractor's driving speed be transmitted to the IsoMatch if the tractor lacks ISOBUS communication?",
+                    "expected_answer": "By adding the IsoMatch power cable set to the tractor.",
+                    "model_answer": " 1. on 122\n    12       11. 1300               13             is in the signal of the tractor off, 1137\n    14\n        123\n15           to stopper with a load     112\n16            1158\n   12\n      1. on the 10\n    119       11. 1300               13             is in the signal of the tractor off, 12\n    14\n        1217\n15           to stopper with a plug in the cable     126\n16            122   12\n17                 1131\n    123\n       11. 1300               on the 13             is 124\n18                         12\n      12, 1190\n        1217           14\n15. 12\n     126                    to 1152\n   122\n    13            Isolate and in the 123\n       11. 130               on 1131\n 16             is 124\n      12, 12\n        1217           1270 15\n17                 12     126\n",
+                    "page": 32,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the main switch button to turn the control box on or off located?",
+                    "expected_answer": "The main switch button is located on the upper left in the red extension.",
+                    "model_answer": "   1.  122\n        12               1150           13             is in the signal on the load     11\n 15            1137\n    14\n                  126                   12\n        12         1168\n 16              123\n 17           to   119. 1300\n       1179\n      13             is in the signal on the load     10\n1. 1200               11. 122\n    14           1217\n15            12\n        12         123\n 16               to   1136\n17                 1190       118\n      13             is in the signal on page 128\n     10, 1200               11. 1261 129\n    1217\n    122\n        12           127\n 14            Isolate and   123\n15 1300\n       12 124\n    13             is the 1190\n    125     12\n    12 128\n    11. 1261 1137\n    12 129,  to",
+                    "page": 34,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How long should the main switch button be pressed to turn the control box on or off?",
+                    "expected_answer": "At least 1 second.",
+                    "model_answer": " 1.  122\n    12       1190               11. 1300\n 15           on the load to stopper in the signal of the tractor     13             1137\n    14, 112\n        12 128\n   10. 1150\n    13            121\n1.  123\n    11. 126               122\n15. 12       124\n    12           on the load to stopper in the signal of the tractor     1137\n14. 13             125\n   13          12 1300\n        1190\n    116\n    11. 126               121\n15. 12       1200\n    122\n    12  to stop on the steering system     123\n    1131\n    12 127\n   13             124\n    12 125\n    12 130           11. 126\n14. 13          1217\n    12 122\n    12 1280       1190     123\n15. 13  12 ",
+                    "page": 34,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "After initial setup of the machine and after any maintenance or repairs, how long should the machine be operated before re-checking all nuts and bolts?",
+                    "expected_answer": "1 hour",
+                    "model_answer": "   1. on the load\n        4.  41\n         to stopper in the signal of the tractor off, 42\n    40\n51             is done with a switcher     43\n  45\n  48\n  41\n  44\n   42\n 1.  41\n  4       39\n  42\n  41\n  42\n  43\n    40,  41\n  42\n        41   to stop the machine on the load of the tractor off,  44\n\b\n   43\n     41.  42\n            43             is 4. 41.  42\n  43\n    40\n  41. 41.  42. 41. 42. 41. 42. 41. 42. 41. 43. 41. 42. 41. 42. 41. 42. 41. 43. 41. 42. 41. 42. 41. 42. 41. 42. 41. ",
+                    "page": 38,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
+                    "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
+                    "model_answer": " 1. on the   122\n        12               1150           13             to        11. 130\n 14            Isolate the cable     1137\n    12         116\n15          12\n                  123\n 16              is in the load of the tractor off, 117\n   13                     on page       126               1150            to stopper to actors and 14. 11\n        127             122\n    12         118\n15          128\n1. 130            119\n     123\n    12 129\n   13                     is the 124\n       126               on 125            to 1137\n14              1210\n        127             122\n    12, 1200\n15 128\n    11. 130            1190     123\n1. 129   12\n    124\n       126               on the 13           125\n 131\n14  to stopper in the load of the tractor off, 127\n        122\n    128\n15 1200\n   ",
+                    "page": 40,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What torque (in NM) should be applied to the vane lock nuts?",
+                    "expected_answer": "50NM",
+                    "model_answer": "   1. on the load\n        10                in the signal of the tractor off,  to stop the machine with a switcher     11\n    12\n        13             is actors  14\n15           12\n                  1120\n   13            Isolate\n16. on the load on the steering system       123\n1.  12\n   13           to stop in the signal of the tractor off, 11\n    12\n        12               14. 15             is act     13           13         10\n 17                 12\n   126\n16            13       12\n   14\n   13           to stop on the machine with a tractor off, 11\n    12\n        13. 12\n15             is in the signal of the tractor     12\n   12\n   13           13. 126\n   12\n       13         14\n   12\n15. 12\n   13          13. 12\n    12\n        13. 12\n   12\n16             is",
+                    "page": 43,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What determines the machine's working width?",
+                    "expected_answer": "Spreading disc RPM",
+                    "model_answer": "   1. on 122\n       17               to     1200\n                  12\n      13             is in the signal of the tractor off, 11\n    123\n        14           12\n15            1137\n    12\n         126\n 16              13          on page 1151\n   13                to stopper     124\n       12. 1300\n   14             is the act of the tractor off, 11\n        123\n15. 12           125\n    12 126\n    13            1137\n    12  13          12  to stop on 127\n       13     12 1280\n   14\n    12 129\n15. 13             is the 11\n    12 130               123\n        12 126\n    12 124\n    13           13 1131\n    12 125\n    12  to stop on 127   14     12 1280\n15. 13             is the 13  12 129\n16            ",
+                    "page": 46,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where should the position sensor for the hydraulic border spreading plate be connected?",
+                    "expected_answer": "In the electronic box on the spreader.",
+                    "model_answer": "   1. on the  to stop\n        122\n  12               1150           13             is in the signal of the tractor off, 11\n    1137\n     14\n        12         126\n15            12\n                  123\n 16              13          10.  to stop on   13\n       13               12\n   12           1190\n1.  13             is the act of the tractor off, 14\n    11. 126\n15. 12\n        12  12\n     13          10\n    123\n    12       13             to stop on   1137\n16           12 1150               12  13             is the 14\n17                 11. 12\n15. 12 126\n        12 13             13          12  123\n    12  12  13            1219\n   12 13           12  to stop on 1300\n15. 12 14     12 13         12 13\n       ",
+                    "page": 47,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific precaution should be taken before working between the tractor and machine to check the coupling shaft length?",
+                    "expected_answer": "Place the machine on a supporting beam.",
+                    "model_answer": "   1. on the  102\n        4.  1030               1017\n  105           1100\n        104\n    106             is in the signal of the tractor off, 108\n11. 1150\n     •         107          1099\n   on the load to stopper       10\n1. 112\n 12               1110\n 15           1100\n        1137\n    11. 116\n 14             is in the signal of the tractor off, 117     12\n      12\n 13          1200\n   123\n       1210\n 1. 1150  to stop on the machine with a switcher 113\n         122\n    11. 112\n        12 1140\n 14               117     10, 1137\n15. 13             is in the signal of the tractor off, 121\n   1160 118\n       12  to stop on the load           123\n1. 11. 1190\n    122\n 12 1260 1150",
+                    "page": 50,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
+                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+                    "model_answer": "   1. on the load\n        4.  1020\n        5               103\n6             to stopper in the signal of the tractor     101\n7           106\n    107          108\n11                         is actors 104\n                  1100\n   12\n 1. 115\n  13            10, 113\n        11.  112\n 14               on page 111\n15             to stop the machine with a tractor off, 12       12\n    12           117\n     13          13\n   13                 123\n14. 12\n   12 1150\n        11. 114\n    12 113\n    13             on page 13\n15.  to the 10\n    12       1217\n    124\n    12 116\n    12 122\n    123\n   13     1. 1150 119\n    12 126\n    14 11. 12 125\n    12  to the 113\n15  12 117\n       ",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
+                    "expected_answer": "Yes.",
+                    "model_answer": "   1. on the load\n    4        to stop the cable     41\n        5               40\n6             in the signal of the tractor off, 42\n    43                         is 45\n   48\n   47                 41\n  44\n   49\n   46\n   51\n   4. on the  to stop the load     42\n   52\n 1.  40\n   53\n    43             is 45\n   48\n   47\n   41\n   44\n   49\n   39\n   46\n   4       50               on the  to stop in the signal of the tractor     42\n   40,  41\n    43             is 45\n   48\n   41\n   41. 44\n   42\n   39\n   42\n   4       40\n   41\n   41.  42\n   41.  40, 43\n   42\n   41. 41. 48\n   42\n",
+                    "page": 52,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
+                    "expected_answer": "30 degrees",
+                    "model_answer": " 1. on 122\n    1190               1157             is in the signal of the tractor off, 12\n       1200           11. 1300     1138\n    13            Isolate the gear\n14. 112\n        1219\n 15.  to stop on the load   122\n1. 1260               123\n 16             is in the signal of the tractor off, 12       127\n17           124\n     125                   13            Isolate and    130         128\n14. 1179\n        129\n15. 1200\n   122\n    126               on 123\n1. 1217             is the  to stop in the signal of the tractor off, 12\n       127           124\n     125                   1300\n14. 1280\n        13            Is it is not actors 129\n15. 1260   123\n    122               on 1317             1200\n1. 1219                 12, 132\n       127           124\n     1300\n",
+                    "page": 54,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What must be ensured with decoupling ropes during power lift connection?",
+                    "expected_answer": "Decoupling ropes must never be tense.",
+                    "model_answer": "   1. on the load\n    4        to stop the machine with a tractor off, in the signal of the control system     5               41\n    6            42\n  45\n  48             is actors 43\n  47                         40\n51                           Setting the cable on the load   4       44\n 1.  49\n  46\n  53\n  45, 41\n    48               42\n  50     4\n  52\n  43             is 47           40\n  51\n  39\n    54\n  44\n  49\n  46\n  53\n            45, 41\n  48\n    42               on the  to stop in the signal of the tractor off, 4.  43\n\b\n  40\n     41\n   51             is  44\n  42\n  39\n  42\n  45\n            41\n  48\n  43\n    42           43\n  49\n  ",
+                    "page": 56,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Below which application rate in kg/min is it advised to use the fine application?",
+                    "expected_answer": "Below 40 kg/min.",
+                    "model_answer": " 1. on the   122\n       17               1280     in the signal of the tractor off, 119\n        130           12\n    13             to stopper with a switcher\n   11\n   14\n   126\n15          1200\n    12         on page 1131\n       1157               123\n     13            10. 116\n        122           112\n    12             to the tractor in the signal of the control system\n   11. 119\n   13          1180\n    14, 117\n    12       1200               on the 1151 128\n15     10            1217\n        123\n    126             to 122\n    12           1138\n    11. 1190\n   13          12\n    12 1300\n    12       1179\n    13         1200     10, 1217\n14               on the 131\n15. 122\n        12             123\n    12 126\n    11.",
+                    "page": 66,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
+                    "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
+                    "model_answer": " 1. on the   122\n        to stopper     1130               119\n  12\n        11. 1300\n    13             is in the signal of the tractor off, 112\n14           10\n15            Isolate and         116\n 16          1200\n   1       117\n  12\n     1137\n     to stopper on the load on the steering system\n        13             is in the signal of the tractor off, 11. 14\n   122\n    12               10\n15           12\n    123\n       1190\n    13            Is it is not act      to stopper with a load on the steering system\n        121\n    12\n    1200\n    11. 126\n   14\n    122\n    1131\n    12\n    123\n    10, 13             1190               1157\n15  to 12\n     12\n    121\n    12       1169\n    11. 1300   12\n   ",
+                    "page": 68,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of serial connection does the IsoMatch control box use for communication?",
+                    "expected_answer": "RS 232",
+                    "model_answer": "   1. on the  to stop\n        122\n    12\n        11. 1300               13             is in the signal of the tractor off, 1137\n    14\n     12           123\n15.  12\n    13            Isolate and         1151\n   13          on page 126\n16               to stop with a switcher       11. 1240               12\n        12             is the act of the tractor off, 1137\n     13           123\n15. 14\n    12\n    12 1151  12\n   13          13             to 13\n16              on page 126\n       11. 12\n        12               1240\n17             is the act of the tractor off, 123\n15. 12\n     13           12\n    12\n    13                     Is it is in the signal to   14\n16            1217\n       12\n    13          12\n        12               on page 126\n15. 12\n    13",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "When loading manually, what's the maximum distance in mm between the hopper rim and the ground before a platform is mandatory?",
+                    "expected_answer": "1250 mm",
+                    "model_answer": " 1. on the   122\n        12               1150           13             to stopper in the signal of the tractor off, 11\n    14            1137\n15          12     10\n        12         123\n                  13             is actors and 126\n16. on the   13                 12       1150               13            to stopper in the signal of the tractor off, 11\n    14            12\n15. 12     10\n        13          12         123\n   1. 126\n    12             on page 1137\n       13                 1190                to 127\n   12           122\n15. 12              14, 11\n    12     13            1219\n16          12         123\n        12 130\n    13             124\n15. 12       13             12               on the  to stopper in the signal of the tractor off, 126\n   14           13             125\n15. 12     12              13         ",
+                    "page": 74,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum distance in mm between spreader and loading platform?",
+                    "expected_answer": "200 mm maximum distance between them.",
+                    "model_answer": "   1. on the load\n        4.  1020\n        11. to stopper in the signal of the tractor off, 103\n    12\n         10. 1157             is act     13           113\n 14               112\n15.  12\n   1. 116            Isolate and 123\n       13          11.  to stopper on the steering system of the tractor off, 12\n    12 1140\n        13             is in the signal     1157  113\n15. 14. 126\n   13           12 116\n16.  1219               11.  to stopper on the steering system       122\n17. 12 128\n    12 123\n        1190             is in the signal of the tractor off, 1131\n15. 1200\n   13           12 126\n     1217\n    14. 12 124\n15. 122\n       12 125                to stopper on the steering system\n        123\n    13             is",
+                    "page": 74,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What does a tray test check on a fertilizer spreader?",
+                    "expected_answer": "Fertilizer distribution pattern of the spreader.",
+                    "model_answer": "   1.  122\n        to stopper in the signal of the tractor off, 1130\n   12\n        11. on the load     13             is 10\n    14               12           1157\n15          12         123\n 16            11. 1300\n1.  to stopper in the signal of the tractor off, 1136\n   12       119\n        13             12     116\n17                 14               on page 13\n    12           1157 15\n   126\n    12 14\n    11.  to stopper in the signal of the tractor off, 117\n   123\n       12 1300\n        122\n     1191\n    12 13             121\n    12 124\n15. 126               on 1137\n    12 125\n    12  to stopper in the signal of the tractor off, 123\n   12 127\n       12 1300     122\n        13         11. 128\n    12 ",
+                    "page": 76,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What materials are required to perform the tray test?",
+                    "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
+                    "model_answer": "   1. on the load     122\n        12               1150           13             is in the signal of the tractor off, 11\n    1137\n   14\n        12         123\n15            to stopper with a plug in the cable\n16              126\n1. on the load     10\n       13               1150           117\n17             is actors and 12\n                  11. 128\n    12          14, 1137\n   13            119\n15.  to stopper in the signal of the tractor off, 12\n     126\n       12               on page 123\n        10           1150\n1. 13             is 11. 122\n    14\n    12         1217\n   12 15\n    12  to stopper in the signal of the tractor off, 1136     13            126\n       123\n        12 1150               on 127\n17             is 124. 128\n    14           1190\n15. 13          12 125",
+                    "page": 77,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
+                    "expected_answer": "3 m/s)",
+                    "model_answer": "   1. on the load\n    1020\n  103\n  4       1017\n  105               1100\n    11             to stopper in the signal of the tractor off, 106\n  12\n     108\n  13           10\n 1. on the load on the steering system   113\n 14\n 15          11. 112\n  12       11. 116\n    12                to stop in the signal of the tractor off, 13             123\n        12     13           10\n 1. 1150 114\n   13         113\n14. 12 15\n   121\n  11. 116\n    12       122\n  12  to the 11. 112\n  123\n        12 117\n  13             1. 126\n 14     12 1150 113\n  12 125               13          12  12 116\n15  13  13  12  to the 11. 122\n   ",
+                    "page": 77,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
+                    "expected_answer": "75 cm above the troughs.",
+                    "model_answer": " 1. 1200\n   119       117            11. 122\n     • on page 12\n 14               118\n    13             to actors 123\n15           10, 1137\n   12\n   1219                 12  124\n   12 1151\n    12 1300\n        11. 13          122\n     13. 126               on the 14. 12 123\n15. 12 125                           1137\n    12  to stopper in the signal of the tractor       13. 124\n   13             12 1151  12  12  122\n     13. 126               13. 13. 123\n14. 12 1219                 12 125                           12  to 12 1140\n15. 13. 12 1137             12 11. 12 124\n    12 122\n   13. 12 1151 13. 12 123\n14. 12 1219                 12 126\n        ",
+                    "page": 84,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
+                    "expected_answer": "75 cm",
+                    "model_answer": " 15\n   14. 1150               on page 113             116            11\n16                         signal     12       112\n17                           Setting the cable      117           12              118\n    13                     setting of the tractor off, 119\n   12               114                 10\n15. 14  to stop on page 123\n   121             11. 116            1200\n16                         signal     122\n17                      Is it is in the load       117\n    12              118\n18                           1151 130               1193\n19                             setting of the tractor off, 12\n      12           124\n   12. 1217             on page 13                         1200\n14                      11. 122\n     10            12       123\n15. 12              112\n    12               1131 1193\n    12, 12\n    12            to   1148\n        1217             13. 126\n14. 1200\n    11. 12\n     122\n15. 12",
+                    "page": 89,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": " 15\n   14. 13             on page 1150               116            12       11\n16                         signal     112\n17                           Setting the cable      117           113\n    12              118\n        10,  to stopper in the load of the tractor off, 119\n   12 13             on page 114\n15. 1200               11. 116            121\n    12       1151 128           112\n    122                           1173                 10\n    12              123\n14                         to actors     1197\n   13             12 126\n15. 1200               on the load of the tractor in the steering system      121\n16            118\n       11. 122\n        12           10, 1173                 12\n    12              123                   119. 12\n   13             12 126\n15. 1200               on page 1137\n14                         to stop the cable     121\n    12       11. 122\n        12           12\n    12",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
+                    "expected_answer": "Inertia causes continued rotation.",
+                    "model_answer": " 15\n   13             on page 116            14. 1150               Load the cable     12       11\n16                         setting of the tractor in 117\n    12           113\n17                           Setting the control system         112\n   12              123\n   10, 119\n15             on page 13\n   12\n   14. 116            121               12       11\n   12\n     1200\n    122\n        1173                         113\n   12            to stop the machine in      123\n   12\n15             on page 13\n   12\n   14. 126\n    12               1217\n   13                     10\n     12       122\n   11                         12\n        12           1190\n   12\n   123\n   12\n15             12\n    12\n   1133\n   12. 13                      121\n14. 12\n   12               12\n     10, 12\n       11. 13                     12\n",
+                    "page": 94,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "According to the last setting check, what is the recommended height in centimeter of the spreader over the ground or crops?",
+                    "expected_answer": "75 cm",
+                    "model_answer": " 15\n   14. 1150               on page 116            11             117     12       10\n        13           112              118\n    12               113                         Setting the cable      119                 12\n16             to stopper in the signal of the tractor off, 114\n15. 1200\n   121                           11. 1151 128       10            116          122\n    12              1173               112\n14                         on page 123\n        12           119     13             118\n15                      12 126\n    1200               1147                 11.  to 1151 128       10, 1219\n   12              122 116. 12 1123                         on the 123\n    12           119. 13             12 124\n15                      12 1200               1137                 11. 126. 12 1151 1188\n14. 1219                  10. 12 1174\n   12              122 123                   12 1123 ",
+                    "page": 96,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What happens when hopper content falls below 100 kg?",
+                    "expected_answer": "Automatic calibration switches off.",
+                    "model_answer": "   1150               on page 113\n15             Load the cable       116            11. 12\n14                         Setting the control system     112\n    117           13          flow rate of 10\n        118              114\n16             signal on 123\n1. 119                 1150               1200\n15                  121\n   122\n17                             setting       12\n    116            11\n     12\n128           117\n14                           Tightening the cable      13                         113\n16             12\n        118. 126\n   119               on page 123\n15              1200\n    121\n17                             to actors 124\n    122\n     10, 12\n       117            11. 12\n128           1151\n    12             13          12\n        12. 126\n   1190               on 1133\n14                         121\n15              12\n    1200\n     122\n    12\n       10, 123\n    11. 12\n    117                      12",
+                    "page": 101,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What are the two functions for border spreading?",
+                    "expected_answer": "Hydraulic border spreading plate and ExactLine.",
+                    "model_answer": "**. 1150               on page 113\n15             Load the cable     116            11\n   12           112\n16              on 117\n    12       13          flow control system         123\n17                         setting of the tractor off, 114\n14                           Setting the load to stop, 115\n        113               12\n15             on page 116            11. 118\n   12           112\n16              Isolation     117\n    13                     Loaders       1200\n17                         signal on 119\n   12\n   10\n   121                           12\n        122                to stop the machine         113\n15             11. 126\n    12           123\n     12              112\n    13                     setting       1200\n14                         on page 115\n    12\n    119            121\n   10\n        12               116\n    12\n15             11.  to 117\n    12           12\n     122\n    12              113\n    13                     12\n    123",
+                    "page": 106,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
+                    "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
+                    "model_answer": " 15\n   14. 1150               on page 113            116             11\n16              12       117           112\n17                         signal     10\n    118\n        12               119                  to stop the machine in      1200\n   13                     121                           123\n15. 122\n    12               on page 114             11\n14                      124\n       12              113            126\n15. 12           1151\n    12               125                         12\n        1173                 12\n   13                     116\n     122\n    12               118\n14             on page 123\n15. 12\n       11. 12\n    1190              126\n    12\n    10, 1131\n    12\n        1217\n   13                         12\n     12\n    12               122\n14             12\n    1200\n15. 123\n    11. 12\n    12\n    12              1193\n    12\n    12",
+                    "page": 108,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should you do if a spreading disc spreads irregularly?",
+                    "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
+                    "model_answer": "   13             on page 115\n15                         Setting       116            14. 12               on 117\n16                          signal     11                           Signal      118\n    1/ to stopper in the direction of the tractor off, 1190           122\n17                             setting the cable with a switch on the   1200\n18                         121             123\n19                 12               on page 113            112\n       12              118\n    11. 13                           Tighten in the signal     10\n14                          12           122\n15                             to actors 126\n   12\n        1190               1151             123\n    12               on 116            112\n       12              1200\n17                         on page 13. 11\n     12\n14                           121\n    12           10\n15                             to stopper in the direction of the tractor off, 122\n   12             1137\n    12               123\n       12              1190          112\n        13. 126\n     12            1200\n14                           on",
+                    "page": 113,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
+                    "expected_answer": "40 degrees Celsius",
+                    "model_answer": " 15\n   13             on page 116            14. 1150               Load the cable     12       11\n16                         signal on 117           112\n    12              113\n17                           Setting the control system         123\n   12          114\n   10, 119\n15             to actors 13\n14. 116            1200               121\n    12       11\n     122\n        118\n   12           117\n   12              113\n   7                 126\n   123\n   10, 119\n    12             13\n   14. 12\n15                         on page 121\n   12               11. 122\n     12       12           1150  to stop the load of the tractor in 116\n   13. 12\n   123\n   12              112\n    10, 113\n   12             119\n15 12\n   11. 12               121\n     12           12\n   12 1150 14. 12\n  ",
+                    "page": 117,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
+                    "expected_answer": "80 bar",
+                    "model_answer": " 15\n   13             on page 116            14. 1150               Load the cable     12       117\n16                         setting of the tractor in 11\n    122                           Setting the control system         113\n17                             Set up to stop, 112\n        118              1200\n   13             on page 123\n14. 119            Isolation      114               12       1151\n15                         signal     116           10\n    122                   11. 126                 1177\n16                      on the load to actors 118\n17                             Setting of the tractor in   1200\n18             119            121\n        12               118\n       12              123\n19                         on page 13           10\n    122. 126                   11. 124\n     12               1151 128\n15                           12\n   1177\n      12             125                 12\n14                      1169\n       1200              118\n        123\n 13                         on page 122\n    1193                          10. 126\n    ",
+                    "page": 117,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
+                    "expected_answer": "Preservative grease or preserving liquid.",
+                    "model_answer": " 15\n   13             on page 116            14. 1150               117     12       11\n16                         signal on 112\n    122                           Setting the cable      113           10\n17                             setting of the tractor off, 123\n   118                 1190              1141 128             116            1200\n15. 121               117     12       11. 126                   112\n    122                      13          12           1153\n14                           10\n        12 123\n   12 1197                  to 1141  12 118\n15             1200              1136               1219\n    12 126. 11. 122\n     13                      12 1152 128\n14. 12 1173                         123                   12 1197                 10. 124\n   12 1161  12 1200             1136               1219\n15. 12 11. 122\n    13                      12 12 126\n14. 12 1173                         ",
+                    "page": 121,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
+                    "expected_answer": "Remove all fertilizer remnants.",
+                    "model_answer": "   13             1150\n15. 14               Load the cable     11                         on page       12\n16              116            117\n    1/ to stop the load of the tractor in 118\n17                           Setting the control system         112\n   122\n   119           1200\n18             Isolation      113\n   121               Load the cable     10. 12\n19                         on page       11\n    12\n                  123\n   12\n        118\n 1 13                           14\n15              12\n   126\n   12\n   1150\n    12             119               113\n     7                 10.  to stop the machine on the load of the tractor in 116\n       11                         12\n   122\n   12\n   13                     1200\n14. 12\n15              121\n    12\n   123\n   12               119            113\n     10             12\n   12\n   126\n   11                         12\n       12\n   1177",
+                    "page": 123,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many grease nipples do the discharge bushings have?",
+                    "expected_answer": "Two grease nipples per discharge bushing.",
+                    "model_answer": "15                         1150               on page 113\n   116            11. 12              117             112\n14                           Setting the cable       118\n    12           13                 10\n        119                 to stopper in the signal     114\n   12          1200\n15               on page 113\n1. 121                         11. 122\n    12             116            112\n14                           Tightening of the tractor       123\n    13                     10\n        12              117\n     12           115\n   12,  to stopper on the steering system         113\n15                         11. 122\n    12               114\n    12             121\n14                           116            123\n    13                     112\n        12              1200\n15. 12\n   117\n    12           119\n    12               113\n     11. 126\n    12\n    10, 118\n    12             121\n    12            1151\n13                         12\n    12              ",
+                    "page": 126,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the required grease level in mm below the filler opening for spreading disc gearboxes after the machine has stood still?",
+                    "expected_answer": "35 mm",
+                    "model_answer": " 1. 1150\n   14               on page 113            11             116           12       112\n15                         setting of the tractor     10\n    117                      13          12              114\n16                          signal on the cable      123\n17                           Tighten in the control system         1150\n   14. 122               11             116            1200\n        12           1133\n15                         setting       1217\n    12               118\n     12              112\n16          10, 13                      119\n17                          on page 123\n   12. 122\n    11             12\n   14. 126\n        12           1200\n15                         1133\n    12               1217\n     12              117\n    12            13. 124\n   10, 12\n       123                   12\n    11             122\n    12               1199                 12\n14                           13. 126\n15                         12\n        1217\n     12              1200",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum hydraulic pressure allowed for the hydaulic system in bars?",
+                    "expected_answer": "210 bars.",
+                    "model_answer": " 15\n   13             on page 116            14. 1150               Load the cable     12       117\n16                         signal to    11\n17                           Setting the control system         113\n   122\n   118\n   12           119                 10\n   123\n15              1200             on 116            121\n   13               14. 126\n   12       117\n    12 128\n     11                         1151\n   122\n   12  to stop the load of the tractor in 119\n   12 1137\n   10\n   123\n   13             12. 126\n   12 14. 1210               on 117\n    11                         12 1151  12 122\n15              12  to stop the cable     12  12 1137\n   13                     123\n   12 12 1193             12 126\n   12. 1210               on 10\n    12 11. 12 1200\n14. 12 117",
+                    "page": 131,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required distance in mm between the rope and discharge bushing opening?",
+                    "expected_answer": "109 mm.",
+                    "model_answer": " 15                         on page 115\n   14               116            cable     117             11. 12\n16              118           Load the control system       117\n17                           Setting the  to stopper in the load of the tractor off, 1190         118\n    1200               117                   on 10\n   121                         setting the cable     116            11. 12\n        122             112\n13                             Set up with a switch       123\n14                           to actors and 113\n15                      in signal      12\n   124                 1200               117           on page 115\n    121                         10\n     126                   11. 12\n        122\n    12             119            13                     116\n14                           to actors 123\n15              12\n128         12\n   1200               117                      1133\n    12           on the load       121\n15. 12\n     11. 122\n    12             10\n    12\n        119                 13                     12\n14                         to stopper in",
+                    "page": 136,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": " 15                         on page 115\n   14. 116               117             Load the cable       116            118\n16              117           117     1190               1200\n17                           Setting the control system         12\n    121                       11. 122\n18                      setting of the tractor in 123\n   12          122\n19                         on page 13             124\n15                             to actors and 126\n14                          signal     125               123\n    12              127\n       1200\n        128           118\n   130                           121\n 1. 119            117\n 122\n 11                         on page 124\n15             12\n 13                      126\n 14                          125               123\n    12              116\n 1150     12\n 128           127\n   12\n  1217\n  10. 117\n 119            12\n 122\n 11                         118\n 13             126\n 1200\n 12               123\n    12              119\n 12\n  121",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "   13             on page 115\n15                         Setting       116               14. 12           Load the cable     117\n16              11                  118            117\n    1/ to stop the load of the tractor in 1200\n17                             setting off, 119\n        122\n   12             on page 123\n15                         121               10. 126\n    13                     Isolation     124\n14                           Setting       127\n   12              125                 118\n   12           128\n15            12          1200\n    11                          1197             on page 123\n16                         122\n   10. 126               12\n     13                      121\n   12\n       1173                           12\n        118\n14                             12\n15               to 113\n    12           11. 1200\n    12             1197                 12\n   123\n   10               122\n     13                         121\n    12\n       12\n    12\n        126                   12\n15              ",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                }
+            ]
+        },
+        "table_questions": {
+            "results": [
+                {
+                    "question": "What is the pattern of the type 'mineral'?",
+                    "expected_answer": "angular, with sharp angles and edges",
+                    "model_answer": "   1. on the load\n    4        to stop the machine with a tractor off, in the signal of the control system     5               41\n    6            42\n  45\n   48             is actors 43\n   47\n   40\n51                         on page 44\n   4.  49\n    46\n   41\n   53\n    42\n   50                to the control system       45\n    52\n 1. 48\n   43             is in the signal of the tractor off, 51\n   4\n   49\n   44\n   40\n   41\n   47\n   42\n   39\n    38\n   45\n    41\n   48\n   43\n   46\n   40\n   41\n   4.  39,  44\n   41\n   37\n   42\n   40\n   42\n   41\n   41\n   38\n   41\n   42\n",
+                    "page": 58,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the hopper weight without hopper cover in kg of the Exacta-TLX GEOSPREAD 3225?",
+                    "expected_answer": "337.5 kg",
+                    "model_answer": "   1. on the 103\n   4       1020\n        1157             to     1100\n11.  105\n    12               1018           is in the signal of the tractor off, 1136\n15. 13            10. 112\n 1. 116\n    12   14\n       11. 1157             on 123\n         to stopper     117\n    12               122\n 16           1260\n17                 1138\n      1190\n    13            118\n1. 12 1300\n   1219\n    11. 14\n       123\n        1200\n     12  to the 127\n    1220               on 1260 128\n15. 1137\n         125           13             1190\n1. 12 124\n   1219\n    12 1300\n    1230, 11. 12 1200     10. 1313\n    1220  to 1176\n    12 1132\n",
+                    "page": 36,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the weight in kg of the Exacta-TLX GEOSPREAD 3900?",
+                    "expected_answer": "795 kg",
+                    "model_answer": "   41\n       1. on the load     40\n        42             to stopper in the signal of the tractor off, 43\n    4\n  41\n   45\n   41\n   48\n   44\n   42\n   42\n   43\n   41. on the 39\n   40\n   43             to 42\n   41\n    41, 4\n    40\n   42\n   41\n   42\n   41.  43\n   41. 48\n   44\n   42\n   43\n   41. 43\n   42\n   41. 40\n   42. 43\n    41. 42. 43. 41. 4. 41. 42. 43. 42. 41. 43. 42. 43. 41. 42. 43. 42. 41. 43. 42. 43. 41. 42. 43. 42. 43. 42. 43. ",
+                    "page": 36,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the sound level in dB of a Tractor + spreading spreader (Kali 60) with its rear window opened?",
+                    "expected_answer": "84.6 dB",
+                    "model_answer": "   1. on the load\n        6               7             to        63\n  4\n      62              is in the signal of the tractor off, 5           61          64\n    66                 67            Isolate\n  68\n   63                         65         70\n 1. on the load     72\n       69               to stopper with a plug in the cable\n      71             is not act of the tractor off, 68\n 64           73\n    70            67          66                 70\n   72\n  74\n  70.  71\n  72\n  69                         on page 73\n  73\n       72\n  73\n  72\n     73\n  73\n    74\n  73\n  74\n   73\n  73\n   74. 75\n            74, 74\n  74. 76\n         75\n  74. 74. 75\n       74. 74. 75\n    74. 74. 76",
+                    "page": 37,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often (in what interval) must the condition of the vanes be inspected?",
+                    "expected_answer": "daily",
+                    "model_answer": " 15\n   13             on page 116            14. 1150               Load the cable     12       11\n16                         setting of the tractor in    117           113\n17                           Setting the control system         112\n   122\n   118\n   12              119                 10\n 1             on page 123\n15. 1200               121\n 14            Isolation     11                         signal       116\n    12           12\n   12\n        117                      13\n 122\n 1153\n   126                                                                 1137\n   12\n 1. 124\n   12             on the 123\n15. 12               121\n 14            125                           12\n    12           116.  to 11\n 13                         122\n  12\n 126                                                                 1137\n   12\n 13                          12\n 1190             on the 123\n 15. 12\n 12               1219                 14. 12\n    12           1200\n 11. 12\n 13                         ",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often (in what interval) must the bushing height be checked and the discharge be set?",
+                    "expected_answer": "after the first 10 hours and every 100 hours, but a minimum of once per year",
+                    "model_answer": " 15\n   14. 1150               on page 116            117             11\n16              12       112\n17                         Setting the cable     118\n    13                     setting of the tractor in 119\n   122                           10           114\n   12               1200\n15                  121\n   123\n   113            on page 126             11. 124\n   12              112\n     12       1151\n    13                         12\n   12, 122\n14                           10\n        12               117\n15                      13                  to stop the machine         123\n   12             121\n   12. 126\n   12              113\n     11. 124\n    12           12\n       122\n   13                         10\n        13                     12               1150\n14                           12\n15. 123\n    12             121\n   12\n    12, 112\n   12              11. 113\n     12           12\n       122\n   ",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often (in what interval) must the agitator seal be replaced?",
+                    "expected_answer": "every 100 hours or if worn",
+                    "model_answer": " 15                         on page 115\n   14               116            117             1150       118\n16              116. 12           117     1190               117. 1200\n17                           Setting the cable      121\n    122                   11. 123\n   12               on page 112\n   12                  122\n 1             13                 118\n 14                         113\n15              12           1190       126\n 16            1200\n     1178\n    121                           10. 123\n 11                          12               12\n   12\n 122\n 1             13                      118\n 14                 113\n 15              12\n 1190       12\n 12           1200\n  126\n    1217\n  12\n 123                   11. 12\n 12               12\n 122\n   12\n 13                         12\n 14                 113\n 13             12\n 1190       12\n 15              12\n 12\n 12\n 121",
+                    "page": 125,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "With what torque in Nm must a M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened?",
+                    "expected_answer": "420 Nm",
+                    "model_answer": "   14\n15                         on page 115               11             12       116            10. 13           Load the cable     112\n    12              117\n16                      setting of the tractor in 113\n17                           Setting the control system         123\n   118\n        114                 1190               on page 115\n15             to actors and 1200\n14. 116            11. 121\n    12              117           10\n     •       122\n    12               112\n13                         Setting the cable      123\n   12 126\n        1190               on 1151\n15             to 12\n    12 118\n    11. 12\n    12              1217\n     10, 12\n    122\n    13                         12\n14. 12\n   123\n    12 126\n        1133\n15             on 13. 12\n    12               11. 12\n    124\n    12              1217\n    12 1151\n    12 12\n   ",
+                    "page": 129,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "With what torque in Nm must a M6 hexagon stainless steel bolt with a 70 (A2) quality and with a 0.2 friction be fastened?",
+                    "expected_answer": "9.9 Nm",
+                    "model_answer": "   13             on page 115\n15                         to actors 14\n16               Load the cable       116            117\n17                           Setting the control system     12           1150 118\n    1. 119                 11. 126                   112\n18                             setting of the tractor   10\n   122\n19                         on page 13             120               1217\n14                          signal       117            123\n15                           to actors 12\n     124\n    12              118\n        11. 126                   1150 128\n    12           1133                 1190\n   13             on the load cable         1200               121\n14                         10\n15. 122\n    12            1177\n     12              123\n        11. 126                   12\n       12. 118\n    13                     12. 1151\n   12. 1190             12. 127\n14. 12. 122\n15. 12. 1217\n     10               123\n    12. 126",
+                    "page": 129,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
+                    "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
+                    "model_answer": " 15\n   14. 1150               on 13             Load the system       116            11\n16                         signal     12           112\n    14. 117\n15              12\n        113\n17                           Setting the cable      12\n   118\n   13                     setting of the tractor in 119\n   12               on 1150       10\n   12             11\n     1200\n    12           121\n15. 12\n    123\n    12              112\n14. 113\n        12\n    13                         122\n    12\n    119             to stop the machine on 115\n   11. 126\n    12               10\n     12           121\n15. 12\n    12             123\n    12              112\n    12\n    13                         113\n14. 12\n    13                     12\n    12\n   11. 12\n    12               10\n    12           121\n15. 12\n    12             123\n",
+                    "page": 152,
+                    "dataset": "table_questions",
+                    "self_evaluation": "no"
+                }
+            ]
+        },
+        "unanswerable_questions": {
+            "results": [
+                {
+                    "question": "How much extra diesel does the tractor consume to use the Exacta-TLX GEOSPREAD?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 1. on 122\n    1130               119       12\n 15           11. 1300\n     14\n    13             to stopper in the signal of the tractor off, 126\n        12\n   1157\n    12  13            10\n 1. 116\n    13          121               on page 113\n15. 11. 122\n    14           12       12\n     12  to stop the machine with a tractor off, 123\n   13             13         1190\n        12 126\n    124\n    12 1151\n    13          1217\n15. 12 14\n    122               12 130       11.  to 1138\n    123\n   12 127\n    12 12 125\n    13             12 1260     1191  13  12 124\n15. 12 14\n        13  12 1152\n    13 13  to the 11. 12 123\n",
+                    "page": 23,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Is fine application more expensive than normal dosing?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   1. on the  to stopper in the signal\n        122\n  4               1150           128\n  13             is act    11\n 15            12\n                  130\n        126                   1137\n     14\n 16              Is it is not on page 123\n   127\n1. 125                            to the 129\n       122               1280           124\n 13             1200\n    12\n15. 130            126                   1137\n  11, 1219\n     1190\n        123\n   12 118\n 14\n  12 127\n       122                to the 10\n 13             125           128\n    124. 1300\n15. 126\n   129\n  1217\n     11. 1200\n        1231, 118\n 14. 12 127\n       122                to 1190\n 13             125                   1280\n    124\n  12 1300\n   1260 ",
+                    "page": 24,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Is one-sided boundary spreading suitable for small gardens?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   122\n       1. on the load of the tractor off, 1130               1157             to        12\n  13            11. 128\n    14           is in the signal     126\n15          1200\n                  130\n 16              117\n   123\n       127\n1. 129\n  1219               on page 122\n        12             to stopper with a tractor off, 128\n    13           124\n     125                   11. 1260\n15. 130            1190\n   123\n       127\n    12 14\n    1217               on the 129\n        122\n    1200             to 118\n1. 13           1280     10, 11. 126\n    124\n    1300\n    1190   1179\n    12       127\n    1217               on the 129. 122\n15. 1200\n        1181\n    1230 1280     10, 13             1260 11.",
+                    "page": 28,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "For what other kind of connections can the IM Tellus Input cable be used?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   1. on the  to stop\n        122\n  4               1150           12\n 15             is in the signal of the tractor off, 13\n    11\n        126\n     14\n   130            116\n   12\n   13          117\n1.  to stop on the load       127\n   13         12\n   15 128\n   12\n   1240               119\n    13             is in the signal     11\n14. 126\n        123\n   10, 122\n   12\n   1217\n   13            to stop on the load of the tractor off, 1131\n   12\n       1200\n    1190               118\n15     11. 14\n   12\n        123\n   10 126\n   12\n   1217\n   13             is  to stop on the load of the tractor off, 122\n   12\n       1300\n    1190               117     11. 1131\n15",
+                    "page": 32,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the IsoMatch universal ISOBUS terminal be used to check the weather?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   1. on the load\n    1020\n  103\n       11. to stopper in the signal of the tractor off, 104\n    12               105\n        1100     1150\n 14           is actors and 1137\n15             10\n1. on the load   13            116\n 16          112\n       11.  to stopper in the signal of the tractor off, 12\n    117\n        12               1150     1190\n17           is actors 113\n15. 12\n    123\n   13             on page 121\n14. 12       11.  to stopper in the signal of the tractor off, 12\n            122\n        12               10\n     1. 1150  13\n    126\n15. 1137\n    12  12 124\n   14           is on page 123\n15. 11.  to the 13             12       116\n16. 12 125               12 122\n        1170     ",
+                    "page": 33,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can IsoMatch Tellus be connected to an external mouse?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   1. on the  122\n        12               1150\n     13             is in the signal of the tractor off, 11\n    123\n        12           to stop with a switcher\n15            116\n14          12\n                  1137\n   130\n1. 126\n    13                     Isolate and         1150               on the load     119\n       12             is in the signal of the tractor off, 11\n        122\n    12           123\n15. 14\n    12            1137\n   13           to stop with a switcher\n15. 126\n    12               on page 1150\n       13             is in the signal of the tractor off, 11\n     12\n        12           122\n    14\n    123\n    12            Is it is not act   1131\n15. 1217\n    12               on 126\n    12              13             in the signal of the tractor off, 11\n     12\n        12           122\n       12        ",
+                    "page": 34,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Is the Hydraulic border spreading plate made out of steel?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   1. on the load     122\n        to stopper in the signal is not set off, 1130\n   12\n        11. 1300               13             Load the cable with a tractor of the control system         123\n    14           112\n15          12\n                  1151\n     12        to stop on the load\n16            13\n    13             is in the signal\n   11. 1260\n        12               1148\n   10, 1137\n    14           123\n15.  1190\n    1219                 1151  to stop on the load     122\n       12 1200\n    13             11. 1260 128\n        12 1173               10, 1137\n   12 123\n15. 12 1190           1219                 12 1300\n14.  to 1221  12 1200     13          13             11. 1260  12 1152\n    12  1137               12",
+                    "page": 47,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the linkage pin for the tractor be made out of aluminium?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   1. on the load\n        4.  1020\n        5               103\n6             to actors  103\n    7           104\n 11                         is in the signal of the tractor off, 105\n   106\n   108\n   12\n                  1100\n       1151.  107     10\n        13          1099\n 14               on page 112\n    11.  to stopper with a plug in the 111\n   12\n 15             12\n  12           113\n  12  123\n       13            13\n     10,  13          12 14\n        1210               on page 114\n    11.  to stop the machine with a tractor off, 112\n   122\n   12 1151 1137\n    123\n       12 116\n   13             12 124\n     1190\n        121\n   14  12 125               11.  to 12 126\n15 12 13          ",
+                    "page": 53,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the tray test be performed at 40 degrees Celsius?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   41             on  42\n       4. to stopper in the signal of the tractor off, 43\n   40\n        45               41\n    48            is 41\n     44\n   42\n   41\n    42\n   43                         41\n    42             on 4.  39\n   43\n    40, 41\n   42\n   45\n    41\n   48\n   44\n   43\n   41\n   42\n   43\n   49\n   40\n   43             on the 4. 41\n   42\n   41\n   41, 42\n   43\n   42\n   43\n   42\n   41\n   43\n   44\n   41\n   42\n   43\n   40\n   41. 42\n   43\n   41\n   42\n   43\n   42\n   41, 43\n    42\n   4\n   43\n",
+                    "page": 77,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the hydraulic border spreading plate be actuated pneumatically?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   13             on page 115\n15                         signal     116            14. 12               117\n16              11. 118\n    1/       1190           10\n17                             setting the cable      12\n   122\n   1200\n        121                           13             on page 113\n   12\n     123\n14                         Setting the control system         112\n15. 12               11. 124\n    12              1151\n       12           126\n   13                     10\n    122\n        12\n    13             on page 113\n14                           123\n     12\n15            121\n    12\n    12               1200\n    11.  to stop the load of the tractor       119\n   12\n    12           122\n        10. 13             1. 126\n14                         on page 113\n    12\n15              121\n    12\n    12               1200\n     11. 123\n    12\n    12\n   12\n",
+                    "page": 85,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "By which environmental standards is the maximum acceptable loss in the ditch is determined?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15                         on page 115\n   14               116            117             11. 12\n16              118           Load the cable     10\n17                           Setting       119                 112\n    13                     setting of the tractor in 1200\n   122                   1217\n   12\n15                             on page 123\n14               12             117\n   12. 126\n        118\n     11                         10\n       119            130                 113\n    12              116           1200\n   13                     121\n   12\n15                      122\n    12               123\n14             on page 117\n   12. 126\n        11                         12\n     119            10\n       12. 118\n    12              1200\n15. 13                     121\n    12\n    12           1137\n    12               122\n14             123\n   12. 126\n        11. 12\n     1193                         12. 12\n       12. 1200\n",
+                    "page": 87,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How should one proceed to stop spreading the fertilizer?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "15                         on page 1150               116\n   13             Load the cable       117            12\n14                           Setting the 11\n   122\n    12              118\n        1. 126                 113\n   12           119\n     •         123\n15          on page 127               10\n    12             124\n   13                         1200\n14            128\n   11                           121\n    12              122\n        117\n   12. 126\n       1190           1151\n     12\n15          118\n    12               10\n    123\n    13             1200\n    12\n    11                         121\n14                      on page 113\n    12              122\n   12. 126\n        1190\n     1. 12\n15.  to stop the load of the tractor       10\n    12               123\n    12             1200\n    11. 13\n    12           121\n    12              122\n   12\n",
+                    "page": 100,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum height the fertilizer flies when spreading without GEOCONTROL headland",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   13             on page 1150               116            117. 14\n15                         signal     12       11\n16              118\n    12           10\n17                           Setting the cable      123\n   12          119                 113\n        12\n   1200             on page 13\n   121               122\n   14. 126\n15                          to stop       11\n     12\n    12           118\n   12\n   123\n   10\n    119            127\n        12\n    12             1200\n13                           121\n    12               on page 113\n14. 12\n15              122\n     11                         12\n        to 112\n    12           123\n   10\n    12\n    12\n        119            131             12\n    13                 12\n    1200               121\n14. 12\n15              12\n    11                         122\n    12\n    12           123\n   12\n    12\n",
+                    "page": 103,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is seven-sided boundary spreading with the hydraulicborder spreading plate?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   13             on page 115\n15                         to actors     14               116            12       1140\n16              on 117. 11\n    1151 128           10\n17                           Setting the cable      118\n   122                   on 112\n   1193             on 1200\n18                         setting of the tractor     121               116            12\n14                          to stop       123\n15                             on page 13\n    12              117\n   124                 11. 126\n16                      on 122\n        1151 128             125                           12\n17                         on 127\n     1200               118\n18                          to 1169\n       1217\n      130           1190              10\n   12\n    12. 126                   11. 122\n        12. 1231 128\n13                           12. 1133\n     1200               on 131\n14                         to 117\n15             1217\n    12. 12\n       12. 124\n   12. 126.",
+                    "page": 107,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Which appropriate measures for road transport should be taken when stopping work?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15                         on page 115\n   13             Load the system       116               14. 12\n16              117            11\n    14           load     112\n17                           Setting the cable      113                 118\n        1/127\n   1200\n15                             setting on page 128\n   119\n   122\n   121               10. 12\n       124\n   123\n    12             11\n     126                    to stop the load of the tractor in 125                           13\n14                         1200\n15              12\n        12           117\n    122\n    121               on page 113\n    12. 124\n   10, 123\n       12             11. 126\n     1/127\n    13                     12\n    12. 128\n15              12\n    12           125                           1190               13. 14. 12\n    1217\n   10, 122\n    12             123                   12. 126\n     11. 12",
+                    "page": 112,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Why do most types of fertiliser attract water?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "15                         on page 1150               116\n   117            11. 12\n16             Load the cable       112\n17                           Setting the control system     113\n    13                     setting of the tractor off, 118\n14                      signal on 114\n        119                 10\n15              1150               116           1200\n   11. 12\n    121             117            112\n    122                           12\n     12       1133\n128          to stop the cable      123\n14                         on page 13\n        119                 114\n15              12               1200\n   11. 116           121\n    12             1151\n    122\n    12            112\n     10, 1133\n    12\n    123\n    12\n        12\n    119                  to 114\n15              12\n   11. 116\n    12               121\n    12             1150\n    12\n    13                         10\n    12\n    112\n    ",
+                    "page": 114,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Why is damage to the vanes, spreading disc or discharge bushing, most likely caused by a hard object?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 14\n   1150               on page 113            116. 11             Load the cable     12       112\n15                         setting of the tractor in 117\n    12              13           10\n16                      signal on 118\n        12          119                  to stopper      114\n17                             Setting the control system   123\n   11. 1200               1151 128             1217\n18                         setting       122\n    12              116            112\n19                           on page 13\n     10, 1193                 118\n14                          12           117\n15                  12          11. 1200               126\n   12             1217\n    12               122\n       123                    to 112\n        12              13            1131\n     10, 12\n    12                      1193           12\n15                         11. 12\n    12                  1200             1217\n   12               122\n14                           12          123                   12\n        12              13                 ",
+                    "page": 115,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should a person do who fell into the fertilizer and no physician is available?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15                         on page 115\n   14               116            117             116. 12              118\n16           Load the cable       117     119                 10\n17                           Setting the control system         1200\n    11                          121\n   122                   Isolation      12\n 1. 123\n128               on page 13             124\n   12              125                         126\n14                      setting       113\n15                  12\n     • Insert\n        127                           12\n    12           1200\n   130                 118\n   13                     123\n   11. 122\n    12               1217\n   124\n   12             126                   1193\n15              12\n     12            125                           12\n14                      1200\n       1131\n    12           13                 10\n 11. 122\n    12               1217\n 16                         12\n   12             123\n 1193                          12\n     12              124\n15. 12\n    12",
+                    "page": 117,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What happens if the machine grease nipples are never lubricated?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   13             on page 115\n15                         to actors     116               14. 12\n16              117            11\n17                           Setting       118\n    1/127\n   12\n        1200\n   128           119\n   122\n   13             on the load of the tractor in the steering system     123\n15 129               121\n14                         to stopper on the gear\n   124\n   12\n    126                           10\n       1200\n        125                       113\n1. 11\n    13             122\n    12           117            116\n     12               121\n14              130                  to 112\n15 128\n   123\n    12\n    119\n    12       10\n    126                                                                 113\n    11. 13             122\n    12           1200\n     1/127\n    12               121\n    12              118\n    12\n   130            123\n    12\n    119\n    10.",
+                    "page": 118,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific paint should be used to paint any damaged paintwork at the end of the season the machine in preparation for winter storage?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   13             on page 115\n15                         to stopper     116               14. 12\n16              117            11\n17                           Setting the cable       118\n    122                 10           119                1200\n        123\n   121                   on 126\n   12             112\n15                   to stopper in the load     13               113\n    12              117\n14. 124\n       12\n    122\n   1151 130                 11                         1190\n        123\n   12           on 126             118\n15                  12\n    1217\n     10               1200\n    12              117. 13                     12\n14. 122\n       1131  12\n    11                         1190\n    12\n   12\n    123                   12\n15             12\n    1217\n     10               12\n    12              1200\n    13                 12\n    122\n    11. 12\n    12\n    119",
+                    "page": 121,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the curriculum of the training program agrarians need to complete to be considered competent to operate this machine?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 1. on the   122\n        12               1150           13             is in the signal of the tractor off, 11\n    123\n     14            to stopper with a switcher\n15. 130\n        12         1168\n   126                   1131\n                  117\n       13          on page 1150               119\n 16             is the act of the tractor off, 11\n    122           118\n     14            Isolate and in the signal to stopper with a switcher\n15. 12\n   123\n        1200\n       13          on page 126\n1. 121               1190             is 1157\n 16              127\n    122           118\n     128\n      124\n17                 125                   130            Is the act of the tractor off, 123\n   12       129\n        126\n1. 13               on page 1130\n15             is 1217\n    1200\n    122\n     128           1190         118\n14. 117",
+                    "page": 4,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "By which international standard are the pictograms used in this manual specified for agricultural machinery?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   1. on the load\n        4.  1020\n        5               103\n6             to stopper in the signal of the tractor off, 105\n    7           106\n   108\n   107\n   11\n   12\n                  10            109\n 1.  1100       13\n 14\n        11. 112\n 15             to actors 113\n   12\n     12               on the 11. 12\n    12           123\n  13\n  13\n   13\n   13\n   12\n   12\n14. 124\n   13          13             to 13. 12\n15. 12\n     14. 11. 12\n    1260\n        13. 1131\n   12\n       123\n   12, 13. 12\n   13. 12\n   13. 12\n   12\n   13. 12\n     14. 13. 12\n    13. 12\n       ",
+                    "page": 5,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How does the rate of corrosion on the Exacta-TLX GEOSPREAD compare between machines used in coastal vs. inland agricultural regions?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   1\n        on 122\n  4               1150\n        12\n                  13             to stopper in the signal of the tractor off, 11. 126\n    15           14\n     1300\n    12\n                   116            is not act   1131\n       13          on 127               1150\n        12         122\n                   to stopper in the signal of the tractor off, 123\n    126. 128           11. 130\n15             1190\n     14\n    12   1217\n       13          118\n    12               on page 1131\n        10            122\n    12 1150\n    123\n    9\n    12 11. 126\n    12  to the 14\n15     13             1217\n   12 130       1190               on 118\n16           12 1131 128\n        10, 122\n    123                   1173\n    12 11. 126\n    12 120",
+                    "page": 21,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What kind of protective safety gloves are needed for cleaning fertiliser remnants from the Exacta-TLX GEOSPREAD before welding?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 1. on the   122\n        to stopper in the signal of the tractor off, 1130               1157             is not act    12\n  13            1200\n 14           Isolate the cable     11\n 15          121\n        12         116. 130\n   122\n        to stopper on the steering system of the tractor off, 123\n   1131\n    126               119\n 13             is in the signal on the 14\n     1240\n   127\n15 128           12\n        125                   130. 129       122\n  to 11\n    1217\n   12\n 1. 1200               126\n 13             is in the 123\n 14, 119     118\n   127\n15 128\n   124\n        12 130           125       1179\n 129.  to 1217\n    122\n 131\n 132\n   1260 1200               13             is 123\n14 1191 128\n 11",
+                    "page": 22,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What are the detailed technical specifications and bandwidth capabilities of different ISOBUS communication protocol versions compatible with the IsoMatch Tellus system?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 1. on the   122\n        to stopper in the signal of the tractor off, 1130\n   12\n        11. 130               13             is actors 123\n    14           112\n     12         1157\n15          10\n                  1/ on the load with a plug\n       126                    to stop in the signal of the tractor off, 1130\n   11. 122\n        13             is 12\n    14               123\n     12           1157 128\n15.  13            Isolate and         116\n16              on page 126\n       1/130\n17                  to the tractor off, 117\n   12\n        127             is 11. 14\n    12               122\n     13           1280\n15. 123\n    13            Is it is in the signal on the 119\n       12         124\n16              126\n17                  to   1151\n        1217\n18             is 1300\n19               122\n     14",
+                    "page": 32,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many hours of continuous operation can the IsoMatch Tellus operate before flattening a typical tractor battery if left switched on with the engine off?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   1.  122\n        12\n  13             to        11\n     1300               on 1137\n14           is in the signal of the tractor off, 112\n15          12\n    12         1158\n   13            Isolate and 10\n   13.  13       11. 126             to 12\n     12 14\n        12  1240               on page 1137\n15. 13           123\n   13          1219\n    12 14\n    122\n    12 1300\n    119       11.  to the 1151\n     12 126\n        12 124\n    13             on 1137\n15. 123\n   12 125               12 128\n    14  13          1219\n15. 12 1220       11. 12  to the 1190     1261  12 13  12  12 1137\n    12 123\n   12 13             13  ",
+                    "page": 34,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific 'grease' type is recommended for 'profiled tubes' of the  coupling shaft?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   1. on the load\n        10                to stopper in the signal     11\n                  12\n        13             is actors  14\n    12           1130\n15              12\n 16            Isolate\n   13          13\n   1. on the load of the tractor off, 12       14\n15.  to stopper in the signal     11\n        12               13             is not act    10\n 17           12\n 14\n16            13         12\n 15. 12\n   13          13. 126\n   12       13.  to stopper on the steering system     123\n        12               1240\n   14\n    13             is in the signal of the tractor off, 11\n15. 12\n         12           13          12\n16            Is it is not act       13. 12\n17                 12\n     13                     on page 123\n        12               14\n   12\n    13             13. 12\n15.",
+                    "page": 51,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'hose coupling support' made of?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   1. on the  to stopper in the signal\n                   122\n        12\n        11. 1300               13             is actors 1137\n    14           123\n     12         1158\n15            12\n      13          10, 119\n    to stop the machine on the load of the tractor off, 116\n       11. 1260\n        12  121\n    12  1131\n    13             is in the signal     123\n14. 122\n    12 130               1190\n15.  to stop on   127\n    12 124\n    11. 1260 128\n        13           125       1217\n    12 129\n    12 1200\n    123\n    1221 1300     1190               1179\n15. 12 131\n   12 124\n    12 1260 1138\n    13             11. 13          1217\n14. 12 128\n        12",
+                    "page": 55,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific type of 'Delicia Schnecken Linsen' slug pellets were used for the spreading chart example?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 1. on the   122\n        12               1150           13             is in the signal of the tractor off, 11\n    130            1137\n14          to actors 126\n15              12\n        112\n     12         123\n                  117. 13                 10\n   on page 127               1150       118\n1. 128           116\n 16             is the gate of the tractor in the cable\n    119            130          11. 129\n15. 12\n        1200\n     122\n    13                 1217\n   123\n14               on page 126\n       124\n15.  to stopper to actors 128\n    125           127\n1. 130             is the 129\n    12\n        1200\n     122\n    13            1217\n   123\n    11. 126               on 124\n15. 12       118\n    12\n    125           127\n    12, 1131\n    130             is",
+                    "page": 69,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the minimum 'baud rate' for 'RS 232 connection'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   122\n       1. on the load of the tractor off, 1137\n   1300               119\n     12\n        11. to stopper in the signal\n    13             is actors 14\n15           1200\n    12\n                  1158\n    12       10\n1. on the load of the tractor off, 1137\n   13          11. 126               121\n     12         122\n         to stopper in the signal is not act with a switcher 1280\n15. 123\n    12       1190\n    14           1179\n1. 1300\n   13             on the 11. 1260     10, 1217\n    1220               118\n        12  to stopper in the signal of the tractor off, 123\n       1190      1200\n15. 12 1131\n    12 13             11. 1300   12 1260  1217\n     12 1220  10  12  to stop",
+                    "page": 72,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum acceptable 'chunk' size of fertilizer in mm to prevent blockage?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 1. on 122\n    12       1190               11. 1300\n 15           13             is in the load     126\n    14            Isolate to actors  123\n   12\n        1137\n   128\n 16              1151 129\n  13          1200\n       11. 130               on 127\n15. 122\n   12           124\n    14             is the act of the tractor     123\n15. 126\n        1217\n   13            125\n    12\n    12 1280\n       11. 130               1190\n1. 1136\n    122\n    127\n    12 129\n    10, 123\n     126.  to the 14\n   13             is 1217\n    1200\n    12 128\n    11. 1300\n    1191 131\n    122\n    12 124\n    12 127               1138\n15. 123\n    12",
+                    "page": 74,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'tap' material used for hydraulic border spreading plate tap?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15                         on page 115\n   13             Load the cable     116               14. 12       1140\n16              117            11\n    1/ to stop      113\n17                           Setting the control system         112\n   122\n   118\n   12           on page 123\n15                         119\n   13             1200               115. 14\n   124\n   12       11\n    1217\n     10, 126\n   12\n    12              122\n   117            113\n   13                     on page 123\n15  12\n   12               1200\n14. 119\n    13             1/130\n   11. 12\n   1217\n   12\n     12              122\n   10, 12\n    12\n   123\n   13                         11. 126\n   12               1133\n   12\n   12\n   12\n   13             1190\n   13                     1217\n   ",
+                    "page": 85,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'active carbon filters' are recommended for closed tractor cabin to filter fertilizer dust?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   13             on page 116            1150               14. 12       117     11                         signal to stop\n16              112           12\n    122                           Setting the cable      113                 10\n17                             setting of the tractor off, 123\n   118\n15                      119             on page 114\n   12               116            1200\n   11                         117\n14. 13                     Isolation     121\n    12              122\n   12           10\n       126                                                                 1151\n   123\n15                      12\n    12             112\n   12               on 113\n16            11.  to stop the cable      13                     12\n     12\n   12              121\n14. 12\n       10, 13                         12\n        123\n15                      12\n    122\n   12             112\n   1133\n    11                           12\n    12               1190\n     12\n   12\n    121\n14. 12\n       ",
+                    "page": 94,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the tolerance for 'measured distance from the bottom of the vanes, the distance to the ground or the crop' in cm?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   14. 1150               on page 116            11             117     12\n16                         signal       112\n17                           Setting the cable      118\n    13                     setting of the tractor in 119\n   122\n   10           1200              113\n15                             to actors 123\n14               on 121\n    11. 116            12\n     12             112\n        12       118\n   13                         117\n   12\n    12\n   119\n   10, 13                     126\n15               to stop the machine in the load on 123\n14. 12\n    11. 122\n    12               121\n     12\n       1200             1151\n        12\n    13                         12\n   1137\n    12\n    12              10\n15. 12\n    123\n    12           11. 12\n    12               on page 114\n14. 12\n     121\n    13             12\n        12\n",
+                    "page": 95,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   13             on page 116            14. 1150               117     12       11\n16                         signal on 112\n    122                           Setting the cable      113           10\n17                             setting of the tractor in 118\n   123\n   119                 114,  to stopper on the steering system\n15. 1200               116             121\n   12       11. 1151 128\n    122                   117            12\n     •         126           10\n 14. 123\n        13                         119                 118\n   12              124\n15  to 1200               121\n   12             11. 1151 128\n    122\n       12 1167                           12\n     1133\n   10, 123\n    13                         1190\n14. 12\n        12              112\n15. 1200               121\n   11. 12\n    12             122\n    12 1151  12\n     1133\n   12",
+                    "page": 96,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the recommended tire pressure 'range' for transport mode?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15             on page 115\n   13               116            cable     14. 12       117\n16                         Setting the system to stop      11\n17                           Signal    118\n        12           1200\n   122\n   119                 113\n   123\n   10, 121\n   12               on 126             116. 112\n15              13                         Setting the cable       117\n14                      12\n    12\n     11                           118\n   12           1150\n        122\n   13                     12\n   119            123\n   12               on 126\n   10. 121\n   12             1200\n15              113\n    12\n     11                         12\n   12           117\n14                           122\n   13                     12\n       12\n   123\n   12               119             to 1151\n   12\n   121\n   12             12\n    12. 126\n   10\n     11                         12\n   ",
+                    "page": 93,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the optimal driving speed reduction percentage during border spreading to compensate for application rate?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   13             on page 116            14. 1150               Load the cable     12       117\n16                         Setting the control system         113\n17                           Signal      11\n    118              112\n        12           10, 114\n   119                  to stopper in signal on page 123\n15             1200               1151 128\n    116            121\n    122\n      117. 126\n    12       118\n13                         11. 125                           12\n14                      119\n   12           10,  to stop the machine on 123\n15             1200               12\n    116            121\n    122\n     1173                 12\n    12\n       118\n    13. 126\n    11. 124\n   12\n    1197                         10\n    123\n    12           1200\n    12\n    1219               12\n     122\n    12\n    1215\n    12\n    13             ",
+                    "page": 106,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   14. 1150               on page 113            116             11. 12\n16                         signal     112              117\n    13                     setting       10           118\n17                           Setting the cable      119                 12\n        1200               1143\n   122                   1217\n   12\n15            123\n14. 124\n   12             on page 113\n     11                         13\n    12           126\n15. 12\n       12              1151\n    12               10,  to stop the machine in 127\n        12\n    123                   122\n14. 12\n   1167             121\n     11. 13                         on page 118\n15. 12\n       12              1200\n    12               1193\n    12           1131\n16. 10\n        12\n    123                   12\n   12\n    1217             11. 13. 12\n     12\n15. 12\n       122\n    ",
+                    "page": 109,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can the parking support withstand storage on a slope of 10 degrees?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   13             1150\n15. 12               11. 14            on page 113\n16                         signal     112\n        12              116           Load the cable       117\n17                             setting of the tractor off, 113\n    12               118\n   10. 13             on 1190\n15. 12               11. 14. 12\n    122                           1217\n      12. 126                   123\n   12              1200\n        117            113\n       13. 12\n    10. 12             119\n15. 12               on 11. 12\n    12. 122\n    12. 1217\n     14. 123\n   12. 12. 126. 13. 12. 1131\n        12. 12. 12. 124. 13. 13. 12. 12. 11. 12. 12. 121. 12. 13. 12. 123. 12. 122. 14. 12. ",
+                    "page": 119,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   14. 1150               on page 116            11             117     12       10\n16                         setting of the tractor in    112\n17                           to stopper on the steering system         113\n        13                     118\n   12           119                 1100\n15. 14, 12               1217\n   11             1200\n     •       122\n   12              10            117\n    12          123\n   12 1133\n   13                         on page 126\n   12 124\n15. 12           1190               12 1151\n   13             11. 12       122\n   12 14. 10\n    12  1217\n     123                   12  to stop the machine on 1133\n   12 126\n   12  12  12 124\n15. 13             13. 13. 12 1151  12  12 14. 12  11. 13. 12 123\n    12",
+                    "page": 121,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many operational hours can 'vanes' typically last before requiring replacement?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15                         on page 115\n   14               116            117             11. 12\n16              118           Load the cable     13                 10\n17                           Setting the control system       119\n    122                       1200\n        121                    to stopper in the load on the steering point of the tractor   123\n128               122\n15             12\n                  11. 124\n    126                         13            125                           113\n14                      Isolation     12\n       127                 12           116\n        12              130               118\n15                             on page 123\n   1190               117             122\n16                          11. 124\n    12\n17                         1200\n      13                      121\n     10, 126\n       12           1137\n18                           12\n        12              131\n19                             on page 123\n   12               122\n15             12. 124\n    13                          11. 12\n14                         125                 12\n     1219\n    12          ",
+                    "page": 125,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'universal grease' is recommended for all 'lubricating nipples'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   13             on page 116               14. 1150       12\n16              117            11\n17                         signal     112\n    12           113\n   12\n        10, 123\n   119                  to stop the machine in      118\n15                             setting on page 13             116\n   12               1200\n14. 121\n    11                         122\n     12              117            113\n   12           126\n        10, 123\n    12\n       1197                  to 112\n15          12\n    13             118\n    12               on page 114\n14. 11\n    12\n     121\n    12              1200\n   12\n        10, 113\n    12           123\n    12\n       1197                  to 13             112\n15. 12\n    12               122\n    11                         12\n     1219\n    12              1200\n   12\n    12\n   ",
+                    "page": 126,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'suitable lubricant' is recommended for 'connectors' to prevent corrosion?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   13             on page 116               14. 1150       12\n16              117            11\n 1. 122                           Setting the cable     113                         setting of the tractor in 118\n    12           123\n   119                 112\n 15          1200             on page 114\n   13                     116               121\n 14              117            11\n 1. 122\n 1153     12\n 128\n   12\n    12           123\n  1197                 113\n 15                      126\n 14             1200\n 13                         on page 125               121\n 16              12\n 11. 122\n 14                           12\n 1151  12\n   12\n    123                   12\n  12\n 13                     113\n 15                      12\n 116            12\n 14             13                         on page 126\n 15. 12\n 11. 12\n 122\n  12\n 1151  12\n   123                   12",
+                    "page": 128,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What 'screwdriver' type (flathead/phillips) is optimal for adjusting 'dosing mechanism'?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   14. on page 1150               13             Load the cable       116            11\n16              12           117     112\n17                         Setting the control system         113\n    12          118\n   122                           Signal      119                 10\n15                             setting of the tractor in 123\n   1200               on 121             116            11. 124\n    12           117\n     12              126                   1151\n 14. 13                     12       122\n        12 125                           12\n15                      1133\n    12 128\n   123               12             1217\n 16            124\n 11                         on page 114\n     12           126                   12. 13                     10\n       122\n        1178\n 14. 127                 1190              12\n15                      12\n   1200               1217\n    12             123\n 11                         12\n     12           12\n 12 126                   13                     10\n 12 ",
+                    "page": 133,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the typical agitator 'seal ring' lifespan in operational hours before requiring replacement?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   13             on page 116            14. 1150               Load the cable     12       11\n16                         signal on 117           112\n    12              113\n17                           Setting the control system         123\n   12          114\n   1. 119\n15             to stopper in the load of the tractor off, 116\n   14               1200\n16            115\n       117           on page 13\n    11                         118\n        122\n   12              10\n     1217\n   12. 126\n   1199                 123\n15             to 112\n    12               1200\n    12, 1131\n    12           117\n       11. 13          122\n14. 12              10\n     12. 12\n        1217\n   12\n    123                    to 112\n15             on the load of the tractor off, 12\n   12               1200\n    12           1131\n    13                     11. 119",
+                    "page": 134,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'small crack of light' dimension in millimeters between 'dosing baffles' when closed?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   13             on page 116               14. 12       1150     11\n16                         signal on 117            112\n    12              113           10\n17                           Setting the cable      118\n   12               119                  to stopper in the load of the tractor off, 13             1200\n15. 14\n       1217     11                         on page 122\n16            12          112\n    12              10           123\n        12         118\n   1133                  to 119\n17                             setting the cable      12               1200\n15. 14             1217\n     13                         on page 126\n   122\n       12 128\n    12              11. 1151\n        10            123\n   12           1193\n    12               12\n 16                      112\n15. 12             1217\n     13                         on page 126\n14. 12\n       122\n    12              1136                 11. 10\n        ",
+                    "page": 135,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   1150\n15             on page 113            116. 14               Load the cable       11                         setting of the tractor     12\n    117           112\n16              on 118\n        13                     Setting the control system         119\n17                             to actors 120\n   122\n15             on 114\n    121                           Tighten with a load               123\n    116            11. 12\n14                         setting       112\n     117           118\n        12              1150\n    13                     Setting the cable      120\n   122\n15             on 113\n    121                           10\n    12               114\n    12            11. 126\n14                         to actors 123\n     112\n        12              1150\n    13                     116\n    12           117\n   119\n15             on 113\n    12\n    12               118\n    10            11. 126\n    12\n    121                            to stop the load     120\n    12              123\n   ",
+                    "page": 138,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the 'plastic seal' material specification for agitator axle seal?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   13             on page 116               14. 1150       12\n16              117            11\n17                         signal     112\n    12           113\n   122\n   10, 119\n        123\n   118\n   12\n15                             to actors 13             116\n14               on page 121\n   12\n       1200\n   11. 126\n     12\n    117            113\n   12\n   122\n        10, 119\n    7                           118\n   123\n   13             12\n   116\n   12\n   121\n   14. 12\n       11. 1200\n     9\n   12\n    12\n   113\n   10, 119\n    12\n   123\n   13             12\n   11. 12\n   12\n    121\n   12\n   122\n   12\n     1. 126\n   13. 12\n   113\n  ",
+                    "page": 140,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the material of the 'metal seal rings' for agitator axle seal?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   13             on page 116            14. 1150               Load the cable     12       117\n16                         signal on 11\n    122                           Setting the control system         113\n17                             setting of the tractor off, 112\n   118\n   1200              119           13             flow rate\n15          116.  to stop the machine     12               117            121\n16                      on page       11                         114\n    122                   12\n17                             setting of the tractor in 123\n18                           113\n   1200              119           112\n19             signal on 13. 124\n   10, 1151               1217\n     •         118\n       12            1169\n    122\n      12 128\n        11. 126                   123\n14                           1200              1193\n15             on 117\n    12           10, 13                         12\n   1217               118\n     12       12\n    12 122\n    9\n    12 115",
+                    "page": 141,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What specific 'extension cable' length in meters is optimal for ISO 11786 in cab tractor connection?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": "   119\n15                             on page 118\n16             Load the system       116               117            1200\n17                         signal     11. 12\n    122                           Setting the cable      121\n18                      setting of the tractor off, 123\n14                          Signal to actors   112\n15                             on page 13\n128             Load           124\n       119               1151\n    126                 1200\n     12              117            122\n        11. 125                           1133\n    12               118\n14                      setting the cable      12\n15                         on page 123\n   13             116\n    12           121\n    12\n       1200\n     10, 117\n    12              11. 126\n        1193\n    12               122\n14                      1151\n15            12\n    12\n   13             123\n    12           1217\n    12\n    1200\n     10, 118\n    11. 126\n    12              1193\n",
+                    "page": 144,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the free 'test period' duration in days for 'GEOCONTROL software' user licence?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   13             on page 116            14. 1150               Load the cable     12       117\n16                         setting of the tractor in    11                           113\n17                             Setting the  to stop        112\n18                          signal on 118\n   122\n19                            Signal      1200             119                 116            13. 1151\n20               Connectors 12\n     1217\n       12              1143\n    12           10, 123\n14                           Setting the cable        11                         on page 122\n15                             to   112\n   12             116            113\n16                          13. 1200               117\n     •         1217\n       12              118\n    12           10, 12\n14                           1193          11. 126\n15                         on page 123\n   12             122\n        12            112\n   13                      1200               1131\n    12\n     1217\n   12              12           1179\n14                           10, 12\n",
+                    "page": 145,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What valve type and manufacturer is used for 'valve set' that comes with hopper empty sensor?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   13             on page 116            14. 1150               Load the cable     12       11\n16                         setting of the tractor off, 117\n17                             Setting the control system         112\n    122                           Tighten in the signal\n   118\n        113           119                 1200\n   13             on page 123\n14               Load the cable     12       11. 116            121\n15              124\n   12\n   12,  to    10\n   126                   1151\n        13                         Setting of the tractor in 117\n   12             122\n   12               on 123\n14                           11. 12\n       1137\n15              12           12\n     12, 124\n    12\n   13                      13. 126\n   12\n        1219                 10\n   12\n   12               123                   122\n14                           11. 13             12\n15              12\n       12           12\n     12, 1131\n   ",
+                    "page": 148,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the drain rate in liters per minute of 'drain kit' for hopper emptying?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   13             on page 116               14. 1150       12\n16              117            11\n        1/ to stopper in the load     112\n17                         signal on 118\n    12           113\n   122\n   10, 119\n   13             123\n   14. 116\n15               1200\n    1217\n    11                           12\n    12       117            112\n     12              118\n   12           113\n   13                         on page 126\n   10, 123\n    12. 1193\n    14. 12\n15             1217\n    12               122\n    12       1200\n     11. 12\n    13. 12\n    12           1131\n   10. 123\n    12\n    12              1193\n    12\n    1217\n    12               122\n    14. 12\n15             12\n    12\n    13. 12",
+                    "page": 149,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What 'sail' material is used for hopper cover, and its UV resistance?",
+                    "expected_answer": "Not found in context",
+                    "model_answer": " 15\n   13             on page 116            14. 1150               Load the cable     12       11\n16                         signal to    117           112\n17                           Setting the control system         113\n   122\n   118\n   12              119                 10\n15                  13             on page 123\n   1200\n   116               121\n14. 12       11                         setting     12\n    12           117            112\n        113\n   122\n   126                                                                 1151\n   10, 119\n    12             123\n   12\n   118\n15                             on page 13. 116\n   11                         12\n     1200               121\n14                           12\n       117            12\n   122\n   12\n   1133\n    119                 10\n   123\n   12             12\n   12. 126\n15                             11. 13                         12\n     121\n   12               12\n   12\n   1200",
+                    "page": 150,
+                    "dataset": "unanswerable_questions",
+                    "self_evaluation": "no"
+                }
+            ]
+        }
+    }
+}
