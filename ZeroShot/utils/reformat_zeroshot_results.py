@@ -12,9 +12,9 @@ EVALUATOR_MODEL = "gemma2_9B-8k"  # As specified in the request
 
 # Mapping from ZeroShot dataset filenames to RAG-style dataset names
 DATASET_MAP = {
-    "question_answers_pairs.json": "general_questions",
-    "question_answers_tables.json": "table_questions",
-    "question_answers_unanswerable.json": "unanswerable_questions",
+    "question_datasets/question_answers_pairs.json": "general_questions",
+    "question_datasets/question_answers_tables.json": "table_questions",
+    "question_datasets/question_answers_unanswerable.json": "unanswerable_questions",
 }
 # Define which mapped dataset names are considered 'answerable' for metric calculation
 ANSWERABLE_SOURCES = ["general_questions", "table_questions"]
@@ -196,11 +196,15 @@ def reformat_zeroshot_file(filepath: str):
             print(f"Warning: Skipping non-dictionary item in {filename}: {item}")
             continue
 
-        # Map dataset name
-        original_dataset = item.get("dataset")
-        mapped_dataset = DATASET_MAP.get(original_dataset)
+        # --- Updated dataset mapping logic ---
+        original_dataset_value = item.get("dataset")
+        # Add strip() to handle potential leading/trailing whitespace
+        original_dataset_key = original_dataset_value.strip() if original_dataset_value else None
+
+        mapped_dataset = DATASET_MAP.get(original_dataset_key) # Use stripped key for lookup
         if not mapped_dataset:
-            print(f"Warning: No mapping found for dataset '{original_dataset}' in {filename}. Skipping item.")
+            # Print the key we tried to look up for better debugging
+            print(f"Warning: No mapping found for dataset key '{original_dataset_key}' (from value '{original_dataset_value}') in {filename}. Skipping item.")
             continue
         item["dataset"] = mapped_dataset # Update item with mapped name
 
@@ -223,6 +227,10 @@ def reformat_zeroshot_file(filepath: str):
     overall_metrics = calculate_metrics(processed_data)
     dataset_success = calculate_dataset_success_rates(processed_data)
     overall_metrics["dataset_self_evaluation_success"] = dataset_success
+
+    if overall_metrics.get("accuracy") == 0.0 or overall_metrics.get("f1_score") == 0.0:
+        print(f"Skipping save for {filename}: Accuracy or F1 score is zero.")
+        return # Exit the function before saving
 
     # 5. Restructure Data
     # 5.1 Test Run Parameters
