@@ -6,15 +6,15 @@ from collections import defaultdict
 from typing import List, Dict, Tuple, Any, Optional
 
 # --- Configuration ---
-ZERO_SHOT_RESULTS_DIR = "results"
+ZERO_SHOT_RESULTS_DIR = "results/remove_folder"
 OUTPUT_DIR = "results/zeroshot_comparison"
 EVALUATOR_MODEL = "gemma2_9B-8k"  # As specified in the request
 
 # Mapping from ZeroShot dataset filenames to RAG-style dataset names
 DATASET_MAP = {
-    "question_datasets/question_answers_pairs.json": "general_questions",
-    "question_datasets/question_answers_tables.json": "table_questions",
-    "question_datasets/question_answers_unanswerable.json": "unanswerable_questions",
+    "question_answers_pairs.json": "general_questions",
+    "question_answers_tables.json": "table_questions",
+    "question_answers_unanswerable.json": "unanswerable_questions",
 }
 # Define which mapped dataset names are considered 'answerable' for metric calculation
 ANSWERABLE_SOURCES = ["general_questions", "table_questions"]
@@ -249,10 +249,7 @@ def reformat_zeroshot_file(filepath: str):
 
     # 5.2 Timing
     timing = {
-        "overall_duration_seconds": total_duration,
-        # Since ZeroShot duration is per-question total, assign it to both phases
         "duration_qa_phase_seconds": total_duration,
-        "duration_eval_phase_seconds": total_duration, # Or set to 0/None if evaluation time wasn't captured
     }
 
     # 5.3 Per Dataset Details
