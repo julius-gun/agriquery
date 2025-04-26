@@ -11,7 +11,8 @@ from typing import Optional, List, Dict, Any
 # Add the project root directory (p_llm_manual/RAG) to the Python path
 # This allows finding modules like utils, llm_connectors, etc.
 current_script_path = pathlib.Path(__file__).resolve()
-project_root = current_script_path.parent
+# The script is in 'demonstration', so the project root is the parent of this script's directory
+project_root = current_script_path.parent.parent
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 # --- End Path Adjustment ---
@@ -110,6 +111,8 @@ def main():
     args = parser.parse_args()
 
     # --- 1. Load Configuration ---
+    # Config and DB paths should be relative to the *project root*, not the CWD
+
     config_path = project_root / args.config
     db_path = project_root / args.db_path
     logging.info(f"Using configuration file: {config_path}")
@@ -441,3 +444,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# python ask_question.py "What is the maximum pressure?" --language english
+# python ask_question.py "How to configure the network?" --language german --chunk-size 200 --overlap-size 100
+# python ask_question.py "Summarize the safety warnings." --language english --llm llama3.1_8B-128k
+# python ask_question.py "What components are needed?" --language english --llm llama3.1_8B-128k --evaluate
