@@ -212,7 +212,8 @@ def generate_dataset_success_heatmaps(
 ):
     """
     Generates heatmaps for Dataset Success Rate: Model vs Chunk/Overlap
-    (English Only, per Algo/Dataset Type).
+    (English Only, per Algo/Dataset Type). Excludes 'zeroshot' algorithm
+    as it lacks chunk/overlap parameters.
     """
     print("\nGenerating Heatmaps: Dataset Success Rate - Model vs Chunk/Overlap (English Only, per Algo/Dataset)")
     target_language = 'english'
@@ -238,40 +239,56 @@ def generate_dataset_success_heatmaps(
 
     # Get unique algorithms and dataset types from the filtered data
     try:
-        unique_algos = df_filtered['retrieval_algorithm'].unique().tolist()
+        # --- MODIFICATION START ---
+        # Filter out 'zeroshot' before getting unique algorithms for this specific plot type
+        df_filtered_non_zeroshot = df_filtered[df_filtered['retrieval_algorithm'] != 'zeroshot']
+        if df_filtered_non_zeroshot.empty:
+             print(f"No non-zeroshot data found for language '{target_language}' and metric '{target_metric}'. Skipping these heatmaps.")
+             return
+
+        unique_algos = df_filtered_non_zeroshot['retrieval_algorithm'].unique().tolist()
+        # --- MODIFICATION END ---
+
+        # Get unique datasets from the original filtered data (might include zeroshot datasets if needed elsewhere later)
         unique_datasets = df_filtered['dataset_type'].unique().tolist()
     except KeyError as e:
         print(f"Error: Missing expected column '{e}' in filtered data. Skipping Dataset Success heatmaps.")
         return
 
     if not unique_algos:
-        print("No unique retrieval algorithms found in the filtered data.")
+        print("No unique non-zeroshot retrieval algorithms found in the filtered data.")
         return
     if not unique_datasets:
         print("No unique dataset types found in the filtered data.")
         return
 
-    print(f"Found {len(unique_algos)} algorithms and {len(unique_datasets)} dataset types for English Dataset Success heatmaps.")
-    print(f"  Algorithms: {unique_algos}")
+    # --- MODIFICATION: Updated print statement ---
+    print(f"Found {len(unique_algos)} non-zeroshot algorithms and {len(unique_datasets)} dataset types for English Dataset Success heatmaps.")
+    print(f"  Algorithms (excluding zeroshot): {unique_algos}")
+    # --- End Modification ---
     print(f"  Dataset Types: {unique_datasets}")
 
     total_plots = len(unique_algos) * len(unique_datasets)
     plot_counter = 0
 
-    # Iterate through each algorithm and dataset type
-    for algo in unique_algos:
+    # Iterate through each non-zeroshot algorithm and dataset type
+    for algo in unique_algos: # This loop now only contains non-zeroshot algos
         for dataset in unique_datasets:
             plot_counter += 1
             print(f"\n[{plot_counter}/{total_plots}] Generating Dataset Success Heatmap for: Lang={target_language}, Algo={algo}, Dataset={dataset}")
 
             # Filter further for the specific algorithm and dataset type
-            df_combo = df_filtered[
-                (df_filtered['retrieval_algorithm'] == algo) &
-                (df_filtered['dataset_type'] == dataset)
+            # Use df_filtered_non_zeroshot here as well to ensure consistency
+            df_combo = df_filtered_non_zeroshot[
+                (df_filtered_non_zeroshot['retrieval_algorithm'] == algo) &
+                (df_filtered_non_zeroshot['dataset_type'] == dataset)
             ].copy()
 
             # Check if data exists and has variation for this specific combination
+            # Need to check for NaN/None in chunk/overlap as well, although filtering zeroshot should handle it
             if df_combo.empty or \
+               df_combo['chunk_size'].isnull().all() or \
+               df_combo['overlap_size'].isnull().all() or \
                df_combo['chunk_size'].nunique() < 1 or \
                df_combo['overlap_size'].nunique() < 1 or \
                df_combo['question_model'].nunique() < 1:

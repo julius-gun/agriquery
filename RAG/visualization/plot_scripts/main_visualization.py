@@ -207,23 +207,39 @@ def main():
             if df_f1_heatmap.empty:
                 print("Warning: No F1 score data found. Skipping F1 heatmaps.")
             else:
-                # Call each F1 heatmap generator function
+                # Call Language vs Model heatmap (includes zeroshot)
                 generate_language_vs_model_heatmap(
                     df_f1_heatmap=df_f1_heatmap,
                     output_dir=args.output_dir,
                     output_filename_prefix=args.output_filename_prefix,
                     all_languages_list=all_languages_list,  # Pass language list
                 )
-                generate_chunk_vs_overlap_heatmap(
-                    df_f1_heatmap=df_f1_heatmap,
-                    output_dir=args.output_dir,
-                    output_filename_prefix=args.output_filename_prefix,
-                )
-                generate_model_vs_chunk_overlap_heatmap(
-                    df_f1_heatmap=df_f1_heatmap,
-                    output_dir=args.output_dir,
-                    output_filename_prefix=args.output_filename_prefix,
-                )
+
+                # Filter out 'zeroshot' for heatmaps requiring chunk/overlap
+                df_f1_heatmap_rag = df_f1_heatmap[
+                    df_f1_heatmap["retrieval_algorithm"] != "zeroshot"
+                ].copy()
+
+                if df_f1_heatmap_rag.empty:
+                    print(
+                        "Warning: No F1 score data found for non-zeroshot algorithms. Skipping Chunk/Overlap related F1 heatmaps."
+                    )
+                else:
+                    # Call Chunk vs Overlap heatmap (excludes zeroshot)
+                    generate_chunk_vs_overlap_heatmap(
+                        df_f1_heatmap=df_f1_heatmap_rag, # Use filtered data
+                        output_dir=args.output_dir,
+                        output_filename_prefix=args.output_filename_prefix,
+                    )
+                    # Call Model vs Chunk/Overlap heatmap (excludes zeroshot)
+                    generate_model_vs_chunk_overlap_heatmap(
+                        df_f1_heatmap=df_f1_heatmap_rag, # Use filtered data
+                        output_dir=args.output_dir,
+                        output_filename_prefix=args.output_filename_prefix,
+                    )
+
+            # --- Call the Dataset Success Rate Heatmap Generators ---
+            # This function handles its own filtering internally if needed
             generate_dataset_success_heatmaps(
                 df_data=df_data,  # Pass the full dataframe
                 output_dir=args.output_dir,
