@@ -28,13 +28,13 @@ try:
         generate_language_vs_model_heatmap,
         generate_chunk_vs_overlap_heatmap,
         generate_model_vs_chunk_overlap_heatmap,
-        generate_dataset_success_heatmaps,  # <-- Import the new function
+        generate_dataset_success_heatmaps,
+        generate_algo_vs_model_f1_heatmap,
+        generate_algo_vs_model_dataset_success_heatmap,
     )
 
     # Removed direct imports from heatmaps.py
-    from visualization.plot_scripts.plot_utils import (
-        sanitize_filename,
-    )  # Keep for now, might not be needed here anymore
+
 except ImportError as e:
     print("Error importing required modules.")
     print(f"Please ensure the script is run from a location where Python can find:")
@@ -92,8 +92,17 @@ def main():
         "--plot-type",
         type=str,
         default="all",
-        choices=["boxplot", "heatmap", "dataset_boxplot", "all"],
-        help="Type of plot(s) to generate. 'dataset_boxplot' generates dataset success plots for specific params. 'all' generates default boxplot, heatmaps, and dataset_boxplot.",
+        # --- MODIFICATION START: Added new choices ---
+        choices=[
+            "boxplot",              # F1 Boxplot (grouped)
+            "heatmap",              # Original set of detailed heatmaps
+            "dataset_boxplot",      # Dataset Success Boxplot (specific params)
+            "algo_vs_model_f1",     # NEW: Algo vs Model F1 Heatmap
+            "algo_vs_model_success",# NEW: Algo vs Model Mean Success Heatmap
+            "all"                   # Generate all plot types
+            ],
+        # --- MODIFICATION END ---
+        help="Type of plot(s) to generate. 'heatmap' generates detailed Lang/Chunk/Model heatmaps. 'algo_vs_model...' generate summary heatmaps. 'all' generates everything.",
     )
     parser.add_argument(
         "--group-by",  # Only used by F1 boxplot now
@@ -178,8 +187,16 @@ def main():
     # 3. Determine which plots to generate
     plot_types_to_generate = []
     if args.plot_type == "all":
-        plot_types_to_generate = ["boxplot", "heatmap", "dataset_boxplot"]
-    elif args.plot_type in ["boxplot", "heatmap", "dataset_boxplot"]:
+        # --- MODIFICATION START: Added new types to 'all' ---
+        plot_types_to_generate = [
+            "boxplot",
+            "heatmap",
+            "dataset_boxplot",
+            "algo_vs_model_f1",
+            "algo_vs_model_success"
+            ]
+        # --- MODIFICATION END ---
+    elif args.plot_type in ["boxplot", "heatmap", "dataset_boxplot", "algo_vs_model_f1", "algo_vs_model_success"]:
         plot_types_to_generate = [args.plot_type]
     else:
         print(f"Error: Invalid plot type '{args.plot_type}' specified.")
@@ -201,11 +218,11 @@ def main():
 
         elif plot_type == "heatmap":
             # --- Call the F1 Score Heatmap Generators ---
-            print("\nGenerating F1 Score Heatmaps")
+            print("\nGenerating Detailed F1 Score Heatmaps (Lang/Chunk/Model)")
             # Filter data specifically for F1 scores for these heatmaps
             df_f1_heatmap = df_data[df_data["metric_type"] == "f1_score"].copy()
             if df_f1_heatmap.empty:
-                print("Warning: No F1 score data found. Skipping F1 heatmaps.")
+                print("Warning: No F1 score data found. Skipping detailed F1 heatmaps.")
             else:
                 # Call Language vs Model heatmap (includes zeroshot)
                 generate_language_vs_model_heatmap(
@@ -238,8 +255,9 @@ def main():
                         output_filename_prefix=args.output_filename_prefix,
                     )
 
-            # --- Call the Dataset Success Rate Heatmap Generators ---
+            # --- Call the Detailed Dataset Success Rate Heatmap Generators ---
             # This function handles its own filtering internally if needed
+            print("\nGenerating Detailed Dataset Success Heatmaps (Model vs Chunk/Overlap)")
             generate_dataset_success_heatmaps(
                 df_data=df_data,  # Pass the full dataframe
                 output_dir=args.output_dir,
@@ -256,6 +274,23 @@ def main():
                 chunk=DATASET_BOXPLOT_CHUNK,
                 overlap=DATASET_BOXPLOT_OVERLAP,
             )
+
+        # --- NEW: Add calls for the new summary heatmaps ---
+        elif plot_type == "algo_vs_model_f1":
+            generate_algo_vs_model_f1_heatmap(
+                df_data=df_data, # Pass the full dataframe
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix
+            )
+
+        elif plot_type == "algo_vs_model_success":
+            generate_algo_vs_model_dataset_success_heatmap(
+                df_data=df_data, # Pass the full dataframe
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix
+            )
+        # --- END NEW ---
+
 
     print("\n--- Visualization Generation Finished ---")
 

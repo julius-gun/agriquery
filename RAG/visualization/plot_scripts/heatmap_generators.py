@@ -324,6 +324,124 @@ def generate_dataset_success_heatmaps(
                 sort_columns_by_value=True # Keep sorting models by performance
             )
 
+# --- NEW: Generator for Algo vs Model F1 Score Heatmap ---
+def generate_algo_vs_model_f1_heatmap(
+    df_data: pd.DataFrame, # Takes the full dataframe
+    output_dir: str,
+    output_filename_prefix: str
+):
+    """
+    Generates a single heatmap comparing Retrieval Algorithms vs LLM Models based on F1 Score.
+    Averages F1 scores across all other parameters (language, chunk, overlap, etc.).
+    """
+    print("\nGenerating Heatmap: F1 Score - Algorithm vs Model")
+    metric_to_plot = 'f1_score'
+    required_cols = ['retrieval_algorithm', 'question_model', 'metric_type', 'metric_value']
+
+    if not all(col in df_data.columns for col in required_cols):
+         print(f"Warning: Input DataFrame is missing one or more required columns for Algo vs Model F1 heatmap: {required_cols}. Skipping.")
+         return
+
+    # 1. Filter for the relevant metric
+    df_filtered = df_data[df_data['metric_type'] == metric_to_plot].copy()
+
+    if df_filtered.empty:
+        print(f"No data found for metric_type '{metric_to_plot}'. Skipping Algo vs Model F1 heatmap.")
+        return
+
+    # 2. Aggregate data: Mean F1 score per Algo/Model combination
+    try:
+        df_agg = df_filtered.groupby(['retrieval_algorithm', 'question_model'])['metric_value'].mean().reset_index()
+        print(f"  Aggregated F1 data points: {len(df_agg)}")
+        if df_agg.empty:
+             print("  Aggregation resulted in empty DataFrame. Skipping plot.")
+             return
+    except KeyError as e:
+        print(f"Error during aggregation for Algo vs Model F1 heatmap: Missing column {e}. Skipping.")
+        return
+    except Exception as e:
+        print(f"Error during aggregation for Algo vs Model F1 heatmap: {e}. Skipping.")
+        return
+
+    # 3. Prepare for plotting
+    output_filename = f"{output_filename_prefix}f1_heatmap_algo_vs_model.png"
+    output_filepath = os.path.join(output_dir, output_filename)
+
+    # 4. Call the generic heatmap function
+    create_f1_heatmap( # Re-using the existing function
+        data=df_agg,
+        output_path=output_filepath,
+        index_col="retrieval_algorithm", # y-axis
+        columns_col="question_model",    # x-axis
+        values_col="metric_value",       # The aggregated mean F1 score
+        value_label="Mean F1 Score",     # Label for the title/colorbar
+        all_indices=None,                # Let it use indices present in aggregated data
+        current_params=None,             # No specific sub-parameters for this plot
+        title="Mean F1 Score: Retrieval Algorithm vs LLM Model", # Custom title
+        sort_columns_by_value=True       # Sort models by performance
+    )
+
+# --- NEW: Generator for Algo vs Model Mean Dataset Success Heatmap ---
+def generate_algo_vs_model_dataset_success_heatmap(
+    df_data: pd.DataFrame, # Takes the full dataframe
+    output_dir: str,
+    output_filename_prefix: str
+):
+    """
+    Generates a single heatmap comparing Retrieval Algorithms vs LLM Models based on
+    the Mean Dataset Success Rate (averaged across all datasets for each algo/model).
+    """
+    print("\nGenerating Heatmap: Mean Dataset Success Rate - Algorithm vs Model")
+    metric_to_plot = 'dataset_success'
+    required_cols = ['retrieval_algorithm', 'question_model', 'metric_type', 'metric_value', 'dataset_type'] # Need dataset_type to know we are averaging
+
+    if not all(col in df_data.columns for col in required_cols):
+         print(f"Warning: Input DataFrame is missing one or more required columns for Algo vs Model Dataset Success heatmap: {required_cols}. Skipping.")
+         return
+
+    # 1. Filter for the relevant metric
+    df_filtered = df_data[df_data['metric_type'] == metric_to_plot].copy()
+
+    if df_filtered.empty:
+        print(f"No data found for metric_type '{metric_to_plot}'. Skipping Algo vs Model Dataset Success heatmap.")
+        return
+    if df_filtered['dataset_type'].isnull().all():
+         print(f"Warning: No non-null 'dataset_type' found for metric '{metric_to_plot}'. Cannot reliably calculate mean success. Skipping.")
+         return
+
+    # 2. Aggregate data: Mean success rate per Algo/Model combination (averages across datasets)
+    try:
+        df_agg = df_filtered.groupby(['retrieval_algorithm', 'question_model'])['metric_value'].mean().reset_index()
+        print(f"  Aggregated Mean Dataset Success data points: {len(df_agg)}")
+        if df_agg.empty:
+             print("  Aggregation resulted in empty DataFrame. Skipping plot.")
+             return
+    except KeyError as e:
+        print(f"Error during aggregation for Algo vs Model Dataset Success heatmap: Missing column {e}. Skipping.")
+        return
+    except Exception as e:
+        print(f"Error during aggregation for Algo vs Model Dataset Success heatmap: {e}. Skipping.")
+        return
+
+    # 3. Prepare for plotting
+    output_filename = f"{output_filename_prefix}mean_dataset_success_heatmap_algo_vs_model.png"
+    output_filepath = os.path.join(output_dir, output_filename)
+
+    # 4. Call the generic heatmap function
+    create_f1_heatmap( # Re-using the existing function
+        data=df_agg,
+        output_path=output_filepath,
+        index_col="retrieval_algorithm", # y-axis
+        columns_col="question_model",    # x-axis
+        values_col="metric_value",       # The aggregated mean success rate
+        value_label="Mean Dataset Success Rate", # Label for the title/colorbar
+        all_indices=None,                # Let it use indices present in aggregated data
+        current_params=None,             # No specific sub-parameters for this plot
+        title="Mean Dataset Success Rate: Retrieval Algorithm vs LLM Model", # Custom title
+        sort_columns_by_value=True       # Sort models by performance
+    )
+
+
 
 # --- Standalone Execution ---
 
@@ -361,7 +479,17 @@ if __name__ == "__main__":
         "--plot-subtype",
         type=str,
         required=True,
-        choices=["lang_vs_model", "chunk_vs_overlap", "model_vs_chunk_overlap", "dataset_success", "all"], # Added 'dataset_success'
+        # --- MODIFICATION START: Added new choices ---
+        choices=[
+            "lang_vs_model",
+            "chunk_vs_overlap",
+            "model_vs_chunk_overlap",
+            "dataset_success", # This is the Model vs Chunk/Overlap for Dataset Success
+            "algo_vs_model_f1", # New choice for F1 Algo vs Model
+            "algo_vs_model_success", # New choice for Mean Success Algo vs Model
+            "all"
+        ],
+        # --- MODIFICATION END ---
         help="Type of heatmap(s) to generate.",
     )
     parser.add_argument(
@@ -388,11 +516,12 @@ if __name__ == "__main__":
         print("Exiting: No data extracted or DataFrame is empty.")
         sys.exit(1)
 
-    # Filter data specifically for F1 scores needed for all heatmaps
-    df_f1_heatmap = df_data[df_data['metric_type'] == 'f1_score'].copy()
-    if df_f1_heatmap.empty:
-        print("Exiting: No F1 score data found in the results. Cannot generate heatmaps.")
-        sys.exit(1)
+    # --- MODIFICATION START: No need to pre-filter for F1 here anymore ---
+    # df_f1_heatmap = df_data[df_data['metric_type'] == 'f1_score'].copy()
+    # if df_f1_heatmap.empty:
+    #     print("Exiting: No F1 score data found in the results. Cannot generate heatmaps.")
+    #     sys.exit(1)
+    # --- MODIFICATION END ---
 
     # Ensure output directory exists
     os.makedirs(args.output_dir, exist_ok=True)
@@ -417,13 +546,26 @@ if __name__ == "__main__":
     # 2. Generate the requested plot subtype(s)
     subtypes_to_generate = []
     if args.plot_subtype == "all":
-        # Added 'dataset_success' to 'all'
-        subtypes_to_generate = ["lang_vs_model", "chunk_vs_overlap", "model_vs_chunk_overlap", "dataset_success"]
+        # --- MODIFICATION START: Added new types to 'all' ---
+        subtypes_to_generate = [
+            "lang_vs_model",
+            "chunk_vs_overlap",
+            "model_vs_chunk_overlap",
+            "dataset_success",
+            "algo_vs_model_f1",
+            "algo_vs_model_success"
+        ]
+        # --- MODIFICATION END ---
     else:
         subtypes_to_generate = [args.plot_subtype]
 
     for subtype in subtypes_to_generate:
         if subtype == "lang_vs_model":
+            # This one specifically needs F1 data
+            df_f1_heatmap = df_data[df_data['metric_type'] == 'f1_score'].copy()
+            if df_f1_heatmap.empty:
+                print("Warning: No F1 score data found. Skipping lang_vs_model heatmap.")
+                continue
             generate_language_vs_model_heatmap(
                 df_f1_heatmap=df_f1_heatmap,
                 output_dir=args.output_dir,
@@ -431,20 +573,43 @@ if __name__ == "__main__":
                 all_languages_list=all_languages_list
             )
         elif subtype == "chunk_vs_overlap":
+             # This one specifically needs F1 data
+            df_f1_heatmap = df_data[df_data['metric_type'] == 'f1_score'].copy()
+            if df_f1_heatmap.empty:
+                print("Warning: No F1 score data found. Skipping chunk_vs_overlap heatmap.")
+                continue
             generate_chunk_vs_overlap_heatmap(
                 df_f1_heatmap=df_f1_heatmap,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix
             )
         elif subtype == "model_vs_chunk_overlap":
+             # This one specifically needs F1 data
+            df_f1_heatmap = df_data[df_data['metric_type'] == 'f1_score'].copy()
+            if df_f1_heatmap.empty:
+                print("Warning: No F1 score data found. Skipping model_vs_chunk_overlap heatmap.")
+                continue
             generate_model_vs_chunk_overlap_heatmap(
                 df_f1_heatmap=df_f1_heatmap,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix
             )
-        elif subtype == "dataset_success": # Add the new call
+        elif subtype == "dataset_success": # This is the Model vs Chunk/Overlap for Dataset Success
             generate_dataset_success_heatmaps(
-                df_data=df_data, # Pass the full dataframe extracted earlier
+                df_data=df_data, # Pass the full dataframe
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix
+            )
+        # --- NEW: Call the new generator functions ---
+        elif subtype == "algo_vs_model_f1":
+            generate_algo_vs_model_f1_heatmap(
+                df_data=df_data, # Pass the full dataframe
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix
+            )
+        elif subtype == "algo_vs_model_success":
+            generate_algo_vs_model_dataset_success_heatmap(
+                df_data=df_data, # Pass the full dataframe
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix
             )
