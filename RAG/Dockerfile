@@ -52,6 +52,7 @@ RUN ollama serve & sleep 10 && \
     ollama pull phi3:medium-128k && \
     ollama pull gemma2:latest && \
     ollama pull qwen2.5 && \
+    ollama pull qwen3:8b && \
     ollama pull deepseek-r1:8b && \
     ollama pull deepseek-r1:1.5b
 

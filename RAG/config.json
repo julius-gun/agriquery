@@ -19,6 +19,12 @@
         "num_predict": 1024,
         "context_window": 128000
       },
+      "qwen3_8B-128k": {
+        "name": "qwen3:8b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
+      },
       "qwen2.5_7B-128k": {
         "name": "qwen2.5:latest",
         "temperature": 0.0,
@@ -88,14 +94,7 @@
     }
   },
   "question_models_to_test": [
-    "deepseek-r1_8B-128k",
-    "deepseek-r1_1.5B-128k",
-    "qwen2.5_7B-128k",
-    "phi3_14B_q4_medium-128k",
-    "phi3_8B_q4_mini-128k",
-    "llama3.1_8B-128k",
-    "llama3.2_3B-128k",
-    "llama3.2_1B-128k"
+    "qwen3_8B-128k"
   ],
   "evaluator_model_name": "gemma3_12B-128k",
   "prompt_paths": {
@@ -128,7 +127,8 @@
   "rag_parameters": {
     "retrieval_algorithms_to_test": [
       "keyword",
-      "hybrid"
+      "hybrid",
+      "embedding"
     ],
     "chunk_sizes_to_test": [
       200

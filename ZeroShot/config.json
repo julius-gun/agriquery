@@ -85,8 +85,8 @@
                 "num_predict": 1024,
                 "context_window": 128000
             },
-            "DeepSeek-R1-Distill-Qwen-7B-uncensored-128k": {
-                "name": "thirdeyeai/DeepSeek-R1-Distill-Qwen-7B-uncensored",
+            "qwen3_8B-128k": {
+                "name": "qwen3:8b",
                 "temperature": 0.0,
                 "num_predict": 1024,
                 "context_window": 128000
