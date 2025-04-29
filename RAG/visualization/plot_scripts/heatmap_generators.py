@@ -518,27 +518,36 @@ def generate_algo_vs_model_dataset_success_heatmap(
     output_filename_prefix: str,
 ):
     """
-    Generates separate heatmaps for each specified dataset type and target language
-    (English, German) comparing Algorithms (RAG filtered by specific chunk/overlap,
-    ZeroShot by specific noise levels) vs LLM Models based on Dataset Success Rate.
+    Generates ONE heatmap for EACH specified dataset type, combining results
+    across specified languages (English, German, French).
+    Compares Algorithms/Languages (Rows) vs LLM Models (Columns) based on
+    Dataset Success Rate. Rows are sorted by Algorithm/Noise Level first,
+    then by Language (e.g., english_embedding, french_embedding...).
+    Filters RAG algorithms by specific chunk/overlap and ZeroShot by specific noise levels.
     """
     # Define target languages and parameters
-    languages_to_plot = ["english", "german", "french"]  # TARGET LANGUAGES
+    languages_to_include = ["english", "german", "french"] # TARGET LANGUAGES TO INCLUDE
     metric_to_plot = "dataset_success"
     # Define target datasets based on config keys (adjust if keys differ)
     target_datasets = ["general_questions", "table_questions", "unanswerable_questions"]
     target_chunk = 200
     target_overlap = 100
     target_noise_levels = [1000, 10000, 30000, 59000]
-    # Define RAG algos explicitly or filter dynamically (using != 'zeroshot' is simpler)
-    # rag_algorithms = ['keyword', 'hybrid', 'embedding']
+    rag_algorithms_ordered = ["hybrid", "embedding" , "keyword"] # Desired RAG order
+    # Create ordered list for zeroshot identifiers
+    zeroshot_identifiers_ordered = [f"zeroshot_noise_{n}" for n in sorted(target_noise_levels)]
+    # Combine into the final algorithm order for sorting
+    algorithm_sort_order = rag_algorithms_ordered + zeroshot_identifiers_ordered
+    language_sort_order = languages_to_include # Use the include list for order
 
-    print(f"\nGenerating Dataset Success Heatmaps: Algorithm vs Model")
-    print(f"  Target Languages: {languages_to_plot}")
+    print(f"\nGenerating Dataset Success Heatmaps: Algorithm/Language vs Model (One per Dataset, Custom Sort)")
+    print(f"  Including Languages: {languages_to_include} (Order: {language_sort_order})")
     print(f"  Target Metric: {metric_to_plot}")
     print(f"  Target Datasets: {target_datasets}")
-    print(f"  RAG Params (fixed for these plots): Chunk={target_chunk}, Overlap={target_overlap}")
-    print(f"  ZeroShot Noise Levels (included for these plots): {target_noise_levels}")
+    print(f"  Algorithm Sort Order: {algorithm_sort_order}")
+    print(f"  RAG Params (fixed): C={target_chunk}/O={target_overlap}")
+    print(f"  ZeroShot Noise Levels (included): {target_noise_levels}")
+
 
     required_cols = [
         "retrieval_algorithm",
@@ -560,135 +569,152 @@ def generate_algo_vs_model_dataset_success_heatmap(
     # Convert relevant columns to numeric ONCE for the whole dataframe, coercing errors
     df_data_processed = df_data.copy() # Work on a copy
     numeric_cols = ['chunk_size', 'overlap_size', 'noise_level']
-    df_data_processed = df_data.copy() # Work on a copy
     for col in numeric_cols:
         if col in df_data_processed.columns:
             df_data_processed[col] = pd.to_numeric(df_data_processed[col], errors='coerce')
 
+    # --- Filter ONCE for relevant languages and metric type ---
+    df_metric_filtered = df_data_processed[
+        (df_data_processed['language'].isin(languages_to_include)) &
+        (df_data_processed['metric_type'] == metric_to_plot)
+    ].copy() # Use the processed df with numeric types
 
-    # --- Outer loop for languages ---
-    for target_language in languages_to_plot:
-        print(f"\n-- Processing Language: {target_language} --")
-
-        # Initial filter for the current language and metric
-        df_lang_metric_filtered = df_data_processed[
-            (df_data_processed['language'] == target_language) &
-            (df_data_processed['metric_type'] == metric_to_plot)
-        ].copy() # Use the processed df with numeric types
-
-        if df_lang_metric_filtered.empty:
-            print(f"  No data found for metric '{metric_to_plot}' and language '{target_language}'. Skipping this language.")
-            continue # Skip to the next language
-
-        # --- Inner loop for dataset types (within each language) ---
-        dataset_plot_counter = 0
-        for dataset_type in target_datasets:
-            dataset_plot_counter += 1
-            print(f"\n  [{dataset_plot_counter}/{len(target_datasets)}] Processing dataset: {dataset_type} for {target_language}")
-
-            # Filter for the current dataset
-            df_dataset_filtered = df_lang_metric_filtered[
-                df_lang_metric_filtered["dataset_type"] == dataset_type
-            ].copy()
-
-            if df_dataset_filtered.empty:
-                print(f"    No data found for dataset '{dataset_type}' in {target_language}. Skipping heatmap.")
-                continue
-
-            # --- Filter RAG Data ---
-            # Identify RAG rows (not 'zeroshot')
-            is_rag = df_dataset_filtered["retrieval_algorithm"] != "zeroshot"
-
-            # Apply RAG filters (chunk, overlap)
-            # Comparisons handle NaN correctly (NaN == value is False)
-            df_rag_filtered = df_dataset_filtered[
-                is_rag
-                & (df_dataset_filtered["chunk_size"] == target_chunk)
-                & (df_dataset_filtered["overlap_size"] == target_overlap)
-            ].copy()
-
-            # Add plot index for RAG
-            if not df_rag_filtered.empty:
-                 df_rag_filtered['plot_index'] = df_rag_filtered['retrieval_algorithm']
-                 print(f"    Found {len(df_rag_filtered)} RAG data points matching criteria for {dataset_type}.")
-            else:
-                 print(f"    No RAG data points found matching criteria for {dataset_type}.")
+    if df_metric_filtered.empty:
+        print(f"  No data found for metric '{metric_to_plot}' and included languages '{languages_to_include}'. Skipping generation.")
+        return # Skip if no relevant data exists at all
 
 
-            # --- Filter ZeroShot Data ---
-            # Apply ZeroShot filters (algorithm name, noise levels)
-            df_zeroshot_filtered = df_dataset_filtered[
-                (df_dataset_filtered["retrieval_algorithm"] == "zeroshot")
-                & (df_dataset_filtered["noise_level"].isin(target_noise_levels))
-            ].copy()
+    # --- Loop through dataset types ---
+    dataset_plot_counter = 0
+    for dataset_type in target_datasets:
+        dataset_plot_counter += 1
+        print(f"\n[{dataset_plot_counter}/{len(target_datasets)}] Processing dataset: {dataset_type} (All Languages)")
 
-            # Add plot index for ZeroShot
-            if not df_zeroshot_filtered.empty:
-                # Create index like 'zeroshot_noise_1000'
-                # Ensure noise_level is integer for formatting, fill potential NaNs from coerce step if any survived isin
-                df_zeroshot_filtered["noise_level_int"] = (
-                    df_zeroshot_filtered["noise_level"].fillna(0).astype(int)
-                )
-                df_zeroshot_filtered["plot_index"] = (
-                    "zeroshot_noise_" + df_zeroshot_filtered["noise_level_int"].astype(str)
-                )
-                # Drop the temporary column if desired
-                df_zeroshot_filtered = df_zeroshot_filtered.drop(
-                    columns=["noise_level_int"]
-                )
-                print(f"    Found {len(df_zeroshot_filtered)} ZeroShot data points matching criteria for {dataset_type}.")
-            else:
-                 print(f"    No ZeroShot data points found matching criteria for {dataset_type}.")
+        # Filter for the current dataset
+        df_dataset_filtered = df_metric_filtered[
+            df_metric_filtered["dataset_type"] == dataset_type
+        ].copy()
 
+        if df_dataset_filtered.empty:
+            print(f"    No data found for dataset '{dataset_type}' (Metric: {metric_to_plot}, Langs: {languages_to_include}). Skipping heatmap.")
+            continue
 
-            # --- Combine and Prepare for Plotting ---
-            # Use list comprehension to handle cases where one df might be empty
-            dfs_to_concat = [
-                df for df in [df_rag_filtered, df_zeroshot_filtered] if not df.empty
-            ]
+        # --- Filter RAG Data ---
+        is_rag = df_dataset_filtered["retrieval_algorithm"] != "zeroshot"
+        df_rag_filtered = df_dataset_filtered[
+            is_rag
+            & (df_dataset_filtered["chunk_size"] == target_chunk)
+            & (df_dataset_filtered["overlap_size"] == target_overlap)
+        ].copy()
 
-            if not dfs_to_concat:
-                 print(f"    No data remaining for dataset '{dataset_type}' in {target_language} after applying RAG/ZeroShot filters. Skipping heatmap.")
-                 continue
-
-            df_combined = pd.concat(dfs_to_concat, ignore_index=True)
-
-            # Check for necessary columns again after potential filtering/concatenation issues
-            if 'plot_index' not in df_combined.columns or 'question_model' not in df_combined.columns or 'metric_value' not in df_combined.columns:
-                 print(f"    Error: Missing essential columns in combined data for {dataset_type}/{target_language}. Skipping heatmap.")
-                 continue
-
-            print(f"    Total data points for heatmap ({dataset_type}/{target_language}): {len(df_combined)}")
-            print(f"    Unique indices found: {df_combined['plot_index'].unique().tolist()}")
-            print(f"    Unique models found: {df_combined['question_model'].unique().tolist()}")
+        # Add combined plot index for RAG ('language_algorithm')
+        if not df_rag_filtered.empty:
+             # Combine language and algorithm for the plot index
+             df_rag_filtered['plot_index'] = df_rag_filtered['language'] + '_' + df_rag_filtered['retrieval_algorithm']
+             df_rag_filtered['_sort_key_algo'] = df_rag_filtered['retrieval_algorithm'] # Base algo is the sort key
+             df_rag_filtered['_sort_key_lang'] = df_rag_filtered['language']
+             print(f"    Found {len(df_rag_filtered)} RAG points for {dataset_type}.")
+        else:
+             print(f"    No RAG data points found matching criteria for {dataset_type} across languages.")
 
 
-            # --- Plotting ---
-            sanitized_dataset_type = sanitize_filename(dataset_type)
-            sanitized_language = sanitize_filename(target_language) # Sanitize language
-            # Include language in the filename
-            output_filename = f"{output_filename_prefix}dataset_success_heatmap_algo_vs_model_{sanitized_language}_{sanitized_dataset_type}.png"
-            output_filepath = os.path.join(output_dir, output_filename)
-            # Include language in the title
-            plot_title = (
-                f"{dataset_type.replace('_', ' ').title()} Success Rate ({target_language.title()}):\n"
-                f"Algorithm (RAG: C={target_chunk}/O={target_overlap}, ZeroShot: Noise) vs LLM Model"
+        # --- Filter ZeroShot Data ---
+        df_zeroshot_filtered = df_dataset_filtered[
+            (df_dataset_filtered["retrieval_algorithm"] == "zeroshot")
+            & (df_dataset_filtered["noise_level"].isin(target_noise_levels))
+        ].copy()
+
+        # Add combined plot index and sorting keys for ZeroShot
+        if not df_zeroshot_filtered.empty:
+            df_zeroshot_filtered["noise_level_int"] = (
+                df_zeroshot_filtered["noise_level"].fillna(0).astype(int)
+            )
+            # Base identifier for sorting (e.g., 'zeroshot_noise_1000')
+            df_zeroshot_filtered['_sort_key_algo'] = "zeroshot_noise_" + df_zeroshot_filtered["noise_level_int"].astype(str)
+            # Combined index for display
+            df_zeroshot_filtered["plot_index"] = df_zeroshot_filtered['language'] + '_' + df_zeroshot_filtered['_sort_key_algo']
+            df_zeroshot_filtered['_sort_key_lang'] = df_zeroshot_filtered['language']
+
+            df_zeroshot_filtered = df_zeroshot_filtered.drop(columns=["noise_level_int"])
+            print(f"    Found {len(df_zeroshot_filtered)} ZeroShot points for {dataset_type}.")
+        else:
+             print(f"    No ZeroShot data points found matching criteria for {dataset_type} across languages.")
+
+
+        # --- Combine and Prepare for Plotting ---
+        dfs_to_concat = [
+            df for df in [df_rag_filtered, df_zeroshot_filtered] if not df.empty
+        ]
+
+        if not dfs_to_concat:
+             print(f"    No data remaining for dataset '{dataset_type}' after applying RAG/ZeroShot filters across languages. Skipping heatmap.")
+             continue
+
+        df_combined = pd.concat(dfs_to_concat, ignore_index=True)
+
+        if not all(col in df_combined.columns for col in ['plot_index', 'question_model', 'metric_value', '_sort_key_algo', '_sort_key_lang']):
+             print(f"    Error: Missing essential columns after concat for {dataset_type}. Skipping heatmap.")
+             continue
+
+        print(f"    Total points for heatmap ({dataset_type}): {len(df_combined)}")
+
+        # --- Apply Custom Sorting ---
+        try:
+            # Convert sorting columns to Categorical with the defined order
+            df_combined['_sort_key_algo'] = pd.Categorical(
+                df_combined['_sort_key_algo'], categories=algorithm_sort_order, ordered=True
+            )
+            df_combined['_sort_key_lang'] = pd.Categorical(
+                df_combined['_sort_key_lang'], categories=language_sort_order, ordered=True
             )
 
+            # Sort the DataFrame
+            df_combined_sorted = df_combined.sort_values(by=['_sort_key_algo', '_sort_key_lang'])
 
-            # Call the generic heatmap function (which handles pivoting)
-            create_f1_heatmap(  # Re-using the existing function
-                data=df_combined,  # Pass the combined, filtered, UNPIVOTED data
-                output_path=output_filepath,
-                index_col="plot_index",  # Use the new combined index (Y-axis: Algos/Zeroshot variants)
-                columns_col="question_model",  # X-axis: Models
-                values_col="metric_value",  # Cell values: Success Rate
-                value_label="Success Rate",  # Label for the title/colorbar
-                all_indices=None,  # Let it determine indices from data
-                current_params=None,  # No specific sub-parameters for this plot type
-                title=plot_title,  # Custom title reflecting dataset and filters
-                sort_columns_by_value=True,  # Sort models by performance
-            )
+            # Get the unique plot indices IN THE SORTED ORDER
+            sorted_plot_indices = df_combined_sorted['plot_index'].unique().tolist()
+
+            print(f"    Applied custom sort. Sorted indices (examples): {sorted_plot_indices[:10]}...")
+            print(f"    Unique models found: {df_combined_sorted['question_model'].unique().tolist()}")
+
+            # Remove temporary columns before plotting if desired
+            df_plot_data = df_combined_sorted.drop(columns=['_sort_key_algo', '_sort_key_lang'])
+
+        except Exception as e:
+            print(f"    Error during custom sorting for {dataset_type}: {e}. Falling back to default sort.")
+            # Fallback: sort alphabetically by plot_index if custom sort fails
+            df_combined_sorted = df_combined.sort_values(by='plot_index')
+            sorted_plot_indices = df_combined_sorted['plot_index'].unique().tolist()
+            df_plot_data = df_combined_sorted.drop(columns=['_sort_key_algo', '_sort_key_lang'], errors='ignore')
+
+
+        # --- Plotting ---
+        sanitized_dataset_type = sanitize_filename(dataset_type)
+        # Update filename to reflect multi-language nature (remove specific language)
+        output_filename = f"{output_filename_prefix}dataset_success_heatmap_lang_algo_vs_model_{sanitized_dataset_type}.png"
+        output_filepath = os.path.join(output_dir, output_filename)
+        # Update title to reflect multi-language nature
+        plot_title = (
+            f"{dataset_type.replace('_', ' ').title()} Success Rate (Multi-Language, Sorted by Algo):\n"
+            f"Algorithm/Language vs LLM Model (RAG: C={target_chunk}/O={target_overlap}, ZeroShot: Noise)"
+        )
+
+        # Call the generic heatmap function
+        create_f1_heatmap(
+            data=df_plot_data,               # Pass the data (sorting is handled by all_indices)
+            output_path=output_filepath,
+            index_col="plot_index",          # Use the combined index (Y-axis)
+            columns_col="question_model",    # X-axis: Models
+            values_col="metric_value",       # Cell values: Success Rate
+            value_label="Success Rate",      # Label for the title/colorbar
+            all_indices=sorted_plot_indices, # <<< Pass the explicitly sorted index list
+            current_params=None,
+            title=plot_title,
+            sort_columns_by_value=True,      # Sort models by performance (X-axis)
+            # Adjust figsize if needed for potentially long Y-axis
+            # figsize=(14, max(8, len(sorted_plot_indices) * 0.4)) # Dynamically adjust height?
+        )
+
 
 
 # --- Standalone Execution ---
