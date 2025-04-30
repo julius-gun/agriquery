@@ -1,54 +1,18 @@
 # RAG Testing Framework
+![F1 Score Heatmap: Language vs Model (Hybrid, CS:200 OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_hybrid_cs_200.0_os_100.0.png)
+![F1 Score Heatmap: Language vs Model (Embedding, CS:200 OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_embedding_cs_200.0_os_100.0.png)
+![F1 Score Heatmap: Language vs Model (Keyword, CS:200 OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_keyword_cs_200.0_os_100.0.png)
 
-![Dataset Success Heatmap: General Questions](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_general_questions.png)
-![Dataset Success Heatmap: Unanswerable Questions](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_unanswerable_questions.png)
-![Dataset Success Heatmap: Table Questions](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_table_questions.png)
+![Dataset Success Heatmap: General Questions (Lang/Algo vs Model)](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_general_questions.png)
+![Dataset Success Heatmap: Unanswerable Questions (Lang/Algo vs Model)](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_unanswerable_questions.png)
+![Dataset Success Heatmap: Table Questions (Lang/Algo vs Model)](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_table_questions.png)
 
-![Success Boxplot Hybrid (English, CS:200 OS:100)](visualization/plots/dataset_success_boxplot_model_vs_dataset_hybrid_lang_english_cs_200_os_100.png)
-*This boxplot illustrates the variability in success rates across different datasets for various models using the hybrid retrieval method in English (Chunk Size 200, Overlap 100).*
+![Dataset Success Boxplot: Hybrid (English, CS:200 OS:100)](visualization/plots/dataset_success_boxplot_model_vs_dataset_hybrid_lang_english_cs_200_os_100.png)
+![Dataset Success Boxplot: Embedding (English, CS:200 OS:100)](visualization/plots/dataset_success_boxplot_model_vs_dataset_embedding_lang_english_cs_200_os_100.png)
+![Dataset Success Boxplot: Keyword (English, CS:200 OS:100)](visualization/plots/dataset_success_boxplot_model_vs_dataset_keyword_lang_english_cs_200_os_100.png)
 
-![Success Heatmap Hybrid (English, General Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_hybrid_dataset_general_questions.png)
-*Hybrid retrieval demonstrates very good success rates for general questions in English across different models and chunk/overlap configurations.*
-
-![Success Heatmap Hybrid (English, Table Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_hybrid_dataset_table_questions.png)
-*Hybrid retrieval shows poor performance when answering table-based questions in English.*
-
-![Success Heatmap Embedding (English, General Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_embedding_dataset_general_questions.png)
-*Embedding retrieval achieves good, though slightly lower than hybrid, success rates for general questions in English.*
-
-![Success Heatmap Embedding (English, Table Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_embedding_dataset_table_questions.png)
-*Embedding retrieval also performs poorly on table-based questions in English, but better then Hybrid.*
-
-![Success Heatmap Keyword (English, answerable Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_keyword_dataset_general_questions.png)
-*Keyword retrieval yields the worst results when attempting to identify answerable questions in English.*
-
-![Success Heatmap Keyword (English, Table Questions)](visualization/plots/dataset_success_heatmap_model_vs_chunk_overlap_lang_english_algo_keyword_dataset_table_questions.png)
-*Keyword retrieval performs the worst among the algorithms for table-based questions in English.*
-
-![F1 Score Box Plot by Model](visualization/plots/f1_boxplot_by_question_model_colored_by_language.png)
-*This box plot shows the distribution of F1 scores achieved by different question-answering LLM models across various tests.*
-
-![F1 Heatmap Model vs Chunk/Overlap (English, Embedding)](visualization/plots/f1_heatmap_model_vs_chunk_overlap_lang_english_algo_embedding.png)
-*F1 score heatmap comparing models vs. chunk/overlap combinations for English language using the embedding algorithm.*
-
-
-![F1 Score Box Plot by Model](visualization/plots/f1_boxplot_by_question_model_colored_by_language.png)
-*This box plot shows the distribution of F1 scores achieved by different question-answering LLM models across various tests.*
-
-![F1 Heatmap Model vs Chunk/Overlap (English, Embedding)](visualization/plots/f1_heatmap_model_vs_chunk_overlap_lang_english_algo_embedding.png)
-*F1 score heatmap comparing models vs. chunk/overlap combinations for English language using the embedding algorithm.*
-
-![F1 Heatmap Language vs Model (Embedding, CS:200, OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_embedding_cs_200_os_100.png)
-*F1 score heatmap comparing languages vs. models for embedding algorithm with chunk size 200 and overlap 100.*
-
-![F1 Heatmap Language vs Model (Embedding, CS:500, OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_embedding_cs_500_os_100.png)
-*F1 score heatmap comparing languages vs. models for embedding algorithm with chunk size 500 and overlap 100.*
-
-![F1 Heatmap Language vs Model (Embedding, CS:2000, OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_embedding_cs_2000_os_100.png)
-*F1 score heatmap comparing languages vs. models for embedding algorithm with chunk size 2000 and overlap 100.*
-
-![F1 Heatmap Chunk vs Overlap (English, Qwen2.5 7B, Embedding)](visualization/plots/f1_heatmap_chunk_vs_overlap_lang_english_model_qwen2.5_7B-128k_algo_embedding.png)
-*F1 score heatmap comparing chunk size vs. overlap size for English language, Qwen2.5 7B model, using the embedding algorithm.*
+![F1 Score Boxplot: Model Performance (Colored by Language)](visualization/plots/f1_boxplot_by_question_model_colored_by_language.png)
+![F1 Score Heatmap: Algorithm vs Model (English)](visualization/plots/f1_heatmap_algo_vs_model_english.png)
 
 More Information
 *   **RAG Plots:** [RAG Plots](RAG/visualization/plots/) 
