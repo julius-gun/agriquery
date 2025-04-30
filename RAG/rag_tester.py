@@ -737,8 +737,6 @@ class RagTester:
             len(self.language_configs)
         )
         combination_count = 0
-        # TODO: Make question LLM type configurable if needed
-        question_llm_type = DEFAULT_LLM_TYPE
 
         # --- Start Iteration Loops (New Order) ---
         # Outermost loop: Question Model
@@ -747,11 +745,20 @@ class RagTester:
 
             # --- Initialize Question LLM Connector (once per model) ---
             current_question_llm_connector: Optional[BaseLLMConnector] = None
+            question_llm_type, _ = self.config_loader.get_llm_type_and_config(model_name) # Use the new method
+
+            if not question_llm_type:
+                 logging.error(f"Model '{model_name}' not found in any LLM configuration ('ollama', 'gemini', etc.). Skipping this model.")
+                 continue # Skip to the next model
+
+            logging.info(f"Determined LLM type for '{model_name}' as: '{question_llm_type}'")
+
             try:
+                # Use the determined llm_type here instead of DEFAULT_LLM_TYPE
                 current_question_llm_connector = self.llm_connector_manager.get_connector(question_llm_type, model_name)
-                logging.info(f"Successfully initialized question connector for model: {model_name}")
+                logging.info(f"Successfully initialized question connector for model: {model_name} (Type: {question_llm_type})")
             except Exception as e:
-                logging.error(f"Error initializing question connector for model {model_name}: {e}. Skipping this model.", exc_info=True)
+                logging.error(f"Error initializing question connector for model {model_name} (Type: {question_llm_type}): {e}. Skipping this model.", exc_info=True)
                 continue # Skip to the next model if connector fails
 
             # Next loops: Chunking parameters

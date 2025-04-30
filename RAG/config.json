@@ -91,10 +91,20 @@
         "num_predict": 1024,
         "context_window": 131072
       }
+    },
+    "gemini": {
+      "gemini-2.5-flash-preview-04-17": {
+        "name": "gemini-2.5-flash-preview-04-17",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": null,
+        "top_p": 0.0,
+        "top_k": 64
+      }
     }
   },
   "question_models_to_test": [
-    "qwen3_8B-128k"
+    "gemini-2.5-flash-preview-04-17"
   ],
   "evaluator_model_name": "gemma3_12B-128k",
   "prompt_paths": {

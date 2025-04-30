@@ -2,10 +2,14 @@
 # python -m llm_connectors.gemini_connector
 
 import os
+import time # Import time module
+import logging # Import logging
 from typing import Dict, Any
 import google.generativeai as genai
 from llm_connectors.base_llm_connector import BaseLLMConnector
 
+# Basic logging configuration (can be adjusted or handled globally)
+# logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class GeminiConnector(BaseLLMConnector):
     """Connector for Gemini LLMs."""
@@ -27,7 +31,7 @@ class GeminiConnector(BaseLLMConnector):
 
         # Initialize Gemini API
         # Key change: Get the API key directly here and handle potential missing key.
-        api_key = os.environ.get("GEMINI_API_KEY1")
+        api_key = os.environ.get("GEMINI_API_KEY")
         # api_key = os.environ.get("HUGGING_FACE_API_KEY")
         # print(f"API key: {api_key}")
         if not api_key:
@@ -39,7 +43,7 @@ class GeminiConnector(BaseLLMConnector):
         # missing keys gracefully.  Also rename max_tokens to max_output_tokens for Gemini.
         self.generation_config = {
             "temperature": self.temperature,
-            "top_p": self.config.get("top_p", 0.95),  # Default values if not in config
+            "top_p": self.config.get("top_p", 0.0),  # Default values if not in config
             "top_k": self.config.get("top_k", 64),
             "max_output_tokens": self.num_predict,  # Use max_tokens from BaseLLMConnector
             "response_mime_type": "text/plain",  # This might not be directly supported, but we keep it for consistency
@@ -62,25 +66,32 @@ class GeminiConnector(BaseLLMConnector):
     def invoke(self, prompt: str) -> str:
         """
         Invokes the Gemini LLM with the given prompt and returns the response.
+        Includes a mandatory delay before each invocation.
 
         Args:
             prompt (str): The prompt to send to Gemini.
 
         Returns:
-            str: The Gemini model's response.  Handles potential errors.
+            str: The Gemini model's response. Handles potential errors.
         """
         try:
+            # --- Add delay specifically for Gemini ---
+            DELAY_SECONDS = 7  # Delay in seconds
+            logging.debug(f"GeminiConnector: Waiting {DELAY_SECONDS} seconds before API call...") # Use debug level for less noise
+            time.sleep(DELAY_SECONDS)
+
             response = self.chat_session.send_message(prompt)
             return response.text
         except Exception as e:
-            print(f"Error during Gemini invocation: {e}")
-            return f"Error: {e}"  # Return the error message as a string
+            # Use logging for errors instead of print
+            logging.error(f"Error during Gemini invocation: {e}", exc_info=True) # Add exc_info for traceback
+            return f"Error: {e}" # Return the error message as a string
 
 
 if __name__ == "__main__":
     # Example usage (assuming GEMINI_API_KEY environment variable is set):
     gemini_config = {
-        "name": "gemini-2.0-flash-thinking-exp-01-21",  # Use the *internal* Gemini model name
+        "name": "gemini-2.5-flash-preview-04-17",  # Use the *internal* Gemini model name
         "temperature": 0.0,
         "num_predict": 256,
         "top_k": 40,  # Example additional parameter

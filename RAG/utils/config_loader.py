@@ -2,7 +2,8 @@
 import json
 import os
 import re
-from typing import List, Dict, Any  # Import List, Dict, Any
+# Corrected import statement: Added Optional and Tuple
+from typing import List, Dict, Any, Optional, Tuple
 
 
 class ConfigLoader:
@@ -183,6 +184,23 @@ class ConfigLoader:
             )
             # raise ValueError(f"LLM type '{llm_type}' not supported or configured in config.")
         return models_for_type
+    def get_llm_type_and_config(self, model_name: str) -> Tuple[Optional[str], Optional[Dict[str, Any]]]:
+        """
+        Finds the LLM type (e.g., 'ollama', 'gemini') and configuration for a given model name.
+
+        Args:
+            model_name (str): The user-facing model name (key in the config).
+
+        Returns:
+            Tuple[Optional[str], Optional[Dict[str, Any]]]: A tuple containing the LLM type
+            (string) and its specific configuration dictionary, or (None, None) if not found.
+        """
+        all_llm_models = self.config.get("llm_models", {})
+        for llm_type, models_config in all_llm_models.items():
+            if model_name in models_config:
+                return llm_type, models_config[model_name]
+        # If the model name was not found under any type
+        return None, None
 
     def get_question_model_name(self) -> str | None:
         """Gets the single question model name (potentially a default)."""
@@ -253,8 +271,29 @@ if __name__ == "__main__":
     ollama_models = config_loader.get_llm_models_config("ollama")
     print("\nOllama models:", json.dumps(ollama_models, indent=2))
 
+    # Test gemini if present
+    gemini_models = config_loader.get_llm_models_config("gemini")
+    if gemini_models:
+        print("\nGemini models:", json.dumps(gemini_models, indent=2))
+
     evaluator_model = config_loader.get_evaluator_model_name()
     print("\nEvaluator model name:", evaluator_model)
+
+    # Test new method
+    test_model = "gemini-2.5-flash-preview-04-17" # Example model name from config
+    llm_type, model_config = config_loader.get_llm_type_and_config(test_model)
+    if llm_type:
+        print(f"\nFound model '{test_model}': Type='{llm_type}', Config={model_config}")
+    else:
+        print(f"\nModel '{test_model}' not found in any LLM type.")
+
+    test_model_ollama = "qwen3_8B-128k" # Example ollama model
+    llm_type_o, model_config_o = config_loader.get_llm_type_and_config(test_model_ollama)
+    if llm_type_o:
+        print(f"\nFound model '{test_model_ollama}': Type='{llm_type_o}', Config={model_config_o}")
+    else:
+        print(f"\nModel '{test_model_ollama}' not found in any LLM type.")
+
 
     # Test new methods
     question_models_list = config_loader.get_question_models_to_test()

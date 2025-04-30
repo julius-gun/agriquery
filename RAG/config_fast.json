@@ -19,6 +19,12 @@
         "num_predict": 1024,
         "context_window": 128000
       },
+      "qwen3_8B-128k": {
+        "name": "qwen3:8b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 128000
+      },
       "qwen2.5_7B-128k": {
         "name": "qwen2.5:latest",
         "temperature": 0.0,
@@ -85,6 +91,16 @@
         "num_predict": 1024,
         "context_window": 131072
       }
+    },
+    "gemini": {
+      "gemini-2.5-flash-preview-04-17": {
+        "name": "gemini-2.5-flash-preview-04-17",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": null,
+        "top_p": 0.0,
+        "top_k": 64
+      }
     }
   },
   "question_models_to_test": [
@@ -122,8 +138,12 @@
     "retrieval_algorithms_to_test": [
       "hybrid"
     ],
-    "chunk_sizes_to_test": [ 200 ],
-    "overlap_sizes_to_test": [ 100 ],
-    "num_retrieved_docs": 10
+    "chunk_sizes_to_test": [
+      200
+    ],
+    "overlap_sizes_to_test": [
+      100
+    ],
+    "num_retrieved_docs": 3
   }
 }
