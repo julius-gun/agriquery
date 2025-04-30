@@ -2,10 +2,13 @@
 # python -m llm_connectors.gemini_connector
 
 import os
-import time # Import time module
-import logging # Import logging
+import time
+import logging
+import random # Import random for jitter
 from typing import Dict, Any
 import google.generativeai as genai
+# Import the specific exception for rate limiting/quota issues
+from google.api_core import exceptions as google_exceptions
 from llm_connectors.base_llm_connector import BaseLLMConnector
 
 # Basic logging configuration (can be adjusted or handled globally)
@@ -67,29 +70,55 @@ class GeminiConnector(BaseLLMConnector):
         """
         Invokes the Gemini LLM with the given prompt and returns the response.
         Includes a mandatory delay before each invocation.
+        and implements retry logic with exponential backoff for rate limit errors (429).
+
 
         Args:
             prompt (str): The prompt to send to Gemini.
 
         Returns:
-            str: The Gemini model's response. Handles potential errors.
+            str: The Gemini model's response. Handles potential errors including retries.
         """
-        try:
-            # --- Add delay specifically for Gemini ---
-            DELAY_SECONDS = 7  # Delay in seconds
-            logging.debug(f"GeminiConnector: Waiting {DELAY_SECONDS} seconds before API call...") # Use debug level for less noise
-            time.sleep(DELAY_SECONDS)
+        DELAY_SECONDS = 8 # Delay in seconds
+        logging.debug(f"GeminiConnector: Waiting {DELAY_SECONDS} seconds before API call...") # Use debug level for less noise
+        time.sleep(DELAY_SECONDS)
+        max_retries = 3 # Maximum number of retries
+        base_delay = 5  # Base delay in seconds for backoff
 
-            response = self.chat_session.send_message(prompt)
-            return response.text
-        except Exception as e:
-            # Use logging for errors instead of print
-            logging.error(f"Error during Gemini invocation: {e}", exc_info=True) # Add exc_info for traceback
-            return f"Error: {e}" # Return the error message as a string
+        for attempt in range(max_retries + 1): # +1 to include the initial attempt
+            try:
+                logging.debug(f"GeminiConnector: Sending message (Attempt {attempt + 1}/{max_retries + 1})...")
+                response = self.chat_session.send_message(prompt)
+                logging.debug(f"GeminiConnector: Received response successfully on attempt {attempt + 1}.")
+                return response.text # Success, return response
+
+            except google_exceptions.ResourceExhausted as e:
+                logging.warning(f"GeminiConnector: Rate limit error (429 Resource Exhausted) encountered on attempt {attempt + 1}. {e}")
+                if attempt < max_retries:
+                    # Calculate backoff time: base_delay * 2^attempt + random_jitter
+                    backoff_time = (base_delay * (2 ** attempt)) + random.uniform(0, 1)
+                    logging.warning(f"GeminiConnector: Retrying in {backoff_time:.2f} seconds...")
+                    time.sleep(backoff_time)
+                else:
+                    logging.error(f"GeminiConnector: Max retries ({max_retries}) reached after rate limit error. Failing request.")
+                    # Re-raise the last exception or return a specific error message
+                    # raise # Option 1: Re-raise the exception
+                    return f"Error: Max retries reached due to rate limiting. Last error: {e}" # Option 2: Return error string
+
+            except Exception as e:
+                # Catch other potential exceptions (e.g., network errors, other API errors)
+                logging.error(f"GeminiConnector: An unexpected error occurred during invocation (Attempt {attempt + 1}): {e}", exc_info=True)
+                # Decide if retrying makes sense for other errors, here we fail fast
+                return f"Error: An unexpected error occurred. {e}" # Return error string for non-retryable errors
+
+        # This part should ideally not be reached if logic is correct, but acts as a fallback.
+        logging.error("GeminiConnector: invoke method exited loop unexpectedly.")
+        return "Error: Failed after multiple retries or unexpected loop exit."
 
 
 if __name__ == "__main__":
     # Example usage (assuming GEMINI_API_KEY environment variable is set):
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s') # Configure logging for example run
     gemini_config = {
         "name": "gemini-2.5-flash-preview-04-17",  # Use the *internal* Gemini model name
         "temperature": 0.0,
@@ -97,9 +126,12 @@ if __name__ == "__main__":
         "top_k": 40,  # Example additional parameter
         "top_p": 0.8,  # Example additional parameter
     }
-    gemini_connector = GeminiConnector("gemini-pro", gemini_config)  # User-facing name
+    gemini_connector = GeminiConnector("gemini-2.5-flash-preview-04-17", gemini_config)
 
     prompt_text = "What is the capital of Spain?"
+    logging.info(f"Sending first prompt: {prompt_text}")
+    # Simulate a rate limit error on the first call for testing (requires mocking)
+    # To test manually, you might need to trigger the rate limit naturally.
     response = gemini_connector.invoke(prompt_text)
     print(f"Prompt: {prompt_text}")
     print(f"Response from Gemini: {response}")
