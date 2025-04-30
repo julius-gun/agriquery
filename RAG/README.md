@@ -1,4 +1,5 @@
 # RAG Testing Framework
+![Dataset Distribution)](visualization/plots/question_dataset_distribution.png)
 ![F1 Score Heatmap: Language vs Model (Hybrid, CS:200 OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_hybrid_cs_200.0_os_100.0.png)
 ![F1 Score Heatmap: Language vs Model (Embedding, CS:200 OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_embedding_cs_200.0_os_100.0.png)
 ![F1 Score Heatmap: Language vs Model (Keyword, CS:200 OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_keyword_cs_200.0_os_100.0.png)

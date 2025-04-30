@@ -1,35 +1,174 @@
-# visualization/plot_scripts/plot_utils.py
-import re
+# visualization/plot_scripts/plot_dataset_distribution.py
 import os
 import sys
+import json
+import matplotlib.pyplot as plt
+from typing import List, Dict, Tuple
 
-def sanitize_filename(name: str) -> str:
-    """Removes or replaces characters problematic for filenames."""
-    # Remove or replace characters like ':', '/', '\', etc.
-    name = re.sub(r'[\\/*?:"<>|]', '_', name)
-    # Replace sequences of whitespace or underscores with a single underscore
-    name = re.sub(r'[\s_]+', '_', name)
-    # Remove leading/trailing underscores
-    name = name.strip('_')
-    return name if name else "invalid_name"
+# --- Path Setup ---
+# Calculate necessary paths relative to this script's location
+# Ensure this runs *before* imports that depend on the project root path.
+def setup_paths():
+    """Adds the project root directory (RAG) to sys.path."""
+    current_script_dir = os.path.dirname(os.path.abspath(__file__))
+    # project_root should be the 'RAG' directory
+    project_root = os.path.dirname(os.path.dirname(current_script_dir))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+    # Print paths for verification
+    # print(f"DEBUG: Current Script Dir: {current_script_dir}")
+    # print(f"DEBUG: Calculated Project Root: {project_root}")
+    # print(f"DEBUG: sys.path: {sys.path}")
+    return project_root
 
-# --- Helper to Adjust Python Path ---
-# This helps scripts in plot_scripts find modules in visualization and the project root (RAG)
-def add_project_paths():
-    """Adds project root and visualization directory to sys.path if not already present."""
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    visualization_dir = os.path.dirname(current_dir) # Parent of plot_scripts
-    project_root_dir = os.path.dirname(visualization_dir) # Parent of visualization (RAG)
+PROJECT_ROOT = setup_paths() # Execute path setup
 
-    if project_root_dir not in sys.path:
-        sys.path.insert(0, project_root_dir)
-    if visualization_dir not in sys.path:
-        sys.path.insert(1, visualization_dir)
+# --- Imports ---
+# Now that PROJECT_ROOT is (hopefully) in sys.path, these should work
+try:
+    from utils.config_loader import ConfigLoader
+    # Import from plot_utils if needed, it should be found now relative to this script
+    # or via the visualization dir if that was added (though PROJECT_ROOT addition is key)
+    # from .plot_utils import some_utility # Example relative import if needed
+except ImportError as e:
+    print(f"Error importing required modules after path setup: {e}")
+    print(f"Project Root added to path: {PROJECT_ROOT}")
+    print(f"Current sys.path: {sys.path}")
+    print("Please ensure 'utils/config_loader.py' exists relative to the project root.")
+    sys.exit(1)
+# --- End Imports ---
 
-# Call this function immediately so paths are set when modules are imported
-add_project_paths()
 
-# --- Constants (Example - could be moved or expanded) ---
-# Define constants used by multiple plotting scripts if needed
-# e.g., DEFAULT_OUTPUT_DIR = os.path.join(visualization_dir, "plots")
-# e.g., DEFAULT_RESULTS_DIR = os.path.join(project_root_dir, "results")
+# Function get_project_root() is no longer needed as we use PROJECT_ROOT constant
+# def get_project_root() -> str: ... # Removed
+
+def load_and_count_questions(filepath: str) -> int:
+    """Loads a JSON file and returns the number of items in the root list."""
+    # Check if path exists before opening
+    if not os.path.exists(filepath):
+        print(f"Error: Dataset file not found at {filepath}")
+        return 0
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        if isinstance(data, list):
+            return len(data)
+        else:
+            print(f"Warning: Expected a list in {filepath}, but found {type(data)}. Cannot count items.")
+            return 0
+    # Removed FileNotFoundError as it's checked above
+    except json.JSONDecodeError:
+        print(f"Error: Could not decode JSON from {filepath}")
+        return 0
+    except Exception as e:
+        print(f"An unexpected error occurred loading {filepath}: {e}")
+        return 0
+
+def plot_question_distribution(config_path: str, output_dir: str):
+    """
+    Loads question dataset paths from config, counts questions in each,
+    and generates a pie chart showing the distribution.
+    """
+    print("--- Generating Question Distribution Pie Chart ---")
+    # Use PROJECT_ROOT calculated at the start
+    abs_config_path = os.path.join(PROJECT_ROOT, config_path) # Ensure absolute path from root
+
+    # 1. Load Config
+    try:
+        config_loader = ConfigLoader(abs_config_path)
+        dataset_paths_config = config_loader.config.get("question_dataset_paths")
+    except FileNotFoundError:
+        print(f"Error: Configuration file not found at '{abs_config_path}'")
+        return
+    except Exception as e:
+        print(f"Error loading config file '{abs_config_path}': {e}")
+        return
+
+    if not dataset_paths_config:
+        print("Error: 'question_dataset_paths' not found in the configuration.")
+        return
+
+    # 2. Define datasets and friendly labels
+    datasets_to_plot = {
+        "general_questions": "General",
+        "table_questions": "Table",
+        "unanswerable_questions": "Unanswerable"
+    }
+
+    counts = []
+    labels = []
+    paths_to_check = []
+
+    # 3. Load data and count questions
+    print("Counting questions in datasets:")
+    for key, label in datasets_to_plot.items():
+        rel_path = dataset_paths_config.get(key)
+        if not rel_path:
+            print(f"Warning: Path for '{key}' not found in config. Skipping.")
+            continue
+
+        # Construct absolute path from project root
+        abs_path = os.path.normpath(os.path.join(PROJECT_ROOT, rel_path))
+        paths_to_check.append(abs_path) # Keep track for reporting
+        print(f"  - Processing '{label}' dataset from: {abs_path}")
+
+        count = load_and_count_questions(abs_path)
+        if count > 0: # Only include datasets with questions found
+            counts.append(count)
+            labels.append(label)
+        else:
+            print(f"    -> No questions counted for '{label}'. Excluding from plot.")
+
+    if not counts:
+        print("Error: No questions counted in any specified dataset. Cannot generate plot.")
+        print(f"Checked paths: {paths_to_check}")
+        return
+
+    # 4. Generate Plot
+    print("\nGenerating plot...")
+    fig, ax = plt.subplots(figsize=(8, 8)) # Adjust size as needed
+
+    # Use direct labeling (percentages on slices, labels for slices)
+    wedges, texts, autotexts = ax.pie(
+        counts,
+        labels=labels,
+        autopct='%1.1f%%', # Format for percentages
+        startangle=90,     # Start first slice at the top
+        pctdistance=0.85,  # Position percentages inside slices
+        textprops={'fontsize': 10}, # Adjust label font size if needed
+        # wedgeprops={'edgecolor': 'white'} # Optional: add white border between slices
+    )
+
+    # Improve clarity of percentage labels
+    plt.setp(autotexts, size=10, weight="bold", color="white") # Make percentages bold and white
+
+    ax.set_title('Distribution of Questions Across Datasets', fontsize=14, weight='bold')
+
+    # 5. Save Plot
+    # Ensure output dir is absolute from project root if needed, or relative as before
+    abs_output_dir = os.path.join(PROJECT_ROOT, output_dir)
+    os.makedirs(abs_output_dir, exist_ok=True)
+    output_filename = "question_dataset_distribution.png"
+    output_filepath = os.path.join(abs_output_dir, output_filename)
+
+    try:
+        plt.savefig(output_filepath, bbox_inches='tight') # Use bbox_inches='tight' to prevent label cutoff
+        print(f"Successfully saved plot to: {output_filepath}")
+    except Exception as e:
+        print(f"Error saving plot to {output_filepath}: {e}")
+
+    plt.close(fig) # Close the figure to free memory
+    print("--- Plot generation finished ---")
+
+
+if __name__ == "__main__":
+    # Define paths relative to the project root (PROJECT_ROOT)
+    # PROJECT_ROOT should be 'p_llm_manual/RAG'
+    DEFAULT_CONFIG_REL_PATH = "config.json" # Relative to PROJECT_ROOT
+    DEFAULT_OUTPUT_REL_DIR = os.path.join("visualization", "plots") # Relative to PROJECT_ROOT
+
+    # Use the relative paths directly; the functions construct absolute paths using PROJECT_ROOT
+    config_to_use = DEFAULT_CONFIG_REL_PATH
+    output_dir_to_use = DEFAULT_OUTPUT_REL_DIR
+
+    plot_question_distribution(config_path=config_to_use, output_dir=output_dir_to_use)
