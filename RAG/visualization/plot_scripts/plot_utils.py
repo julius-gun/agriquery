@@ -8,20 +8,21 @@ from typing import List, Dict, Tuple
 # --- Path Setup ---
 # Calculate necessary paths relative to this script's location
 # Ensure this runs *before* imports that depend on the project root path.
-def setup_paths():
-    """Adds the project root directory (RAG) to sys.path."""
+def add_project_paths() -> str:
+    """Adds the project root directory (RAG) to sys.path and returns it."""
     current_script_dir = os.path.dirname(os.path.abspath(__file__))
-    # project_root should be the 'RAG' directory
-    project_root = os.path.dirname(os.path.dirname(current_script_dir))
+    # project_root should be the 'RAG' directory (parent of 'visualization')
+    visualization_dir = os.path.dirname(current_script_dir)
+    project_root = os.path.dirname(visualization_dir)
     if project_root not in sys.path:
         sys.path.insert(0, project_root)
-    # Print paths for verification
-    # print(f"DEBUG: Current Script Dir: {current_script_dir}")
-    # print(f"DEBUG: Calculated Project Root: {project_root}")
-    # print(f"DEBUG: sys.path: {sys.path}")
+        # print(f"DEBUG: Added Project Root to sys.path: {project_root}") # Optional debug
+    # else:
+        # print(f"DEBUG: Project Root already in sys.path: {project_root}") # Optional debug
+    # print(f"DEBUG: Current sys.path: {sys.path}") # Optional debug
     return project_root
 
-PROJECT_ROOT = setup_paths() # Execute path setup
+PROJECT_ROOT = add_project_paths() # Execute path setup and store the root path
 
 # --- Imports ---
 # Now that PROJECT_ROOT is (hopefully) in sys.path, these should work
@@ -32,11 +33,26 @@ try:
     # from .plot_utils import some_utility # Example relative import if needed
 except ImportError as e:
     print(f"Error importing required modules after path setup: {e}")
-    print(f"Project Root added to path: {PROJECT_ROOT}")
+    print(f"Project Root determined: {PROJECT_ROOT}")
     print(f"Current sys.path: {sys.path}")
     print("Please ensure 'utils/config_loader.py' exists relative to the project root.")
     sys.exit(1)
 # --- End Imports ---
+
+
+def sanitize_filename(filename: str) -> str:
+    """Removes or replaces characters that are problematic in filenames."""
+    # Replace common problematic characters with underscores
+    sanitized = filename.replace(" ", "_").replace(":", "-").replace("/", "-").replace("\\", "-")
+    # Remove any characters that are not alphanumeric, underscore, hyphen, or period
+    sanitized = "".join(c for c in sanitized if c.isalnum() or c in ['_', '-', '.'])
+    # Avoid starting with a period or hyphen
+    if sanitized.startswith('.') or sanitized.startswith('-'):
+        sanitized = '_' + sanitized
+    # Limit length if necessary (optional)
+    # max_len = 200
+    # sanitized = sanitized[:max_len]
+    return sanitized
 
 
 # Function get_project_root() is no longer needed as we use PROJECT_ROOT constant

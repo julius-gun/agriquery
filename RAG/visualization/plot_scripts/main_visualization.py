@@ -8,9 +8,26 @@ import argparse
 import pandas as pd
 
 # --- Adjust Python Path (using the helper) ---
-from plot_utils import add_project_paths
+# Import the function and call it explicitly to ensure paths are set
+# before other project imports are attempted.
+try:
+    # This import will also execute the path setup code in plot_utils
+    # because it runs at the module level there.
+    from plot_utils import add_project_paths, sanitize_filename
+    PROJECT_ROOT = add_project_paths() # Ensure paths are set and get the root
+except ImportError as e:
+     print("Failed to import 'add_project_paths' or 'sanitize_filename' from 'plot_utils.py'.")
+     print(f"Make sure 'plot_utils.py' exists in the same directory as this script ({os.path.dirname(__file__)}) and is correctly structured.")
+     print(f"Original error: {e}")
+     # Attempt to provide more context on where it's looking
+     print(f"Current sys.path: {sys.path}")
+     # Try calculating expected path for plot_utils
+     expected_plot_utils_path = os.path.join(os.path.dirname(__file__), 'plot_utils.py')
+     print(f"Checking for plot_utils at: {expected_plot_utils_path}")
+     if not os.path.exists(expected_plot_utils_path):
+         print("Error: plot_utils.py not found at the expected location.")
+     sys.exit(1)
 
-add_project_paths()  # Ensure project paths are set
 
 # --- Imports ---
 try:
@@ -36,31 +53,22 @@ try:
     # Removed direct imports from heatmaps.py
 
 except ImportError as e:
-    print("Error importing required modules.")
-    print(f"Please ensure the script is run from a location where Python can find:")
-    print(
-        f"  - '{os.path.dirname(os.path.dirname(os.path.dirname(__file__)))}/utils/config_loader.py'"
-    )  # Adjusted path example
-    print(
-        f"  - '{os.path.dirname(os.path.dirname(os.path.dirname(__file__)))}/visualization/visualization_data_extractor.py'"
-    )
-    print(f"  - '{os.path.dirname(__file__)}/box_plots.py'")
-    print(f"  - '{os.path.dirname(__file__)}/boxplot_generators.py'")
-    print(f"  - '{os.path.dirname(__file__)}/heatmaps.py'")
-    print(f"  - '{os.path.dirname(__file__)}/heatmap_generators.py'")  # Added
-    print(f"  - '{os.path.dirname(__file__)}/plot_utils.py'")
+    print("Error importing required modules after attempting path setup.")
+    print("This might indicate an issue with the project structure or missing files within 'utils' or 'visualization'.")
+    print(f"Project root added to sys.path: {PROJECT_ROOT if 'PROJECT_ROOT' in locals() else 'Unknown'}")
     print(f"Current sys.path: {sys.path}")
     print(f"Original Error: {e}")
     sys.exit(1)
 
-# sanitize_filename function removed from here
+# sanitize_filename function is now imported from plot_utils
 
 
 def main():
-    # Get project root and visualization dir for default paths
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    visualization_dir = os.path.dirname(current_dir)
-    project_root_dir = os.path.dirname(visualization_dir)
+    # Get project root and visualization dir using the established PROJECT_ROOT
+    visualization_dir = os.path.join(PROJECT_ROOT, "visualization") # Derived from root
+    project_root_dir = PROJECT_ROOT # Use the established root
+
+    # [...] rest of the main function (paths should now use project_root_dir)
 
     parser = argparse.ArgumentParser(
         description="Generate visualizations for RAG test results."
@@ -133,6 +141,7 @@ def main():
     args = parser.parse_args()
 
     print("--- Starting Visualization Generation ---")
+    print(f"Project Root: {project_root_dir}")
     print(f"Results directory: {args.results_dir}")
     print(f"Output directory: {args.output_dir}")
     print(f"Requested plot type(s): {args.plot_type}")
