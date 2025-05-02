@@ -5,6 +5,11 @@
         "page": 24
     },
     {
+        "question": "Does the spreader support GreenSeeker sensor?",
+        "answer": "Yes.",
+        "page": 27
+    },
+    {
         "question": "What is the overlap percentage for the full field spreading pattern?",
         "answer": "100% overlap",
         "page": 28
@@ -85,9 +90,24 @@
         "page": 56
     },
     {
+        "question": "How many parts the distribution meter has?",
+        "answer": "Seven.",
+        "page": 57
+    },
+    {
         "question": "Below which application rate in kg/min is it advised to use the fine application?",
         "answer": "Below 40 kg/min.",
         "page": 66
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "page": 67
+    },
+    {
+        "question": "What is the symbol indicating Fine application kit enabled?",
+        "answer": "1 open hole and 2 thick holes",
+        "page": 67
     },
     {
         "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
@@ -97,6 +117,11 @@
     {
         "question": "What type of serial connection does the IsoMatch control box use for communication?",
         "answer": "RS 232",
+        "page": 72
+    },
+    {
+        "question": "Where the RS 232 connector is located?",
+        "answer": "At the back of the control box.",
         "page": 72
     },
     {
@@ -121,7 +146,7 @@
     },
     {
         "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
-        "answer": "3 m/s)",
+        "answer": "3 m/s",
         "page": 77
     },
     {
@@ -143,6 +168,11 @@
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
         "answer": "Inertia causes continued rotation.",
         "page": 94
+    },
+    {
+        "question": "From which machine point the spreading height is measured to the ground or the crop?",
+        "answer": "Measured from the bottom of the vanes.",
+        "page": 95
     },
     {
         "question": "According to the last setting check, what is the recommended height in centimeter of the spreader over the ground or crops?",
@@ -200,6 +230,11 @@
         "page": 127
     },
     {
+        "question": "What is type of grease in central gearbox?",
+        "answer": "EP 00/000 gear grease.",
+        "page": 127
+    },
+    {
         "question": "What is the maximum hydraulic pressure allowed for the hydaulic system in bars?",
         "answer": "210 bars.",
         "page": 131
@@ -219,4 +254,15 @@
         "answer": "Every season and after every 100 operational hours.",
         "page": 140
     }
+    {
+        "question": "Is it possible to use ISO 11786 signal connector as speed source?",
+        "answer": "Yes, using the Input IM Tellus cable.",
+        "page": 143
+    }
+    {
+        "question": "Is the step ladder to inspect the hoppen standard or an option?",
+        "answer": "Step is an accessory.",
+        "page": 151
+    },
+	
 ]
