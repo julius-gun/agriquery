@@ -130,7 +130,6 @@
   ],
   "question_dataset_paths": {
     "general_questions": "question_datasets/question_answers_pairs.json",
-    "table_questions": "question_datasets/question_answers_tables.json",
     "unanswerable_questions": "question_datasets/question_answers_unanswerable.json"
   },
   "output_dir": "results",

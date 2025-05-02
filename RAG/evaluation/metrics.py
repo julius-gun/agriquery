@@ -32,7 +32,8 @@ def _calculate_counts(results: List[Dict[str, Any]]) -> Tuple[int, int, int, int
 
     # Define answerable and unanswerable dataset identifiers based on common patterns
     # These should match the keys used in config.json's question_dataset_paths
-    answerable_sources = ["general_questions", "table_questions", "pairs", "tables"]
+    # answerable_sources = ["general_questions", "table_questions", "tables"]
+    answerable_sources = ["general_questions"] # "tables" is not used in the current evaluation
     unanswerable_sources = ["unanswerable_questions", "unanswerable"]
 
     for result in results:
