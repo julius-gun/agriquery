@@ -2,6 +2,7 @@
 import json
 import os
 import re
+
 # Corrected import statement: Added Optional and Tuple
 from typing import List, Dict, Any, Optional, Tuple
 
@@ -19,13 +20,17 @@ class ConfigLoader:
                 return json.load(f)
         except FileNotFoundError:
             print(
-                f"Warning: Configuration file not found at '{self.config_path}'. Using default configurations."
+                f"Warning: Configuration file not found at '{self.config_path}'. Trying to load default configurations."
             )
-            # In a real scenario, you might want to define actual defaults here
-            # or raise an error if the config is essential.
-            # For now, returning an empty dict might suffice for some getters,
-            # but others will fail. Let's keep the original default loader.
-            return self._load_default_config()  # Keep default loading logic
+            # Attempt to load defaults if file not found
+            try:
+                return self._load_default_config()
+            except Exception as e:
+                # If default loading also fails, raise a more informative error
+                raise ValueError(
+                    f"Failed to load config from '{self.config_path}' and also failed to load default config. Error: {e}"
+                )
+
         except json.JSONDecodeError:
             raise ValueError(
                 f"Error decoding JSON from '{self.config_path}'. Please check if the file is valid JSON."
@@ -33,144 +38,144 @@ class ConfigLoader:
 
     def _load_default_config(self):
         default_config = {
-            {
-                "llm_models": {
-                    "ollama": {
-                        "deepseek-r1_8B-128k": {
-                            "name": "deepseek-r1:8b",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 128000,
-                        },
-                        "deepseek-r1_1.5B-128k": {
-                            "name": "deepseek-r1:1.5b",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 128000,
-                        },
-                        "deepseek-r1_14B-128k": {
-                            "name": "deepseek-r1:14b",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 128000,
-                        },
-                        "qwen2.5_7B-128k": {
-                            "name": "qwen2.5:latest",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 128000,
-                        },
-                        "phi3_14B_q4_medium-128k": {
-                            "name": "phi3:medium-128k",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 128000,
-                        },
-                        "phi3_8B_q4_mini-128k": {
-                            "name": "phi3:mini-128k",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 128000,
-                        },
-                        "llama3.1_8B-128k": {
-                            "name": "llama3.1:latest",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 128000,
-                        },
-                        "llama3.2_3B-128k": {
-                            "name": "llama3.2:latest",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 128000,
-                        },
-                        "llama3.2_1B-128k": {
-                            "name": "llama3.2:1b",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 128000,
-                        },
-                        "phi3_14B_medium-4k": {
-                            "name": "phi3:medium",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 4000,
-                        },
-                        "gemma2_9B-8k": {
-                            "name": "gemma2:latest",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 8192,
-                        },
-                        "gemma3_12B-128k": {
-                            "name": "gemma3:12b",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 128000,
-                        },
-                        "phi4_14B-16k": {
-                            "name": "phi4:latest",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 16384,
-                        },
-                        "qwq_32B-128k": {
-                            "name": "qwq",
-                            "temperature": 0.0,
-                            "num_predict": 1024,
-                            "context_window": 131072,
-                        },
+            "llm_models": {
+                "ollama": {
+                    "deepseek-r1_8B-128k": {
+                        "name": "deepseek-r1:8b",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 128000,
+                    },
+                    "deepseek-r1_1.5B-128k": {
+                        "name": "deepseek-r1:1.5b",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 128000,
+                    },
+                    "deepseek-r1_14B-128k": {
+                        "name": "deepseek-r1:14b",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 128000,
+                    },
+                    "qwen3_8B-128k": {
+                        "name": "qwen3:8b",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 128000,
+                    },
+                    "qwen2.5_7B-128k": {
+                        "name": "qwen2.5:latest",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 128000,
+                    },
+                    "phi3_14B_q4_medium-128k": {
+                        "name": "phi3:medium-128k",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 128000,
+                    },
+                    "phi3_8B_q4_mini-128k": {
+                        "name": "phi3:mini-128k",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 128000,
+                    },
+                    "llama3.1_8B-128k": {
+                        "name": "llama3.1:latest",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 128000,
+                    },
+                    "llama3.2_3B-128k": {
+                        "name": "llama3.2:latest",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 128000,
+                    },
+                    "llama3.2_1B-128k": {
+                        "name": "llama3.2:1b",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 128000,
+                    },
+                    "phi3_14B_medium-4k": {
+                        "name": "phi3:medium",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 4000,
+                    },
+                    "gemma2_9B-8k": {
+                        "name": "gemma2:latest",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 8192,
+                    },
+                    "gemma3_12B-128k": {
+                        "name": "gemma3:12b",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 128000,
+                    },
+                    "phi4_14B-16k": {
+                        "name": "phi4:latest",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 16384,
+                    },
+                    "qwq_32B-128k": {
+                        "name": "qwq",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": 131072,
+                    },
+                },
+                "gemini": {
+                    "gemini-2.5-flash-preview-04-17": {
+                        "name": "gemini-2.5-flash-preview-04-17",
+                        "temperature": 0.0,
+                        "num_predict": 1024,
+                        "context_window": null,
+                        "top_p": 0.0,
+                        "top_k": 64,
                     }
                 },
-                "question_models_to_test": [
-                    "deepseek-r1_8B-128k",
-                    "deepseek-r1_1.5B-128k",
-                    "deepseek-r1_14B-128k",
-                    "qwen2.5_7B-128k",
-                    "phi3_14B_q4_medium-128k",
-                    "phi3_8B_q4_mini-128k",
-                    "llama3.1_8B-128k",
-                    "llama3.2_3B-128k",
-                    "llama3.2_1B-128k",
-                    "phi3_14B_medium-4k",
-                    "phi4_14B-16k",
-                    "qwq_32B-128k",
-                ],
-                "evaluator_model_name": "gemma3_12B-128k",
-                "prompt_paths": {
-                    "question_prompt": "prompt_templates/question_prompt.txt",
-                    "evaluation_prompt": "prompt_templates/evaluation_prompt.txt",
+            },
+            "question_models_to_test": ["gemini-2.5-flash-preview-04-17"],
+            "evaluator_model_name": "gemma3_12B-128k",
+            "prompt_paths": {
+                "question_prompt": "prompt_templates/question_prompt.txt",
+                "evaluation_prompt": "prompt_templates/evaluation_prompt.txt",
+            },
+            "language_configs": [
+                {
+                    "language": "english",
+                    "manual_path": "manuals/english_manual.txt",
+                    "collection_base_name": "english_manual",
                 },
-                "language_configs": [
-                    {
-                        "language": "english",
-                        "manual_path": "manuals/english_manual.txt",
-                        "collection_base_name": "english_manual",
-                    },
-                    {
-                        "language": "french",
-                        "manual_path": "manuals/french_manual.txt",
-                        "collection_base_name": "french_manual",
-                    },
-                    {
-                        "language": "german",
-                        "manual_path": "manuals/german_manual.txt",
-                        "collection_base_name": "german_manual",
-                    },
-                ],
-                "question_dataset_paths": {
-                    "general_questions": "question_datasets/question_answers_pairs.json",
-                    "table_questions": "question_datasets/question_answers_tables.json",
-                    "unanswerable_questions": "question_datasets/question_answers_unanswerable.json",
+                {
+                    "language": "french",
+                    "manual_path": "manuals/french_manual.txt",
+                    "collection_base_name": "french_manual",
                 },
-                "output_dir": "results",
-                "rag_parameters": {
-                    "retrieval_algorithms_to_test": ["embedding"],
-                    "num_retrieved_docs": 3,
-                    "chunk_size": 2000,
-                    "overlap_size": 50,
+                {
+                    "language": "german",
+                    "manual_path": "manuals/german_manual.txt",
+                    "collection_base_name": "german_manual",
                 },
-            }
+            ],
+            "question_dataset_paths": {
+                "general_questions": "question_datasets/question_answers_pairs.json",
+                "unanswerable_questions": "question_datasets/question_answers_unanswerable.json",
+            },
+            "output_dir": "results",
+            "rag_parameters": {
+                "retrieval_algorithms_to_test": ["keyword", "hybrid", "embedding"],
+                "chunk_sizes_to_test": [200],
+                "overlap_sizes_to_test": [100],
+                "num_retrieved_docs": 3,
+            },
         }
         return default_config
 
@@ -184,7 +189,10 @@ class ConfigLoader:
             )
             # raise ValueError(f"LLM type '{llm_type}' not supported or configured in config.")
         return models_for_type
-    def get_llm_type_and_config(self, model_name: str) -> Tuple[Optional[str], Optional[Dict[str, Any]]]:
+
+    def get_llm_type_and_config(
+        self, model_name: str
+    ) -> Tuple[Optional[str], Optional[Dict[str, Any]]]:
         """
         Finds the LLM type (e.g., 'ollama', 'gemini') and configuration for a given model name.
 
@@ -280,20 +288,23 @@ if __name__ == "__main__":
     print("\nEvaluator model name:", evaluator_model)
 
     # Test new method
-    test_model = "gemini-2.5-flash-preview-04-17" # Example model name from config
+    test_model = "gemini-2.5-flash-preview-04-17"  # Example model name from config
     llm_type, model_config = config_loader.get_llm_type_and_config(test_model)
     if llm_type:
         print(f"\nFound model '{test_model}': Type='{llm_type}', Config={model_config}")
     else:
         print(f"\nModel '{test_model}' not found in any LLM type.")
 
-    test_model_ollama = "qwen3_8B-128k" # Example ollama model
-    llm_type_o, model_config_o = config_loader.get_llm_type_and_config(test_model_ollama)
+    test_model_ollama = "qwen3_8B-128k"  # Example ollama model
+    llm_type_o, model_config_o = config_loader.get_llm_type_and_config(
+        test_model_ollama
+    )
     if llm_type_o:
-        print(f"\nFound model '{test_model_ollama}': Type='{llm_type_o}', Config={model_config_o}")
+        print(
+            f"\nFound model '{test_model_ollama}': Type='{llm_type_o}', Config={model_config_o}"
+        )
     else:
         print(f"\nModel '{test_model_ollama}' not found in any LLM type.")
-
 
     # Test new methods
     question_models_list = config_loader.get_question_models_to_test()
