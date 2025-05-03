@@ -5,8 +5,8 @@
         "page": 24
     },
     {
-        "question": "Does the spreader support GreenSeeker sensor?",
-        "answer": "Yes.",
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "answer": "06.00.00.0257",
         "page": 27
     },
     {
@@ -90,7 +90,7 @@
         "page": 56
     },
     {
-        "question": "How many parts the distribution meter has?",
+        "question": "How many parts does the distribution meter have?",
         "answer": "Seven.",
         "page": 57
     },
@@ -105,7 +105,7 @@
         "page": 67
     },
     {
-        "question": "What is the symbol indicating Fine application kit enabled?",
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
         "answer": "1 open hole and 2 thick holes",
         "page": 67
     },
@@ -170,7 +170,7 @@
         "page": 94
     },
     {
-        "question": "From which machine point the spreading height is measured to the ground or the crop?",
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
         "answer": "Measured from the bottom of the vanes.",
         "page": 95
     },
@@ -195,6 +195,11 @@
         "page": 108
     },
     {
+        "question": "What information is available so that can I set the correct PTO shaft and spreading disc RPM?",
+        "answer": "spreading chart or online spreading chart",
+        "page": 111
+    },
+    {
         "question": "What should you do if a spreading disc spreads irregularly?",
         "answer": "Stop spreading and disconnect the PTO shaft immediately.",
         "page": 113
@@ -208,6 +213,11 @@
         "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
         "answer": "80 bar",
         "page": 117
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "answer": "Place the spreader on a firm, stable ramp",
+        "page": 120
     },
     {
         "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
@@ -230,7 +240,7 @@
         "page": 127
     },
     {
-        "question": "What is type of grease in central gearbox?",
+        "question": "What type of grease is the central gearbox filled withs?",
         "answer": "EP 00/000 gear grease.",
         "page": 127
     },
@@ -253,16 +263,10 @@
         "question": "How often should the agitator axle seal be replaced?",
         "answer": "Every season and after every 100 operational hours.",
         "page": 140
-    }
-    {
-        "question": "Is it possible to use ISO 11786 signal connector as speed source?",
-        "answer": "Yes, using the Input IM Tellus cable.",
-        "page": 143
-    }
-    {
-        "question": "Is the step ladder to inspect the hoppen standard or an option?",
-        "answer": "Step is an accessory.",
-        "page": 151
     },
-	
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "answer": "Yes, using the Sensor input IM Tellus.",
+        "page": 144
+    }
 ]
