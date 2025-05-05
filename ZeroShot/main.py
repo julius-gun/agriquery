@@ -1,3 +1,44 @@
+import subprocess
+import sys
+import os # Import os to construct the requirements path
+
+# --- Installation Step ---
+# NOTE: This is generally not recommended. Dependencies should ideally be
+# installed during the Docker image build process (in the Dockerfile)
+# for efficiency and reliability. Running this on every start adds overhead
+# and can fail if there are network issues.
+
+print("Attempting to install dependencies from requirements.txt...")
+# Assuming requirements.txt is in the same directory as main.py (/app in the container)
+requirements_path = os.path.join(os.path.dirname(__file__), 'requirements.txt')
+
+# Check if requirements.txt exists
+if not os.path.exists(requirements_path):
+    print(f"ERROR: requirements.txt not found at {requirements_path}")
+    sys.exit(1)
+
+# Construct the command
+# Using sys.executable ensures we use the same python interpreter's pip
+pip_command = [sys.executable, '-m', 'pip', 'install', '-r', requirements_path]
+
+# Run the command
+install_process = subprocess.run(pip_command, capture_output=True, text=True)
+
+# Check for errors
+if install_process.returncode != 0:
+    print("ERROR: Failed to install dependencies from requirements.txt.")
+    print("--- pip stdout ---")
+    print(install_process.stdout)
+    print("--- pip stderr ---")
+    print(install_process.stderr)
+    sys.exit(1) # Exit if installation fails
+else:
+    print("Dependencies installed successfully (or already satisfied).")
+    # Optionally print stdout for confirmation, even on success
+    # print("--- pip stdout ---")
+    # print(install_process.stdout)
+
+# --- Original Imports (Now safe to run) ---
 import argparse
 from llm_tester import LLMTester
 import logging

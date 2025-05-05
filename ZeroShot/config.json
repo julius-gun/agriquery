@@ -119,11 +119,6 @@
     "tokenizer_name": "pcuenq/Llama-3.2-1B-Instruct-tokenizer",
     "visualization_dir": "results/plots",
     "file_extensions_to_test": [
-        "txt",
-        "csv",
-        "xml",
-        "yaml",
-        "html",
-        "json"
+        "txt"
     ]
 }
