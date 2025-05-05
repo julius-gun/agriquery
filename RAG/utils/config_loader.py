@@ -144,6 +144,7 @@ class ConfigLoader:
             },
             "question_models_to_test": ["gemini-2.5-flash-preview-04-17"],
             "evaluator_model_name": "gemma3_12B-128k",
+            "enable_reevaluation": true,
             "prompt_paths": {
                 "question_prompt": "prompt_templates/question_prompt.txt",
                 "evaluation_prompt": "prompt_templates/evaluation_prompt.txt",
@@ -268,6 +269,12 @@ class ConfigLoader:
             )
             return []
         return algorithms
+
+    def get_enable_reevaluation(self) -> bool:
+        """Gets the value of the 'enable_reevaluation' flag from the config."""
+        # Default to False if the key doesn't exist or is not a boolean
+        value = self.config.get("enable_reevaluation", False)
+        return value if isinstance(value, bool) else False
 
 
 if __name__ == "__main__":

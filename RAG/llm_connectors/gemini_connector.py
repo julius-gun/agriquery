@@ -19,7 +19,7 @@ from llm_connectors.base_llm_connector import BaseLLMConnector
 logger = logging.getLogger(__name__)
 # Ensure a handler is added if run as a script or no other config exists
 if not logger.hasHandlers():
-    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class GeminiConnector(BaseLLMConnector):
     """

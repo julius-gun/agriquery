@@ -104,9 +104,10 @@
     }
   },
   "question_models_to_test": [
-    "gemini-2.5-flash-preview-04-17"
+    "gemma2_9B-8k"
   ],
   "evaluator_model_name": "gemma3_12B-128k",
+  "enable_reevaluation": true,
   "prompt_paths": {
     "question_prompt": "prompt_templates/question_prompt.txt",
     "evaluation_prompt": "prompt_templates/evaluation_prompt.txt"
