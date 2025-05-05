@@ -633,7 +633,8 @@ class RagTester:
                         # HybridRetriever should have had its keyword index built in _process_single_combination
                         # and its Chroma collection set during initialization.
                         # Retrieve relevant chunks using the internal combined logic (RRF)
-                        retrieved_chunks_text, _ = (
+                        # *** Modify this line to capture scores ***
+                        retrieved_chunks_text, scores = ( # Changed _ to scores
                             retriever.retrieve_relevant_chunks(
                                 query_representation=query_representation,  # Pass dict with embedding and tokens
                                 top_k=self.num_retrieved_docs,
