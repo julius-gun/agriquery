@@ -12,12 +12,13 @@ models_to_test = [
     "llama3.2_1B-128k",
     "deepseek-r1_1.5B-128k",
     "deepseek-r1_8B-128k",
-    # "deepseek-r1_14B-128k",
+    "qwen3_8B-128k",
     "qwen2.5_7B-128k",
-    # "phi3_14B_q4_medium-128k",
-    # "phi3_8B_q4_mini-128k",
+    "phi3_14B_q4_medium-128k",
+    "phi3_8B_q4_mini-128k",
     "llama3.1_8B-128k",
     "llama3.2_3B-128k",
+    "phi3_14B_medium-4k"
 ]
 
 documents_to_test = [
@@ -77,8 +78,8 @@ def main():
         type=int,
         nargs="+",
         # default=[59000],
-        # default=[1000, 2000, 5000, 10000, 20000, 30000, 59000],
-        default=[30000],
+        default=[1000, 2000, 5000, 10000, 20000, 30000, 59000],
+        # default=[30000],
         # default=[1000],
         # pages
         # default=[0, 10],
@@ -94,8 +95,8 @@ def main():
     parser.add_argument(
         "--mode",
         type=str,
-        # default="test",
-        default="evaluate",
+        default="test",
+        # default="evaluate",
         choices=["test", "evaluate"],
         help="Mode to run in: 'test' or 'evaluate'. Defaults to 'test'.",
     )
