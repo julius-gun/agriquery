@@ -10,19 +10,18 @@
         "chroma_collection_used": "french_manual_cs200_os100"
     },
     "overall_metrics": {
-        "accuracy": 0.46296296296296297,
-        "precision": 0.3888888888888889,
-        "recall": 0.12962962962962962,
+        "accuracy": 0.4811320754716981,
+        "precision": 0.42105263157894735,
+        "recall": 0.15384615384615385,
         "specificity": 0.7962962962962963,
-        "f1_score": 0.19444444444444445,
-        "true_positives": 7,
+        "f1_score": 0.22535211267605634,
+        "true_positives": 8,
         "true_negatives": 43,
         "false_positives": 11,
-        "false_negatives": 47,
-        "total_questions": 108,
+        "false_negatives": 44,
+        "total_questions": 106,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.1590909090909091,
-            "table_questions": 0.0,
+            "general_questions": 0.15384615384615385,
             "unanswerable_questions": 0.7962962962962963
         }
     },
@@ -165,16 +164,6 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "<think>\nOkay, so I need to figure out the maximum operating angle of the coupling shaft when it's lifted and when it's lowered. Let me look through the context provided.\n\nI see several lines mentioning angles, like line 51 which says \"Limitez l'angle de travail \u00e0 30\u00ba au maximum\" which translates to limiting the working angle to a maximum of 30 degrees. Then on line 35, it also mentions \"Angle de travail\" (working angle) with values 51 and 54.\n\nWait, but I'm specifically looking for the coupling shaft's operating angle when lifted and lowered. The context doesn't explicitly mention the coupling shaft by name, but lines 31 and 35 talk about the \"Angle de travail arbre d'accouplement\" which translates to the coupling shaft working angle. Line 51 says it should be limited to 30 degrees maximum.\n\nSo, putting this together, the maximum operating angle for both when lifted and lowered is 30 degrees.\n</think>\n\nThe maximum operating angle of the coupling shaft when lifted and when lowered is **30\u00ba**.",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "<think>\nOkay, so I need to figure out whether the parking brake of a tractor should be engaged before connecting the machine. Let me look through the provided context carefully.\n\nStarting with Page 1, there's some technical information about the manual, including version numbers and references. Not much there that relates to the question.\n\nMoving on to Page 2, it talks about identifying the machine and mentions specific details like type, number of series, and addresses for the concessionnaire and fabricant. It also notes that Kverneland Group holds the copyright and rights of use, but nothing about parking brakes or connecting machinery.\n\nHmm, I don't see any direct information in the context that specifically addresses whether to engage the parking brake before connecting the machine. The context is more about machine identification and usage rights rather than operational procedures like braking systems.\n\nSince there's no relevant section or instruction provided in the context related to parking brakes or machine connections, I can't extract an answer from it. Therefore, the correct response would be \"Not found in context.\"\n</think>\n\nNot found in context",
@@ -285,16 +274,6 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "<think>\nOkay, so I need to figure out the required height of the spreading disc above the troughs for one-sided boundary spreading based on the given context. Let me start by reading through the context carefully.\n\nLooking at Page 1, there are some references to a manual (manuel d'utilisation) with a version number GS3 x.x., and it's in French. It mentions \"Num\u00e9ro de s\u00e9rie :\" which translates to Serial Number, but I don't see any specific measurements related to the spreading disc height here.\n\nMoving on to Page 2, the context talks about identifying the machine and some contact information for the manufacturer, Kverneland Group. There are repeated lines about the Exacta-TLX-GEOSPREAD GS3 model with details like Type de machine (Type of machine) and Num\u00e9ro de s\u00e9rie (Serial Number). However, again, I don't see any specific information regarding the spreading disc height.\n\nSince both pages don't provide any direct or indirect mention of the spreading disc's required height above the troughs for one-sided boundary spreading, I can't extract that information from the context provided. Therefore, based on the instructions, if the information isn't found, I should respond with \"Unknown\" or \"Not found in context.\"\n</think>\n\nThe required height of the spreading disc above the troughs for one-sided boundary spreading is not specified in the provided context.\n\nAnswer: Unknown",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "<think>\nOkay, so I need to figure out the specific height in centimeters that the spreading disc should be set to above the troughs before testing the ExactLine spreading pattern. Let me go through the context step by step.\n\nFirst, I'll read through the context carefully. The context is in French, but I can understand the technical terms. There are several steps mentioned under \"R\u00e9alisation\" and \"Proc\u00e9dure.\"\n\nLooking at the \"R\u00e9alisation\" section, it mentions setting the height of the spreading disc to 75 cm above the troughs or bacs de collecte. That seems relevant because the question is about the height above the troughs.\n\nIn the \"Proc\u00e9dure\" section, under \"Utilisation dans les champs,\" there's a mention that during testing on bacs, the height was set to 75 cm. It also says to adjust this height before the actual spreading.\n\nSo, putting it together, the specific height required is 75 cm above the troughs.\n</think>\n\nThe spreading disc should be set to a height of **75 cm** above the troughs before testing the ExactLine spreading pattern.",
@@ -302,16 +281,6 @@
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "<think>\nOkay, so I need to figure out the maximum fertilizer loss percentage allowed for the middle trough in a ditch. Let me read through the context carefully.\n\nThe context is about operations before spreading sludge, testing the distribution on both sides, and some specifications. There's an indication that the left and right spreaders should spread equally for good nutrient distribution, checking this once a year.\n\nLooking at the realization steps, it mentions cutting the tractor engine, removing the key, engaging the handbrake, and then there are some weight specifications. The numbers listed are 4895 kg as the total weight maximum, followed by weights without and with a canvas, and with an electric canvas. Then, on line 13, it says \"\u00c9pandage\" which translates to spreading or application.\n\nWait, I'm looking for fertilizer loss percentage in the middle trough. The context doesn't explicitly mention percentages or specific losses. It talks about ensuring equal spread but not about allowable loss rates. There's no mention of maximum allowed loss; instead, it focuses on proper distribution and annual checks.\n\nI don't see any figures related to loss percentages here. So, based on the given information, there's no data about maximum fertilizer loss in the middle trough.\n</think>\n\nUnknown",
-                    "page": 91,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
                     "eval_error": false
                 },
                 {
@@ -455,20 +424,130 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-                    "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "<think>\nOkay, so I need to figure out the required distance in meters between the discharge bushing and the spreading disc based on the given context. Let me start by carefully reading through the context provided.\n\nLooking at the context, there are several lines with numbers and labels. The question is about the distance between two specific parts: the discharge bushing and the spreading disc. I need to find which part of the context refers to this.\n\nI see that line 5 mentions \"Distance entre le centre de gravit\u00e9 de la machine ou du poids et le centre de l'essieu avant\" which translates to the distance between the center of gravity of the machine or weight and the front axle center. The unit is in meters, labeled as 'f'. \n\nHowever, I'm not sure if this directly refers to the discharge bushing and spreading disc. Maybe I should look for other parts that mention these components. \n\nFurther down, line 7 talks about \"Distance entre le centre de l'essieu arri\u00e8re et le centre du point d'attache du bras de levage (3)\". This translates to the distance between the rear axle center and the attachment point of the lifting arm. The unit is meters, labeled as 'h'. \n\nBut again, this seems related to the lifting arm, not necessarily the discharge bushing and spreading disc. I'm a bit confused because the context doesn't explicitly mention these two components together.\n\nWait, maybe I should look for any other lines that specifically refer to the discharge bushing or spreading disc. Scanning through, I don't see any direct mentions of these parts in the context provided. \n\nSince there's no explicit information about the distance between the discharge bushing and spreading disc, I might have to conclude that this specific detail isn't present in the given context. Therefore, based on the instructions, if the information isn't found, I should respond with \"Unknown\" or \"Not found in context.\"\n</think>\n\nThe required distance between the discharge bushing and spreading disc is not explicitly provided in the context.\n\nAnswer: Unknown",
-                    "page": 138,
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "<think>\nOkay, so I need to figure out how often the agitator axle seal should be replaced based on the given context. Let me start by reading through the context carefully.\n\nLooking at Page 1, there's a lot of information about the manual, including version numbers and machine identifiers, but nothing directly related to maintenance or replacement intervals for specific parts like the agitator axle seal.\n\nMoving to Page 2, it talks about identifying the machine and mentions some addresses and references. Again, this seems more about setup or identification rather than maintenance procedures.\n\nI don't see any mention of service intervals or replacement schedules in either page. The context provided is mostly about the manual's version, printing date, language, and some machine details, but nothing specific to when parts should be replaced.\n\nSince there's no information about replacement frequencies for the agitator axle seal, I have to conclude that this specific detail isn't present in the given context.\n</think>\n\nUnknown",
+                    "page": 140,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",
                     "eval_error": false
                 },
                 {
-                    "question": "How often should the agitator axle seal be replaced?",
-                    "expected_answer": "Every season and after every 100 operational hours.",
-                    "model_answer": "<think>\nOkay, so I need to figure out how often the agitator axle seal should be replaced based on the given context. Let me start by reading through the context carefully.\n\nLooking at Page 1, there's a lot of information about the manual, including version numbers and machine identifiers, but nothing directly related to maintenance or replacement intervals for specific parts like the agitator axle seal.\n\nMoving to Page 2, it talks about identifying the machine and mentions some addresses and references. Again, this seems more about setup or identification rather than maintenance procedures.\n\nI don't see any mention of service intervals or replacement schedules in either page. The context provided is mostly about the manual's version, printing date, language, and some machine details, but nothing specific to when parts should be replaced.\n\nSince there's no information about replacement frequencies for the agitator axle seal, I have to conclude that this specific detail isn't present in the given context.\n</think>\n\nUnknown",
-                    "page": 140,
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "<think>\nOkay, so I need to figure out from which version the ISOBUS system supports receiving signals from the GreenSeeker sensor. Let me start by reading through the context provided carefully.\n\nThe context mentions several versions of software and hardware related to the GreenSeeker and ISOBUS system. The first part talks about signal reception with MULTIRATE icons, advising to consult the GEOCONTROL manual. Then it says that starting from version 06.00.00.0257 of the GreenSeeker, the logiciel (software) can receive external signals.\n\nI'm looking for a specific version number where this support was introduced. The context clearly states \"\u00c0 partir de la version 06.00.00.0257 du GreenSeeker,\" which translates to starting from version 06.00.00.0257 of the GreenSeeker, the software handles external signal reception.\n\nSo, the exact version is 06.00.00.0257. I should make sure there's no earlier mention that contradicts this. Scanning through, I don't see any other versions mentioned for ISOBUS and GreenSeeker compatibility before this one. Therefore, the correct answer is version 06.00.00.0257.\n</think>\n\nThe ISOBUS system supports the reception of signals from the GreenSeeker sensor starting from version **06.00.00.0257** of the GreenSeeker.\n\nAnswer:  \nFrom version 06.00.00.0257 du GreenSeeker",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "<think>\nOkay, so I need to figure out when shortening a coupling shaft, how much the profiled tubes must overlap at least in millimeters. Let me go through the context provided step by step.\n\nFirst, I'll look for any mention of shortening or modifying the coupling shaft. The context mentions several steps like evaluating and adapting, which might relate to adjustments made during maintenance or repair.\n\nI see a part where it talks about profiled tubes possibly differing by up to 15% from the average. That's interesting but not directly related to the overlap when shortening.\n\nThen there's a specific instruction: \"If during the second test, the correction with 2 letters seems too high, remove one letter for the drop point.\" Hmm, that's a bit unclear in terms of technical instructions, but it might relate to how much adjustment is needed, which could affect the overlap.\n\nLooking further down, there are steps like dismantling the tractor part, greasing the profiled tubes, mounting protective tubes, and assembling the transmission shaft. These seem like physical adjustments, so maybe the overlap is related to how these parts fit together after shortening.\n\nThe key sentence here is: \"Montez les cha\u00eenes de s\u00e9curit\u00e9 au niveau des deux extr\u00e9mit\u00e9s des tubes protecteurs de l'arbre de transmission.\" Translating that, it means mounting safety chains at both ends of the protective tubes on the coupling shaft. This suggests that when the shaft is shortened, the protective tubes need to be positioned correctly to prevent damage or accidents.\n\nPutting this together, the overlap would be determined by how much the protective tubes can extend beyond the coupling shaft after shortening. The context doesn't give a specific number, but it's implied that the overlap must be sufficient to prevent issues during operation. Since there's no exact figure provided, I might have to infer based on standard practices or assume it's not specified in the given text.\n\nWait, earlier there was mention of removing one letter for the drop point if the correction is too high. Maybe each letter represents a certain measurement or overlap value. If that's the case, removing one letter could mean reducing the overlap by a specific amount, but without knowing what each letter corresponds to, it's hard to determine the exact number in mm.\n\nGiven all this, I think the context doesn't provide an explicit answer to how much the tubes must overlap when shortening the shaft. Therefore, the correct response would be that the information isn't found in the provided context.\n</think>\n\nThe context does not specify the required overlap for profiled tubes when shortening a coupling shaft. \n\nAnswer: Not found in context",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "<think>\nOkay, so I need to figure out how many parts the distribution meter has based on the given context. Let me start by reading through the context carefully.\n\nThe context mentions \"fonctionnalit\u00e9 ISOBUS via IsoMatch\" which talks about how functions like distribution and data transfer happen through the ISOBUS system between the tractor's terminal or ISO controller and the machine. It also says that communication allows handling specific locations and reacting to anomalies in field shape and soil composition, using GPS, sensors, and management systems.\n\nLooking for any mention of a \"distribution meter,\" I see terms like \"fonction de distribution\" which translates to \"distribution function.\" The context doesn't explicitly name a \"distribution meter\" but refers to functions related to distribution. \n\nSince the question is about the number of parts in the distribution meter, and there's no specific information provided about its structure or components, I can't determine the exact number from the given text.\n\nTherefore, based on the instructions, if unsure, I should respond with \"Unknown\" or \"Not found in context.\"\n</think>\n\nUnknown",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "<think>\nOkay, so I need to figure out how to enable a fine application for dosing at a low application rate based on the given context. Let me read through the context carefully.\n\nThe context is in French, but I can understand the main points. It mentions that only proper use is acceptable and the manufacturer disclaims responsibility for damages from improper use, so the user is responsible. Proper usage includes following manufacturer instructions for use, maintenance, and repair.\n\nThere's a section about the user's responsibilities: they must know basic safety guidelines, ARBO rules, traffic regulations, have appropriate information about working with the machine and its dangers, read and understand the instruction manual, and know safety protocols.\n\nIt also says that knowledge of safety guidelines is key to safe and optimal use. Applying safety guidelines consistently can prevent most accidents. The machine is exclusively for spreading granular products like fertilizers and seeds. Any other use is improper, and the manufacturer isn't liable if damage results from such misuse.\n\nThe context then talks about online spread tables, mentioning that settings for the fertilizer distributor are available in the spread table manual, on the website, or through a mobile app (AutosetApp) which works on iOS and Android. The app provides additional tested types of fertilizers recently.\n\nNow, the question is about enabling fine application at a low application rate. I'm looking for specific steps or methods mentioned in the context that relate to this.\n\nThe context mentions that the manual includes information on spread table settings, available online or through the mobile app. So, perhaps using the app allows for precise adjustments, which could help in achieving a fine application with a low rate.\n\nI don't see any direct steps about how to adjust rates specifically, but the availability of detailed settings and additional fertilizer types might imply that users can set parameters for low application rates. The app's function is described as providing more information, so maybe it allows for fine-tuning the application process.\n\nTherefore, enabling a fine application at a low rate would involve using the provided resources like the manual or the mobile app to adjust settings appropriately.\n</think>\n\nTo enable a fine application for dosing at a low rate, utilize the resources such as the manual and the AutosetApp. These provide detailed settings and additional information to adjust parameters accordingly.\n\nAnswer: Use the manual and the AutosetApp to adjust settings for precise application at a low rate.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "<think>\nOkay, so I need to figure out what the symbol on top of the fine application handle indicates. The context provided is in French, but I can read it. Let me go through it carefully.\n\nFirst, the context mentions that only proper applications are suitable. The manufacturer disclaims responsibility for damages caused by improper use, and the user is solely responsible. It also talks about the user's responsibilities, like following safety guidelines, knowing traffic rules, having appropriate information about the machine's work and dangers, reading and understanding the manual, and knowing basic safety instructions.\n\nThen it says that the machine is exclusively for spreading granular products like fertilizers and seeds. Any other use would be improper, and the manufacturer isn't liable in such cases.\n\nNext, there are mentions of online spread tables, an AutosetApp mobile application, some images, and operations before spreading. It also talks about the settings of the fertilizer distributor being available in the spread table manual, on the website, or in the mobile app, which offers additional tested fertilizers.\n\nNow, looking for symbols related to the fine application kit. The context doesn't explicitly mention a symbol on top of the handle indicating that the Fine application kit is enabled. It does talk about the application being proper and the user's responsibilities, but nothing specific about a symbol.\n\nI don't see any part where it describes symbols or indicators for enabling features like the Fine application kit. The focus seems to be more on safety, usage guidelines, and access to information through manuals or apps rather than visual indicators.\n\nSo, based on the context provided, there's no direct information about a specific symbol indicating the Fine application kit is enabled.\n</think>\n\nUnknown",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "<think>\nOkay, so I need to figure out where the RS-232 connector is located based on the given context. Let me start by reading through the context carefully.\n\nLooking at the first page of the context, there's a mention of \"Raccordement RS 232\" which translates to \"RS-232 connection.\" It says it's part of the system that allows variable spreading via an external command. So, the RS-232 connector is a component here.\n\nOn Page 2, I see more about machine identification and some references to Exacta-TLX-GEOSPREAD GS3, but nothing directly about the location of the RS-232 connector. The context doesn't specify where exactly it's placed on the machine or in which part of the system.\n\nSince there's no specific information given about the physical location of the RS-232 connector beyond its existence as a component, I can't pinpoint its exact position. Therefore, based on the provided context, the answer should be \"Not found in context\" because the location isn't specified.\n</think>\n\nThe RS-232 connector is part of the system but its specific location isn't detailed in the context.\n\nAnswer: Not found in context",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "<think>\nOkay, so I need to figure out how often the left and right spreading discs should be checked if they spread the same volumes of fertilizer to ensure good distribution. Let me look through the provided context carefully.\n\nStarting with Page 1, there's some information about the manual, version number, printing date, language, and references. Not directly related to the question, so I can skip that.\n\nMoving on to Page 2, it talks about identifying the machine and mentions specific details like type, number of series, options, and addresses for the concessionnaire and fabricant. It also notes that Kverneland Group holds exclusive rights to the content, but again, nothing directly about the spreading discs or their maintenance.\n\nWait, maybe I missed something. The context doesn't explicitly mention anything about checking the spreading discs. It's more about machine identification and legal information. There's no section discussing maintenance schedules or component checks like the spreading discs.\n\nSo, based on what's provided, there's no specific instruction on how often to check the left and right spreading discs. All the relevant pages focus on identification and copyright notices rather than operation or maintenance procedures.\n\nTherefore, I don't have enough information in the context to answer the question accurately. The answer should be \"Not found in context\" since the necessary details about checking frequency aren't present.\n</think>\n\nThe context provided does not include any specific instructions regarding the frequency at which the left and right spreading discs should be checked for ensuring good fertilizer distribution.\n\n**Answer:** Not found in context",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "<think>\nOkay, so I need to figure out the maximum fertilizer loss percentage allowed for the quantity in the middle trough of a ditch. Let me start by reading through the context provided carefully.\n\nThe context is in French, but I can understand some technical terms. It mentions \"Op\u00e9rations avant l'\u00e9pandage,\" which translates to operations before spreading. There's also talk about evaluation and adaptation. \n\nLooking further, it says that the content of individual tubes can differ by a maximum of 15% compared to the average. That seems related but not directly about the middle trough. Then there's something about if the correction with two letters is too high in the second test, you should remove a letter for the drop point. Not sure how that ties in.\n\nNext, it discusses operations before spreading again, mentioning evaluation and adaptation. It states that the maximum loss allowed in the ditch is defined by an environmental standard. To meet this, the quantity of granular material in the first collection tank located in the fictitious ditch can represent a maximum of 10% of the quantity in the central collector tank (which holds 100%).\n\nSo, the middle trough here refers to the first collection tank. The maximum allowed loss is 10%. Therefore, the answer should be 10%.\n</think>\n\nThe maximum fertilizer loss allowed for the quantity in the middle trough is **10%**.\n\nAnswer: 10%",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "<think>\nOkay, so I need to figure out from which machine point the spreading height is measured. Let me read through the context carefully.\n\nLooking at the context, there are mentions of \"point de jonction\" (connection points) on the transmission tree, but that seems more about how parts connect rather than measurement. Then I see something about \"point d'\u00e9coulement,\" which translates to \"exhaust point\" or \"outlet point.\" \n\nFurther down, it says that the spreading height is determined by the distribution across the width. It specifically mentions that this happens at the \"point d'\u00e9coulement,\" where the grains of fertilizer come into contact with the disk's paddles. So, the measurement must be taken from this point.\n\nI don't see any other points mentioned in relation to measuring the spreading height. The context also refers to a V\u00e9rin \u00e9lectrique for adjusting this point, which reinforces that it's the outlet point where adjustments are made.\n</think>\n\nThe spreading height is measured at the **point d'\u00e9coulement** (exhaust point).",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "<think>\nOkay, so I need to figure out how to set the correct PTO shaft and spreading disc RPM based on the given context. Let me start by reading through the context carefully.\n\nThe context is in French, but I can understand the technical terms. It talks about connecting a control box (IsoMatch Tellus) to a tractor with an ISOBUS system using a CAN bus cable. There are specific steps mentioned for connecting the terminals and ensuring proper communication.\n\nI'm looking for information related to setting RPM for PTO shaft and spreading disc. The context mentions connecting the control box to the tractor's CAN standard receptacle using the provided CAN 7-pin cable. It also talks about connecting the 2-pin connectors on the control box side of the cable to the tractor's ISOBUS receptacle.\n\nWait, but I'm not seeing any direct mention of PTO shaft or spreading disc RPM settings here. The context is more about physical connections rather than operational parameters like RPM. There are steps about ensuring clean connections and proper grounding, but nothing specific on how to adjust RPM settings for the PTO or discs.\n\nSo, based on this, I don't have enough information in the context provided to determine the RPM settings for the PTO shaft or spreading disc. The focus is on the hardware setup, not the operational adjustments.\n</think>\n\nUnknown",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "<think>\nOkay, so I'm trying to figure out what to do if I can't lower the power lift enough to release the catch hooks when preparing the machine for storage. Let me look through the context provided.\n\nThe context has some numbers and mentions \"Chevalet (accessoires)\" which translates to accessories or attachments related to the cheval, maybe parts of the machine. It also talks about operations before spreading, but I'm not sure how that connects yet.\n\nLooking at the table, it seems like it's a setup for different scenarios with columns labeled 0,1,2,3 and some variables like kg/min and km/h. But I don't see anything directly about power lifts or catch hooks here.\n\nWait, maybe the numbers correspond to specific actions. For example, line 9 mentions \"Chevalet (accessoires)\" and lines around it have values like 5.0, 6.0, etc. Maybe these are steps or parameters related to accessing parts of the machine.\n\nBut I'm not seeing a direct instruction about power lifts. The question is about not being able to lower the power lift enough. Since there's no specific info in the context on this issue, I should probably respond that it's unknown based on the given text.\n</think>\n\nUnknown",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "<think>\nOkay, so I need to figure out what type of grease is used in the central gearbox. Let me look through the context provided.\n\nStarting from line 19: \"Capacit\u00e9 (graisse) du bo\u00eetier central (cm 3 )\". That translates to \"Capacity (grease) of the central gearbox (in cm\u00b3)\". The number next to it is 2 x 250, which probably means 500 cm\u00b3. But that's just the capacity.\n\nLooking further down, at line 49: \"Type de graisse\". That's \"Type of grease\". The numbers before it are 36 and 58. Wait, maybe I need to check what those refer to. Earlier in the context, there's a mention of types like cristallin, granul\u00e9s, etc., under line 41-48.\n\nSo, at line 49, it says \"Type de graisse\" with numbers 36 and 58. Maybe these correspond to specific types listed elsewhere. Looking back, line 44 mentions \"m\u00e9lange\", which is a mix, but I'm not sure if that's relevant here.\n\nWait, the question is about the type of grease in the central gearbox. The context at line 49 specifically says \"Type de graisse\" and refers to numbers 36 and 58. Since line 44 mentions \"m\u00e9lange\", perhaps it's a mixture, but I'm not certain. Alternatively, maybe the types are listed as cristallin (crystalline), granul\u00e9s (granules), etc.\n\nBut looking at the structure, each type like cristallin is under its own number. So line 41: cristallin, line 42: granul\u00e9s, line 43: Granul\u00e9s anti-limaces, line 44: m\u00e9lange, line 45: min\u00e9ral, line 46: Pellets prill\u00e9, line 48: Semences.\n\nWait, but the question is about the central gearbox. The context at line 49 says \"Type de graisse\" with numbers 36 and 58. Maybe those correspond to specific types elsewhere. Alternatively, perhaps it's referring to a mixture or a specific type used in that application.\n\nI'm not entirely sure, but based on the structure, each number corresponds to a type. So if line 49 is \"Type de graisse\" with numbers 36 and 58, maybe those are cross-references to other sections. For example, number 36 might refer to line 36 which talks about preparation of the machine or something else.\n\nAlternatively, perhaps the answer is that it's a granular grease or something similar. But without more context, I'm not certain. However, the most precise information seems to be that at line 49, \"Type de graisse\" is mentioned with numbers 36 and 58, which might correspond to specific types elsewhere in the document.\n\nWait, but looking back, line 20 mentions \"Capacit\u00e9 (graisse) du bo\u00eetier central\", so it's about the capacity of the grease. Line 19 has 1500 cm\u00b3, and line 20 has 2 x 250, which is 500 cm\u00b3. Maybe that's a typo or different entries.\n\nI think I need to focus on what directly answers the question: What type of grease is used? The context at line 49 says \"Type de graisse\" with numbers 36 and 58. Since each number corresponds to a specific type, perhaps it's referring to a mixture (m\u00e9lange) or another type.\n\nBut without more explicit information, I'm not sure. Alternatively, maybe the answer is that it's a granular grease based on line 42: granul\u00e9s. But I'm not certain.\n\nWait, looking again, at line 49: \"Type de graisse\" with numbers 36 and 58. Line 44 mentions m\u00e9lange, which is a mixture. So perhaps the answer is that it's a mixed grease or a specific type like granular.\n\nBut to be precise, I think the best approach is to state that based on the context, the central gearbox is filled with a specific type of grease referred to as \"Type de graisse\" at line 49, which corresponds to numbers 36 and 58. However, without more details, it's unclear exactly which type it is.\n\nAlternatively, perhaps the answer is that it's a granular grease because line 42 mentions granul\u00e9s. But I'm not entirely sure.\n\nWait, another approach: The context at line 49 says \"Type de graisse\" and refers to numbers 36 and 58. Since each number corresponds to a type, maybe it's referring to a mixture (m\u00e9lange) as in line 44. So perhaps the answer is that it's a mixed grease or m\u00e9lange.\n\nBut I'm not certain. Alternatively, maybe it's a crystalline grease because line 41 mentions cristall",
+                    "page": 127,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",
