@@ -5,6 +5,11 @@
         "page": 24
     },
     {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "answer": "06.00.00.0257",
+        "page": 27
+    },
+    {
         "question": "What is the overlap percentage for the full field spreading pattern?",
         "answer": "100% overlap",
         "page": 28
@@ -65,8 +70,8 @@
         "page": 50
     },
     {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "answer": "150mm.",
         "page": 51
     },
     {
@@ -85,9 +90,24 @@
         "page": 56
     },
     {
+        "question": "How many parts does the distribution meter have?",
+        "answer": "Seven.",
+        "page": 59
+    },
+    {
         "question": "Below which application rate in kg/min is it advised to use the fine application?",
         "answer": "Below 40 kg/min.",
         "page": 66
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "page": 67
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "answer": "1 open hole and 2 thick holes",
+        "page": 67
     },
     {
         "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
@@ -97,6 +117,11 @@
     {
         "question": "What type of serial connection does the IsoMatch control box use for communication?",
         "answer": "RS 232",
+        "page": 72
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "answer": "At the back of the control box.",
         "page": 72
     },
     {
@@ -121,13 +146,13 @@
     },
     {
         "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
-        "answer": "3 m/s)",
+        "answer": "3 m/s",
         "page": 77
     },
     {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "answer": "75 cm above the troughs.",
-        "page": 84
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "answer": "Every year",
+        "page": 78
     },
     {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
@@ -135,7 +160,7 @@
         "page": 89
     },
     {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
         "answer": "10% of the quantity in the middle trough",
         "page": 91
     },
@@ -143,6 +168,11 @@
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
         "answer": "Inertia causes continued rotation.",
         "page": 94
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "answer": "Measured from the bottom of the vanes.",
+        "page": 95
     },
     {
         "question": "According to the last setting check, what is the recommended height in centimeter of the spreader over the ground or crops?",
@@ -165,6 +195,11 @@
         "page": 108
     },
     {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "answer": "spreading chart or online spreading chart",
+        "page": 111
+    },
+    {
         "question": "What should you do if a spreading disc spreads irregularly?",
         "answer": "Stop spreading and disconnect the PTO shaft immediately.",
         "page": 113
@@ -178,6 +213,11 @@
         "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
         "answer": "80 bar",
         "page": 117
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "answer": "Place the spreader on a firm, stable ramp",
+        "page": 120
     },
     {
         "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
@@ -200,6 +240,11 @@
         "page": 127
     },
     {
+        "question": "What type of grease is the central gearbox filled with?",
+        "answer": "EP 00/000 gear grease.",
+        "page": 127
+    },
+    {
         "question": "What is the maximum hydraulic pressure allowed for the hydaulic system in bars?",
         "answer": "210 bars.",
         "page": 131
@@ -210,7 +255,7 @@
         "page": 136
     },
     {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
         "answer": "The required distance is 1.0 mm.",
         "page": 138
     },
@@ -218,5 +263,10 @@
         "question": "How often should the agitator axle seal be replaced?",
         "answer": "Every season and after every 100 operational hours.",
         "page": 140
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "answer": "Yes, using the Sensor input IM Tellus.",
+        "page": 144
     }
 ]

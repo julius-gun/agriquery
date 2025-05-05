@@ -1,12 +1,6 @@
 {
     "llm_models": {
         "ollama": {
-            "deepseek-r1_70B-128k": {
-                "name": "deepseek-r1:70b",
-                "temperature": 0.0,
-                "num_predict": 1024,
-                "context_window": 128000
-            },
             "deepseek-r1_8B-128k": {
                 "name": "deepseek-r1:8b",
                 "temperature": 0.0,
@@ -21,6 +15,12 @@
             },
             "deepseek-r1_14B-128k": {
                 "name": "deepseek-r1:14b",
+                "temperature": 0.0,
+                "num_predict": 1024,
+                "context_window": 128000
+            },
+            "qwen3_8B-128k": {
+                "name": "qwen3:8b",
                 "temperature": 0.0,
                 "num_predict": 1024,
                 "context_window": 128000
@@ -73,30 +73,33 @@
                 "num_predict": 1024,
                 "context_window": 8192
             },
-            "phi4_14B-4k": {
+            "gemma3_12B-128k": {
+                "name": "gemma3:12b",
+                "temperature": 0.0,
+                "num_predict": 1024,
+                "context_window": 128000
+            },
+            "phi4_14B-16k": {
                 "name": "phi4:latest",
                 "temperature": 0.0,
                 "num_predict": 1024,
-                "context_window": 4096
+                "context_window": 16384
             },
-            "r1-1776_70B-128k": {
-                "name": "r1-1776:70b",
+            "qwq_32B-128k": {
+                "name": "qwq",
                 "temperature": 0.0,
                 "num_predict": 1024,
-                "context_window": 128000
-            },
-            "qwen3_8B-128k": {
-                "name": "qwen3:8b",
-                "temperature": 0.0,
-                "num_predict": 1024,
-                "context_window": 128000
+                "context_window": 131072
             }
         },
         "gemini": {
-            "gemini-pro": {
-                "name": "gemini-2.0-flash-thinking-exp-01-21",
+      "gemini-2.5-flash-preview-04-17": {
+        "name": "gemini-2.5-flash-preview-04-17",
                 "temperature": 0.0,
-                "num_predict": 1024
+        "num_predict": 1024,
+        "context_window": null,
+        "top_p": 0.0,
+        "top_k": 64
             }
         }
     },

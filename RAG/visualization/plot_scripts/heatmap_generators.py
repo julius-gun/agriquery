@@ -884,12 +884,13 @@ if __name__ == "__main__":
                 output_filename_prefix=args.output_filename_prefix,
             )
         # --- NEW: Call the new generator functions ---
-        elif subtype == "algo_vs_model_f1":
-            generate_algo_vs_model_f1_heatmap(
-                df_data=df_data,  # Pass the full dataframe
-                output_dir=args.output_dir,
-                output_filename_prefix=args.output_filename_prefix,
-            )
+        # mean F1 heatmap for algo vs model (english only)
+        # elif subtype == "algo_vs_model_f1":
+        #     generate_algo_vs_model_f1_heatmap(
+        #         df_data=df_data,  # Pass the full dataframe
+        #         output_dir=args.output_dir,
+        #         output_filename_prefix=args.output_filename_prefix,
+        #     )
         elif subtype == "algo_vs_model_success":
             generate_algo_vs_model_dataset_success_heatmap(
                 df_data=df_data,  # Pass the full dataframe

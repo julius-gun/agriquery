@@ -264,14 +264,14 @@ if __name__ == "__main__":
             print(f"Warning: Config file not found at '{args.config_path}'. Cannot determine language list.")
         except Exception as e:
             print(f"Warning: Error loading config file '{args.config_path}': {e}.")
-
-        generate_f1_boxplot(
-            df_data=df_data,
-            group_by=args.group_by,
-            output_dir=args.output_dir,
-            output_filename_prefix=args.output_filename_prefix,
-            all_languages_list=all_languages_list # Pass loaded languages
-        )
+        # generate f1 boxplot with different languages, chunk sizes, etc.
+        # generate_f1_boxplot(
+        #     df_data=df_data,
+        #     group_by=args.group_by,
+        #     output_dir=args.output_dir,
+        #     output_filename_prefix=args.output_filename_prefix,
+        #     all_languages_list=all_languages_list # Pass loaded languages
+        # )
     elif args.plot_subtype == "dataset_success":
         generate_dataset_success_boxplot(
             df_data=df_data,
