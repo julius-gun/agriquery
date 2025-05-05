@@ -10,19 +10,18 @@
         "chroma_collection_used": "french_manual_cs200_os100"
     },
     "overall_metrics": {
-        "accuracy": 0.6111111111111112,
-        "precision": 0.7307692307692307,
-        "recall": 0.35185185185185186,
+        "accuracy": 0.6481481481481481,
+        "precision": 0.7666666666666667,
+        "recall": 0.42592592592592593,
         "specificity": 0.8703703703703703,
-        "f1_score": 0.47500000000000003,
-        "true_positives": 19,
+        "f1_score": 0.5476190476190477,
+        "true_positives": 23,
         "true_negatives": 47,
         "false_positives": 7,
-        "false_negatives": 35,
+        "false_negatives": 31,
         "total_questions": 108,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.4318181818181818,
-            "table_questions": 0.0,
+            "general_questions": 0.42592592592592593,
             "unanswerable_questions": 0.8703703703703703
         }
     },
@@ -57,7 +56,7 @@
                 {
                     "question": "What system continuously measures fertilizer quantity being spread?",
                     "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
-                    "model_answer": "<answer>\nThe system continuously measures fertilizer quantity being spread using a capteur de référence.\n</answer>",
+                    "model_answer": "<answer>\nThe system continuously measures fertilizer quantity being spread using a capteur de r\u00e9f\u00e9rence.\n</answer>",
                     "page": 30,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -165,16 +164,6 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "<answer>\n30° vers le haut et 30° vers le bas\n</answer>",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "Unknown",
@@ -187,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "<answer>\n30°\n</answer>",
+                    "model_answer": "<answer>\n30\u00b0\n</answer>",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -285,16 +274,6 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "Unknown",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "<answer>\n75\n</answer>",
@@ -302,16 +281,6 @@
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "Unknown",
-                    "page": 91,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
                     "eval_error": false
                 },
                 {
@@ -377,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40°C",
+                    "model_answer": "40\u00b0C",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -407,7 +376,7 @@
                 {
                     "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
                     "expected_answer": "Remove all fertilizer remnants.",
-                    "model_answer": "<answer>\n    Éloignez tous les résidus d'engrais des orifices, des angles, des manchons et des flexibles avant de souder.\n</answer>",
+                    "model_answer": "<answer>\n    \u00c9loignez tous les r\u00e9sidus d'engrais des orifices, des angles, des manchons et des flexibles avant de souder.\n</answer>",
                     "page": 123,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -455,7 +424,137 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "Unknown",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "<answer>\n06.00.00.0257\n</answer>",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "<answer>\n25 mm\n</answer>",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "Unknown",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "<answer>\nAfin de permettre une application fine pour un d\u00e9bit faible, il est recommand\u00e9 d'utiliser le kit de dosage fin et de s\u00e9lectionner l'orifice de dosage plus grand.\n</answer>",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "Unknown",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "<answer>\n9 broches\n</answer>",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "<answer>\nEvery year.\n</answer>",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "<answer>\n10%\n</answer>",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "Unknown",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "Unknown",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "Unknown",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "EP 00/000",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
                     "expected_answer": "The required distance is 1.0 mm.",
                     "model_answer": "<answer>\n1.0 mm\n</answer>",
                     "page": 138,
@@ -465,13 +564,13 @@
                     "eval_error": false
                 },
                 {
-                    "question": "How often should the agitator axle seal be replaced?",
-                    "expected_answer": "Every season and after every 100 operational hours.",
-                    "model_answer": "Unknown",
-                    "page": 140,
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "<answer>\nYes, with the IsoMatch Tellus entry capteur available in option, you can connect the tractor's speed sensor or radar to the IsoMatch control box.\n</answer>",
+                    "page": 144,
                     "dataset": "general_questions",
                     "qa_error": false,
-                    "self_evaluation": "no",
+                    "self_evaluation": "yes",
                     "eval_error": false
                 }
             ],
@@ -524,7 +623,7 @@
                 {
                     "question": "How often (in what interval) must the condition of the vanes be inspected?",
                     "expected_answer": "daily",
-                    "model_answer": "<answer>\nIntervalles de maintenance\nMaintenance\nRespectez les intervalles de contrôle et de maintenance suivants pour conserver la machine en bon état.\n                                                 Tous  le s  jo urs                  Au bo ut de s 10 pr emière s heur es Tout es  les sema i n e s T out es les 10 0 h e u res Au moins 1 f ois par a n Comme recommandé        Si us ure             Page\n3                               État agitateur et arbre d'agitateur                ·                                                                                                                                                                       \n4                                                        État pales                ·                                                                                                                                                                     43\n</answer>",
+                    "model_answer": "<answer>\nIntervalles de maintenance\nMaintenance\nRespectez les intervalles de contr\u00f4le et de maintenance suivants pour conserver la machine en bon \u00e9tat.\n                                                 Tous  le s  jo urs                  Au bo ut de s 10 pr emi\u00e8re s heur es Tout es  les sema i n e s T out es les 10 0 h e u res Au moins 1 f ois par a n Comme recommand\u00e9        Si us ure             Page\n3                               \u00c9tat agitateur et arbre d'agitateur                \u00b7                                                                                                                                                                       \n4                                                        \u00c9tat pales                \u00b7                                                                                                                                                                     43\n</answer>",
                     "page": 125,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -574,7 +673,7 @@
                 {
                     "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
                     "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
-                    "model_answer": "<answer>\n    If the flow of the fertilizer is blocked, inspect the trémie content for other blocks and reduce them. Refer to page 113 for further instructions.\n</answer>",
+                    "model_answer": "<answer>\n    If the flow of the fertilizer is blocked, inspect the tr\u00e9mie content for other blocks and reduce them. Refer to page 113 for further instructions.\n</answer>",
                     "page": 152,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -701,7 +800,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Refer to paragraph 8. \"Procédez à l'épandage uniquement lorsque les conditions météorologiques sont favorables\" translates to \"Continue with spreading only when favorable weather conditions are met\".",
+                    "model_answer": "Refer to paragraph 8. \"Proc\u00e9dez \u00e0 l'\u00e9pandage uniquement lorsque les conditions m\u00e9t\u00e9orologiques sont favorables\" translates to \"Continue with spreading only when favorable weather conditions are met\".",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -961,7 +1060,7 @@
                 {
                     "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "<answer>\n2 mètres\n</answer>",
+                    "model_answer": "<answer>\n2 m\u00e8tres\n</answer>",
                     "page": 109,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

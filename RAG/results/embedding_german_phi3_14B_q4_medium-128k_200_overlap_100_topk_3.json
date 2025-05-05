@@ -10,19 +10,18 @@
         "chroma_collection_used": "german_manual_cs200_os100"
     },
     "overall_metrics": {
-        "accuracy": 0.6759259259259259,
-        "precision": 0.6792452830188679,
-        "recall": 0.6666666666666666,
+        "accuracy": 0.7222222222222222,
+        "precision": 0.7068965517241379,
+        "recall": 0.7592592592592593,
         "specificity": 0.6851851851851852,
-        "f1_score": 0.6728971962616822,
-        "true_positives": 36,
+        "f1_score": 0.7321428571428572,
+        "true_positives": 41,
         "true_negatives": 37,
         "false_positives": 17,
-        "false_negatives": 18,
+        "false_negatives": 13,
         "total_questions": 108,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.7954545454545454,
-            "table_questions": 0.1,
+            "general_questions": 0.7592592592592593,
             "unanswerable_questions": 0.6851851851851852
         }
     },
@@ -57,7 +56,7 @@
                 {
                     "question": "What system continuously measures fertilizer quantity being spread?",
                     "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
-                    "model_answer": "The Wägezellen (weighing cells) continuously measure the quantity of fertilizer being spread.",
+                    "model_answer": "The W\u00e4gezellen (weighing cells) continuously measure the quantity of fertilizer being spread.",
                     "page": 30,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -117,7 +116,7 @@
                 {
                     "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
                     "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
-                    "model_answer": "Schweißen Sie eine Fußplatte vor der Montage auf eine ausgewählte Fläche in der Kabine.",
+                    "model_answer": "Schwei\u00dfen Sie eine Fu\u00dfplatte vor der Montage auf eine ausgew\u00e4hlte Fl\u00e4che in der Kabine.",
                     "page": 40,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -159,16 +158,6 @@
                     "expected_answer": "Place the machine on a supporting beam.",
                     "model_answer": "Place the machine on a suitable support before someone goes between the tractor and machine.",
                     "page": 50,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30° both when lifted and lowered.",
-                    "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "yes",
@@ -217,7 +206,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "Benötigte Auslaufgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha)",
+                    "model_answer": "Ben\u00f6tigte Auslaufgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha)",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -267,7 +256,7 @@
                 {
                     "question": "What materials are required to perform the tray test?",
                     "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-                    "model_answer": "Bandmaß oder Messlatte, Wasserwaage, 7 Auffangbehälter.",
+                    "model_answer": "Bandma\u00df oder Messlatte, Wasserwaage, 7 Auffangbeh\u00e4lter.",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -277,18 +266,8 @@
                 {
                     "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
                     "expected_answer": "3 m/s)",
-                    "model_answer": "3 m/s (Windstärke 2)",
+                    "model_answer": "3 m/s (Windst\u00e4rke 2)",
                     "page": 77,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "75 cm",
-                    "page": 84,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "yes",
@@ -299,16 +278,6 @@
                     "expected_answer": "75 cm",
                     "model_answer": "75 cm",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "The maximum fertilizer loss of the quantity in the middle trough allowed in an imaginative ditch is 10%.",
-                    "page": 91,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "yes",
@@ -367,7 +336,7 @@
                 {
                     "question": "What should you do if a spreading disc spreads irregularly?",
                     "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-                    "model_answer": "1. Check for damage to doser openings or mixer by inserting an object like a screwdriver through the outflow opening.\n2. If you find any damage, repair it before continuing spreading.\n3. Avoid driving errors and ensure good overlap of spreading discs.\n4. For trapezoidal spread patterns with large working widths, overlapping is more sensitive to errors; avoid this by marking the drive lanes with stakes or markers.\n5. If there's a discrep\n6. Check if the machine hangs horizontally behind the tractor and perform \"Kontrolle und Einstellung Dosiermechanismus\" test as described on page 133.\n7. Perform \"Kontrolle und Einstellung Auslauföffnung\" test as described on page 136.",
+                    "model_answer": "1. Check for damage to doser openings or mixer by inserting an object like a screwdriver through the outflow opening.\n2. If you find any damage, repair it before continuing spreading.\n3. Avoid driving errors and ensure good overlap of spreading discs.\n4. For trapezoidal spread patterns with large working widths, overlapping is more sensitive to errors; avoid this by marking the drive lanes with stakes or markers.\n5. If there's a discrep\n6. Check if the machine hangs horizontally behind the tractor and perform \"Kontrolle und Einstellung Dosiermechanismus\" test as described on page 133.\n7. Perform \"Kontrolle und Einstellung Auslauf\u00f6ffnung\" test as described on page 136.",
                     "page": 113,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -377,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40°C",
+                    "model_answer": "40\u00b0C",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -455,16 +424,6 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-                    "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "The context does not provide a specific distance in meters between the discharge bushing and spreading disc. The answer is \"Not found in context\".",
-                    "page": 138,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
                     "question": "How often should the agitator axle seal be replaced?",
                     "expected_answer": "Every season and after every 100 operational hours.",
                     "model_answer": "Not found in context.",
@@ -472,6 +431,146 @@
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "06.00.00.00.0257",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "The profiled tubes must overlap by at least 150 mm.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "The distribution meter has 4 parts.",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "To enable a fine application for dosing at a low application rate, use the Feindosierset.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "Unknown or Not found in context.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "On the back of the control unit.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "J\u00e4hrlich (annually)",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "The maximum fertilizer loss of the quantity in the middle trough allowed in a ditch is 10%.",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "The spreading height is measured from the streuer (spreader) to the ground or crop.",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "The context provides instructions for setting up a Streuer (spreader) correctly. It mentions checking if the height over ground or crop is set to 75 cm, ensuring the correct shovel combination is mounted, adjusting the number of doser openings and the exit opening, setting the right dose, and selecting the appropriate GEOPOINT\u00ae (core spread pattern). However, it does not provide specific information on how to set the PTO shaft and spreading disc RPM. Therefore, the answer is \"Not found in context\".",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "Place the machine on a stable elevation like a pallet.",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "The central gearbox is filled with Getriebefett EP 00/000.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "1.0 mm",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "Yes, you can connect the tractor's speed sensor or radar to the IsoMatch control box.",
+                    "page": 144,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
                     "eval_error": false
                 }
             ],
@@ -484,7 +583,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "Mineralisch: eckig, mit scharfen Kanten und Rändern, sehr rau",
+                    "model_answer": "Mineralisch: eckig, mit scharfen Kanten und R\u00e4ndern, sehr rau",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -621,7 +720,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Input IM Tellus with ISO11786 'In Cab' Anschluss, Beleuchtung und Zündschloss, Schlepper CAN (optionaler schlepperspezifischer Stecker erforderlich), Videoeingang.",
+                    "model_answer": "Input IM Tellus with ISO11786 'In Cab' Anschluss, Beleuchtung und Z\u00fcndschloss, Schlepper CAN (optionaler schlepperspezifischer Stecker erforderlich), Videoeingang.",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -701,7 +800,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Stoppen Sie mit dem Streuen erst, wenn Sie mit dem Auffangbehälter mindestens eine Arbeitsbreite (z. B. 18 oder 24 Meter) passiert haben. Der Streuer streut nämlich ungefähr gleich weit nach hinten wie zur Seite.",
+                    "model_answer": "Stoppen Sie mit dem Streuen erst, wenn Sie mit dem Auffangbeh\u00e4lter mindestens eine Arbeitsbreite (z. B. 18 oder 24 Meter) passiert haben. Der Streuer streut n\u00e4mlich ungef\u00e4hr gleich weit nach hinten wie zur Seite.",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -911,7 +1010,7 @@
                 {
                     "question": "What type of 'active carbon filters' are recommended for closed tractor cabin to filter fertilizer dust?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Aktivkohlefilter in den Lufteinlässen.",
+                    "model_answer": "Aktivkohlefilter in den Lufteinl\u00e4ssen.",
                     "page": 94,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -931,7 +1030,7 @@
                 {
                     "question": "What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "3 m/s (Windstärke 2)",
+                    "model_answer": "3 m/s (Windst\u00e4rke 2)",
                     "page": 96,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1051,7 +1150,7 @@
                 {
                     "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Fühlerlehre",
+                    "model_answer": "F\u00fchlerlehre",
                     "page": 138,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

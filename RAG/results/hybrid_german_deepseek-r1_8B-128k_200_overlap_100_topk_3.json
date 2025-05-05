@@ -10,19 +10,18 @@
         "chroma_collection_used": "german_manual_cs200_os100"
     },
     "overall_metrics": {
-        "accuracy": 0.6574074074074074,
-        "precision": 0.660377358490566,
-        "recall": 0.6481481481481481,
+        "accuracy": 0.7037037037037037,
+        "precision": 0.6896551724137931,
+        "recall": 0.7407407407407407,
         "specificity": 0.6666666666666666,
-        "f1_score": 0.6542056074766356,
-        "true_positives": 35,
+        "f1_score": 0.7142857142857143,
+        "true_positives": 40,
         "true_negatives": 36,
         "false_positives": 18,
-        "false_negatives": 19,
+        "false_negatives": 14,
         "total_questions": 108,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.75,
-            "table_questions": 0.2,
+            "general_questions": 0.7407407407407407,
             "unanswerable_questions": 0.6666666666666666
         }
     },
@@ -165,16 +164,6 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "<think>\nOkay, so I need to figure out the maximum operating angle of the coupling shaft for this machine. Let me look through the context provided.\n\nOn Page 2, there's a section about attaching check chains to the coupling shaft protection sleeves. Then it mentions that during lifting and lowering, the coupling shaft needs space for sliding in and out, and sufficient overlap between the profiled tubes when driving the machine at extreme operating angles.\n\nFurther down, I see a TIP: The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered. It also says that this position allows the maximum distance between the PTO shaft of the tractor and the driving axle of the machine. If the working angle were greater than 30\u00b0, it could damage the coupling shaft.\n\nSo, the key information here is that the maximum operating angle is 30 degrees both when lifted and when lowered.\n</think>\n\nThe maximum operating angle of the coupling shaft is **30\u00b0** when lifted and **30\u00b0** when lowered.",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "<think>\nOkay, so I need to figure out whether the parking brake of the tractor should be engaged before connecting the machine. Let me look through the context provided.\n\nFirst, I see several points listed. The first point says to engage the parking brake of the tractor. That seems directly related. Then there's a note about protecting the mobile machine from rolling away while connected, which makes sense because if the parking brake isn't on, the tractor might move, causing the machine to roll.\n\nAnother point mentions connecting and disconnecting only on a firm, dry surface to prevent tilting or sinking. That's more about the environment where the connection happens rather than the action of engaging the brake.\n\nThere's also a warning not to have other people nearby, which is important for safety but doesn't directly answer the question about the parking brake.\n\nThe guidelines say to follow the manual, use a power lift that meets regulations, and not stand between the tractor and machine while operating the power lift. Again, these are additional safety measures but don't specifically address the parking brake.\n\nThen there's a section about only connecting at designated points and doing so with the PTO shaft off. That's important for correct operation but doesn't directly answer if the parking brake should be on.\n\nLastly, checking the machine's state to ensure safe operation and transport. This is more about maintenance than the specific action of engaging the brake.\n\nSo, focusing only on the specific information related to the question: The first point clearly states to engage the parking brake of the tractor. There's no conflicting information elsewhere that would suggest otherwise.\n</think>\n\nYes, the parking brake of the tractor should be engaged before connecting the machine.",
@@ -285,30 +274,10 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "<think>\nOkay, so I need to figure out the required height of the spreading disc above the troughs for one-sided boundary spreading based on the given context. Let me start by reading through the context carefully.\n\nOn Page 2, there's a section about setting up the spreader for one-sided boundary spreading. It mentions that the height of the spreading disc should be 75 cm above the troughs. That seems to directly answer the question. I don't see any other information related to this specific detail elsewhere in the context.\n\nI should make sure I'm not missing anything, but it looks like the key point is right there on Page 2. So, the height required is 75 cm.\n</think>\n\nThe required height of the spreading disc above the troughs for one-sided boundary spreading is **75 cm**.",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "<think>\nOkay, so I need to figure out the specific height in centimeters that the spreading disc should be set to above the troughs before testing the ExactLine spreading pattern. Let me read through the context carefully.\n\nLooking at the context, there are a few sections related to the ExactLine. The first part mentions setting the height of the Streuscheibe (which I think is the disc) to 75 cm over the Auffangbeh\u00e4ltern (troughs). Then later on, it talks about the same thing in German, confirming that the disc height should be set to 75 cm above the troughs during testing.\n\nI don't see any conflicting information. Both sections agree that 75 cm is the correct height. So, the answer should be straightforward.\n</think>\n\nThe spreading disc should be set to a height of **75 cm** above the troughs before testing the ExactLine spreading pattern.",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "<think>\nOkay, so I need to figure out the maximum fertilizer loss allowed in the middle trough of an imaginative ditch. Let me read through the context carefully.\n\nThe context mentions that environmental standards determine the maximum acceptable loss. To comply with these standards, the quantity of fertilizer in the first trough must be a maximum of 10% of the quantity collected in the middle trough. That means the middle trough has 100%, and the first trough can only have up to 10%.\n\nI should make sure I'm not mixing up any numbers here. The key point is that the first trough's fertilizer is capped at 10% of the middle trough's amount. So, the loss allowed in the middle trough is 10%. There's no mention of a different percentage elsewhere relevant to this question.\n\nI think that's it. The answer should be straightforward: 10%.\n</think>\n\nThe maximum fertilizer loss allowed in the middle trough is 10%.\n\n**Answer:** 10%",
-                    "page": 91,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "yes",
@@ -455,16 +424,6 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-                    "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "<think>\nOkay, so I need to figure out the required distance between the discharge bushing and the spreading disc. Let me go through the context provided step by step.\n\nFirst, I'll look at each line of the context to find any mention of this specific measurement. The context is in German, but I can still read it as it's written here.\n\nLooking at line 6: \"g Achsstand des Schleppers\" \u2013 that translates to something about the axle position, probably not relevant.\n\nLine 7: \"h Abstand zwischen der Mitte der Hinterachse und der Mitte des Hubarmkupplungspunkts (3)\" \u2013 this is about the distance between the middle of the rear axle and the hub arm coupling point. Not what I'm looking for.\n\nLine 8: \"Abstand zwischen dem Schwerpunkt der Maschine oder dem Gewicht und dem Herz des Hubarmkupplungspunkts (2)\" \u2013 this is the distance from the machine's center of gravity or weight to the hub arm coupling point. Still not the discharge bushing and spreading disc.\n\nLine 9: It seems to be repeating something about considering add-ons or water weight in the tires, which might relate to overall weight distribution but not the specific measurement between two parts.\n\nThen I see lines mentioning wearing protective clothing and following instructions because of potential injury from friction. That's a safety note, so probably not relevant for the distance measurement.\n\nFurther down, there are steps about attaching the machine, raising it, switching off the tractor, placing supports, etc. These seem like setup or maintenance procedures.\n\nLooking specifically for \"distance between discharge bushing and spreading disc,\" I find that in the context, line 6 mentions \"Abstand zwischen der Mitte der Hinterachse und der Mitte des Hubarmkupplungspunkts (3)\" which is about the rear axle and hub arm coupling point. Not directly related.\n\nWait, but then later in the context, there's a mention: \"The distance between the discharge bushing and the spreading disc must be 1.0 mm.\" That's exactly what I'm looking for. It says if this distance is too great or too short, it causes issues with the spreading pattern or machine damage.\n\nSo the required distance is 1.0 mm. The question asks for the distance in meters, but since 1 mm is 0.001 meters, that would be 0.001 m. However, sometimes such measurements are given in millimeters when precise, so I need to check if the answer expects meters or millimeters.\n\nThe question specifically says \"in m,\" which stands for meters. So 1.0 mm is 0.001 meters. But it's more common in machinery to specify this distance in millimeters rather than converting to meters. However, since the instruction is to provide the exact information as per the context and the question asks for meters, I should convert it.\n\nAlternatively, maybe the context uses \"m\" as a unit abbreviation, but in the given text, it's written as \"1.0 mm,\" so perhaps the answer expects 1.0 mm. But the question explicitly says to provide the distance in meters. So I need to convert 1.0 mm to meters.\n\n1 mm = 0.001 m, so the required distance is 0.001 meters.\n</think>\n\nThe required distance between the discharge bushing and the spreading disc is **0.001 meters**.",
-                    "page": 138,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
                     "question": "How often should the agitator axle seal be replaced?",
                     "expected_answer": "Every season and after every 100 operational hours.",
                     "model_answer": "<think>\nOkay, so I need to figure out how often the agitator axle seal should be replaced based on the given context. Let me start by reading through the context carefully.\n\nFirst, I see there's a list of maintenance steps involving the metal seal rings. It mentions removing and replacing them, checking the condition of the agitator axle, and putting them back in place. But that doesn't directly tell me about replacement intervals.\n\nThen, looking at the \"Wartungsintervalle\" section, which translates to Maintenance Intervals. There's a table with numbers 0 through 10, each corresponding to different maintenance tasks. Number 2 is \"Kontrolle Hydrauliksystem,\" which means hydraulic system control. Number 3 is about the condition of the agitator and its axle.\n\nWait, but I'm looking for the seal replacement interval specifically. The context doesn't explicitly state a time interval like monthly or annually for the seal. It only mentions checking the condition of the agitator axle during maintenance. So maybe the answer isn't directly provided in the context.\n\nI should check if there's any mention of how often the seal should be replaced. Scanning through, I don't see any specific intervals given. The maintenance steps include replacing the metal seal rings but not the frequency. The table lists control and maintenance tasks without specifying replacement periods for seals.\n\nSo, based on this, the context doesn't provide a specific interval for replacing the agitator axle seal. Therefore, the answer should be \"Not found in context.\"\n</think>\n\nThe context does not specify how often the agitator axle seal should be replaced. \n\nAnswer: Not found in context",
@@ -472,6 +431,146 @@
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "<think>\nOkay, so I need to figure out from which version the ISOBUS supports the reception of the GreenSeeker sensor's signal. Let me start by reading through the context provided carefully.\n\nThe context mentions several things about the ISOBUS and the GreenSeeker sensor. It says that the ISOBUS supports the Farmfacts GreenSeeker Sensor, specifically starting from the GreenSeeker version 06.00.00.0257 onwards. So this is the key point I'm looking for.\n\nI should make sure I'm not missing any other versions or additional information that might affect this answer. The context also talks about the ISO terminal and Task Controller, but those seem to be more about how it's implemented rather than the version number itself.\n\nSo, putting it all together, the ISOBUS supports the GreenSeeker sensor starting from version 06.00.00.0257. I need to present this information precisely without adding any extra details.\n</think>\n\nFrom version 06.00.00.0257 onwards, the ISOBUS supports the reception of the signal from the GreenSeeker sensor.\n\n**Answer:** From version 06.00.00.0257 onwards.",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "<think>\nOkay, so I need to figure out when shortening a coupling shaft, how far the profiled tubes must at least overlap. Let me read through the context carefully.\n\nThe context starts with instructions on shortening the coupling shaft. It mentions that before first use, the profiled tubes must overlap as far as possible, with a minimum of 150 mm. So that's the key point here. The user is asking about the minimum overlap when shortening the coupling shaft, and the context clearly states it's at least 150 mm.\n\nI should make sure I'm not missing any other details. It also talks about cutting off the tubes to achieve 25 mm clearance, but that's after the initial overlapping requirement. So the main point is the 150 mm minimum overlap before any adjustments are made.\n\nTherefore, the answer should be exactly 150 mm.\n</think>\n\nThe profiled tubes must overlap a minimum of **150 mm** when shortening the coupling shaft.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "<think>\nOkay, so I need to figure out how many parts the distribution meter has based on the given context. Let me read through the context carefully.\n\nThe context starts by talking about determining distribution using a distribution meter that comes with every spreader. It mentions that the meter has 4 sections and 7 parts in total. The seven parts have different mesh widths that divide the fertilizer granules based on their diameters.\n\nWait, so it says there are 4 sections and 7 parts. I need to make sure I'm interpreting this correctly. Each section likely corresponds to a specific size range of granules. The four sections probably represent different diameter ranges, each with its own mesh width.\n\nSo the distribution meter has 4 sections, which are made up of 7 parts. That means each section is divided into parts that help measure the granule sizes. Therefore, the total number of parts is 7, but they're organized into 4 sections for different size categories.\n\nI think the question is asking for the total number of parts, so it's 7.\n</think>\n\nThe distribution meter has 7 parts in total. \n\nAnswer: The distribution meter has 7 parts.",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "<think>\nOkay, so I need to figure out how to enable fine application for dosing a low application rate based on the provided context. Let me start by reading through the context carefully.\n\nLooking at Page 2 of the context, there's a troubleshooting table with several problems related to incorrect application rates. The first three entries (0, 1, and 2) all mention \"Incorrect application rates (kg per hectare)\" as the problem. \n\nFor entry 0, the possible cause is \"Dosing setting incorrectly set,\" and the solution is to check the dosing setting on page 78.\n\nEntry 1 says the possible cause is \"Incorrect setting for fine dosage\" and suggests setting the dosing setting for fine application as per instructions on page 67.\n\nEntry 2 mentions that the driving speed signal isn't correctly set, so you need to set the correct source of the driving speed signal in the control system and control box, then calibrate the driving speed.\n\nThe question is about enabling fine application for low rates. From entry 1, it seems that setting the dosing for fine application as per instructions would be the solution. So, I think the answer is to set the dosing setting for fine application according to the instructions, which refers to page 67.\n</think>\n\nTo enable fine application for low dosing rates, set the dosing setting for fine application as per the provided instructions.\n\n**Answer:** Set the dosing setting for fine application as per the instructions.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "<think>\nOkay, so I need to figure out what the symbol on top of the fine application handle indicates about the Fine Application Kit being enabled. Let me read through the context carefully.\n\nLooking at the context, there's a section about \"Die Dosierstellung\" which translates to dosing setup. It mentions that in the Streutabelle (dosing table), if you want to use the Feindosier-Set (Fine Dosing Set), you can look for an indication there. The symbol is represented by 1 offene \u00d6ffnung (open opening) next to the Feindosier-Set symbol.\n\nFurther down, in the \"Vorgehensweise\" (Procedure) section under Akkumulator (Accumulator), it talks about bringing the ExactLine into working position using a simple hydraulic control for a few seconds. This also brings the accumulator onto pressure and displays the ExactLine symbol on the main display screen.\n\nWait, but the question is specifically about the symbol on top of the fine application handle indicating that the Fine Application Kit is enabled. From the context, I see that in the dosing setup part, when using the Feindosier-Set, there's an indication in the Streutabelle with 1 open hole next to the Feindosier-Set symbol.\n\nSo, putting it together, the symbol indicating the Fine Application Kit is enabled would be the one showing 1 open hole associated with the Feindosier-Set. Therefore, the answer should mention that the symbol shows \"1 offene \u00d6ffnung\" for the Feindosier-Set.\n</think>\n\nThe symbol on top of the fine application handle indicates that the Fine Application Kit is enabled by displaying \"1 offene \u00d6ffnung\" associated with the Feindosier-Set.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "<think>\nOkay, so I need to figure out where the RS 232 connector is located based on the given context. Let me read through the context carefully.\n\nThe context mentions several things about connections for tractors and spreaders, like ISO 11786 in-cab connections and various cables. It also talks about an extended ISO cable for a tractor-trailed spreader. Then it moves on to the Tellus control box communicating with external systems via RS 232. \n\nLooking specifically at the part about RS 232: \"The Tellus control box communicates with an external system via an RS 232 connection. You can use a cable with an RS232 plug to connect the signal from an external system to the Tellus control box.\" It also says, \"You can find the plug pin occupation in the Tellus control box operating manual.\"\n\nSo, the RS 232 connector is part of the Tellus control box. The context doesn't specify where exactly on the control box it's located, like if it's on the front, back, or side. It just mentions that the connection is via an RS 232 cable with a plug.\n\nI think the answer should state that the RS 232 connector is part of the Tellus control box and that details can be found in its operating manual.\n</think>\n\nThe RS 232 connector is located on the Tellus control box, with specific pin details available in its operating manual. \n\nAnswer: The RS 232 connector is located on the Tellus control box.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "<think>\nOkay, so I need to figure out how often the left and right spreading discs should be checked to ensure they spread the same volumes of fertilizer. Let me go through the context provided step by step.\n\nFirst, I see that there's a section about Wartungsintervalle, which translates to maintenance intervals. It lists some intervals with numbers and descriptions. The first interval is labeled as 0, which says \"Kontrolle von Schrauben und Muttern,\" meaning control of screws and nuts. Then it goes up to 1, 2, etc.\n\nLooking further down, there's a specific instruction about checking the spreading discs. It mentions that the left and right spreading discs must spread the same volumes of fertilizer for good distribution and that this check should be done every year. This is under the \"INDICATION\" section, which seems to be a test procedure.\n\nSo, putting it together, the context explicitly states that the spreading discs need to be checked annually to ensure they're distributing the same amount on both sides.\n</think>\n\nThe left and right spreading discs must be checked every year to ensure equal distribution of fertilizer. \n\n**Answer:** The check should be performed annually.",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "<think>\nOkay, so I need to figure out what the maximum fertilizer loss is allowed in a ditch based on the given context. Let me start by reading through the context carefully.\n\nLooking at the context, there's mention of environmental standards determining the maximum acceptable loss. The key part here is that the quantity of fertilizer in the first trough (in an imaginary ditch) must be a maximum of 10% of the quantity collected in the middle trough, which is set to 100%. \n\nSo, the first trough can't have more than 10%, and the middle trough is considered 100%. This means that the loss from the middle trough to the first trough is 90%, but the question specifically asks about the maximum allowed loss for the quantity in the middle trough. Wait, no\u2014the question is asking what's allowed as a percentage of the middle trough.\n\nWait, actually, the context says the first trough must be at most 10% of the middle trough. So the maximum allowed is 10%. That means the loss from the middle to the first is 90%, but the question is about the maximum allowed in the ditch, which refers to the first trough being no more than 10% of the middle.\n\nSo, the answer should be 10%.\n</think>\n\nThe maximum fertilizer loss allowed in the first trough compared to the middle trough is 10%. Therefore, the quantity in the first trough must not exceed 10% of that in the middle trough. \n\nAnswer: 10%",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "<think>\nOkay, so I need to figure out from which machine point the spreading height is measured. Let me read through the context carefully.\n\nLooking at the context, there's a section about \"Height correction with top dressing.\" It says that if the required height of 75 cm above the crop isn't possible with the power lift, you should use the high spreading setting or adjust the spreader forward as per the charts. Then it mentions to see paragraph \"Selecting linkage pin height\" on page 53.\n\nWait, but I'm looking for where exactly the measurement is taken from. There's a part that says, \"Measured from the bottom of the vanes, the distance to the ground or the crop must be 75 cm.\" So the spreading height is measured from the bottom of the vanes to the ground or crop.\n\nI think the key point here is that it's measured from the bottom of the vanes. That makes sense because the vanes are part of the spreader, and measuring from there ensures the correct height above the crop.\n</think>\n\nThe spreading height is measured from the bottom of the vanes to the ground or crop.\n\nAnswer: The spreading height is measured from the bottom of the vanes.",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "<think>\nOkay, so I need to figure out what information is provided in the context to help set the correct PTO shaft and spreading disc RPM. Let me start by reading through the context carefully.\n\nLooking at the context, there are several lines that mention \"PTO shaft (rpm)\" with values 410-570 on lines 16, 19, etc. So it seems like the PTO shaft speed is within this range. \n\nThen, line 11 mentions \"Zwischenbock (Zubeh\u00f6r)\", which I think refers to a coupling or accessory. The spreading chart shows the RPM of the spreading discs and the PTO shaft. It also says that the exact RPM can be found using the online chart or an app.\n\nSo putting this together, the context provides the range for PTO shaft RPM (410-570) and mentions that the spreading disc RPM is displayed on the control box. Additionally, there's a method to find the exact RPM via the spreading chart or app.\n</think>\n\nThe PTO shaft speed ranges from 410 to 570 RPM, as indicated in the context. The actual RPM of the spreading discs is displayed on the control box screen, and further details can be found using the online spreading chart or mobile app.\n\nAnswer:  \nThe PTO shaft RPM is between 410 and 570, with the exact spreading disc RPM available via the control box and online resources.",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "<think>\nOkay, so I need to figure out what to do if I can't lower the power lift enough to release the catch hooks when preparing the machine for storage. Let me read through the context carefully.\n\nLooking at the context, there are some steps listed under \"Storing the machine.\" The first tip says that if you can't lower the power lift far enough, they advise placing the spreader on a firm, stable ramp, like a pawl. That seems relevant because it's directly addressing the issue I'm facing.\n\nThen, further down, there are more steps. It mentions driving the tractor about 200 mm forward, switching it off, removing the key, engaging the parking brake, using wheel chocks, disconnecting plugs and hydraulic hoses, placing protective caps, hanging hoses, disconnecting the coupling shaft, and wearing safety gear.\n\nWait, but the question is specifically about not being able to lower the power lift. The first tip mentions using a ramp if that's an issue. So the main action here is to use a stable ramp or pawl for the spreader when you can't lower it enough.\n\nI should make sure I'm only extracting the specific information related to the question and nothing extra. The answer needs to be precise, so focusing on placing the spreader on a firm, stable ramp or using a pawl.\n</think>\n\nIf you cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage, place the spreader on a firm, stable ramp, such as a pawl.",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "<think>\nOkay, so I need to figure out what type of grease the central gearbox is filled with based on the given context. Let me start by reading through the context carefully.\n\nOn Page 1, there's a list of information related to the machine. It includes things like Posten number, print date, language, software version, machine number, serial number, and reference number. Not much about grease here.\n\nMoving to Page 2, I see some steps involving coupling shafts and checking the gearbox. The relevant part is where it mentions the central gearbox has two compartments filled with gear wheel grease EP 00/000. It also says that this grease doesn't need replacement; only regular checks are needed.\n\nSo, focusing on the specific information: the type of grease is gear wheel grease EP 00/000.\n</think>\n\nThe central gearbox is filled with **gear wheel grease EP 00/000**.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "<think>\nOkay, so I need to figure out the required distance in millimeters between the discharge bushing and the spreading disc based on the given context. Let me start by reading through the context carefully.\n\nLooking at the context, there are a few points mentioned about the corn kernel size distribution, but that seems unrelated to the question. Then there's some general advice about wearing protective clothing and following instructions, which also doesn't help. \n\nNext, I see a specific point: \"The distance between the discharge bushing and the spreading disc must be 1.0 mm.\" That directly answers the question. There are also mentions of what happens if the distance is too great or too short, but the key information here is that it needs to be exactly 1.0 mm.\n\nI should make sure I'm not missing any other details. The context also talks about measuring this distance using a feeler gauge and instructions on how to adjust if it's not correct, but the question only asks for the required distance, so those details aren't necessary for the answer.\n\nSo, putting it all together, the required distance is 1.0 mm.\n</think>\n\nThe required distance between the discharge bushing and the spreading disc is **1.0 mm**.",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "<think>\nOkay, so I need to figure out if the tractor's speed sensor or radar can be connected to the IsoMatch control box. Let me read through the context carefully.\n\nLooking at the context, there are a few relevant sections. The first part mentions that you can connect the tractor's speed sensor or radar to the IsoMatch control box using an optional \"Sensor input IM Tellus\" cable. This is necessary if the tractor doesn't have the ISO 11786 in-cab connection. So that seems like a direct answer.\n\nAnother section talks about connecting via the RS-232 on the control box for GPS signals, which is needed for GEOCONTROL functionality. But the question specifically asks about speed sensor or radar, so I should focus on the first part.\n\nI also see that if the tractor doesn't have ISO 11786 in-cab, they can use this Sensor input cable. So yes, it's possible to connect either the speed sensor or radar using this specific cable set provided as an optional item.\n</think>\n\nYes, you can connect the tractor's speed sensor or radar to the IsoMatch control box using the optional \"Sensor input IM Tellus\" cable if the tractor lacks the ISO 11786 in-cab connection.",
+                    "page": 144,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
                     "eval_error": false
                 }
             ],

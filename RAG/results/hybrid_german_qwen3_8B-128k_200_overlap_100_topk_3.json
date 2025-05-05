@@ -10,19 +10,18 @@
         "chroma_collection_used": "german_manual_cs200_os100"
     },
     "overall_metrics": {
-        "accuracy": 0.7870370370370371,
-        "precision": 0.8297872340425532,
-        "recall": 0.7222222222222222,
+        "accuracy": 0.8240740740740741,
+        "precision": 0.8431372549019608,
+        "recall": 0.7962962962962963,
         "specificity": 0.8518518518518519,
-        "f1_score": 0.7722772277227723,
-        "true_positives": 39,
+        "f1_score": 0.8190476190476189,
+        "true_positives": 43,
         "true_negatives": 46,
         "false_positives": 8,
-        "false_negatives": 15,
+        "false_negatives": 11,
         "total_questions": 108,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.8181818181818182,
-            "table_questions": 0.3,
+            "general_questions": 0.7962962962962963,
             "unanswerable_questions": 0.8518518518518519
         }
     },
@@ -165,16 +164,6 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking about the maximum operating angle of the coupling shaft when lifted and when lowered.\n\nFirst, I need to look through the provided context carefully. The context is in German, but there are some English instructions. Let me scan through the pages.\n\nOn Page 2, there's a section that mentions: \"The maximum operating angle of the coupling shaft is 30 \u00b0 when lifted and 30 \u00b0 when lowered.\" That seems to directly answer the question. \n\nI should check if there's any other mention of angles. There's also a note about the maximum distance between the PTO shaft and the drive axle being reached in that position, but that's about distance, not the angle. The TIP section also states the same 30\u00b0 for both lifted and lowered. \n\nSo the answer is 30 degrees for both. The user wants a precise, concise answer. The exact wording from the context is \"30 \u00b0 when lifted and 30 \u00b0 when lowered.\" So I should present that as the answer.\n</think>\n\nThe maximum operating angle of the coupling shaft is 30 \u00b0 when lifted and 30 \u00b0 when lowered.",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "<think>\nOkay, let's tackle this question. The user is asking if the parking brake of the tractor should be engaged before connecting the machine. I need to find the exact information from the provided context.\n\nLooking through the context, there's a section under the \"Wartung\" (Maintenance) part. The user mentioned a list of instructions. Let me scan through the text. \n\nUnder the \"Wartungsintervalle\" section, there's a list of points. The first point says: \"\u00b7 engage the parking brake of the tractor,\" and then continues with other points about protecting the machine from rolling away. \n\nWait, the exact sentence is: \"\u00b7 engage the parking brake of the tractor, \u00b7 a mobile machine must also be protected from rolling away while being connected,\" So the first bullet point mentions engaging the parking brake. But is this part of the maintenance intervals or part of the connection instructions?\n\nLooking at the structure, the first part talks about maintenance intervals, then there's a section with bullet points. The first bullet point is about engaging the parking brake. However, the context seems to have a mix of maintenance instructions and operational safety steps. \n\nThe question is about connecting the machine, so the relevant part is the bullet point that says \"engage the parking brake of the tractor\" as part of the steps when connecting. The answer should be yes, based on that instruction. The exact phrase is \"engage the parking brake of the tractor,\" which directly answers the question. So the answer is yes, the parking brake should be engaged.\n</think>\n\n[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]  \nYes, the parking brake of the tractor must be engaged.",
@@ -285,30 +274,10 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking about the required height of the spreading disc above the troughs for one-sided boundary spreading.\n\nFirst, I need to look through the provided context carefully. The context has several instructions and images related to setting up a spreading unit. Let me scan through the text.\n\nOn Page 1, there's a section that mentions setting the spreader according to the spreading chart for the desired working width. It also references the 'One-sided boundary spreading' chapter and specifies that the height of the spreading disc should be 75 cm above the troughs. That seems directly relevant.\n\nI should check if there's any other mention of height elsewhere. On Page 2, the same instruction is repeated: \"height of the spreading disc = 75 cm above the troughs.\" So that's consistent. \n\nThe question is specifically about the height for one-sided boundary spreading, and the context clearly states 75 cm. There's no conflicting information here. The answer should be exact, so 75 cm is the correct value. No need to add extra details. Just the number and unit as given.\n</think>\n\n75 cm above the troughs",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "<think>\nOkay, let's tackle this question. The user is asking about the specific height in centimeters the spreading disc should be set to above the troughs before testing the ExactLine spreading pattern.\n\nFirst, I need to look through the provided context carefully. The context mentions a few things related to settings. There's a part that says, \"During the tray test the disc height above the troughs was set to 75 cm.\" That seems directly relevant. \n\nAnother section mentions setting the spreading height back to the tray test, which again refers to 75 cm. The question is about the height above the troughs, so the 75 cm figure is the key here. \n\nI should check if there are any other numbers mentioned. The context also talks about adjusting settings like from 5 to 4 or 1 to 2, but those are about adjusting the width, not the height. The height is specifically mentioned as 75 cm in the tray test. \n\nThe answer needs to be precise and in centimeters. The user wants the exact value from the context. Since the context clearly states 75 cm, that's the answer. No other numbers are provided for the height. So the answer should be 75 cm.\n</think>\n\n[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]  \n75 cm",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking about the maximum fertilizer loss allowed in the middle trough of an imaginative ditch, expressed as a percentage.\n\nFirst, I need to look through the provided context to find the relevant information. The context mentions environmental standards and fertilizer loss. There's a part that says, \"the quantity of fertiliser in the 1st trough, standing in the imaginative ditch, must be a maximum of 10% of the quantity collected in the trough in the middle of the track (= 100%).\"\n\nSo, the 1st trough's fertilizer is limited to 10% of the middle trough's quantity. That means the maximum allowed loss is 10%. The question is phrased as \"maximum fertilizer loss of the quantity in the middle trough,\" but the context states that the 1st trough's loss is 10% of the middle's. Wait, maybe I need to clarify. The middle trough is the reference here. The 1st trough's fertilizer is 10% of the middle's, implying that the loss is 10% of the middle's quantity. Therefore, the maximum allowed loss is 10%. \n\nI should check if there's any other mention of percentages. The context also talks about the trough next to the ditch being less than 100%, but that's about the topping, not the loss. The key part is the 10% figure. So the answer should be 10%.\n</think>\n\n[The maximum fertilizer loss allowed is 10% of the quantity in the middle trough.]",
-                    "page": 91,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "yes",
@@ -455,16 +424,6 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-                    "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking for the required distance in meters between the discharge bushing and the spreading disc.\n\nFirst, I need to look through the provided context carefully. The context has several entries with numbers and descriptions. Let me scan through each line.\n\nLooking at line 9, there's a mention of the distance between the discharge bushing and the spreading disc must be 1.0 mm. Wait, the question asks for meters, but the context says 1.0 mm. That's a crucial point. The answer needs to be in meters, so converting millimeters to meters would be 0.001 meters. However, the context specifies 1.0 mm, so I should check if there's any other mention of distance in meters. \n\nLooking through the rest of the context, most of the distances are listed in meters (m) with labels like g, h, i, etc. But the specific mention of the discharge bushing and spreading disc is only in line 9, which states 1.0 mm. There's no other mention of this particular distance in meters. \n\nThe instructions say to base the answer strictly on the context. Since the context explicitly states 1.0 mm for that distance, even though the question asks for meters, the answer should reflect the exact value given. However, the user might expect the conversion. Wait, but the answer format requires the exact information from the context. The context says 1.0 mm, so the answer should be 1.0 mm. But the question asks for meters. Hmm, this is a bit conflicting. \n\nWait, maybe the context has a typo? Let me check again. The line says: \"The distance between the discharge bushing and the spreading disc must be 1.0 mm.\" So the answer is 1.0 mm. But the question asks for meters. However, the user might have made a mistake in the question's units. But according to the context, the answer is 1.0 mm. Since the instructions say to adhere strictly to the context, even if the units don't match, the answer should be as given. Therefore, the answer is 1.0 mm. But the answer format requires meters. Wait, the question says \"required distance in m\", but the context says mm. Should I convert it? The instructions say to base the answer on the context. So if the context says 1.0 mm, then the answer is 1.0 mm, even though the question asks for meters. But maybe the user intended the answer to be in meters. However, the context explicitly states mm. So the correct answer based on the context is 1.0 mm. But the answer format requires meters. Wait, the answer should be in meters as per the question. But the context says mm. This is a conflict. \n\nWait, the user's question is in meters, but the context says mm. The answer should be in meters. So converting 1.0 mm to meters is 0.001 m. But the context says 1.0 mm. However, the instructions say to extract the exact information from the context. Therefore, the answer should be 1.0 mm. But the question asks for meters. This is a problem. \n\nAlternatively, maybe the context has a mistake. But according to the given context, the answer is 1.0 mm. So the answer should be 1.0 mm. However, the user's question specifies meters. But the answer must be based on the context. Therefore, the answer is 1.0 mm. But the answer format requires meters. Wait, the answer should be in meters as per the question. But the context says mm. So perhaps the answer is 1.0 mm, even though the question asks for meters. Because the context is the source. \n\nAlternatively, maybe the answer is 1.0 mm, and the user made a mistake in the question's units. But the instructions say to base the answer strictly on the context. Therefore, the answer is 1.0 mm. However, the answer format requires meters. Wait, the answer should be in meters. But the context says mm. So the answer is 1.0 mm. But the user's question asks for meters. This is conflicting. \n\nWait, the user's question is: \"What is the required distance in m between the discharge bushing and spreading disc?\" The context says 1.0 mm. So the answer should be 1.0 mm. But the question asks for meters. However, the answer must be based on the context. Therefore, the answer is 1.0 mm. But the answer format requires meters. Wait, the answer should be in meters. But the context says mm. So perhaps the answer is 0.001 m. But the context says 1.0 mm. \n\nThis is a tricky situation.",
-                    "page": 138,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
                     "question": "How often should the agitator axle seal be replaced?",
                     "expected_answer": "Every season and after every 100 operational hours.",
                     "model_answer": "<think>\nOkay, let's tackle this question. The user is asking how often the agitator axle seal should be replaced. I need to find the exact information from the provided context.\n\nFirst, I'll scan through the context. There's a section about maintenance steps, including removing and replacing the metal seal rings. But the question is about the replacement frequency, not the steps themselves. \n\nLooking further, there's a part titled \"Wartungsintervalle\" which translates to maintenance intervals. The text mentions \"min. 1x pro Jahr\" which means at least once per year. The context also says to check the agitator axle condition, but the replacement interval is specified as once a year. \n\nI need to confirm if the agitator axle seal is covered under this interval. The maintenance steps mention replacing the fertiliser sealing ring, which might be the same as the agitator axle seal. The instruction says to replace it during maintenance, which is every 100 hours or once a year. However, the exact phrase \"min. 1x pro Jahr\" is in the context, so the answer should be once per year.\n</think>\n\n[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]  \nOnce per year (min. 1x pro Jahr)",
@@ -472,6 +431,146 @@
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking from which version the ISOBUS supports the reception of the Greenseeker sensor's signal.\n\nFirst, I need to look through the provided context. The context mentions the ISOBUS supporting the Farmfacts GreenSeeker Sensor. Then there's a part that says, \"Ab der GreenSeeker-Version 06.00.00.00.0257 unterst\u00fctzt die Software den Empfang des externen Signals.\" Translating that, it means that starting from GreenSeeker version 06.00.00.00.0257, the software supports receiving the external signal. \n\nWait, the question is about the ISOBUS supporting the signal reception. The context states that the ISOBUS supports the sensor, but the specific version where the software starts supporting the external signal is 06.00.00.00.0257. However, the version number seems a bit odd with multiple zeros. Maybe it's a typo, but I should stick to the exact text. The answer should be the version mentioned, which is 06.00.00.00.0257. I need to make sure there's no other version mentioned elsewhere. Scanning through the context again, that's the only version specified. So the answer is that version.\n</think>\n\n[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]  \nFrom GreenSeeker version 06.00.00.00.0257.",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking about the minimum overlap required for profiled tubes when shortening a coupling shaft. \n\nFirst, I need to look through the provided context carefully. The context mentions several steps related to shortening the coupling shaft. Let me scan through the text again.\n\nUnder the \"Before first use\" section, there's a part that says: \"The profiled tubes must overlap as far as possible, with a minimum of 150 mm.\" That seems directly relevant. Then later, there's a mention of 25 mm free clearance at the outer edges when the tractor PTO shaft and the machine drive axle are level. But the question is specifically about the overlap, not the clearance. \n\nSo the key sentence here is about the minimum overlap being 150 mm. The other numbers, like 25 mm, relate to clearance, not overlap. The user is asking for the overlap distance, so the answer should be 150 mm. I need to make sure there's no other mention of overlap elsewhere in the context. Scanning through the rest of the text, there's talk about cutting the tubes, deburring, cleaning, etc., but nothing else about overlap. \n\nTherefore, the answer is 15,0 mm. Wait, the context says \"minimum of 150 mm,\" so the answer should be 150 mm. The user might have a typo in the question, but the context clearly states 150 mm. I should confirm that there's no other conflicting information. The rest of the context is about adjusting the spreader settings, which isn't related. So the answer is 150 mm.\n</think>\n\n150 mm",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking how many parts the distribution meter has. I need to find the exact information from the context provided.\n\nLooking through the context, there's a part that says, \"This meter has 4 sections, with seven parts.\" Wait, that seems a bit conflicting. Let me check again. The sentence mentions \"4 sections, with seven parts.\" So, the meter has seven parts in total. The sections might be part of the structure, but the key part here is the number of parts. The answer should be seven. Let me make sure there's no other mention of parts elsewhere. The rest of the context talks about steps to determine distribution, filling slots, shaking, etc., but not about the number of parts again. So the answer is seven.\n</think>\n\n[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]  \n7",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking how to enable fine application for dosing low application rates. I need to look through the provided context to find the exact answer.\n\nFirst, I'll scan the context for any mentions of \"fine application\" or related terms. On Page 2, there's a troubleshooting table. Looking at the entries, entry 1 mentions \"Incorrect application rates (kg per hectare)\" with a possible cause of \"Incorrect setting for fine dosage\" and the solution as \"Set the dosing setting for fine application as per the instructions.\" \n\nThat seems directly relevant. The question is about enabling fine application for low rates, so the solution here is to set the dosing setting for fine application according to the instructions. The answer should be precise, so I need to make sure I don't add extra information. The exact instruction from the context is the key here. I should check if there's any other mention, but it looks like this is the only relevant part. So the answer should be to set the dosing setting for fine application as per the instructions.\n</think>\n\nSet the dosing setting for fine application as per the instructions.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking about the symbol on top of the fine application handle that indicates the Fine application kit is enabled.\n\nFirst, I need to look through the provided context. The context is in German, so I'll need to parse that carefully. Let me scan through the text.\n\nLooking at the section about the fine application handle, there's a mention of indications on top of the handle. The text says: \"die Indikationen auf top der feinen Anwendungshandle f\u00fcr die Anzahl der Dosier\u00f6ffnungen: 3 offene L\u00f6cher f\u00fcr Standarddosierung und 1 offenes Loch und 2 dicke L\u00f6cher f\u00fcr feine Anwendung.\" \n\nTranslating that, it means the indications on top of the fine application handle show the number of dosing openings: 3 open holes for standard dosing and 1 open hole and 2 thick holes for fine application. \n\nThe question is about the symbol indicating the Fine application kit is enabled. The context mentions that when using the fine application, there's 1 open hole and 2 thick holes. But the exact symbol isn't described beyond the number of holes. However, the question is about the symbol, which might refer to the visual indicator. The text says \"Indikationen\" which could be the symbols or markings. \n\nWait, the user is asking specifically about the symbol that indicates the Fine application kit is enabled. The context mentions that when the handle is set to fine application, there's 1 open hole and 2 thick holes. But the symbol might be the presence of those holes. However, the exact wording is \"Indikationen auf top der feinen Anwendungshandle f\u00fcr die Anzahl der Dosier\u00f6ffnungen: 3 offene L\u00f6cher f\u00fcr Standarddosierung und 1 offenes Loch und 2 dicke L\u00f6cher f\u00fcr feine Anwendung.\" \n\nSo the symbol is the number of holes: 1 open and 2 thick. But the question is about the symbol indicating the kit is enabled. The answer might be that the symbol is the presence of 1 open hole and 2 thick holes. However, the exact answer needs to be precise. The context says that the handle's indications show the number of dosing openings. For fine application, it's 1 open and 2 thick. Therefore, the symbol is the combination of 1 open hole and 2 thick holes. But the question is phrased as \"the symbol on top of the fine application handle indicating that the Fine application kit is enabled.\" The context doesn't mention a specific symbol like an icon, but rather the number of holes. However, the answer should be based on the context. The exact answer is that the symbol is the indication of 1 open hole and 2 thick holes. But the user might be looking for the specific description. Alternatively, maybe the symbol is the presence of the holes. Wait, the text says \"die Indikationen auf top der feinen Anwendungshandle f\u00fcr die Anzahl der Dosier\u00f6ffnungen: 3 offene L\u00f6cher f\u00fcr Standarddosierung und 1 offenes Loch und 2 dicke L\u00f6cher f\u00fcr feine Anwendung.\" So the symbol is the number of holes. Therefore, the answer is that the symbol is 1 open hole and 2 thick holes. But the question is about the symbol indicating the kit is enabled. The context says that when you set it to fine application, you have 1 open and 2 thick. So the symbol is that combination. Therefore, the answer should be \"1 open hole and 2 thick holes.\"\n</think>\n\nThe symbol on top of the fine application handle indicating the Fine application kit is enabled is **1 open hole and 2 thick holes**.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking where the RS 232 connector is located. I need to find the exact information from the provided context.\n\nFirst, I'll scan through the context for mentions of RS 232. There's a part that says: \"The Tellus control box communicates with an external system via an RS 232 connection. You can use a cable with an RS232 plug to connect the signal from an external system to the Tellus control box. You can find the plug pin occupation in \u2192 The Tellus control box operating manual.\" \n\nSo, the RS 232 connection is part of the Tellus control box. The context mentions that the plug pin occupation (which would be the pinout details) is in the operating manual. However, the question is about the location of the RS 232 connector, not the pinout. \n\nLooking further, there's another mention: \"Zudem kann \u00fcber RS 232 auf dem Bedienpult das GPS-Signal genutzt werden.\" This translates to \"Additionally, the GPS signal can be used via RS 232 on the control panel.\" So the RS 232 connection is on the control panel. \n\nWait, the first part talks about the Tellus control box having an RS 232 connection, and the second part mentions using RS 232 on the control panel. The question is about where the RS 232 connector is located. The answer seems to be that it's on the control panel. But I need to check if the context explicitly states the location. \n\nThe exact sentence is: \"Zudem kann \u00fcber RS 232 auf dem Bedienpult das GPS-Signal genutzt werden.\" So the RS 232 is used on the control panel (Bedienpult). Therefore, the location is the control panel. \n\nBut wait, the first part mentions the Tellus control box having an RS 232 connection. So maybe there are two places: the Tellus control box and the control panel. However, the question is about the RS 232 connector. The context says that the Tellus control box uses RS 232 to connect to an external system, and the control panel uses RS 232 for GPS. So the answer should specify both locations? But the user wants a precise answer. \n\nWait, the question is \"Where is the RS 232 connector located?\" The context mentions two instances: one in the Tellus control box and another on the control panel. However, the exact answer might be that the RS 232 connector is on the control panel. Let me check again. \n\nThe first mention: \"The Tellus control box communicates with an external system via an RS 232 connection.\" So the connector is part of the Tellus control box. The second mention: \"Zudem kann \u00fcber RS 232 auf dem Bedienpult das GPS-Signal genutzt werden.\" So the RS 232 is used on the control panel. Therefore, the answer is that the RS 232 connector is located on the control panel (Bedienpult) and in the Tellus control box. But the user wants the answer to be as precise and concise as possible. \n\nWait, the question is about the location of the RS 232 connector. The context says that the Tellus control box has an RS 232 connection, and the control panel uses RS 232 for GPS. So the answer should mention both locations. However, the user might be referring to the specific connector for the GPS signal, which is on the control panel. But the first part is about the Tellus control box. \n\nAlternatively, maybe the answer is that the RS 232 connector is located on the control panel (Bedienpult) as per the context. But I need to check if the context explicitly states the location. The first part says the Tellus control box has the RS 232 connection, but the second part says the control panel uses RS 232 for GPS. So the answer is that the RS 232 connector is located on the control panel (Bedienpult) and in the Tellus control box. However, the user might be looking for the location of the connector for the GPS signal, which is on the control panel. \n\nBut the question is general. The answer should be based on the context. The context mentions two places: the Tellus control box and the control panel. However, the exact answer might be that the RS 232 connector is located on the control panel (Bedienpult) as per the second mention. But the first mention is about the Tellus control box. \n\nWait, the user's question is \"Where is the RS 232 connector located?\" The context says that the Tellus",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking how often the left and right spreading discs should be checked to ensure they spread the same volume of fertilizer for good distribution.\n\nFirst, I need to look through the provided context. The context has several sections. The first part talks about maintenance intervals, mentioning checks after the first 10 operating hours and every 100 hours, at least once a year. But that's general maintenance. \n\nThen there's a section about the left and right spreading discs. The key part here is: \"The left and right spreading discs must spread the same volumes of fertiliser to ensure good distribution. Check this every year!\" So the direct answer here is every year. \n\nI should make sure there's no other mention of frequency. The rest of the context includes operational steps but doesn't mention the checking frequency again. The answer is explicitly stated as \"Check this every year!\" so the answer should be once a year.\n</think>\n\nThe left and right spreading discs should be checked every year to ensure they spread the same volumes of fertiliser for good distribution.",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking for the maximum fertilizer loss allowed in the middle trough as a percentage in a ditch. \n\nFirst, I need to look through the provided context. The context mentions environmental standards and the maximum acceptable loss. Specifically, there's a part that says: \"the quantity of fertiliser in the 1st trough, standing in the imaginative ditch, must be a maximum of 10% of the quantity collected in the trough in the middle of the track (= 100%).\"\n\nSo, the 1st trough's fertilizer is limited to 10% of the middle trough's quantity. That means the maximum allowed loss is 10%. The question is phrased as \"maximum fertilizer loss of the quantity in the middle trough,\" but based on the context, the 1st trough's loss is 10% relative to the middle. However, the question might be a bit ambiguous. Wait, the user is asking about the middle trough's loss. Wait, no, the wording is \"maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch.\" Wait, maybe I need to parse that again.\n\nWait, the context says the 1st trough (which is in the ditch) must be a maximum of 10% of the middle trough's quantity. So the loss is 10% of the middle trough's amount. But the question is asking for the maximum allowed loss of the middle trough's quantity. Wait, that might be a misunderstanding. Let me re-read the context.\n\nThe context states: \"the quantity of fertiliser in the 1st trough, standing in the imaginative ditch, must be a maximum of 10% of the quantity collected in the trough in the middle of the track (= 100%).\"\n\nSo the 1st trough (in the ditch) is 10% of the middle trough. Therefore, the maximum allowed loss is 10% of the middle trough's quantity. But the question is phrased as \"maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch.\" Wait, that's confusing. The middle trough is not in the ditch; the 1st trough is in the ditch. The middle trough is on the track. So the loss is the amount in the ditch (1st trough) compared to the middle. So the maximum allowed loss is 10% of the middle trough's quantity. Therefore, the answer is 10%.\n</think>\n\nThe maximum fertilizer loss allowed in the ditch is 10% of the quantity in the middle trough.  \n**Answer:** 10%",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking from which machine point the spreading height is measured to the ground or the crop. \n\nFirst, I need to look through the provided context carefully. The context has several parts. The first part mentions \"Measured from the bottom of the vanes, the distance to the ground or the crop must be 75 cm.\" That seems directly relevant. \n\nThe question is about the measurement point. The key phrase here is \"from the bottom of the vanes.\" The vanes are part of the machine, so that's the point of reference. The rest of the context talks about adjusting the height using the power lift, lift rod, top link, etc., but the specific measurement point is mentioned in that first part.\n\nI should check if there's any other mention of measurement points. The later parts mention things like linkage pins and spreading charts, but those are about adjusting the height rather than the measurement point itself. The answer should be \"bottom of the vanes\" as that's the exact point specified in the context. \n\nNo other parts mention the measurement point. The answer needs to be precise and concise, so \"bottom of the vanes\" is the correct answer here.\n</think>\n\n[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]  \nbottom of the vanes",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "<think>\nOkay, let's tackle this question. The user wants to know what information is available to set the correct PTO shaft and spreading disc RPM.\n\nFirst, I'll look through the context provided. The context mentions a spreading chart that shows both PTO shaft RPM and spreading disc RPM. There's also a note about using the ExactLine and border spreading plate to find recommended RPM values via an online chart or app. Additionally, the PTO speed and connection point are mentioned as important factors. The user needs to refer to the spreading chart book, online service, or app, and use the connection point shown there. \n\nThe key points here are the spreading chart, the ExactLine with border spreading plate, online service, app, and the connection point. The answer should list these as the available information. I need to make sure it's concise and directly answers the question without extra details.\n</think>\n\nThe information available includes the PTO shaft rpm range (410-570), recommended PTO and spreading disc rpm values via the spreading chart book, online spreading chart service, or mobile app, and the connection point specified in the chart. Use the connection point shown in the spreading chart.",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking what to do if they can't lower the power lift enough to release the catch hooks when preparing the machine for storage.\n\nFirst, I need to look through the provided context. The context has several numbered points, some in German and some in English. The relevant part seems to be under the \"Storing the machine\" section. \n\nLooking at the TIP mentioned: \"If you cannot lower the power lift far enough to release the catch hooks, we advise you to place the spreader on a firm, stable ramp, for example a pawl.\" That directly answers the question. \n\nI should check if there are other instructions related to this scenario. The rest of the context talks about steps like disconnecting hoses, using chocks, etc., but the specific advice about the power lift and catch hooks is in that TIP. \n\nThe answer needs to be precise and concise, matching the exact information from the context. So the correct action is to place the spreader on a firm, stable ramp like a pawl. No other steps are mentioned in the context for this specific situation. \n\nI should make sure not to include any other steps unless they're directly related. The answer should be exactly as stated in the TIP.\n</think>\n\nPlace the spreader on a firm, stable ramp, for example a pawl.",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking about the type of grease used in the central gearbox. I need to find the exact answer from the provided context.\n\nFirst, I'll scan through the context. The relevant part is on Page 2. The text mentions \"The central gearbox consists of 2 compartments filled with gear wheel grease EP 00/000.\" So the grease type is specified as \"gear wheel grease EP 00/000\". \n\nI should check if there's any other mention of grease elsewhere, but looking through the rest of the context, there's no other information about the grease type. The answer needs to be precise and match the exact wording from the context. The answer should be as brief as possible, so just the name of the grease. \n\nNo need to include extra details like the volume or the compartments. The question specifically asks for the type, so \"gear wheel grease EP 00/000\" is the correct answer. I don't see any other possible answers, so that's the one to provide.\n</think>\n\ngear wheel grease EP 00/000",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "<think>\nOkay, let's see. The user is asking for the required distance in millimeters between the discharge bushing and the spreading disc.\n\nFirst, I need to look through the provided context carefully. The context has several parts, including some instructions about fertilizer spreader settings. \n\nLooking at the section about the distance between the discharge bushing and the spreading disc, there's a specific mention: \"The distance between the discharge bushing and the spreading disc must be 1.0 mm.\" That seems to directly answer the question. \n\nI should check if there are any other mentions of distance. There's a part about measuring the distance using a feeler gauge, but the exact required distance is clearly stated as 1.0 mm. The other parts talk about consequences if the distance is too great or too short, but the required distance is explicitly given. \n\nNo other numbers are mentioned for the required distance. The answer should be exactly 1.0 mm. The user wants a precise and concise answer, so just stating 1.0 mm is sufficient. I don't see any conflicting information here. So the answer is 1.0 mm.\n</think>\n\n[The required distance between the discharge bushing and spreading disc is 1.0 mm.]",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "<think>\nOkay, let's tackle this question. The user is asking if the tractor's speed sensor or radar can be connected to the IsoMatch control box.\n\nFirst, I need to look through the provided context. The context mentions several things. There's a section that says: \"You can connect the tractor's speed sensor or radar to the IsoMatch control box with the optional 'Sensor input IM Tellus'.\" That seems directly relevant. \n\nWait, but there's also a part about the ISO 11786 connection. The question is about connecting the speed sensor or radar, not the ISO connection. The answer here is explicitly stating that you can connect those components using the Sensor input IM Tellus. \n\nI should check if there are any other mentions. The context also talks about needing the Sensor input IM Tellus if the tractor doesn't have the ISO connection. But the main answer is in that first part. \n\nSo the answer should be yes, you can connect them using the optional Sensor input IM Tellus. The answer needs to be precise and concise, matching the exact information from the context. No need to mention other parts unless they're directly relevant. The answer format should be in English, and if unsure, say \"Unknown\" or \"Not found\". But here, the context clearly states the possibility, so the answer is straightforward.\n</think>\n\nYes, the tractor's speed sensor or radar can be connected to the IsoMatch control box using the optional \"Sensor input IM Tellus\".",
+                    "page": 144,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
                     "eval_error": false
                 }
             ],

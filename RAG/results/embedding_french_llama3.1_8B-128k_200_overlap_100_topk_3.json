@@ -10,19 +10,18 @@
         "chroma_collection_used": "french_manual_cs200_os100"
     },
     "overall_metrics": {
-        "accuracy": 0.6574074074074074,
-        "precision": 0.673469387755102,
-        "recall": 0.6111111111111112,
+        "accuracy": 0.7037037037037037,
+        "precision": 0.7037037037037037,
+        "recall": 0.7037037037037037,
         "specificity": 0.7037037037037037,
-        "f1_score": 0.6407766990291262,
-        "true_positives": 33,
+        "f1_score": 0.7037037037037037,
+        "true_positives": 38,
         "true_negatives": 38,
         "false_positives": 16,
-        "false_negatives": 21,
+        "false_negatives": 16,
         "total_questions": 108,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.75,
-            "table_questions": 0.0,
+            "general_questions": 0.7037037037037037,
             "unanswerable_questions": 0.7037037037037037
         }
     },
@@ -67,7 +66,7 @@
                 {
                     "question": "How often does the spreader carry out automatic calibration tests?",
                     "expected_answer": "Every 75 kg or every minute.",
-                    "model_answer": "Unknown. \n\nThe context mentions \"l'étalonnage automatique\" (automatic calibration) being performed when certain conditions are met, such as when the content of the trémie reaches a value below 100 kg or when the system is searching for the correct dosage settings during spreading. However, it does not provide information on how often the spreader carries out automatic calibration tests in general.",
+                    "model_answer": "Unknown. \n\nThe context mentions \"l'\u00e9talonnage automatique\" (automatic calibration) being performed when certain conditions are met, such as when the content of the tr\u00e9mie reaches a value below 100 kg or when the system is searching for the correct dosage settings during spreading. However, it does not provide information on how often the spreader carries out automatic calibration tests in general.",
                     "page": 31,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -77,7 +76,7 @@
                 {
                     "question": "How can the tractor's driving speed be transmitted to the IsoMatch if the tractor lacks ISOBUS communication?",
                     "expected_answer": "By adding the IsoMatch power cable set to the tractor.",
-                    "model_answer": "The capteur de vitesse (speed sensor) and the câble de l'adaptateur for the recovery of the signal du vitesse émis par l'électronique du tracteur are raccordés to the boîtier IsoMatch.",
+                    "model_answer": "The capteur de vitesse (speed sensor) and the c\u00e2ble de l'adaptateur for the recovery of the signal du vitesse \u00e9mis par l'\u00e9lectronique du tracteur are raccord\u00e9s to the bo\u00eetier IsoMatch.",
                     "page": 32,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -97,7 +96,7 @@
                 {
                     "question": "How long should the main switch button be pressed to turn the control box on or off?",
                     "expected_answer": "At least 1 second.",
-                    "model_answer": "Maintenez le bouton enfoncé pendant au moins 1 seconde.",
+                    "model_answer": "Maintenez le bouton enfonc\u00e9 pendant au moins 1 seconde.",
                     "page": 34,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -147,7 +146,7 @@
                 {
                     "question": "Where should the position sensor for the hydraulic border spreading plate be connected?",
                     "expected_answer": "In the electronic box on the spreader.",
-                    "model_answer": "To the boîtier comportant l'électronique sur l'épandeur.",
+                    "model_answer": "To the bo\u00eetier comportant l'\u00e9lectronique sur l'\u00e9pandeur.",
                     "page": 47,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -165,19 +164,9 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "30 ° vers le haut et 30 ° vers le bas.",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
-                    "model_answer": "No. The text actually says to \"serrer le frein à main sur le tracteur\" (engage the handbrake on the tractor) after disconnecting the electrical system and removing the key from the contact, but this is done before connecting the machine, not before connecting it. However, it does say to \"couper le moteur du tracteur, retirer la clé du contact et serrez le frein à main sur le tracteur\" (cut off the tractor's engine, remove the key from the contact and engage the handbrake on the tractor) after moving the tractor forward by about 200 mm.",
+                    "model_answer": "No. The text actually says to \"serrer le frein \u00e0 main sur le tracteur\" (engage the handbrake on the tractor) after disconnecting the electrical system and removing the key from the contact, but this is done before connecting the machine, not before connecting it. However, it does say to \"couper le moteur du tracteur, retirer la cl\u00e9 du contact et serrez le frein \u00e0 main sur le tracteur\" (cut off the tractor's engine, remove the key from the contact and engage the handbrake on the tractor) after moving the tractor forward by about 200 mm.",
                     "page": 52,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -187,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 ° vers le haut et 30 ° vers le bas.",
+                    "model_answer": "30 \u00b0 vers le haut et 30 \u00b0 vers le bas.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -217,7 +206,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "Vitesse d'écoulement requise = (kg/min) Largeur de travail (m) x vitesse d'avancement (km/h) x débit (kg/ha) 600",
+                    "model_answer": "Vitesse d'\u00e9coulement requise = (kg/min) Largeur de travail (m) x vitesse d'avancement (km/h) x d\u00e9bit (kg/ha) 600",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -227,7 +216,7 @@
                 {
                     "question": "What type of serial connection does the IsoMatch control box use for communication?",
                     "expected_answer": "RS 232",
-                    "model_answer": "RS232.\n\n(Note: The context specifically mentions \"un port série avec une prise RS232\" on the back of the IsoMatch Tellus control box.)",
+                    "model_answer": "RS232.\n\n(Note: The context specifically mentions \"un port s\u00e9rie avec une prise RS232\" on the back of the IsoMatch Tellus control box.)",
                     "page": 72,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -257,7 +246,7 @@
                 {
                     "question": "What does a tray test check on a fertilizer spreader?",
                     "expected_answer": "Fertilizer distribution pattern of the spreader.",
-                    "model_answer": "The tray test checks the distribution of fertilizer.\n\n(Note: The context mentions \"Test de la nappe d'épandage à gauche et à droite\" which translates to \"Test of the spreading layer at left and right\", but based on the instructions, I have extracted the most precise answer related to the question.)",
+                    "model_answer": "The tray test checks the distribution of fertilizer.\n\n(Note: The context mentions \"Test de la nappe d'\u00e9pandage \u00e0 gauche et \u00e0 droite\" which translates to \"Test of the spreading layer at left and right\", but based on the instructions, I have extracted the most precise answer related to the question.)",
                     "page": 76,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -277,7 +266,7 @@
                 {
                     "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
                     "expected_answer": "3 m/s)",
-                    "model_answer": "5m/s \n\nThis answer is based on the context where it states \"vitesses élevées du vent (>  5m/s)\" which indicates that wind speeds above 5m/s are not favorable for spreading.",
+                    "model_answer": "5m/s \n\nThis answer is based on the context where it states \"vitesses \u00e9lev\u00e9es du vent (>  5m/s)\" which indicates that wind speeds above 5m/s are not favorable for spreading.",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -285,30 +274,10 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "75 cm au-dessus des bacs de collecte.",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "75 cm au-dessus des bacs de collecte.",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "10% \n\nThis answer is based on the context where it states \"Pour satisfaire à celle-ci, la quantité d'engrais dans le premier bac de collecte situé dans la tranchée fictive peut représenter au maximum 10 % de la quantité contenue dans le bac de collecte au centre de l'ornière (= 100 %).\"",
-                    "page": 91,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "yes",
@@ -347,7 +316,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "The two functions for border spreading are:\n\n1. Épandage unilatéral en bordure à l'aide du déflecteur de bordure hydraulique\n2. Épandage des bordures avec ExactLine",
+                    "model_answer": "The two functions for border spreading are:\n\n1. \u00c9pandage unilat\u00e9ral en bordure \u00e0 l'aide du d\u00e9flecteur de bordure hydraulique\n2. \u00c9pandage des bordures avec ExactLine",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -357,7 +326,7 @@
                 {
                     "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
                     "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-                    "model_answer": "Introduisez un objet dans l'ouverture d'écoulement de la bague d'écoulement du côté endommagé pour éviter de perdre de l'engrais. Démarrez le tracteur et branchez le boîtier de commande.\n\n(Note : The answer is a direct extraction of the two actions mentioned in the context as necessary steps to take when experiencing spreader failure or stoppage while using the spreader in the field.)",
+                    "model_answer": "Introduisez un objet dans l'ouverture d'\u00e9coulement de la bague d'\u00e9coulement du c\u00f4t\u00e9 endommag\u00e9 pour \u00e9viter de perdre de l'engrais. D\u00e9marrez le tracteur et branchez le bo\u00eetier de commande.\n\n(Note : The answer is a direct extraction of the two actions mentioned in the context as necessary steps to take when experiencing spreader failure or stoppage while using the spreader in the field.)",
                     "page": 108,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -367,7 +336,7 @@
                 {
                     "question": "What should you do if a spreading disc spreads irregularly?",
                     "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-                    "model_answer": "Contrôlez si la machine est attachée à l'horizontale derrière le tracteur dans le sens de la longueur et de la largeur.\n\n(Translated to English: Check if the machine is attached horizontally behind the tractor in length and width direction.)",
+                    "model_answer": "Contr\u00f4lez si la machine est attach\u00e9e \u00e0 l'horizontale derri\u00e8re le tracteur dans le sens de la longueur et de la largeur.\n\n(Translated to English: Check if the machine is attached horizontally behind the tractor in length and width direction.)",
                     "page": 113,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -397,7 +366,7 @@
                 {
                     "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
                     "expected_answer": "Preservative grease or preserving liquid.",
-                    "model_answer": "Apply de la graisse de protection sur les parties nues comme les bielles de piston des vérins hydrauliques ou le liquide de conservation (fourni) sur les parties métalliques (nues) de la machine pour la protéger de la corrosion.",
+                    "model_answer": "Apply de la graisse de protection sur les parties nues comme les bielles de piston des v\u00e9rins hydrauliques ou le liquide de conservation (fourni) sur les parties m\u00e9talliques (nues) de la machine pour la prot\u00e9ger de la corrosion.",
                     "page": 121,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -407,7 +376,7 @@
                 {
                     "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
                     "expected_answer": "Remove all fertilizer remnants.",
-                    "model_answer": "Éloignez pour cela tous les résidus d'engrais des orifices, des angles, des manchons et des flexibles.",
+                    "model_answer": "\u00c9loignez pour cela tous les r\u00e9sidus d'engrais des orifices, des angles, des manchons et des flexibles.",
                     "page": 123,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -455,16 +424,6 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-                    "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "1.0 mm (no conversion to meters provided)",
-                    "page": 138,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
                     "question": "How often should the agitator axle seal be replaced?",
                     "expected_answer": "Every season and after every 100 operational hours.",
                     "model_answer": "Unknown",
@@ -472,6 +431,146 @@
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "06.00.00.0257",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "150 mm.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "Unknown. The context does not provide information about the number of parts the distribution meter has. It mentions a \"m\u00e9canisme de dosage\" (dosing mechanism) on the tr\u00e9mie (tray), but it does not specify how many parts this mechanism consists of.",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "To enable fine application for dosing low application rates, select the \"Dosage fin\" function on the control box, which immediately closes one of the two disks of dosage.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "3 ronds ouverts (orifice de dosage)",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "The RS232 connector is located on the back of the IsoMatch Tellus control box.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "Once per year.",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "10% \n\nThis answer is based on the context where it states \"Pour satisfaire \u00e0 celle-ci, la quantit\u00e9 d'engrais dans le premier bac de collecte situ\u00e9 dans le foss\u00e9 fictif peut repr\u00e9senter au maximum 10 % de la quantit\u00e9 contenue dans le bac de collecte au centre de la voie du tracteur (= 100 %).\"",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "75 cm above the sol or the v\u00e9g\u00e9tation.",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "The table of spreading (in-line) indicates both the regime of the required spreading discs and the regime of the PTO shaft. The PTO shaft regime is mentioned with the connection point of the transmission tree to use on the machine side.\n\nYou must reach the indicated spreading disc RPM. The current spreading disc RPM is displayed on the control box screen.\n\nRefer also to the paragraph \"Setting up the spreader\" on page 62.",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "Unknown. The context does not provide a solution for this specific scenario.",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "EP 00/000.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "1.0 mm.",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "Yes, with the IsoMatch Tellus capture module available as an option, you can connect the tractor's speed sensor or radar to the IsoMatch control box.",
+                    "page": 144,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
                     "eval_error": false
                 }
             ],
@@ -484,7 +583,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "sphéricité irrégulière",
+                    "model_answer": "sph\u00e9ricit\u00e9 irr\u00e9guli\u00e8re",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -524,7 +623,7 @@
                 {
                     "question": "How often (in what interval) must the condition of the vanes be inspected?",
                     "expected_answer": "daily",
-                    "model_answer": "Every 10 premières heures.",
+                    "model_answer": "Every 10 premi\u00e8res heures.",
                     "page": 125,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -701,7 +800,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Refermez la bâche de trémie.",
+                    "model_answer": "Refermez la b\u00e2che de tr\u00e9mie.",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -731,7 +830,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Contrôlez toutes les parties escamotables et vérifiez leur verrouillage : \n· jupe,\n· débrancher le système de commande électronique,\n· couper le contact sur le tracteur,\n· retirer la clé du contact,\n· serrer le frein à main sur le tracteur.",
+                    "model_answer": "Contr\u00f4lez toutes les parties escamotables et v\u00e9rifiez leur verrouillage : \n\u00b7 jupe,\n\u00b7 d\u00e9brancher le syst\u00e8me de commande \u00e9lectronique,\n\u00b7 couper le contact sur le tracteur,\n\u00b7 retirer la cl\u00e9 du contact,\n\u00b7 serrer le frein \u00e0 main sur le tracteur.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -751,7 +850,7 @@
                 {
                     "question": "Why is damage to the vanes, spreading disc or discharge bushing, most likely caused by a hard object?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "A hard object blocking the agitator.\n\n(Note: This answer is based on the context provided, where it states \"Si les pales, le disque d'épandage ou les bagues d'écoulement sont endommagées, le défaut a très probablement été causé par un corps étranger dur.\")",
+                    "model_answer": "A hard object blocking the agitator.\n\n(Note: This answer is based on the context provided, where it states \"Si les pales, le disque d'\u00e9pandage ou les bagues d'\u00e9coulement sont endommag\u00e9es, le d\u00e9faut a tr\u00e8s probablement \u00e9t\u00e9 caus\u00e9 par un corps \u00e9tranger dur.\")",
                     "page": 115,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -761,7 +860,7 @@
                 {
                     "question": "What should a person do who fell into the fertilizer and no physician is available?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Consultez un médecin sans tarder !",
+                    "model_answer": "Consultez un m\u00e9decin sans tarder !",
                     "page": 117,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -781,7 +880,7 @@
                 {
                     "question": "What specific paint should be used to paint any damaged paintwork at the end of the season the machine in preparation for winter storage?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Unknown \n\nThe context does not mention a specific type of paint to be used for repairing damaged paintwork. It only mentions \"restaurez les peintures endommagées\" (restore the damaged paints) but does not specify what kind of paint or product should be used for this purpose.",
+                    "model_answer": "Unknown \n\nThe context does not mention a specific type of paint to be used for repairing damaged paintwork. It only mentions \"restaurez les peintures endommag\u00e9es\" (restore the damaged paints) but does not specify what kind of paint or product should be used for this purpose.",
                     "page": 121,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -791,7 +890,7 @@
                 {
                     "question": "What is the curriculum of the training program agrarians need to complete to be considered competent to operate this machine?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The training program requires agrarians to have followed the formations exigées by les autorités nationales.",
+                    "model_answer": "The training program requires agrarians to have followed the formations exig\u00e9es by les autorit\u00e9s nationales.",
                     "page": 4,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1011,7 +1110,7 @@
                 {
                     "question": "What type of 'suitable lubricant' is recommended for 'connectors' to prevent corrosion?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The context does not mention \"connectors\" but rather mentions applying a protective grease on exposed parts such as piston rod of hydraulic cylinders or conservation liquid (provided) on metal parts (bare) of the machine to protect against corrosion.\n\nHowever, based on the closest relevant information:\n\nA suitable lubricant is described as \"de la graisse qui ne sèche pas et ne durcit pas\" which translates to \"a grease that does not dry and does not harden\".",
+                    "model_answer": "The context does not mention \"connectors\" but rather mentions applying a protective grease on exposed parts such as piston rod of hydraulic cylinders or conservation liquid (provided) on metal parts (bare) of the machine to protect against corrosion.\n\nHowever, based on the closest relevant information:\n\nA suitable lubricant is described as \"de la graisse qui ne s\u00e8che pas et ne durcit pas\" which translates to \"a grease that does not dry and does not harden\".",
                     "page": 128,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1091,7 +1190,7 @@
                 {
                     "question": "What is the free 'test period' duration in days for 'GEOCONTROL software' user licence?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Unknown. \n\nThe context does not mention a specific free \"test period\" duration in days for the 'GEOCONTROL software' user licence. It only mentions a \"période d'évaluation gratuite\" (free evaluation period) but does not provide any information about its duration.",
+                    "model_answer": "Unknown. \n\nThe context does not mention a specific free \"test period\" duration in days for the 'GEOCONTROL software' user licence. It only mentions a \"p\u00e9riode d'\u00e9valuation gratuite\" (free evaluation period) but does not provide any information about its duration.",
                     "page": 145,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

@@ -10,19 +10,18 @@
         "chroma_collection_used": "german_manual_cs200_os100"
     },
     "overall_metrics": {
-        "accuracy": 0.4537037037037037,
-        "precision": 0.3076923076923077,
-        "recall": 0.07407407407407407,
+        "accuracy": 0.4722222222222222,
+        "precision": 0.4,
+        "recall": 0.1111111111111111,
         "specificity": 0.8333333333333334,
-        "f1_score": 0.11940298507462686,
-        "true_positives": 4,
+        "f1_score": 0.1739130434782609,
+        "true_positives": 6,
         "true_negatives": 45,
         "false_positives": 9,
-        "false_negatives": 50,
+        "false_negatives": 48,
         "total_questions": 108,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.09090909090909091,
-            "table_questions": 0.0,
+            "general_questions": 0.1111111111111111,
             "unanswerable_questions": 0.8333333333333334
         }
     },
@@ -165,16 +164,6 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-                    "model_answer": "<think>\nOkay, so I need to figure out the maximum operating angle of the coupling shaft for both when it's lifted and when it's lowered. Let me start by reading through the provided context carefully.\n\nLooking at Page 1, there are some numbers listed: Posten 0 to 5 with values like \"Posten\" as 0, \"Druckdatum\" as 06.2024, \"Sprache\" as DE, \"Ab Softwareversion\" as V: GS3 x.x., \"Ab Maschinennummer\" as 1001, \"Seriennummer\" as VN407, and \"Referenznummer\" as A148818240-1. These seem like some sort of identifiers or settings for the machine.\n\nPage 2 has more detailed information. It mentions \"Kennzeichnung der Maschine,\" which translates to identification of the machine. There's a repeated entry for Exacta-TLX-GEOSPREAD GS3, listing the type, serial number, additional equipment, and addresses for the dealer and manufacturer. The manufacturer is Kverneland Group Nieuw-Vennep B.V., located at Hoofdweg 1278 in NL-2153 LR Nieuw-Vennep, Netherlands.\n\nThe last part of Page 2 states that the Kverneland Group holds all rights to use and ownership, and they can change the contents of this manual without prior notice. All rights are reserved, and technical changes are also subject to their control.\n\nNow, looking back at the question: it's asking about the maximum operating angle of the coupling shaft when lifted and when lowered. I need to find if this specific information is present in the context provided.\n\nFrom what I can see, the context includes machine identifiers, some settings, manufacturer details, and a notice about rights. There's no mention of technical specifications like angles or movements of parts. The closest thing is \"Ab Softwareversion\" which might relate to software versioning but not physical angles.\n\nSince there's no direct information about the coupling shaft's operating angle in either page, I can't extract any data that answers the question precisely.\n</think>\n\nUnknown",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "<think>\nOkay, so I need to figure out whether the parking brake of a tractor should be engaged before connecting the machine. Let me look through the context provided.\n\nFirst, I see some German terms like \"Wartungsintervalle\" which means maintenance intervals. There's also a section about controls and maintenance. It lists intervals for things like checking screws every 10 beats after 100 strokes per hour. But that seems more about regular checks rather than specific safety procedures.\n\nThen there's a part labeled \"Betriebsanleitung,\" which translates to operating instructions. Page 1 has some machine details, but nothing directly about parking brakes. Page 2 talks about identifying the machine for service purposes, mentioning the Exacta-TLX-GEOSPREAD GS3 model and some contact information.\n\nI don't see any specific instructions in the context about engaging the parking brake before connecting the machine. The focus seems to be more on maintenance schedules and machine identification rather than operator safety procedures.\n\nSince there's no direct information related to the parking brake, I should respond that it's not found in the context.\n</think>\n\nNot found in context",
@@ -285,16 +274,6 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "<think>\nOkay, so I need to figure out the required height of the spreading disc above the troughs for one-sided boundary spreading based on the given context. Let me start by reading through the context carefully.\n\nLooking at Page 1, there are some technical specifications listed. The first line is \"Posten\" which might translate to something like posts or positions. Then there's \"Druckdatum,\" which I think means print date, and it's June 2024. Next, the language is German, so that's DE. It mentions software version GS3 x.x., machine number 1001, serial number VN407, and a reference number A148818240-1.\n\nOn Page 2, there's a section about identifying the machine. It lists \"Exacta-TLX-GEOSPREAD GS3\" as the machine type, along with its serial number and some attachments. The manufacturer is Kverneland Group Nieuw-Vennep B.V., located at Hoofdweg 1278 in NL-2153 LR Nieuw-Vennep, Netherlands.\n\nNow, the question is about the height of the spreading disc above the troughs for one-sided boundary spreading. I'm not sure if this information is directly provided in the context. The context mentions technical details like serial numbers and manufacturer info but doesn't specify anything about the spreading disc's height.\n\nI don't see any mention of measurements or specifications related to the spreading disc's height. Since there's no specific data given, I should probably respond that it's not found in the context.\n</think>\n\nNot found in context",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "<think>\nOkay, so I need to figure out the specific height the spreading disc should be set to before testing the ExactLine spreading pattern. Let me read through the context carefully.\n\nThe context is in German, but I can understand the technical terms. It mentions \"Streuscheibe\" which translates to spreading disc or plate. The key part here is that during the test, the height of this disc should be set to 75 cm above the troughs. \n\nI see instructions about setting the hydraulische Steuerger\u00e4t (hydraulic control unit) and adjusting the ExactLine's position. But the question specifically asks about the height of the spreading disc. The context clearly states that the Scheibenh\u00f6he (height of the plate) should be 75 cm above the Auffangbeh\u00e4ltern (troughs). \n\nSo, putting it all together, the exact height needed is 75 cm.\n</think>\n\nThe spreading disc should be set to a height of **75 cm** above the troughs before testing.",
@@ -302,16 +281,6 @@
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "<think>\nOkay, so I'm trying to figure out this question about fertilizer loss. The question is asking for the maximum percentage of fertilizer loss allowed in a middle trough in an imaginative ditch. Hmm, that's a bit confusing because the context provided doesn't seem directly related to agriculture or ditches.\n\nLooking at the context, it's all about connecting CAN plugs on a bedienpult (which I think is some kind of control panel) and assembling parts of a machine, probably a agricultural machinery like a tractor or something similar. There are instructions about attaching control panels, installing foot plates, mounting consoles, and adjusting connections for a Gelenkwelle (which might be a transmission or something). None of this mentions anything about fertilizer or ditches.\n\nThe question is specifically about fertilizer loss in a middle trough, which makes me think it's related to irrigation systems or agricultural equipment where fertilizers are applied. But the context given doesn't touch on that topic at all. It's all technical instructions for assembling machinery, not discussing application rates or losses.\n\nI'm trying to see if there's any indirect information here. Maybe the term \"middle trough\" refers to a specific part of the machine being discussed in the context? But looking through the text, it's about mechanical assembly\u2014mounting parts, connecting cables, adjusting controls. There's nothing about chemicals, fertilizers, or agricultural practices.\n\nSo, since the context doesn't provide any information related to fertilizer loss or application, I can't extract any data from it. The question is asking for a specific percentage allowed, but without any relevant details in the provided text, I have to conclude that this information isn't available here.\n</think>\n\nUnknown",
-                    "page": 91,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
                     "eval_error": false
                 },
                 {
@@ -455,9 +424,139 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "<think>\nOkay, so I need to figure out how often the agitator axle seal should be replaced based on the given context. Let me start by reading through the context carefully.\n\nFirst, I see some German terms like \"Wartungsintervalle,\" which means maintenance intervals. There's a table with numbers and descriptions. The first column seems to list the interval number, and the second column has tasks. For example, item 0 is about controlling something, item 1 is controlling screws and nuts, and so on.\n\nLooking further down, I see \"Zustand R\u00fchrer und R\u00fchrerwelle,\" which translates to the condition of the stirrer and stirrer shaft. That's probably related to the agitator axle. But I don't immediately see a specific interval number assigned to this task.\n\nThen, moving on to Page 1, there are some machine details like software version and serial numbers, but nothing about seals or replacement intervals.\n\nPage 2 talks about identifying the machine for service purposes, listing the exact model, serial number, etc., but again, no direct mention of seal replacement.\n\nSince the context doesn't explicitly state a maintenance interval for the agitator axle seal, I can't find any specific information. Therefore, based on the given instructions, if unsure, I should respond with \"Unknown\" or \"Not found in context.\"\n</think>\n\nUnknown",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "<think>\nOkay, so I need to figure out from which version the ISOBUS supports receiving the signal from the Greenseeker sensor. Let me read through the context carefully.\n\nLooking at the context, there's a mention of the GreenSeeker sensor being supported by the ISOBUS. Specifically, it says: \"Ab der GreenSeeker-Version 06.00.00.00.0257 unterst\u00fctzt die Software den Empfang des externen Signals.\" \n\nBreaking that down, \"Ab\" means \"Starting from,\" so starting from version 06.00.00.00.0257, the software supports receiving the external signal. So the exact version is 06.00.00.00.0257.\n</think>\n\nFrom version 06.00.00.00.0257 onwards, the ISOBUS supports the reception of the Greenseeker sensor's signal.\n\nAnswer: From version 06.00.00.00.0257.",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "<think>\nOkay, so I need to figure out when shortening a coupling shaft, how much the profiled tubes must overlap at least in millimeters. Let me go through the context provided step by step.\n\nFirst, looking at the context, there are some numbered options (0, 1, 2) with different conditions about the spread of the coupling. The context mentions \"Der Streuer streut zu schmal\" which translates to \"The coupler spreads too narrowly.\" It also talks about setting the discharge opening adjustment to two characters in direction A or U depending on whether it's too narrow or wide.\n\nThere's a note that says if the test correction is too strong by two characters, you should set the discharge opening back by one character. Additionally, it mentions that the content of separate tubes must not deviate more than 15% from the average. \n\nThe context also refers to specific sections on page 107 about Einscheiben-Grenzstreuen with a hydraulic boundary bleed. It suggests using GEOCONTROL to indicate the parcel boundary on the right side of the machine.\n\nNow, focusing on the question about shortening a coupling shaft and the required overlap of profiled tubes. The context discusses adjustments based on whether the spread is too narrow or wide. If it's too narrow (option A), you set the discharge opening adjustment two characters in direction A. This suggests that when shortening, there's a specific minimum overlap needed to ensure proper spreading.\n\nSince the question asks for the minimum overlap in mm, and considering the context refers to setting adjustments based on spread, I infer that the overlap must be enough to prevent excessive narrowing. The 15% deviation rule might imply a tolerance, but without exact numbers, it's tricky. However, the key instruction is about the correction when the spread is too narrow, which would require a certain minimum overlap.\n\nGiven the options in the context (A, B, D), and the adjustments made, I think the answer relates to setting the discharge opening adjustment to two characters in direction A, indicating that the overlap must be sufficient to achieve this setting. Therefore, the minimum overlap is likely 15 mm based on standard engineering practices for couplers.\n</think>\n\nThe profiled tubes must overlap by at least **15 mm** when shortening a coupling shaft.\n\n**Answer:** The minimum overlap required is **15 mm**.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "<think>\nOkay, so I need to figure out how many parts the distribution meter has based on the given context. Let me start by reading through the context carefully.\n\nLooking at the context, there are several instructions about setting up Auffangbeh\u00e4lter, which seem to be some kind of containers or traps. The first part mentions placing one Auffangbeh\u00e4lter in the middle of the track, 2 meters from the line where a fictional ditch is located. Then it says something about using a water level to place them horizontally.\n\nNext, there's another instruction about setting Auffangbeh\u00e4lter 1 in the middle of the track. Then, it talks about distributing the remaining six containers along one side of the track over the actual working width of the spreader. It mentions that the actual working width is twice as large as the effective working width.\n\nIf someone wants a working width of 24 meters, they should place the containers every 4 meters because 24 divided by 6 equals 4. There's also some mention about mounting a joint shaft at a specific connection point of the central gear, which is detailed on page 64. Then, checking the height of the spreader, setting grids into the containers, and placing another container in the middle.\n\nNow, the question is specifically asking about the number of parts the distribution meter has. I'm not seeing any direct mention of a \"distribution meter\" in the context provided. The terms mentioned are Auffangbeh\u00e4lter (which seems to be containers or traps) and other components like Gelenkwelle (joint shaft), Wasserwaage (water level), and Streuscheibe (spreaders).\n\nSince there's no explicit information about a distribution meter, I have to consider if it's possible that the context refers to something else. Maybe \"distribution meter\" is a term used elsewhere, but in this context, it's not defined or discussed.\n\nGiven that, I don't have enough information to determine how many parts the distribution meter has. Therefore, the answer should be \"Unknown\" because the specific question about the distribution meter isn't addressed in the provided context.\n</think>\n\nUnknown",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "<think>\nOkay, so I need to figure out how to enable fine application for dosing a low application rate based on the given context. Let me start by reading through the context carefully.\n\nLooking at Page 1, there are some machine identifiers like Posten, Druckdatum, Sprache, Softwareversion, Maschinennummer, Seriennummer, and Referenznummer. These seem to be technical details about the machine but don't directly relate to dosing settings.\n\nMoving on to Page 2, it's in German and talks about identifying the machine for service purposes. It mentions Exacta-TLX-GEOSPREAD GS3 as the model, and lists Seriennummer (Serial number) and other details like H\u00e4ndler and Hersteller (Dealer and Manufacturer). The manufacturer is Kverneland Group Nieuw-Vennep B.V., located in Nieuw-Vennep, Netherlands.\n\nNow, the question is about enabling fine application for low dosing rates. I'm not seeing any specific instructions on how to adjust dosing settings or parameters in the provided context. It seems like the context is more about machine identification and service information rather than operational adjustments.\n\nSince there's no mention of dosing configurations or methods to achieve a low application rate, I can't extract any precise steps from this context. Therefore, based on the given information, it's not possible to determine how to enable fine application for low rates.\n</think>\n\nUnknown",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "<think>\nOkay, so I need to figure out what the symbol on top of the fine application handle indicates when the Fine application kit is enabled. Let me read through the context carefully.\n\nLooking at the context, there's a section about \"Dosierstellung\" which translates to dosing setup. It mentions using a Feindosier-Set, which I think refers to the fine application kit. The symbol for this is mentioned right after it says \"Feindosier-Set.\" \n\nIn the first bullet point under \"Die Dosierstellung,\" it says that when you want to use the Feindosier-Set, there's a specific number of open dosing openings required. It also mentions that this setup will be indicated by 1 open dosier\u00f6ffnung (dosier opening). So, the symbol indicating that the Fine application kit is enabled is the one showing 1 open dosier\u00f6ffnung.\n\nI should make sure I'm not missing any other symbols mentioned. The context talks about ExactLine and some hydraulics, but those are more about the system's operation rather than the specific indicator for enabling the fine application kit. \n\nSo, putting it all together, the symbol is 1 open dosier\u00f6ffnung.\n</think>\n\nThe symbol indicating that the Fine application kit is enabled is **1 open dosier\u00f6ffnung**.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "<think>\nOkay, so I need to figure out where the RS 232 connector is located based on the given context. Let me read through the context carefully.\n\nThe context mentions that the external system and the control system of the stirrer communicate via an RS 232 connection. It says this connection is on the backside of the Bedieneinheit, which I think translates to the control unit or operator panel. The exact location is described as \"die R\u00fcckseite der Bedieneinheit,\" so that's the rear side of the control unit.\n\nI should make sure I'm not missing any other details. It also talks about a 9-pin RS 232 connector and mentions the contact layout in the user manual, but since the question is just about the location, I don't need to go into the specifics of the pins or the manual references.\n\nSo putting it all together, the RS 232 connector is on the backside of the Bedieneinheit. That's where it's located.\n</think>\n\nThe RS 232 connector is located on the rear side of the control unit (Bedieneinheit).",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "<think>\nOkay, so I need to figure out how often the left and right spreading discs should be checked. The context provided is in German, but I can read it. Let me go through it step by step.\n\nFirst, looking at the context, there's a section labeled \"Wartungsintervalle,\" which translates to \"Maintenance Intervals.\" Under that, it lists specific intervals for different maintenance tasks. Each interval has a number and a description.\n\nI see entries like:\n- 0: Kontrollieren (Control)\n- 1: \u00bbKontrolle von Schrauben und Muttern\u00ab (Control of screws and nuts)\n- 2: Kontrolle Hydrauliksystem (Hydraulic system control)\n- 3: Zustand R\u00fchrer und R\u00fchrerwelle (Condition of the stirrer and stirrer shaft)\n\nWait, but I'm looking for information about the spreading discs. The question is about checking the left and right spreading discs to ensure good distribution when they spread the same volume of fertilizer.\n\nIn the context provided, there's a table on Page 1 with maintenance intervals. However, the entries are numbered starting from 0, and each corresponds to a specific task. I don't see any entry that directly mentions \"spreading disc\" or \"discs.\"\n\nLooking further, the rest of the context includes machine identification and settings but doesn't provide information about the discs' inspection frequency.\n\nSince there's no specific interval mentioned for checking the spreading discs in the provided context, I should respond with \"Unknown\" or \"Not found in context.\"\n</think>\n\nThe context does not specify a maintenance interval for checking the left and right spreading discs. \n\nAnswer: Unknown",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "<think>\nOkay, so I need to figure out the maximum fertilizer loss percentage allowed for the middle trough in a ditch based on the given context. Let me start by reading through the provided context carefully.\n\nLooking at Page 86, there's some information about hydraulic border spreading with H2O settings. It mentions that longer sheets are supplied with the hydraulic border spreader and not to follow the settings from the H2O table. But I'm not sure how this relates directly to fertilizer loss percentages.\n\nMoving on to Page 87, it talks about safety requirements and necessary data for calculating minimum requirements, axle load, and current and maximum total weight. It lists some technical data in a table, but again, nothing specific about fertilizer loss.\n\nI don't see any mention of fertilizer loss or thresholds related to the middle trough in either page. The context seems more focused on machinery settings, safety data, and technical specifications rather than agricultural practices like fertilizer application rates or losses.\n\nSince there's no direct information about fertilizer loss percentages in the middle trough, I should respond that it's not found in the context.\n</think>\n\nNot found in context",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "<think>\nOkay, so I need to figure out from which machine point the spreading height is measured. Let me look through the context provided.\n\nOn Page 2, there's a section about identifying the machine. It mentions \"Exacta-TLX-GEOSPREAD GS3\" and lists details like Maschinentyp (machine type), Seriennummer (serial number), etc. But I'm looking for information related to measuring spreading height.\n\nWait, maybe it's in another part of the context. The first page has some technical data with columns labeled \"Posten,\" \"Druckdatum,\" \"Sprache,\" and others, but nothing about measurement points.\n\nLooking back at Page 2, after the machine details, there's a note that the Kverneland Group holds all rights and can change the manual without notice. That doesn't help either.\n\nHmm, I don't see any specific mention of where the spreading height is measured from in the context provided. It seems like the information isn't directly available here.\n</think>\n\nThe spreading height measurement point is not explicitly mentioned in the provided context. \n\nAnswer: Unknown",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "<think>\nOkay, so I need to figure out what information is available to set the correct PTO shaft and spreading disc RPM based on the given context. Let me start by reading through the context carefully.\n\nLooking at the context, there are several lines about different aspects of a Schlepper (which I think refers to a tractor or similar machinery). It mentions things like ISOBUS connections, Kabelsatz (cable sets), and specific standards like ISO 11786. \n\nThe question is asking about setting the correct PTO shaft and spreading disc RPM. PTO stands for Power Take-Off, which is a mechanism used to transfer power from the engine to other machinery components. The RPM (Revolutions Per Minute) would be important for ensuring that the PTO and the attached equipment (like the spreading disc) operate at the correct speed.\n\nIn the context provided, there's mention of an ISOBUS connection, which is a type of electrical interface used in tractors to connect various systems. It also talks about Kabelsatz, which refers to the set of cables that come with the IsoMatch system. The standard Kabelsatz includes things like ISO 11786 'In Cab' connections, lighting and ignition, Schlepper CAN (which might be optional), and video input.\n\nI'm trying to see if there's any information about PTO shaft or spreading disc RPM in this context. However, the context seems focused on electrical connections and cable sets rather than mechanical components like the PTO shaft or hydraulic systems for the spreading disc.\n\nSince the context doesn't mention anything related to PTO shafts or the speed of the spreading disc, I don't have enough information to answer the question accurately. Therefore, based on the given instructions, if the information isn't found in the context, I should respond with \"Unknown\" or \"Not found in context.\"\n</think>\n\nUnknown",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "<think>\nOkay, so I'm trying to figure out what to do if I can't lower the power lift enough to release the catch hooks when preparing the machine for storage. Let me look through the context provided.\n\nFirst, I see some numbers and mentions of \"Zwischenbock (Zubeh\u00f6r)\" on lines 9-11. That might be related to additional parts or accessories. Then there's a table with columns like kg/min, km/h, and kg/ha. It seems to show different values for various settings.\n\nFurther down, I notice instructions about a manual drain test to control the discharge speed. There's also mention of a Dosierstellung (dosing setting) where 18+3 equals 21. But I'm not sure how that ties into lowering the power lift.\n\nWait, maybe the \"Zwischenbock\" refers to intermediate blocks or something attached to the machine. If those can't be released because the power lift isn't low enough, perhaps removing them manually is necessary. The context doesn't specify a method for releasing them if the power lift is insufficient, but it does mention doing a manual drain test and checking settings like 18+3.\n\nSo, putting this together, if I can't lower the power lift enough, I might need to remove the intermediate blocks manually. There's no direct step-by-step guide in the context, but that seems like the logical action based on the presence of Zubeh\u00f6r.\n</think>\n\nIf unable to lower the power lift sufficiently to release catch hooks for storage preparation, manually remove any intermediate blocks or accessories (Zwischenbock).",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "<think>\nOkay, so I need to figure out what type of grease is used in the central gearbox of this Exacta-TLX-GEOSPREAD GS3 machine. Let me start by reading through the provided context carefully.\n\nLooking at Page 1, there are some technical specifications listed. The first line says \"Posten\" which might be a part number or position. Then it goes into details like Druckdatum (print date), Sprache (language), software version, machine number, serial number, and reference number. These seem more about the documentation rather than the grease.\n\nMoving to Page 2, there's a section titled \"Kennzeichnung der Maschine,\" which translates to \"Identification of the Machine.\" This part lists the machine type as Exacta-TLX-GEOSPREAD GS3, along with its serial number and some attachments. It also mentions the manufacturer, Kverneland Group Nieuw-Vennep B.V., located in Nieuw-Vennep, Netherlands.\n\nThe last lines on Page 2 mention that the Kverneland Group holds all rights to the intellectual property and usage of this manual. They reserve the right to make changes without prior notice. This is more about legal information rather than technical details about the grease.\n\nI'm trying to find any mention of grease type in the context provided. On Page 1, there's a line \"Ab Softwareversion\" which translates to \"By Software Version,\" indicating it's related to software, not grease. Similarly, \"Ab Maschinennummer\" is \"By Machine Number.\" None of these seem relevant.\n\nPage 2 talks about the machine's identification and manufacturer but doesn't specify any grease used in the central gearbox. There's no mention of lubricants or specific types like lithium grease, mineral oil, etc., anywhere in the context.\n\nSince there's no direct information about the type of grease, I have to conclude that it's not provided in the given text. Therefore, the answer should be \"Unknown\" as per the instructions.\n</think>\n\nUnknown",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
                     "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "<think>\nOkay, so I need to figure out the required distance in meters between the discharge bushing and the spreading disc based on the given context. Let me start by carefully reading through the context provided.\n\nLooking at the context, I see a list of items numbered from 3 to 33. Each item seems to be related to different components or measurements on a machine, possibly a agricultural machinery since terms like \"Hubarmkupplungspunkts\" and \"Vorderachse\" are mentioned, which I think relate to coupling points and front axle.\n\nThe question is specifically about the distance between two parts: the discharge bushing and the spreading disc. In German, \"Abstand\" means distance, so I'm looking for an entry that mentions both these components.\n\nI'll go through each line:\n\n- Line 3: Gesamtgewicht... Kg D (Total weight of front machine)\n- Line 4: Gesamtgewicht... Kg E (Total weight of rear machine)\n- Line 5: Abstand zwischen dem Schwerpunkt oder Gewicht und Mitte Vorderachse m f\n- Line 6: g Achsstand des Schleppers m\n- Line 7: h Abstand zwischen der Mitte Hinterachse und Hubarmkupplungspunkts (3) m\n- Line 8: Abstand zwischen dem Schwerpunkt oder Gewicht und Herz des Hubarmkupplungspunkts (2) m i\n- Lines 9-12: Repeated \"Ber\u00fccksichtigen Sie...\" which seems to be about considering additional weights or water in tires\n- Lines 13-33: Various components like Stecker, IsoMatch Eye, etc., and their respective numbers.\n\nWait, I don't see any direct mention of the discharge bushing or spreading disc. The terms mentioned are more technical, possibly related to coupling points and axles but not specifically the parts in question.\n\nI might be missing something. Let me think about possible translations or synonyms for \"discharge bushing\" and \"spreading disc.\" In agricultural machinery, a discharge bushing could refer to a component that directs something, like crop or waste, while a spreading disc is used to spread materials evenly.\n\nLooking again at the context, I don't see any entries that directly mention these parts. The measurements are about distances between centers of axles, weights, and other components related to coupling points but not the specific discharge and spreading elements.\n\nSince there's no direct information provided about the distance between these two specific components, I should respond that this information isn't found in the context.\n</think>\n\nNot found in context",
+                    "model_answer": "<think>\nOkay, so I need to figure out the required distance in millimeters between the discharge bushing and the spreading disc based on the given context. Let me start by reading through the context carefully.\n\nThe context is about corn kernel size distribution and some instructions related to a \"Gelenkwelle k\u00fcrzen,\" which translates to shortening the joint shaft, I think. There are also steps like cleaning the joint shaft, removing the ends of the profiles, and shortening protective tubes.\n\nWait, but the question is specifically about the distance between two components: discharge bushing and spreading disc. Hmm, in the context provided, there's a section that talks about profile pipes needing to overlap as much as possible, with at least 150 mm overlap required. However, it also mentions that the pipes must have at least 25 mm of play at the ends if certain conditions are met.\n\nLooking further, under \"Gelenkwelle k\u00fcrzen,\" which seems to be about shortening a joint shaft, there's a step: \"Die Profilrohre sollen einander so weit wie m\u00f6glich \u00fcberlappen; es ist eine \u00dcberlappung von mindestens 150 mm erforderlich.\" So that translates to the profile pipes should overlap as much as possible, requiring at least 150 mm of overlap.\n\nAnother point says: \"Die Profilrohre m\u00fcssen an den Enden jedoch \u00fcber mindestens 25 mm Spiel verf\u00fcgen...\" which means the profile pipes must have at least 25 mm play at the ends. Then it suggests shortening both profile pipes so that 25 mm of play remains, and also mentions removing the ends of the profiles.\n\nWait, but the question is about the distance between discharge bushing and spreading disc. I'm not entirely sure if \"discharge bushing\" refers to a specific component in this context. The term \"spreading disc\" might be related to the spreading mechanism in agriculture or machinery.\n\nLooking back at the context, there's no direct mention of these terms. However, the part about the profile pipes overlapping by 150 mm and having 25 mm play at the ends seems more related to pipe connections rather than the discharge bushing and spreading disc.\n\nSince the question is specifically asking for a distance between two components not mentioned in the context, I might have to infer based on similar terms. Alternatively, if \"discharge bushing\" refers to something else, like a fitting or part in machinery, but without more information, it's unclear.\n\nGiven that the context doesn't explicitly mention discharge bushing or spreading disc, and the focus is on pipe overlaps and joint shafts, I might have to conclude that the required distance isn't provided here. Therefore, the answer would be \"Not found in context.\"\n</think>\n\nThe required distance between the discharge bushing and spreading disc is not specified in the provided context.\n\nAnswer: Not found in context",
                     "page": 138,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -465,10 +564,10 @@
                     "eval_error": false
                 },
                 {
-                    "question": "How often should the agitator axle seal be replaced?",
-                    "expected_answer": "Every season and after every 100 operational hours.",
-                    "model_answer": "<think>\nOkay, so I need to figure out how often the agitator axle seal should be replaced based on the given context. Let me start by reading through the context carefully.\n\nFirst, I see some German terms like \"Wartungsintervalle,\" which means maintenance intervals. There's a table with numbers and descriptions. The first column seems to list the interval number, and the second column has tasks. For example, item 0 is about controlling something, item 1 is controlling screws and nuts, and so on.\n\nLooking further down, I see \"Zustand R\u00fchrer und R\u00fchrerwelle,\" which translates to the condition of the stirrer and stirrer shaft. That's probably related to the agitator axle. But I don't immediately see a specific interval number assigned to this task.\n\nThen, moving on to Page 1, there are some machine details like software version and serial numbers, but nothing about seals or replacement intervals.\n\nPage 2 talks about identifying the machine for service purposes, listing the exact model, serial number, etc., but again, no direct mention of seal replacement.\n\nSince the context doesn't explicitly state a maintenance interval for the agitator axle seal, I can't find any specific information. Therefore, based on the given instructions, if unsure, I should respond with \"Unknown\" or \"Not found in context.\"\n</think>\n\nUnknown",
-                    "page": 140,
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "<think>\nOkay, so I need to figure out if the tractor's speed sensor or radar can be connected to the IsoMatch control box. Let me look through the context provided.\n\nFirst, I see that the context lists various accessories related to IsoMatch, like ISO 11786 'In Cab', Beleuchtung und Z\u00fcndschloss, Schlepper CAN (with optional connectors), and Videoeingang. It also mentions an IsoMatch Stromversorgungskabelsatz for non-ISO sleppers, which allows ISOBUS communication by adding the necessary cables.\n\nThere's a mention of the 'Input IM Tellus' cable, which is used for other connections. The RS-232 Kabel and Verl\u00e4ngerte ISO-Kabel are also listed, but I'm not sure how they relate to sensors or radar.\n\nI don't see any direct information about connecting speed sensors or radar specifically. The context talks about the IsoMatch Bedienpult (control panel) being connected, but not about sensors or radar units.\n\nSince there's no explicit mention of connecting speed sensors or radar to IsoMatch, I should probably say it's unknown.\n</think>\n\nUnknown",
+                    "page": 144,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",

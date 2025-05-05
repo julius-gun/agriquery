@@ -10,19 +10,18 @@
         "chroma_collection_used": "english_manual_cs200_os100"
     },
     "overall_metrics": {
-        "accuracy": 0.7037037037037037,
-        "precision": 0.6774193548387096,
-        "recall": 0.7777777777777778,
+        "accuracy": 0.7314814814814815,
+        "precision": 0.6923076923076923,
+        "recall": 0.8333333333333334,
         "specificity": 0.6296296296296297,
-        "f1_score": 0.7241379310344828,
-        "true_positives": 42,
+        "f1_score": 0.7563025210084034,
+        "true_positives": 45,
         "true_negatives": 34,
         "false_positives": 20,
-        "false_negatives": 12,
+        "false_negatives": 9,
         "total_questions": 108,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.8863636363636364,
-            "table_questions": 0.3,
+            "general_questions": 0.8333333333333334,
             "unanswerable_questions": 0.6296296296296297
         }
     },
@@ -165,16 +164,6 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "30 ° when lifted and 30 ° when lowered.",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "Yes.",
@@ -187,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 °",
+                    "model_answer": "30 \u00b0",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -267,7 +256,7 @@
                 {
                     "question": "What materials are required to perform the tray test?",
                     "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-                    "model_answer": "· measuring tape or ruler,\n· spirit level to set the troughs horizontal,\n· 7 troughs,\n· 7 graduated tubes,\n· 1 funnel,\n· notebook, pen and calculator,\n· this manual.\n· the instruction manual of the software.",
+                    "model_answer": "\u00b7 measuring tape or ruler,\n\u00b7 spirit level to set the troughs horizontal,\n\u00b7 7 troughs,\n\u00b7 7 graduated tubes,\n\u00b7 1 funnel,\n\u00b7 notebook, pen and calculator,\n\u00b7 this manual.\n\u00b7 the instruction manual of the software.",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -285,30 +274,10 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "75 cm.",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "75 cm.",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "10%",
-                    "page": 91,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "yes",
@@ -377,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40°C.",
+                    "model_answer": "40\u00b0C.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -455,7 +424,137 @@
                     "eval_error": false
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "Unknown. \n\nThe context does not provide specific guidance on how often to replace the agitator axle seal. It only mentions replacing the fertiliser sealing ring in certain steps of maintenance, but it does not specify a replacement frequency for the agitator axle seal itself.",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "06.00.00.0257",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "150 mm.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "The distribution meter has 4 sections, with each section having 7 parts. Therefore, the total number of parts is 4 x 7 = 28. However, based on the context, the answer to the specific question \"How many parts does the distribution meter have?\" is:\n\n4 sections",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "Close 2 of the 3 dosing openings.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "1 open hole (dosing opening)",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "The back of the control box.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "Test should be carried out annually on the left and the right side.",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "10%",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "Measured from the bottom of the vanes.",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "The online spreading chart shows the rpm of the spreading discs as well as the rpm of the PTO shaft. The PTO speed is given, as well as the connection point to be used for the machine coupling shaft.\n\nAdditionally, the recommended PTO shaft rpm and associated spreading disc rpm can be found in:\n\n* The spreading chart book\n* Via the online spreading chart service on the website\n* Via the free application (App) for mobile phones\n\nThe information is also available on page 106 under paragraph \"Border spreading\".",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "Place the spreader on a firm, stable ramp.",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "EP 00/000.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
                     "expected_answer": "The required distance is 1.0 mm.",
                     "model_answer": "1.0 mm",
                     "page": 138,
@@ -465,13 +564,13 @@
                     "eval_error": false
                 },
                 {
-                    "question": "How often should the agitator axle seal be replaced?",
-                    "expected_answer": "Every season and after every 100 operational hours.",
-                    "model_answer": "Unknown. \n\nThe context does not provide specific guidance on how often to replace the agitator axle seal. It only mentions replacing the fertiliser sealing ring in certain steps of maintenance, but it does not specify a replacement frequency for the agitator axle seal itself.",
-                    "page": 140,
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "Yes, with the optional \"Sensor input IM Tellus\".",
+                    "page": 144,
                     "dataset": "general_questions",
                     "qa_error": false,
-                    "self_evaluation": "no",
+                    "self_evaluation": "yes",
                     "eval_error": false
                 }
             ],
@@ -621,7 +720,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Other connections are made via the \"Input IM Tellus\" cable, supplied as a standard item. \n\nThese include:\n· lights and ignition\n· Tractor CAN (optional plug specific to the tractor required)\n· Video input.",
+                    "model_answer": "Other connections are made via the \"Input IM Tellus\" cable, supplied as a standard item. \n\nThese include:\n\u00b7 lights and ignition\n\u00b7 Tractor CAN (optional plug specific to the tractor required)\n\u00b7 Video input.",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

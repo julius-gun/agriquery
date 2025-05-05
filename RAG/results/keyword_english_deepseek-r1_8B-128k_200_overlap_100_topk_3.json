@@ -7,7 +7,8 @@
         "chunk_size": 200,
         "overlap_size": 100,
         "num_retrieved_docs": 3,
-        "chroma_collection_used": "english_manual_cs200_os100"
+        "chroma_collection_used": "english_manual_cs200_os100",
+        "reevaluation_run_type": "metrics_only"
     },
     "overall_metrics": {
         "accuracy": 0.7314814814814815,
