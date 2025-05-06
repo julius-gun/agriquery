@@ -187,7 +187,9 @@ class LLMTester:
                                     question_text = question_data["question"]
 
                                     try:
-                                        test_result = test_executor.execute_test_question(  # Use TestExecutor to run test  # noqa: F841
+                                        
+                                        # Execute test question - result is appended to self.results within test_executor
+                                        test_executor.execute_test_question(
                                             question_data,
                                             context_type,
                                             noise_level,
@@ -195,17 +197,28 @@ class LLMTester:
                                             file_extension,
                                             llm_connector,
                                             self.results,  # Pass self.results to append to
-                                            language,  # Pass language to test executor
+                                            language,
                                         )
 
-                                        self.result_manager.save_results(  # Save results using ResultManager
-                                            self.results,
-                                            language,
-                                            model_name,
-                                            file_extension,
-                                            context_type,
-                                            noise_level,
-                                        )
+                                        # test_result = test_executor.execute_test_question(  # Use TestExecutor to run test  # noqa: F841
+                                        #     question_data,
+                                        #     context_type,
+                                        #     noise_level,
+                                        #     model_name,
+                                        #     file_extension,
+                                        #     llm_connector,
+                                        #     self.results,  # Pass self.results to append to
+                                        #     language,  # Pass language to test executor
+                                        # )
+
+                                        # self.result_manager.save_results(  # Save results using ResultManager
+                                        #     self.results,
+                                        #     language,
+                                        #     model_name,
+                                        #     file_extension,
+                                        #     context_type,
+                                        #     noise_level,
+                                        # )
 
                                     except Exception as question_error:
                                         print(
@@ -214,7 +227,17 @@ class LLMTester:
                                     finally:
                                         question_pbar.update(1)  # ALWAYS update
 
-                                question_pbar.close()  # Close the progress bar
+                                question_pbar.close()
+
+                                # *** ADDED SAVE AFTER THE LOOP ***
+                                self.result_manager.save_results( # Save all results for this config once
+                                    self.results,
+                                    language,
+                                    model_name,
+                                    file_extension,
+                                    context_type,
+                                    noise_level,
+                                )
 
 
                             else:
