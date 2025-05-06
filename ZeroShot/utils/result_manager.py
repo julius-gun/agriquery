@@ -42,9 +42,9 @@ class ResultManager:
         """Saves the results to a JSON file."""
         filename = self._generate_filename(language, model_name, file_extension, context_type, noise_level)
         filepath = os.path.join(self.output_dir, filename)
-        with open(filepath, "w") as f:
-            json.dump(results, f, indent=4)
-        print(f"Results saved to {filepath}") # No need to print every save
+        with open(filepath, "w", encoding="utf-8") as f:
+            json.dump(results, f, indent=4, ensure_ascii=False)
+        # print(f"Results saved to {filepath}") # No need to print every save
 
     def _generate_filename(self, language: str, model_name: str, file_extension: str, context_type: str, noise_level: int) -> str:
         """Generates the filename for the results file based on test parameters."""

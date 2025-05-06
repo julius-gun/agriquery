@@ -13,12 +13,6 @@
                 "num_predict": 1024,
                 "context_window": 131072
             },
-            "deepseek-r1_14B-128k": {
-                "name": "deepseek-r1:14b",
-                "temperature": 0.0,
-                "num_predict": 1024,
-                "context_window": 131072
-            },
             "qwen3_8B-128k": {
                 "name": "qwen3:8b",
                 "temperature": 0.0,
@@ -61,35 +55,17 @@
                 "num_predict": 1024,
                 "context_window": 131072
             },
-            "phi3_14B_medium-4k": {
-                "name": "phi3:medium",
-                "temperature": 0.0,
-                "num_predict": 1024,
-                "context_window": 4000
-            },
             "gemma2_9B-8k": {
                 "name": "gemma2:latest",
                 "temperature": 0.0,
                 "num_predict": 1024,
                 "context_window": 8192
             },
-            "gemma3_12B-128k": {
-                "name": "gemma3:12b",
-                "temperature": 0.0,
-                "num_predict": 1024,
-                "context_window": 131072
-            },
             "phi4_14B-16k": {
                 "name": "phi4:latest",
                 "temperature": 0.0,
                 "num_predict": 1024,
                 "context_window": 16384
-            },
-            "qwq_32B-128k": {
-                "name": "qwq",
-                "temperature": 0.0,
-                "num_predict": 1024,
-                "context_window": 131072
             }
         },
         "gemini": {
