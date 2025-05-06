@@ -128,10 +128,9 @@ def main():
     parser.add_argument(
         "--mode",
         type=str,
-        default="test",
-        # default="evaluate",
-        choices=["test", "evaluate"],
-        help="Mode to run in: 'test' or 'evaluate'. Defaults to 'test'.",
+        default="all",
+        choices=["test", "evaluate", "all"], # Added "all" choice
+        help="Mode to run in: 'test' (only tests), 'evaluate' (only evaluations), or 'all' (tests then evaluations). Defaults to 'test'.",
     )
 
     args = parser.parse_args()
@@ -142,7 +141,8 @@ def main():
         print(f"Starting processing for model: {model_name}")
         current_llm_type = "gemini" if model_name == "gemini-pro" else args.llm_type # Determine LLM type outside document loop
 
-        if args.mode == "test":
+        if args.mode == "test" or args.mode == "all":
+            print(f"\n--- Running Tests for Model: {model_name} ---")
             tester.run_tests(
                 model_name,
                 current_llm_type,
@@ -150,17 +150,21 @@ def main():
                 args.noise_levels,
                 documents_to_test, # Pass documents_to_test list
             )
-            args.mode == "evaluate" # Evaluate after testing
-            print(f"Finished testing {model_name}")
-        if args.mode == "evaluate":
-             tester.run_evaluations(
+            # Removed print "Finished testing" here, it's part of the overall model completion message.
+
+        if args.mode == "evaluate" or args.mode == "all":
+            # If mode is 'all', this runs after tests for the current model.
+            # If mode is 'evaluate', this runs directly.
+            print(f"\n--- Running Evaluations for Model: {model_name} ---")
+            tester.run_evaluations(
                 model_name, # Evaluate only current model
-                tester.file_extensions_to_test,
+                tester.file_extensions_to_test, # Use tester's configured extensions
                 args.noise_levels,
                 args.context_type,
                 documents_to_test, # Pass documents_to_test
             )
-             print(f"Finished evaluation for {model_name}")
+        
+        print(f"\n--- Completed processing for Model: {model_name} (Mode: {args.mode}) ---")
 
 
 if __name__ == "__main__":
