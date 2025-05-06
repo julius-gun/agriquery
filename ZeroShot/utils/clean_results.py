@@ -1,4 +1,4 @@
-# ZeroShot/clean_results.py
+# Run from ZeroShot/clean_results.py
 import json
 import os
 import glob

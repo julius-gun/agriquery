@@ -227,13 +227,11 @@ class LLMTester:
                     extension_pbar.update(1)  # Update extension progress bar
             if current_llm_type == "ollama":
                 try:
-                    print(f"DEBUG: Stopping model: {model_name}")
-                    self.stop_model(
-                        model_name
-                    )  # Use model_name as model_id for ollama
-                    time.sleep(
-                        5
-                    )  # Add a 5-second delay after stopping # ADD THIS LINE
+                    print(f"DEBUG: Attempting to stop model: {model_name} via its connector.")
+                    llm_connector.stop_model() # Call stop_model on the connector instance
+                    # time.sleep(
+                    #     5
+                    # )  # Add a 5-second delay after stopping # ADD THIS LINE
                 except Exception as e:
                     print(f"Error stopping model {model_name}: {e}")
             # print(f"Completed tests for model: {model_name}")

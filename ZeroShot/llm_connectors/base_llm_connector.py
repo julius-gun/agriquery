@@ -32,3 +32,13 @@ class BaseLLMConnector(ABC):
         """
         pass
 
+    def stop_model(self):
+        """
+        Optional method to stop or release resources associated with the model.
+        Subclasses can override this if specific cleanup is needed.
+        By default, it does nothing.
+        """
+        # print(f"DEBUG: BaseLLMConnector.stop_model() called for {self.model_name}. Default implementation: doing nothing.")
+        pass
+
+# ...
