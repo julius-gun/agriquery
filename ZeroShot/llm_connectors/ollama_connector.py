@@ -50,7 +50,7 @@ class OllamaConnector(BaseLLMConnector):
             str: The Ollama model's response.
         """
         retries = 5
-        wait_times = [5, 25, 125, 625, 3125]  # Exponential backoff in seconds
+        wait_times = [1, 2, 3, 4, 5] 
 
         for attempt in range(retries):
             try:
