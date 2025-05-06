@@ -199,7 +199,7 @@ class LLMTester:
                                             self.results,  # Pass self.results to append to
                                             language,
                                         )
-
+                                        # # ###################### SAVE RESULTS HERE ######################
                                         # test_result = test_executor.execute_test_question(  # Use TestExecutor to run test  # noqa: F841
                                         #     question_data,
                                         #     context_type,
@@ -211,14 +211,14 @@ class LLMTester:
                                         #     language,  # Pass language to test executor
                                         # )
 
-                                        # self.result_manager.save_results(  # Save results using ResultManager
-                                        #     self.results,
-                                        #     language,
-                                        #     model_name,
-                                        #     file_extension,
-                                        #     context_type,
-                                        #     noise_level,
-                                        # )
+                                        self.result_manager.save_results(  # Save results using ResultManager
+                                            self.results,
+                                            language,
+                                            model_name,
+                                            file_extension,
+                                            context_type,
+                                            noise_level,
+                                        )
 
                                     except Exception as question_error:
                                         print(
@@ -229,15 +229,15 @@ class LLMTester:
 
                                 question_pbar.close()
 
-                                # *** ADDED SAVE AFTER THE LOOP ***
-                                self.result_manager.save_results( # Save all results for this config once
-                                    self.results,
-                                    language,
-                                    model_name,
-                                    file_extension,
-                                    context_type,
-                                    noise_level,
-                                )
+                                # # *** ADDED SAVE AFTER THE LOOP ***
+                                # self.result_manager.save_results( # Save all results for this config once
+                                #     self.results,
+                                #     language,
+                                #     model_name,
+                                #     file_extension,
+                                #     context_type,
+                                #     noise_level,
+                                # )
 
 
                             else:

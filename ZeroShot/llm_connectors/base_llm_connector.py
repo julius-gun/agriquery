@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import Dict, Any
+# REMOVED: from llm_connectors.ollama_connector import OllamaConnector # This caused the circular import
 
 class BaseLLMConnector(ABC):
     """Abstract base class for LLM connectors."""
@@ -41,4 +42,4 @@ class BaseLLMConnector(ABC):
         # print(f"DEBUG: BaseLLMConnector.stop_model() called for {self.model_name}. Default implementation: doing nothing.")
         pass
 
-# ...
+# Removed the unnecessary import above
