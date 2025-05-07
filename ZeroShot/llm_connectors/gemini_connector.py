@@ -29,7 +29,7 @@ class GeminiConnector(BaseLLMConnector):
 
     # Define the order of API key environment variable names to try
     API_KEY_ENV_VARS: List[str] = ["GEMINI_API_KEY_DC", "GEMINI_API_KEY_LS", "GEMINI_API_KEY_SG"]
-    INVOKE_TIMEOUT_SECONDS: int = 300 # 5 minutes, adjust as needed
+    INVOKE_TIMEOUT_SECONDS: int = 3600 # 60 minutes, adjust as needed
     KEY_SWITCH_BASE_WAIT_SECONDS: int = 40 # Base wait time after a key switch
     KEY_SWITCH_RANDOM_WAIT_SECONDS: int = 20 # Max random seconds to add to base wait
 

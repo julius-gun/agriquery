@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 294.5985572338104,
-        "duration_qa_phase_seconds": 294.5974323749542,
-        "duration_eval_phase_seconds": 0.0011248588562011719
+        "overall_duration_seconds": 287.8659076690674,
+        "duration_qa_phase_seconds": 287.86489486694336,
+        "duration_eval_phase_seconds": 0.0010128021240234375
     },
     "per_dataset_details": {
         "general_questions": {
@@ -56,7 +56,7 @@
                 {
                     "question": "What system continuously measures fertilizer quantity being spread?",
                     "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
-                    "model_answer": "<answer>\nDer Computer im Verteiler misst durch die W\u00e4gezellen st\u00e4ndig die Menge Kunstd\u00fcnger, die verstreut wird.\n</answer>",
+                    "model_answer": "<answer>\nDer Computer im Verteiler misst durch die Wägezellen ständig die Menge Kunstdünger, die verstreut wird.\n</answer>",
                     "page": 30,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "<answer>\n30 \u00b0\n</answer>",
+                    "model_answer": "<answer>\n30 °\n</answer>",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -256,7 +256,7 @@
                 {
                     "question": "What materials are required to perform the tray test?",
                     "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-                    "model_answer": "<answer>\nBandma\u00df oder Messlatte,\nWasserwaage\n</answer>",
+                    "model_answer": "<answer>\nBandmaß oder Messlatte,\nWasserwaage\n</answer>",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -266,7 +266,7 @@
                 {
                     "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
                     "expected_answer": "3 m/s)",
-                    "model_answer": "<answer>\n3 m/s (Windst\u00e4rke 2)\n</answer>",
+                    "model_answer": "<answer>\n3 m/s (Windstärke 2)\n</answer>",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -326,7 +326,7 @@
                 {
                     "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
                     "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-                    "model_answer": "<answer>\n    Versuchen Sie, den Brocken oder die verkrustete Schicht zu verringern, z. B. durch einen Stock, Schraubendreher oder eine Schaufel.\n    Sollten Sie die Siebe \u00f6ffnen, um von der Oberseite aus den Brocken oder die verkrustete Schicht zu verkleinern, m\u00fcssen Sie diese feststellen, um ein ungew\u00fcnschtes Zufallen zu verhindern.\n</answer>",
+                    "model_answer": "<answer>\n    Versuchen Sie, den Brocken oder die verkrustete Schicht zu verringern, z. B. durch einen Stock, Schraubendreher oder eine Schaufel.\n    Sollten Sie die Siebe öffnen, um von der Oberseite aus den Brocken oder die verkrustete Schicht zu verkleinern, müssen Sie diese feststellen, um ein ungewünschtes Zufallen zu verhindern.\n</answer>",
                     "page": 108,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40\u00b0C",
+                    "model_answer": "40°C",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -366,7 +366,7 @@
                 {
                     "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
                     "expected_answer": "Preservative grease or preserving liquid.",
-                    "model_answer": "<answer>\nVersehen Sie blanke Teile, wie Kolbenstangen der Hydraulikzylinder mit konservierendem Fett oder spr\u00fchen (blanke) Metallteile der Maschine mit Konservierungsmittel (mitgeliefert)\n</answer>",
+                    "model_answer": "<answer>\nVersehen Sie blanke Teile, wie Kolbenstangen der Hydraulikzylinder mit konservierendem Fett oder sprühen (blanke) Metallteile der Maschine mit Konservierungsmittel (mitgeliefert)\n</answer>",
                     "page": 121,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -376,7 +376,7 @@
                 {
                     "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
                     "expected_answer": "Remove all fertilizer remnants.",
-                    "model_answer": "\u00b7 Entfernen Sie s\u00e4mtliche D\u00fcngemittelreste aus allen Hohlr\u00e4umen, Ecken, Rohren und Schl\u00e4uchen.",
+                    "model_answer": "· Entfernen Sie sämtliche Düngemittelreste aus allen Hohlräumen, Ecken, Rohren und Schläuchen.",
                     "page": 123,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -496,7 +496,7 @@
                 {
                     "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
                     "expected_answer": "Every year",
-                    "model_answer": "<answer>\nJ\u00e4hrlich\n</answer>",
+                    "model_answer": "<answer>\nJährlich\n</answer>",
                     "page": 78,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -800,7 +800,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Stop spreading by passing with the Auffangbeh\u00e4lter at least one working width (e.g. 18 or 24 meters).",
+                    "model_answer": "Stop spreading by passing with the Auffangbehälter at least one working width (e.g. 18 or 24 meters).",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -830,7 +830,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "<answer>\n    \u00dcberpr\u00fcfen Sie die Funktion und Befestigung der Beleuchtung, Warn- und Schutzvorrichtungen sowie der Bremsanlage.\n</answer>",
+                    "model_answer": "<answer>\n    Überprüfen Sie die Funktion und Befestigung der Beleuchtung, Warn- und Schutzvorrichtungen sowie der Bremsanlage.\n</answer>",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1010,7 +1010,7 @@
                 {
                     "question": "What type of 'active carbon filters' are recommended for closed tractor cabin to filter fertilizer dust?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "<answer>\n    An Aktivkohlefilter in den Lufteinl\u00e4ssen\n</answer>",
+                    "model_answer": "<answer>\n    An Aktivkohlefilter in den Lufteinlässen\n</answer>",
                     "page": 94,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

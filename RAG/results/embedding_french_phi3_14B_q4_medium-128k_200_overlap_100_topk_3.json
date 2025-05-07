@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 158.7888641357422,
-        "duration_qa_phase_seconds": 158.78825163841248,
-        "duration_eval_phase_seconds": 0.0006124973297119141
+        "overall_duration_seconds": 146.55043530464172,
+        "duration_qa_phase_seconds": 146.54989862442017,
+        "duration_eval_phase_seconds": 0.0005366802215576172
     },
     "per_dataset_details": {
         "general_questions": {
@@ -96,7 +96,7 @@
                 {
                     "question": "How long should the main switch button be pressed to turn the control box on or off?",
                     "expected_answer": "At least 1 second.",
-                    "model_answer": "Maintain the button enfonc\u00e9 pendant au moins 1 seconde.",
+                    "model_answer": "Maintain the button enfoncé pendant au moins 1 seconde.",
                     "page": 34,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -136,7 +136,7 @@
                 {
                     "question": "What determines the machine's working width?",
                     "expected_answer": "Spreading disc RPM",
-                    "model_answer": "The machine's working width is determined by:\n\u00b7 The correct connection point for the transmission shaft with the power take-off speed and\n\u00b7 The drop point.",
+                    "model_answer": "The machine's working width is determined by:\n· The correct connection point for the transmission shaft with the power take-off speed and\n· The drop point.",
                     "page": 46,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -146,7 +146,7 @@
                 {
                     "question": "Where should the position sensor for the hydraulic border spreading plate be connected?",
                     "expected_answer": "In the electronic box on the spreader.",
-                    "model_answer": "Raccordez le capteur de position au bo\u00eetier comportant l'\u00e9lectronique sur l'\u00e9pandeur.",
+                    "model_answer": "Raccordez le capteur de position au boîtier comportant l'électronique sur l'épandeur.",
                     "page": 47,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -166,7 +166,7 @@
                 {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
-                    "model_answer": "Serrez le frein \u00e0 main sur le tracteur.",
+                    "model_answer": "Serrez le frein à main sur le tracteur.",
                     "page": 52,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -206,7 +206,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "Vitesse d'\u00e9coulement requise = (kg/min) x Largeur de travail (m) x vitesse d'avancement (km/h) x d\u00e9bit (kg/ha)",
+                    "model_answer": "Vitesse d'écoulement requise = (kg/min) x Largeur de travail (m) x vitesse d'avancement (km/h) x débit (kg/ha)",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -316,7 +316,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "1. GEOSPREAD: Epandage unilat\u00e9ral en bordure avec d\u00e9flecteur de bordure\n2. GEOCONTROL: ExactLine",
+                    "model_answer": "1. GEOSPREAD: Epandage unilatéral en bordure avec déflecteur de bordure\n2. GEOCONTROL: ExactLine",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -336,7 +336,7 @@
                 {
                     "question": "What should you do if a spreading disc spreads irregularly?",
                     "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-                    "model_answer": "Contr\u00f4lez si la machine est attach\u00e9e \u00e0 l'horizontale derri\u00e8re le tracteur dans le sens de la longueur et de la largeur. Proc\u00e9dez au \u00bbContr\u00f4le et r\u00e9glage du m\u00e9canisme de dosage\u00ab tel que le d\u00e9crit la page e133 et r\u00e9p\u00e9tez ce test.",
+                    "model_answer": "Contrôlez si la machine est attachée à l'horizontale derrière le tracteur dans le sens de la longueur et de la largeur. Procédez au »Contrôle et réglage du mécanisme de dosage« tel que le décrit la page e133 et répétez ce test.",
                     "page": 113,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40\u00b0C",
+                    "model_answer": "40°C",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -366,7 +366,7 @@
                 {
                     "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
                     "expected_answer": "Preservative grease or preserving liquid.",
-                    "model_answer": "Appliquez le liquide de protection fourni sur les parties m\u00e9talliques (nues) de la machine pour les prot\u00e9ger de la corrosion.",
+                    "model_answer": "Appliquez le liquide de protection fourni sur les parties métalliques (nues) de la machine pour les protéger de la corrosion.",
                     "page": 121,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -456,7 +456,7 @@
                 {
                     "question": "How many parts does the distribution meter have?",
                     "expected_answer": "Seven.",
-                    "model_answer": "The granulom\u00e8tre provided with each distributor of fertilizer has four small compartments.",
+                    "model_answer": "The granulomètre provided with each distributor of fertilizer has four small compartments.",
                     "page": 59,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -466,7 +466,7 @@
                 {
                     "question": "How to enable fine application for dosing low application rate?",
                     "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
-                    "model_answer": "Utilisez le kit de dosage fin pour de faibles d\u00e9bits r\u00e9guliers (< 40 kg/ min).",
+                    "model_answer": "Utilisez le kit de dosage fin pour de faibles débits réguliers (< 40 kg/ min).",
                     "page": 67,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -486,7 +486,7 @@
                 {
                     "question": "Where is the RS 232 connector located?",
                     "expected_answer": "At the back of the control box.",
-                    "model_answer": "On the back of the bo\u00eetier de commande IsoMatch Tellus.",
+                    "model_answer": "On the back of the boîtier de commande IsoMatch Tellus.",
                     "page": 72,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -583,7 +583,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "Sph\u00e9ricit\u00e9 irr\u00e9guli\u00e8re",
+                    "model_answer": "Sphéricité irrégulière",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -800,7 +800,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Refermez la b\u00e2che de tr\u00e9mie.",
+                    "model_answer": "Refermez la bâche de trémie.",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -860,7 +860,7 @@
                 {
                     "question": "What should a person do who fell into the fertilizer and no physician is available?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Consulter un m\u00e9decin sans tarder !",
+                    "model_answer": "Consulter un médecin sans tarder !",
                     "page": 117,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1050,7 +1050,7 @@
                 {
                     "question": "What is the optimal driving speed reduction percentage during border spreading to compensate for application rate?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "R\u00e9duisez le d\u00e9bit de 25%.",
+                    "model_answer": "Réduisez le débit de 25%.",
                     "page": 106,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1060,7 +1060,7 @@
                 {
                     "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "2 m\u00e8tres",
+                    "model_answer": "2 mètres",
                     "page": 109,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

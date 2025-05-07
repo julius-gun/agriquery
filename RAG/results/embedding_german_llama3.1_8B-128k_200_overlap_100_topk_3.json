@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 101.72397494316101,
-        "duration_qa_phase_seconds": 101.72329497337341,
-        "duration_eval_phase_seconds": 0.0006799697875976562
+        "overall_duration_seconds": 93.8667721748352,
+        "duration_qa_phase_seconds": 93.8661699295044,
+        "duration_eval_phase_seconds": 0.0006022453308105469
     },
     "per_dataset_details": {
         "general_questions": {
@@ -36,7 +36,7 @@
                 {
                     "question": "How many dosing openings are closed during fine application?",
                     "expected_answer": "Two of three dosing openings are closed.",
-                    "model_answer": "2. \n\nExplanation: According to the context, \"Im Feindosierstand sind 2 der 3 Dosier\u00f6ffnungen geschlossen.\" This translates to \"In fine application mode, 2 of the 3 dosing openings are closed.\"",
+                    "model_answer": "2. \n\nExplanation: According to the context, \"Im Feindosierstand sind 2 der 3 Dosieröffnungen geschlossen.\" This translates to \"In fine application mode, 2 of the 3 dosing openings are closed.\"",
                     "page": 24,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -46,7 +46,7 @@
                 {
                     "question": "What is the overlap percentage for the full field spreading pattern?",
                     "expected_answer": "100% overlap",
-                    "model_answer": "10% \n\n(Note: The context states that \"Der maximal zul\u00e4ssige Verlust \u00fcber dem Feldrand ist in der Umweltnorm festgelegt. Um der Norm zu entsprechen, darf die Menge D\u00fcngemittel, die \u00fcber den Feldrand gestreut wird, maximal 10 % der Menge betragen, die in der Mitte hinter dem Streuer verteilt wird (= 100 %).\")",
+                    "model_answer": "10% \n\n(Note: The context states that \"Der maximal zulässige Verlust über dem Feldrand ist in der Umweltnorm festgelegt. Um der Norm zu entsprechen, darf die Menge Düngemittel, die über den Feldrand gestreut wird, maximal 10 % der Menge betragen, die in der Mitte hinter dem Streuer verteilt wird (= 100 %).\")",
                     "page": 28,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -56,7 +56,7 @@
                 {
                     "question": "What system continuously measures fertilizer quantity being spread?",
                     "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
-                    "model_answer": "Der Streuer misst durch die W\u00e4gezellen.\n\n(Translation: The spreader measures through the weighing cells.)",
+                    "model_answer": "Der Streuer misst durch die Wägezellen.\n\n(Translation: The spreader measures through the weighing cells.)",
                     "page": 30,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -76,7 +76,7 @@
                 {
                     "question": "How can the tractor's driving speed be transmitted to the IsoMatch if the tractor lacks ISOBUS communication?",
                     "expected_answer": "By adding the IsoMatch power cable set to the tractor.",
-                    "model_answer": "Anschlie\u00dfend ist Ihr Schlepper vollst\u00e4ndig ISOBUS-ger\u00fcstet und Sie k\u00f6nnen die Maschine mit dem IsoMatch Bedienpult anschlie\u00dfen und bedienen.\n\n(Translation: After that, your tractor is fully equipped with ISOBUS and you can connect the machine to the IsoMatch control panel and operate it.)",
+                    "model_answer": "Anschließend ist Ihr Schlepper vollständig ISOBUS-gerüstet und Sie können die Maschine mit dem IsoMatch Bedienpult anschließen und bedienen.\n\n(Translation: After that, your tractor is fully equipped with ISOBUS and you can connect the machine to the IsoMatch control panel and operate it.)",
                     "page": 32,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -136,7 +136,7 @@
                 {
                     "question": "What determines the machine's working width?",
                     "expected_answer": "Spreading disc RPM",
-                    "model_answer": "The Drehzahl der Streuscheibe (rotation speed of the spreader disc) and the gew\u00e4hlte Anschlusspunkt der Gelenkwelle (chosen connection point of the drive shaft).",
+                    "model_answer": "The Drehzahl der Streuscheibe (rotation speed of the spreader disc) and the gewählte Anschlusspunkt der Gelenkwelle (chosen connection point of the drive shaft).",
                     "page": 46,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 \u00b0",
+                    "model_answer": "30 °",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -206,7 +206,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "Ben\u00f6tigte Auslassgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha)",
+                    "model_answer": "Benötigte Auslassgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha)",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -246,7 +246,7 @@
                 {
                     "question": "What does a tray test check on a fertilizer spreader?",
                     "expected_answer": "Fertilizer distribution pattern of the spreader.",
-                    "model_answer": "The tray test checks if the left and right fertilizer spreaders are distributing the fertilizer evenly.\n\n(Extracted from: \"Linkes und rechtes Streubild testen / F\u00fcr eine gute Verteilung des Kunstd\u00fcngers m\u00fcssen die linke und rechte Streuscheibe gleichm\u00e4\u00dfig streuen. \u00dcberpr\u00fcfen Sie dies jedes Jahr.\")",
+                    "model_answer": "The tray test checks if the left and right fertilizer spreaders are distributing the fertilizer evenly.\n\n(Extracted from: \"Linkes und rechtes Streubild testen / Für eine gute Verteilung des Kunstdüngers müssen die linke und rechte Streuscheibe gleichmäßig streuen. Überprüfen Sie dies jedes Jahr.\")",
                     "page": 76,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -256,7 +256,7 @@
                 {
                     "question": "What materials are required to perform the tray test?",
                     "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-                    "model_answer": "\u00b7 Bandma\u00df oder Messlatte,\n\u00b7 Wasserwaage, um Auffangbeh\u00e4lter horizontal zu setzen,\n\u00b7 7 Auffangbeh\u00e4lter.",
+                    "model_answer": "· Bandmaß oder Messlatte,\n· Wasserwaage, um Auffangbehälter horizontal zu setzen,\n· 7 Auffangbehälter.",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -366,7 +366,7 @@
                 {
                     "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
                     "expected_answer": "Preservative grease or preserving liquid.",
-                    "model_answer": "Versehen Sie blanke Teile, wie Kolbenstangen der Hydraulikzylinder mit konservierendem Fett oder spr\u00fchen (blanke) Metallteile der Maschine mit Konservierungsmittel (mitgeliefert).",
+                    "model_answer": "Versehen Sie blanke Teile, wie Kolbenstangen der Hydraulikzylinder mit konservierendem Fett oder sprühen (blanke) Metallteile der Maschine mit Konservierungsmittel (mitgeliefert).",
                     "page": 121,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -376,7 +376,7 @@
                 {
                     "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
                     "expected_answer": "Remove all fertilizer remnants.",
-                    "model_answer": "Entfernen Sie s\u00e4mtliche D\u00fcngemittelreste aus allen Hohlr\u00e4umen, Ecken, Rohren und Schl\u00e4uchen.",
+                    "model_answer": "Entfernen Sie sämtliche Düngemittelreste aus allen Hohlräumen, Ecken, Rohren und Schläuchen.",
                     "page": 123,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -486,7 +486,7 @@
                 {
                     "question": "Where is the RS 232 connector located?",
                     "expected_answer": "At the back of the control box.",
-                    "model_answer": "The RS 232 connector is located on the R\u00fcckseite (rear side) of the Bedieneinheit (control unit).",
+                    "model_answer": "The RS 232 connector is located on the Rückseite (rear side) of the Bedieneinheit (control unit).",
                     "page": 72,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -506,7 +506,7 @@
                 {
                     "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
                     "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "10% \n\nThis answer is based on the context where it states: \"Um der Norm zu entsprechen, darf die Menge D\u00fcngemittel im 1. Auffangbeh\u00e4lter, der in dem fiktiven Graben steht, maximal 10 % der Menge des Auffangbeh\u00e4lters betragen, der in der Mitte der Fahrspur ist (= 100 %).\"",
+                    "model_answer": "10% \n\nThis answer is based on the context where it states: \"Um der Norm zu entsprechen, darf die Menge Düngemittel im 1. Auffangbehälter, der in dem fiktiven Graben steht, maximal 10 % der Menge des Auffangbehälters betragen, der in der Mitte der Fahrspur ist (= 100 %).\"",
                     "page": 91,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -516,7 +516,7 @@
                 {
                     "question": "From which machine point is the spreading height measured to the ground or the crop?",
                     "expected_answer": "Measured from the bottom of the vanes.",
-                    "model_answer": "75 cm \u00fcber dem Auffangbeh\u00e4lter.",
+                    "model_answer": "75 cm über dem Auffangbehälter.",
                     "page": 95,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -566,7 +566,7 @@
                 {
                     "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
                     "expected_answer": "Yes, using the Sensor input IM Tellus.",
-                    "model_answer": "Ja, Sie k\u00f6nnen den Schlepper-Geschwindigkeitssensor oder den Radar auf dem IsoMatch Bedienpult anschlie\u00dfen.",
+                    "model_answer": "Ja, Sie können den Schlepper-Geschwindigkeitssensor oder den Radar auf dem IsoMatch Bedienpult anschließen.",
                     "page": 144,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -583,7 +583,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "eckig, mit scharfen Kanten und R\u00e4ndern",
+                    "model_answer": "eckig, mit scharfen Kanten und Rändern",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -720,7 +720,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The IM Tellus Input cable can also be used for:\n\n* Beleuchtung und Z\u00fcndschloss (Lighting and ignition)\n* Schlepper CAN (optionaler schlepperspezifischer Stecker erforderlich) (Tractor CAN, optional specific tractor connector required)\n\nNote: The context mentions that the standard IM Tellus Input cable set includes connections for ISO 11786 'In Cab', Lighting and Ignition, Tractor CAN, and Video input.",
+                    "model_answer": "The IM Tellus Input cable can also be used for:\n\n* Beleuchtung und Zündschloss (Lighting and ignition)\n* Schlepper CAN (optionaler schlepperspezifischer Stecker erforderlich) (Tractor CAN, optional specific tractor connector required)\n\nNote: The context mentions that the standard IM Tellus Input cable set includes connections for ISO 11786 'In Cab', Lighting and Ignition, Tractor CAN, and Video input.",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -800,7 +800,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Stoppen Sie mit dem Streuen erst, wenn Sie mit dem Auffangbeh\u00e4lter mindestens eine Arbeitsbreite (z. B. 18 oder 24 Meter) passiert haben.",
+                    "model_answer": "Stoppen Sie mit dem Streuen erst, wenn Sie mit dem Auffangbehälter mindestens eine Arbeitsbreite (z. B. 18 oder 24 Meter) passiert haben.",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -880,7 +880,7 @@
                 {
                     "question": "What specific paint should be used to paint any damaged paintwork at the end of the season the machine in preparation for winter storage?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Unknown \n\nThe context does not mention a specific type of paint to be used for repairing damaged paintwork. It only mentions \"Lacksch\u00e4den ausbessern\" (repairing paint damage) but does not specify the type of paint to use.",
+                    "model_answer": "Unknown \n\nThe context does not mention a specific type of paint to be used for repairing damaged paintwork. It only mentions \"Lackschäden ausbessern\" (repairing paint damage) but does not specify the type of paint to use.",
                     "page": 121,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1150,7 +1150,7 @@
                 {
                     "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Pl\u00e4ttchen (with a thickness of 1.0 mm)",
+                    "model_answer": "Plättchen (with a thickness of 1.0 mm)",
                     "page": 138,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1180,7 +1180,7 @@
                 {
                     "question": "What specific 'extension cable' length in meters is optimal for ISO 11786 in cab tractor connection?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Unknown \n\nThe context does not provide specific information about the optimal length of an extension cable for ISO 11786 in cab tractor connection. It only mentions \"Verl\u00e4ngerte ISO-Kabel\" (Extended ISO cables) but does not specify a particular length.",
+                    "model_answer": "Unknown \n\nThe context does not provide specific information about the optimal length of an extension cable for ISO 11786 in cab tractor connection. It only mentions \"Verlängerte ISO-Kabel\" (Extended ISO cables) but does not specify a particular length.",
                     "page": 144,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 28.820683479309082,
-        "duration_qa_phase_seconds": 16.48899006843567,
-        "duration_eval_phase_seconds": 12.331693410873413
+        "overall_duration_seconds": 26.6547794342041,
+        "duration_qa_phase_seconds": 15.212785482406616,
+        "duration_eval_phase_seconds": 11.441993951797485
     },
     "per_dataset_details": {
         "general_questions": {
@@ -76,7 +76,7 @@
                 {
                     "question": "How can the tractor's driving speed be transmitted to the IsoMatch if the tractor lacks ISOBUS communication?",
                     "expected_answer": "By adding the IsoMatch power cable set to the tractor.",
-                    "model_answer": "Die Fahrgeschwindigkeit des Schleppers (oder der gezogenen Maschine) wird \u00fcber den ISOBUS an IsoMatch durchgegeben.",
+                    "model_answer": "Die Fahrgeschwindigkeit des Schleppers (oder der gezogenen Maschine) wird über den ISOBUS an IsoMatch durchgegeben.",
                     "page": 32,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -116,7 +116,7 @@
                 {
                     "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
                     "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
-                    "model_answer": "Die Console-Assembly-Fu\u00df kann mit einem Aktivkohlefilter in den Lufteinl\u00e4ssen in einer geschlossenen Kabine montiert werden.",
+                    "model_answer": "Die Console-Assembly-Fuß kann mit einem Aktivkohlefilter in den Lufteinlässen in einer geschlossenen Kabine montiert werden.",
                     "page": 40,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -146,7 +146,7 @@
                 {
                     "question": "Where should the position sensor for the hydraulic border spreading plate be connected?",
                     "expected_answer": "In the electronic box on the spreader.",
-                    "model_answer": "Der Positionssensor f\u00fcr den hydraulischen Grenzstreublech sollte direkt auf dem Schlepperradar oder -Radsensor montiert werden.",
+                    "model_answer": "Der Positionssensor für den hydraulischen Grenzstreublech sollte direkt auf dem Schlepperradar oder -Radsensor montiert werden.",
                     "page": 47,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -156,7 +156,7 @@
                 {
                     "question": "What specific precaution should be taken before working between the tractor and machine to check the coupling shaft length?",
                     "expected_answer": "Place the machine on a supporting beam.",
-                    "model_answer": "The specific precaution to take before working between the tractor and machine to check the coupling shaft length is:\n\n\"1. Pr\u00fcfen Sie die L\u00e4nge des Koppels.\"",
+                    "model_answer": "The specific precaution to take before working between the tractor and machine to check the coupling shaft length is:\n\n\"1. Prüfen Sie die Länge des Koppels.\"",
                     "page": 50,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -166,7 +166,7 @@
                 {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
-                    "model_answer": "Engagieren Sie den Parkbrauch nicht vor dem Anschlie\u00dfen der Maschine.",
+                    "model_answer": "Engagieren Sie den Parkbrauch nicht vor dem Anschließen der Maschine.",
                     "page": 52,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "Die maximale zugelassene Schwerkraft f\u00fcr das Coupling Shaft betr\u00e4gt 10.000 Nm.",
+                    "model_answer": "Die maximale zugelassene Schwerkraft für das Coupling Shaft beträgt 10.000 Nm.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -206,7 +206,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "Kein spezifisches Antwortm\u00f6glichkeit im Kontext des bereitgestellten Textes gibt.",
+                    "model_answer": "Kein spezifisches Antwortmöglichkeit im Kontext des bereitgestellten Textes gibt.",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -216,7 +216,7 @@
                 {
                     "question": "What type of serial connection does the IsoMatch control box use for communication?",
                     "expected_answer": "RS 232",
-                    "model_answer": "Die IsoMatch-Konsole verwendet eine RS-232-Serienkabel f\u00fcr die Kommunikation.",
+                    "model_answer": "Die IsoMatch-Konsole verwendet eine RS-232-Serienkabel für die Kommunikation.",
                     "page": 72,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -266,7 +266,7 @@
                 {
                     "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
                     "expected_answer": "3 m/s)",
-                    "model_answer": "Die maximale zugelassene Windgeschwindigkeit f\u00fcr beide Testmethoden betr\u00e4gt 10 m/s.",
+                    "model_answer": "Die maximale zugelassene Windgeschwindigkeit für beide Testmethoden beträgt 10 m/s.",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -336,7 +336,7 @@
                 {
                     "question": "What should you do if a spreading disc spreads irregularly?",
                     "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-                    "model_answer": "You should set the Einstellung der Auslass\u00f6ffnung to 1 Buchstabe.",
+                    "model_answer": "You should set the Einstellung der Auslassöffnung to 1 Buchstabe.",
                     "page": 113,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -406,7 +406,7 @@
                 {
                     "question": "What is the maximum hydraulic pressure allowed for the hydaulic system in bars?",
                     "expected_answer": "210 bars.",
-                    "model_answer": "Die maximale hydraulische Druckkraft, die f\u00fcr das hydraulische System in Bars erlaubt ist, wird nicht im bereitgestellten Text angegeben.",
+                    "model_answer": "Die maximale hydraulische Druckkraft, die für das hydraulische System in Bars erlaubt ist, wird nicht im bereitgestellten Text angegeben.",
                     "page": 131,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -436,7 +436,7 @@
                 {
                     "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
                     "expected_answer": "06.00.00.0257",
-                    "model_answer": "Der ISOBUS unterst\u00fctzt die GreenSeeker-Sensor ab der Version 06.00.00.00.0257.",
+                    "model_answer": "Der ISOBUS unterstützt die GreenSeeker-Sensor ab der Version 06.00.00.00.0257.",
                     "page": 27,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -446,7 +446,7 @@
                 {
                     "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
                     "expected_answer": "150mm.",
-                    "model_answer": "Die Profilen der Tubes m\u00fcssen mindestens 2 mm \u00fcber die Arbeitsbreite des Streuers liegen.",
+                    "model_answer": "Die Profilen der Tubes müssen mindestens 2 mm über die Arbeitsbreite des Streuers liegen.",
                     "page": 51,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -486,7 +486,7 @@
                 {
                     "question": "Where is the RS 232 connector located?",
                     "expected_answer": "At the back of the control box.",
-                    "model_answer": "Die RS 232-Konverter ist auf der R\u00fcckseite der Bedieneinheit.",
+                    "model_answer": "Die RS 232-Konverter ist auf der Rückseite der Bedieneinheit.",
                     "page": 72,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -536,7 +536,7 @@
                 {
                     "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
                     "expected_answer": "Place the spreader on a firm, stable ramp",
-                    "model_answer": "Falls unbekannt ist, nehmen Sie i = 0.5 Maschinenl\u00e4nge.",
+                    "model_answer": "Falls unbekannt ist, nehmen Sie i = 0.5 Maschinenlänge.",
                     "page": 120,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -653,7 +653,7 @@
                 {
                     "question": "With what torque in Nm must a M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened?",
                     "expected_answer": "420 Nm",
-                    "model_answer": "Der erforderliche Torque betr\u00e4gt 130 Nm.",
+                    "model_answer": "Der erforderliche Torque beträgt 130 Nm.",
                     "page": 129,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -663,7 +663,7 @@
                 {
                     "question": "With what torque in Nm must a M6 hexagon stainless steel bolt with a 70 (A2) quality and with a 0.2 friction be fastened?",
                     "expected_answer": "9.9 Nm",
-                    "model_answer": "Der M6 hexagon stainless steel bolt mit einer Frictionstufe von 0,2 und einer Qualit\u00e4t von 70 (A2) erfordert eine Torque von 131 Nm.",
+                    "model_answer": "Der M6 hexagon stainless steel bolt mit einer Frictionstufe von 0,2 und einer Qualität von 70 (A2) erfordert eine Torque von 131 Nm.",
                     "page": 129,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -770,7 +770,7 @@
                 {
                     "question": "Can the tray test be performed at 40 degrees Celsius?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Der Streuer streut zu schmal. Setzen Sie die Einstellung der Auslass\u00f6ffnung 2 Buchstaben Richtung A.",
+                    "model_answer": "Der Streuer streut zu schmal. Setzen Sie die Einstellung der Auslassöffnung 2 Buchstaben Richtung A.",
                     "page": 77,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -810,7 +810,7 @@
                 {
                     "question": "What is the maximum height the fertilizer flies when spreading without GEOCONTROL headland",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Der maximale H\u00f6he, den das Fertilisierungsmedium (Futter) fliegt, wenn es ohne GEOCONTROL-Vorhandensein auf dem Feld verteilt wird, betr\u00e4gt 1/2 Meter.",
+                    "model_answer": "Der maximale Höhe, den das Fertilisierungsmedium (Futter) fliegt, wenn es ohne GEOCONTROL-Vorhandensein auf dem Feld verteilt wird, beträgt 1/2 Meter.",
                     "page": 103,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -850,7 +850,7 @@
                 {
                     "question": "Why is damage to the vanes, spreading disc or discharge bushing, most likely caused by a hard object?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Der Schwerpunkt der Frage liegt auf der Erkl\u00e4rung, warum die Besch\u00e4digung von Vane-Bl\u00e4ttern, Spiegelpolstern oder Ablassb\u00fcchsen am wahrscheinlichsten durch einen harten Gegenstand verursacht wird.",
+                    "model_answer": "Der Schwerpunkt der Frage liegt auf der Erklärung, warum die Beschädigung von Vane-Blättern, Spiegelpolstern oder Ablassbüchsen am wahrscheinlichsten durch einen harten Gegenstand verursacht wird.",
                     "page": 115,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -860,7 +860,7 @@
                 {
                     "question": "What should a person do who fell into the fertilizer and no physician is available?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Kein spezifisches Anweisungsst\u00fcck oder Beispiel f\u00fcr eine \"fertige Antwort\" ist im gegebenen Kontext enthalten.",
+                    "model_answer": "Kein spezifisches Anweisungsstück oder Beispiel für eine \"fertige Antwort\" ist im gegebenen Kontext enthalten.",
                     "page": 117,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -980,7 +980,7 @@
                 {
                     "question": "What is the minimum 'baud rate' for 'RS 232 connection'?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Die Antwort auf die Frage \"Was ist das Minimum f\u00fcr den Baudrate bei einer RS 232-Konektion?\" lautet: 115200.",
+                    "model_answer": "Die Antwort auf die Frage \"Was ist das Minimum für den Baudrate bei einer RS 232-Konektion?\" lautet: 115200.",
                     "page": 72,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1050,7 +1050,7 @@
                 {
                     "question": "What is the optimal driving speed reduction percentage during border spreading to compensate for application rate?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Die optimale Reduktion der Fahrgeschwindigkeit bei der Spreading des Anbaus (Border Spreading) betr\u00e4gt 20%.",
+                    "model_answer": "Die optimale Reduktion der Fahrgeschwindigkeit bei der Spreading des Anbaus (Border Spreading) beträgt 20%.",
                     "page": 106,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1210,7 +1210,7 @@
                 {
                     "question": "What is the drain rate in liters per minute of 'drain kit' for hopper emptying?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Die ben\u00f6tigte Auslassgeschwindigkeit des Kunstd\u00fcngers wird von dem Computer anhand der folgenden Formel berechnet: \nBen\u00f6tigte Auslaufgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha)\n\nDie Antwort lautet also: 600",
+                    "model_answer": "Die benötigte Auslassgeschwindigkeit des Kunstdüngers wird von dem Computer anhand der folgenden Formel berechnet: \nBenötigte Auslaufgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha)\n\nDie Antwort lautet also: 600",
                     "page": 149,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 90.2277090549469,
-        "duration_qa_phase_seconds": 77.7225067615509,
-        "duration_eval_phase_seconds": 12.505202293395996
+        "overall_duration_seconds": 83.51330375671387,
+        "duration_qa_phase_seconds": 71.89692807197571,
+        "duration_eval_phase_seconds": 11.61637568473816
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30\u00ba maximum",
+                    "model_answer": "30º maximum",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -246,7 +246,7 @@
                 {
                     "question": "What does a tray test check on a fertilizer spreader?",
                     "expected_answer": "Fertilizer distribution pattern of the spreader.",
-                    "model_answer": "The tray test checks if the nappe d'\u00e9pandage (spread of fertilizer) is too wide or narrow on a fertilizer spreader. If it's too wide, adjust the flow rate by two letters towards A; if it's too narrow, also adjust by two letters towards A.",
+                    "model_answer": "The tray test checks if the nappe d'épandage (spread of fertilizer) is too wide or narrow on a fertilizer spreader. If it's too wide, adjust the flow rate by two letters towards A; if it's too narrow, also adjust by two letters towards A.",
                     "page": 76,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -336,7 +336,7 @@
                 {
                     "question": "What should you do if a spreading disc spreads irregularly?",
                     "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-                    "model_answer": "0  B                                 L'\u00e9pandage est trop \u00e9troit. \uf034 R\u00e9glez l'ouverture d'\u00e9coulement de 2 lettres vers le A \uf034 Effectuez \u00e0 nouveau le test\n1  C                                 L'\u00e9pandage est trop large : \uf034 R\u00e9glez l'ouverture d'\u00e9coulement de 2 lettres vers le U \uf034 Effectuez \u00e0 nouveau le test\n2  D  L'\u00e9pandage est trop \u00e9troit (nappe d'\u00e9pandage en trap\u00e8ze) : \uf034 R\u00e9glez l'ouverture d'\u00e9coulement de 2 lettres vers le A \uf034 Effectuez \u00e0 nouveau le test",
+                    "model_answer": "0  B                                 L'épandage est trop étroit.  Réglez l'ouverture d'écoulement de 2 lettres vers le A  Effectuez à nouveau le test\n1  C                                 L'épandage est trop large :  Réglez l'ouverture d'écoulement de 2 lettres vers le U  Effectuez à nouveau le test\n2  D  L'épandage est trop étroit (nappe d'épandage en trapèze) :  Réglez l'ouverture d'écoulement de 2 lettres vers le A  Effectuez à nouveau le test",
                     "page": 113,
                     "dataset": "general_questions",
                     "qa_error": false,

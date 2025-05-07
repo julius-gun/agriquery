@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 90.2380793094635,
-        "duration_qa_phase_seconds": 80.49985146522522,
-        "duration_eval_phase_seconds": 9.738227844238281
+        "overall_duration_seconds": 82.59298372268677,
+        "duration_qa_phase_seconds": 73.69610238075256,
+        "duration_eval_phase_seconds": 8.896881341934204
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "<answer>\n30 \u00b0\n</answer>",
+                    "model_answer": "<answer>\n30 °\n</answer>",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40\u00b0C",
+                    "model_answer": "40°C",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,

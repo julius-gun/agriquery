@@ -27,9 +27,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 1681.0499901771545,
-        "duration_qa_phase_seconds": 1580.1052753925323,
-        "duration_eval_phase_seconds": 100.94471478462219
+        "overall_duration_seconds": 1537.5725769996643,
+        "duration_qa_phase_seconds": 1445.357570886612,
+        "duration_eval_phase_seconds": 92.21500611305237
     },
     "per_dataset_details": {
         "general_questions": {
@@ -487,7 +487,7 @@
                 {
                     "question": "Where is the RS 232 connector located?",
                     "expected_answer": "At the back of the control box.",
-                    "model_answer": "auf der R\u00fcckseite der Bedieneinheit",
+                    "model_answer": "auf der Rückseite der Bedieneinheit",
                     "page": 72,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -567,7 +567,7 @@
                 {
                     "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
                     "expected_answer": "Yes, using the Sensor input IM Tellus.",
-                    "model_answer": "Ja, mit dem optional erh\u00e4ltlichen Sensor Input IM Tellus k\u00f6nnen Sie den Geschwindigkeitssensor oder den Radar des Schleppers an das IsoMatch Tellus Bedienpult anschlie\u00dfen.",
+                    "model_answer": "Ja, mit dem optional erhältlichen Sensor Input IM Tellus können Sie den Geschwindigkeitssensor oder den Radar des Schleppers an das IsoMatch Tellus Bedienpult anschließen.",
                     "page": 144,
                     "dataset": "general_questions",
                     "qa_error": false,

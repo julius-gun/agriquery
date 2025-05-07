@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 91.47488117218018,
-        "duration_qa_phase_seconds": 81.6395514011383,
-        "duration_eval_phase_seconds": 9.83532977104187
+        "overall_duration_seconds": 83.74706077575684,
+        "duration_qa_phase_seconds": 74.77658414840698,
+        "duration_eval_phase_seconds": 8.970476627349854
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "<answer>\n30 \u00b0\n</answer>",
+                    "model_answer": "<answer>\n30 °\n</answer>",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -256,7 +256,7 @@
                 {
                     "question": "What materials are required to perform the tray test?",
                     "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-                    "model_answer": "<answer>\n\u00b7 measuring tape or ruler,\n\u00b7 spirit level to set the troughs horizontal,\n\u00b7 7 troughs,\n\u00b7 7 graduated tubes,\n\u00b7 1 funnel,\n\u00b7 notebook, pen and calculator.\n</answer>",
+                    "model_answer": "<answer>\n· measuring tape or ruler,\n· spirit level to set the troughs horizontal,\n· 7 troughs,\n· 7 graduated tubes,\n· 1 funnel,\n· notebook, pen and calculator.\n</answer>",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "<answer>\n40\u00b0C\n</answer>",
+                    "model_answer": "<answer>\n40°C\n</answer>",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -720,7 +720,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "<answer>\nOther connections made via the \"Input IM Tellus\" cable include:\n\u00b7 lights and ignition\n\u00b7 Tractor CAN (optional plug specific to the tractor required)\n\u00b7 Video input.\n</answer>",
+                    "model_answer": "<answer>\nOther connections made via the \"Input IM Tellus\" cable include:\n· lights and ignition\n· Tractor CAN (optional plug specific to the tractor required)\n· Video input.\n</answer>",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

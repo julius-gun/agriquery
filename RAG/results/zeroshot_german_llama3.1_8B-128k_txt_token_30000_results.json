@@ -9,23 +9,25 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.2796610169491525,
+        "accuracy": 0.3055555555555556,
         "precision": 0.34328358208955223,
-        "recall": 0.359375,
+        "recall": 0.42592592592592593,
         "specificity": 0.18518518518518517,
-        "f1_score": 0.3511450381679389,
+        "f1_score": 0.38016528925619836,
         "true_positives": 23,
         "true_negatives": 10,
         "false_positives": 44,
-        "false_negatives": 41,
-        "total_questions": 118,
+        "false_negatives": 31,
+        "total_questions": 108,
         "dataset_self_evaluation_success": {
             "general_questions": 0.42592592592592593,
             "unanswerable_questions": 0.18518518518518517
         }
     },
     "timing": {
-        "duration_qa_phase_seconds": 1548.8000000000002
+        "overall_duration_seconds": 0.0,
+        "duration_qa_phase_seconds": 0.0,
+        "duration_eval_phase_seconds": 0.0
     },
     "per_dataset_details": {
         "general_questions": {

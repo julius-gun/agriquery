@@ -243,9 +243,10 @@ def reformat_zeroshot_file(filepath: str):
     dataset_success = calculate_dataset_success_rates(processed_data)
     overall_metrics["dataset_self_evaluation_success"] = dataset_success
 
-    # if overall_metrics.get("accuracy") == 0.0 or overall_metrics.get("f1_score") == 0.0:
-    #     print(f"Skipping save for {filename}: Accuracy or F1 score is zero.")
-    #     return # Exit the function before saving
+    if overall_metrics.get("accuracy") == 0.0 or overall_metrics.get("f1_score") == 0.0:
+        filepath = os.path.join(ZERO_SHOT_RESULTS_DIR, filename)
+        print(f"Warning: Zero accuracy or F1 score in {filepath}")
+        # return # Exit the function before saving
 
     # 5. Restructure Data
     # 5.1 Test Run Parameters

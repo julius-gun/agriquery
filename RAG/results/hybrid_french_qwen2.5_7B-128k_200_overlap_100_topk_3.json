@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 95.45256280899048,
-        "duration_qa_phase_seconds": 85.55423951148987,
-        "duration_eval_phase_seconds": 9.89832329750061
+        "overall_duration_seconds": 87.46823644638062,
+        "duration_qa_phase_seconds": 78.4317455291748,
+        "duration_eval_phase_seconds": 9.03649091720581
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,7 +136,7 @@
                 {
                     "question": "What determines the machine's working width?",
                     "expected_answer": "Spreading disc RPM",
-                    "model_answer": "The working width is adjusted with:\n\u00b7 the correct connection point for the coupling shaft with the PTO speed and\n\u00b7 the discharge point.",
+                    "model_answer": "The working width is adjusted with:\n· the correct connection point for the coupling shaft with the PTO speed and\n· the discharge point.",
                     "page": 46,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30\u00b0",
+                    "model_answer": "30°",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,

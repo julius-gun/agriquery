@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 95.3705382347107,
-        "duration_qa_phase_seconds": 85.51728701591492,
-        "duration_eval_phase_seconds": 9.853251218795776
+        "overall_duration_seconds": 87.43103313446045,
+        "duration_qa_phase_seconds": 78.4253613948822,
+        "duration_eval_phase_seconds": 9.005671739578247
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,7 +136,7 @@
                 {
                     "question": "What determines the machine's working width?",
                     "expected_answer": "Spreading disc RPM",
-                    "model_answer": "The working width is adjusted with:\n\u00b7 the correct connection point for the coupling shaft with the PTO speed and\n\u00b7 the discharge point.",
+                    "model_answer": "The working width is adjusted with:\n· the correct connection point for the coupling shaft with the PTO speed and\n· the discharge point.",
                     "page": 46,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 \u00b0",
+                    "model_answer": "30 °",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -206,7 +206,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "27 (m) x 8 (km/h) x 25 (kg/ha) \u00f7 600 = 9 kg/min",
+                    "model_answer": "27 (m) x 8 (km/h) x 25 (kg/ha) ÷ 600 = 9 kg/min",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -316,7 +316,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "\u00b7 one-sided boundary spreading with the hydraulic border spreading plate,\n\u00b7 boundary track spreading with ExactLine.",
+                    "model_answer": "· one-sided boundary spreading with the hydraulic border spreading plate,\n· boundary track spreading with ExactLine.",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40\u00b0C",
+                    "model_answer": "40°C",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,

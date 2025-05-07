@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 31.95490860939026,
-        "duration_qa_phase_seconds": 19.791746854782104,
-        "duration_eval_phase_seconds": 12.163161754608154
+        "overall_duration_seconds": 30.00262761116028,
+        "duration_qa_phase_seconds": 18.675620555877686,
+        "duration_eval_phase_seconds": 11.327007055282593
     },
     "per_dataset_details": {
         "general_questions": {
@@ -116,7 +116,7 @@
                 {
                     "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
                     "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
-                    "model_answer": "Soudez le socle du tube pour le montage \u00e0 l'emplacement choisi de la cabine.",
+                    "model_answer": "Soudez le socle du tube pour le montage à l'emplacement choisi de la cabine.",
                     "page": 40,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "51\u00b0",
+                    "model_answer": "51°",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,

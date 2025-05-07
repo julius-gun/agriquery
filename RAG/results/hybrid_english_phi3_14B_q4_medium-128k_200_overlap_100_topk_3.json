@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 189.70628261566162,
-        "duration_qa_phase_seconds": 176.8498513698578,
-        "duration_eval_phase_seconds": 12.856431245803833
+        "overall_duration_seconds": 172.2629919052124,
+        "duration_qa_phase_seconds": 160.33576083183289,
+        "duration_eval_phase_seconds": 11.927231073379517
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "The maximum permissible operating angle for the coupling shaft is 30 \u00b0 when lifted and 30 \u00b0 when lowered.",
+                    "model_answer": "The maximum permissible operating angle for the coupling shaft is 30 ° when lifted and 30 ° when lowered.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "Maximum allowable temperature: 40 \u00b0C",
+                    "model_answer": "Maximum allowable temperature: 40 °C",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -830,7 +830,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Before leaving the tractor:\n\u00b7 switch the PTO shaft off,\n\u00b7 release the pressure from the hydraeus system,\n\u00b7 switch the electronic control system off,\n\u00b7 switch the tractor off,\n\u00b7 remove the key from the ignition,\n\u00b7 engage the parking brake of the tractor.",
+                    "model_answer": "Before leaving the tractor:\n· switch the PTO shaft off,\n· release the pressure from the hydraeus system,\n· switch the electronic control system off,\n· switch the tractor off,\n· remove the key from the ignition,\n· engage the parking brake of the tractor.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

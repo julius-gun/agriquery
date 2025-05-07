@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 177.66621899604797,
-        "duration_qa_phase_seconds": 164.8500039577484,
-        "duration_eval_phase_seconds": 12.81621503829956
+        "overall_duration_seconds": 163.76638913154602,
+        "duration_qa_phase_seconds": 151.83532905578613,
+        "duration_eval_phase_seconds": 11.931060075759888
     },
     "per_dataset_details": {
         "general_questions": {
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40\u00b0C",
+                    "model_answer": "40°C",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,

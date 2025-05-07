@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 90.61392879486084,
-        "duration_qa_phase_seconds": 90.6126434803009,
-        "duration_eval_phase_seconds": 0.0012853145599365234
+        "overall_duration_seconds": 83.20351338386536,
+        "duration_qa_phase_seconds": 83.20233964920044,
+        "duration_eval_phase_seconds": 0.0011737346649169922
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,7 +136,7 @@
                 {
                     "question": "What determines the machine's working width?",
                     "expected_answer": "Spreading disc RPM",
-                    "model_answer": "The working width is adjusted with:\n\u00b7 the correct connection point for the coupling shaft with the PTO speed and\n\u00b7 the discharge point.",
+                    "model_answer": "The working width is adjusted with:\n· the correct connection point for the coupling shaft with the PTO speed and\n· the discharge point.",
                     "page": 46,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 \u00b0",
+                    "model_answer": "30 °",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -316,7 +316,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "\u00b7 one-sided boundary spreading with the hydraulic border spreading plate,\n\u00b7 boundary track spreading with ExactLine.",
+                    "model_answer": "· one-sided boundary spreading with the hydraulic border spreading plate,\n· boundary track spreading with ExactLine.",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,

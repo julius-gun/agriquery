@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 50.89951777458191,
-        "duration_qa_phase_seconds": 31.59028434753418,
-        "duration_eval_phase_seconds": 19.30923342704773
+        "overall_duration_seconds": 46.812318086624146,
+        "duration_qa_phase_seconds": 28.431227684020996,
+        "duration_eval_phase_seconds": 18.38109040260315
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "The maximum permissible operating angle in degrees for the coupling shaft is 30\u00ba.",
+                    "model_answer": "The maximum permissible operating angle in degrees for the coupling shaft is 30º.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -286,7 +286,7 @@
                 {
                     "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
                     "expected_answer": "Inertia causes continued rotation.",
-                    "model_answer": "A route encrass\u00e9e constitue un danger pour ses usagers.\n\n(Note: This answer is based on the context provided, where it is mentioned that \"Une route encrass\u00e9e constitue un danger pour ses usagers\" after cleaning up any loose debris.)",
+                    "model_answer": "A route encrassée constitue un danger pour ses usagers.\n\n(Note: This answer is based on the context provided, where it is mentioned that \"Une route encrassée constitue un danger pour ses usagers\" after cleaning up any loose debris.)",
                     "page": 94,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -336,7 +336,7 @@
                 {
                     "question": "What should you do if a spreading disc spreads irregularly?",
                     "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-                    "model_answer": "R\u00e9glez l'ouverture d'\u00e9coulement de 2 lettres vers le U.",
+                    "model_answer": "Réglez l'ouverture d'écoulement de 2 lettres vers le U.",
                     "page": 113,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -366,7 +366,7 @@
                 {
                     "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
                     "expected_answer": "Preservative grease or preserving liquid.",
-                    "model_answer": "Appliquez le liquide de protection fourni sur les parties m\u00e9talliques (nues) de la machine pour les prot\u00e9ger de la corrosion.",
+                    "model_answer": "Appliquez le liquide de protection fourni sur les parties métalliques (nues) de la machine pour les protéger de la corrosion.",
                     "page": 121,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -506,7 +506,7 @@
                 {
                     "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
                     "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "10% \n\nThis answer is based on the context where it states \"Pour satisfaire \u00e0 celle-ci, la quantit\u00e9 d'engrais dans le premier bac de collecte situ\u00e9 dans la tranch\u00e9e fictive peut repr\u00e9senter au maximum 10 % de la quantit\u00e9 contenue dans le bac de collecte au centre de l'orni\u00e8re (= 100 %).\"",
+                    "model_answer": "10% \n\nThis answer is based on the context where it states \"Pour satisfaire à celle-ci, la quantité d'engrais dans le premier bac de collecte situé dans la tranchée fictive peut représenter au maximum 10 % de la quantité contenue dans le bac de collecte au centre de l'ornière (= 100 %).\"",
                     "page": 91,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -593,7 +593,7 @@
                 {
                     "question": "What is the hopper weight without hopper cover in kg of the Exacta-TLX GEOSPREAD 3225?",
                     "expected_answer": "337.5 kg",
-                    "model_answer": "Unknown \n\nThe context provided does not mention the \"Exacta-TLX GEOSPREAD 3225\" model. It mentions the \"Distributeur d'engrais \u00e0 pes\u00e9e Exacta-TLX GEOSPREAD avec accessoires et variantes d'\u00e9quipement Mod\u00e8le : VN407\".",
+                    "model_answer": "Unknown \n\nThe context provided does not mention the \"Exacta-TLX GEOSPREAD 3225\" model. It mentions the \"Distributeur d'engrais à pesée Exacta-TLX GEOSPREAD avec accessoires et variantes d'équipement Modèle : VN407\".",
                     "page": 36,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -603,7 +603,7 @@
                 {
                     "question": "What is the weight in kg of the Exacta-TLX GEOSPREAD 3900?",
                     "expected_answer": "795 kg",
-                    "model_answer": "Unknown \n\nThe context provided does not mention a \"Exacta-TLX GEOSPREAD 3900\" but rather an \"Exacta-TLX GEOSPREAD avec accessoires et variantes d'\u00e9quipement\" with a model number VN407. The weight information is also related to the tractor, not the Exacta-TLX GEOSPREAD itself.",
+                    "model_answer": "Unknown \n\nThe context provided does not mention a \"Exacta-TLX GEOSPREAD 3900\" but rather an \"Exacta-TLX GEOSPREAD avec accessoires et variantes d'équipement\" with a model number VN407. The weight information is also related to the tractor, not the Exacta-TLX GEOSPREAD itself.",
                     "page": 36,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -623,7 +623,7 @@
                 {
                     "question": "How often (in what interval) must the condition of the vanes be inspected?",
                     "expected_answer": "daily",
-                    "model_answer": "Unknown \n\nThe provided context does not mention anything about inspecting the condition of vanes or any specific interval for doing so. It discusses testing the spreader's nappe d'\u00e9pandage (spreading pattern) and adjusting it if necessary, but there is no information on inspecting vanes.",
+                    "model_answer": "Unknown \n\nThe provided context does not mention anything about inspecting the condition of vanes or any specific interval for doing so. It discusses testing the spreader's nappe d'épandage (spreading pattern) and adjusting it if necessary, but there is no information on inspecting vanes.",
                     "page": 125,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -830,7 +830,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Contr\u00f4lez les c\u00e2bles de l'attelage rapide.",
+                    "model_answer": "Contrôlez les câbles de l'attelage rapide.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

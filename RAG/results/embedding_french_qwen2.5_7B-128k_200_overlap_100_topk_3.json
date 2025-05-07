@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 89.53874444961548,
-        "duration_qa_phase_seconds": 89.5364158153534,
-        "duration_eval_phase_seconds": 0.002328634262084961
+        "overall_duration_seconds": 82.07216286659241,
+        "duration_qa_phase_seconds": 82.07027769088745,
+        "duration_eval_phase_seconds": 0.0018851757049560547
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,7 +136,7 @@
                 {
                     "question": "What determines the machine's working width?",
                     "expected_answer": "Spreading disc RPM",
-                    "model_answer": "The machine's working width is determined by:\n\u00b7 the correct point of connection for the transmission shaft with the power take-off speed\n\u00b7 the point of drop.",
+                    "model_answer": "The machine's working width is determined by:\n· the correct point of connection for the transmission shaft with the power take-off speed\n· the point of drop.",
                     "page": 46,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 \u00b0 vers le haut et 30 \u00b0 vers le bas",
+                    "model_answer": "30 ° vers le haut et 30 ° vers le bas",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -206,7 +206,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "Vitesse d'\u00e9coulement requise = (kg/min) Largeur de travail (m) x vitesse d'avancement (km/h) x d\u00e9bit (kg/ha) / 600",
+                    "model_answer": "Vitesse d'écoulement requise = (kg/min) Largeur de travail (m) x vitesse d'avancement (km/h) x débit (kg/ha) / 600",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -316,7 +316,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "\u00b7 \u00c9pandage unilat\u00e9ral en bordure \u00e0 l'aide du d\u00e9flecteur de bordure hydraulique,\n\u00b7 \u00c9pandage des bordures avec ExactLine.",
+                    "model_answer": "· Épandage unilatéral en bordure à l'aide du déflecteur de bordure hydraulique,\n· Épandage des bordures avec ExactLine.",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40\u00b0C",
+                    "model_answer": "40°C",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -583,7 +583,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "[sph\u00e9ricit\u00e9 irr\u00e9guli\u00e8re; tr\u00e8s in\u00e9gale]",
+                    "model_answer": "[sphéricité irrégulière; très inégale]",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -800,7 +800,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Refermez la b\u00e2che de tr\u00e9mie.",
+                    "model_answer": "Refermez la bâche de trémie.",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

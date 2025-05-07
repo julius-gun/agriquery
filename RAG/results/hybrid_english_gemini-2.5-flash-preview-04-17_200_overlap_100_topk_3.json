@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 1584.6034870147705,
-        "duration_qa_phase_seconds": 1480.0214788913727,
-        "duration_eval_phase_seconds": 104.58200812339783
+        "overall_duration_seconds": 1437.3814935684204,
+        "duration_qa_phase_seconds": 1341.9762744903564,
+        "duration_eval_phase_seconds": 95.40521907806396
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 \u00b0 when lifted and 30 \u00b0 when lowered",
+                    "model_answer": "30 ° when lifted and 30 ° when lowered",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,

@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 45.84027814865112,
-        "duration_qa_phase_seconds": 32.95152449607849,
-        "duration_eval_phase_seconds": 12.888753652572632
+        "overall_duration_seconds": 41.83842420578003,
+        "duration_qa_phase_seconds": 29.8624050617218,
+        "duration_eval_phase_seconds": 11.976019144058228
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 \u00b0",
+                    "model_answer": "30 °",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40\u00b0C.",
+                    "model_answer": "40°C.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -623,7 +623,7 @@
                 {
                     "question": "How often (in what interval) must the condition of the vanes be inspected?",
                     "expected_answer": "daily",
-                    "model_answer": "Maintenance intervals\nKeep to the checking and maintenance intervals given below to keep the machine in good working order.\n...\n4                                           Condition of the vanes  \u00b7                                                                                                               43\n\nThe answer is: weekly every 100 hours.",
+                    "model_answer": "Maintenance intervals\nKeep to the checking and maintenance intervals given below to keep the machine in good working order.\n...\n4                                           Condition of the vanes  ·                                                                                                               43\n\nThe answer is: weekly every 100 hours.",
                     "page": 125,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -830,7 +830,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "See paragraph \u00bbPreparing the machine to be transported\u00ab on page 93.",
+                    "model_answer": "See paragraph »Preparing the machine to be transported« on page 93.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

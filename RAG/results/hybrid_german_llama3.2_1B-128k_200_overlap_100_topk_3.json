@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 91.25872039794922,
-        "duration_qa_phase_seconds": 81.20795178413391,
-        "duration_eval_phase_seconds": 10.050768613815308
+        "overall_duration_seconds": 83.31488156318665,
+        "duration_qa_phase_seconds": 74.2113389968872,
+        "duration_eval_phase_seconds": 9.103542566299438
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "Die maximale zugelassene Arbeitsanglese in Betracht ziehen, ist 30 \u00b0.",
+                    "model_answer": "Die maximale zugelassene Arbeitsanglese in Betracht ziehen, ist 30 °.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "Die maximale akzeptierte Temperatur f\u00fcr das Reinigen der Maschine mit Wasser oder Steamer betr\u00e4gt 40\u00b0C.",
+                    "model_answer": "Die maximale akzeptierte Temperatur für das Reinigen der Maschine mit Wasser oder Steamer beträgt 40°C.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -653,7 +653,7 @@
                 {
                     "question": "With what torque in Nm must a M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened?",
                     "expected_answer": "420 Nm",
-                    "model_answer": "Die erforderliche Torque f\u00fcr einen M18 hexagonen Stahlbolzen mit einer Qualit\u00e4t von 10.9 und einem Friction von 0.13 betr\u00e4gt 12.9 Nm.",
+                    "model_answer": "Die erforderliche Torque für einen M18 hexagonen Stahlbolzen mit einer Qualität von 10.9 und einem Friction von 0.13 beträgt 12.9 Nm.",
                     "page": 129,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -910,7 +910,7 @@
                 {
                     "question": "How does the rate of corrosion on the Exacta-TLX GEOSPREAD compare between machines used in coastal vs. inland agricultural regions?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Die Korrosionsrate auf dem Exacta-TLX GEOSPREAD variiert je nach Region. In coastal regions liegt sie h\u00f6her als in inlanden Gebieten.",
+                    "model_answer": "Die Korrosionsrate auf dem Exacta-TLX GEOSPREAD variiert je nach Region. In coastal regions liegt sie höher als in inlanden Gebieten.",
                     "page": 21,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

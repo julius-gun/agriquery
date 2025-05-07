@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 115.27763605117798,
-        "duration_qa_phase_seconds": 102.58539032936096,
-        "duration_eval_phase_seconds": 12.692245721817017
+        "overall_duration_seconds": 104.7297568321228,
+        "duration_qa_phase_seconds": 92.97936964035034,
+        "duration_eval_phase_seconds": 11.750387191772461
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 \u00b0",
+                    "model_answer": "30 °",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40\u00b0C.",
+                    "model_answer": "40°C.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -366,7 +366,7 @@
                 {
                     "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
                     "expected_answer": "Preservative grease or preserving liquid.",
-                    "model_answer": "Appliquez le liquide de protection fourni sur les parties m\u00e9talliques (nues) de la machine.",
+                    "model_answer": "Appliquez le liquide de protection fourni sur les parties métalliques (nues) de la machine.",
                     "page": 121,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -1100,7 +1100,7 @@
                 {
                     "question": "What type of 'universal grease' is recommended for all 'lubricating nipples'?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "See \u00bbOil and grease content\u00ab on page 124.",
+                    "model_answer": "See »Oil and grease content« on page 124.",
                     "page": 126,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

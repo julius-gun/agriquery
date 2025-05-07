@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 83.54723691940308,
-        "duration_qa_phase_seconds": 71.11120009422302,
-        "duration_eval_phase_seconds": 12.436036825180054
+        "overall_duration_seconds": 77.47180700302124,
+        "duration_qa_phase_seconds": 65.88038754463196,
+        "duration_eval_phase_seconds": 11.591419458389282
     },
     "per_dataset_details": {
         "general_questions": {
@@ -336,7 +336,7 @@
                 {
                     "question": "What should you do if a spreading disc spreads irregularly?",
                     "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-                    "model_answer": "Setzen Sie die Einstellung der Auslass\u00f6ffnung um 1 Buchstaben zur\u00fcck.",
+                    "model_answer": "Setzen Sie die Einstellung der Auslassöffnung um 1 Buchstaben zurück.",
                     "page": 113,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -720,7 +720,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Beleuchtung und Z\u00fcndschloss, Schlepper CAN (optionaler schlepperspezifischer Stecker erforderlich), Videoeingang.",
+                    "model_answer": "Beleuchtung und Zündschloss, Schlepper CAN (optionaler schlepperspezifischer Stecker erforderlich), Videoeingang.",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

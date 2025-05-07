@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 82.71958422660828,
-        "duration_qa_phase_seconds": 82.71874475479126,
-        "duration_eval_phase_seconds": 0.0008394718170166016
+        "overall_duration_seconds": 74.9389135837555,
+        "duration_qa_phase_seconds": 74.93816924095154,
+        "duration_eval_phase_seconds": 0.0007443428039550781
     },
     "per_dataset_details": {
         "general_questions": {
@@ -56,7 +56,7 @@
                 {
                     "question": "What system continuously measures fertilizer quantity being spread?",
                     "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
-                    "model_answer": "<answer>\nThe system continuously measures fertilizer quantity being spread using a capteur de r\u00e9f\u00e9rence.\n</answer>",
+                    "model_answer": "<answer>\nThe system continuously measures fertilizer quantity being spread using a capteur de référence.\n</answer>",
                     "page": 30,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "<answer>\n30\u00b0\n</answer>",
+                    "model_answer": "<answer>\n30°\n</answer>",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40\u00b0C",
+                    "model_answer": "40°C",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -376,7 +376,7 @@
                 {
                     "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
                     "expected_answer": "Remove all fertilizer remnants.",
-                    "model_answer": "<answer>\n    \u00c9loignez tous les r\u00e9sidus d'engrais des orifices, des angles, des manchons et des flexibles avant de souder.\n</answer>",
+                    "model_answer": "<answer>\n    Éloignez tous les résidus d'engrais des orifices, des angles, des manchons et des flexibles avant de souder.\n</answer>",
                     "page": 123,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -466,7 +466,7 @@
                 {
                     "question": "How to enable fine application for dosing low application rate?",
                     "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
-                    "model_answer": "<answer>\nAfin de permettre une application fine pour un d\u00e9bit faible, il est recommand\u00e9 d'utiliser le kit de dosage fin et de s\u00e9lectionner l'orifice de dosage plus grand.\n</answer>",
+                    "model_answer": "<answer>\nAfin de permettre une application fine pour un débit faible, il est recommandé d'utiliser le kit de dosage fin et de sélectionner l'orifice de dosage plus grand.\n</answer>",
                     "page": 67,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -623,7 +623,7 @@
                 {
                     "question": "How often (in what interval) must the condition of the vanes be inspected?",
                     "expected_answer": "daily",
-                    "model_answer": "<answer>\nIntervalles de maintenance\nMaintenance\nRespectez les intervalles de contr\u00f4le et de maintenance suivants pour conserver la machine en bon \u00e9tat.\n                                                 Tous  le s  jo urs                  Au bo ut de s 10 pr emi\u00e8re s heur es Tout es  les sema i n e s T out es les 10 0 h e u res Au moins 1 f ois par a n Comme recommand\u00e9        Si us ure             Page\n3                               \u00c9tat agitateur et arbre d'agitateur                \u00b7                                                                                                                                                                       \n4                                                        \u00c9tat pales                \u00b7                                                                                                                                                                     43\n</answer>",
+                    "model_answer": "<answer>\nIntervalles de maintenance\nMaintenance\nRespectez les intervalles de contrôle et de maintenance suivants pour conserver la machine en bon état.\n                                                 Tous  le s  jo urs                  Au bo ut de s 10 pr emière s heur es Tout es  les sema i n e s T out es les 10 0 h e u res Au moins 1 f ois par a n Comme recommandé        Si us ure             Page\n3                               État agitateur et arbre d'agitateur                ·                                                                                                                                                                       \n4                                                        État pales                ·                                                                                                                                                                     43\n</answer>",
                     "page": 125,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -673,7 +673,7 @@
                 {
                     "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
                     "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
-                    "model_answer": "<answer>\n    If the flow of the fertilizer is blocked, inspect the tr\u00e9mie content for other blocks and reduce them. Refer to page 113 for further instructions.\n</answer>",
+                    "model_answer": "<answer>\n    If the flow of the fertilizer is blocked, inspect the trémie content for other blocks and reduce them. Refer to page 113 for further instructions.\n</answer>",
                     "page": 152,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -800,7 +800,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Refer to paragraph 8. \"Proc\u00e9dez \u00e0 l'\u00e9pandage uniquement lorsque les conditions m\u00e9t\u00e9orologiques sont favorables\" translates to \"Continue with spreading only when favorable weather conditions are met\".",
+                    "model_answer": "Refer to paragraph 8. \"Procédez à l'épandage uniquement lorsque les conditions météorologiques sont favorables\" translates to \"Continue with spreading only when favorable weather conditions are met\".",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1060,7 +1060,7 @@
                 {
                     "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "<answer>\n2 m\u00e8tres\n</answer>",
+                    "model_answer": "<answer>\n2 mètres\n</answer>",
                     "page": 109,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

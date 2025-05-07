@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 41.434067487716675,
-        "duration_qa_phase_seconds": 28.98735022544861,
-        "duration_eval_phase_seconds": 12.446717262268066
+        "overall_duration_seconds": 37.96419095993042,
+        "duration_qa_phase_seconds": 26.404395580291748,
+        "duration_eval_phase_seconds": 11.559795379638672
     },
     "per_dataset_details": {
         "general_questions": {
@@ -336,7 +336,7 @@
                 {
                     "question": "What should you do if a spreading disc spreads irregularly?",
                     "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-                    "model_answer": "Setzen Sie die Einstellung der Auslass\u00f6ffnung 2 Buchstaben zur\u00fcck und wiederholen Sie den Test.",
+                    "model_answer": "Setzen Sie die Einstellung der Auslassöffnung 2 Buchstaben zurück und wiederholen Sie den Test.",
                     "page": 113,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "Unknown \n\nThe context provided does not mention anything about the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam. It only discusses general safety precautions for operating a machine, such as working in a closed cabin to avoid kunstd\u00fcngerstaub and high noise levels.",
+                    "model_answer": "Unknown \n\nThe context provided does not mention anything about the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam. It only discusses general safety precautions for operating a machine, such as working in a closed cabin to avoid kunstdüngerstaub and high noise levels.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -1030,7 +1030,7 @@
                 {
                     "question": "What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Unknown \n\nThe context provided does not mention anything about wind speed limits or its impact on spreading quality. It focuses on safety guidelines for operating a machine in an enclosed cabin to avoid exposure to kunstd\u00fcngerstaub (artificial fertilizer dust) and high noise levels.",
+                    "model_answer": "Unknown \n\nThe context provided does not mention anything about wind speed limits or its impact on spreading quality. It focuses on safety guidelines for operating a machine in an enclosed cabin to avoid exposure to kunstdüngerstaub (artificial fertilizer dust) and high noise levels.",
                     "page": 96,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1130,7 +1130,7 @@
                 {
                     "question": "What is the typical agitator 'seal ring' lifespan in operational hours before requiring replacement?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Unknown \n\nThe provided context does not mention anything about the \"agitator 'seal ring' lifespan\" or its operational hours before requiring replacement. The text discusses safety guidelines for operating a machine in a closed cabin to prevent exposure to kunstd\u00fcngerstaub and high noise levels, but it does not provide information on the seal ring's lifespan.",
+                    "model_answer": "Unknown \n\nThe provided context does not mention anything about the \"agitator 'seal ring' lifespan\" or its operational hours before requiring replacement. The text discusses safety guidelines for operating a machine in a closed cabin to prevent exposure to kunstdüngerstaub and high noise levels, but it does not provide information on the seal ring's lifespan.",
                     "page": 134,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

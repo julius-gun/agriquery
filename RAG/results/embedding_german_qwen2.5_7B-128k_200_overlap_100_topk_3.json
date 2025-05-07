@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 91.53715085983276,
-        "duration_qa_phase_seconds": 91.53481483459473,
-        "duration_eval_phase_seconds": 0.0023360252380371094
+        "overall_duration_seconds": 84.12648820877075,
+        "duration_qa_phase_seconds": 84.12448215484619,
+        "duration_eval_phase_seconds": 0.002006053924560547
     },
     "per_dataset_details": {
         "general_questions": {
@@ -116,7 +116,7 @@
                 {
                     "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
                     "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
-                    "model_answer": "Schwei\u00dfen Sie eine Fu\u00dfplatte vor der Montage auf eine ausgew\u00e4hlte Fl\u00e4che in der Kabine.",
+                    "model_answer": "Schweißen Sie eine Fußplatte vor der Montage auf eine ausgewählte Fläche in der Kabine.",
                     "page": 40,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 \u00b0",
+                    "model_answer": "30 °",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -206,7 +206,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "Ben\u00f6tigte Auslaufgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha)",
+                    "model_answer": "Benötigte Auslaufgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha)",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -256,7 +256,7 @@
                 {
                     "question": "What materials are required to perform the tray test?",
                     "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-                    "model_answer": "\u00b7 Bandma\u00df oder Messlatte,\n\u00b7 Wasserwaage, um Auffangbeh\u00e4lter horizontal zu setzen,\n\u00b7 7 Auffangbeh\u00e4lter,",
+                    "model_answer": "· Bandmaß oder Messlatte,\n· Wasserwaage, um Auffangbehälter horizontal zu setzen,\n· 7 Auffangbehälter,",
                     "page": 77,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -326,7 +326,7 @@
                 {
                     "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
                     "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-                    "model_answer": "Setzen Sie einen Gegenstand, z. B. ein Tuch oder einen Sack in die Auslass\u00f6ffnung des Auslaufrohrs an der besch\u00e4digten Seite. Schalten Sie das Bedienpult aus.",
+                    "model_answer": "Setzen Sie einen Gegenstand, z. B. ein Tuch oder einen Sack in die Auslassöffnung des Auslaufrohrs an der beschädigten Seite. Schalten Sie das Bedienpult aus.",
                     "page": 108,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40\u00b0C",
+                    "model_answer": "40°C",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -366,7 +366,7 @@
                 {
                     "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
                     "expected_answer": "Preservative grease or preserving liquid.",
-                    "model_answer": "Versehen Sie blanke Teile, wie Kolbenstangen der Hydraulikzylinder mit konservierendem Fett oder spr\u00fchen (blanke) Metallteile der Maschine mit Konservierungsmittel.",
+                    "model_answer": "Versehen Sie blanke Teile, wie Kolbenstangen der Hydraulikzylinder mit konservierendem Fett oder sprühen (blanke) Metallteile der Maschine mit Konservierungsmittel.",
                     "page": 121,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -466,7 +466,7 @@
                 {
                     "question": "How to enable fine application for dosing low application rate?",
                     "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
-                    "model_answer": "at gleichm\u00e4\u00dfigen, geringen Dosen (< 40 kg/min) verwenden Sie das Feindosierset, \uf0ae siehe Absatz \u00bbFeindosieren\u00ab auf Seite 67.",
+                    "model_answer": "at gleichmäßigen, geringen Dosen (< 40 kg/min) verwenden Sie das Feindosierset,  siehe Absatz »Feindosieren« auf Seite 67.",
                     "page": 67,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -496,7 +496,7 @@
                 {
                     "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
                     "expected_answer": "Every year",
-                    "model_answer": "J\u00e4hrlich",
+                    "model_answer": "Jährlich",
                     "page": 78,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -516,7 +516,7 @@
                 {
                     "question": "From which machine point is the spreading height measured to the ground or the crop?",
                     "expected_answer": "Measured from the bottom of the vanes.",
-                    "model_answer": "75 cm above the Auffangbeh\u00e4lter (catch bin)",
+                    "model_answer": "75 cm above the Auffangbehälter (catch bin)",
                     "page": 95,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -583,7 +583,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "eckig, mit scharfen Kanten und R\u00e4ndern",
+                    "model_answer": "eckig, mit scharfen Kanten und Rändern",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -720,7 +720,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The IM Tellus Input cable can be used for Beleuchtung und Z\u00fcndschloss, Schlepper CAN (optional), and Videoeingang.",
+                    "model_answer": "The IM Tellus Input cable can be used for Beleuchtung und Zündschloss, Schlepper CAN (optional), and Videoeingang.",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -790,7 +790,7 @@
                 {
                     "question": "By which environmental standards is the maximum acceptable loss in the ditch is determined?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The maximal zul\u00e4ssige Verlust im Graben is determined by the Umweltnorm.",
+                    "model_answer": "The maximal zulässige Verlust im Graben is determined by the Umweltnorm.",
                     "page": 87,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -800,7 +800,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Stoppen Sie mit dem Streuen erst, wenn Sie mit dem Auffangbeh\u00e4lter mindestens eine Arbeitsbreite (z. B. 24 Meter) passiert haben.",
+                    "model_answer": "Stoppen Sie mit dem Streuen erst, wenn Sie mit dem Auffangbehälter mindestens eine Arbeitsbreite (z. B. 24 Meter) passiert haben.",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -850,7 +850,7 @@
                 {
                     "question": "Why is damage to the vanes, spreading disc or discharge bushing, most likely caused by a hard object?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Because the context states: \"Wenn Sie feststellen sollten, dass die Schaufeln, die Streuscheibe oder die Auslaufrohre besch\u00e4digt sind, dann wurde die St\u00f6rung h\u00f6chstwahrscheinlich durch einen harten Gegenstand verursacht.\" \n\nDamage to the vanes, spreading disc or discharge bushing is most likely caused by a hard object.",
+                    "model_answer": "Because the context states: \"Wenn Sie feststellen sollten, dass die Schaufeln, die Streuscheibe oder die Auslaufrohre beschädigt sind, dann wurde die Störung höchstwahrscheinlich durch einen harten Gegenstand verursacht.\" \n\nDamage to the vanes, spreading disc or discharge bushing is most likely caused by a hard object.",
                     "page": 115,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

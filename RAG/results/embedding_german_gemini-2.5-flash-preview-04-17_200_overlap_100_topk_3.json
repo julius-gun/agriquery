@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 1693.167005777359,
-        "duration_qa_phase_seconds": 1588.3514058589935,
-        "duration_eval_phase_seconds": 104.81559991836548
+        "overall_duration_seconds": 1532.064888715744,
+        "duration_qa_phase_seconds": 1436.3863813877106,
+        "duration_eval_phase_seconds": 95.67850732803345
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 \u00b0 upwards and 30 \u00b0 downwards",
+                    "model_answer": "30 ° upwards and 30 ° downwards",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40 \u00b0C",
+                    "model_answer": "40 °C",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -486,7 +486,7 @@
                 {
                     "question": "Where is the RS 232 connector located?",
                     "expected_answer": "At the back of the control box.",
-                    "model_answer": "auf der R\u00fcckseite der Bedieneinheit",
+                    "model_answer": "auf der Rückseite der Bedieneinheit",
                     "page": 72,
                     "dataset": "general_questions",
                     "qa_error": false,

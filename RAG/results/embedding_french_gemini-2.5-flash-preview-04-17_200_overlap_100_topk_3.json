@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 1664.4740540981293,
-        "duration_qa_phase_seconds": 1560.22891831398,
-        "duration_eval_phase_seconds": 104.24513578414917
+        "overall_duration_seconds": 1515.6174023151398,
+        "duration_qa_phase_seconds": 1420.2409360408783,
+        "duration_eval_phase_seconds": 95.37646627426147
     },
     "per_dataset_details": {
         "general_questions": {
@@ -86,7 +86,7 @@
                 {
                     "question": "Where is the main switch button to turn the control box on or off located?",
                     "expected_answer": "The main switch button is located on the upper left in the red extension.",
-                    "model_answer": "en haut \u00e0 gauche dans la bordure rouge",
+                    "model_answer": "en haut à gauche dans la bordure rouge",
                     "page": 34,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -106,7 +106,7 @@
                 {
                     "question": "After initial setup of the machine and after any maintenance or repairs, how long should the machine be operated before re-checking all nuts and bolts?",
                     "expected_answer": "1 hour",
-                    "model_answer": "au bout des 10 premi\u00e8res heures",
+                    "model_answer": "au bout des 10 premières heures",
                     "page": 38,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -146,7 +146,7 @@
                 {
                     "question": "Where should the position sensor for the hydraulic border spreading plate be connected?",
                     "expected_answer": "In the electronic box on the spreader.",
-                    "model_answer": "au bo\u00eetier comportant l'\u00e9lectronique sur l'\u00e9pandeur",
+                    "model_answer": "au boîtier comportant l'électronique sur l'épandeur",
                     "page": 47,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30\u00b0 vers le haut et de 30\u00b0 vers le bas",
+                    "model_answer": "30° vers le haut et de 30° vers le bas",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -186,7 +186,7 @@
                 {
                     "question": "What must be ensured with decoupling ropes during power lift connection?",
                     "expected_answer": "Decoupling ropes must never be tense.",
-                    "model_answer": "Les c\u00e2bles ne doivent jamais \u00eatre tendus et doivent avoir une libert\u00e9 de mouvement suffisante, m\u00eame lorsque le dispositif de levage est dans la position la plus basse",
+                    "model_answer": "Les câbles ne doivent jamais être tendus et doivent avoir une liberté de mouvement suffisante, même lorsque le dispositif de levage est dans la position la plus basse",
                     "page": 56,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -206,7 +206,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "(Largeur de travail (m) x vitesse d'avancement (km/h) x d\u00e9bit (kg/ha)) / 600",
+                    "model_answer": "(Largeur de travail (m) x vitesse d'avancement (km/h) x débit (kg/ha)) / 600",
                     "page": 68,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -246,7 +246,7 @@
                 {
                     "question": "What does a tray test check on a fertilizer spreader?",
                     "expected_answer": "Fertilizer distribution pattern of the spreader.",
-                    "model_answer": "la r\u00e9partition de l'engrais ainsi que le distributeur d'engrais qui effectue cette r\u00e9partition",
+                    "model_answer": "la répartition de l'engrais ainsi que le distributeur d'engrais qui effectue cette répartition",
                     "page": 76,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -316,7 +316,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "\u00c9pandage unilat\u00e9ral en bordure \u00e0 l'aide du d\u00e9flecteur de bordure hydraulique, \u00c9pandage des bordures avec ExactLine",
+                    "model_answer": "Épandage unilatéral en bordure à l'aide du déflecteur de bordure hydraulique, Épandage des bordures avec ExactLine",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -326,7 +326,7 @@
                 {
                     "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
                     "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-                    "model_answer": "Arr\u00eatez imm\u00e9diatement d'\u00e9pandre !, D\u00e9brayez imm\u00e9diatement la prise de force !",
+                    "model_answer": "Arrêtez immédiatement d'épandre !, Débrayez immédiatement la prise de force !",
                     "page": 108,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -486,7 +486,7 @@
                 {
                     "question": "Where is the RS 232 connector located?",
                     "expected_answer": "At the back of the control box.",
-                    "model_answer": "sur la face arri\u00e8re du bo\u00eetier de commande",
+                    "model_answer": "sur la face arrière du boîtier de commande",
                     "page": 72,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -526,7 +526,7 @@
                 {
                     "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
                     "expected_answer": "spreading chart or online spreading chart",
-                    "model_answer": "Le tableau d'\u00e9pandage (en ligne)",
+                    "model_answer": "Le tableau d'épandage (en ligne)",
                     "page": 111,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -583,7 +583,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "sph\u00e9ricit\u00e9 irr\u00e9guli\u00e8re",
+                    "model_answer": "sphéricité irrégulière",
                     "page": 58,
                     "dataset": "table_questions",
                     "qa_error": false,
@@ -800,7 +800,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Arr\u00eatez imm\u00e9diatement d'\u00e9pandre !, D\u00e9brayez imm\u00e9diatement la prise de force !",
+                    "model_answer": "Arrêtez immédiatement d'épandre !, Débrayez immédiatement la prise de force !",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1060,7 +1060,7 @@
                 {
                     "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "environ 2 m\u00e8tres (about 2 meters)",
+                    "model_answer": "environ 2 mètres (about 2 meters)",
                     "page": 109,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

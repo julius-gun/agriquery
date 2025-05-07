@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 21.67743182182312,
-        "duration_qa_phase_seconds": 11.82424283027649,
-        "duration_eval_phase_seconds": 9.85318899154663
+        "overall_duration_seconds": 19.962262868881226,
+        "duration_qa_phase_seconds": 10.941706895828247,
+        "duration_eval_phase_seconds": 9.020555973052979
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "<answer>\n30 \u00b0\n</answer>",
+                    "model_answer": "<answer>\n30 °\n</answer>",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "<answer>\n40\u00b0C\n</answer>",
+                    "model_answer": "<answer>\n40°C\n</answer>",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -830,7 +830,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "<Tabular data>\n  <Tr>\n    <Th>Appropriate measures for road transport when stopping work:</Th>\n    <Th>Extracted from context:</Th>\n  </Tr>\n  <Tr>\n    <Td>Take all appropriate measures for road transport.</Td>\n    <Td>See paragraph \u00bbPreparing the machine to be transported\u00ab on page 93.</Td>\n  </Tr>\n</Tabular data>\n\nAnswer: Take all appropriate measures for road transport.",
+                    "model_answer": "<Tabular data>\n  <Tr>\n    <Th>Appropriate measures for road transport when stopping work:</Th>\n    <Th>Extracted from context:</Th>\n  </Tr>\n  <Tr>\n    <Td>Take all appropriate measures for road transport.</Td>\n    <Td>See paragraph »Preparing the machine to be transported« on page 93.</Td>\n  </Tr>\n</Tabular data>\n\nAnswer: Take all appropriate measures for road transport.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

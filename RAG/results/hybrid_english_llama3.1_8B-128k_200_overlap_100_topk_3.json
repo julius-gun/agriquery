@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 115.71102213859558,
-        "duration_qa_phase_seconds": 102.86681294441223,
-        "duration_eval_phase_seconds": 12.84420919418335
+        "overall_duration_seconds": 106.13851857185364,
+        "duration_qa_phase_seconds": 94.23896265029907,
+        "duration_eval_phase_seconds": 11.899555921554565
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "30 \u00b0",
+                    "model_answer": "30 °",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40\u00b0C.",
+                    "model_answer": "40°C.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -720,7 +720,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Other connections are made via the \"Input IM Tellus\" cable, supplied as a standard item. \n\nThese include:\n\u00b7 ISO 11786 In cab\n\u00b7 lights and ignition\n\u00b7 Tractor CAN (optional plug specific to the tractor required)\n\u00b7 Video input.",
+                    "model_answer": "Other connections are made via the \"Input IM Tellus\" cable, supplied as a standard item. \n\nThese include:\n· ISO 11786 In cab\n· lights and ignition\n· Tractor CAN (optional plug specific to the tractor required)\n· Video input.",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

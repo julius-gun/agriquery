@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 176.4721314907074,
-        "duration_qa_phase_seconds": 163.62527441978455,
-        "duration_eval_phase_seconds": 12.846857070922852
+        "overall_duration_seconds": 162.58021569252014,
+        "duration_qa_phase_seconds": 150.65320253372192,
+        "duration_eval_phase_seconds": 11.927013158798218
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "The maximum permissible operating angle for the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
+                    "model_answer": "The maximum permissible operating angle for the coupling shaft is 30° when lifted and 30° when lowered.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "Maximum allowable temperature: 40 \u00b0C",
+                    "model_answer": "Maximum allowable temperature: 40 °C",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -970,7 +970,7 @@
                 {
                     "question": "What specific type of 'Delicia Schnecken Linsen' slug pellets were used for the spreading chart example?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The specific type of 'Delicia Schnecken Linsen' slug pellets used for the spreading chart example is Granul\u00e9s anti-limaces.",
+                    "model_answer": "The specific type of 'Delicia Schnecken Linsen' slug pellets used for the spreading chart example is Granulés anti-limaces.",
                     "page": 69,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

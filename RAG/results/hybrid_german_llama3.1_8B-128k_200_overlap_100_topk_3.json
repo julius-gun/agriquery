@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 112.83558416366577,
-        "duration_qa_phase_seconds": 100.15488839149475,
-        "duration_eval_phase_seconds": 12.68069577217102
+        "overall_duration_seconds": 104.08240175247192,
+        "duration_qa_phase_seconds": 92.3214852809906,
+        "duration_eval_phase_seconds": 11.760916471481323
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,7 +136,7 @@
                 {
                     "question": "What determines the machine's working width?",
                     "expected_answer": "Spreading disc RPM",
-                    "model_answer": "The working width is adjusted with:\n\u00b7 the correct connection point for the coupling shaft with the PTO speed \n\u00b7 the discharge point\nand also determined by the chosen connection point for the coupling shaft on the central gearbox.",
+                    "model_answer": "The working width is adjusted with:\n· the correct connection point for the coupling shaft with the PTO speed \n· the discharge point\nand also determined by the chosen connection point for the coupling shaft on the central gearbox.",
                     "page": 46,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30 \u00b0 when lifted and 30 \u00b0 when lowered.",
+                    "model_answer": "The maximum operating angle of the coupling shaft is 30 ° when lifted and 30 ° when lowered.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -326,7 +326,7 @@
                 {
                     "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
                     "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-                    "model_answer": "\u00b7 releasing the pressure from the hydraulic system,\n\u00b7 switching off the electronic control system.",
+                    "model_answer": "· releasing the pressure from the hydraulic system,\n· switching off the electronic control system.",
                     "page": 108,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40\u00b0C.",
+                    "model_answer": "40°C.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -720,7 +720,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Other connections are made via the \"Input IM Tellus\" cable, supplied as a standard item. \n\nThese include:\n\u00b7 lights and ignition\n\u00b7 Tractor CAN (optional plug specific to the tractor required)\n\u00b7 Video input.",
+                    "model_answer": "Other connections are made via the \"Input IM Tellus\" cable, supplied as a standard item. \n\nThese include:\n· lights and ignition\n· Tractor CAN (optional plug specific to the tractor required)\n· Video input.",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -830,7 +830,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Set all parts of the machine and the tractor to transport mode.\n\n(Extracted from the context: \"\uf034 Set all parts of the machine and the tractor, especially the PTO shaft, the hydraulics, the wheels and the electric system, to transport mode.\")",
+                    "model_answer": "Set all parts of the machine and the tractor to transport mode.\n\n(Extracted from the context: \" Set all parts of the machine and the tractor, especially the PTO shaft, the hydraulics, the wheels and the electric system, to transport mode.\")",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,

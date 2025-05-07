@@ -26,9 +26,9 @@
         }
     },
     "timing": {
-        "overall_duration_seconds": 93.42934799194336,
-        "duration_qa_phase_seconds": 83.26566529273987,
-        "duration_eval_phase_seconds": 10.163682699203491
+        "overall_duration_seconds": 85.59475064277649,
+        "duration_qa_phase_seconds": 76.31963849067688,
+        "duration_eval_phase_seconds": 9.27511215209961
     },
     "per_dataset_details": {
         "general_questions": {
@@ -176,7 +176,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "The maximum permissible operating angle in degrees for the coupling shaft is 30 \u00b0.",
+                    "model_answer": "The maximum permissible operating angle in degrees for the coupling shaft is 30 °.",
                     "page": 54,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -346,7 +346,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "The maximum allowable temperature in degrees Celsius when cleaning the machine with water or steam is 40\u00b0C.",
+                    "model_answer": "The maximum allowable temperature in degrees Celsius when cleaning the machine with water or steam is 40°C.",
                     "page": 117,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -633,7 +633,7 @@
                 {
                     "question": "How often (in what interval) must the bushing height be checked and the discharge be set?",
                     "expected_answer": "after the first 10 hours and every 100 hours, but a minimum of once per year",
-                    "model_answer": "The correct answer to the question is:\n\n\u00b7 Is the correct vane combination mounted?\n\nUnknown or Not found in context",
+                    "model_answer": "The correct answer to the question is:\n\n· Is the correct vane combination mounted?\n\nUnknown or Not found in context",
                     "page": 125,
                     "dataset": "table_questions",
                     "qa_error": false,
