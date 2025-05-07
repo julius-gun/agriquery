@@ -169,19 +169,6 @@
         "duration": 16.1
     },
     {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-        "model_answer": "The maximum operating angle of the coupling shaft when lifted and when lowered is 30\u00b0.",
-        "target_page": 51,
-        "context_type": "token",
-        "noise_level": 30000,
-        "model_name": "llama3.1_8B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 16.0
-    },
-    {
         "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
         "expected_answer": "Yes.",
         "model_answer": "The parking brake of the tractor should not be engaged when connecting the machine.",
@@ -197,7 +184,7 @@
     {
         "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
         "expected_answer": "30 degrees",
-        "model_answer": "The maximum permissible operating angle of the coupling shaft is 30\u00b0.",
+        "model_answer": "The maximum permissible operating angle of the coupling shaft is 30°.",
         "target_page": 54,
         "context_type": "token",
         "noise_level": 30000,
@@ -301,7 +288,7 @@
     {
         "question": "What materials are required to perform the tray test?",
         "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-        "model_answer": "The text does not provide a clear answer to the question. However, based on the context, I will try to infer what is being asked.\n\nIt seems like the question is asking about the materials required for performing the tray test in the context of a machine or equipment that uses the ExactLine system.\n\nBased on the provided text, it appears that the tray test requires:\n\n* Auffangbeh\u00e4lter (or hopper)\n* Messrohre (or measuring rod)\n* Trichter\n* Notizblock, Stift und Taschenrechner\n\nThese materials are required to perform the tray test in order to check the correct dosing of the ExactLine system.",
+        "model_answer": "The text does not provide a clear answer to the question. However, based on the context, I will try to infer what is being asked.\n\nIt seems like the question is asking about the materials required for performing the tray test in the context of a machine or equipment that uses the ExactLine system.\n\nBased on the provided text, it appears that the tray test requires:\n\n* Auffangbehälter (or hopper)\n* Messrohre (or measuring rod)\n* Trichter\n* Notizblock, Stift und Taschenrechner\n\nThese materials are required to perform the tray test in order to check the correct dosing of the ExactLine system.",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 30000,
@@ -325,19 +312,6 @@
         "duration": 0.6
     },
     {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "expected_answer": "75 cm above the troughs.",
-        "model_answer": "The required height of the spreading disc above the troughs for one-sided boundary spreading is 75 cm.",
-        "target_page": 84,
-        "context_type": "token",
-        "noise_level": 30000,
-        "model_name": "llama3.1_8B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 16.0
-    },
-    {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
         "expected_answer": "75 cm",
         "model_answer": "The correct answer is: 75cm.",
@@ -349,19 +323,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 15.8
-    },
-    {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-        "expected_answer": "10% of the quantity in the middle trough",
-        "model_answer": "The maximum fertilizer loss over the field is 10% of the quantity in the middle trough.",
-        "target_page": 91,
-        "context_type": "token",
-        "noise_level": 30000,
-        "model_name": "llama3.1_8B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 16.0
     },
     {
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
@@ -405,7 +366,7 @@
     {
         "question": "What are the two functions for border spreading?",
         "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-        "model_answer": "The two functions for border spreading are:\n\n1. Einscheiben-Grenzstreuen mit dem hydraulischen Grenzstreublech (Zubeh\u00f6r)\n2. Zweischeiben-Grenzstreuen mit ExactLine",
+        "model_answer": "The two functions for border spreading are:\n\n1. Einscheiben-Grenzstreuen mit dem hydraulischen Grenzstreublech (Zubehör)\n2. Zweischeiben-Grenzstreuen mit ExactLine",
         "target_page": 106,
         "context_type": "token",
         "noise_level": 30000,
@@ -444,7 +405,7 @@
     {
         "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
         "expected_answer": "40 degrees Celsius",
-        "model_answer": "The maximum allowable temperature for cleaning the machine with water or steam is 40\u00b0C.",
+        "model_answer": "The maximum allowable temperature for cleaning the machine with water or steam is 40°C.",
         "target_page": 117,
         "context_type": "token",
         "noise_level": 30000,
@@ -541,19 +502,6 @@
         "noise_level": 30000,
         "model_name": "llama3.1_8B-128k",
         "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 15.8
-    },
-    {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-        "expected_answer": "The required distance is 1.0 mm.",
-        "model_answer": "The required distance is 109 mm.",
-        "target_page": 138,
-        "context_type": "token",
-        "noise_level": 30000,
-        "model_name": "llama3.1_8B-128k",
-        "self_evaluation": "no",
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 15.8
@@ -691,7 +639,7 @@
     {
         "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
         "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
-        "model_answer": "The answer to this question can be found in the section \"St\u00f6rung/Verstopfung\" on page 114.",
+        "model_answer": "The answer to this question can be found in the section \"Störung/Verstopfung\" on page 114.",
         "target_page": 152,
         "context_type": "token",
         "noise_level": 30000,
@@ -717,7 +665,7 @@
     {
         "question": "Is fine application more expensive than normal dosing?",
         "expected_answer": "Not found in context",
-        "model_answer": "Die Frage ist nicht klar und pr\u00e4zis. Die Antwort lautet: Nein, eine feine Dosierung ist nicht teuer als eine normale Dosierung.",
+        "model_answer": "Die Frage ist nicht klar und präzis. Die Antwort lautet: Nein, eine feine Dosierung ist nicht teuer als eine normale Dosierung.",
         "target_page": 24,
         "context_type": "token",
         "noise_level": 30000,
@@ -808,7 +756,7 @@
     {
         "question": "Can the tray test be performed at 40 degrees Celsius?",
         "expected_answer": "Not found in context",
-        "model_answer": "The tray test can be performed at 40\u00b0C.",
+        "model_answer": "The tray test can be performed at 40°C.",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 30000,
@@ -886,7 +834,7 @@
     {
         "question": "Which appropriate measures for road transport should be taken when stopping work?",
         "expected_answer": "Not found in context",
-        "model_answer": "The correct answer is: \n1. Schalten Sie das Bedienpult aus.\n2. Die Zapfwelle ausschalten.\n3. Den Schlepper auszuschalten und den Z\u00fcndschl\u00fcssel vom Z\u00fcndschloss abziehen.\n4. Bet\u00e4tigen Sie die Feststellbremse des Schleppers anziehen.\n5. Warten, bis alle Teile der Maschine stillstehen, bevor Sie mit der Wartung beginnen.\n6. Sch\u00fctzende Kleidung, wie z.B. Sicherheitshandschuhe und Sicherheitsschuhe tragen.\n7. Die beschriebenen Handlungen alleine und vorsichtig ausf\u00fchren.\n\nThis text is a list of steps to be taken when stopping work on the machine for road transport.",
+        "model_answer": "The correct answer is: \n1. Schalten Sie das Bedienpult aus.\n2. Die Zapfwelle ausschalten.\n3. Den Schlepper auszuschalten und den Zündschlüssel vom Zündschloss abziehen.\n4. Betätigen Sie die Feststellbremse des Schleppers anziehen.\n5. Warten, bis alle Teile der Maschine stillstehen, bevor Sie mit der Wartung beginnen.\n6. Schützende Kleidung, wie z.B. Sicherheitshandschuhe und Sicherheitsschuhe tragen.\n7. Die beschriebenen Handlungen alleine und vorsichtig ausführen.\n\nThis text is a list of steps to be taken when stopping work on the machine for road transport.",
         "target_page": 112,
         "context_type": "token",
         "noise_level": 30000,
@@ -964,7 +912,7 @@
     {
         "question": "What is the curriculum of the training program agrarians need to complete to be considered competent to operate this machine?",
         "expected_answer": "Not found in context",
-        "model_answer": "The curriculum for the training program is not explicitly stated in the provided text. However, based on the context, I can infer that the training program is intended for operators of a machine called Exacta-TLX-GEOSPREAD or Exacta-TLX-GEOSpread.\n\nTo be considered competent to operate this machine, one would need to complete the following:\n\n1. Familiarity with the technical data:\n\t* Leergewicht (empty weight) of the machine\n\t* Gewicht auf der Vorderachse (front axle weight)\n\t* Gewicht auf der Hinterachse (rear axle weight)\n\t* Gesamtgewicht (total weight)\n\t* Abstand zwischen dem Schwerpunkt der Maschine und der Mitte der Vorderachse\n\t* Abstand zwischen der Mitte der Hinterachse und der Mitte des Hubarmkupplungspunkts\n\t* Abstand zwischen dem Schwerpunkt der Maschine und dem Gewicht und dem Herz des Hubarmkupplungspunkts\n\n2. Familiarity with the machine's operating procedures:\n\t* Bedienpult (operator terminal)\n\t* ISO-Bedienterminal (ISO control terminal)\n\n3. Knowledge of the machine's technical specifications and capabilities:\n\t* Schlepper mit IsoMatch Stromversorgungskabelsatz (Schlepper with IsoMatch power supply cable set)\n\t* GPS f\u00fcr GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\t* ISOBUS-Kommunikationssystem und ISOBUS-Steckeranschluss (ISOBUS communication system and ISOBUS plug)\n\n4. Familiarity with the machine's operating procedures:\n\t* Bedienpult an einem ISO-Schlepper (operator terminal on a non-ISO machine)\n\t* Schlepper mit Kraftheber der Kat. 3 / 4 (Schlepper with power takeoff of type 3 or 4)\n\n5. Familiarity with the machine's safety features:\n\t* Beleuchtung (illumination)\n\t* Steuersystem (control system)\n\t* GPS f\u00fcr GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\n6. Familiarity with the machine's technical specifications and capabilities:\n\t* Schlepper mit IsoMatch Stromversorgungskabelsatz (Schlepper with IsoMatch power supply cable set)\n\t* ISOBUS-Schlepperanschluss (ISOBUS connection)\n\t* GPS f\u00fcr GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\n7. Familiarity with the machine's operating procedures:\n\t* Bedienpult an einem NICHT-ISO-Schlepper (operator terminal on a non-ISO machine)\n\t* Schlepper mit Kraftheber der Kat. 3 / 4 (Schlepper with power takeoff of type 3 or 4)\n\n8. Familiarity with the machine's safety features:\n\t* Beleuchtung (illumination)\n\t* Steuersystem (control system)\n\t* GPS f\u00fcr GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\n9. Familiarity with the machine's technical specifications and capabilities:\n\t* Schlepper mit IsoMatch Stromversorgungskabelsatz (Schlepper with IsoMatch power supply cable set)\n\t* ISOBUS-Schlepperanschluss (ISOBUS connection)\n\t* GPS f\u00fcr GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\n10. Familiarity with the machine's operating procedures:\n\t* Bedienpult an einem NICHT-ISO-Schlepper (operator terminal on a non-ISO machine)\n\t* Schlepper mit Kraftheber der Kat. 3 / 4 (Schlepper with power takeoff of type 3 or 4)\n\n11. Familiarity with the machine's safety features:\n\t* Beleuchtung (illumination)\n\t* Steuersystem (control system)\n\t* GPS f\u00fcr GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\n12. Familiarity with the machine's technical specifications and capabilities:\n\t* Schlepper mit IsoMatch Stromversorgungskabelsatz (Schlepper with IsoMatch power supply cable set)\n\t* ISOBUS-Schlepperanschluss (ISOBUS connection)\n\t* GPS f\u00fcr GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\n13. Familiarity with the machine's operating procedures:\n\t* Bedienpult an einem NICHT-ISO-Schlepper (operator terminal on a non-ISO machine)\n\t* Schlepper mit Kraftheber der Kat. 3 / 4 (Schlepper with power takeoff of type 3 or 4)\n\n14. Familiarity with the machine's safety features:\n\t* Beleuchtung (illumination)\n\t* Steuersystem",
+        "model_answer": "The curriculum for the training program is not explicitly stated in the provided text. However, based on the context, I can infer that the training program is intended for operators of a machine called Exacta-TLX-GEOSPREAD or Exacta-TLX-GEOSpread.\n\nTo be considered competent to operate this machine, one would need to complete the following:\n\n1. Familiarity with the technical data:\n\t* Leergewicht (empty weight) of the machine\n\t* Gewicht auf der Vorderachse (front axle weight)\n\t* Gewicht auf der Hinterachse (rear axle weight)\n\t* Gesamtgewicht (total weight)\n\t* Abstand zwischen dem Schwerpunkt der Maschine und der Mitte der Vorderachse\n\t* Abstand zwischen der Mitte der Hinterachse und der Mitte des Hubarmkupplungspunkts\n\t* Abstand zwischen dem Schwerpunkt der Maschine und dem Gewicht und dem Herz des Hubarmkupplungspunkts\n\n2. Familiarity with the machine's operating procedures:\n\t* Bedienpult (operator terminal)\n\t* ISO-Bedienterminal (ISO control terminal)\n\n3. Knowledge of the machine's technical specifications and capabilities:\n\t* Schlepper mit IsoMatch Stromversorgungskabelsatz (Schlepper with IsoMatch power supply cable set)\n\t* GPS für GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\t* ISOBUS-Kommunikationssystem und ISOBUS-Steckeranschluss (ISOBUS communication system and ISOBUS plug)\n\n4. Familiarity with the machine's operating procedures:\n\t* Bedienpult an einem ISO-Schlepper (operator terminal on a non-ISO machine)\n\t* Schlepper mit Kraftheber der Kat. 3 / 4 (Schlepper with power takeoff of type 3 or 4)\n\n5. Familiarity with the machine's safety features:\n\t* Beleuchtung (illumination)\n\t* Steuersystem (control system)\n\t* GPS für GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\n6. Familiarity with the machine's technical specifications and capabilities:\n\t* Schlepper mit IsoMatch Stromversorgungskabelsatz (Schlepper with IsoMatch power supply cable set)\n\t* ISOBUS-Schlepperanschluss (ISOBUS connection)\n\t* GPS für GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\n7. Familiarity with the machine's operating procedures:\n\t* Bedienpult an einem NICHT-ISO-Schlepper (operator terminal on a non-ISO machine)\n\t* Schlepper mit Kraftheber der Kat. 3 / 4 (Schlepper with power takeoff of type 3 or 4)\n\n8. Familiarity with the machine's safety features:\n\t* Beleuchtung (illumination)\n\t* Steuersystem (control system)\n\t* GPS für GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\n9. Familiarity with the machine's technical specifications and capabilities:\n\t* Schlepper mit IsoMatch Stromversorgungskabelsatz (Schlepper with IsoMatch power supply cable set)\n\t* ISOBUS-Schlepperanschluss (ISOBUS connection)\n\t* GPS für GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\n10. Familiarity with the machine's operating procedures:\n\t* Bedienpult an einem NICHT-ISO-Schlepper (operator terminal on a non-ISO machine)\n\t* Schlepper mit Kraftheber der Kat. 3 / 4 (Schlepper with power takeoff of type 3 or 4)\n\n11. Familiarity with the machine's safety features:\n\t* Beleuchtung (illumination)\n\t* Steuersystem (control system)\n\t* GPS für GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\n12. Familiarity with the machine's technical specifications and capabilities:\n\t* Schlepper mit IsoMatch Stromversorgungskabelsatz (Schlepper with IsoMatch power supply cable set)\n\t* ISOBUS-Schlepperanschluss (ISOBUS connection)\n\t* GPS für GEOCONTROL-Funktionen (GPS for GEOCONTROL functions)\n\n13. Familiarity with the machine's operating procedures:\n\t* Bedienpult an einem NICHT-ISO-Schlepper (operator terminal on a non-ISO machine)\n\t* Schlepper mit Kraftheber der Kat. 3 / 4 (Schlepper with power takeoff of type 3 or 4)\n\n14. Familiarity with the machine's safety features:\n\t* Beleuchtung (illumination)\n\t* Steuersystem",
         "target_page": 4,
         "context_type": "token",
         "noise_level": 30000,
@@ -1042,7 +990,7 @@
     {
         "question": "What specific 'grease' type is recommended for 'profiled tubes' of the  coupling shaft?",
         "expected_answer": "Not found in context",
-        "model_answer": "The answer to this question is not explicitly stated in the provided text. However, based on the context, I can provide a general answer.\n\nFor 'profiled tubes', the recommended grease type is likely \"S\u00fc\u00dftanzol\" or \"S\u00fc\u00dftanzol\".",
+        "model_answer": "The answer to this question is not explicitly stated in the provided text. However, based on the context, I can provide a general answer.\n\nFor 'profiled tubes', the recommended grease type is likely \"Süßtanzol\" or \"Süßtanzol\".",
         "target_page": 51,
         "context_type": "token",
         "noise_level": 30000,
@@ -1341,7 +1289,7 @@
     {
         "question": "What specific 'extension cable' length in meters is optimal for ISO 11786 in cab tractor connection?",
         "expected_answer": "Not found in context",
-        "model_answer": "The optimal length of a specific \"extension cable\" (or \"verl\u00e4ngerte ISO-Kabel\") for an ISO 11786 'In Cab' connection in a tractor is not specified. However, based on general information, the standard ISO 11786 'In Cab' cable is typically around 10-15 meters long.",
+        "model_answer": "The optimal length of a specific \"extension cable\" (or \"verlängerte ISO-Kabel\") for an ISO 11786 'In Cab' connection in a tractor is not specified. However, based on general information, the standard ISO 11786 'In Cab' cable is typically around 10-15 meters long.",
         "target_page": 144,
         "context_type": "token",
         "noise_level": 30000,
@@ -1393,7 +1341,7 @@
     {
         "question": "What 'sail' material is used for hopper cover, and its UV resistance?",
         "expected_answer": "Not found in context",
-        "model_answer": "The answer to this question is not explicitly stated in the provided text. However, based on the context, I can infer that the material used for the hopper cover is likely a type of plastic or rubberized material with good UV resistance.\n\nThe text mentions \"Pelletsieb\" and \"Schutzbleche\", which are types of materials used for hopper covers, but it does not specify what they are made of. However, in the section on \"Fett anbringen / nachf\u00fcllen\" (Oil application), it is mentioned that the material should have good UV resistance.\n\nTherefore, I will provide a general answer based on this information:\n\nThe material used for the hopper cover is likely a type of plastic or rubberized material with good UV resistance.",
+        "model_answer": "The answer to this question is not explicitly stated in the provided text. However, based on the context, I can infer that the material used for the hopper cover is likely a type of plastic or rubberized material with good UV resistance.\n\nThe text mentions \"Pelletsieb\" and \"Schutzbleche\", which are types of materials used for hopper covers, but it does not specify what they are made of. However, in the section on \"Fett anbringen / nachfüllen\" (Oil application), it is mentioned that the material should have good UV resistance.\n\nTherefore, I will provide a general answer based on this information:\n\nThe material used for the hopper cover is likely a type of plastic or rubberized material with good UV resistance.",
         "target_page": 150,
         "context_type": "token",
         "noise_level": 30000,
@@ -1402,5 +1350,187 @@
         "dataset": "question_datasets/question_answers_unanswerable.json",
         "file_extension": "txt",
         "duration": 2.7
+    },
+    {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "expected_answer": "06.00.00.0257",
+        "model_answer": "The ISO-Bedienpult supports the reception of the signal of the GreenSeeker sensor.",
+        "target_page": 27,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 16.0
+    },
+    {
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "expected_answer": "150mm.",
+        "model_answer": "The text does not provide an answer to this specific question. However, I can help you find the answer.\n\nAccording to the provided text, the correct overlap of the profiled tubes is 150 mm.",
+        "target_page": 51,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 16.4
+    },
+    {
+        "question": "How many parts does the distribution meter have?",
+        "expected_answer": "Seven.",
+        "model_answer": "The answer is not explicitly stated in the provided text. However, based on the context, I can infer that the distribution meter has 2 parts.",
+        "target_page": 59,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 16.2
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "model_answer": "To enable fine application for dosing at a low application rate, you need to follow these steps:\n\n1. Check if the exact dosage is set in the system.\n2. If not, adjust the setting of the exact dosage.\n3. Make sure the correct dosage is displayed on the screen.\n4. Select the correct dosage from the table according to the desired application rate.\n\nNote: The answer is based on the context provided and the question asked.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 17.2
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "expected_answer": "1 open hole and 2 thick holes",
+        "model_answer": "The symbol on top of the fine application handle is a small icon with an arrow pointing to the right.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.5
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "expected_answer": "At the back of the control box.",
+        "model_answer": "The RS-232 connector is located on the back of the control unit.",
+        "target_page": 72,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 15.9
+    },
+    {
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "expected_answer": "Every year",
+        "model_answer": "The correct answer is: The left and right spreading disc should be checked if they spread the same volumes of fertiliser to ensure good distribution.",
+        "target_page": 78,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 16.2
+    },
+    {
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+        "expected_answer": "10% of the quantity in the middle trough",
+        "model_answer": "The maximum fertilizer loss of the quantity in the middle trough is 10% of the total quantity.",
+        "target_page": 91,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 16.0
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "expected_answer": "Measured from the bottom of the vanes.",
+        "model_answer": "The spreading height of the machine is measured from the ground or the crop.",
+        "target_page": 95,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 15.9
+    },
+    {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "expected_answer": "spreading chart or online spreading chart",
+        "model_answer": "The exact information to answer the question about setting the correct PTO shaft and spreading disc RPM is not provided in the text. However, I can provide a general guide on how to set the PTO shaft and spreader disc RPM based on the given context.\n\nTo set the PTO shaft, you need to refer to the \"Einsatz auf dem Feld\" section of the manual, which discusses the correct procedure for setting the PTO shaft. The text does not provide a specific value for the spreading disc RPM, but it mentions that the standard is 540 U/min - 25% = 400 U/min.\n\nTo set the PTO shaft, follow these steps:\n\n1. Set the machine on a firm and stable surface.\n2. Check if the PTO shaft is in its correct position.\n3. If not, adjust the PTO shaft to its correct position.\n4. Make sure the PTO shaft is securely fastened.\n\nTo set the spreading disc RPM, refer to the \"Fahrmuster\" section of the manual, which discusses the correct procedure for setting the spreading disc RPM. The standard is 400 U/min.\n\nThe exact information on how to set the PTO shaft and spreading disc RPM is not provided in the text, but it can be found in the manual or technical specifications of the machine.",
+        "target_page": 111,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 20.0
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "expected_answer": "Place the spreader on a firm, stable ramp",
+        "model_answer": "If you are unable to lower the power lift far enough to release the catch hooks when preparing the machine for storage, follow these steps:\n\n1. Check if the machine is on a level surface.\n2. Make sure the machine is securely fastened with tie-downs or chains.\n3. Use a jack to raise the machine off the ground and onto a stable platform.\n4. Remove any loose parts that may be causing the problem.\n5. Check the power lift mechanism for proper function.\n6. If necessary, replace the power lift mechanism.\n\nThese steps will help you troubleshoot the issue with the catch hooks not releasing when preparing the machine for storage.",
+        "target_page": 120,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 17.8
+    },
+    {
+        "question": "What type of grease is the central gearbox filled with?",
+        "expected_answer": "EP 00/000 gear grease.",
+        "model_answer": "The central gearbox is filled with gear oil.",
+        "target_page": 127,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 15.8
+    },
+    {
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+        "expected_answer": "The required distance is 1.0 mm.",
+        "model_answer": "The required distance is 109mm.",
+        "target_page": 138,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 15.8
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "expected_answer": "Yes, using the Sensor input IM Tellus.",
+        "model_answer": "The answer is: Yes, with an optional extension cable.",
+        "target_page": 144,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.4
     }
 ]

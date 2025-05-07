@@ -54,7 +54,7 @@
     {
         "question": "How can the tractor's driving speed be transmitted to the IsoMatch if the tractor lacks ISOBUS communication?",
         "expected_answer": "By adding the IsoMatch power cable set to the tractor.",
-        "model_answer": "[Reportez-vous au chapitre \u00bb\u00c9pandage de bordure\u00ab de la page 106.] \n\nHowever, this statement does not directly address how to transmit the tractor's driving speed if ISOBUS communication is lacking. Given the context and instructions provided in the document, there isn't a specific method mentioned for transmitting the tractor's driving speed without ISOBUS. The document focuses on using ExactLine or deflector settings but doesn't detail an alternative speed transmission mechanism when ISOBUS is not available.",
+        "model_answer": "[Reportez-vous au chapitre »Épandage de bordure« de la page 106.] \n\nHowever, this statement does not directly address how to transmit the tractor's driving speed if ISOBUS communication is lacking. Given the context and instructions provided in the document, there isn't a specific method mentioned for transmitting the tractor's driving speed without ISOBUS. The document focuses on using ExactLine or deflector settings but doesn't detail an alternative speed transmission mechanism when ISOBUS is not available.",
         "target_page": 32,
         "context_type": "token",
         "noise_level": 59000,
@@ -67,7 +67,7 @@
     {
         "question": "Where is the main switch button to turn the control box on or off located?",
         "expected_answer": "The main switch button is located on the upper left in the red extension.",
-        "model_answer": "The instructions state: \"Fermez la cabine en fermant toutes les portes et les vitres.\" followed by \"Branchez le bo\u00eetier de commande.\" This implies the control box switch is located on or within the command box that is brached on. However, the exact location of the main switch button to turn the control box on or off is not explicitly stated in the provided context.",
+        "model_answer": "The instructions state: \"Fermez la cabine en fermant toutes les portes et les vitres.\" followed by \"Branchez le boîtier de commande.\" This implies the control box switch is located on or within the command box that is brached on. However, the exact location of the main switch button to turn the control box on or off is not explicitly stated in the provided context.",
         "target_page": 34,
         "context_type": "token",
         "noise_level": 59000,
@@ -169,19 +169,6 @@
         "duration": 1.2
     },
     {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-        "model_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 upwards and 30\u00b0 downwards.",
-        "target_page": 51,
-        "context_type": "token",
-        "noise_level": 59000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 0.9
-    },
-    {
         "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
         "expected_answer": "Yes.",
         "model_answer": "[The tractor must be turned off, the key removed, and the handbrake applied before connecting the machine. This prevents the tractor from starting unexpectedly while working on the machine, which could cause serious personal injuries.]\nTherefore, the answer is: Yes, the parking brake of the tractor should be engaged before connecting the machine.",
@@ -197,7 +184,7 @@
     {
         "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
         "expected_answer": "30 degrees",
-        "model_answer": "The maximum operating angle for the coupling shaft is 30\u00b0 upwards and 30\u00b0 downwards.",
+        "model_answer": "The maximum operating angle for the coupling shaft is 30° upwards and 30° downwards.",
         "target_page": 54,
         "context_type": "token",
         "noise_level": 59000,
@@ -236,7 +223,7 @@
     {
         "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
         "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-        "model_answer": "The general formula for calculating the required flowrate of fertilizer in kg/min is:\n\nVitesse d'\u00e9coulement requise (kg/min) = Largeur de travail (m) x vitesse d'avancement (km/h) / 600\n\nThis is stated on page 66, paragraph 4 of the manual.",
+        "model_answer": "The general formula for calculating the required flowrate of fertilizer in kg/min is:\n\nVitesse d'écoulement requise (kg/min) = Largeur de travail (m) x vitesse d'avancement (km/h) / 600\n\nThis is stated on page 66, paragraph 4 of the manual.",
         "target_page": 68,
         "context_type": "token",
         "noise_level": 59000,
@@ -288,7 +275,7 @@
     {
         "question": "What does a tray test check on a fertilizer spreader?",
         "expected_answer": "Fertilizer distribution pattern of the spreader.",
-        "model_answer": "[Test de la nappe d'\u00e9pandage (test sur bacs)]",
+        "model_answer": "[Test de la nappe d'épandage (test sur bacs)]",
         "target_page": 76,
         "context_type": "token",
         "noise_level": 59000,
@@ -325,19 +312,6 @@
         "duration": 0.7
     },
     {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "expected_answer": "75 cm above the troughs.",
-        "model_answer": "The distance between the ring and the spreading disc must be 109 mm.",
-        "target_page": 84,
-        "context_type": "token",
-        "noise_level": 59000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 47.8
-    },
-    {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
         "expected_answer": "75 cm",
         "model_answer": "75 cm",
@@ -349,19 +323,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 47.6
-    },
-    {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-        "expected_answer": "10% of the quantity in the middle trough",
-        "model_answer": "10%",
-        "target_page": 91,
-        "context_type": "token",
-        "noise_level": 59000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 47.4
     },
     {
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
@@ -418,7 +379,7 @@
     {
         "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
         "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-        "model_answer": "[The machine must be stopped and the system hydraulics must be depressurized.]\nThis is derived from the instructions: \"Arr\u00eatez imm\u00e9diatement d'\u00e9pandre! D\u00e9brayez imm\u00e9diatement la prise de force!\" (Stop immediately spreading! Immediately disengage the power take-off!)",
+        "model_answer": "[The machine must be stopped and the system hydraulics must be depressurized.]\nThis is derived from the instructions: \"Arrêtez immédiatement d'épandre! Débrayez immédiatement la prise de force!\" (Stop immediately spreading! Immediately disengage the power take-off!)",
         "target_page": 108,
         "context_type": "token",
         "noise_level": 59000,
@@ -470,7 +431,7 @@
     {
         "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
         "expected_answer": "Preservative grease or preserving liquid.",
-        "model_answer": "[Nettoyez \u00e0 fond la machine apr\u00e8s chaque utilisation. Remplacez l'agitateur lorsque celui-ci est us\u00e9        118]",
+        "model_answer": "[Nettoyez à fond la machine après chaque utilisation. Remplacez l'agitateur lorsque celui-ci est usé        118]",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 59000,
@@ -544,19 +505,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 1.1
-    },
-    {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-        "expected_answer": "The required distance is 1.0 mm.",
-        "model_answer": "[Image] 109 mm",
-        "target_page": 138,
-        "context_type": "token",
-        "noise_level": 59000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 0.7
     },
     {
         "question": "How often should the agitator axle seal be replaced?",
@@ -652,7 +600,7 @@
     {
         "question": "How often (in what interval) must the agitator seal be replaced?",
         "expected_answer": "every 100 hours or if worn",
-        "model_answer": "[Every 100 hours of use or at the beginning of each season.]\nThis is derived from the maintenance interval details provided in the document under \"Capacit\u00e9s en huile et en graisse\" (Capacity in oil and grease), where it states that the plastic seal on the agitator should be replaced every 100 hours of use or at the start of each season.",
+        "model_answer": "[Every 100 hours of use or at the beginning of each season.]\nThis is derived from the maintenance interval details provided in the document under \"Capacités en huile et en graisse\" (Capacity in oil and grease), where it states that the plastic seal on the agitator should be replaced every 100 hours of use or at the start of each season.",
         "target_page": 125,
         "context_type": "token",
         "noise_level": 59000,
@@ -847,7 +795,7 @@
     {
         "question": "How should one proceed to stop spreading the fertilizer?",
         "expected_answer": "Not found in context",
-        "model_answer": "Stop immediately spreading! Debray the power take-off!\n[This is a direct translation from the provided context which states: \"Arr\u00eatez imm\u00e9diatement d'\u00e9pandre! D\u00e9brayez imm\u00e9diatement la prise de force!\"]",
+        "model_answer": "Stop immediately spreading! Debray the power take-off!\n[This is a direct translation from the provided context which states: \"Arrêtez immédiatement d'épandre! Débrayez immédiatement la prise de force!\"]",
         "target_page": 100,
         "context_type": "token",
         "noise_level": 59000,
@@ -925,7 +873,7 @@
     {
         "question": "What should a person do who fell into the fertilizer and no physician is available?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Nettoyez \u00e0 fond la machine apr\u00e8s chaque utilisation. Remplacez l'agitateur lorsque celui-ci est us\u00e9        118]",
+        "model_answer": "[Nettoyez à fond la machine après chaque utilisation. Remplacez l'agitateur lorsque celui-ci est usé        118]",
         "target_page": 117,
         "context_type": "token",
         "noise_level": 59000,
@@ -1094,7 +1042,7 @@
     {
         "question": "What is the maximum acceptable 'chunk' size of fertilizer in mm to prevent blockage?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Image]\nLa plupart des types d'engrais absorbent l'eau et peuvent alors former des blocs. Ces blocs sont susceptibles de provoquer des bourrages au niveau de l'\u00e9pandeur ou d'ab\u00eemer la nappe d'\u00e9pandage.\n\u00b7 Si les conditions sont humides, travaillez uniquement avec la b\u00e2che de tr\u00e9mie bien ferm\u00e9e.\n\u00b7 N'\u00e9pandez jamais sans b\u00e2che de tr\u00e9mie lorsque les conditions sont humides.\n\u00b7 Ne laissez jamais l'engrais pendant longtemps dans l'\u00e9pandeur. Des blocs peuvent \u00e9galement se former sous l'action de l'humidit\u00e9 de l'air.\n\u00b7 Nettoyez \u00e0 fond l'\u00e9pandeur apr\u00e8s chaque utilisation, ainsi que les orifices de dosage et les bagues d'\u00e9coulement.\n\n[The maximum acceptable 'chunk' size of fertilizer to prevent blockage is not explicitly stated in the provided context. However, it can be inferred that any size large enough to form a block under humid conditions could potentially cause issues.]\n\nBased on the context, there isn't an explicit mention of a specific maximum chunk size. The focus is more on preventing blocks from forming due to humidity and ensuring regular cleaning.\nThe question cannot be precisely answered with the given information.",
+        "model_answer": "[Image]\nLa plupart des types d'engrais absorbent l'eau et peuvent alors former des blocs. Ces blocs sont susceptibles de provoquer des bourrages au niveau de l'épandeur ou d'abîmer la nappe d'épandage.\n· Si les conditions sont humides, travaillez uniquement avec la bâche de trémie bien fermée.\n· N'épandez jamais sans bâche de trémie lorsque les conditions sont humides.\n· Ne laissez jamais l'engrais pendant longtemps dans l'épandeur. Des blocs peuvent également se former sous l'action de l'humidité de l'air.\n· Nettoyez à fond l'épandeur après chaque utilisation, ainsi que les orifices de dosage et les bagues d'écoulement.\n\n[The maximum acceptable 'chunk' size of fertilizer to prevent blockage is not explicitly stated in the provided context. However, it can be inferred that any size large enough to form a block under humid conditions could potentially cause issues.]\n\nBased on the context, there isn't an explicit mention of a specific maximum chunk size. The focus is more on preventing blocks from forming due to humidity and ensuring regular cleaning.\nThe question cannot be precisely answered with the given information.",
         "target_page": 74,
         "context_type": "token",
         "noise_level": 59000,
@@ -1185,7 +1133,7 @@
     {
         "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Image]\nEvitez tout contact avec l'engrais et d'autres produits\nLors du nettoyage de la machine, vous pouvez facilezement entrer en contact avec certains produits. Portez pour cette raison des v\u00eatements de protection, tels que des gants protecteurs, des chaussures de s\u00e9curit\u00e9 et des lunettes protectrices. Lisez \u00e9galement les indications de s\u00e9curit\u00e9 du fabricant des produits concern\u00e9s et suivez ces indications. Le contact avec ces produits peut \u00eatre \u00e0 l'origine de blessures corporelles.\nAttention \u00e0 ne pas vous coincer!\nLors du contr\u00f4le et du r\u00e9glage de l'\u00e9pandeur, vous pouvez facilezement vous coincer.\nVeillez \u00e0 votre s\u00e9curit\u00e9 lors du contr\u00f4le et du r\u00e9glage en :\n\u00b7 coupant le syst\u00e8me de commande \u00e9lectronique,\n\u00b7 coupant le contact du tracteur et en retirant la cl\u00e9 du contact,\n\u00b7 serrant le frein \u00e0 main sur le tracteur,\n\u00b7 attendant que toutes les pi\u00e8ces de la machine se soient totalement arr\u00eat\u00e9es avant de proc\u00e9der aux op\u00e9rations de maintenance,\n\u00b7 portant des v\u00eatements de protection tels que des gants protecteurs et des chaussures de s\u00e9curit\u00e9,\n\u00b7 d'ex\u00e9cuter seul et avec prudence la proc\u00e9dure d\u00e9crite.\nEn vous coin\u00e7ant, vous pouvez vous blesser.\n\n[Image]\nFin des op\u00e9rations\n122\n\n[Image]\nProc\u00e9dure\nbatterie d'accumulateurs\nExactLine en position marche\n[Image: ExactLine en position marche]\n[Image]\n\nEvitez tout contact avec l'engrais et d'autres produits\nLors du nettoyage de la machine, vous pouvez facilezement entrer en contact avec certains produits. Portez pour cette raison des v\u00eatements de protection, tels que des gants protecteurs, des chaussures de s\u00e9curit\u00e9 et des lunettes protectrices. Lisez \u00e9galement les indications de s\u00e9curit\u00e9 du fabricant des produits concern\u00e9s et suivez ces indications. Le contact avec ces produits peut \u00eatre \u00e0 l'origine de blessures corporelles.\nAttention \u00e0 ne pas vous coincer!\nLors du contr\u00f4le et du r\u00e9glage de l'\u00e9pandeur, vous pouvez facilezement vous coincer.\nVeillez \u00e0 votre s\u00e9curit\u00e9 lors du contr\u00f4le et du r\u00e9glage en :\n\u00b7 coupant le syst\u00e8me de commande \u00e9lectronique,\n\u00b7 coupant le contact du tracteur et en retirant la cl\u00e9 du contact,\n\u00b7 serrant le frein \u00e0 main sur le tracteur,\n\u00b7 attendant que toutes les pi\u00e8ces de la machine se soient totalement arr\u00eat\u00e9es avant de proc\u00e9der aux op\u00e9rations de maintenance,\n\u00b7 portant des v\u00eatements de protection tels que des gants protecteurs et des chaussures de s\u00e9curit\u00e9,\n\u00b7 d'ex\u00e9cuter seul et avec prudence la proc\u00e9dure d\u00e9crite.\nEn vous coin\u00e7ant, vous pouvez vous blesser.\n\n[Image]\nFin des op\u00e9rations\n122\n\n[Image]\nProc\u00e9dure\nbatterie d'accumulateurs\nExactLine en position marche\n[Image: ExactLine en position marche]\n[Image]\n\nEvitez tout contact avec l'engrais et d'autres produits\nLors du nettoyage de la machine, vous pouvez facilezement entrer en contact avec certains produits. Portez pour cette raison des v\u00eatements de protection, tels que des gants protecteurs, des chaussures de s\u00e9curit\u00e9 et des lunettes protectrices. Lisez \u00e9galement les indications de s\u00e9curit\u00e9 du fabricant des produits concern\u00e9s et suivez ces indications. Le contact avec ces produits peut \u00eatre \u00e0 l'origine de blessures corporelles.\nAttention \u00e0 ne pas vous coincer!\nLors du contr\u00f4le et du r\u00e9glage de l'\u00e9pandeur, vous pouvez facilezement vous coincer.\nVeillez \u00e0 votre s\u00e9curit\u00e9 lors du contr\u00f4le et du r\u00e9glage en :\n\u00b7 coupant le syst\u00e8me de commande \u00e9lectronique,\n\u00b7 coupant le contact du tracteur et en retirant la cl\u00e9 du contact,\n\u00b7 serrant le frein \u00e0 main sur le tracteur,\n\u00b7 attendant que toutes les pi\u00e8ces de la machine se soient totalement arr\u00eat\u00e9es avant de proc\u00e9der aux op\u00e9rations de maintenance,\n\u00b7 portant des v\u00eatements de protection tels que des gants protecteurs et des chaussures de s\u00e9curit\u00e9,\n\u00b7 d'ex\u00e9cuter seul et avec prudence la proc\u00e9dure d\u00e9crite.\nEn vous coin\u00e7ant, vous pouvez vous blesser.\n\n[Image]\nFin des op\u00e9rations\n122\n\n[Image]\nProc\u00e9dure\nbatterie d'accumulateurs\nExactLine en position marche\n[Image: ExactLine en position marche]\n[Image]\n\nEvitez tout contact avec l'engrais et d'autres produits",
+        "model_answer": "[Image]\nEvitez tout contact avec l'engrais et d'autres produits\nLors du nettoyage de la machine, vous pouvez facilezement entrer en contact avec certains produits. Portez pour cette raison des vêtements de protection, tels que des gants protecteurs, des chaussures de sécurité et des lunettes protectrices. Lisez également les indications de sécurité du fabricant des produits concernés et suivez ces indications. Le contact avec ces produits peut être à l'origine de blessures corporelles.\nAttention à ne pas vous coincer!\nLors du contrôle et du réglage de l'épandeur, vous pouvez facilezement vous coincer.\nVeillez à votre sécurité lors du contrôle et du réglage en :\n· coupant le système de commande électronique,\n· coupant le contact du tracteur et en retirant la clé du contact,\n· serrant le frein à main sur le tracteur,\n· attendant que toutes les pièces de la machine se soient totalement arrêtées avant de procéder aux opérations de maintenance,\n· portant des vêtements de protection tels que des gants protecteurs et des chaussures de sécurité,\n· d'exécuter seul et avec prudence la procédure décrite.\nEn vous coinçant, vous pouvez vous blesser.\n\n[Image]\nFin des opérations\n122\n\n[Image]\nProcédure\nbatterie d'accumulateurs\nExactLine en position marche\n[Image: ExactLine en position marche]\n[Image]\n\nEvitez tout contact avec l'engrais et d'autres produits\nLors du nettoyage de la machine, vous pouvez facilezement entrer en contact avec certains produits. Portez pour cette raison des vêtements de protection, tels que des gants protecteurs, des chaussures de sécurité et des lunettes protectrices. Lisez également les indications de sécurité du fabricant des produits concernés et suivez ces indications. Le contact avec ces produits peut être à l'origine de blessures corporelles.\nAttention à ne pas vous coincer!\nLors du contrôle et du réglage de l'épandeur, vous pouvez facilezement vous coincer.\nVeillez à votre sécurité lors du contrôle et du réglage en :\n· coupant le système de commande électronique,\n· coupant le contact du tracteur et en retirant la clé du contact,\n· serrant le frein à main sur le tracteur,\n· attendant que toutes les pièces de la machine se soient totalement arrêtées avant de procéder aux opérations de maintenance,\n· portant des vêtements de protection tels que des gants protecteurs et des chaussures de sécurité,\n· d'exécuter seul et avec prudence la procédure décrite.\nEn vous coinçant, vous pouvez vous blesser.\n\n[Image]\nFin des opérations\n122\n\n[Image]\nProcédure\nbatterie d'accumulateurs\nExactLine en position marche\n[Image: ExactLine en position marche]\n[Image]\n\nEvitez tout contact avec l'engrais et d'autres produits\nLors du nettoyage de la machine, vous pouvez facilezement entrer en contact avec certains produits. Portez pour cette raison des vêtements de protection, tels que des gants protecteurs, des chaussures de sécurité et des lunettes protectrices. Lisez également les indications de sécurité du fabricant des produits concernés et suivez ces indications. Le contact avec ces produits peut être à l'origine de blessures corporelles.\nAttention à ne pas vous coincer!\nLors du contrôle et du réglage de l'épandeur, vous pouvez facilezement vous coincer.\nVeillez à votre sécurité lors du contrôle et du réglage en :\n· coupant le système de commande électronique,\n· coupant le contact du tracteur et en retirant la clé du contact,\n· serrant le frein à main sur le tracteur,\n· attendant que toutes les pièces de la machine se soient totalement arrêtées avant de procéder aux opérations de maintenance,\n· portant des vêtements de protection tels que des gants protecteurs et des chaussures de sécurité,\n· d'exécuter seul et avec prudence la procédure décrite.\nEn vous coinçant, vous pouvez vous blesser.\n\n[Image]\nFin des opérations\n122\n\n[Image]\nProcédure\nbatterie d'accumulateurs\nExactLine en position marche\n[Image: ExactLine en position marche]\n[Image]\n\nEvitez tout contact avec l'engrais et d'autres produits",
         "target_page": 109,
         "context_type": "token",
         "noise_level": 59000,
@@ -1211,7 +1159,7 @@
     {
         "question": "What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Nettoyez \u00e0 fond la machine apr\u00e8s chaque utilisation. Remplacez l'agitateur lorsque celui-ci est us\u00e9        118]",
+        "model_answer": "[Nettoyez à fond la machine après chaque utilisation. Remplacez l'agitateur lorsque celui-ci est usé        118]",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 59000,
@@ -1237,7 +1185,7 @@
     {
         "question": "What type of 'universal grease' is recommended for all 'lubricating nipples'?",
         "expected_answer": "Not found in context",
-        "model_answer": "Unknown\n\nThe context does not contain specific information about a \"universal grease\" being recommended for all 'lubricating nipples'. The closest related content is under \"Capacit\u00e9s en huile et en graisse\", but it does not specify a universal grease type.",
+        "model_answer": "Unknown\n\nThe context does not contain specific information about a \"universal grease\" being recommended for all 'lubricating nipples'. The closest related content is under \"Capacités en huile et en graisse\", but it does not specify a universal grease type.",
         "target_page": 126,
         "context_type": "token",
         "noise_level": 59000,
@@ -1302,7 +1250,7 @@
     {
         "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
         "expected_answer": "Not found in context",
-        "model_answer": "The passage states that a metal bague d'\u00e9tanch\u00e9it\u00e9 (seal ring) should be used to set the discharge bushing height to 109 mm. Therefore, the answer is:\n\n[metal]\n\nThis indicates that a metal material is recommended for setting the discharge bushing height.",
+        "model_answer": "The passage states that a metal bague d'étanchéité (seal ring) should be used to set the discharge bushing height to 109 mm. Therefore, the answer is:\n\n[metal]\n\nThis indicates that a metal material is recommended for setting the discharge bushing height.",
         "target_page": 138,
         "context_type": "token",
         "noise_level": 59000,
@@ -1402,5 +1350,187 @@
         "dataset": "question_datasets/question_answers_unanswerable.json",
         "file_extension": "txt",
         "duration": 0.6
+    },
+    {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "expected_answer": "06.00.00.0257",
+        "model_answer": "Unknown",
+        "target_page": 27,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 46.9
+    },
+    {
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "expected_answer": "150mm.",
+        "model_answer": "Unknown",
+        "target_page": 51,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.3
+    },
+    {
+        "question": "How many parts does the distribution meter have?",
+        "expected_answer": "Seven.",
+        "model_answer": "Unknown\n\nThe provided context does not contain any specific information about the number of parts in the distribution meter. Therefore, based on the given text, the answer is \"Unknown\".",
+        "target_page": 59,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 47.4
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "model_answer": "To enable fine application for dosing low application rates, you should:\n\n- Use the kit of fine adjustment (dosage fin) when setting up the distributor.\n- Ensure that the discharge orifice is only partially open for very low flow rates (< 25 kg/min).\n- Adjust the discharge opening by 2 notches towards A if the distribution is too narrow.\n- Adjust the discharge opening by 2 notches towards U if the distribution is too wide.\n\nFollow these steps to ensure a proper setup for low application rates.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 48.8
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "expected_answer": "1 open hole and 2 thick holes",
+        "model_answer": "Unknown\n\nThe provided context does not contain any information about a symbol on top of a fine application handle or the Fine application kit. The context is related to machine operation and maintenance instructions for agricultural equipment, specifically an applicator/spreader, but does not include the specific detail asked in the question.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.5
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "expected_answer": "At the back of the control box.",
+        "model_answer": "The RS 232 connector is located on the back of the IsoMatch command box.",
+        "target_page": 72,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 47.1
+    },
+    {
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "expected_answer": "Every year",
+        "model_answer": "Evaluation\n   A                                                                                                       Nappe d'épandage régulière, ExactLine est bien réglé\n0  B  L'épandage est trop étroit.  Réglez-le un cran plus large (par exemple de 3 vers 4  ou de 7 vers la position de transport)  Effectuez à nouveau le test\n1  C  L'épandage est trop large :  Réglez-le un cran plus petit (par exemple de 5 vers 4 ou  de la position de transport vers 7)  Effectuez à nouveau le test",
+        "target_page": 78,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 49.9
+    },
+    {
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+        "expected_answer": "10% of the quantity in the middle trough",
+        "model_answer": "10%",
+        "target_page": 91,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 47.2
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "expected_answer": "Measured from the bottom of the vanes.",
+        "model_answer": "The spreading height is measured from the center of the rear axle to the ground or the crop.",
+        "target_page": 95,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 47.6
+    },
+    {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "expected_answer": "spreading chart or online spreading chart",
+        "model_answer": "[The information to correctly set the PTO shaft and spreading disc RPM is not explicitly provided in the given context. However, relevant sections include pages 46, 51, 53, 54, 64, 65, 133, and 136 which discuss related aspects such as shafts, transmission arbor, point of chute adjustment, and disc settings.]\nThe exact RPM values or procedures to set the PTO shaft and spreading disc RPM are not detailed in this context.",
+        "target_page": 111,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 50.4
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "expected_answer": "Place the spreader on a firm, stable ramp",
+        "model_answer": "[Image] You can place the machine on a stable platform resting on a flat and robust surface.",
+        "target_page": 120,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 49.0
+    },
+    {
+        "question": "What type of grease is the central gearbox filled with?",
+        "expected_answer": "EP 00/000 gear grease.",
+        "model_answer": "[Image: Bagues d'écoulement]\n[Image: Éléments de fixationTableau de bord]\n\nEvitez tout contact avec l'engrais et d'autres produits\n\nL'huile hydraulique est soumise à une forte pression\n\nN'essayez jamais de boucher une fuite avec vos mains. Ne tentez jamais de rechercher une fuite hydraulique à la main ou de la maintenir bouchée! Utilisez toujours pour la recherche de fuites une petite planche ou quelque chose de ce type et portez des lunettes protectrices ainsi que des gants protecteurs! Un liquide sous haute pression gicle facilement sur la peau et les vêtements, entraînant des blessures graves. Consultez immédiatement un médecin en cas de blessures!\n\nNe dépassez pas la pression hydraulique maximale de 210 bars\n\nAssurez-vous que la pression du circuit hydraulique n'excède pas 210 bars! Si cette pression est plus élevée que la pression autorisée, la machine risque d'être endommagée et vous vous exposez à des situations à risques.\n\nDistance de sécurité par rapport à la machine pendant le contrôle et les essais\n\nUtilisez un bâton pour plier les flexibles hydrauliques lors des contrôles de fuite. Vous garderez ainsi une distance suffisante avec la machine. Étant donné la pression et la température du système, les projections d'huile ou les flexibles qui se détachent soudainement peuvent causer des dommages corporels graves.\n\n[Image: Tableau de bord]\n\nCapacités en huile et en graisse\n\nBoîtier central Disques d'épandage du boîtier 2x 0,25 litre 1,5 litre Graisse pour pignons EP00/000 Graisse pour pignons EP00/000\n\n[Image: Bagues d'écoulement]\n\n[Image]\n[Image]\n\nThe central gearbox is filled with **Graisse pour pignons EP00/000**.",
+        "target_page": 127,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 9.8
+    },
+    {
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+        "expected_answer": "The required distance is 1.0 mm.",
+        "model_answer": "[109 mm]",
+        "target_page": 138,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.4
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "expected_answer": "Yes, using the Sensor input IM Tellus.",
+        "model_answer": "Yes, with the optional IsoMatch Capteur entry, you can connect the tractor's speed sensor or radar to the IsoMatch control box.",
+        "target_page": 144,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.9
     }
 ]

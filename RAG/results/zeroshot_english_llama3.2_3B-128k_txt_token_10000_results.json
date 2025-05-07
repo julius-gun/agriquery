@@ -9,24 +9,23 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.25925925925925924,
+        "accuracy": 0.23728813559322035,
         "precision": 0.24,
-        "recall": 0.2222222222222222,
+        "recall": 0.1875,
         "specificity": 0.2962962962962963,
-        "f1_score": 0.23076923076923075,
+        "f1_score": 0.21052631578947367,
         "true_positives": 12,
         "true_negatives": 16,
         "false_positives": 38,
-        "false_negatives": 42,
-        "total_questions": 108,
+        "false_negatives": 52,
+        "total_questions": 118,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.2727272727272727,
-            "unanswerable_questions": 0.2962962962962963,
-            "table_questions": 0.0
+            "general_questions": 0.2222222222222222,
+            "unanswerable_questions": 0.2962962962962963
         }
     },
     "timing": {
-        "duration_qa_phase_seconds": 175.89999999999995
+        "duration_qa_phase_seconds": 196.39999999999992
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,14 +135,6 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft when lifted and when lowered is 30°.",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "The answer is: Yes, the parking brake of the tractor should be engaged before connecting the machine.",
@@ -232,28 +223,12 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "The required height of the spreading disc above the troughs for one-sided boundary spreading is 75 cm.",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "The correct answer is: 75cm.",
                     "page": 89,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "The correct answer to the question \"What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginary ditch?\n\nAccording to the context provided, the text does not explicitly state the exact percentage. However, we can infer that the maximum fertilizer loss in the middle trough should be less than 10% of the quantity collected in the trough in the middle of the track.\n\nThe correct answer is: <1>",
-                    "page": 91,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
                 },
                 {
                     "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
@@ -368,18 +343,122 @@
                     "self_evaluation": "yes"
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "The frequency of replacement for the agitator axle seal is not specified in the context. However, based on general guidelines, it is recommended to replace the agitator axle seal every 100 operational hours or when the machine has been used.",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "The minimum load on the front axle must not exceed 80% of the basic weight of the tractor. The maximum allowed weight is 1000 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual front axle load (kg) = Actual front axle load (kg)\nThe actual rear axle load (kg) = Actual rear axle load (kg)\n\nThe minimum load on the rear axle must not exceed 45% of the basic weight of the tractor. The maximum allowed weight is 900 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual front axle load (kg) = Actual front axle load (kg)\nThe minimum load on the rear axle must not exceed 40% of the basic weight of the tractor. The maximum allowed weight is 900 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual rear axle load (kg) = Actual rear axle load (kg)\n\nThe minimum load on the front axle must not exceed 60% of the basic weight of the tractor. The maximum allowed weight is 800 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual front axle load (kg) = Actual front axle load (kg)\n\nThe minimum load on the rear axle must not exceed 50% of the basic weight of the tractor. The maximum allowed weight is 700 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual rear axle load (kg) = Actual rear axle load (kg)\n\nThe minimum load on the front axle must not exceed 70% of the basic weight of the tractor. The maximum allowed weight is 600 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual front axle load (kg) = Actual front axle load (kg)\n\nThe minimum load on the rear axle must not exceed 30% of the basic weight of the tractor. The maximum allowed weight is 500 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual rear axle load (kg) = Actual rear axle load (kg)\n\nThe minimum load on the front axle must not exceed 40% of the basic weight of the tractor. The maximum allowed weight is 400 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual front axle load (kg) = Actual front axle load (kg)\n\nThe minimum load on the rear axle must not exceed 30% of the basic weight of the tractor. The maximum allowed weight is 300 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual rear axle load (kg) = Actual rear axle load (kg)\n\nThe minimum load on the front axle must not exceed 20% of the basic weight of the tractor. The maximum allowed weight is 200 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual front axle load (kg) = Actual front axle load (kg)\n\nThe minimum load on the rear axle must not exceed 15% of the basic weight of the tractor. The maximum allowed weight is 150 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual rear axle load (kg) = Actual rear axle load (kg)\n\nThe minimum load on the front axle must not exceed 10% of the basic weight of the tractor. The maximum allowed weight is 100 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual rear axle load (kg) = Actual rear axle load (kg)\n\nThe minimum load on the front axle must not exceed 5% of the basic weight of the tractor. The maximum allowed weight is 80 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual rear axle load (kg) = Actual rear axle load (kg)\n\nThe minimum load on the front axle must not exceed 5% of the basic weight of the tractor. The maximum allowed weight is 50 kg.\nThe actual total weight should be calculated by using the formula:\nActual total weight (kg) = A + D + E\nActual rear axle load (kg) = Actual rear axle load (kg)\n\nThe minimum load on the front axle must not exceed 3% of the basic weight of the tractor. The maximum allowed weight is ",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "The text does not contain the answer to the question \"When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?\" The relevant information is on page 51.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "The number of parts in the distribution meter is not explicitly stated in the context. However, based on the provided text, we can infer that the distribution meter has 7 parts.",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "The correct answer is: 3.7 kg/min.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "The symbol on top of the fine application handle is a 3 open hole.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "The location of the RS 232 connector is not mentioned in the provided context.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "The frequency of checking the left and right spreading discs should be checked every 10% of the total application rate.",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "The correct answer to the question \"What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?\" can be found in the context. The text does not provide a clear and concise answer to the question. However, I will attempt to extract the relevant information from the provided text.\n\nAccording to the instructions, the correct answer is: 10%.",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "The correct answer is: 250 kg/ha.",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "The answer to the question \"What information is available that I can set the correct PTO shaft and spreading disc RPM?\" is not explicitly stated in the context. However, based on the provided text, the correct answer can be inferred from the following:\n\nThe correct setting for the PTO shaft and spreading disc RPM depends on the specific application rate and spreader type.",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "The answer is: If you cannot lower the power lift high enough to release the catch, check if the distance between the agitator axle and the seal ring is not equal.",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "The answer to the question \"What type of grease is the central gearbox filled with?\" is not explicitly stated in the context. The text does not provide a clear indication of what type of grease used in the central gearbox. However, based on the provided information, it can be inferred that the central gearbox is likely filled with hydraulic fluid or oil.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
                     "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "The text of the context does not provide a clear answer to the question \"What is the required distance in between the discharge bushing and spreading disc?\" The relevant information can be found on page 137.",
+                    "model_answer": "The text of the context does not provide a clear answer to the question \"What is the required distance in mm between the discharge bushing and spreading disc?\" The relevant information can be found on page 137.",
                     "page": 138,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "How often should the agitator axle seal be replaced?",
-                    "expected_answer": "Every season and after every 100 operational hours.",
-                    "model_answer": "The frequency of replacement for the agitator axle seal is not specified in the context. However, based on general guidelines, it is recommended to replace the agitator axle seal every 100 operational hours or when the machine has been used.",
-                    "page": 140,
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "The answer is: The ISO 11786 in cab connection.",
+                    "page": 144,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 }

@@ -9,24 +9,23 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.37962962962962965,
-        "precision": 0.38596491228070173,
-        "recall": 0.4074074074074074,
+        "accuracy": 0.3728813559322034,
+        "precision": 0.4166666666666667,
+        "recall": 0.390625,
         "specificity": 0.35185185185185186,
-        "f1_score": 0.3963963963963964,
-        "true_positives": 22,
+        "f1_score": 0.40322580645161293,
+        "true_positives": 25,
         "true_negatives": 19,
         "false_positives": 35,
-        "false_negatives": 32,
-        "total_questions": 108,
+        "false_negatives": 39,
+        "total_questions": 118,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.4772727272727273,
-            "unanswerable_questions": 0.35185185185185186,
-            "table_questions": 0.1
+            "general_questions": 0.4444444444444444,
+            "unanswerable_questions": 0.35185185185185186
         }
     },
     "timing": {
-        "duration_qa_phase_seconds": 622.2000000000002
+        "duration_qa_phase_seconds": 688.2000000000003
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,14 +135,6 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "The working angle out of working reach is 30º when the coupling shaft is lowered. When raised, the working angle should be limited to a maximum of 30º.\nTherefore, the maximum operating angle of the coupling shaft is 30º when lowered and also 30º when raised.",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "Yes. The instructions state: \"Switch the tractor off, remove the key from the ignition and engage the parking brake of the tractor.\"",
@@ -232,26 +223,10 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "The distance between the discharge bushing and the spreading disc must be 1.0 mm.",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "The spreading disc must be set to 75 cm above the troughs.",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "10%",
-                    "page": 91,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
                 },
@@ -368,7 +343,111 @@
                     "self_evaluation": "yes"
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "The agitator axle seal must be replaced every season.",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "[Image] Tractor radar or wheel sensor\nThe tractor's speed sensor or radar can be connected to the IsoMatch control box with the optional \"Sensor input IM Tellus\". This is needed if your tractor does not have the ISO 11786 in cab connection. Other connections are the same as the \"Input IM Tellus\" cable set, supplied as a standard item.\nFrom the information provided, it can be inferred that ISOBUS support for receiving signals from the Greenseeker sensor (which is similar to a tractor radar or wheel sensor) would require an optional \"Sensor input IM Tellus\" connection. However, there's no explicit mention of the specific version of ISOBUS supporting this feature.\nGiven the context and the lack of specific version information, we cannot precisely state which version of ISOBUS supports Greenseeker sensor signals reception based solely on the provided text.",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "The maximum acceptable overlap is 30 mm. However, the exact minimum overlap distance is not specified in the provided context. Based on general engineering practices and the context, a safe overlap of at least 25-30 mm is recommended to prevent mechanical issues. But for precise information, refer to the technical specifications or manual.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "Unknown\n\nThe provided context does not contain specific information about how many parts the distribution meter has.",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "[To set the spreader for fine application with an application rate less than 40 kg/min, follow these steps according to the manual:]\n\n1. Switch the tractor off, remove the key from the ignition, and engage the parking brake.\n2. Set the dosing setting on the control box to \"fine application\" as per the instructions provided.\n\nThis ensures that only one of the three dosing openings is open for low flow rates.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "The arrow on the hand-grip indicates the desired position for the fine application setting.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "The RS232 cable is used to connect the signal from an external system to the Tellus control box. The plug pin occupation can be found in the Tellus control box operating manual.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "The left and right spreading discs must be checked regularly if they are not spreading the same volumes of fertiliser to ensure good distribution. Specifically, this should be done:\n- After the first 10 running hours \n- For each season\n- After every 100 operational hours\n- If the difference in application rate between left and right sides is more than 3%\nThis can be performed by testing the spreading pattern as described on page 76.",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "10%",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "From the bottom of the vanes, the distance to the ground or the crop must be 75 cm.",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "The control system will drive the dosing units in such a way that the actual application rate is equal to the set application rate through the lower PTO shaft RPM. The correct PTO shaft and spreading discs RPM can be set based on the spreading chart, online spreading chart or by referring to the chart on the previous page.\n[Note: This information comes from the paragraph describing how to set the PTO shaft and spreading disc RPM for boundary track spreading with ExactLine.]",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "If you cannot lower the power lift far enough to release the catch hooks, we advise you to place the spreader on a firm, stable ramp, for example a pawl.",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "EP00/000 gear grease EP00/000 gear grease",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
                     "expected_answer": "The required distance is 1.0 mm.",
                     "model_answer": "The distance between the discharge bushing and the spreading disc must be 1.0 mm.",
                     "page": 138,
@@ -376,12 +455,12 @@
                     "self_evaluation": "yes"
                 },
                 {
-                    "question": "How often should the agitator axle seal be replaced?",
-                    "expected_answer": "Every season and after every 100 operational hours.",
-                    "model_answer": "The agitator axle seal must be replaced every season.",
-                    "page": 140,
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "Yes, you can connect the tractor's speed sensor or radar to the IsoMatch control box with the optional \"Sensor input IM Tellus\".",
+                    "page": 144,
                     "dataset": "general_questions",
-                    "self_evaluation": "no"
+                    "self_evaluation": "yes"
                 }
             ]
         },

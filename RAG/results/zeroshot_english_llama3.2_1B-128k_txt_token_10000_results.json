@@ -9,24 +9,23 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.09259259259259259,
-        "precision": 0.041666666666666664,
-        "recall": 0.037037037037037035,
+        "accuracy": 0.07627118644067797,
+        "precision": 0.02127659574468085,
+        "recall": 0.015625,
         "specificity": 0.14814814814814814,
-        "f1_score": 0.03921568627450981,
-        "true_positives": 2,
+        "f1_score": 0.018018018018018018,
+        "true_positives": 1,
         "true_negatives": 8,
         "false_positives": 46,
-        "false_negatives": 52,
-        "total_questions": 108,
+        "false_negatives": 63,
+        "total_questions": 118,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.045454545454545456,
-            "unanswerable_questions": 0.14814814814814814,
-            "table_questions": 0.0
+            "general_questions": 0.018518518518518517,
+            "unanswerable_questions": 0.14814814814814814
         }
     },
     "timing": {
-        "duration_qa_phase_seconds": 149.80000000000007
+        "duration_qa_phase_seconds": 204.20000000000007
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,14 +135,6 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "## Step 1: Determine the correct answer to the question\nTo determine the maximum operating angle of the coupling shaft when lifted and lowered.\n\nThe correct answer is 30°.\n\n\nThe best answer for determining the distribution of the fertiliser with respect to your spreader:\n• The spreading chart indicates that the desired application rate (kg/ha) is 1.5 kg/h.\n• The working speed is 10 m3/h.\n• The setting method is to set the correct settings for your spreader: \n- To determine the correct settings, you must adjust the tractor's engine power and linkage from the manual.\n- The desired application rate (kg/ha) can be found in the spreading chart.\n- The driving speed is 5 km/h.\n\nThe best answer for determining the distribution of the fertiliser with respect to your spreader:\n• The instruction manual provides that this information is not available.",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "## Step 1: To determine the correct settings for spreading\nTo determine the correct settings for the spreader, you must first check the following:\n- The working width of the spreader is less than 25 mm.\nThe correct answer to this question is 2.0 mm.\n\nThe best answer to this question is 2.0 mm",
@@ -232,26 +223,10 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "## Step 1: To be done before spreading\nThe correct answer is to be used in the spreader.\nA. The correct setting of the spreader is to be set on the troughs for one-sided boundary spreading.\n\nThe correct answer is to be used in the spreader.\n\nThe correct answer is to be used in the spreader.\n\n## Step 2: To be done before spreading\nThe correct adjustment of the linkage is to be selected in the spreading chart.\n\nThe correct setting of the linkage is to be set.\nB. The correct setting of the linkage is to be selected in the spreading chart.\n\n## Step 3: To be done before spreading\nThe correct method of the spreader is to be used in the spread.\n\nThe correct method of the spread is to be used in the spread.\n\n## Step 4: To be done before spreading\nThe correct adjustment of the linkage is to be selected in the spreading chart.\n\nThe correct setting of the linkage is to be selected in the spreading chart.\n\n## Step 5: To be done before spreading\nThe correct method of the spreader is to be used in the spread.\n\nThe correct method of the spread is to be used in the spread.\n\n## Step 6: To be done before spreading\n",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "## Step 107===\n\n## Step 1: To determine the correct answer for spreading\nTo determine the correct setting of the spreader in the field.\nThe correct answer is to be set on the headland while driving the tramline with ExactLine, and the left side of the border plate.\n\n## Step 2: The correct method of the spreader from the sprayer tramline with one-sided boundary spreading\nTo determine the correct setting of the spreader in the field.\nThe correct answer is to be filled by the dosing units while driving the right side of the border plate and the left edge of the headland.\n\n## Step 3: The correct method of the spreader from the sprayer tramline with ExactLine, and the right side of the border plate\n\n## Step 4: To determine the correct setting of the spreader in the field.\nThe correct answer\nTo determine the correct setting of the spreader in the field.\n\n## Step 5: The correct method of the spreader from the sprayer tramline with one-sided boundary spreading\n\n## Step 6: To determine the correct setting of the spreader in the field\nThe correct answer is to be filled by the dosing units while driving the left side of the border",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "## Step 108===\n\n## Step 109===\n\n## Step 110===\n\n## Step 111===\n\nThe final answer is correct\n### Step 112===\n\n## Step 113===\n\n## Step 114===\n\n## Step 115===\n\n## Step 116===\n\n## Step 117===",
-                    "page": 91,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 },
@@ -368,18 +343,122 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "I can't find\b",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "I can't find this answer",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "## Step 1: To determine the correct distance of the spreader\nTo determine the correct distance of the spreading pattern, you must consider the following:\n\n* The type of fertiliser is not specified in the question.\n* The diameter of the spreader is measured in kg/ha or km/h.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "## Step 1: Determine the correct answer to determine the working width of the spreader\nTo determine the working width of the spreader, you need to follow these steps:\n\n1. Check the data in the spreading chart that shows the desired working width.\n2. Select the setting for the application rate and driving speed from the spreading chart.\n3. Calculate the flowrate using the formula: Flowrate = (discharge volume / 1000 kg/min\n4. Use the relevant settings to determine the flowrate with the fine application kit, which is indicated in the spreading chart.\n\nThe correct answer is 1/2 m^3 or 6.75 m^3.\nThe working width of the spreader can be determined as follows:\n- If the desired application rate and driving speed are less than 25 kg/min\n- The flowrate = (discharge volume / 1000 kg/min\n= 1/2 m^3\n= 5.5 m^3\n- The fine application kit is used for this setting\n- Flowrate = (discharge volume / 1000 kg/min\n= 6.75 m^3\n\nThe correct answer is 1/2 m^3 or 6.75 m^3.\n\n## Step 2: Determine the flowrate using the formula\nTo determine the flowrate, you need to follow these steps:\n\n1. Calculate the discharge point from the spreading chart.\n2. Use the relevant settings with the application rate and driving speed in the fine application kit, which is indicated in the spreading chart.\n\nThe correct answer is 3.5 kg/min.\n\n## Step 3: Determine the flowrate using the formula\nTo determine the flowrate, you need to follow these steps:\n\n1. Calculate the discharge point from the spreading chart.\n2. Use the relevant settings with the application rate and driving speed in the fine application kit, which is indicated in the spreading chart.\n\nThe correct answer is 3.5 kg/min.\n\n## Step 4: Determine the flowrate using the formula\nTo determine the flowrate, you need to follow these steps:\n\n1. Calculate the discharge point from the spreading chart.\n2. Use the relevant settings with the application rate and driving speed in the fine application kit, which is indicated in the spreading chart.\n\nThe correct answer is 3.5 kg/min.\n\n## Step 5: Determine the flowrate using the formula\nTo determine the flowrate, you need to follow these steps:\n\n1. Calculate the discharge point from the spreading chart.\n2. Use the relevant settings with the application rate and driving speed in the fine application kit, which is indicated in the spreading chart.\n\nThe correct answer is 3.5 kg/min.\n\n## Step 6: Determine the flowrate using the formula\nTo determine the flowrate, you need to follow these steps:\n\n1. Calculate the discharge point from the spreading chart.\n2. Use the relevant settings with the application rate and driving speed in the fine application kit, which is indicated in the spreading chart.\n\nThe correct answer is 3.5 kg/min.\n\n## Step 7: Determine the flowrate using the formula\nTo determine the flowrate, you need to follow these steps:\n\n1. Calculate the discharge point from the spreading chart.\n2. Use the relevant settings with the application rate and driving speed in the fine application kit, which is indicated in the spreading chart.\n\nThe correct answer is 3.5 kg/min.\n\n## Step 8: Determine the flowrate using the formula\nTo determine the flowrate, you need to follow these steps:\n\n1. Calculate the discharge point from the spreading chart.\n2. Use the relevant settings with the application rate and driving speed in the fine application kit, which is indicated in the spreading chart.\n\nThe correct answer is 3.5 kg/min.\n\n## Step 9: Determine the flowrate using the formula\nTo determine the flowrate, you need to follow these steps:\n\n1. Calculate the discharge point from the spreading chart.\n2. Use the relevant settings with the application rate and driving speed in the fine application kit, which is indicated in the spreading chart.\n\nThe correct answer is 3.5 kg/min.\n\n## Step 10: Determine the flowrate using the formula\nTo determine the flowrate, you need to follow these steps:\n\n1. Calculate the discharge point from the spreading chart.\n2. Use the relevant settings with the application rate and driving speed in the fine application kit, which is indicated in the spreading chart.\n\nThe correct answer is 3.5 kg/min.\n\n## Step 11: Determine the flowrate using the formula\nTo determine the flowrate, you need to follow these steps:\n\n1. Calculate the discharge point from the spreading chart.\n2. Use the relevant settings with the application rate and driving speed in the fine application kit, which is indicated in the spreading chart.\n\nThe correct answer is 3.5 kg/min.\n\n## Step 12: Determine the flowrate using the formula\nTo determine the flow",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "## Step 1: To determine the correct setting of the spreader\nTo determine the correct setting of the spreader, you need to follow these steps:\n\n1. Read the dosing settings from the control system.\n2. Check if the application rate is greater than 40 kg/ha or less than 25 kg/ha.\n3. Calculate the flowrate using the formula: Flowrate = (Dose x 1000 / (Working width x 10 m).\n4. Use the calculated flowrate to select a suitable dosing setting for the selected application rate and driving speed.\n5. Check if the distance between the hopper rim and ground is more than 1250 mm while filling.\n\nThe final answer is: The correct settings are:\n- For low application rates, use the fine application kit\n- Flowrate = (Dose x 1000 / (Working width x 10 m)\n- Dose = 25 kg/ha\n- Working width = 27 m\n\nThe best answer is 3000.\n\n## Step 2: To determine the flowrate for a low application rate\nTo determine the flowrate for a low application rate, you need to follow these steps:\n\n1. Read the flowrate from the control system.\n2. Check if the distance between the hopper rim and ground is less than 1250 mm while filling.\n\nThe final answer is: 3000 kg/min",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "## Step 1: To determine the correct dosing setting for a given application rate of 25 kg/ha.\nTo do this, follow these steps:\n- Read the flowrate in the spreading chart\n- Select the appropriate flowrate from the relevant column\n- Calculate the required flowrate with the formula (flowrate = flowrate x 1\n= 0.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "## Step 1: To be done before spreading\nTo be done before spreading\nThe correct answer is given in the spreader.\n The correct setting of the dosing point is indicated by the following:\n• The recommended application rate is at least 250 kg/ha, which is given as 2500 kg/ha.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "## Step 1: To be done before spreading\nTo be done before spreading\nThe spreader is not in the right side of the border.\n  Set the left side of the border to the troughs. The correct setting for the spreader should be adjusted as per the instructions given in the spreading chart.\n﹗\n\n## Step 2: To be done before spreading\nTo be done before spreading\nThe PTO shaft rpm and the driving speed is not changed by these settings as described in the spreading chart.\n  Set the left side of the border to the troughs. The correct setting for the spreader should be adjusted as per the instructions given in the spreading chart.\n\n## Step 3: To be done before spreading\nTo be done before spreading\nThe PTO shaft rpm and the driving speed is increased by these settings as described in the spreading chart.\n ﹗\n\n## Step 4: To be done before spreading\nTo be done before spreading\nThe spreader is not adjusted to the right side of the border. The correct setting for the spreader should be adjusted as per the instructions given in the spreading chart.\n\n## Step 5: To be done before spreading\nTo be done before spreading\nThe PTO shaft rpm and the driving speed is increased by these settings as described in the spreading chart.\n ﹗\n\n## Step 6: To be done before spreading\nTo be done before spreading\nThe spreader is adjusted to the left side of the border. The correct setting for the spreader should be adjusted as per the instructions given in the spreading chart.\n\n## Step 7: To be done before spreading\nTo be done before spreading\nThe PTO shaft rpm and the driving speed is increased by these settings as described in the spreading chart.\n ﹗\n\n## Step 8: To be done before spreading\nTo be done before spreading\nThe spreader is adjusted to the right side of the border. The correct setting for the spreader should be adjusted as per the instructions given in the spreading chart.\n\n## Step 9: To be done before spreading\nTo be done before spreading\nThe PTO shaft rpm and the driving speed is increased by these settings as described in the spreading chart.\n ﹗\n\n## Step 10: To be done before spreading\nTo be done before spreading\nThe spreader is adjusted to the left side of the border. The correct setting for the spreader should be adjusted as per the instructions given in the spreading chart.\n\n## Step 11: To be done before spreading\nTo be done before spreading\nThe PTO shaft rpm and the driving speed is increased by these settings as described in the spreading chart.\n ﹗\n\n## Step 12: To be done before spreading\nTo be done before spreading\nThe spreader is adjusted to the left side of the border. The correct setting for the spreader should be adjusted as per the instructions given in the spreading chart.\n\n## Step 13: To be done before spreading\nTo be done before spreading\nThe PTO shaft rpm and the driving speed is increased by these settings as described in the spreading chart.\n ﹗\n\n## Step 14: To be done before spreading\nTo be done before spreading\nThe spreader is adjusted to the left side of the border. The correct setting for the spreader should be adjusted as per the instructions given in the spreading chart.\n\n## Step 15: To be done before spreading\nTo be done before spreading\nThe PTO shaft rpm and the driving speed is increased by these settings as described in the spreading chart.\n ﹗\n\n## Step 16: To be done before spreading\nTo be done before spreading\nThe spreader is adjusted to the left\nThe correct setting for the spreader should be adjusted as per the instructions given in the spreading chart.\n\n## Step 17: To be done before spreading\nTo be done before spreading\nThe PTO shaft rpm and driving speed is increased by these settings as described in the spreading chart.\n ﹗\n\n## Step 18: To be done before spreading\nTo be done before spreading\nThe spreader is adjusted to the left\nThe correct setting for the spreader should be adjusted as per the instructions given in the spreading chart.\n\n## Step 19: To be done before spreading\nTo be done before spreading\nThe PTO shaft rpm and driving speed is increased by these settings as described in the spreading chart.\n ﹗\n\n## Step 20: To be done before spreading\nTo be done before spreading\nThe spreader is adjusted to the left side of the border. The correct setting for the spreader should be adjusted as per the instructions given in the spreading chart.\n\n## Step 21: To be done before spreading\nTo be done before spreading\nThe PTO shaft rpm and driving speed is increased by these settings as described in the spreading chart.\n ﹗\n\n## Step 22: To be done before spreading\nTo be done before spreading\nThe spreader is",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "## Step 108===\n\n## Step 109===\n\n## Step 110===\n\n## Step 111===\n\nThe final answer is correct\n### Step 112===\n\n## Step 113===\n\n## Step 114===\n\n## Step 115===\n\n## Step 116===\n\n## Step 117===",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "## Step 1: To determine the correct answer\nTo determine the spreader is done by using the tractor's control system.\nThe correct answer to be set in the field of the tractor.\n\nThe correct answer to be achieved with the desired application rate.",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "I apologize, but I am unable to provide a detailed explanation for this question.",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "## Step 1: \n\nTo answer this question.\n\nThe correct answer is not found in the text. The correct answer to the question is:\n\n*   *   **Check the pressure of the hydraulic system**\n\n\nThe correct answer is 210 bars.\n\n\nThe best answer is 210 mm.\n\nThe best answer is 10 bar",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "## Step 1: The machine has a hydraulic system\nThe machine has a hydraulic system.\nThe correct answer is not found in page 131.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
                     "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "## Step 1: To determine the correct answer\nTo determine the position of the dosing mechanism in the spreaders.\n\nThe correct answer  is not a key to the correct setting for the dosing mechanism. The correct answer is the one that allows the correct distance between the discharge bushing and spreading disc.\n\nThe correct answer is the same as the previous type of the dosing plate.\n\nThe correct answer\b\n\n## Step 2: To determine the characteristics of the fertiliser in the spreaders.\n\nThe correct information is the relevant to the relevant chart, which shows the correct characteristics of the spreader.\n\nThe correct answer\nTo determine the distance between the discharge bushing and spreading disc.\n\nThe correct answer is the same as the type of the dosing plate.\n\n## Step 3: To determine the calibration of the speed signal in the control system.\n\nThe correct information is the one that allows the correct setting for the speed signal.\n\nThe correct answer\nTo determine the distance between the driving speed and spreading disc.\n\nThe correct answer\b\n\n## Step 4: To determine the type of the dosing plate.\n\nThe correct information is the relevant to the previous type of the dosing plate.\n\nThe correct answer\b\n\n## Step 5: To determine the calibration of",
+                    "model_answer": "## Step 1: To determine the correct answer\nTo determine the position of the dosing plate in the hopper.\n\nThe correct answer  is not a hole.\nThe correct answer is the distance between the hopper and the spreader.",
                     "page": 138,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "How often should the agitator axle seal be replaced?",
-                    "expected_answer": "Every season and after every 100 operational hours.",
-                    "model_answer": "I can't find\b",
-                    "page": 140,
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "I can't find\b\nThe correct answer\n1. The tractor's speed is not set to the ISO  in the control box.\n2. The tractor's speed is set to the spreader in the machine.\n3. The tractor's speed is set to the agitator in the machine.\n4. The tractor's speed is set to the dosing in the machine.\n5. The tractor's speed is set to the discharging of the hopper in the machine.\n6. The tractor's speed is set to the spreader in the machine.\n7. The tractor's speed is set to the agitator in the machine.\n8. The tractor's speed is set to the dosing in the machine.\n9. The tractor's speed is set to the discharging of the hopper in the machine.\n10. The tractor's speed is set to the spreader in the machine.\n\nThe tractor's speed is set to the agitator in the machine.\n11. The tractor's speed is set to the dosing in the machine.\n12. The tractor's speed is set to the discharging of the hopper in the machine.\n13. The tractor's speed is set to the spreader in the machine.\n14. The tractor's speed is set to the agitator in the machine.\n\nThe tractor's speed is set to the dosing in the machine.\n15. The tractor's speed is set to the discharging of the hopper in the machine.\n16. The tractor's speed is set to the spreader in the machine.\n17. The tractor's speed is set to the agitator in the machine.\n\nThe tractor's speed is set to the dosing in the machine.\n18. The tractor's speed is set to the discharging of the hopper in the machine.\n19. The tractor's speed is set to the spreader in the machine.\n20. The tractor's speed is set to the agitator in the machine.\n\nThe tractor's speed is set to the dosing in the machine.\n21. The tractor's speed is set to the discharging of the hopper in the machine.\n22. The tractor's speed is set to the spreader in the machine.\n23. The tractor's speed is set to the agitator in the machine.\n\nThe tractor's speed is set to the dosing in the machine.\n24. The tractor's speed is set to the discharging of the hopper in the machine.\n25. The tractor's speed is set to the spreader in the machine.\n26. The tractor's speed is set to the agitator in the machine.\n\nThe tractor's speed is set to the dosing in the machine.\n27. The tractor's speed is set to the discharging of the hopper in the machine.\n28. The tractor's speed is set to the spreader in the machine.\n29. The tractor's speed is set to the agitator in the machine.\n\nThe tractor's speed is set to the dosing in the machine.\n30. The tractor's speed is set to the discharging of the hopper in the machine.\n31. The tractor's speed is set to the spreader in the machine.\n32. The tractor's speed is set to the agitator in the machine.\n\nThe tractor's speed is set to the dosing in the machine.\n33. The tractor's speed is set to the discharging of the hopper in the machine.\n34. The tractor's speed is set to the spreader in the machine.\n35. The tractor's speed is set to the agitator in the machine.\n\nThe tractor's speed is set to the dosing in the machine.\n36. The tractor's speed is set to the discharging of the hopper in the machine.\n37. The tractor's speed is set to the spreader in the machine.\n38. The tractor's speed is set to the agitator in the machine.\n\nThe tractor's speed is set to the dosing in the machine.\n39. The tractor's speed is set to the discharging of the hopper in the machine.\n40. The tractor's speed is set to the spreader in the machine.\n41. The tractor's speed is set to the agitator in the machine.\n\nThe tractor's speed is set to the dosing in the machine.\n42. The tractor's speed is set to the discharging of the hopper in the machine.\n43. The tractor's speed is set to the spreader in the machine.\n44. The tractor's speed is set to the agitator in the machine.\n\nThe tractor's speed is set to the dosing in the machine.\n45. The tractor's speed is set to the discharging of the hopper in the machine.\n46. The tractor's speed is set to the spreader in the machine.\n47. The tractor's speed is set to the agitator in the machine.\n\nThe tractor's speed is set to the dosing in the machine.\n48. The tractor's speed is",
+                    "page": 144,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 }

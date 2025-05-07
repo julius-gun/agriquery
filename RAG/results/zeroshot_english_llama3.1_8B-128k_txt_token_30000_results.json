@@ -9,24 +9,23 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.3611111111111111,
-        "precision": 0.4,
-        "recall": 0.5555555555555556,
+        "accuracy": 0.3644067796610169,
+        "precision": 0.43037974683544306,
+        "recall": 0.53125,
         "specificity": 0.16666666666666666,
-        "f1_score": 0.46511627906976744,
-        "true_positives": 30,
+        "f1_score": 0.47552447552447547,
+        "true_positives": 34,
         "true_negatives": 9,
         "false_positives": 45,
-        "false_negatives": 24,
-        "total_questions": 108,
+        "false_negatives": 30,
+        "total_questions": 118,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.6590909090909091,
-            "unanswerable_questions": 0.16666666666666666,
-            "table_questions": 0.1
+            "general_questions": 0.6111111111111112,
+            "unanswerable_questions": 0.16666666666666666
         }
     },
     "timing": {
-        "duration_qa_phase_seconds": 1353.8999999999999
+        "duration_qa_phase_seconds": 1533.9
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,14 +135,6 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "The parking brake of the tractor should be engaged before connecting the machine.",
@@ -232,26 +223,10 @@
                     "self_evaluation": "yes"
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "The required height of the spreading disc above the troughs is 75 cm.",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "The correct height of the spreading disc is 75 cm.",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "The maximum acceptable loss of the quantity in the middle trough is 10% of the quantity distributed in the centre behind the spreader.",
-                    "page": 91,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
                 },
@@ -368,20 +343,124 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-                    "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "The required distance in mm between the discharge bushing and spreading disc is 1.0 mm.",
-                    "page": 138,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "How often should the agitator axle seal be replaced?",
                     "expected_answer": "Every season and after every 100 operational hours.",
                     "model_answer": "The agitator axle seal is recommended to be replaced every season, as well as after every 100 operational hours.",
                     "page": 140,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "The ISO control system uses the ISOBUS communication protocol, which makes it suitable for tractors that are also equipped with an ISOBUS communication system. For tractors that still do not have an ISOBUS connection, your dealer can supply the universal IsoMatch terminal to which you can connect all ISOBUS machines.\nThe spreader uses weighcells to continuously measure the quantity of fertiliser that is being spread. The computer in the distribution box compares these values with the set application rate and corrects as needed by further opening or closing the dosing unit. The tractor's electronics or an extra (gps) sensor measures the current required driving speed and localisation.\nThe working width and the start/stop time is controlled with field boundaries and headlands. Field data imported from a new management system or a newly created field boundary is used for this purpose.\n[Image]\n81\n===Page 82===\n\nGetting familiar with the machine\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\nThe working width of the spreader can be set to any value between 24 and 36 metres. The working width is adjusted by changing the position of the coupling shaft on the central gearbox, the PTO speed and the flowrate.\nThe discharge point can be set between positions C to U. The correct settings are determined on the basis of the selected application rate and the required driving speed. The position that would most likely provide the best spreading pattern is given in the third column, Discharge Point, of the spreading chart.\nAlways check the accuracy of the discharge point by conducting spreading pattern tests (tray test).\nThe ISO control system can drive the spreader in three different ways:\n· distribution that resembles the settings for the preset application rate must be determined under changing circumstances through automatic calibration and driving speed correction,\n see the paragraph below,»Constant application rate«.\nwith similar or lower application rates (< 40 kg/min) the fine application kit should be used,\n See paragraph »Fine application« on page 67.\n· with very low application rates on very uneven terrain, preset application rates must be checked manually to ensure that the correct dosing setting is being distributed, without automatic calibration but with driving speed correction,\nThe control system can spread an equal amount of fertiliser over the entire field. In doing so, the control system corrects changes in driving speed, while maintaining the option to adjust the application rate manually for over- or underdosing.\nThe control system can search for the correct dosing setting with the preset application rate through automatic calibration. The disadvantage is that the application rate for the second automatic calibration (= approx. 2 minutes) could differ markedly from the selected application rate. It is therefore strongly recommended that the starting values be taken from the spreading charts. This can be done in the 'Curve Calibration' screen. The control system calculates the discharge curve from the starting values. The control system corrects the spreader for changing circumstances, based on this curve, e.g. as a result of changes in driving speed.\nThe control system can drive the spreader in three different ways:\n· distribution that resembles the settings for the preset application rate must be determined under changing circumstances through automatic calibration and driving speed correction,\n See paragraph »Variable, externally driven application rate« on page 72.\nLook for the most comparable fertiliser type and the correct settings for the selected working width in the (online) spreading chart:\n Read the setting of the dosing in the Dosing Setting column that goes with the selected application rate and driving speed.\n The corresponding flowrate is given in the Kg/min column.\n The given values are to be entered in the control system.\nIf the selected application rate is not given in the spreading charts, use the settings that are the closest to the selected application rate. If the selected driving speed is not given, use the settings closest to the selected driving speed.\n82\n===Page 83===\n\nGetting familiar with the machine\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\nThe control system can drive the spreader in three different ways:\n· distribution that resembles the settings for the preset application rate must be determined under changing circumstances through automatic calibration and driving speed correction,\n see the paragraph below,»Constant application rate«.\nwith similar or lower application rates (< 40 kg/min) the fine application kit should be used,\n See paragraph »Fine application« on page 67.\n· with very low application rates on very uneven terrain, preset application rates must be checked manually to ensure that the correct dosing setting is being distributed, without automatic calibration but with driving speed correction,\nThe control system can spread an equal amount of fertiliser over the entire field. In doing so, the control system corrects changes in driving speed, while maintaining the option to adjust the application rate manually for over- or underdosing.\nThe control system can search for the correct dosing setting with the preset application rate through automatic calibration. The disadvantage is that the application rate for",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "The maximum operating angle of the coupling shaft is 30 ° when lifted and 30 ° when lowered. The minimum overlap between the PTO shaft and the machine drive axle is 150 mm.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "The distribution meter has 7 parts.",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "The control system can drive the spreader in three different ways:\n· distribution that resembles the settings for the preset application rate must be determined under changing circumstances through automatic calibration and driving speed correction,\nwith similar or lower application rates (< 40 kg/min) the fine application kit should be used,\nwith very low application rates on very uneven terrain, preset application rates must be checked manually to ensure that the correct dosing setting is being distributed, without automatic calibration but with driving speed correction,\n· under changing circumstances location specific application rate driven by an external signal, through automatic calibration and driving speed correction,\nThe control system can search for the correct dosing setting with the preset application rate through automatic calibration. The disadvantage is that the application rate for the second automatic calibration (= approx. 2 minutes) could differ markedly from the selected application rate. It is therefore strongly recommended that the starting values be taken from the spreading charts. This can be done in the 'Curve Calibration' screen. The control system calculates the discharge curve from the starting values. The control system corrects the spreader for changing circumstances, based on this curve, e.g. as a result of changes in driving speed.\nThe control system can drive the spreader with the IsoMatch control box also transmit the application rate and working width used back to the external system.\nThe external system and the control system of a spreader with an IsoMatch control box communicate through a serial port with an RS 232 connection. This connection is located at the back of the control box. The occupation of pins in the 9-point RS 232 plug and the settings required are given in\nthe user manual of the IsoMatch control box.\nThe control system can spread an equal amount of fertiliser over the entire field. In doing so, the control system corrects changes in driving speed, while maintaining the option to adjust the application rate manually for over- or underdosing.\nThe control system can search for the correct dosing setting with the preset application rate through automatic calibration. The disadvantage is that the application rate for the second automatic calibration (= approx. 2 minutes) could differ markedly from the selected application rate. It is therefore strongly recommended that the starting values be taken from the spreading charts. This can be done in the 'Curve Calibration' screen. The control system calculates the discharge curve from the starting values. The control system corrects the spreader for changing circumstances, based on this curve, e.g. as a result of changes in driving speed.\nThe control system can drive the spreader with the IsoMatch control box also transmit the application rate and working width used back to the external system.\nThe external system and the control system of a spreader with an IsoMatch control box communicate through a serial port with an RS 232 connection. This connection is located at the back of the control box. The occupation of pins in the 9-point RS 232 plug and the settings required are given in\nthe user manual of the IsoMatch control box.\nThe control system can spread an equal amount of fertiliser over the entire field. In doing so, the control system corrects changes in driving speed, while maintaining the option to adjust the application rate manually for over- or underdosing.\nThe control system can search for the correct dosing setting with the preset application rate through automatic calibration. The disadvantage is that the application rate for the second automatic calibration (= approx. 2 minutes) could differ markedly from the selected application rate. It is therefore strongly recommended that the starting values be taken from the spreading charts. This can be done in the 'Curve Calibration' screen. The control system calculates the discharge curve from the starting values. The control system corrects the spreader for changing circumstances, based on this curve, e.g. as a result of changes in driving speed.\nThe control system can drive the spreader with the IsoMatch control box also transmit the application rate and working width used back to the external system.\nThe external system and the control system of a spreader with an IsoMatch control box communicate through a serial port with an RS 232 connection. This connection is located at the back of the control box. The occupation of pins in the 9-point RS 232 plug and the settings required are given in\nthe user manual of the IsoMatch control box.\nThe control system can spread an equal amount of fertiliser over the entire field. In doing so, the control system corrects changes in driving speed, while maintaining the option to adjust the application rate manually for over- or underdosing.\nThe control system can search for the correct dosing setting with the preset application rate through automatic calibration. The disadvantage is that the application rate for the second automatic calibration (= approx. 2 minutes) could differ markedly from the selected application rate. It is therefore strongly recommended that the starting values be taken from the spreading charts. This can be done in the 'Curve Calibration' screen. The control system calculates the discharge curve from the starting values. The control system corrects the spreader for changing circumstances, based on this curve, e.g.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "The symbol on top of the fine application handle indicates that the Fine application kit is enabled.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "The RS-232 connection is located at the back of the control box.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "The correct answer is: The left and right spreading discs should be checked every year.",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "The maximum acceptable loss of the quantity in the middle trough in percent is 10%.",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "The spreading height of the spreader is measured from the bottom of the vanes.",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "The exact information needed to answer this question is found in the paragraph on page 46.\n[Image]\n[Image]\nSpreading chart\n[Image: Spreading chart]\nSetting\n154\nINDICATION\nThe spreading chart shows the correct setting for the PTO shaft and spreading discs RPM, based on the type of fertiliser used. The chart also indicates the correct position of the ExactLine or hydraulic border spreading plate.\nIf you want to know the exact information:\n· find with the online spreading chart service on the website or via the Free Application (App) for mobile phones with an iOs and/or Android operating system.\nThe spreading pattern of both spreading discs overlap partially, especially in the middle behind the spreader. For this reason, the real application rate will deviate from the one that you set during one-sided over- and under dosing. You will see the effect especially with narrow working widths because that is when the spreading patterns overlap the most.\nThe chart shows settings for the yield and ECO positions; for the yield position use the standard mounted (short) plates.\n[Image]\n155\n===Page 156===\n\nUse in the field\nSpreader control software\nIsoMatch Grip\n[Image]\nAccessories\nA user licence can be purchased via the IsoMatch shop which, after the expiry of the free test period, allows your machine to work with\n· Task controller\n· external application rate\n· control for headland management and GEOSPREAD functions.\n See the website www.isomatchshop.com\nIsoMatch GEOCONTROL is an advanced software application for more precise and efficient use of fertiliser spreaders.\nSite-dependent control of your GEOSpread\nAround the spreader\n· to get spreading done specific to the site\n· with automatic headland control\n· and working width reduction with gored spreading,\nyou require additional software. See the website www.isomatchshop.com\nThe IsoMatch Grip is a control unit on which most of the machine functions used can be operated centrally with one handle. This is available in addition to the ISO tractor or ISOMatch control box.\nHandle control\nWhile working attention and visibility is often required to follow the work process. If operating buttons can be located by the sense of touch reaction speed can  be  increased and operating mistakes avoided. By locating the control buttons on the handle by touch while you are looking where you are driving system control can remain focussed.\n157\n===Page 158===\n\nAccessories\nIsoMatch MultiEye\n[Image]\nIsoMatch Global GPS antenna\n[Image]\nIsoMatch Wireless\n[Image]\n158\nTo complement the GEOCONTROL functions an optically guided steering instrument will assist you in finding and keeping the A-B line during various activities.\nDGPS driven steering\nThe upper and middle section shows the DGPS driven steering while spraying and for other treatments, where close monitoring of the pass is required.\nGEOCONTROL Section Activity\nAt the bottom of the display you will see the enabled and disabled sections displayed.\n See the website www.isomatchshop.com\nThe latest development in ISOBUS communication is an extension to the IsoMatch terminal for tractors which cannot give any own locational information. The GPS antenna with DGPS accuracy allows satellite navigation for field-specific section control, variable dosing and field registration.\n See the website www.isomatchshop.com\nConnection with local Wireless Internet and IsoMatch. With IsoMatch Wireless, you can easily connect the IsoMatch Tellus (GO) to any wireless network. Think of hot spot, home network, etc.\n===Page 159===\n\nIsoMatch MultiEye\nReflector\n[Image: Reflector]\n[Image]\nAccessories\nA user licence can be purchased via the IsoMatch shop which, after the expiry of the free test period, allows your machine to work with\n· Task controller\n· external application rate\n· control for headland management and GEOSPREAD functions.\n See the website www.isomatchshop.com\nIsoMatch GEOCONTROL is an advanced software application for more precise and efficient use of fertiliser spreaders.\nSite-dependent control of your GEOSpread\nAround the spreader\n· to get spreading done specific to the site\n· with automatic headland control\n· and working width reduction with gored spreading,\nyou require additional software. See the website www.isomatchshop.com\nThe IsoMatch Grip is a control unit on which most of the machine functions used can be operated centrally with one handle. This is available in addition to the ISO tractor or ISOMatch control box.\nHandle control\nWhile working attention and visibility is often required to follow the work process. If operating buttons can be located by the sense of touch reaction speed can  be  increased and operating mistakes avoided. By locating the control buttons on the handle by touch while you are looking where you are driving system control can remain focussed.\n160\n===Page 161===\n\nAccessories\nIsoMatch MultiEye\n[Image]\nIsoMatch Global GPS antenna\n[Image",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "If you are unable to lower the power lift far enough to release the catch hooks when preparing the machine for storage, follow these steps:\n\n1. Switch off the PTO shaft.\n2. Remove the key from the ignition.\n3. Engage the parking brake of the tractor.\n4. Wait until all parts have stopped moving before you approach it.\n5. Place the machine on a firm, stable surface.\n\nThe power lift is designed to be used for lifting and lowering the machine, so it's essential that it's in working order when storing the machine.",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "The central gearbox is filled with gear wheel grease EP 00/000.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "The required distance between the discharge bushing and spreading disc is 1.0 mm.",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "The ExactLine is an accurate border spreading tool for boundary track spreading from the last sprayer tramline. The ExactLine provides a very good border spreading pattern with an optimal balance between profit and the environment.\n\nTo connect the tractor's speed sensor or radar to the IsoMatch control box, you need to have the ISO 11786 in cab connection.",
+                    "page": 144,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
                 }
             ]
         },

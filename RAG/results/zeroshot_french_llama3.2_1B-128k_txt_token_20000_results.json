@@ -9,24 +9,23 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.027777777777777776,
+        "accuracy": 0.025423728813559324,
         "precision": 0.03636363636363636,
-        "recall": 0.037037037037037035,
+        "recall": 0.03125,
         "specificity": 0.018518518518518517,
-        "f1_score": 0.03669724770642201,
+        "f1_score": 0.03361344537815126,
         "true_positives": 2,
         "true_negatives": 1,
         "false_positives": 53,
-        "false_negatives": 52,
-        "total_questions": 108,
+        "false_negatives": 62,
+        "total_questions": 118,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.045454545454545456,
-            "unanswerable_questions": 0.018518518518518517,
-            "table_questions": 0.0
+            "general_questions": 0.037037037037037035,
+            "unanswerable_questions": 0.018518518518518517
         }
     },
     "timing": {
-        "duration_qa_phase_seconds": 576.4000000000002
+        "duration_qa_phase_seconds": 604.8000000000001
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,14 +135,6 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "La réponse est la bonne réponse à l'épandeur de type d'engrais\n[Image]\n[Image]\nLorsque vous montez le disque de commande, il doit être déplacé et non-roulent.\nÂtrez les étapes pour obtenir une largeur de travail avec un disposit du tracteur. Le système de commande peut commander l'épandeur de trois façons différentes :\n· réaliser une répartition aussi régulière que possible d'un débit préalablement réglé dans des conditions variables à l'aide de l'étalonnage automatique et de la correction de vitesse d'avancement,\n cf. le paragraphe ci-dessus »Réglages des ouvertures\nUtilisez les câbles pour obtenir une largeur de travail sur la commande, mais avec un débit préalablement réglé dans les conditions et la valeur de l'engrais.\nSi vous montez le disque de commande, il doit être déplacé et non-roulent. Les câbles doivent être serrés et non roulés.\nÂtrez les étapes pour obtenir une largeur de travail avec un dispositeuse de commande, mais avec un débit préalablement réglée dans les conditions et la valeur de l'engrais.\nSi vous montez le disque de commande, il doit être serré et non-roulent. Les câbles doivent être serrés et non roulés.\n===Page 68===\n\nRéglage de la vitesse d'avancement\n[Image]\nRégime de prise de force\n[Image]\nLe système de commande peut commander l'épandeur de trois façons différentes :\n· réaliser une répartition aussi régulière que possible d'un débit préalablement réglé dans les conditions variables à l'aide de l'étalonnage automatique et de la correction de vitesse d'avancement,\n cf. le paragraphe ci-dessus »Réglages des ouvertures\nUtilisez les câbles pour obtenir une largeur de travail avec un débit préalablement réglé dans les conditions et la valeur de l'engrais.\nSi vous montez le disque de commande, il doit être serré et non-roulent. Les câbles doivent être serrés et non roulés.\n===Page 69===\n\nRéglage de la vitesse d'avancement\n[Image]\nSystème de commande\n[Image]\nRégime de prise de force\n[Image]\nLe système de commande peut commander l'épandeur de trois façons différentes :\n· réaliser une répartition aussi régulière que possible d'un débit préalablement réglé dans les conditions et la valeur de l'engrais.\n cf. le paragraphe ci-dessus »Réglages des ouvertures\nUtilisez les câbles pour obtenir une largeur de travail avec un débit préalablement réglé dans les conditions et la valeur de l'engrais.\nSi vous montez le disque de commande, il doit être serré et non-roulent. Les câbles doivent être serrés et non roulés.\n===Page 70===\n\nRéglage de la vitesse d'avancement\n[Image]\nSystème de commande\n[Image]\nRégime de prise de force\n[Image]\nLe système de commande peut commander l'épandeur de trois façons différentes :\n· réaliser une répartition aussi régulière que possible d'un débit préalablement réglé dans les conditions et la valeur de l'engrais.\n cf. le paragraphe ci-dessus »Réglages des ouvertures\nUtilisez les câbles pour obtenir une largeur de travail avec un débit préalablement réglé dans les conditions et la valeur de l'engrais.\nSi vous montez le disque de commande, il doit être serré et non-roulent. Les câbles doivent être serrés et non roulés.\n===Page 71===\n\nRéglage de la vitesse d'avancement\n[Image]\nSystème de commande\n[Image]\nRégime de prise de force\n[Image]\nLe système de commande peut commander l'épandeur de trois façons différentes :\n· réaliser une répartition aussi régulière que possible d'un débit préalablement réglé dans les conditions et la valeur de l'engrais.\n cf. le paragraphe ci-dessus »Réglages des ouvertures\nUtilisez les câbles pour obtenir une largeur de travail avec un débit préalablement réglé dans les conditions et la",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "I apologize, mais il semble que vous voyez les réglages de la vitesse d'écoulement pour le tracteur. Pour obtenir une largeur de travail qui est inférieur à 2 mètres.\nRéponse\nLa réponse finale\n    [Image]\n[Image]\n[Image]\nLa bonne réponse est : 1,0 kg/min.\n    \nLa bonne réponse est donc la valeur de vitesse d'écoulement pour le tracteur. Pour obtenir une largeur de travail qui est inférieur à 2 mètres, vous pouvez utiliser un système de commande qui satisfait au débit de l'épandage et à la prise de force.\n    [Image]\n[Image]\n[Image]\nLa bonne réponse est donc la valeur de vitesse d'écoulement pour le tracteur. Pour obtenir une largeur de travail qui est inférieur à 2 mètres, vous pouvez utiliser un système de commande qui satisfait au débit de l'épandage et à la prise de force.\n    [Image]\n[Image]\n[Image]\nLa bonne réponse est donc la valeur de vitesse d'écoulement pour le tracteur. Pour obtenir une largeur de travail qui est inférieur à 2 mètres, vous pouvez utiliser un système de commande qui satisfait au débit de l'épandage et à la prise de force.\n    [Image]\n[Image]\n[Image]\nLa bonne réponse est donc la valeur de vitesse d'écoulement pour le tracteur. Pour obtenir une largeur de travail qui est inférieur à 2 mètres, vous pouvez utiliser un système de commande qui satisfait au débit de l'épandage et à la prise de force.\n    [Image]\n[Image]\n[Image]\nLa bonne réponse est donc la valeur de vitesse d'écoulement pour le tracteur. Pour obtenir une largeur de travail qui est inférieur à 2 mètres, vous pouvez utiliser un système de commande qui satisfait au débit de l'épandage et à la prise de force.\n    [Image]\n[Image]\n[Image]\nLa bonne réponse est donc la valeur de vitesse d'écoulement pour le tracteur. Pour obtenir une largeur de travail qui est inférieur à 2 mètres, vous pouvez utiliser un système de commande qui satisfait au débit de l'épandage et à la prise de force.\n    [Image]\n[Image]\n[Image]\nLa bonne réponse est donc la valeur de vitesse d'écoulement pour le tracteur. Pour obtenir une largeur de travail qui est inférieur à 2 mètres, vous pouvez utiliser un système de commande qui satisfait au débit de l'épandage et à la prise de force.\n    [Image]\n[Image]\n[Image]\nLa bonne réponse and\nRéponse\n    [Image]\n[Image]\n[Image]\nPour obtenir une largeur de travail qui est inférieur à 2 mètres, vous pouvez utiliser un système de commande qui satisfait au débit de l'épandage et à la prise de force. Pour obtenir une largeur de travail qui est inférieur à 2 mètres, vous devez utiliser un système de commande qui satisfait au débit de l'épandage et à la prise de force.\n    [Image]\n[Image]\n[Image]\nLa bonne réponse est donc la valeur de vitesse d'écoulement pour le tracteur. Pour obtenir une largeur de travail qui est inférieur à 2 mètres, vous pouvez utiliser un système de commande qui satisfait au débit de l'épandage et à la prise de force.\n    [Image]\n[Image]\n[Image]\nLa bonne réponse est donc la valeur de vitesse d'écoulement pour le tracteur. Pour obtenir une largeur de travail qui est inférieur à 2 mètres, vous pouvez utiliser un système de commande qui satisfait au débit de l'épandage et à la prise de force.\n    [Image]\n[Image]\n[Image]\nLa bonne réponse est donc la valeur de vitesse d'écoulement pour le tracteur. Pour obtenir une largeur de travail qui est inférieur à 2 mètres, vous pouvez utiliser un système de commande qui satisfait au débit de l'épandage et à la prise de force.\n    [Image]\n[Image]\nLa bonne réponse est donc la valeur de vitesse d'écoulement pour le tracteur. Pour obtenir une largeur de travail qui est inférieur à 2 mètres, vous pouvez utiliser un système de commande qui satisfait au débit de l'épandage et à la prise de force.\n    [Image]\n[Image]\nLa bonne réponse est donc la valeur de vitesse d'écoulement pour le tracteur.",
@@ -232,26 +223,10 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "La réponse est de la largeur\nÂtre de l&#39;étage avec le débit d&#39;engrais pour un passage en vitesse.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;épandage.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;épandage.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;épandage.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;épandage.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;épandage.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;épandage.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;épandage.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;épandage.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;épandage.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;épandage.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;épandage.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;épandage.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;épandage.\nÂtre de la largeur et le disque de dépassement, il faut réagissant au bout de champ et à droite. La valeur de la largeur est de 25 cm.\nÂtre de l&#39;étage avec les étapes suivantes sont à régler dans le tableau d&#39;",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "La réponse est un débitement de la nappe épandue au bordure avec le déflecteur de bordure hydraulique\nÂtrez les disques d'épandage avec ExactLine\n   Épandage unilatéral en bordure, vous pouvez faire des réglages dans l'epandage.\n    La perte du débit de la nappe épandue au bordure avec le déflecteur de bordure hydraulique <<|mode=<<|> 1\n   Épandeur a 2 façons différentes de travailler et autant d&#39;adaptions correspondantes pour l&#39;épandage de bordure.\n    La perte du débitérial à droite de la nappe épandue au bordure avec le déflecteur de bordure hydraulique <<|> 1\n   Épandeur unilatéral en bordure, vous pouvez faire des réglages dans l&#39;epandage.\n    La perte du débitérial à gauche de la nappe épandue au bordure avec le déflecteur de bordure hydraulique <<|> 1\n   Épandeur a 2 façons différentes de travailler et autant d&#39;adaptions correspondantes pour l&#39;épandage de bordure.\n    La perte du débitérial à droite de la nappe épandue au bordure avec le déflecteur de bordure hydraulique <<|> 1\n   Épandeur unilatéral en bordure, vous pouvez faire des réglages dans l&#39;epandage.\n    La perte du débitérial à gauche de la nappe épandue au bordure avec le déflecteur de bordure hydraulique <<|> 1\n   Épandeur a 3 façons différentes de travailler et autant d&#39;adaptions correspondantes pour l&#39;épandage de bordure.\n    La perte du débitérial à droite de la nappe épandue au bordure avec le déflecteur de bordure hydraulique <<|> 1\n   Épandeur unilatéral en bordure, vous pouvez faire des réglages dans l&#39;epandage.\n    La perte du débitérial à gauche de la nappe épandue au bordure avec le déflecteur de bordure hydraulique <<|> 1\n   Épandeur a 4 façons différentes de travailler et autant d&#39;adaptions correspondantes pour l&#39;épandage de bordure.\n    La perte du débitérial à droite de la nappe épandue au bordure avec le déflecteur de bordure hydraulique <<|> 1\n   Épandeur unilatéral en bordure, vous pouvez faire des réglages dans l&#39;epandage.\n    La perte du débitérial à gauche de la nappe épandue au bordure avec le déflecteur de bordure hydraulique <<|> 1\n   Épandeur a 5 façons différentes de travailler et autant d&#39;adaptions correspondantes pour l&#39;épandage de bordure.\n    La perte du débitérial à droite de la nappe épandue au bordure avec le déflecteur de bordure hydraulique <<|> 1\n   Épandeur unilatéral en bordure, vous pouvez faire des réglages dans l&#39;epandage.\n    La perte du débitérial à gauche de la nappe épandue au bordure avec le déflecteur de bordure hydraulique <<|> 1\n   Épandeur a 6 façons différentes de travailler et autant d&#39;adaptions correspondantes pour l&#39;épandage de bordure.\n    La perte du débitérial à droite de la nappe épandue au bordure avec le déflecteur de bordure hydraulique <<|> 1\n   Épandeur unilatéral en bordure, vous pouvez faire des réglages dans l&#39;epandage.\n    La perte du débitérial à gauche de la nappe épandue au bordure avec le déflecteur de bordure hydraulique <<|> 1\n   Épandeur a 7 façons différentes de travailler et autant d&#39;adaptions correspondantes pour l&#39;épandage de bordure.\n    La perte du débitérial à droite de",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "La réponse est un débit de la nappe d'épandage avec le système ExactLine\nÂge et de travail du tracteur avec le disque en ligne « de la page 92.\nÂge et de travail de l&#39;épandeur avec le disque en ligne« de la page 90.\nÂge et de travail de l&#39;épandeur avec le disque d&#39;épandeur\nÂge et de travail du tracteur avec le système ExactLine\nÂge et de travail de l&#39;épandeur avec le disque en ligne« de la page 91.\nÂge et de travail de l&#39;épandeur avec le disque d&#39;épandeur\nÂge et de travail du tracteur avec le système ExactLine\nÂge et de travail de l&#39;épandeur avec le disque en ligne« de la page 92.\nÂge et de travail de l&#39;épandeur avec le disque d&#39;épandeur",
-                    "page": 91,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 },
@@ -368,18 +343,122 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "I apologize, mais\n**Réponse : \nLa réponse est de la commande et/ouverture de l'acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les dispositéres.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l'acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les disposit\n**Réponse :**\nLa réponse est de la commande et/ouverture de l'acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les disposit\b\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "I apologize, mais il faut un système de commande IsoMatch Tellus\nSystème d'actuation\nÂge et utilisation\nÂge\n   : Système d&#39;actuation\nÂge\n   : Système d&#39;actuation\nÂge\n  *   : Système d&#39;actuation\nÂge\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n ",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "I apologize, mais il faut réagissant de la commande et d'engrais pour obtenir l'épandeur. Lorsque vous voulez épandre avec un débit préalablement réglé dans les conditions variables, nous trouvons la valeur de la vitesse d'avancement.\nÂtrez le moteur du tracteur et retirez la clé du contact et serrez le frein à main le tracteur. Pour obtenir l'épandeur avec un débit préalablement réglé dans les conditions variables, nous trouvons la valeur de la vitesse d'avancement.\nÂtrez le moteur du tracteur et retirez la clé du contact et serrez le frein à main le tracteur. Pour obtenir l'épandeur avec un débit préalablement réglé dans les conditions variables, nous trouvons la valeur de la vitesse d'avancement.\nÂtrez le moteur du tracteur et retirez la clé du contact et serrez le frein à main le tracteur. Pour obtenir l'épandeur avec un débit préalablement réglé dans les conditions variables, nous trouvons la valeur de la vitesse d'avancement.\nÂtrez le moteur du tracteur et retirez la clé du contact et serrez le frein à main le tracteur.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "I apologize, mais il semble que vous pouvez faire un épandeur de 1/2 à 10 cm. Les câbles sont attachés au bouton de commande et aux boulons du tracteur.\nLa réponse est donc : 1/2 mètres carré.\n\nRéponse\n**Notez la bonne réponse, en utilisant le système de commande IsoMatch.",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "I cannot find la réponse à l'engrais\nLa bonne réponse est de 1,5 mètres.\nRéponse:\nLa bonne réponse est correcte.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "Réponse\nLa réponse finale est : 3 kg/ha.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "Réponse\nLa réponse finale est : 3.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "La réponse est la bonne réponse au test de l'épandage\nÂtre les câbles et le tracteur avec un débit inférieur à 40 kg/ha.\nÂtre les câbles et le tracteur avec un débit élevé ou supérieur à 25 km/h.",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "La réponse est la valeur de l'épandeur de la nappe d'épandage en bordure.\nÂtrez les disques de dosage avec le débit et le système ExactLine\n    <a>Épandage unilatéral en bordure, vous pouvez faire pour ce qui est éventre dans la largeur de travail. La perte au-delà de la nappe d'épandeur épandre.\n    <a> Épandage avec le débit et le système ExactLine\n    <a> Détection du débit et le système ExactLine\n    <a>Épandage unilatéral en bordure, vous pouvez faire pour ce qui est éventre dans la largeur de travail. La perte au-delà de la nappe d'épandeur épandre.\n    <a> Épandage avec le débit et le système ExactLine\n    <a> Détection du débit et le système ExactLine\n    <a>Épandage unilatéral en bordure, vous pouvez faire pour ce qui est éventre dans la largeur de travail. La perte au-delà de la nappe d'épandeur épandre.\n    <a> Épandage avec le débit et le système ExactLine\n    <a> Détection du débit et le système ExactLine\n    <a>Épandage unilatéral en bordure, vous pouvez faire pour ce qui est éventre dans la largeur de travail. La perte au-delà de la nappe d'épandeur épandre.\n    <a> Épandage avec le débit et le système\n    <a> Détection du débit et le système ExactLine\n    <a>Épandage unilatéral en bordure, vous pouvez faire pour ce qui est éventre dans la largeur de travail. La perte au-delà de la nappe d'épandeur épandre.\n    <a> Épandage avec le débit et le système ExactLine\n    <a> Détection du débit et le système ExactLine\n    <Âtrez les disques de dosage avec le débit et le système ExactLine\n    <Â >Épandage unilatéral en bordure, vous pouvez faire pour ce qui est éventre dans la largeur de travail. La perte au-delà de la nappe d'épandeur épandre.\n    a> Épandage avec le débit et le système\n    a> Détection du débitÉpandage unilatéral en bordure, vous pouvez faire pour ce qui est éventre dans la largeur de travail. La perte au-delà de la nappe d'épandeur épandre.\n    a> Épandage avec le débit et le système\n    a> Détection du débit et le système ExactLine\n    <a>Épandage unilatéral en bordure, vous pouvez faire pour ce qui est éventre dans la largeur de travail. La perte au-delà de la nappe d'épandeur épandre.\n    a> Épandage avec le débit et le système\b\n    a> Détection du débit et le système ExactLine\n    a>Épandage unilatéral en bordure, vous pouvez faire pour ce qui est éventre dans la largeur de travail. La perte au-delà de la nappe d'épandeur épandre.\n    a> Épandage avec le débit et le système ExactLine\n    a> Détection du débit et le système ExactLine\n    a>Épandage unilatéral en bordure, vous pouvez faire pour ce qui est éventre dans la largeur de travail. La perte au-delà de la nappe d'épandeur épandre.\n    a> Épandage avec le débit et le système ExactLine\n    a> Détection du débit et le système ExactLine\n    a>Épandage unilatéral en bordure, vous pouvez faire pour ce qui est éventre dans la largeur de travail. La perte au-delà de la nappe d'épandeur épandre.\n    a> Épandage avec le débit et le système ExactLine\n    a> Détection du débit et le système ExactLine\n    a>Épandage unilatéral en bordure, vous pouvez faire pour ce qui est éventre dans la largeur de travail. La perte au-delà de la nappe d'épandeur épandre.\n    a> Épandage avec",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "La réponse\nUtilisation dans les champs\nFonctionnement\nIndiquez les opérations\n=== Page 116===\n\nUtilisation dans les champs\nDésactivité du système ExactLine\nFonctionnement et contrôle\n[Image]\nUtilisation dans les champs\n Démarrez le moteur de tracteur, fermez la prise de force.\n  Ferrez le frein à main sur l'outre en bouche de travail.",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "I apologize, mais vous pouvez pas de la vitesse de l'engrais et d'épandeur\nÂtre les câbles de décharge de 1/2 mètre.\n  Contrôlez les câbles de décharge de 1/2 mètre.",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "## Étapes\n**Réponse**\nLa réponse est la bonne réponse à l'option suivante. \n\nLa bonne réponse est correcte.\n**Réponse**\n\nLa bonne réponse est correcte.\n\nRépondez-leur",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "I apologize, mais il est utilisé pour le système de commande et la bouteille d'engrais.\nÂtre\n  •   ​\n 1.  La réponse à la question est \"Iso\" et non-ISO 11786.\n 2.  La réponse est \"ISO\"\n 3.  Le répondeur est \"ISO\".\n 4.  La réponse est \"ISO\"\n 5.  La réponse est \"ISO\"\n\nRéponse\n**La réponse est ISO",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
                     "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "I apologize, mais\n**Réponse : \nLa réponse est la bonne réponse à l'opération de la machine. La bâche doit être déplacée avec le tracteur et les câbles du boîtier de commande ISOMatch.\n**Réponse**\n\nRéponse: \n\nLa bonne réponse est correcte",
+                    "model_answer": "I apologize, mais\n**Réponse : \nLa réponse est la bonne réponse à l'opération de la machine. La bague d&#39;étanche de tracteur doit être déposée avec le système de commande et du tracteur.\n**Réponse**\n\nRéponse: \n\nLa bonne réponse est correcte.\n\n**Réponse**\n\nLa bonne réponse est correcte.",
                     "page": 138,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "How often should the agitator axle seal be replaced?",
-                    "expected_answer": "Every season and after every 100 operational hours.",
-                    "model_answer": "I apologize, mais\n**Réponse : \nLa réponse est de la commande et/ouverture de l'acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les dispositéres.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l'acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les disposit\n**Réponse :**\nLa réponse est de la commande et/ouverture de l'acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les disposit\b\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse :**\nLa réponse est de la commande et/ouverture de l&#39;acte de la disposition des dispositions qui sont utilisées aux prévention des dommages. Les dispositions suivantes doivent être déplacées à la réglementation des contrôleurs d'engrais, les câbles et les câbles.\n**Réponse",
-                    "page": 140,
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "I cannot find the correct answer pour la question. Votre réponse est : \n\nLa bonne réponse est :\n\n**Réponse: 1**\n\nJe ne peux pas de graisseur d'engrais sur le tracteur.\n\nRemplacez les câbles et écrous dans le boîtier de commande IsoMatch Tellus GO.",
+                    "page": 144,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 }

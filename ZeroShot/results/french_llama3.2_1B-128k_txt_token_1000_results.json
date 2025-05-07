@@ -2,7 +2,7 @@
     {
         "question": "How many dosing openings are closed during fine application?",
         "expected_answer": "Two of three dosing openings are closed.",
-        "model_answer": "Il y a 2 dosings openings ferm\u00e9s lors de la fin d'application.",
+        "model_answer": "Il y a 2 dosings openings fermés lors de la fin d'application.",
         "target_page": 24,
         "context_type": "token",
         "noise_level": 1000,
@@ -15,7 +15,7 @@
     {
         "question": "What is the overlap percentage for the full field spreading pattern?",
         "expected_answer": "100% overlap",
-        "model_answer": "Le d\u00e9bit est modul\u00e9 ind\u00e9pendamment \u00e0 gauche et \u00e0 droite en fonction d'une carte de pr\u00e9conisation.",
+        "model_answer": "Le débit est modulé indépendamment à gauche et à droite en fonction d'une carte de préconisation.",
         "target_page": 28,
         "context_type": "token",
         "noise_level": 1000,
@@ -41,7 +41,7 @@
     {
         "question": "How often does the spreader carry out automatic calibration tests?",
         "expected_answer": "Every 75 kg or every minute.",
-        "model_answer": "Les tests d'\u00e9talonnage automatiques sont effectu\u00e9s tous les 75 kg ou toutes les minutes.",
+        "model_answer": "Les tests d'étalonnage automatiques sont effectués tous les 75 kg ou toutes les minutes.",
         "target_page": 31,
         "context_type": "token",
         "noise_level": 1000,
@@ -54,7 +54,7 @@
     {
         "question": "How can the tractor's driving speed be transmitted to the IsoMatch if the tractor lacks ISOBUS communication?",
         "expected_answer": "By adding the IsoMatch power cable set to the tractor.",
-        "model_answer": "Le syst\u00e8me de commande utilise le signal du capteur de r\u00e9f\u00e9rence pour corriger l'impact des facteurs mentionn\u00e9s lorsqu'il n'y a pas d'\u00e9talonnage automatique.",
+        "model_answer": "Le système de commande utilise le signal du capteur de référence pour corriger l'impact des facteurs mentionnés lorsqu'il n'y a pas d'étalonnage automatique.",
         "target_page": 32,
         "context_type": "token",
         "noise_level": 1000,
@@ -67,7 +67,7 @@
     {
         "question": "Where is the main switch button to turn the control box on or off located?",
         "expected_answer": "The main switch button is located on the upper left in the red extension.",
-        "model_answer": "La r\u00e9ponse \u00e0 la question est : Le commutateur principal, en haut \u00e0 gauche dans la bordure rouge.",
+        "model_answer": "La réponse à la question est : Le commutateur principal, en haut à gauche dans la bordure rouge.",
         "target_page": 34,
         "context_type": "token",
         "noise_level": 1000,
@@ -80,7 +80,7 @@
     {
         "question": "How long should the main switch button be pressed to turn the control box on or off?",
         "expected_answer": "At least 1 second.",
-        "model_answer": "Le bouton principal du bo\u00eetier de commande IsoMatch Tellus GO doit \u00eatre enfonc\u00e9 pendant au moins 1 seconde pour activer ou d\u00e9sactiver le contr\u00f4le.",
+        "model_answer": "Le bouton principal du boîtier de commande IsoMatch Tellus GO doit être enfoncé pendant au moins 1 seconde pour activer ou désactiver le contrôle.",
         "target_page": 34,
         "context_type": "token",
         "noise_level": 1000,
@@ -106,7 +106,7 @@
     {
         "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
         "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
-        "model_answer": "Si vous utilisez le bo\u00eetier de commande IsoMatch ou un autre bo\u00eetier de commande ISOBUS amovible sur un tracteur avec syst\u00e8me de communication ISOBUS, vous devez d'abord installer les \u00e9l\u00e9ments de fixation et les instructions de montage.",
+        "model_answer": "Si vous utilisez le boîtier de commande IsoMatch ou un autre boîtier de commande ISOBUS amovible sur un tracteur avec système de communication ISOBUS, vous devez d'abord installer les éléments de fixation et les instructions de montage.",
         "target_page": 40,
         "context_type": "token",
         "noise_level": 1000,
@@ -119,7 +119,7 @@
     {
         "question": "What torque (in NM) should be applied to the vane lock nuts?",
         "expected_answer": "50NM",
-        "model_answer": "Pour appliquer la bonne torque \u00e0 la vane lock nut, il faut 50 Nm.",
+        "model_answer": "Pour appliquer la bonne torque à la vane lock nut, il faut 50 Nm.",
         "target_page": 43,
         "context_type": "token",
         "noise_level": 1000,
@@ -132,7 +132,7 @@
     {
         "question": "What determines the machine's working width?",
         "expected_answer": "Spreading disc RPM",
-        "model_answer": "La largeur de travail est d\u00e9termin\u00e9e par le r\u00e9gime du disque d'\u00e9pandage.",
+        "model_answer": "La largeur de travail est déterminée par le régime du disque d'épandage.",
         "target_page": 46,
         "context_type": "token",
         "noise_level": 1000,
@@ -145,7 +145,7 @@
     {
         "question": "Where should the position sensor for the hydraulic border spreading plate be connected?",
         "expected_answer": "In the electronic box on the spreader.",
-        "model_answer": "Le point de jonction rapide/lent/tortue est le point de jonction qui permet un \u00e9pandage rapide et facile \u00e0 contr\u00f4ler.",
+        "model_answer": "Le point de jonction rapide/lent/tortue est le point de jonction qui permet un épandage rapide et facile à contrôler.",
         "target_page": 47,
         "context_type": "token",
         "noise_level": 1000,
@@ -158,7 +158,7 @@
     {
         "question": "What specific precaution should be taken before working between the tractor and machine to check the coupling shaft length?",
         "expected_answer": "Place the machine on a supporting beam.",
-        "model_answer": "Pour v\u00e9rifier la longueur du coussin de transmission avant d'attacher le tracteur \u00e0 la machine, il faut soulever la machine \u00e0 l'aide du dispositif de levage jusqu'\u00e0 ce que les arbres moteur et traction soient \u00e0 la m\u00eame hauteur.",
+        "model_answer": "Pour vérifier la longueur du coussin de transmission avant d'attacher le tracteur à la machine, il faut soulever la machine à l'aide du dispositif de levage jusqu'à ce que les arbres moteur et traction soient à la même hauteur.",
         "target_page": 50,
         "context_type": "token",
         "noise_level": 1000,
@@ -169,22 +169,9 @@
         "duration": 0.3
     },
     {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-        "model_answer": "Le maximum angle de travail pour l'arbre de transmission est de 30 \u00b0 vers le haut et de 30 \u00b0 vers le bas.",
-        "target_page": 51,
-        "context_type": "token",
-        "noise_level": 1000,
-        "model_name": "llama3.2_1B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 0.2
-    },
-    {
         "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
         "expected_answer": "Yes.",
-        "model_answer": "Si le frein \u00e0 main du tracteur est serr\u00e9 avant de connecter la machine.",
+        "model_answer": "Si le frein à main du tracteur est serré avant de connecter la machine.",
         "target_page": 52,
         "context_type": "token",
         "noise_level": 1000,
@@ -197,7 +184,7 @@
     {
         "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
         "expected_answer": "30 degrees",
-        "model_answer": "Le maximum permissible angle de travail pour le couplage du chariot de levage est de 30\u00b0.",
+        "model_answer": "Le maximum permissible angle de travail pour le couplage du chariot de levage est de 30°.",
         "target_page": 54,
         "context_type": "token",
         "noise_level": 1000,
@@ -210,7 +197,7 @@
     {
         "question": "What must be ensured with decoupling ropes during power lift connection?",
         "expected_answer": "Decoupling ropes must never be tense.",
-        "model_answer": "Lorsque les c\u00e2bles de l'attelage rapide ne sont pas tendus et ont une libert\u00e9 de mouvement suffisante, m\u00eame lorsque le dispositif de levage est dans la position la plus basse.",
+        "model_answer": "Lorsque les câbles de l'attelage rapide ne sont pas tendus et ont une liberté de mouvement suffisante, même lorsque le dispositif de levage est dans la position la plus basse.",
         "target_page": 56,
         "context_type": "token",
         "noise_level": 1000,
@@ -223,7 +210,7 @@
     {
         "question": "Below which application rate in kg/min is it advised to use the fine application?",
         "expected_answer": "Below 40 kg/min.",
-        "model_answer": "Il est recommand\u00e9 d'utiliser un d\u00e9bit inf\u00e9rieur \u00e0 40 kg/min pour l'application fine.",
+        "model_answer": "Il est recommandé d'utiliser un débit inférieur à 40 kg/min pour l'application fine.",
         "target_page": 66,
         "context_type": "token",
         "noise_level": 1000,
@@ -236,7 +223,7 @@
     {
         "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
         "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-        "model_answer": "La formule g\u00e9n\u00e9rale pour calculer la vitesse d'\u00e9coulement requise est : \n\nVitesse d'\u00e9coulement (kg/min) = Largeur de travail (m) x Vitesse d'avancement (km/h)\n\nRemplacez les valeurs du r\u00e9glage des ouvertures de dosage, du point de chute et de la vitesse d'\u00e9coulement dans le tableau d'\u00e9pandage pour obtenir la vitesse d'\u00e9coulement requise.",
+        "model_answer": "La formule générale pour calculer la vitesse d'écoulement requise est : \n\nVitesse d'écoulement (kg/min) = Largeur de travail (m) x Vitesse d'avancement (km/h)\n\nRemplacez les valeurs du réglage des ouvertures de dosage, du point de chute et de la vitesse d'écoulement dans le tableau d'épandage pour obtenir la vitesse d'écoulement requise.",
         "target_page": 68,
         "context_type": "token",
         "noise_level": 1000,
@@ -249,7 +236,7 @@
     {
         "question": "What type of serial connection does the IsoMatch control box use for communication?",
         "expected_answer": "RS 232",
-        "model_answer": "Le bo\u00eetier de commande IsoMatch Tellus utilise un port s\u00e9rie RS232.",
+        "model_answer": "Le boîtier de commande IsoMatch Tellus utilise un port série RS232.",
         "target_page": 72,
         "context_type": "token",
         "noise_level": 1000,
@@ -288,7 +275,7 @@
     {
         "question": "What does a tray test check on a fertilizer spreader?",
         "expected_answer": "Fertilizer distribution pattern of the spreader.",
-        "model_answer": "Le test sur bacs v\u00e9rifie la r\u00e9partition de l'engrais.",
+        "model_answer": "Le test sur bacs vérifie la répartition de l'engrais.",
         "target_page": 76,
         "context_type": "token",
         "noise_level": 1000,
@@ -325,22 +312,9 @@
         "duration": 0.1
     },
     {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "expected_answer": "75 cm above the troughs.",
-        "model_answer": "La r\u00e9ponse exacte \u00e0 la question est : 75 cm.",
-        "target_page": 84,
-        "context_type": "token",
-        "noise_level": 1000,
-        "model_name": "llama3.2_1B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 0.1
-    },
-    {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
         "expected_answer": "75 cm",
-        "model_answer": "Le niveau dans le tube de mesure central est de 25 % plus bas que dans les tubes de mesure ext\u00e9rieurs.",
+        "model_answer": "Le niveau dans le tube de mesure central est de 25 % plus bas que dans les tubes de mesure extérieurs.",
         "target_page": 89,
         "context_type": "token",
         "noise_level": 1000,
@@ -351,22 +325,9 @@
         "duration": 0.2
     },
     {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-        "expected_answer": "10% of the quantity in the middle trough",
-        "model_answer": "Le maximum de la perte autoris\u00e9e dans la tranch\u00e9e est de 10 %.",
-        "target_page": 91,
-        "context_type": "token",
-        "noise_level": 1000,
-        "model_name": "llama3.2_1B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 0.1
-    },
-    {
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
         "expected_answer": "Inertia causes continued rotation.",
-        "model_answer": "La r\u00e9ponse exacte \u00e0 la question \"After disengaging the PTO shaft, what poses a continued danger and why?\" est :\n\n\u00b7 Ne pas avoir \u00e9loign\u00e9 toute personne et tout obstacle de la zone dangereuse du tracteur.",
+        "model_answer": "La réponse exacte à la question \"After disengaging the PTO shaft, what poses a continued danger and why?\" est :\n\n· Ne pas avoir éloigné toute personne et tout obstacle de la zone dangereuse du tracteur.",
         "target_page": 94,
         "context_type": "token",
         "noise_level": 1000,
@@ -379,7 +340,7 @@
     {
         "question": "According to the last setting check, what is the recommended height in centimeter of the spreader over the ground or crops?",
         "expected_answer": "75 cm",
-        "model_answer": "Le recommand\u00e9 height de la pales en centim\u00e8tres au-dessus du sol ou de la v\u00e9g\u00e9tation est de 75 cm.",
+        "model_answer": "Le recommandé height de la pales en centimètres au-dessus du sol ou de la végétation est de 75 cm.",
         "target_page": 96,
         "context_type": "token",
         "noise_level": 1000,
@@ -392,7 +353,7 @@
     {
         "question": "What happens when hopper content falls below 100 kg?",
         "expected_answer": "Automatic calibration switches off.",
-        "model_answer": "Lorsque le contenu de la tr\u00e9mie atteint une valeur inf\u00e9rieure \u00e0 100 kg, le syst\u00e8me de commande coupe l'\u00e9talonnage automatique.",
+        "model_answer": "Lorsque le contenu de la trémie atteint une valeur inférieure à 100 kg, le système de commande coupe l'étalonnage automatique.",
         "target_page": 101,
         "context_type": "token",
         "noise_level": 1000,
@@ -405,7 +366,7 @@
     {
         "question": "What are the two functions for border spreading?",
         "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-        "model_answer": "Les deux fonctionnalit\u00e9s pour la dispersion des engrais sur le bord de la parcelle sont :\n\n1. \u00c9pandage unilat\u00e9ral en bordure \u00e0 l'aide du d\u00e9flecteur de bordure hydraulique\n2. \u00c9pandage des bordures avec ExactLine",
+        "model_answer": "Les deux fonctionnalités pour la dispersion des engrais sur le bord de la parcelle sont :\n\n1. Épandage unilatéral en bordure à l'aide du déflecteur de bordure hydraulique\n2. Épandage des bordures avec ExactLine",
         "target_page": 106,
         "context_type": "token",
         "noise_level": 1000,
@@ -418,7 +379,7 @@
     {
         "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
         "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-        "model_answer": "Pour satisfaire \u00e0 la norme environnementale, il faut arr\u00eater imm\u00e9diatement d'\u00e9pandre et d\u00e9brayer la prise de force.",
+        "model_answer": "Pour satisfaire à la norme environnementale, il faut arrêter immédiatement d'épandre et débrayer la prise de force.",
         "target_page": 108,
         "context_type": "token",
         "noise_level": 1000,
@@ -431,7 +392,7 @@
     {
         "question": "What should you do if a spreading disc spreads irregularly?",
         "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-        "model_answer": "Vous devez fermer les unit\u00e9s de dosage.",
+        "model_answer": "Vous devez fermer les unités de dosage.",
         "target_page": 113,
         "context_type": "token",
         "noise_level": 1000,
@@ -444,7 +405,7 @@
     {
         "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
         "expected_answer": "40 degrees Celsius",
-        "model_answer": "Le maximum allowable temperature pour la nettoyage avec eau ou vapeur est de 40\u00b0C.",
+        "model_answer": "Le maximum allowable temperature pour la nettoyage avec eau ou vapeur est de 40°C.",
         "target_page": 117,
         "context_type": "token",
         "noise_level": 1000,
@@ -457,7 +418,7 @@
     {
         "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
         "expected_answer": "80 bar",
-        "model_answer": "Le maximum allowable pressure en bar lorsque la machine est nettoy\u00e9e avec de l'eau ou du vapeur est de 80 bar.",
+        "model_answer": "Le maximum allowable pressure en bar lorsque la machine est nettoyée avec de l'eau ou du vapeur est de 80 bar.",
         "target_page": 117,
         "context_type": "token",
         "noise_level": 1000,
@@ -470,7 +431,7 @@
     {
         "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
         "expected_answer": "Preservative grease or preserving liquid.",
-        "model_answer": "Vous devez nettoyer et graisser les parties m\u00e9talliques de la machine (billes de piston des v\u00e9rins hydrauliques ou le liquide de conservation) pour prot\u00e9ger contre la corrosion lors du stockage d'\u00e9t\u00e9.",
+        "model_answer": "Vous devez nettoyer et graisser les parties métalliques de la machine (billes de piston des vérins hydrauliques ou le liquide de conservation) pour protéger contre la corrosion lors du stockage d'été.",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 1000,
@@ -483,7 +444,7 @@
     {
         "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
         "expected_answer": "Remove all fertilizer remnants.",
-        "model_answer": "Vous devez \u00e9loigner tous les r\u00e9sidus d'engrais des orifices, des angles, des manchons et des flexibles avant de souder ou tailler sur la machine.",
+        "model_answer": "Vous devez éloigner tous les résidus d'engrais des orifices, des angles, des manchons et des flexibles avant de souder ou tailler sur la machine.",
         "target_page": 123,
         "context_type": "token",
         "noise_level": 1000,
@@ -496,7 +457,7 @@
     {
         "question": "How many grease nipples do the discharge bushings have?",
         "expected_answer": "Two grease nipples per discharge bushing.",
-        "model_answer": "Les bagues d'\u00e9coulement ont 2 graisseurs.",
+        "model_answer": "Les bagues d'écoulement ont 2 graisseurs.",
         "target_page": 126,
         "context_type": "token",
         "noise_level": 1000,
@@ -509,7 +470,7 @@
     {
         "question": "What is the required grease level in mm below the filler opening for spreading disc gearboxes after the machine has stood still?",
         "expected_answer": "35 mm",
-        "model_answer": "Le niveau de graisse doit \u00eatre de 35 mm sous l'orifice de remplissage.",
+        "model_answer": "Le niveau de graisse doit être de 35 mm sous l'orifice de remplissage.",
         "target_page": 127,
         "context_type": "token",
         "noise_level": 1000,
@@ -522,7 +483,7 @@
     {
         "question": "What is the maximum hydraulic pressure allowed for the hydaulic system in bars?",
         "expected_answer": "210 bars.",
-        "model_answer": "Le maximum de pression hydraulique autoris\u00e9e pour le syst\u00e8me hydraulique est de 210 bars.",
+        "model_answer": "Le maximum de pression hydraulique autorisée pour le système hydraulique est de 210 bars.",
         "target_page": 131,
         "context_type": "token",
         "noise_level": 1000,
@@ -535,21 +496,8 @@
     {
         "question": "What is the required distance in mm between the rope and discharge bushing opening?",
         "expected_answer": "109 mm.",
-        "model_answer": "La r\u00e9ponse exacte est 109 mm.",
+        "model_answer": "La réponse exacte est 109 mm.",
         "target_page": 136,
-        "context_type": "token",
-        "noise_level": 1000,
-        "model_name": "llama3.2_1B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 0.1
-    },
-    {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-        "expected_answer": "The required distance is 1.0 mm.",
-        "model_answer": "The required distance in millimeters between the discharge bushing and spreading disc is 1.0 mm.",
-        "target_page": 138,
         "context_type": "token",
         "noise_level": 1000,
         "model_name": "llama3.2_1B-128k",
@@ -561,7 +509,7 @@
     {
         "question": "How often should the agitator axle seal be replaced?",
         "expected_answer": "Every season and after every 100 operational hours.",
-        "model_answer": "L'agitateur axe doit \u00eatre remplac\u00e9 \u00e0 chaque d\u00e9but de saison et au bout de toutes les 100 heures d'utilisation de la machine.",
+        "model_answer": "L'agitateur axe doit être remplacé à chaque début de saison et au bout de toutes les 100 heures d'utilisation de la machine.",
         "target_page": 140,
         "context_type": "token",
         "noise_level": 1000,
@@ -626,7 +574,7 @@
     {
         "question": "How often (in what interval) must the condition of the vanes be inspected?",
         "expected_answer": "daily",
-        "model_answer": "Les d\u00e9chets doivent \u00eatre r\u00e9cup\u00e9r\u00e9s et \u00e9limin\u00e9s conform\u00e9ment \u00e0 la l\u00e9gislation nationale.",
+        "model_answer": "Les déchets doivent être récupérés et éliminés conformément à la législation nationale.",
         "target_page": 125,
         "context_type": "token",
         "noise_level": 1000,
@@ -639,7 +587,7 @@
     {
         "question": "How often (in what interval) must the bushing height be checked and the discharge be set?",
         "expected_answer": "after the first 10 hours and every 100 hours, but a minimum of once per year",
-        "model_answer": "Le bushing height doit \u00eatre v\u00e9rifi\u00e9 et ajust\u00e9 tous les 10 heures.",
+        "model_answer": "Le bushing height doit être vérifié et ajusté tous les 10 heures.",
         "target_page": 125,
         "context_type": "token",
         "noise_level": 1000,
@@ -652,7 +600,7 @@
     {
         "question": "How often (in what interval) must the agitator seal be replaced?",
         "expected_answer": "every 100 hours or if worn",
-        "model_answer": "La quantit\u00e9 de graisse pour le seau du bo\u00eetier central est de 1 \u00e0 2 coups.",
+        "model_answer": "La quantité de graisse pour le seau du boîtier central est de 1 à 2 coups.",
         "target_page": 125,
         "context_type": "token",
         "noise_level": 1000,
@@ -678,7 +626,7 @@
     {
         "question": "With what torque in Nm must a M6 hexagon stainless steel bolt with a 70 (A2) quality and with a 0.2 friction be fastened?",
         "expected_answer": "9.9 Nm",
-        "model_answer": "Le coefficient de friction est de 0,10 Nm pour les boulons et \u00e9crous \u00e0 base dentel\u00e9e.",
+        "model_answer": "Le coefficient de friction est de 0,10 Nm pour les boulons et écrous à base dentelée.",
         "target_page": 129,
         "context_type": "token",
         "noise_level": 1000,
@@ -691,7 +639,7 @@
     {
         "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
         "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
-        "model_answer": "Vous devez nettoyer \u00e0 fond la machine apr\u00e8s chaque utilisation.",
+        "model_answer": "Vous devez nettoyer à fond la machine après chaque utilisation.",
         "target_page": 152,
         "context_type": "token",
         "noise_level": 1000,
@@ -717,7 +665,7 @@
     {
         "question": "Is fine application more expensive than normal dosing?",
         "expected_answer": "Not found in context",
-        "model_answer": "La r\u00e9ponse exacte \u00e0 la question \"Is fine application more expensive than normal dosing?\" est : Non.",
+        "model_answer": "La réponse exacte à la question \"Is fine application more expensive than normal dosing?\" est : Non.",
         "target_page": 24,
         "context_type": "token",
         "noise_level": 1000,
@@ -730,7 +678,7 @@
     {
         "question": "Is one-sided boundary spreading suitable for small gardens?",
         "expected_answer": "Not found in context",
-        "model_answer": "La r\u00e9ponse exacte est : Non.",
+        "model_answer": "La réponse exacte est : Non.",
         "target_page": 28,
         "context_type": "token",
         "noise_level": 1000,
@@ -743,7 +691,7 @@
     {
         "question": "For what other kind of connections can the IM Tellus Input cable be used?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le c\u00e2ble d'alimentation \"IsoMatch Tellus\" fourni en standard peut \u00eatre utilis\u00e9 pour les autres branchements.",
+        "model_answer": "Le câble d'alimentation \"IsoMatch Tellus\" fourni en standard peut être utilisé pour les autres branchements.",
         "target_page": 32,
         "context_type": "token",
         "noise_level": 1000,
@@ -756,7 +704,7 @@
     {
         "question": "Can the IsoMatch universal ISOBUS terminal be used to check the weather?",
         "expected_answer": "Not found in context",
-        "model_answer": "Il n'y a pas d'information sp\u00e9cifique mentionn\u00e9e dans le contexte qui permettrait de savoir si l'IsoMatch universal ISOBUS terminal peut \u00eatre utilis\u00e9 pour v\u00e9rifier la m\u00e9t\u00e9o.",
+        "model_answer": "Il n'y a pas d'information spécifique mentionnée dans le contexte qui permettrait de savoir si l'IsoMatch universal ISOBUS terminal peut être utilisé pour vérifier la météo.",
         "target_page": 33,
         "context_type": "token",
         "noise_level": 1000,
@@ -769,7 +717,7 @@
     {
         "question": "Can IsoMatch Tellus be connected to an external mouse?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le bo\u00eetier de commande IsoMatch Tellus GO peut \u00eatre connect\u00e9 \u00e0 un externe mouse.",
+        "model_answer": "Le boîtier de commande IsoMatch Tellus GO peut être connecté à un externe mouse.",
         "target_page": 34,
         "context_type": "token",
         "noise_level": 1000,
@@ -782,7 +730,7 @@
     {
         "question": "Is the Hydraulic border spreading plate made out of steel?",
         "expected_answer": "Not found in context",
-        "model_answer": "La r\u00e9ponse est : Non.",
+        "model_answer": "La réponse est : Non.",
         "target_page": 47,
         "context_type": "token",
         "noise_level": 1000,
@@ -795,7 +743,7 @@
     {
         "question": "Can the linkage pin for the tractor be made out of aluminium?",
         "expected_answer": "Not found in context",
-        "model_answer": "La r\u00e9ponse est non.",
+        "model_answer": "La réponse est non.",
         "target_page": 53,
         "context_type": "token",
         "noise_level": 1000,
@@ -808,7 +756,7 @@
     {
         "question": "Can the tray test be performed at 40 degrees Celsius?",
         "expected_answer": "Not found in context",
-        "model_answer": "Il n'y a pas d'information sp\u00e9cifique mentionn\u00e9e dans le contexte qui sugg\u00e8re que le test de r\u00e9partition sur bacs puisse \u00eatre effectu\u00e9 \u00e0 40\u00b0C.",
+        "model_answer": "Il n'y a pas d'information spécifique mentionnée dans le contexte qui suggère que le test de répartition sur bacs puisse être effectué à 40°C.",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 1000,
@@ -821,7 +769,7 @@
     {
         "question": "Can the hydraulic border spreading plate be actuated pneumatically?",
         "expected_answer": "Not found in context",
-        "model_answer": "Il n'y a pas d'information sp\u00e9cifique indiquant que le syst\u00e8me de d\u00e9p\u00f4t hydraulique du tracteur peut \u00eatre actu\u00e9 pneumatis\u00e9.",
+        "model_answer": "Il n'y a pas d'information spécifique indiquant que le système de dépôt hydraulique du tracteur peut être actué pneumatisé.",
         "target_page": 85,
         "context_type": "token",
         "noise_level": 1000,
@@ -834,7 +782,7 @@
     {
         "question": "By which environmental standards is the maximum acceptable loss in the ditch is determined?",
         "expected_answer": "Not found in context",
-        "model_answer": "La perte maximale autoris\u00e9e dans le foss\u00e9 est d\u00e9finie dans une norme environnementale.",
+        "model_answer": "La perte maximale autorisée dans le fossé est définie dans une norme environnementale.",
         "target_page": 87,
         "context_type": "token",
         "noise_level": 1000,
@@ -847,7 +795,7 @@
     {
         "question": "How should one proceed to stop spreading the fertilizer?",
         "expected_answer": "Not found in context",
-        "model_answer": "Pour arr\u00eater le d\u00e9p\u00f4t de fertilisant, il faut fermer la cabine et contr\u00f4ler les r\u00e9glages du tracteur pour que le r\u00e9gime des disques d'\u00e9pandage ne tourne pas inutilement pendant longtemps.",
+        "model_answer": "Pour arrêter le dépôt de fertilisant, il faut fermer la cabine et contrôler les réglages du tracteur pour que le régime des disques d'épandage ne tourne pas inutilement pendant longtemps.",
         "target_page": 100,
         "context_type": "token",
         "noise_level": 1000,
@@ -860,7 +808,7 @@
     {
         "question": "What is the maximum height the fertilizer flies when spreading without GEOCONTROL headland",
         "expected_answer": "Not found in context",
-        "model_answer": "La r\u00e9ponse est : 1.5 m\u00e8tres.",
+        "model_answer": "La réponse est : 1.5 mètres.",
         "target_page": 103,
         "context_type": "token",
         "noise_level": 1000,
@@ -873,7 +821,7 @@
     {
         "question": "What is seven-sided boundary spreading with the hydraulicborder spreading plate?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le d\u00e9bit maximum autoris\u00e9 au-del\u00e0 de la bordure de parcelle est de 10 % de la quantit\u00e9 \u00e9pandue au centre derri\u00e8re l'\u00e9pandeur.",
+        "model_answer": "Le débit maximum autorisé au-delà de la bordure de parcelle est de 10 % de la quantité épandue au centre derrière l'épandeur.",
         "target_page": 107,
         "context_type": "token",
         "noise_level": 1000,
@@ -886,7 +834,7 @@
     {
         "question": "Which appropriate measures for road transport should be taken when stopping work?",
         "expected_answer": "Not found in context",
-        "model_answer": "Pour \u00e9viter que le syst\u00e8me ExactLine ne change de position en cours d'\u00e9pandage \u00e0 cause d'un distributeur qui fuirait, il faut suivre les \u00e9tapes suivantes :\n\n1. Coupez le moteur du tracteur.\n2. Retirez la cl\u00e9 du contact et serrez le frein \u00e0 main sur le tracteur.\n3. Ne modifiez pas les r\u00e9glages de l'\u00e9pandeur.\n\nCes mesures garantissent que le syst\u00e8me ExactLine reste dans sa position souhait\u00e9e pendant l'\u00e9pandage.",
+        "model_answer": "Pour éviter que le système ExactLine ne change de position en cours d'épandage à cause d'un distributeur qui fuirait, il faut suivre les étapes suivantes :\n\n1. Coupez le moteur du tracteur.\n2. Retirez la clé du contact et serrez le frein à main sur le tracteur.\n3. Ne modifiez pas les réglages de l'épandeur.\n\nCes mesures garantissent que le système ExactLine reste dans sa position souhaitée pendant l'épandage.",
         "target_page": 112,
         "context_type": "token",
         "noise_level": 1000,
@@ -899,7 +847,7 @@
     {
         "question": "Why do most types of fertiliser attract water?",
         "expected_answer": "Not found in context",
-        "model_answer": "Les types d'engrais absorbent l'eau et peuvent former des blocs, ce qui provoque des bourrages au niveau de l'\u00e9pandeur ou peut ab\u00eemer la nappe d'\u00e9pandage.",
+        "model_answer": "Les types d'engrais absorbent l'eau et peuvent former des blocs, ce qui provoque des bourrages au niveau de l'épandeur ou peut abîmer la nappe d'épandage.",
         "target_page": 114,
         "context_type": "token",
         "noise_level": 1000,
@@ -912,7 +860,7 @@
     {
         "question": "Why is damage to the vanes, spreading disc or discharge bushing, most likely caused by a hard object?",
         "expected_answer": "Not found in context",
-        "model_answer": "Les pales, le disque d'\u00e9pandage ou les bagues d'\u00e9coulement sont endommag\u00e9es.",
+        "model_answer": "Les pales, le disque d'épandage ou les bagues d'écoulement sont endommagées.",
         "target_page": 115,
         "context_type": "token",
         "noise_level": 1000,
@@ -925,7 +873,7 @@
     {
         "question": "What should a person do who fell into the fertilizer and no physician is available?",
         "expected_answer": "Not found in context",
-        "model_answer": "Lorsque vous avez \u00e9t\u00e9 touch\u00e9 par l'engrais ou d'autres produits chimiques lors du nettoyage de la machine, il est recommand\u00e9 de porter des v\u00eatements de protection tels que des gants protecteurs et des chaussures de s\u00e9curit\u00e9.",
+        "model_answer": "Lorsque vous avez été touché par l'engrais ou d'autres produits chimiques lors du nettoyage de la machine, il est recommandé de porter des vêtements de protection tels que des gants protecteurs et des chaussures de sécurité.",
         "target_page": 117,
         "context_type": "token",
         "noise_level": 1000,
@@ -938,7 +886,7 @@
     {
         "question": "What happens if the machine grease nipples are never lubricated?",
         "expected_answer": "Not found in context",
-        "model_answer": "Si les greffes de la machine ne sont pas lubrifi\u00e9es, cela entra\u00eenera des probl\u00e8mes tels que l'usure et la perte de fonctionnalit\u00e9.",
+        "model_answer": "Si les greffes de la machine ne sont pas lubrifiées, cela entraînera des problèmes tels que l'usure et la perte de fonctionnalité.",
         "target_page": 118,
         "context_type": "token",
         "noise_level": 1000,
@@ -951,7 +899,7 @@
     {
         "question": "What specific paint should be used to paint any damaged paintwork at the end of the season the machine in preparation for winter storage?",
         "expected_answer": "Not found in context",
-        "model_answer": "Pour la peinture de la machine apr\u00e8s le remisage d'hiver, il est recommand\u00e9 d'utiliser une graisse qui ne s\u00e8che pas et ne durcit pas.",
+        "model_answer": "Pour la peinture de la machine après le remisage d'hiver, il est recommandé d'utiliser une graisse qui ne sèche pas et ne durcit pas.",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 1000,
@@ -964,7 +912,7 @@
     {
         "question": "What is the curriculum of the training program agrarians need to complete to be considered competent to operate this machine?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le curriculum de formation agricole n\u00e9cessaire pour \u00eatre consid\u00e9r\u00e9 comme comp\u00e9tent \u00e0 operer cette machine est de 1 an.",
+        "model_answer": "Le curriculum de formation agricole nécessaire pour être considéré comme compétent à operer cette machine est de 1 an.",
         "target_page": 4,
         "context_type": "token",
         "noise_level": 1000,
@@ -977,7 +925,7 @@
     {
         "question": "By which international standard are the pictograms used in this manual specified for agricultural machinery?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le pictogramme utilis\u00e9 pour repr\u00e9senter la s\u00e9curit\u00e9 est un triangle.",
+        "model_answer": "Le pictogramme utilisé pour représenter la sécurité est un triangle.",
         "target_page": 5,
         "context_type": "token",
         "noise_level": 1000,
@@ -990,7 +938,7 @@
     {
         "question": "How does the rate of corrosion on the Exacta-TLX GEOSPREAD compare between machines used in coastal vs. inland agricultural regions?",
         "expected_answer": "Not found in context",
-        "model_answer": "La r\u00e9ponse exacte \u00e0 la question est : \n\"Ne laissez jamais fonctionner le tracteur dans un espace clos.\"",
+        "model_answer": "La réponse exacte à la question est : \n\"Ne laissez jamais fonctionner le tracteur dans un espace clos.\"",
         "target_page": 21,
         "context_type": "token",
         "noise_level": 1000,
@@ -1003,7 +951,7 @@
     {
         "question": "What kind of protective safety gloves are needed for cleaning fertiliser remnants from the Exacta-TLX GEOSPREAD before welding?",
         "expected_answer": "Not found in context",
-        "model_answer": "Pour les remplacement des pi\u00e8ces d'origine, il est recommand\u00e9 de utiliser des gants protecteurs.",
+        "model_answer": "Pour les remplacement des pièces d'origine, il est recommandé de utiliser des gants protecteurs.",
         "target_page": 22,
         "context_type": "token",
         "noise_level": 1000,
@@ -1016,7 +964,7 @@
     {
         "question": "What are the detailed technical specifications and bandwidth capabilities of different ISOBUS communication protocol versions compatible with the IsoMatch Tellus system?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le syst\u00e8me de commande IsoMatch utilise les protocoles suivants :\n\n*   ISO 11786\n*   ISO 11785\n*   ISO 11787\n*   ISO 11792\n*   ISO 11793\n*   ISO 11794\n*   ISO 11795",
+        "model_answer": "Le système de commande IsoMatch utilise les protocoles suivants :\n\n*   ISO 11786\n*   ISO 11785\n*   ISO 11787\n*   ISO 11792\n*   ISO 11793\n*   ISO 11794\n*   ISO 11795",
         "target_page": 32,
         "context_type": "token",
         "noise_level": 1000,
@@ -1029,7 +977,7 @@
     {
         "question": "How many hours of continuous operation can the IsoMatch Tellus operate before flattening a typical tractor battery if left switched on with the engine off?",
         "expected_answer": "Not found in context",
-        "model_answer": "Il ne y a pas d'information sp\u00e9cifique mentionn\u00e9e dans le contexte qui indique combien d'heures de fonctionnement continu la machine IsoMatch Tellus peut op\u00e9rer avant de se d\u00e9faillir.",
+        "model_answer": "Il ne y a pas d'information spécifique mentionnée dans le contexte qui indique combien d'heures de fonctionnement continu la machine IsoMatch Tellus peut opérer avant de se défaillir.",
         "target_page": 34,
         "context_type": "token",
         "noise_level": 1000,
@@ -1042,7 +990,7 @@
     {
         "question": "What specific 'grease' type is recommended for 'profiled tubes' of the  coupling shaft?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le type de greasage recommand\u00e9 pour les tubes profil\u00e9s du coussin de transmission est de l'huile \u00e0 base de paraffine.",
+        "model_answer": "Le type de greasage recommandé pour les tubes profilés du coussin de transmission est de l'huile à base de paraffine.",
         "target_page": 51,
         "context_type": "token",
         "noise_level": 1000,
@@ -1094,7 +1042,7 @@
     {
         "question": "What is the maximum acceptable 'chunk' size of fertilizer in mm to prevent blockage?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le maximum accept\u00e9 pour le 'chunk' de fertilisant est de 1250 mm.",
+        "model_answer": "Le maximum accepté pour le 'chunk' de fertilisant est de 1250 mm.",
         "target_page": 74,
         "context_type": "token",
         "noise_level": 1000,
@@ -1107,7 +1055,7 @@
     {
         "question": "What is the 'tap' material used for hydraulic border spreading plate tap?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le 'tap' utilis\u00e9 pour le bord de tranch\u00e9e est un tuyau en acier.",
+        "model_answer": "Le 'tap' utilisé pour le bord de tranchée est un tuyau en acier.",
         "target_page": 85,
         "context_type": "token",
         "noise_level": 1000,
@@ -1120,7 +1068,7 @@
     {
         "question": "What type of 'active carbon filters' are recommended for closed tractor cabin to filter fertilizer dust?",
         "expected_answer": "Not found in context",
-        "model_answer": "Les filtres de carbone activ\u00e9s sont recommand\u00e9s pour filtrer les pouss\u00e9es d'engrais dans le tracteur.",
+        "model_answer": "Les filtres de carbone activés sont recommandés pour filtrer les poussées d'engrais dans le tracteur.",
         "target_page": 94,
         "context_type": "token",
         "noise_level": 1000,
@@ -1133,7 +1081,7 @@
     {
         "question": "What is the tolerance for 'measured distance from the bottom of the vanes, the distance to the ground or the crop' in cm?",
         "expected_answer": "Not found in context",
-        "model_answer": "La r\u00e9ponse exacte \u00e0 la question est 75 cm.",
+        "model_answer": "La réponse exacte à la question est 75 cm.",
         "target_page": 95,
         "context_type": "token",
         "noise_level": 1000,
@@ -1146,7 +1094,7 @@
     {
         "question": "What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?",
         "expected_answer": "Not found in context",
-        "model_answer": "La r\u00e9ponse exacte \u00e0 la question \"What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?\" est de 2,5 m/sec.",
+        "model_answer": "La réponse exacte à la question \"What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?\" est de 2,5 m/sec.",
         "target_page": 96,
         "context_type": "token",
         "noise_level": 1000,
@@ -1172,7 +1120,7 @@
     {
         "question": "What is the optimal driving speed reduction percentage during border spreading to compensate for application rate?",
         "expected_answer": "Not found in context",
-        "model_answer": "L'optimal r\u00e9duction du d\u00e9bit de d\u00e9p\u00f4t pour compenser la vitesse d'application est de 20%.",
+        "model_answer": "L'optimal réduction du débit de dépôt pour compenser la vitesse d'application est de 20%.",
         "target_page": 106,
         "context_type": "token",
         "noise_level": 1000,
@@ -1185,7 +1133,7 @@
     {
         "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le distance tol\u00e9rance en m\u00e8tres de la bordure de parcelle lors du passage \"d\u00e9marre\" (ou \"first path\") pour l'\u00e9pandage \u00e0 partir des voies de pulv\u00e9risation est de 2 m\u00e8tres.",
+        "model_answer": "Le distance tolérance en mètres de la bordure de parcelle lors du passage \"démarre\" (ou \"first path\") pour l'épandage à partir des voies de pulvérisation est de 2 mètres.",
         "target_page": 109,
         "context_type": "token",
         "noise_level": 1000,
@@ -1198,7 +1146,7 @@
     {
         "question": "Can the parking support withstand storage on a slope of 10 degrees?",
         "expected_answer": "Not found in context",
-        "model_answer": "La r\u00e9ponse \u00e0 la question \"Can the parking support withstand storage on a slope of 10 degrees?\" est non.",
+        "model_answer": "La réponse à la question \"Can the parking support withstand storage on a slope of 10 degrees?\" est non.",
         "target_page": 119,
         "context_type": "token",
         "noise_level": 1000,
@@ -1211,7 +1159,7 @@
     {
         "question": "What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?",
         "expected_answer": "Not found in context",
-        "model_answer": "Il est recommand\u00e9 de graisser et de lubrifier \u00e0 nouveau tous les points de la machine afin de mieux la conserver avant de commencer le remisage d'hiver.",
+        "model_answer": "Il est recommandé de graisser et de lubrifier à nouveau tous les points de la machine afin de mieux la conserver avant de commencer le remisage d'hiver.",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 1000,
@@ -1224,7 +1172,7 @@
     {
         "question": "How many operational hours can 'vanes' typically last before requiring replacement?",
         "expected_answer": "Not found in context",
-        "model_answer": "Il est possible de prolonger la dur\u00e9e d'utilisation des 'vanes' jusqu'\u00e0 1 000 heures avant leur n\u00e9cessit\u00e9 de remplacer.",
+        "model_answer": "Il est possible de prolonger la durée d'utilisation des 'vanes' jusqu'à 1 000 heures avant leur nécessité de remplacer.",
         "target_page": 125,
         "context_type": "token",
         "noise_level": 1000,
@@ -1263,7 +1211,7 @@
     {
         "question": "What 'screwdriver' type (flathead/phillips) is optimal for adjusting 'dosing mechanism'?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le type de screwdriver optimal pour ajuster le m\u00e9canisme de dosage est un outil \u00e0 aiguille plate (flathead).",
+        "model_answer": "Le type de screwdriver optimal pour ajuster le mécanisme de dosage est un outil à aiguille plate (flathead).",
         "target_page": 133,
         "context_type": "token",
         "noise_level": 1000,
@@ -1276,7 +1224,7 @@
     {
         "question": "What is the typical agitator 'seal ring' lifespan in operational hours before requiring replacement?",
         "expected_answer": "Not found in context",
-        "model_answer": "La dur\u00e9e normale avant la r\u00e9paration du seau de dosage est d'environ 100 heures.",
+        "model_answer": "La durée normale avant la réparation du seau de dosage est d'environ 100 heures.",
         "target_page": 134,
         "context_type": "token",
         "noise_level": 1000,
@@ -1289,7 +1237,7 @@
     {
         "question": "What is the 'small crack of light' dimension in millimeters between 'dosing baffles' when closed?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le 'small crack of light' se situe entre les disques de dosage \u00e0 environ 2 mm.",
+        "model_answer": "Le 'small crack of light' se situe entre les disques de dosage à environ 2 mm.",
         "target_page": 135,
         "context_type": "token",
         "noise_level": 1000,
@@ -1302,7 +1250,7 @@
     {
         "question": "What type of 'feeler gauge' material is recommended for 'discharge bushing height' check?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le type de mat\u00e9riau recommand\u00e9 pour le 'feeler gauge' (ou disque d'\u00e9pandage) pour v\u00e9rifier la hauteur est du cuivre.",
+        "model_answer": "Le type de matériau recommandé pour le 'feeler gauge' (ou disque d'épandage) pour vérifier la hauteur est du cuivre.",
         "target_page": 138,
         "context_type": "token",
         "noise_level": 1000,
@@ -1315,7 +1263,7 @@
     {
         "question": "What is the 'plastic seal' material specification for agitator axle seal?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le 'plastic seal' material sp\u00e9cifique pour le syst\u00e8me d'\u00e9tanch\u00e9it\u00e9 de l'agitateur est du type polyisoprene.",
+        "model_answer": "Le 'plastic seal' material spécifique pour le système d'étanchéité de l'agitateur est du type polyisoprene.",
         "target_page": 140,
         "context_type": "token",
         "noise_level": 1000,
@@ -1328,7 +1276,7 @@
     {
         "question": "What is the material of the 'metal seal rings' for agitator axle seal?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le mat\u00e9riau de la bague d'\u00e9tanch\u00e9it\u00e9 en m\u00e9tal.",
+        "model_answer": "Le matériau de la bague d'étanchéité en métal.",
         "target_page": 141,
         "context_type": "token",
         "noise_level": 1000,
@@ -1341,7 +1289,7 @@
     {
         "question": "What specific 'extension cable' length in meters is optimal for ISO 11786 in cab tractor connection?",
         "expected_answer": "Not found in context",
-        "model_answer": "Le c\u00e2ble d'alimentation \"IsoMatch Tellus\" fourni en standard a une longueur de 143 m\u00e8tres.",
+        "model_answer": "Le câble d'alimentation \"IsoMatch Tellus\" fourni en standard a une longueur de 143 mètres.",
         "target_page": 144,
         "context_type": "token",
         "noise_level": 1000,
@@ -1402,5 +1350,187 @@
         "dataset": "question_datasets/question_answers_unanswerable.json",
         "file_extension": "txt",
         "duration": 0.1
+    },
+    {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "expected_answer": "06.00.00.0257",
+        "model_answer": "La réponse à la question est de 06.00.00.0257.",
+        "target_page": 27,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.5
+    },
+    {
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "expected_answer": "150mm.",
+        "model_answer": "Les tubes profilés doivent disposer d'un jeu de au moins 25 mm aux extrémités lorsque la prise de force du tracteur et l'arbre d'entraînement de la machine se trouvent à la même hauteur.",
+        "target_page": 51,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.2
+    },
+    {
+        "question": "How many parts does the distribution meter have?",
+        "expected_answer": "Seven.",
+        "model_answer": "The distribution meter has 4 parts.",
+        "target_page": 59,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.1
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "model_answer": "Pour obtenir une application fine pour un taux d'application réduit, vous devez ajuster le levier de dosage fin.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.1
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "expected_answer": "1 open hole and 2 thick holes",
+        "model_answer": "Le symbole sur le haut du levier de dosage fin indique \"Fine\".",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.1
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "expected_answer": "At the back of the control box.",
+        "model_answer": "The RS 232 connector is located on the face arrière du boîtier de commande.",
+        "target_page": 72,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.1
+    },
+    {
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "expected_answer": "Every year",
+        "model_answer": "Les bacs de collecte doivent être vérifiés régulièrement pour s'assurer qu'ils épaississent à la même vitesse que le disque d'épandage.",
+        "target_page": 78,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.2
+    },
+    {
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+        "expected_answer": "10% of the quantity in the middle trough",
+        "model_answer": "Le maximum de la perte autorisée dans la tranchée est de 10 %.",
+        "target_page": 91,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.1
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "expected_answer": "Measured from the bottom of the vanes.",
+        "model_answer": "La hauteur du dépôt d'épandage est mesurée à partir de la surface du sol ou de la végétation.",
+        "target_page": 95,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.1
+    },
+    {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "expected_answer": "spreading chart or online spreading chart",
+        "model_answer": "Pour configurer le rapport de vitesse d'épandage et la réglage du disque de dépôt correct, vous devez suivre les étapes suivantes :\n\n1. Réglez le système ExactLine sur la position souhaitée à l'aide du tableau d'épandage (en ligne).\n2. Démarrez le tracteur et utilisez le tableau d'épandage (en ligne) ou le tableau de la page précédente pour ajuster les régimes de force et les disques d'épandage en fonction des besoins spécifiques à votre situation.\n3. Choisissez si vous souhaitez un rapport qui vous permette d'avancer à la même vitesse que lors de l'épandage plein champ, puis actionnez l'épandeur de la même façon que pour l'épandage plein champ.\n\nCette approche garantit une position optimale du système ExactLine et réduit les défauts d'épandage.",
+        "target_page": 111,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.7
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "expected_answer": "Place the spreader on a firm, stable ramp",
+        "model_answer": "Si vous ne pouvez pas lever la béquille suffisamment pour libérer les câbles des crochets lors du déplacement de la machine pour le stockage, il est recommandé d'ajuster la longueur du bras supérieur et de retirer le câble du crochet.",
+        "target_page": 120,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.2
+    },
+    {
+        "question": "What type of grease is the central gearbox filled with?",
+        "expected_answer": "EP 00/000 gear grease.",
+        "model_answer": "Le boîtier central est rempli de graisse EP 00/000.",
+        "target_page": 127,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.1
+    },
+    {
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+        "expected_answer": "The required distance is 1.0 mm.",
+        "model_answer": "The required distance between the discharge bushing and spreading disc is 1.0 mm.",
+        "target_page": 138,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.1
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "expected_answer": "Yes, using the Sensor input IM Tellus.",
+        "model_answer": "Vous pouvez raccorder le capteur de vitesse du tracteur ou le radar au boîtier de commande IsoMatch Tellus en utilisant un câble avec connecteurs 7 broches pour connexion ISO 11786.",
+        "target_page": 144,
+        "context_type": "token",
+        "noise_level": 1000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.2
     }
 ]

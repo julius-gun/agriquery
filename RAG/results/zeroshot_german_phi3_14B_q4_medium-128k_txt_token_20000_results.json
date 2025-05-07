@@ -9,24 +9,23 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.5740740740740741,
-        "precision": 0.5869565217391305,
-        "recall": 0.5,
+        "accuracy": 0.559322033898305,
+        "precision": 0.62,
+        "recall": 0.484375,
         "specificity": 0.6481481481481481,
-        "f1_score": 0.54,
-        "true_positives": 27,
+        "f1_score": 0.5438596491228069,
+        "true_positives": 31,
         "true_negatives": 35,
         "false_positives": 19,
-        "false_negatives": 27,
-        "total_questions": 108,
+        "false_negatives": 33,
+        "total_questions": 118,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.5909090909090909,
-            "unanswerable_questions": 0.6481481481481481,
-            "table_questions": 0.1
+            "general_questions": 0.5555555555555556,
+            "unanswerable_questions": 0.6481481481481481
         }
     },
     "timing": {
-        "duration_qa_phase_seconds": 2841.800000000001
+        "duration_qa_phase_seconds": 3089.0000000000014
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,14 +135,6 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "The maximum working angles for the coupling shaft are 30° upwards and 30° downwards.",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "Yes, engage the parking brake of the tractor before connecting the machine.",
@@ -232,26 +223,10 @@
                     "self_evaluation": "yes"
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "The required height of the spreading disc above the troughs for one-sided boundary spreading is not explicitly mentioned in the provided context. The instructions suggest setting the height to 75 cm over the Boden or crop, but do not specify a different value for one-sided boundary spreading. Therefore, based on the available information:\nUnknown",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "75 cm over the Auffangbehälter.",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "The maximum fertilizer loss over the field edge is allowed to be up to 10% of the quantity in the middle trough.",
-                    "page": 91,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
                 },
@@ -368,20 +343,124 @@
                     "self_evaluation": "yes"
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-                    "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "The required distance between the discharge bushing and spreading disc is 1.0 mm.",
-                    "page": 138,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "How often should the agitator axle seal be replaced?",
                     "expected_answer": "Every season and after every 100 operational hours.",
                     "model_answer": "The context does not provide a specific interval for replacing the agitator axle seal. The answer is \"Not found in context\".",
                     "page": 140,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "The GreenSeeker sensor is supported starting from version 06.00.00.00.0257 of the ISOBUS system.\n",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "The profiled tubes of a coupling shaft must have an overlapping length of at least 150 mm.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "The context provided does not specify the number of parts in a distribution meter. Therefore, the answer is \"Not found in context\".",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "To enable fine application for a low application rate:\n- Use the Feindosier-Set.\n- The desired dosing is indicated in the Streutabelle behind the symbol \"Feindosier-Set\".\n- Adjust the Dosierstellung to match the desired dose and speed, as shown in the Streutabelle.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "The context does not provide a specific symbol for when the Fine application kit is enabled. The answer to this question cannot be found in the provided context.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "The RS 232 connector is located on the backside of the control unit.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "[Image]\nLinks-Rechts-Test ausführen.\n95<|begin_of_text|>\n===Page 96===\n\nArbeiten vor dem Streuen\nWenn Sie den Streuer korrekt eingestellt haben und die Fahrwege im richtigen Abstand zueinander stehen, erhalten Sie eine gute Verteilung über das Land. Bedingung ist jedoch, dass das Streubild des Streuers die richtige Form aufweist.\nAusführung\n Schalten Sie den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss und betätigen Sie die Feststellbremse des Schleppers.\n Entkoppeln Sie die linke Streuscheibe, indem Sie das Kupplungsstück nach links schieben. Arretieren Sie das Kupplungsstück wieder mit dem Sicherungsclip.\n Suchen Sie in der (Online-)Streutabelle für die am ehesten vergleichbaren Düngemittel, Saaten oder Körner die richtige Auslaufposition auf, um 24 Meter breit zu streuen und stellen Sie dies mit dem Griff ein.\n Siehe Absatz »Auslassöffnung« auf Seite 65 und das Vorwort des Streutabellenbuchs.\n Montieren Sie die Gelenkwelle am richtigen Anschlusspunkt des Zentralgetriebes, der in der betreffenden Streutabelle angegeben ist.\n Kontrollieren Sie die Höhe des Streuers (Höhe Streuscheibe = 75 cm über den Auffangbehältern).\n Setzen Sie die Gitter in die Auffangbehälter.\n Setzen Sie Auffangbehälter 1 mitten auf die Spur des Schleppers.\nHINWEIS Platzieren Sie die Auffangbehälter mithilfe einer Wasserwaage horizontal!\n[Image]\n96<|begin_of_text|>\n===Page 97===\n\nArbeiten vor dem Streuen\n Den Schleppermotor anlassen.\n Schließen Sie die Kabine, indem Sie alle Türen und Fenster schließen.\n Schalten Sie das Bedienpult ein.\n Geben Sie die gewünschte Dosis ein.\n Geben Sie den neuen Wert ein.\n Geben Sie die Arbeitsbreite ein.\nWir empfehlen Ihnen, bei der gewünschten Fahrgeschwindigkeit eine Dosis von mindestens 250 kg/ha einzustellen und eine geringe Fahrgeschwindigkeit zu wählen.\n Schalten Sie die linke Streuscheibe ein.\n Schalten Sie die automatische Kalibrierung aus.\n Schalten Sie die Gelenkwelle ein stellen Sie die Drehzahl der Streuscheiben ein, wie in der entsprechenden Streutabelle wiedergegeben.\n Öffnen Sie die rechte Dosiereinheit.\nFahren Sie mitten über den 1. Auffangbehälter und halten Sie erst an, wenn Sie mindestens 20 Meter weiter gefahren sind. Der Streuer streut nämlich ungefähr gleich weit nach hinten wie zur Seite.\n Schließen Sie die Dosiereinheit.\n Leeren Sie den Auffangbehälter mithilfe des Trichters in die Messröhrchen und notieren Sie die Werte in Ihrem Notizbuch.\nWiederholen Sie das vorstehende Verfahren, aber entkoppeln Sie die rechte Streuscheibe und schalten die Dosiereinheit der rechten Streuscheibe aus. Stellen Sie die Auffangbehälter auf die linke Seite der Schlepperspur.\nFahren Sie mit derselben Geschwindigkeit und mit gleicher Zapfwellendrehzahl wie beim ersten Mal!\n97<|begin_of_text|>\n===Page 98===\n\n[Image]\nArbeiten vor dem Streuen\nBeurteilung\n Notieren Sie die Werte, die Sie in den Messröhrchen von der linken und der rechten Streuscheibe ablesen.\n Vergleichen Sie die Werte, rechnen",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "The maximum fertilizer loss over the quantity in the middle trough allowed in a ditch is 10%.",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "The spreading height is measured from the bottom of the shovel.",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "The context does not provide specific information on how to set the correct PTO shaft and spreading disc RPM. The answer is \"Not found in context\".",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "Place the machine on a stable platform like a pallet. Drive the tractor approximately 200 mm forward (the maximum distance depends on the range of the power lift; the halves must overlap). Turn off the engine, remove the key from the ignition switch and engage the parking brake. Place wedges in front of the stabilizer wheels to prevent rolling. Disconnect electrical connectors and cover them with a holder. Remove hydraulic hoses. Attach protective caps on the fittings of the hoses. Hang the hoses on their holders. If the machine is equipped with brakes, drive it to the desired parking spot. Place wedges in front of the brake wheels.",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "The central gearbox is filled with Getriebefett EP00/000.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "1.0 mm",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "Yes, you can connect a speed sensor or radar to the IsoMatch control box using an optional 'Sensor Input IM Tellus' with a Sensor Anschluss. This allows for the integration of the Schlepper-Geschwindigkeitssensor or Radar into the IsoMatch Bedienpult.",
+                    "page": 144,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
                 }
             ]
         },

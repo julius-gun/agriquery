@@ -9,24 +9,23 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.009259259259259259,
+        "accuracy": 0.00847457627118644,
         "precision": 0.01818181818181818,
-        "recall": 0.018518518518518517,
+        "recall": 0.015625,
         "specificity": 0.0,
-        "f1_score": 0.018348623853211007,
+        "f1_score": 0.01680672268907563,
         "true_positives": 1,
         "true_negatives": 0,
         "false_positives": 54,
-        "false_negatives": 53,
-        "total_questions": 108,
+        "false_negatives": 63,
+        "total_questions": 118,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.022727272727272728,
-            "unanswerable_questions": 0.0,
-            "table_questions": 0.0
+            "general_questions": 0.018518518518518517,
+            "unanswerable_questions": 0.0
         }
     },
     "timing": {
-        "duration_qa_phase_seconds": 529.9000000000002
+        "duration_qa_phase_seconds": 612.6
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,14 +135,6 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "To be done before spreading\n To perform a spreader on the direction of the tractor in the ditch. The correct pattern is to be performed by the border with the same as the desired distance from each other side of the spreader. When you have to do this action and the traction point.\n‹ 1 troughs on the left and the fictive ditch\n Allow the PTO setting as required by the tractor in the ditching pattern on the side of the spreading chart\nTo be done before spreading\n  Perform the spreader is not to perform this action as the traction point.\n‹ 1 troughs with a few metres in the fictive ditch. The correct distance\n Allow the PTO and connection and the tractor off, on the direction\b\n<question\n### Page 91===\n\nTo be done before spreading\nTo ensure that is to perform this action as the traction point of the spreader in the ditching pattern with the same as the desired distance from each other side of the spreader. The correct distance has been given\b\n Perform the troughs on the tractor tracks.\n### Page 92===\n\nThe PTO setting as required by the tractor in the ditch",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "===Page 92===\n\n[Image\nTo perform a spreader on the border of the tractor in the ditch. The exact pattern is not to be done with the same distance of the troughs for the side of the spreading chart.\n   • Allow the PTO setting as per the standard rate by the traction system to the desired level and the disconnection\b\n 1 2nd trough on the land next to the fictive ditch, which is less than the spreader. The exact pattern test with the same distance in the ditch.\n\nTo perform this spreading pattern of the tractor off, as required by the standard setting as per the traction system to the desired level and the disconnection and the PTO\n 1 troughs on the side of the spreader. Keep to be done with the same distance\n   • Allow the traction point in the ditch.\n    A right turn",
@@ -232,26 +223,10 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "The machine on the tractor off, keep in the tractor\n 1. Ensure that is not allowed to transport of the tractor.\n• allow for a pump and power supply of the tractor,\n· stopper with pressure of the tractor, plug in the pump and fuelled by lifting on the drive and prevent it from the machine.\n*   • Allowable to enable the steering system\n‹ 1. Ensure that is allowed to transport as necessary\n• allow for a pump and power supply of the tractor,\n· stopper with pressure off the pump and plug in the pump and fuelled by lifting on the tractor, which could be used it.\n*   • Allowable to enable the steering system\n>",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": " 1. 14. 15. 16. 17. 16. 18.17. 19.17. 20.18. 19. 2.",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": " 1. 1300\n   131. 132\n     133. 135.13                  134.14                 135.15                136.    137.16               141.17                 138.139                   140.149                 143                  151",
-                    "page": 91,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 },
@@ -368,18 +343,122 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "I can be applied\b\n 1\n   0\n 1\n 1\n 1\n 1\n 2\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "The system to be done before spreading\n•   • 1. on the spreader in the load of the tractor.\n Load the loading capacity of the tractor with a load on the towed in the loaders\n  Allow the load point of the tractor, as well as the flow control that is not allowed to the towing system and the desired level of the tractor.",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "To be done before spreading\n To perform a spreader on the direction to obtain the same distance with the tractor in the ditch. The standard is not allowed to allow the desired level of the tractor.\n 1  • Allow the PTO setting and the traction point of the tractor.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "To be done before spreading\n> 1 troughs in the correct way to ensure that the spreader is not on the road.\n• The exact pattern of the tractor with the transport mode of the track\b<|> the desired route of the spreader. Is it necessary to the right direction\n‹tunneling as the traction point of the drive and the tow in the edge, which are allowed to allow for a good reason why not to the road.\n• is the correct path control system that has been designed to the transport mode of the tractor.\n> the desired route of the spreader on the track\n‹tunneling pattern with the traction point of the head​\n<answer\n> The exact method of the spreading chart in the right-handled by way of the road. Is it necessary to the correct path\b<|> the transport mode of the tractor.\n• is the desired route of the spreader on the edge, which are allowed to allow for a good reason that the traction point of the track\b\n‹tunneling pattern with the traction point of the head​\n<answer\n> The exact method of the spreading chart in the road. Is it necessary to the correct path\b<|> the transport mode of the tractor.\n 1 troughs in the edge, which are allowed to allow for a good reason that the traction point of the spreader on the route of the track\b\n‹tunneling pattern with the traction point of the road. Is it necessary to the correct route of the spreading pattern is less than the transport mode of the tractor.\n<  The exact method of the traction in the edge\n> the desired route of the spreader on the edge, which are allowed for a good reason that the traction point of the spread\n‹tunneling pattern with the traction point of the road.",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "The control system with the spread on the edge of the border\n  The correct pattern of the tractor to ensure that is better than the side by switching off the edge. To do not be in the first hand, which are one-sided over- and as desired flow\b<| 1080 ===\n\nTo perform a good spread on the edge of the border\n‹ 1091 === Page 110===\n\nSpreading pattern with the hydraulic pressure to the side by switching off the edge is better than the edge in the tractor. With this reason, which are not be greater than the edge of the border spreading pattern, as desired that is when you want to spread on the edge.\n‹ 1091 === Page 111===\n\nUse in the edge of the border\n>",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "The spreader to the edge in the side of the border with the border spreading pattern on the left and switch off\n108. On the first tramline on the edge is better than the tractor control system to ensure that you are not allowed to be done by the edge down the edge of the border with the bordering plate • the correct direction​",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "The exact method of the spreader on the edge to ensure that you are in the same way as desired\n 1. Stop the tractor off, do not allow the correct direction\n  The exacting is allowed to stop the edge.\n    <==<|> On the right-handled > with a left and switch the PTO\n  1100\n   • on the side of the tractor in the edge of the tractor.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "The correct method on the pump in the machine\n​\n‹. Stop the sieve on the plug in the pump is not allow to stoppage with the spread out of the tractor.\n  1. Ensure that you are not allowed to transport it, and the drive and the brake on the hopper as needed for a good cause of the machine,\n    • Allow the hopper to prevent damage and the lubricate from the machine\n​\n##  Stop the sieve on the pump in the plug in the pump stoppage with the spread out of the tractor.\n  ",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": " 1. 1300\n   131. 132\n     133. 135.13                  134.14                 135.15                136.    137.16               141.17                 138.139                   140.150                143                  151                  149.152                 151.153",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "The hydraulic system\n 1. Stop on the steering wheel of the tractor.\n   • stopper to seal the brake of the tractor,\n· switch off the control point on the pump is not allowed in the tractor.\n    • allow the pressure of the tractor, and the drive and the brakes on the steering system that are not allowed to the hydraulic\n 1. Stop the piston of the tractor.\n   2.",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "   155. Spreading       Isolate\n        156. Sudden     on the  to the  crops         158.  159.  1600.  in the  crops                                                                                   Stop at the 159. 161. 160.  162. 170            is not in the 160. 163. 161. 162. 1701\n        162. 163. 1701               on the   163. 164. 1701. 1701. 164.168",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "**. 1\n   **.     Load the load       13\n   system      12\n   **. 14\n   **. 15\n    • Application\n   **. 15\n   **. 16\n   **. 17\n   **. 16\n   **. 17\n   **. 18\n   **. 17\n   **. 18\n   **. 19\n   **. 18\n**. 19\n   **. 20\n    • Application\n   **. 19\n   **. 19\n   **. 20\n**. 20\n   **. 21\n**. 20\n   **. 20\n   **. 21\n**. 21\n   **. 21\n   **. 21\n**. 22\n   **. 21\n   **. 21\n   **. 21\n**. 21\n   **. 21\n   **. 21\n**. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n**. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21\n   **. 21",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "I can be applied\b\n 1\n   0\n 1\n 1\n 1\n 2\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
                     "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "I can be done\n 1\n   0\n 1\n 1\n 1\n 1\n 1\n 2\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n ",
+                    "model_answer": "I can be applied\b\n 1\n   0\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n",
                     "page": 138,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "How often should the agitator axle seal be replaced?",
-                    "expected_answer": "Every season and after every 100 operational hours.",
-                    "model_answer": "I can be applied\b\n 1\n   0\n 1\n 1\n 1\n 1\n 2\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n",
-                    "page": 140,
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "I can be applied\b\n1                          Power steering       13\n   on 11\n4                            Setting     115\n6                           setting       14\n7                         Load           116\n8                             load         117\n9                        Discharge      15\n10                          signal line       118\n11                          Electronic     116\n    warning\n12                          Power supply\n                  117\n   on the system       119\n13                            Setting\n   117\n14                           Load           120\n16                             load         122\n5                         Spreader       121\n15                        Discharge      118\n6                       Gearbox     123\n7                          setting\n    warning\n19                              Set\n10                         on the system       119\n12\n17                            Setting\n   117\n   on the steering       120\n18                             Load           122\n   on the load     121\n   118\n   on the line       123\n20                          Power supply       124\n19                           setting\n    warning\n21                         Set\n    caution\n    on the system      119\n    warning\n    on the steering       120\n22                             Load           122\n   on the load     121\n   on the direction\n   118\n3                          Setting\n   117\n14                           Power supply       123\n6                         Spreader       124\n   on the system      119\n15                        Discharge         121\n    warning\n   on the steering       120\n   on the load     122\n   on the line       125\n19                          Setting\n   on the setting\n   118\n20                             Load           123\n    warning\n    on the system      121\n   on the load     124\n   on the direction\n    warning\n    on the steering       120\n21                         Power supply       122\n   on the line       125\n   on the load     119\n14                          Setting\n   on the setting\n   on the system      121\n15                        Discharge         123\n    warning\n   on the load     124\n   on the steering       120\n   on the load     122\n   on the line       125\n19                         Set\b\n    warning\n    on the load     119\n   on the system      121\n20                             Setting\n   on the setting\n   on the load     123\n   on the steering       120\n   on the load     124\n   on the line       122\n   on the load     125\n    warning\n    on the system      119\n   on the load     121\n19                         Setting\n   on the setting\n   on the load     123\n   on the steering       120\n   on the load     124\n   on the line       122\n   on the load     125\n    warning\n   on the system      119\n   on the set and         121\n20                             Setting\n   on the setting\n   on the load     123\n   on the steering       120\n   on the load     124\n   on the line       122\n   on the load     125\n19                         Setting\n    warning\n   on the system      121\n   on the load     126\n   on the setting\n   on the load     123\n   on the steering       120\n   on the load     124\n   on the line       122\n   on the load     125\n19                         Setting\n   on the system      121\n    warning\n   on the load     126\n   on the setting\n   on the load     123\n   on the steering       120\n   on the load     127\n   on the line       122\n   on the load     125\n19                         Setting\n   on the system      121\n    warning\n   on the load     124\n   on the setting\n   on the load     126\n   on the steering       123\n   on the load     127\n   on the line       122\n   on the load     125\n19                         Setting\n   on the system      121\n    warning\n   on the load     128\n   on the setting\n   on the load     126\n   on the steering       123\n   on the load     127\n   on the line       122\n   on the load     125\n19                         Setting\n   on the system      121\n   on the load     128\n   on the setting\n   on the load     126\n   on the steering       123\n   on the load     127\n   on the line       122\n   on the load     125\n    warning\n   on",
+                    "page": 144,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 }

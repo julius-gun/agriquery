@@ -106,7 +106,7 @@
     {
         "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
         "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
-        "model_answer": "The instructions are to read the entire context carefully. The answer is not explicitly stated in the text, but can be inferred from the following passage:\n\n\"Montieren Sie das Bedienpult an einer Stelle, an der dieses: \u00b7 gut sichtbar ist, \u00b7 w\u00e4hrend des Streuens leicht zu bedienen ist, \u00b7 ein Minimum an Sichtverlust und Behinderung beim Fahren des Schleppers aufweist.\"\n\nThis suggests that the console assembly foot should be mounted in a location where it is easily visible and accessible during operation of the machine.",
+        "model_answer": "The instructions are to read the entire context carefully. The answer is not explicitly stated in the text, but can be inferred from the following passage:\n\n\"Montieren Sie das Bedienpult an einer Stelle, an der dieses: · gut sichtbar ist, · während des Streuens leicht zu bedienen ist, · ein Minimum an Sichtverlust und Behinderung beim Fahren des Schleppers aufweist.\"\n\nThis suggests that the console assembly foot should be mounted in a location where it is easily visible and accessible during operation of the machine.",
         "target_page": 40,
         "context_type": "token",
         "noise_level": 20000,
@@ -158,25 +158,12 @@
     {
         "question": "What specific precaution should be taken before working between the tractor and machine to check the coupling shaft length?",
         "expected_answer": "Place the machine on a supporting beam.",
-        "model_answer": "The correct answer is: \nDie Gelenkwelle sollte auf die richtige L\u00e4nge gek\u00fcrzt werden.",
+        "model_answer": "The correct answer is: \nDie Gelenkwelle sollte auf die richtige Länge gekürzt werden.",
         "target_page": 50,
         "context_type": "token",
         "noise_level": 20000,
         "model_name": "llama3.1_8B-128k",
         "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 7.8
-    },
-    {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-        "model_answer": "The maximum operating angle of the coupling shaft when lifted and when lowered is 30\u00b0.",
-        "target_page": 51,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "llama3.1_8B-128k",
-        "self_evaluation": "yes",
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 7.8
@@ -197,7 +184,7 @@
     {
         "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
         "expected_answer": "30 degrees",
-        "model_answer": "30\u00b0",
+        "model_answer": "30°",
         "target_page": 54,
         "context_type": "token",
         "noise_level": 20000,
@@ -236,7 +223,7 @@
     {
         "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
         "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-        "model_answer": "The general formula for calculating the required flow rate of fertilizer in kg/min is:\n\nBen\u00f6tigte Auslassgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha)\n\nThis formula can be used to calculate the required flow rate based on the desired application rate, working width, and forward speed.",
+        "model_answer": "The general formula for calculating the required flow rate of fertilizer in kg/min is:\n\nBenötigte Auslassgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha)\n\nThis formula can be used to calculate the required flow rate based on the desired application rate, working width, and forward speed.",
         "target_page": 68,
         "context_type": "token",
         "noise_level": 20000,
@@ -301,7 +288,7 @@
     {
         "question": "What materials are required to perform the tray test?",
         "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-        "model_answer": "The text does not explicitly state what materials are required for the tray test. However, based on the context, it appears to be referring to a \"tray\" or \"Auffangbeh\u00e4lter\", which is likely a container used in the process of testing the spreader's performance.\n\nHowever, if we look at the context where the term \"tray\" is mentioned, it seems to refer to a device used for measuring the amount of material being spread. In that case, the materials required would be:\n\n* Auffangbeh\u00e4lter (a container or tray)\n* Messrohre (measuring rods)\n\nThese are likely the materials needed to perform the \"tray test\".",
+        "model_answer": "The text does not explicitly state what materials are required for the tray test. However, based on the context, it appears to be referring to a \"tray\" or \"Auffangbehälter\", which is likely a container used in the process of testing the spreader's performance.\n\nHowever, if we look at the context where the term \"tray\" is mentioned, it seems to refer to a device used for measuring the amount of material being spread. In that case, the materials required would be:\n\n* Auffangbehälter (a container or tray)\n* Messrohre (measuring rods)\n\nThese are likely the materials needed to perform the \"tray test\".",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 20000,
@@ -314,7 +301,7 @@
     {
         "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
         "expected_answer": "3 m/s)",
-        "model_answer": "3 m/s (Windst\u00e4rke 2)",
+        "model_answer": "3 m/s (Windstärke 2)",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 20000,
@@ -323,19 +310,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 0.3
-    },
-    {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "expected_answer": "75 cm above the troughs.",
-        "model_answer": "The required height of the spreading disc above the troughs for one-sided boundary spreading is 75 cm.",
-        "target_page": 84,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "llama3.1_8B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 7.8
     },
     {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
@@ -349,19 +323,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 7.7
-    },
-    {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-        "expected_answer": "10% of the quantity in the middle trough",
-        "model_answer": "The maximum fertilizer loss of the quantity in the middle trough is 10% of the quantity in the center.",
-        "target_page": 91,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "llama3.1_8B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 7.9
     },
     {
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
@@ -405,7 +366,7 @@
     {
         "question": "What are the two functions for border spreading?",
         "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-        "model_answer": "The two functions for border spreading with the ExactLine are:\n\n1. Beim Grenzaufstreuen mit der ExactLine (Zubeh\u00f6r) fahren Sie auf einer halben Arbeitsbreite (1/2 X Meter) (= erste Spritzgasse) ab Parzellenrand.\n2. Beim Grenzaufstreuen mit der ExactLine (Zubeh\u00f6r) fahren Sie in der ersten Streuspur vom Feldrand aus und streuen in Richtung des Feldrands.\n\nNote: The answer is based on the text provided, which describes the two functions for border spreading with the ExactLine.",
+        "model_answer": "The two functions for border spreading with the ExactLine are:\n\n1. Beim Grenzaufstreuen mit der ExactLine (Zubehör) fahren Sie auf einer halben Arbeitsbreite (1/2 X Meter) (= erste Spritzgasse) ab Parzellenrand.\n2. Beim Grenzaufstreuen mit der ExactLine (Zubehör) fahren Sie in der ersten Streuspur vom Feldrand aus und streuen in Richtung des Feldrands.\n\nNote: The answer is based on the text provided, which describes the two functions for border spreading with the ExactLine.",
         "target_page": 106,
         "context_type": "token",
         "noise_level": 20000,
@@ -418,7 +379,7 @@
     {
         "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
         "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-        "model_answer": "The two actions to be taken in case of spreader failure or stoppage are:\n\n1. Das Streuen unverz\u00fcglich einstellen!\n2. Die Zapfwelle sofort abstellen!\n\nThese steps should be done immediately after the problem occurs, to prevent any potential harm to people and equipment.",
+        "model_answer": "The two actions to be taken in case of spreader failure or stoppage are:\n\n1. Das Streuen unverzüglich einstellen!\n2. Die Zapfwelle sofort abstellen!\n\nThese steps should be done immediately after the problem occurs, to prevent any potential harm to people and equipment.",
         "target_page": 108,
         "context_type": "token",
         "noise_level": 20000,
@@ -444,7 +405,7 @@
     {
         "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
         "expected_answer": "40 degrees Celsius",
-        "model_answer": "The maximum allowable temperature for cleaning the machine with water or steam is 40\u00b0C.",
+        "model_answer": "The maximum allowable temperature for cleaning the machine with water or steam is 40°C.",
         "target_page": 117,
         "context_type": "token",
         "noise_level": 20000,
@@ -483,7 +444,7 @@
     {
         "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
         "expected_answer": "Remove all fertilizer remnants.",
-        "model_answer": "Verwenden Sie beim Schwei\u00dfen am Streuer niemals ein Leck mit Ihren Fingern zu dichten. Vermeiden Sie, dass der Druck in der Hydraulikanlage 210 bar \u00fcberschreitet!",
+        "model_answer": "Verwenden Sie beim Schweißen am Streuer niemals ein Leck mit Ihren Fingern zu dichten. Vermeiden Sie, dass der Druck in der Hydraulikanlage 210 bar überschreitet!",
         "target_page": 123,
         "context_type": "token",
         "noise_level": 20000,
@@ -546,19 +507,6 @@
         "duration": 7.7
     },
     {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-        "expected_answer": "The required distance is 1.0 mm.",
-        "model_answer": "The required distance is 109 mm.",
-        "target_page": 138,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "llama3.1_8B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 7.7
-    },
-    {
         "question": "How often should the agitator axle seal be replaced?",
         "expected_answer": "Every season and after every 100 operational hours.",
         "model_answer": "The text does not explicitly state when the agitator axle seal should be replaced. However, based on general guidelines for maintenance of agricultural equipment, it is recommended to replace the agitator axle seal every 1000 hours or 5000 operating hours, whichever comes first.",
@@ -574,7 +522,7 @@
     {
         "question": "What is the pattern of the type 'mineral'?",
         "expected_answer": "angular, with sharp angles and edges",
-        "model_answer": "The pattern for the type \"Mineralisch\" is: eckig, mit scharfen Kanten und R\u00e4ndern.",
+        "model_answer": "The pattern for the type \"Mineralisch\" is: eckig, mit scharfen Kanten und Rändern.",
         "target_page": 58,
         "context_type": "token",
         "noise_level": 20000,
@@ -626,7 +574,7 @@
     {
         "question": "How often (in what interval) must the condition of the vanes be inspected?",
         "expected_answer": "daily",
-        "model_answer": "The answer is: \"t\u00e4glich\"",
+        "model_answer": "The answer is: \"täglich\"",
         "target_page": 125,
         "context_type": "token",
         "noise_level": 20000,
@@ -808,7 +756,7 @@
     {
         "question": "Can the tray test be performed at 40 degrees Celsius?",
         "expected_answer": "Not found in context",
-        "model_answer": "The tray test can be performed at a temperature of up to 40\u00b0C.",
+        "model_answer": "The tray test can be performed at a temperature of up to 40°C.",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 20000,
@@ -886,7 +834,7 @@
     {
         "question": "Which appropriate measures for road transport should be taken when stopping work?",
         "expected_answer": "Not found in context",
-        "model_answer": "The correct answer is: \n1. Schlie\u00dfen Sie die Dosiereinheiten.\n2. Die Zapfwelle ausschalten.\n3. Schalten Sie das elektronische Steuersystem aus.\n4. Schalten Sie den Schlepper aus, ziehen Sie den Z\u00fcndschl\u00fcssel aus dem Z\u00fcndschloss und bet\u00e4tigen Sie die Feststellbremse des Schleppers.\n\nThis answer is based on the text provided and follows the format specified in the instructions.",
+        "model_answer": "The correct answer is: \n1. Schließen Sie die Dosiereinheiten.\n2. Die Zapfwelle ausschalten.\n3. Schalten Sie das elektronische Steuersystem aus.\n4. Schalten Sie den Schlepper aus, ziehen Sie den Zündschlüssel aus dem Zündschloss und betätigen Sie die Feststellbremse des Schleppers.\n\nThis answer is based on the text provided and follows the format specified in the instructions.",
         "target_page": 112,
         "context_type": "token",
         "noise_level": 20000,
@@ -1016,7 +964,7 @@
     {
         "question": "What are the detailed technical specifications and bandwidth capabilities of different ISOBUS communication protocol versions compatible with the IsoMatch Tellus system?",
         "expected_answer": "Not found in context",
-        "model_answer": "The ISO-Bediensystem uses the ISOBUS Kommunikationsprotokoll. The Exacta-TLX-GEOSPREAD system is compatible with the IsoMatch Tellus system.\n\nFor the Exacta-TLX-GEOSpread, the technical specifications are as follows:\n\n* 1875 kg: Maximaler Beh\u00e4lterinhalt\n* 2550 kg: Maximaler Beh\u00e4lterinhalt\n* 3225 kg: Maximaler Beh\u00e4lterinhalt\n* 3900 kg: Maximaler Beh\u00e4lterinhalt\n\nThe Exacta-TLX-GEOSpread system is compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the bandwidth capabilities are as follows:\n\n* 0: Allgemeines\n* 1: L\u00e4rmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60) (dB)\n\nThe Exacta-TLX-GEOSpread system is also compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the technical specifications are as follows:\n\n* 0: Allgemeines\n* 1: L\u00e4rmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60) (dB)\n\nThe Exacta-TLX-GEOSpread system is also compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the bandwidth capabilities are as follows:\n\n* 0: Allgemeines\n* 1: L\u00e4rmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60) (dB)\n\nThe Exacta-TLX-GEOSpread system is also compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the technical specifications are as follows:\n\n* 0: Allgemeines\n* 1: L\u00e4rmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60) (dB)\n\nThe Exacta-TLX-GEOSpread system is also compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the bandwidth capabilities are as follows:\n\n* 0: Allgemeines\n* 1: L\u00e4rmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60) (dB)\n\nThe Exacta-TLX-GEOSpread system is also compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the technical specifications are as follows:\n\n* 0: Allgemeines\n* 1: L\u00e4rmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60) (dB)\n\nThe Exacta-TLX-GEOSpread system is also compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the bandwidth capabilities are as follows:\n\n* 0: Allgemeines\n* 1: L\u00e4rmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60)",
+        "model_answer": "The ISO-Bediensystem uses the ISOBUS Kommunikationsprotokoll. The Exacta-TLX-GEOSPREAD system is compatible with the IsoMatch Tellus system.\n\nFor the Exacta-TLX-GEOSpread, the technical specifications are as follows:\n\n* 1875 kg: Maximaler Behälterinhalt\n* 2550 kg: Maximaler Behälterinhalt\n* 3225 kg: Maximaler Behälterinhalt\n* 3900 kg: Maximaler Behälterinhalt\n\nThe Exacta-TLX-GEOSpread system is compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the bandwidth capabilities are as follows:\n\n* 0: Allgemeines\n* 1: Lärmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60) (dB)\n\nThe Exacta-TLX-GEOSpread system is also compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the technical specifications are as follows:\n\n* 0: Allgemeines\n* 1: Lärmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60) (dB)\n\nThe Exacta-TLX-GEOSpread system is also compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the bandwidth capabilities are as follows:\n\n* 0: Allgemeines\n* 1: Lärmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60) (dB)\n\nThe Exacta-TLX-GEOSpread system is also compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the technical specifications are as follows:\n\n* 0: Allgemeines\n* 1: Lärmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60) (dB)\n\nThe Exacta-TLX-GEOSpread system is also compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the bandwidth capabilities are as follows:\n\n* 0: Allgemeines\n* 1: Lärmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60) (dB)\n\nThe Exacta-TLX-GEOSpread system is also compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the technical specifications are as follows:\n\n* 0: Allgemeines\n* 1: Lärmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60) (dB)\n\nThe Exacta-TLX-GEOSpread system is also compatible with the IsoMatch Tellus system, which requires a 9-polige 'In Cab' Kabel.\n\nFor the Exacta-TLX-GEOSpread system, the bandwidth capabilities are as follows:\n\n* 0: Allgemeines\n* 1: Lärmpegel\n* 2: Schlepper bei 540 U/min (dB)\n* 3: Schlepper + arbeitender, leerer Streuer (dB)\n* 4: Schlepper + streuender Streuer (Kali 60)",
         "target_page": 32,
         "context_type": "token",
         "noise_level": 20000,
@@ -1146,7 +1094,7 @@
     {
         "question": "What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?",
         "expected_answer": "Not found in context",
-        "model_answer": "The text does not explicitly state a specific wind speed limit. However, based on the context of the document, which is about operating a machine for spreading fertilizer, I can infer that the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable would be around 3 m/s (Windst\u00e4rke 2).",
+        "model_answer": "The text does not explicitly state a specific wind speed limit. However, based on the context of the document, which is about operating a machine for spreading fertilizer, I can infer that the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable would be around 3 m/s (Windstärke 2).",
         "target_page": 96,
         "context_type": "token",
         "noise_level": 20000,
@@ -1198,7 +1146,7 @@
     {
         "question": "Can the parking support withstand storage on a slope of 10 degrees?",
         "expected_answer": "Not found in context",
-        "model_answer": "The answer is not explicitly stated in the provided text. However, based on the context, I can infer that the answer to the question \"Can the parking support withstand storage on a slope of 10 degrees?\" is likely \"yes\", but with certain conditions.\n\nIn the section about \"Au\u00dferbetriebnahme\" (page 119), it is mentioned that the machine should be placed on a flat and stable ground. However, in the section about \"Vorbereitung f\u00fcr die Winterlagerung\" (page 121), it is recommended to place the machine on a slope of 200 mm.\n\nTherefore, I will provide an answer based on this information:\n\nYes, the parking support can withstand storage on a slope of 10 degrees.",
+        "model_answer": "The answer is not explicitly stated in the provided text. However, based on the context, I can infer that the answer to the question \"Can the parking support withstand storage on a slope of 10 degrees?\" is likely \"yes\", but with certain conditions.\n\nIn the section about \"Außerbetriebnahme\" (page 119), it is mentioned that the machine should be placed on a flat and stable ground. However, in the section about \"Vorbereitung für die Winterlagerung\" (page 121), it is recommended to place the machine on a slope of 200 mm.\n\nTherefore, I will provide an answer based on this information:\n\nYes, the parking support can withstand storage on a slope of 10 degrees.",
         "target_page": 119,
         "context_type": "token",
         "noise_level": 20000,
@@ -1224,7 +1172,7 @@
     {
         "question": "How many operational hours can 'vanes' typically last before requiring replacement?",
         "expected_answer": "Not found in context",
-        "model_answer": "The answer is not explicitly stated in the text. However, based on the context, we can infer that the machine requires maintenance after 10 hours of operation.\n\nThe text mentions \"Wartung\" (maintenance) several times, which suggests that regular maintenance is necessary to ensure the machine's proper functioning and longevity. It also mentions \"t\u00e4glich\" (daily), \"w\u00f6chentlich\" (weekly), and \"jeweils\" (every time) in relation to performing certain tasks or checks.\n\nTherefore, it can be inferred that the machine requires maintenance after a certain number of operational hours, but the exact number is not specified.",
+        "model_answer": "The answer is not explicitly stated in the text. However, based on the context, we can infer that the machine requires maintenance after 10 hours of operation.\n\nThe text mentions \"Wartung\" (maintenance) several times, which suggests that regular maintenance is necessary to ensure the machine's proper functioning and longevity. It also mentions \"täglich\" (daily), \"wöchentlich\" (weekly), and \"jeweils\" (every time) in relation to performing certain tasks or checks.\n\nTherefore, it can be inferred that the machine requires maintenance after a certain number of operational hours, but the exact number is not specified.",
         "target_page": 125,
         "context_type": "token",
         "noise_level": 20000,
@@ -1250,7 +1198,7 @@
     {
         "question": "What type of 'suitable lubricant' is recommended for 'connectors' to prevent corrosion?",
         "expected_answer": "Not found in context",
-        "model_answer": "The text does not explicitly state what type of lubricant is recommended for connectors. However, based on the context, it can be inferred that the answer is 'Schmier\u00f6l' (lubricating oil).",
+        "model_answer": "The text does not explicitly state what type of lubricant is recommended for connectors. However, based on the context, it can be inferred that the answer is 'Schmieröl' (lubricating oil).",
         "target_page": 128,
         "context_type": "token",
         "noise_level": 20000,
@@ -1315,7 +1263,7 @@
     {
         "question": "What is the 'plastic seal' material specification for agitator axle seal?",
         "expected_answer": "Not found in context",
-        "model_answer": "The text does not explicitly mention a specific \"plastic seal\" material specification. However, it mentions \"Kunstd\u00fcnger\", which is German for fertilizer or manure. The context suggests that this is related to the topic of dosing mechanism maintenance.\n\nHowever, in the section on \"Dichtung R\u00fchrerwelle austauschen\" (page 140), it talks about replacing a rubber seal with a new one, but does not specify the material.\n\nIn another part of the text, it mentions \"Kunstd\u00fcnger\", which is German for fertilizer or manure.",
+        "model_answer": "The text does not explicitly mention a specific \"plastic seal\" material specification. However, it mentions \"Kunstdünger\", which is German for fertilizer or manure. The context suggests that this is related to the topic of dosing mechanism maintenance.\n\nHowever, in the section on \"Dichtung Rührerwelle austauschen\" (page 140), it talks about replacing a rubber seal with a new one, but does not specify the material.\n\nIn another part of the text, it mentions \"Kunstdünger\", which is German for fertilizer or manure.",
         "target_page": 140,
         "context_type": "token",
         "noise_level": 20000,
@@ -1341,7 +1289,7 @@
     {
         "question": "What specific 'extension cable' length in meters is optimal for ISO 11786 in cab tractor connection?",
         "expected_answer": "Not found in context",
-        "model_answer": "The exact length of the extension cable for ISO 11786 'In Cab' is not specified. However, according to the text, a verl\u00e4ngertes ISO-Kabel (extension cable) with a 9-pole connector is available for this purpose.",
+        "model_answer": "The exact length of the extension cable for ISO 11786 'In Cab' is not specified. However, according to the text, a verlängertes ISO-Kabel (extension cable) with a 9-pole connector is available for this purpose.",
         "target_page": 144,
         "context_type": "token",
         "noise_level": 20000,
@@ -1402,5 +1350,187 @@
         "dataset": "question_datasets/question_answers_unanswerable.json",
         "file_extension": "txt",
         "duration": 2.1
+    },
+    {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "expected_answer": "06.00.00.0257",
+        "model_answer": "The ISO-Bedienpult supports the reception of the signal of the GreenSeeker sensor from version 06.00.00.0257 onwards.",
+        "target_page": 27,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 8.0
+    },
+    {
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "expected_answer": "150mm.",
+        "model_answer": "Die Profilrohre müssen an den Enden jedoch über mindestens 25 mm Spiel verfügen.",
+        "target_page": 51,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.9
+    },
+    {
+        "question": "How many parts does the distribution meter have?",
+        "expected_answer": "Seven.",
+        "model_answer": "The text does not explicitly state how many parts the distribution meter has.",
+        "target_page": 59,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.8
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "model_answer": "To enable a fine application of dosing at a low application rate, you need to follow these steps:\n\n1. Check the dosage table for the specific fertilizer type and desired working width.\n2. Select the correct dosage setting based on the dosage table.\n3. Set the dosage setting in the machine.\n4. Start the machine and allow it to run for 2 minutes to calibrate the system.\n5. Perform a manual calibration test by checking the actual application rate against the set dosage.\n\nNote: The exact steps may vary depending on the specific machine model and type of fertilizer being used.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 9.1
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "expected_answer": "1 open hole and 2 thick holes",
+        "model_answer": "The symbol on top of the fine application handle is a small icon with an arrow pointing to the right.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.4
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "expected_answer": "At the back of the control box.",
+        "model_answer": "The RS-232 connector is located on the back of the control unit.",
+        "target_page": 72,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.8
+    },
+    {
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "expected_answer": "Every year",
+        "model_answer": "The left and right spreading discs should be checked every year.",
+        "target_page": 78,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.8
+    },
+    {
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+        "expected_answer": "10% of the quantity in the middle trough",
+        "model_answer": "The maximum fertilizer loss of the quantity in the middle trough is 10% of the quantity in the center.",
+        "target_page": 91,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.9
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "expected_answer": "Measured from the bottom of the vanes.",
+        "model_answer": "The spreading height of the machine is measured 75 cm above the ground or the crop.",
+        "target_page": 95,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.8
+    },
+    {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "expected_answer": "spreading chart or online spreading chart",
+        "model_answer": "The text does not provide a clear answer to the question. However, I can infer from the context that the correct PTO shaft and spreading disc RPM is related to the type of machine being used.\n\nTo find the correct PTO shaft and spreading disc RPM for your specific machine, you should refer to the manual or documentation provided with the machine. The information may be listed in a table or chart under the section \"Richtlinien für Anzugsmomente\" (Richtlines for Anzugsmomente) which is mentioned on page 129.\n\nThe table lists different types of Anzugsmomente (PTO shafts) with their corresponding values, but it does not specify which one to use for your machine. You should look for the specific information in the manual or documentation provided by the manufacturer.\n\nIf you cannot find the correct PTO shaft and spreading disc RPM in the manual, you can try to contact the manufacturer's customer support or technical service department for assistance.\n\nIn general, the PTO shaft and spreading disc RPM is usually specified in the range of 1000-1500 RPM.",
+        "target_page": 111,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 10.6
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "expected_answer": "Place the spreader on a firm, stable ramp",
+        "model_answer": "If you are unable to lower the power lift far enough to release the catch hooks when preparing the machine for storage, follow these steps:\n\n1. Check if the machine is on a level surface.\n2. If not, place the machine on a flat and stable base.\n3. Use a jack or other lifting equipment to raise the machine so that you can access the area where the catch hooks are located.\n4. Remove any objects that may be blocking the movement of the power lift.\n5. Check if the power lift is functioning properly by checking if it can move freely without any obstructions.\n\nIf none of these steps resolve the issue, contact a professional for assistance.",
+        "target_page": 120,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 9.4
+    },
+    {
+        "question": "What type of grease is the central gearbox filled with?",
+        "expected_answer": "EP 00/000 gear grease.",
+        "model_answer": "The central gearbox is filled with Getriebefett EP 00/000.",
+        "target_page": 127,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.8
+    },
+    {
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+        "expected_answer": "The required distance is 1.0 mm.",
+        "model_answer": "The required distance is 1.0 mm.",
+        "target_page": 138,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.7
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "expected_answer": "Yes, using the Sensor input IM Tellus.",
+        "model_answer": "The answer is: \nYou can connect the tractor's speed sensor or radar to the IsoMatch control box using the \"Sensor Input IM Tellus\" cable.",
+        "target_page": 144,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.1_8B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 8.0
     }
 ]

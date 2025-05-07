@@ -9,24 +9,23 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.1574074074074074,
-        "precision": 0.19672131147540983,
-        "recall": 0.2222222222222222,
+        "accuracy": 0.13559322033898305,
+        "precision": 0.18333333333333332,
+        "recall": 0.171875,
         "specificity": 0.09259259259259259,
-        "f1_score": 0.20869565217391306,
-        "true_positives": 12,
+        "f1_score": 0.17741935483870966,
+        "true_positives": 11,
         "true_negatives": 5,
         "false_positives": 49,
-        "false_negatives": 42,
-        "total_questions": 108,
+        "false_negatives": 53,
+        "total_questions": 118,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.2727272727272727,
-            "unanswerable_questions": 0.09259259259259259,
-            "table_questions": 0.0
+            "general_questions": 0.2037037037037037,
+            "unanswerable_questions": 0.09259259259259259
         }
     },
     "timing": {
-        "duration_qa_phase_seconds": 3182.2000000000003
+        "duration_qa_phase_seconds": 3699.3
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,14 +135,6 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft when lifted and when lowered is 75 degrees.",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "La réponse est : La machine ne peut pas être mise en service tant que l'utilisateur n'a pas reçu les instructions pour la mise en marche initiale de la part du vendeur ou d'un représentant agréé du fabricant. Le tracteur doit être doté d'un distributeur. En fonction des accessoires choisis, cette quantité peut augmenter.\nLa réponse est : La machine ne peut pas être mise en service tant que l'utilisateur n'a pas reçu les instructions pour la mise en marche initiale de la part du vendeur ou d'un représentant agréé du fabricant. Le tracteur doit être doté d'un distributeur. En fonction des accessoires choisis, cette quantité peut augmenter.\nLa réponse est : La machine ne peut pas être mise en service tant que l'utilisateur n'a pas reçu les instructions pour la mise en marche initiale de la part du vendeur ou d'un représentant agréé du fabricant. Le tracteur doit être doté d'un distributeur. En fonction des accessoires choisis, cette quantité peut augmenter.\nLa réponse est : La machine ne peut pas être mise en service tant que l'utilisateur n'a pas reçu les instructions pour la mise en marche initiale de la part du vendeur ou d'un représentant agréé du fabricant. Le tracteur doit être doté d'un distributeur. En fonction des accessoires choisis, cette quantité peut augmenter.\nLa réponse est : La machine ne peut pas être mise en service tant que l'utilisateur n'a pas reçu les instructions pour la mise en marche initiale de la part du vendeur ou d'un représentant agréé du fabricant. Le tracteur doit être doté d'un distributeur. En fonction des accessoires choisis, cette quantité peut augmenter.\nLa réponse est : La machine ne peut pas être mise en service tant que l'utilisateur n'a pas reçu les instructions pour la mise en marche initiale de la part du vendeur ou d'un représentant agréé du fabricant. Le tracteur doit être doté d'un distributeur. En fonction des accessoires choisis, cette quantité peut augmenter.\nLa réponse est : La machine ne peut pas être mise en service tant que l'utilisateur n'a pas reçu les instructions pour la mise en marche initiale de la part du vendeur ou d'un représentant agréé du fabricant. Le tracteur doit être doté d'un distributeur. En fonction des accessoires choisis, cette quantité peut augmenter.\nLa réponse est : La machine ne peut pas être mise en service tant que l'utilisateur n'a pas reçu les instructions pour la mise en marche initiale de la part du vendeur ou d'un représentant agréé du fabricant. Le tracteur doit être doté d'un distributeur. En fonction des accessoires choisis, cette quantité peut augmenter.\nLa réponse est : La machine ne peut pas être mise en service tant que l'utilisateur n'a pas reçu les instructions pour la mise en marche initiale de la part du vendeur ou d'un représentant agréé du fabricant. Le tracteur doit être doté d'un distributeur. En fonction des accessoires choisis, cette quantité peut augmenter.\nLa réponse est : La machine ne peut pas être mise en service tant que l'utilisateur n'a pas reçu les instructions pour la mise en marche initiale de la part du vendeur ou d'un représentant agréé du fabricant. Le tracteur doit être doté d'un distributeur. En fonction des accessoires choisis, cette quantité peut augmenter.\nLa réponse est : La machine ne peut pas être mise en service tant que l'utilisateur n'a pas reçu les instructions pour la mise en marche initiale de la part du vendeur ou d'un représentant agréé du fabricant. Le tracteur doit être doté d'un distributeur. En fonction des accessoires choisis, cette quantité peut augmenter.\nLa réponse est : La machine ne peut pas être mise en service tant que l'utilisateur n'a pas reçu les instructions pour la mise en marche initiale de la part du vendeur ou d'un représentant agréé du fabricant. Le tracteur doit être doté d'un distributeur. En fonction des accessoires choisis, cette quantité peut augmenter.\nLa réponse est : La machine ne peut pas être mise en service tant que l'utilisateur n'a pas reçu les instructions pour la mise en marche initiale de la part du vendeur ou d'un représentant agréé du fabricant. Le tracteur doit être doté d'un distributeur. En fonction des accessoires choisis, cette quantité peut",
@@ -232,26 +223,10 @@
                     "self_evaluation": "yes"
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "The height of the spreading disc above the troughs for one-sided boundary spreading is 75 cm.",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "The height of the spreading disc for the ExactLine system is 75 cm.",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "The maximum fertilizer loss of the quantity in the middle trench is 10% of the total quantity.",
-                    "page": 91,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
                 },
@@ -368,18 +343,122 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-                    "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "The required distance in mm between the discharge bushing and spreading disc is 1.0mm.",
-                    "page": 138,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "How often should the agitator axle seal be replaced?",
                     "expected_answer": "Every season and after every 100 operational hours.",
                     "model_answer": "The agitateur axle seal should be replaced every 10 years.",
                     "page": 140,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "The system ExactLine is used to command the EPANDAUR with the ISOBUS terminal. The terminal IsoMatch Tellus is connected via a CAN cable 9 pins on the tractor's control unit (ECU) and the CAN cable 7 pins on the machine. The signal of the GPS is sent to the terminal IsoMatch Tellus via the ISOBUS system.\nThe system ExactLine is used to command the EPANDAUR with the ISO Match Tellus terminal. The terminal IsoMatch Tellus is connected via a CAN cable 9 pins on the tractor's control unit (ECU) and the CAN cable 7 pins on the machine. The signal of the GPS is sent to the terminal IsoMatch Tellus via the ISOBUS system.\nThe system ExactLine is used to command the EPANDAUR with the ISO Match Tellus terminal. The terminal IsoMatch Tellus is connected via a CAN cable 9 pins on the tractor's control unit (ECU) and the CAN cable 7 pins on the machine. The signal of the GPS is sent to the terminal IsoMatch Tellus via the ISOBUS system.\n111\n===Page 112===\n\nOpérations avant l'épandage\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\nUtilisation dans les champs\nLa quantité d'engrais épandue au-delà de la bordure de parcelle est définie dans une norme environnementale. Pour satisfaire à celle-ci, la quantité d'engrais épandue au-delà de la bordure de parcelle peut représenter 10 % tout au plus de la quantité épandue au centre derrière l'épandeur (= 100 %).\nLe bac de collecte sur le champ le long de la bordure de tranchée fictive fournit une dose complémentaire pour la nappe d'épandage. La dose complémentaire ne doit jamais être de 100 %.\n   A                                                                                                       Nappe d'épandage régulière, ExactLine est bien réglé\n0  B                                 L'épandage est trop étroit.  Réglez-le un cran plus large (par exemple de 3 vers 4  ou de 7 vers la position de transport)  Effectuez à nouveau le test\n1  C                               L'épandage est trop large :  Réglez-le un cran plus petit (par exemple de 5 vers 4 ou de la position de transport vers 7)  Effectuez à nouveau le test\nSi vous réglé le système ExactLine un cran plus haut ou plus bas (par exemple de 1 vers 2 ou de 3 vers 2), la largeur de travail varie d'environ 0,3 mètre au niveau de la bordure du fossé.\nRamener la hauteur d'épandage après le test sur bacs\nPendant le test sur bacs, vous avez réglé la hauteur des disques à 75 cm.\n Avant l'épandage, réglez la hauteur des disques à 75 cm au-dessus du sol ou de la plante.\n Voir le paragraphe »Hauteur d'épandage«, page 95.\n113\n===Page 114===\n\nOpérations avant l'épandage\n[Image]\nUtilisation dans les champs\nLa quantité d'engrais épandue au-delà de la bordure de parcelle est définie dans une norme environnementale. Pour satisfaire à celle-ci, la quantité d'engrais épandue au-delà de la bordure de parcelle peut représenter 10 % tout au plus de la quantité épandue au centre derrière l'épandeur (= 100 %).\nLe bac de collecte sur le champ le long de la bordure de tranchée fictive fournit une dose complémentaire pour la nappe d'épandage. La dose complémentaire ne doit jamais être de 100 %.\n   A                                                                                                       Nappe d'épandage régulière, ExactLine est bien réglé\n0  B                                 L'épandage est trop étroit.  Réglez-le un cran plus large (par exemple de 3 vers 4  ou de 7 vers la position de transport)  Effectuez à nouveau le test\n1  C                               L'épandage est trop large :  Réglez-le un cran plus petit (par exemple de 5 vers 4 ou de la position de transport vers 7)  Effectuez à nouveau le test\nSi vous réglé le système ExactLine un cran plus haut ou plus bas (par exemple de 1",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "La distance entre les deux tubes de dosage est d'au moins 25 mm.\n[Image]\n112\n===Page 113===\n\nOpérations avant l'épandage\nUtilisation dans les champs\nLorsque vous avez réglé le système ExactLine, vous pouvez effectuer un test sur bacs pour contrôler la vitesse de rotation des disques d'épandage.\n[Image]\n[Image]\n113\nLa distance entre les deux tubes de dosage est de 25 mm.\n Réglez l'ouverture d'écoulement de 2 lettres vers le A  Effectuez à nouveau le test.\nSi vous voulez épandre avec un faible débit, par exemple quelques kilos par hectare, le système de commande ne peut pas effectuer d'étalonnage automatique. Le poids épandu est trop infime pour pouvoir régler le débit avec précision.\nPour prévenir toute obstruction des ouvertures de dosage, vous pouvez en fermer 2 sur 3. L'ouverture restante doit alors être davantage ouverte étant donné qu'en cas de débit constant, la vitesse d'écoulement par celle-ci doit être trois fois plus grande.\nLe levier de dosage fin permettant de fermer ou d'ouvrir 2 orifices de dosage sur 3 est situé sur le côté extérieur du disque d'épandage, audessus du levier de même forme du point de chute. Au-dessus du levier de dosage fin figurent des indications sur le nombre d'orifices de dosage : 3 orifices ronds pour le dosage normal, 1 seul orifice rond ouvert et 2 orifices ronds fermés pour le dosage fin.\n Coupez le moteur du tracteur, retirez la clé du contact et serrez le frein à main sur le tracteur.\n Séparez l'arbre de transmission côté machine.\n Fixez les pales courtes sur la position adéquate (voir l'image).\n Réglez la hauteur du support. La face supérieure du support doit se trouver à la même hauteur que la face supérieure du timon.\n Resserrez les écrous de blocage (50NM)\n114\n===Page 114===\n\nOpérations avant l'épandage\nRéglages des ouvertures\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\nLe réglage des ouvertures de dosage que vous allez effectuer peut être :\n· repris dans le tableau d'épandage concerné, si vous voulez épandre avec un faible débit en utilisant le kit de dosage fin et si le tableau d'épandage affiche le symbole du kit de dosage fin, ce qui est indiqué par 1 rond ouvert (orifice de dosage).\n· Pour déterminer un débit non indiqué, procédez comme décrit au paragraphe »Point de chute«, page 65 et suivantes.\n· calculé à l'aide du tableau d'épandage concerné, si vous voulez épandre avec un faible débit en utilisant le kit de dosage fin et si le tableau d'épandage affiche le symbole du Kit de dosage fin, ceci est indiqué par 3 ronds ouverts (orifice de dosage).\nCalcul\nPuisque 2 orifices de dosage sur 3 sont fermés, la vitesse d'écoulement par l'orifice de dosage restant doit être 3 fois plus importante pour épandre un débit identique.\n Reprenez les valeurs du réglage des ouvertures de dosage, du point d'alimentation et de la vitesse d'écoulement dans le tableau d'épandage. Calculez si nécessaire la vitesse d'écoulement requise à l'aide de la formule ci-dessous.\nSi le tableau d'épandage n'indique pas de débit souhaité ou de vitesse d'avancement, vous pouvez calculer la vitesse d'écoulement nécessaire comme suit :\nVitesse d'écoulement requise (kg/min) =\nLargeur de travail (m) x vitesse d'avancement (km/h)\n600\nReprenez pour le réglage du point de chute la lettre qui figure dans la ligne du tableau d'épandage qui s'approche le plus de la vitesse d'écoulement calculée.\n Multipliez par 3 la vitesse d'écoulement (indiquée dans la colonne (Kg/min) ou calculée).\n Recherchez dans la colonne Kg/min",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "The distribution meter has 2 parts.",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "Pour épandre un débit adapté, vous devez par conséquent effectuer un sur- ou sous-dosage dans la trace de jalonnage qui suit aussi bien lors du premier que du deuxième passage.\n[Image]\nFonctionnement\n[Image]\nUtilisation dans les champs\nLors de l'épandage de bordure avec le système ExactLine (accessoire), vous effectuez le passage le plus à l'extérieur sur la moitié de la largeur de travail (1/2 X mètre) à partir de la bordure de parcelle. Le flux de grains d'engrais, de graines ou de granulés, se commande à l'aide du système ExactLine.\nLa perte maximale autorisée au-delà de la bordure de parcelle est définie dans une norme environnementale. Pour satisfaire à celle-ci, la quantité d'engrais épandue au-delà de la bordure de parcelle peut représenter 10 % tout au plus de la quantité épandue au centre derrière l'épandeur (= 100 %).\nTestez pour cette raison le fonctionnement du système TrimFlow à chaque fois avant d'effectuer le test, comme indiqué au\n[Image]\n117\n===Page 122===\n\nOpérations avant l'épandage\nUtilisation dans les champs\nLors de l'épandage unilatéral en bordure avec le déflecteur de bordure hydraulique (accessoire), vous effectuez le passage le plus à l'extérieur sur la moitié de la largeur de travail (1/2 X mètre) à partir de la bordure de parcelle. Le flux de grains d'engrais, de graines ou de granulés, se commande à l'aide du système ExactLine.\nLa perte maximale autorisée au-delà de la bordure de parcelle est définie dans une norme environnementale. Pour satisfaire à celle-ci, la quantité d'engrais épandue au-delà de la bordure de parcelle peut représenter 10 % tout au plus de la quantité épandue au centre derrière l'épandeur (= 100 %).\nTestez pour cette raison le fonctionnement du système TrimFlow à chaque fois avant d'effectuer le test, comme indiqué au\n[Image]\n118\n===Page 123===\n\nOpérations avant l'épandage\nUtilisation dans les champs\nLors de l'épandage unilatéral en bordure avec le déflecteur de bordure hydraulique (accessoire), vous effectuez le passage le plus à l'extérieur sur la moitié de la largeur de travail (1/2 X mètre) à partir de la bordure de parcelle. Le flux de grains d'engrais, de graines ou de granulés, se commande à l'aide du système ExactLine.\nLa perte maximale autorisée au-delà de la bordure de parcelle est définie dans une norme environnementale. Pour satisfaire à celle-ci, la quantité d'engrais épandue au-delà de la bordure de parcelle peut représenter 10 % tout au plus de la quantité épandue au centre derrière l'épandeur (= 100 %).\nTestez pour cette raison le fonctionnement du système TrimFlow à chaque fois avant d'effectuer le test, comme indiqué au\n[Image]\n119\n===Page 124===\n\nOpérations avant l'épandage\nUtilisation dans les champs\nLors de l'épandage unilatéral en bordure avec le déflecteur de bordure hydraulique (accessoire), vous effectuez le passage le plus à l'extérieur sur la moitié de la largeur de travail (1/2 X mètre) à partir de la bordure de parcelle. Le flux de grains d'engrais, de graines ou de granulés, se commande à l'aide du système ExactLine.\nLa perte maximale autorisée au-delà de la bordure de parcelle est définie dans une norme environnementale. Pour satisfaire à celle-ci, la quantité d'engrais épandue au-delà de la bordure de parcelle peut représenter 10 % tout au plus de la quantité épandue au centre derrière l'épandeur (= 100 %).\nTestez pour cette raison le fonctionnement du système TrimFlow à chaque fois avant d'effectuer le test, comme indiqué au\n[Image]\n120\n===Page 125===\n\nOpérations avant l'épand",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "The Fine Application Kit is enabled.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "The RS-232 connector is located on the back of the control box.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "La machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit épandu soit identique au débit réglé, en dépit du faible régime de la prise de force.\nLa machine doit être vérifiée régulièrement pour s'assurer une répartition correcte des engrais. Le système de commande peut commander les unités de dosage de sorte à ce que le débit ép",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "The maximum fertilizer loss of the quantity in the middle trench is 10% of the total quantity.",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "La hauteur de remplissage est mesurée à 75 cm au-dessus du sol ou de la végétation.\n[Image]\n151\n===Page 152===\n\nAccessoires\nBâche électrique\n[Image]\nTamis à pellets\n[Image]\n152\nVous pouvez augmenter le volume de chargement de votre distributeur d'engrais en installant une, deux ou trois rehausses.\n Vérifiez si la hauteur de remplissage est inférieure à 75 cm au-dessus du sol ou de la végétation.\n Contrôlez l'état des tubes protecteurs et des chaînes de sécurité.\n Remplacez les boulons qui sont endommagés.\nLa machine ne doit pas reposer sur le sol mais doit être relevée à au moins 10 cm du sol!\n Réglez la hauteur de remplissage à 75 cm au-dessus du sol ou de la végétation.\n Contrôlez si les unités de dosage sont fermées et fermez-les, si nécessaire.\n Vérifiez l'absence d'encrassement au niveau des raccords du tracteur et nettoyez-le, si nécessaire.\n153\n===Page 153===\n\nUtilisation dans les champs\nUtilisation dans les champs\n[Image]\nBâche de trémie\n[Image: Bâche de trémie]\n[Image]\n[Image]\nBâche électrique\n[Image]\n154\nLa bâche de trémie est pourvue d'être chargée lorsqu'elle est suspendue. Ne la placez jamais une machine remplie sur le sol.\n Contrôlez l'environnement direct au début et au cours des opérations effectuées avec et sur la machine.\nVeillez à ce que personne ne se trouve dans la zone de travail et dans la zone dangereuse du tracteur et de la machine.\nSi vous voulez épandre, réglez le débit souhaité en utilisant le kit de dosage fin ou le tableau d'épandage correspondant.\n Contrôlez les réglages des ouvertures de dosage et le point de chute.\n Réglage du point de chute\n[Image]\n155\n===Page 154===\n\nOpérations avant l'épandage\nContrôle du profil d'épandage (test sur bacs)\n[Image]\nTest du profil d'épandage avec le déflecteur de bordure hydraulique\nLa position des disques de dosage doit être réglée à la même hauteur que les pales.\n Réglez l'ouverture d'écoulement de 2 lettres vers la position de transport.\n Contrôlez si la machine est attachée à l'horizontale derrière le tracteur dans le sens de la longueur et de la largeur.\nLa distance entre les deux disques d'épandage doit être de 30 % ou plus, par exemple 2 mètres.\n Réglage du point de chute\n[Image]\n156\n===Page 155===\n\nOpérations avant l'épandage\nContrôle et réglage du mécanisme de dosage\nLa position des disques de dosage doit être réglée à la même hauteur que les pales.\n Réglez le point d'écoulement indiqué dans le tableau d'épandage correspondant.\n Contrôlez si la machine est attachée à l'horizontale derrière le tracteur dans le sens de la longueur et de la largeur.\nLa distance entre les deux disques d'épandage doit être de 30 % ou plus, par exemple 2 mètres.\n Réglage du point de chute\n[Image]\n157\n===Page 156===\n\nOpérations avant l'épandage\nContrôle et réglage du mécanisme de dosage\nLa position des disques de dosage doit être réglée à la même hauteur que les pales.\n Réglez le point d'écoulement indiqué dans le tableau d'épandage correspondant.\n Contrôlez si la machine est attachée à l'horizontale derrière le tracteur dans le sens de la longueur et de la largeur.\nLa distance entre les deux disques d'épandage doit être de 30 % ou plus, par exemple 2 mètres.\n Réglage du point de chute\n[Image]\n158\n===Page 157===\n\nOpérations avant l'épandage\nContrôle et réglage du mécanisme de dosage\nLa position des disques de dosage doit être réglée à",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "The exact information to answer your question about setting the correct PTO shaft and spreading disc RPM is not explicitly stated in the text. However, based on the context, I can provide a general guideline.\n\nTo set the correct PTO shaft and spreading disc RPM, you should refer to the table of specifications for the machine, which is usually located at the beginning or end of the manual. The table will list the recommended RPM for the PTO shaft and spreading disc in relation to the type of operation (e.g., tilling, mowing, etc.) and the desired speed.\n\nFor example, if you are looking for the correct PTO shaft and spreading disc RPM for a tractor with a 4WD transmission, the table will indicate that the recommended RPM is between 1000-1200.",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "If you are unable to lower the power lift far enough to release the catch hooks when preparing the machine for storage, you can use a tool such as a wrench or pliers to loosen the hooks.",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "The central gearbox is filled with a lubricant.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "The required distance between the discharge bushing and spreading disc is 109mm.",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "The tractor's speed sensor is connected to the IsoMatch control box via a cable with 9 pins.",
+                    "page": 144,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 }

@@ -169,19 +169,6 @@
         "duration": 5.4
     },
     {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-        "model_answer": "<think>\nOkay, so I need to figure out what the maximum operating angle of the coupling shaft is when it's lifted and when it's lowered. Let me start by looking through the provided pages.\n\nFirst, I see that the spreader has a main body with several components: hopper, discharge point, dosing unit, PTO shaft, and coupling shaft. The hopper is connected to the discharge point via a 10-inch diameter tube. When the machine is in a certain position, the hopper fills up, which then feeds into the discharge point.\n\nLooking at page 72, there's a mention of the coupling shaft connection point. It says that when the tractor is switched off and the ignition system is turned on, the PTO shaft is connected to the main body via the connection point. The spreader has two coupling points: one for the right side (right coupling) and one for the left side (left coupling). \n\nI remember from page 73 that when the machine is in a certain position, the hopper fills up, which feeds into the discharge point. This setup allows the coupling shaft to be connected to the main body through these connection points.\n\nNow, I need to find out how much angle this connection creates. From page 68, it seems that the spreader's operating angle is around 10 degrees when it's being used in a certain position. But since the question asks for both lifted and lowered positions, I should check if there's any variation.\n\nLooking at pages 72-73 again, they mention that the connection point is on the main body, which is part of the spreader. The operating angle when connected would depend on how much the machine is tilted. If the machine is tilted upwards (lifted), the coupling shaft might form a slightly larger angle because it's trying to accommodate the tilt. Conversely, if the machine is tilted downwards (lowered), the angle could be smaller.\n\nBut without specific data from these pages about the exact angles when lifted and lowered, I need to make an educated guess based on typical spreader designs. Usually, the operating angle for the coupling shaft in a spreader is around 10 degrees when it's being used. If the machine tilts upwards (lifted), the angle might increase slightly due to the additional tilt, but if it tilts downwards (lowered), the angle could decrease.\n\nHowever, since I don't have exact measurements from these pages, I'll assume that the maximum operating angle is around 10 degrees when the spreader is in a tilted position. When lowered, the angle would be slightly less than that.\n</think>\n\nThe maximum operating angle of the coupling shaft when it's lifted and when it's lowered is approximately **10 degrees**.\n\nStep-by-step explanation:\n\n1. **When Lifting (Tilted Up):**\n   - The spreader tilts upwards, creating a slight increase in the operating angle due to additional tilt.\n   - This allows for better load distribution and improved efficiency during operation.\n\n2. **When Lowering (Tilted Down):**\n   - The spreader tilts downwards, slightly reducing the operating angle as the machine descends.\n   - This ensures that the spreader remains stable and efficient even when the machine is in a tilted position.\n\n**Answer:**  \nThe maximum operating angle of the coupling shaft is approximately **10 degrees** both when it's lifted (tilted up) and when it's lowered (tilted down).",
-        "target_page": 51,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "deepseek-r1_1.5B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 7.9
-    },
-    {
         "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
         "expected_answer": "Yes.",
         "model_answer": "<think>\nOkay, so I need to figure out whether the parking brake of the tractor should be engaged before connecting the machine. Let me go through the relevant pages step by step.\n\nFirst, looking at page 73, it mentions that filling is done while the machine is in a suspended state. The text says: \"Always 10 cm above the ground.\" It also warns about contact with materials and safety instructions. But I don't see any mention of the parking brake here. So maybe the parking brake isn't directly related to this.\n\nMoving on to page 74, it talks about filling the spreader. It says that if you're using a hopper cover under moist conditions, you shouldn't leave the fertilizer in the hopper while it's lifted. But again, no mention of the parking brake here either.\n\nThen, looking at page 75, there are instructions for working carefully when filling and taking regulations into account. It mentions not to exceed the maximum recommended weight and closing the hopper cover. This is about proper handling during filling but doesn't specify anything about the parking brake.\n\nOn page 76, it talks about spreading patterns and how the spreader could fall backwards if the hopper isn't closed properly. But again, no direct info on the parking brake's role in this context.\n\nFinally, page 77 mentions that after connecting the machine to the spreader, you should engage the PTO shaft. This is a separate step from turning off the PTO shaft and engaging the parking brake. The question is about whether the parking brake needs to be engaged before connecting the tractor, so I don't see any connection there.\n\nPutting it all together, based on the pages provided, the parking brake isn't mentioned in any of the instructions for filling or spreading. Therefore, the answer should be that the parking brake doesn't need to be engaged before connecting the machine.\n</think>\n\nTo determine whether the parking brake of the tractor should be engaged before connecting the machine, we analyze the relevant pages:\n\n- **Page 73**: Discusses filling and mentions no direct mention of the parking brake being engaged during filling.\n- **Page 74**: Focuses on filling instructions but does not specify the role of the parking brake in this context.\n- **Page 75**: Relates to spreading patterns and mentions that the hopper cover should be closed, which is about proper handling rather than the PTO shaft engagement.\n- **Page 76**: Discusses potential issues with spreaders falling backwards but does not mention the PPT or parking brake.\n\nSince none of these pages explicitly address the parking brake's role in connecting the tractor to the spreader, we conclude that the parking brake is not required before connecting the machine.\n\n**Answer:** The parking brake should not be engaged before connecting the tractor.",
@@ -325,19 +312,6 @@
         "duration": 2.9
     },
     {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "expected_answer": "75 cm above the troughs.",
-        "model_answer": "<think>\nOkay, so I need to figure out what the required height of the spreading disc is above the troughs for one-sided boundary spreading. Let me start by looking through the provided text.\n\nFirst, I see a section about border spreading in paragraph 103. It mentions that when using the ExactLine with a situation A (one-sided boundary), you drive to the left or right and spread down to the field boundary while driving towards the headland. The field boundary is set at 75 cm above the ground, which is the height of the troughs.\n\nLooking further, in paragraph 103, it says: \"The field boundary is defined as 75 cm above the ground.\" This directly states that the required height is 75 cm.\n\nI should also check if there are any other details about this. In paragraph 98, it mentions that the field edge is at 10 cm higher than the crop line, but that's not relevant here. The key point is that the field boundary is set to 75 cm above the ground, which is the height of the troughs.\n\nSo, putting it all together, the required height is 75 cm.\n</think>\n\nThe required height of the spreading disc above the troughs for one-sided boundary spreading is **75 cm**.",
-        "target_page": 84,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "deepseek-r1_1.5B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 4.7
-    },
-    {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
         "expected_answer": "75 cm",
         "model_answer": "\n\nBefore testing the ExactLine spreading pattern, the spreading disc should be set to a height of **10 cm** above the troughs. This ensures proper spacing between the fertilizer granules and maintains an optimal application rate.\n\n```json\n{ \"height\": 10 }\n```",
@@ -349,19 +323,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 3.2
-    },
-    {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-        "expected_answer": "10% of the quantity in the middle trough",
-        "model_answer": "<think>\nOkay, so I need to figure out how much fertilizer can be lost in the middle of the trough. Let me look through the provided text.\n\nFirst, I see a section about the exact line spreading with the hydraulic spreader. It mentions that the maximum acceptable loss is 10% of the quantity distributed in the center behind the spreader. That seems important.\n\nLooking further down, there's an online calculator for calculating the correct application rate based on the working width and field edge. The formula involves dividing the field width by the number of rows and then multiplying by the desired application rate. This ensures even distribution across all rows.\n\nAdditionally, in another part, it mentions that the maximum acceptable loss is 10% when spreading in a triangular pattern. So, combining these points, the middle trough should have no more than 10% of the quantity distributed there to avoid uneven application and ensure efficient use of fertilizers.\n</think>\n\nThe maximum fertilizer loss allowed in the middle trough during field spreader operation is **10% of the quantity distributed in the center behind the spreader**. This ensures even distribution and prevents uneven application, which can lead to inefficiencies in crop production.\n\n```json\n{\"maximum_fertil_loss\": \"10%\"},\n```",
-        "target_page": 91,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "deepseek-r1_1.5B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 4.6
     },
     {
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
@@ -546,19 +507,6 @@
         "duration": 4.4
     },
     {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-        "expected_answer": "The required distance is 1.0 mm.",
-        "model_answer": "<think>\nOkay, I need to figure out how to determine the required distance in meters between the discharge bushing and the spreading disc. Let me look through the provided pages.\n\nFirst, I'll scan the pages for any relevant information about the discharge bushing and the spreading disc. \n\nLooking at page 162, there's a section that mentions \"discharge bushing\" on page 150 and \"spreading disc\" on page 149. It also says \"Discharge bushing is located under the crop storage box.\" \n\nOn page 163, it lists \"Discharge bushing\" as part of the \" technical specifications \" section on page 162. The exact line for discharge bushing is listed there.\n\nI see that the \"Technical specifications\" page (page 162) has a list of items like \"Discharge bushing under crop storage box.\" It also mentions \"Discharge bushing\" and \"Spreading disc\" on pages 149 and 150 respectively. \n\nThe exact line for discharge bushing is listed as \"Discharge bushing under crop storage box\" on page 162, which seems to indicate its location but not the distance from the spreading disc. However, considering that both are part of the machinery on the tractor bed, I realize that without a clear diagram or additional specifications, it's challenging to determine the exact physical distance between them.\n\nSince the question asks for the required distance in meters, and I don't have access to any specific measurements or diagrams, I can only conclude that the distance is determined by their placement within the tractor bed. The exact measurement would require a diagram showing the positions of both components.\n</think>\n\nThe required distance between the discharge bushing and the spreading disc cannot be accurately determined from the provided information alone. However, based on the context, the discharge bushing is located under the crop storage box, while the spreading disc is positioned within the tractor bed. The exact physical distance would require a diagram showing their placement relative to each other.\n\n**Answer:**  \nThe required distance between the discharge bushing and the spreading disc cannot be determined from the provided information alone.",
-        "target_page": 138,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "deepseek-r1_1.5B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 6.1
-    },
-    {
         "question": "How often should the agitator axle seal be replaced?",
         "expected_answer": "Every season and after every 100 operational hours.",
         "model_answer": "<think>\nOkay, I need to figure out how often the agitator axle seal should be replaced based on the provided technical specifications. Let me go through each page step by step.\n\nFirst, looking at Page 162, there's a section about the agitator axle seal. It mentions that it's crucial for proper operation and maintenance. The exact line is listed as \"ExactLine\" with a value of 110. This suggests that the seal should be replaced when the agitator is running at this specific speed.\n\nThen, in Page 163, there are several pages related to the agitator axle seal. It mentions that it's important for the machine to function correctly and that it needs regular maintenance. The section on \"Working method\" under Page 164 indicates that the seal should be replaced when the agitator is running at a specific speed.\n\nI also see that in Page 162, there are instructions about the agitator's speed and how it affects the seal. This confirms that the seal needs to be checked periodically based on these factors.\n\nSo, putting this together, the agitator axle seal should be replaced when the agitator is running at a specific speed of 110, as indicated by the EXACTLine value in Page 162.\n</think>\n\nThe agitator axle seal should be replaced when the agitator is running at a specific speed of **110**.",
@@ -587,7 +535,7 @@
     {
         "question": "What is the hopper weight without hopper cover in kg of the Exacta-TLX GEOSPREAD 3225?",
         "expected_answer": "337.5 kg",
-        "model_answer": "<think>\nOkay, so I need to figure out how to answer this question about the Exacta-TLX GEOSPREAD 3225. The user provided a lot of text from the IsoMatch Tellus terminal, which is an online tool for managing fertilizers. Let me go through it step by step.\n\nFirst, I see that the question is asking about the hopper weight without hopper cover in kilograms. Looking at the text, there's a section titled \"To be done before spreading\" and another part where they mention the settings for the spreader. \n\nIn the \"To be done before spreading\" section, there are several paragraphs discussing how to determine the distribution of the fertiliser. One of them talks about checking the density of the granules using the scale and measuring beaker. It also mentions that the density is kg/litre or ton/m\u00b3.\n\nThen, in another part, it says that the hopper weight without hopper cover can be found by looking at the table index on the IsoMatch tellus terminal's website. The exact information provided there would give the hopper weight based on the specific fertilizer and working width.\n\nLooking back at the text, I see a paragraph that states: \"The hopper weight without hopper cover can be found by looking at the table index on the IsoMatch tellus terminal's website.\" This is crucial because it tells me to use the IsoMatch tellus terminal for precise data.\n\nSo, putting this together, the answer should mention using the IsoMatch tellus terminal to find the hopper weight without hopper cover.\n</think>\n\nTo determine the hopper weight without hopper cover in kilograms of the Exacta-TLX GEOSPREAD 3225 fertilizer, you can use the IsoMatch tellus terminal. The hopper weight is found by looking at the table index on the IsoMatch tellus terminal's website.\n\n**Answer:**  \nTo determine the hopper weight without hopper cover in kilograms of the Exacta-TLX GEOSPREAD 3225 fertilizer, you can use the IsoMatch tellus terminal.",
+        "model_answer": "<think>\nOkay, so I need to figure out how to answer this question about the Exacta-TLX GEOSPREAD 3225. The user provided a lot of text from the IsoMatch Tellus terminal, which is an online tool for managing fertilizers. Let me go through it step by step.\n\nFirst, I see that the question is asking about the hopper weight without hopper cover in kilograms. Looking at the text, there's a section titled \"To be done before spreading\" and another part where they mention the settings for the spreader. \n\nIn the \"To be done before spreading\" section, there are several paragraphs discussing how to determine the distribution of the fertiliser. One of them talks about checking the density of the granules using the scale and measuring beaker. It also mentions that the density is kg/litre or ton/m³.\n\nThen, in another part, it says that the hopper weight without hopper cover can be found by looking at the table index on the IsoMatch tellus terminal's website. The exact information provided there would give the hopper weight based on the specific fertilizer and working width.\n\nLooking back at the text, I see a paragraph that states: \"The hopper weight without hopper cover can be found by looking at the table index on the IsoMatch tellus terminal's website.\" This is crucial because it tells me to use the IsoMatch tellus terminal for precise data.\n\nSo, putting this together, the answer should mention using the IsoMatch tellus terminal to find the hopper weight without hopper cover.\n</think>\n\nTo determine the hopper weight without hopper cover in kilograms of the Exacta-TLX GEOSPREAD 3225 fertilizer, you can use the IsoMatch tellus terminal. The hopper weight is found by looking at the table index on the IsoMatch tellus terminal's website.\n\n**Answer:**  \nTo determine the hopper weight without hopper cover in kilograms of the Exacta-TLX GEOSPREAD 3225 fertilizer, you can use the IsoMatch tellus terminal.",
         "target_page": 36,
         "context_type": "token",
         "noise_level": 20000,
@@ -600,7 +548,7 @@
     {
         "question": "What is the weight in kg of the Exacta-TLX GEOSPREAD 3900?",
         "expected_answer": "795 kg",
-        "model_answer": "<think>\nOkay, I need to figure out how to determine the weight in kg of the Exacta-TLX GEOSPREAD 3900 fertilizer. Let me start by looking at the provided text.\n\nFirst, I see a table on page 61 that lists various fertilizers and their densities. The column for \"Exacta-TLX GEOSPREAD 3900\" is labeled as \"Fertilizer with a density of 3900 kg/ha.\" So, looking at the table, under \"Fertilizer,\" I find \"Exacta-TLX GEOSPREAD 3900\" and its density is listed as 3900 kg per hectare. \n\nWait, but the question asks for the weight in kg of a single bag. The table shows kg/ha, which is area density. To get the weight of a single bag, I need to know how much area one bag covers. Typically, bags are sold in 50 kg increments, so each bag covers about 1 m\u00b2. Therefore, the weight per bag would be approximately 3900 kg/m\u00b2 * 1 m\u00b2 = 3900 kg.\n\nBut wait, let me double-check. The table shows \"Fertilizer with a density of 3900 kg/ha.\" That's area density. If each bag covers 1 m\u00b2, then the weight per bag is indeed 3900 kg. However, if bags are sold in 50 kg increments, I might need to adjust for that. But without specific information on how many bags are in a standard bag, it's safer to assume one bag covers 1 m\u00b2, giving a weight of 3900 kg.\n\nSo, the weight in kg of the Exacta-TLX GEOSPREAD 3900 fertilizer is approximately 3900 kg per bag.\n</think>\n\nThe weight in kg of the Exacta-TLX GEOSPREAD 3900 fertilizer is approximately **3900 kg** per bag.",
+        "model_answer": "<think>\nOkay, I need to figure out how to determine the weight in kg of the Exacta-TLX GEOSPREAD 3900 fertilizer. Let me start by looking at the provided text.\n\nFirst, I see a table on page 61 that lists various fertilizers and their densities. The column for \"Exacta-TLX GEOSPREAD 3900\" is labeled as \"Fertilizer with a density of 3900 kg/ha.\" So, looking at the table, under \"Fertilizer,\" I find \"Exacta-TLX GEOSPREAD 3900\" and its density is listed as 3900 kg per hectare. \n\nWait, but the question asks for the weight in kg of a single bag. The table shows kg/ha, which is area density. To get the weight of a single bag, I need to know how much area one bag covers. Typically, bags are sold in 50 kg increments, so each bag covers about 1 m². Therefore, the weight per bag would be approximately 3900 kg/m² * 1 m² = 3900 kg.\n\nBut wait, let me double-check. The table shows \"Fertilizer with a density of 3900 kg/ha.\" That's area density. If each bag covers 1 m², then the weight per bag is indeed 3900 kg. However, if bags are sold in 50 kg increments, I might need to adjust for that. But without specific information on how many bags are in a standard bag, it's safer to assume one bag covers 1 m², giving a weight of 3900 kg.\n\nSo, the weight in kg of the Exacta-TLX GEOSPREAD 3900 fertilizer is approximately 3900 kg per bag.\n</think>\n\nThe weight in kg of the Exacta-TLX GEOSPREAD 3900 fertilizer is approximately **3900 kg** per bag.",
         "target_page": 36,
         "context_type": "token",
         "noise_level": 20000,
@@ -665,7 +613,7 @@
     {
         "question": "With what torque in Nm must a M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened?",
         "expected_answer": "420 Nm",
-        "model_answer": "<think>\nOkay, I need to figure out how much torque is needed to fasten an M18 hexagon steel bolt with a 0.13 friction under normal conditions. Let me start by looking at the specifications provided.\n\nFirst, the machine's control box has a motor speed of 25 bars per minute and a speedometer set to 24.97. The spuser is connected to a 2-inch diameter pipe, which I assume carries water for the agitator. The feed rate is set at 0.13 friction.\n\nLooking at the control box's settings, under Motor Speed, it says 25 bars per minute and speedometer set to 24.97. The spuser flow rate is specified as 0.13 friction. The motor speed is probably in RPM (revolutions per minute). \n\nThe agitator has a diameter of 2 inches, which affects the flow rate and pressure. The feed rate is given as 0.13 friction, which I think refers to the friction coefficient or the amount of air passed through the agitator. \n\nTo calculate torque, I need the rotational speed (RPM) and the radius of the bolt head. The diameter is 2 inches, so the radius is 1 inch. Converting that to meters for SI units: 1 inch is approximately 0.0254 meters.\n\nThe motor's speedometer is set at 24.97 RPM. Using the formula for torque (T = F * r), where F is force and r is radius, but since we don't have the exact force values, I might need to use the flow rate and friction coefficient to estimate the pressure gradient, which would relate to torque.\n\nAlternatively, using the formula T = (F * \u03c0 * D\u00b2) / 4n, where F is flow rate, D is diameter, n is RPM. But without specific flow rates or pressures, it's tricky.\n\nGiven the information, I think the answer expects a calculation based on the motor speed and radius, leading to a torque of approximately 150 Nm.\n</think>\n\nTo calculate the required torque for fastening an M18 hexagon steel bolt with a 0.13 friction under normal conditions:\n\n1. **Motor Speed**: The control box specifies a motor speed of 25 bars per minute (RPM) and speedometer set to 24.97 RPM.\n2. **Radius of the Bore**: The machine's agitator has a diameter of 2 inches, so the radius is approximately 1 inch or 0.0254 meters.\n\nUsing the formula for torque (T = F * r), where F is force and r is radius:\n\n- Torque depends on the flow rate, friction coefficient, and RPM.\n- Without specific flow rates or pressures, we estimate based on RPM and radius.\n\n**Approximate Torque Calculation:**\n\nAssuming a typical friction coefficient of 0.13 and using the given RPM (24.97):\n\nTorque \u2248 (Flow Rate \u00d7 \u03c0 \u00d7 Diameter\u00b2) / (4 \u00d7 RPM)\n\nBut without specific flow rates, we estimate torque to be around **150 Nm**.\n\n**Answer:** The required torque is approximately **150 Nm**.",
+        "model_answer": "<think>\nOkay, I need to figure out how much torque is needed to fasten an M18 hexagon steel bolt with a 0.13 friction under normal conditions. Let me start by looking at the specifications provided.\n\nFirst, the machine's control box has a motor speed of 25 bars per minute and a speedometer set to 24.97. The spuser is connected to a 2-inch diameter pipe, which I assume carries water for the agitator. The feed rate is set at 0.13 friction.\n\nLooking at the control box's settings, under Motor Speed, it says 25 bars per minute and speedometer set to 24.97. The spuser flow rate is specified as 0.13 friction. The motor speed is probably in RPM (revolutions per minute). \n\nThe agitator has a diameter of 2 inches, which affects the flow rate and pressure. The feed rate is given as 0.13 friction, which I think refers to the friction coefficient or the amount of air passed through the agitator. \n\nTo calculate torque, I need the rotational speed (RPM) and the radius of the bolt head. The diameter is 2 inches, so the radius is 1 inch. Converting that to meters for SI units: 1 inch is approximately 0.0254 meters.\n\nThe motor's speedometer is set at 24.97 RPM. Using the formula for torque (T = F * r), where F is force and r is radius, but since we don't have the exact force values, I might need to use the flow rate and friction coefficient to estimate the pressure gradient, which would relate to torque.\n\nAlternatively, using the formula T = (F * π * D²) / 4n, where F is flow rate, D is diameter, n is RPM. But without specific flow rates or pressures, it's tricky.\n\nGiven the information, I think the answer expects a calculation based on the motor speed and radius, leading to a torque of approximately 150 Nm.\n</think>\n\nTo calculate the required torque for fastening an M18 hexagon steel bolt with a 0.13 friction under normal conditions:\n\n1. **Motor Speed**: The control box specifies a motor speed of 25 bars per minute (RPM) and speedometer set to 24.97 RPM.\n2. **Radius of the Bore**: The machine's agitator has a diameter of 2 inches, so the radius is approximately 1 inch or 0.0254 meters.\n\nUsing the formula for torque (T = F * r), where F is force and r is radius:\n\n- Torque depends on the flow rate, friction coefficient, and RPM.\n- Without specific flow rates or pressures, we estimate based on RPM and radius.\n\n**Approximate Torque Calculation:**\n\nAssuming a typical friction coefficient of 0.13 and using the given RPM (24.97):\n\nTorque ≈ (Flow Rate × π × Diameter²) / (4 × RPM)\n\nBut without specific flow rates, we estimate torque to be around **150 Nm**.\n\n**Answer:** The required torque is approximately **150 Nm**.",
         "target_page": 129,
         "context_type": "token",
         "noise_level": 20000,
@@ -1159,7 +1107,7 @@
     {
         "question": "What is the recommended tire pressure 'range' for transport mode?",
         "expected_answer": "Not found in context",
-        "model_answer": "<think>\nOkay, I need to figure out what the recommended tire pressure range is for transport mode. Let me go through the provided text step by step.\n\nFirst, I'll look for any sections that mention tire pressure in relation to transport. Scanning through the pages, I see a section discussing the tire pressure in the context of using the ExactLine spreader. It mentions \"tire pressure (10-25 kg/cm\u00b2)\" which seems relevant.\n\nLooking further down, there's another part about the tires on the field and the tire pressure required for transport. It says, \"The tires on the field must be at least 75 cm high to prevent overdrainage in the field.\" This indicates that the tires need to have a minimum height of 75 cm.\n\nAdditionally, there's a mention about the tires being at least 10 cm high when driving to the farthest point. So, combining these points, it seems that the tire pressure should be between 10 and 25 kg/cm\u00b2 to ensure proper transport conditions.\n</think>\n\nThe recommended tire pressure range for transport mode is **10-25 kg/cm\u00b2**.\n\n```json\n{\"tirePressureRange\": { \"range\": [10, 25] }}\n```",
+        "model_answer": "<think>\nOkay, I need to figure out what the recommended tire pressure range is for transport mode. Let me go through the provided text step by step.\n\nFirst, I'll look for any sections that mention tire pressure in relation to transport. Scanning through the pages, I see a section discussing the tire pressure in the context of using the ExactLine spreader. It mentions \"tire pressure (10-25 kg/cm²)\" which seems relevant.\n\nLooking further down, there's another part about the tires on the field and the tire pressure required for transport. It says, \"The tires on the field must be at least 75 cm high to prevent overdrainage in the field.\" This indicates that the tires need to have a minimum height of 75 cm.\n\nAdditionally, there's a mention about the tires being at least 10 cm high when driving to the farthest point. So, combining these points, it seems that the tire pressure should be between 10 and 25 kg/cm² to ensure proper transport conditions.\n</think>\n\nThe recommended tire pressure range for transport mode is **10-25 kg/cm²**.\n\n```json\n{\"tirePressureRange\": { \"range\": [10, 25] }}\n```",
         "target_page": 93,
         "context_type": "token",
         "noise_level": 20000,
@@ -1393,7 +1341,7 @@
     {
         "question": "What 'sail' material is used for hopper cover, and its UV resistance?",
         "expected_answer": "Not found in context",
-        "model_answer": "<think>\nOkay, I need to figure out what material is used for hopper cover and has UV resistance. Let me start by looking through the provided text. \n\nI see a section about hopper covers in page 162. It mentions that hopper covers are made from a specific material. The text says: \"Hopper cover (machine) \u2013 construction       53, 54; hopper cover machine     53, 54; hopper cover hopper loader 53, 54.\" \n\nNext, I need to find the UV resistance information. Looking through the same section, there's a part about \"Fertilizer application and spread.\" It mentions that the hopper cover is coated with a specific material for UV protection. The text says: \"Fertilizer application and spread \u2013 application rate 67, fine application 59, and working width 102.\"\n\nPutting it all together, the hopper cover uses a specific coating material to ensure UV resistance. From the context, I can infer that this material is likely a type of plastic or resin used for UV protection. However, without more detailed information from the text, I can't specify exactly which material it is. But based on the application details and the mention of UV protection, it's likely a plastic or resin coated.\n</think>\n\nThe hopper cover uses a specific coating material to ensure UV resistance.",
+        "model_answer": "<think>\nOkay, I need to figure out what material is used for hopper cover and has UV resistance. Let me start by looking through the provided text. \n\nI see a section about hopper covers in page 162. It mentions that hopper covers are made from a specific material. The text says: \"Hopper cover (machine) – construction       53, 54; hopper cover machine     53, 54; hopper cover hopper loader 53, 54.\" \n\nNext, I need to find the UV resistance information. Looking through the same section, there's a part about \"Fertilizer application and spread.\" It mentions that the hopper cover is coated with a specific material for UV protection. The text says: \"Fertilizer application and spread – application rate 67, fine application 59, and working width 102.\"\n\nPutting it all together, the hopper cover uses a specific coating material to ensure UV resistance. From the context, I can infer that this material is likely a type of plastic or resin used for UV protection. However, without more detailed information from the text, I can't specify exactly which material it is. But based on the application details and the mention of UV protection, it's likely a plastic or resin coated.\n</think>\n\nThe hopper cover uses a specific coating material to ensure UV resistance.",
         "target_page": 150,
         "context_type": "token",
         "noise_level": 20000,
@@ -1402,5 +1350,187 @@
         "dataset": "question_datasets/question_answers_unanswerable.json",
         "file_extension": "txt",
         "duration": 2.2
+    },
+    {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "expected_answer": "06.00.00.0257",
+        "model_answer": "<think>\nAlright, I need to figure out when the ISOBUS supports the reception for the Greenseeker sensor. Let me start by looking at the provided text.\n\nFirst, I see a section discussing the Greenseeker sensor. It mentions that the Greensecker is part of the ISOBUS system and that it's used in the spreader. The text states: \"The Greensefer sensor is integrated into the ISOBUS system for use with the spreader.\" So, this confirms that the Greensefer sensor is supported by the ISOBUS system.\n\nI should make sure I'm only considering the information given and not any other details from the rest of the document. The question is about when the reception signal is received, which in this case is handled by the Greensefer sensor within the ISOBUS framework.\n\nSo, putting it all together, the Greensefer sensor is supported by the ISOBUS system for receiving its signal.\n</think>\n\nThe Greensefer sensor is supported by the ISOBUS system for receiving its signal. The Greensefer sensor is integrated into the ISOBUS system and is used with the spreader.\n\nANSWER: The Greensefer sensor is supported by the ISOBUS system for receiving its signal.",
+        "target_page": 27,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 4.5
+    },
+    {
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "expected_answer": "150mm.",
+        "model_answer": "<think>\nOkay, so I need to figure out how far the profiled tubes must overlap when shortening a coupling shaft. Let me start by looking at the context provided.\n\nThe context is from page 75 of the PDF file, which seems to be about the spreader's operation. It mentions that during spreading, the coupling shaft is shortened. The question asks about the minimum overlap between profiled tubes in mm when shortening.\n\nLooking through the text, I see a paragraph titled \"To be done before spreading\" on page 75. It says: \"The profiled tubes must overlap at least 20 mm to prevent blockages and ensure proper flow.\" That seems like the key information needed here.\n\nSo, based on this, the minimum overlap between profiled tubes should be at least 20 millimeters.\n</think>\n\nTo prevent blockages and ensure proper flow during shortening a coupling shaft, the profiled tubes must overlap by at least **20 mm**.",
+        "target_page": 51,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 4.2
+    },
+    {
+        "question": "How many parts does the distribution meter have?",
+        "expected_answer": "Seven.",
+        "model_answer": "<think>\nOkay, so I need to figure out how many parts the distribution meter has. Let me start by looking through the provided context. The context is about field spreaders and includes several sections discussing various aspects of their operation.\n\nFirst, I see a section titled \"To be done before spreading\" which mentions that the distribution meter is used to monitor the application rate on each spreader disc. It also talks about the spreader distributing fertiliser evenly across the field. This suggests that the distribution meter has multiple components related to measuring and controlling the fertilizer application.\n\nLooking through the context, I notice several paragraphs that discuss different aspects of the spreader's operation. For example, there are sections on how the spreader distributes the fertilizer, the types of fertilizers used, and the settings for the spreader. These all point towards the distribution meter being a key tool in controlling the application rate.\n\nI also see that the context mentions \"the distribution meter\" as a specific component within the spreader system. It's likely that it has several parts to measure the amount of fertilizer applied on each track and ensure even distribution across the field.\n\nConsidering all this, I can conclude that the distribution meter is an essential tool for monitoring and adjusting the application rate on each spreader disc, ensuring even fertiliser distribution.\n</think>\n\nThe distribution meter in a spreader system has several key components to monitor and control the fertilizer application. These include:\n\n1. **Flow Rate Measurement**: To measure the amount of fertilizer applied per track.\n2. **Application Angle**: To adjust the angle at which fertilizer is applied.\n3. **Dosing Point**: To set the exact point where the fertilizer is applied on each spreader disc.\n4. **Discharge Point**: To control how much fertilizer flows through the spreader.\n5. **Drainage Rate**: To monitor and adjust the rate of water draining from the spreader.\n\nThese components work together to ensure even and precise application of fertilizers across the field, which is crucial for effective crop management.",
+        "target_page": 59,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 5.7
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "model_answer": "\n\nTo enable fine application for dosing low application rates, you should:\n\n1. **Extract the exact instructions from the relevant spreading chart**.\n\n2. **Adjust the spreader settings to allow for fine application**.\n\n3. **Ensure that the spreader is set to a low application rate when necessary**.\n\n4. **Use the spreader in conjunction with other tools like the PTO shaft and dosing units**.\n\n5. **Consider using the ExactLine or Other spreading patterns if needed**.\n\nBy following these steps, you can achieve fine application for low application rates effectively.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 3.6
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "expected_answer": "1 open hole and 2 thick holes",
+        "model_answer": "<think>\nAlright, I need to figure out what the symbol on top of the fine application handle indicates. Let me start by looking at the provided text and understanding the context.\n\nThe user has given a lot of detailed information about the spreaders and their operation. They've covered various aspects like the spreader chart, manual instructions, testing methods, and more. But I need to focus on the specific part related to the fine application kit.\n\nLooking through the text, there's a section discussing the fine application kit. It mentions that the fine application kit is enabled by a specific symbol on top of the handle. The text also provides details about how this kit works, including the spreader settings and application methods.\n\nIn paragraph 87, it says: \"The fine application kit is enabled by a specific symbol on top of the fine application handle.\" This seems to be the key information needed. It specifies that the symbol indicates the fine application capability.\n\nSo, the answer should mention this symbol and its role in enabling the fine application.\n</think>\n\nThe symbol on top of the fine application handle indicates that the fine application kit is enabled.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.8
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "expected_answer": "At the back of the control box.",
+        "model_answer": "<think>\nAlright, I need to figure out where the RS 232 connector is located. Let me start by looking through the provided pages and tables in the document. The user has given a lot of technical details about various farming tools, including spreaders, but I'm not sure if there's a specific section that mentions the RS 232 connector.\n\nLooking at the table on page 18, it seems to list various spreaders with their specifications. One of them is the \"RS 232\" spreader. The details for this spreader include its height and application rate. It says that the spreader must be set to a height of 75 cm above the crop and by levelling the vanes, the spreader can work properly.\n\nAdditionally, there's a table on page 19 that lists all the spreaders available in the field. The \"RS 232\" spreader is listed as one of them. It provides clear instructions for setting the height and application rate, which aligns with what I know about spreaders from previous knowledge.\n\nSo, putting it together, the RS 232 spreader is located on page 19, specifically in the \"All available spreaders\" table, under the \"RS 232\" row. It's important to note that this spreader must be set correctly and adjusted properly for optimal performance.\n</think>\n\nThe RS 232 connector is located on page 19 of the document, specifically in the \"All available spreaders\" section. The spreader with the model number RS 232 is listed as one of the options.\n\nAnswer:  \n[Carefully extract the exact information that directly answers the question, keeping it as brief and precise as possible.]",
+        "target_page": 72,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 5.5
+    },
+    {
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "expected_answer": "Every year",
+        "model_answer": "<think>\nOkay, so I need to figure out how often the left and right spreading discs should be checked if they spread the same volumes of fertiliser. Let me start by looking through the provided pages.\n\nFirst, I see a section about using the hydraulic border spreading plate with tram lines. It mentions that when spreading the headland, you create the field boundary where you spread on edges with the ExactLine while driving to the left through the first sprayer tramline. Then, make a second round with the ExactLine switched off for a double headland.\n\nHmm, so if both discs are spreading the same volumes, maybe they should be checked periodically. I think the key here is that the border spreaders need regular checks to ensure even distribution. The section says that the left and right spreading disc should be checked when spreading the same volumes of fertiliser to ensure good distribution.\n\nSo, putting it all together, the answer should mention checking the discs regularly when spreading the same volumes.\n</think>\n\nThe left and right spreading discs should be checked periodically if they spread the same volumes of fertiliser to ensure good distribution. This ensures even application and proper fertiliser distribution across the field boundaries.\n\nAnswer:  \nThe left and right spreading discs should be checked regularly when spreading the same volumes of fertiliser to ensure good distribution.",
+        "target_page": 78,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 4.7
+    },
+    {
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+        "expected_answer": "10% of the quantity in the middle trough",
+        "model_answer": "<think>\nOkay, so I need to figure out how much fertilizer can be lost in the middle of the trough. Let me look through the provided text.\n\nHmm, there's a section about the field spreader. It mentions \"the maximum acceptable loss of 10% of the quantity distributed in the centre behind the spreader.\" That seems important. So, that means if you have more than 10% of the fertilizer beyond what's needed for the middle, it's not allowed.\n\nWait, but I should make sure I'm reading this correctly. The text says: \"the maximum acceptable loss of 10% of the quantity distributed in the centre behind the spreader.\" So that refers to the area immediately behind the spreader where you're spreading the fertilizer. That makes sense because it's the middle part.\n\nSo, if the amount of fertilizer beyond this 10% is lost, it's not allowed. Therefore, the maximum loss allowed is 10% in that specific area.\n</think>\n\nThe maximum fertilizer loss allowed in the middle trough (the area immediately behind the spreader) is **10% of the quantity distributed in the centre behind the spreader**.\n\n```json\n{\"maximum_fertil_loss\": \"10%\"},\n```\n\nThis means that if more than 10% of the fertilizer exceeds what's needed for the middle part, it should be discarded.",
+        "target_page": 91,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 4.7
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "expected_answer": "Measured from the bottom of the vanes.",
+        "model_answer": "<think>\nOkay, I need to figure out where the spreading height is measured on the machine. Let me go through the pages step by step.\n\nFirst, looking at Page 108, there's a section about the spreader's settings. It mentions \"spreading disc and hopper capacity.\" The text says that the spreader spreads fertilizer in a triangular pattern based on these settings. So, the spreading height is measured using the spreader's spreaders.\n\nNext, I check Page 109 for more details. It describes how the spreader operates, including the spreader itself. It mentions \"the spreader spreads the fertiliser granules into the field with a triangular pattern.\" This confirms that the spreader spreads the fertilizer in a triangular area, which is where the height is measured.\n\nThen, I look at Page 120 for more information on storage and preparation. It talks about preparing the machine for winter storage but doesn't mention the spreading height measurement here.\n\nFinally, I review other pages to ensure no other sources are relevant. The key points are that the spreader's spreaders measure the spreading height using their settings, which is detailed in Page 108.\n</think>\n\nThe spreading height on the machine is measured using the spreader's spreaders. Specifically, it is determined by the spreader's spreader settings and the pattern of fertilizer granules being spread into a triangular area.\n\nANSWER: The spreading height is measured using the spreader's spreaders.",
+        "target_page": 95,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 4.9
+    },
+    {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "expected_answer": "spreading chart or online spreading chart",
+        "model_answer": "<think>\nOkay, let me try to figure out how to set the correct PTO shaft and spreading disc RPM. I remember seeing some instructions in the maintenance manual about these settings. Let me go through them step by step.\n\nFirst, I think there's a section that mentions adjusting the PTO shaft speed. It says something like \"Adjust the PTO shaft speed to 100% of its maximum possible speed.\" That makes sense because higher RPM means faster spreading. Then, for the spreading disc, it probably has a setting for RPM. Maybe it's mentioned as \"set the spreading disc RPM to 200 RPM.\" Wait, but I'm not sure if that's correct or if there are other settings involved.\n\nWait, maybe I should check the specific instructions from the manual. Let me imagine looking at the maintenance pages. On page 137, under the section about the spreader, it says: \"Set the PTO shaft speed to 100% of its maximum possible speed and set the spreading disc RPM to 200 RPM.\" That seems like a clear answer.\n\nSo, putting that together, I think the correct settings are PTO shaft at full speed and spreading disc at 200 RPM. This should ensure proper fertilization application.\n</think>\n\nTo set the correct PTO shaft and spreading disc RPM, refer to the maintenance instructions in the manual:\n\n- **PTO Shaft Speed**: Set the PTO shaft speed to 100% of its maximum possible speed.\n- **Spreading Disc RPM**: Set the spreading disc RPM to 200 RPM.\n\nThese settings ensure proper fertilization application with the correct rotational speeds for efficient and consistent spread.",
+        "target_page": 111,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 5.2
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "expected_answer": "Place the spreader on a firm, stable ramp",
+        "model_answer": "<think>\nOkay, so the user is asking about how to lower the power lift far enough to release the catch hooks. Let me look through the provided text to find relevant instructions.\n\nI see a section discussing the power lift mechanism on page 136. It mentions that lowering the power load can be done by releasing the catch hook with the key, which is located in the top right corner of the control box. The user needs to ensure they have enough power before using it. \n\nWait, but I should check if there's any specific steps or accessories mentioned for this action. Scanning through the text, I don't see any additional instructions beyond what's already covered. It seems that lowering the power is straightforward and doesn't require any extra tools or adapters.\n\nSo, the answer should be to release the catch hook with the key as described in paragraph 136.\n</think>\n\nTo lower the power load far enough to release the catch hooks when preparing the machine for storage:\n\n**Answer:**  \nLower the power load by releasing the catch hook with the key.",
+        "target_page": 120,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 4.2
+    },
+    {
+        "question": "What type of grease is the central gearbox filled with?",
+        "expected_answer": "EP 00/000 gear grease.",
+        "model_answer": "<think>\nOkay, I need to figure out what type of grease the central gearbox in the tractor is filled with. Let me start by looking through the provided files and tables.\n\nFirst, I see a table listing various types of fertiliser spreaders and their specifications. Each spreader has different settings for application rate, working width, and discharge point. The central gearbox is part of the spreader system, so it's likely connected to one of these spreaders.\n\nLooking at the first table (Table 1), I see that the central gearbox is listed under \"Central Gear\" with a setting for fine application. It seems to be filled with fine fertilizer. However, there are other tables and pages mentioned in the context that might provide more details.\n\nI also recall that the spreader's settings determine how much fertilizer is applied. The central gear is connected to the spreader, so it should receive the correct amount of fertilizer based on the spreader's settings.\n\nAdditionally, I see a table (Table 154) that lists the types of fertiliser and their application rates. The central gearbox receives the application rate from the spreader, which determines how much fertilizer is applied per unit area.\n\nPutting this together, the central gearbox in the tractor is filled with fine fertilizer based on the settings of the spreader connected to it.\n</think>\n\nThe central gearbox in the tractor is filled with fine fertilizer.",
+        "target_page": 127,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 4.7
+    },
+    {
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+        "expected_answer": "The required distance is 1.0 mm.",
+        "model_answer": "<think>\nOkay, I need to figure out how to determine the required distance between the discharge bushing and the spreading disc. Let me look through the provided pages.\n\nFirst, I see a page about \"Isomatch IsoMatch Tellus sensor input\" which mentions that the sensor is connected to the discharge bushing. The sensor's output is set by the exact line. \n\nLooking at another page, there's a section discussing the \"IsoMatch IsoMatchEye\" system. It states that the sensor is installed into the discharge bushing and the spread disc. This confirms that the distance between them is established correctly.\n\nI also recall that in the \"Isomatch IsoMatch Tellus sensor input\" page, it specifies that the sensor's output is set by the exact line. This means that the system ensures a proper connection between the discharge bushing and the spreading disc, ensuring the correct distance.\n</think>\n\nThe required distance between the discharge bushing and the spreading disc is established through the \"IsoMatch IsoMatchEye\" system. The sensor is connected to the discharge bushing, and the exact line configuration ensures proper spacing.\n\n**Answer:**  \nThe required distance is set by the \"IsoMatch IsoMatchEye\" system, which connects the sensor to the discharge bushing.",
+        "target_page": 138,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 4.8
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "expected_answer": "Yes, using the Sensor input IM Tellus.",
+        "model_answer": "<think>\nOkay, I need to figure out how to connect the tractor's speed sensor or radar to the IsoMatch control box. Let me start by looking through the provided text to find any mentions of these connections.\n\nFirst, I'll scan through each page in the document. On Page 162, there are several sections discussing the tractor's safety features and related components. In that section, I see a mention of \"speed sensor\" on Page 158 and \"radar\" on Page 149. These seem to be relevant.\n\nLooking at the text, it says: \"speed sensor (speed indicator) on page 162, and \"radar\" is mentioned in another section. Both are listed under \"Safety features - Sensors and Bots.\" Specifically, on Page 158, there's a mention of \"speed sensor,\" and on Page 149, it refers to \"radar.\"\n\nSince the question asks about connecting these sensors or radars to the IsoMatch control box, I can see that both the speed sensor and radar are part of the safety features. The tractor's speed sensor is on page 158, and the radar is on page 149. Both are listed under \"Safety features - Sensors and Bots.\" Therefore, they should be connected to the IsoMatch control box.\n</think>\n\nThe tractor's speed sensor (speed indicator) and radar can be connected to the IsoMatch control box as per the provided text.\n\n**Answer:**  \nYes, both the tractor's speed sensor and radar are listed in the safety features section under \"Sensors and Bots.\" They should be connected to the IsoMatch control box.",
+        "target_page": 144,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "deepseek-r1_1.5B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 5.4
     }
 ]

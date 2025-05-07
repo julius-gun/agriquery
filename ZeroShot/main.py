@@ -58,7 +58,8 @@ models_to_test = [
     "phi3_8B_q4_mini-128k",
     "llama3.1_8B-128k",
     "llama3.2_3B-128k",
-    "llama3.2_1B-128k"
+    "llama3.2_1B-128k",
+    "gemini-2.5-flash-preview-04-17"
 ]
 
 documents_to_test = [

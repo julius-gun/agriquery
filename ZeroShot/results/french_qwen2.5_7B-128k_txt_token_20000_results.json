@@ -54,7 +54,7 @@
     {
         "question": "How can the tractor's driving speed be transmitted to the IsoMatch if the tractor lacks ISOBUS communication?",
         "expected_answer": "By adding the IsoMatch power cable set to the tractor.",
-        "model_answer": "[Image: Alimentation par la batterie du tracteur]\nCapteurs de vitesse et de r\u00e9gime de prise de force\nTransformation du tracteur en tracteur ISOBUS avec faisceau IsoMatch Power\n[Image]\n[Image]\nSi la vitesse n'est pas mesur\u00e9e sur la machine (tra\u00een\u00e9e), mais par l'interm\u00e9diaire du tracteur, le capteur de vitesse et le c\u00e2ble de l'adaptateur pour la r\u00e9cup\u00e9ration du signal du vitesse \u00e9mis par l'\u00e9lectronique du tracteur sont raccord\u00e9s au bo\u00eetier IsoMatch.",
+        "model_answer": "[Image: Alimentation par la batterie du tracteur]\nCapteurs de vitesse et de régime de prise de force\nTransformation du tracteur en tracteur ISOBUS avec faisceau IsoMatch Power\n[Image]\n[Image]\nSi la vitesse n'est pas mesurée sur la machine (traînée), mais par l'intermédiaire du tracteur, le capteur de vitesse et le câble de l'adaptateur pour la récupération du signal du vitesse émis par l'électronique du tracteur sont raccordés au boîtier IsoMatch.",
         "target_page": 32,
         "context_type": "token",
         "noise_level": 20000,
@@ -106,7 +106,7 @@
     {
         "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
         "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
-        "model_answer": "[Image] Montez le tube servant de pied \u00e0 la console sur une base solide. L'emplacement de la cabine s'y pr\u00eatant n'ayant pas \u00e9t\u00e9 d\u00e9termin\u00e9 auparavant, vous devez vous-m\u00eame r\u00e9aliser un socle dans lequel ins\u00e9rer le tube.",
+        "model_answer": "[Image] Montez le tube servant de pied à la console sur une base solide. L'emplacement de la cabine s'y prêtant n'ayant pas été déterminé auparavant, vous devez vous-même réaliser un socle dans lequel insérer le tube.",
         "target_page": 40,
         "context_type": "token",
         "noise_level": 20000,
@@ -169,19 +169,6 @@
         "duration": 7.0
     },
     {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-        "model_answer": "Unknown",
-        "target_page": 51,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 6.8
-    },
-    {
         "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
         "expected_answer": "Yes.",
         "model_answer": "No, but you must secure the machine on robust supports.",
@@ -210,7 +197,7 @@
     {
         "question": "What must be ensured with decoupling ropes during power lift connection?",
         "expected_answer": "Decoupling ropes must never be tense.",
-        "model_answer": "[Image: Cha\u00eene de stabilisation]",
+        "model_answer": "[Image: Chaîne de stabilisation]",
         "target_page": 56,
         "context_type": "token",
         "noise_level": 20000,
@@ -223,7 +210,7 @@
     {
         "question": "Below which application rate in kg/min is it advised to use the fine application?",
         "expected_answer": "Below 40 kg/min.",
-        "model_answer": "[Image: Levier de dosage fin position de dosage fin]\norifice de dosage\n[Image: orifice de dosage]\nLevier de dosage fin position de dosage fin\n[Image: Levier de dosage fin position de dosage fin]\nSi vous souhaitez \u00e9pandre avec de tr\u00e8s faibles d\u00e9bits (moins de 25 kg/ha), par exemple quelques kilos par hectare, le syst\u00e8me de commande ne peut pas effectuer d'\u00e9talonnage automatique. The answer is 25 kg/min.",
+        "model_answer": "[Image: Levier de dosage fin position de dosage fin]\norifice de dosage\n[Image: orifice de dosage]\nLevier de dosage fin position de dosage fin\n[Image: Levier de dosage fin position de dosage fin]\nSi vous souhaitez épandre avec de très faibles débits (moins de 25 kg/ha), par exemple quelques kilos par hectare, le système de commande ne peut pas effectuer d'étalonnage automatique. The answer is 25 kg/min.",
         "target_page": 66,
         "context_type": "token",
         "noise_level": 20000,
@@ -236,7 +223,7 @@
     {
         "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
         "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-        "model_answer": "\\[ \\text{Vitesse d'\u00e9coulement requise (kg/min)} = \\frac{\\text{Largeur de travail (m)} \\times \\text{vitesse d'avancement (km/h)}}{600} \\]",
+        "model_answer": "\\[ \\text{Vitesse d'écoulement requise (kg/min)} = \\frac{\\text{Largeur de travail (m)} \\times \\text{vitesse d'avancement (km/h)}}{600} \\]",
         "target_page": 68,
         "context_type": "token",
         "noise_level": 20000,
@@ -301,7 +288,7 @@
     {
         "question": "What materials are required to perform the tray test?",
         "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-        "model_answer": "m\u00e8tre \u00e0 ruban ou r\u00e8gle gradu\u00e9e, niveau \u00e0 bulle pour r\u00e9gler les bacs de collecte \u00e0 l'horizontale, 7 bacs de collecte, 7 tubes de mesure, 1 entonnoir, bloc-notes, stylo et calculatrice, manuel d'utilisation.",
+        "model_answer": "mètre à ruban ou règle graduée, niveau à bulle pour régler les bacs de collecte à l'horizontale, 7 bacs de collecte, 7 tubes de mesure, 1 entonnoir, bloc-notes, stylo et calculatrice, manuel d'utilisation.",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 20000,
@@ -325,19 +312,6 @@
         "duration": 0.2
     },
     {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "expected_answer": "75 cm above the troughs.",
-        "model_answer": "75 cm",
-        "target_page": 84,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 6.8
-    },
-    {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
         "expected_answer": "75 cm",
         "model_answer": "75 cm",
@@ -349,19 +323,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 6.8
-    },
-    {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-        "expected_answer": "10% of the quantity in the middle trough",
-        "model_answer": "10%",
-        "target_page": 91,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 6.6
     },
     {
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
@@ -405,7 +366,7 @@
     {
         "question": "What are the two functions for border spreading?",
         "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-        "model_answer": "The two functions for border spreading are:\n- \u00c9pandage unilat\u00e9ral en bordure \u00e0 l'aide du d\u00e9flecteur de bordure hydraulique,\n- \u00c9pandage des bordures avec ExactLine.",
+        "model_answer": "The two functions for border spreading are:\n- Épandage unilatéral en bordure à l'aide du déflecteur de bordure hydraulique,\n- Épandage des bordures avec ExactLine.",
         "target_page": 106,
         "context_type": "token",
         "noise_level": 20000,
@@ -418,7 +379,7 @@
     {
         "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
         "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-        "model_answer": "[Arr\u00eatez imm\u00e9diatement d'\u00e9pandre! D\u00e9brayez imm\u00e9diatement la prise de force!]",
+        "model_answer": "[Arrêtez immédiatement d'épandre! Débrayez immédiatement la prise de force!]",
         "target_page": 108,
         "context_type": "token",
         "noise_level": 20000,
@@ -457,7 +418,7 @@
     {
         "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
         "expected_answer": "80 bar",
-        "model_answer": "[Image] \n127\n\nApport ou appoint en graisse\nTubes profil\u00e9s d'arbres de transmission\nBo\u00eetier central\nDisques d'\u00e9pandage du bo\u00eetier\nMaintenance\nLes tubes profil\u00e9s de l'arbre de transmission doivent \u00eatre r\u00e9guli\u00e8rement graiss\u00e9s. Enduisez de graisse les surfaces de contact des deux tubes profil\u00e9s d\u00e8s que vous remarquez une r\u00e9sistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du d\u00e9telage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profil\u00e9s d'arbres de transmission\nBo\u00eetier central\nDisques d'\u00e9pandage du bo\u00eetier\nMaintenance\nLes tubes profil\u00e9s de l'arbre de transmission doivent \u00eatre r\u00e9guli\u00e8rement graiss\u00e9s. Enduisez de graisse les surfaces de contact des deux tubes profil\u00e9s d\u00e8s que vous remarquez une r\u00e9sistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du d\u00e9telage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profil\u00e9s d'arbres de transmission\nBo\u00eetier central\nDisques d'\u00e9pandage du bo\u00eetier\nMaintenance\nLes tubes profil\u00e9s de l'arbre de transmission doivent \u00eatre r\u00e9guli\u00e8rement graiss\u00e9s. Enduisez de graisse les surfaces de contact des deux tubes profil\u00e9s d\u00e8s que vous remarquez une r\u00e9sistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du d\u00e9telage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profil\u00e9s d'arbres de transmission\nBo\u00eetier central\nDisques d'\u00e9pandage du bo\u00eetier\nMaintenance\nLes tubes profil\u00e9s de l'arbre de transmission doivent \u00eatre r\u00e9guli\u00e8rement graiss\u00e9s. Enduisez de graisse les surfaces de contact des deux tubes profil\u00e9s d\u00e8s que vous remarquez une r\u00e9sistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du d\u00e9telage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profil\u00e9s d'arbres de transmission\nBo\u00eetier central\nDisques d'\u00e9pandage du bo\u00eetier\nMaintenance\nLes tubes profil\u00e9s de l'arbre de transmission doivent \u00eatre r\u00e9guli\u00e8rement graiss\u00e9s. Enduisez de graisse les surfaces de contact des deux tubes profil\u00e9s d\u00e8s que vous remarquez une r\u00e9sistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du d\u00e9telage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profil\u00e9s d'arbres de transmission\nBo\u00eetier central\nDisques d'\u00e9pandage du bo\u00eetier\nMaintenance\nLes tubes profil\u00e9s de l'arbre de transmission doivent \u00eatre r\u00e9guli\u00e8rement graiss\u00e9s. Enduisez de graisse les surfaces de contact des deux tubes profil\u00e9s d\u00e8s que vous remarquez une r\u00e9sistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du d\u00e9telage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profil\u00e9s d'arbres de transmission\nBo\u00eetier central\nDisques d'\u00e9pandage du bo\u00eetier\nMaintenance\nLes tubes profil\u00e9s de l'arbre de transmission doivent \u00eatre r\u00e9guli\u00e8rement graiss\u00e9s. Enduisez de graisse les surfaces de contact des deux tubes profil\u00e9s d\u00e8s que vous remarquez une r\u00e9sistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du d\u00e9telage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profil\u00e9s d'arbres de transmission\nBo\u00eetier central\nDisques d'\u00e9pandage du bo\u00eetier\nMaintenance\nLes tubes profil\u00e9s de l'arbre de transmission doivent \u00eatre r\u00e9guli\u00e8rement graiss\u00e9s. Enduisez de graisse les surfaces de contact des deux tubes profil\u00e9s d\u00e8s que vous remarquez une r\u00e9sistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du d\u00e9telage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profil\u00e9s d'arbres de transmission\nBo\u00eetier central\nDisques d'\u00e9pandage du bo\u00eetier\nMaintenance\nLes tubes profil\u00e9s de l'arbre de transmission doivent \u00eatre r\u00e9guli\u00e8rement graiss",
+        "model_answer": "[Image] \n127\n\nApport ou appoint en graisse\nTubes profilés d'arbres de transmission\nBoîtier central\nDisques d'épandage du boîtier\nMaintenance\nLes tubes profilés de l'arbre de transmission doivent être régulièrement graissés. Enduisez de graisse les surfaces de contact des deux tubes profilés dès que vous remarquez une résistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du dételage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profilés d'arbres de transmission\nBoîtier central\nDisques d'épandage du boîtier\nMaintenance\nLes tubes profilés de l'arbre de transmission doivent être régulièrement graissés. Enduisez de graisse les surfaces de contact des deux tubes profilés dès que vous remarquez une résistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du dételage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profilés d'arbres de transmission\nBoîtier central\nDisques d'épandage du boîtier\nMaintenance\nLes tubes profilés de l'arbre de transmission doivent être régulièrement graissés. Enduisez de graisse les surfaces de contact des deux tubes profilés dès que vous remarquez une résistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du dételage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profilés d'arbres de transmission\nBoîtier central\nDisques d'épandage du boîtier\nMaintenance\nLes tubes profilés de l'arbre de transmission doivent être régulièrement graissés. Enduisez de graisse les surfaces de contact des deux tubes profilés dès que vous remarquez une résistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du dételage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profilés d'arbres de transmission\nBoîtier central\nDisques d'épandage du boîtier\nMaintenance\nLes tubes profilés de l'arbre de transmission doivent être régulièrement graissés. Enduisez de graisse les surfaces de contact des deux tubes profilés dès que vous remarquez une résistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du dételage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profilés d'arbres de transmission\nBoîtier central\nDisques d'épandage du boîtier\nMaintenance\nLes tubes profilés de l'arbre de transmission doivent être régulièrement graissés. Enduisez de graisse les surfaces de contact des deux tubes profilés dès que vous remarquez une résistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du dételage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profilés d'arbres de transmission\nBoîtier central\nDisques d'épandage du boîtier\nMaintenance\nLes tubes profilés de l'arbre de transmission doivent être régulièrement graissés. Enduisez de graisse les surfaces de contact des deux tubes profilés dès que vous remarquez une résistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du dételage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profilés d'arbres de transmission\nBoîtier central\nDisques d'épandage du boîtier\nMaintenance\nLes tubes profilés de l'arbre de transmission doivent être régulièrement graissés. Enduisez de graisse les surfaces de contact des deux tubes profilés dès que vous remarquez une résistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du dételage, et au moins une fois par saison.\n[Image]\n127\n\nApport ou appoint en graisse\nTubes profilés d'arbres de transmission\nBoîtier central\nDisques d'épandage du boîtier\nMaintenance\nLes tubes profilés de l'arbre de transmission doivent être régulièrement graiss",
         "target_page": 117,
         "context_type": "token",
         "noise_level": 20000,
@@ -496,7 +457,7 @@
     {
         "question": "How many grease nipples do the discharge bushings have?",
         "expected_answer": "Two grease nipples per discharge bushing.",
-        "model_answer": "[Image: Bagues d'\u00e9coulement]\nBagues d'\u00e9coulement sont mont\u00e9es sur paliers, fix\u00e9es \u00e0 l'arbre de l'agitateur et pourvues de 2 graisseurs.\nUnknown\n\nThe exact number of grease nipples for the discharge bushings is not directly stated in the context provided. The information given refers to the agitator bushings having 2 grease nipples each.",
+        "model_answer": "[Image: Bagues d'écoulement]\nBagues d'écoulement sont montées sur paliers, fixées à l'arbre de l'agitateur et pourvues de 2 graisseurs.\nUnknown\n\nThe exact number of grease nipples for the discharge bushings is not directly stated in the context provided. The information given refers to the agitator bushings having 2 grease nipples each.",
         "target_page": 126,
         "context_type": "token",
         "noise_level": 20000,
@@ -537,19 +498,6 @@
         "expected_answer": "109 mm.",
         "model_answer": "109 mm",
         "target_page": 136,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 6.8
-    },
-    {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-        "expected_answer": "The required distance is 1.0 mm.",
-        "model_answer": "1.0 mm",
-        "target_page": 138,
         "context_type": "token",
         "noise_level": 20000,
         "model_name": "qwen2.5_7B-128k",
@@ -691,7 +639,7 @@
     {
         "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
         "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
-        "model_answer": "Nettoyez \u00e0 fond la machine apr\u00e8s chaque utilisation. Remplacez l'agitateur lorsque celui-ci est us\u00e9. Page 118",
+        "model_answer": "Nettoyez à fond la machine après chaque utilisation. Remplacez l'agitateur lorsque celui-ci est usé. Page 118",
         "target_page": 152,
         "context_type": "token",
         "noise_level": 20000,
@@ -743,7 +691,7 @@
     {
         "question": "For what other kind of connections can the IM Tellus Input cable be used?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Image]\nTerminal IsoMatch Tellus sur un tracteur non ISOBUS\nSignal GPS pour le GEOCONTROL\n\uf034 Raccordez l'extr\u00e9mit\u00e9 du c\u00e2ble o\u00f9 est fix\u00e9 1 connecteur au raccord CAN du tracteur.\n\uf034 Branchez le c\u00e2ble du c\u00f4t\u00e9 des 2 connecteurs sur les deux raccords du bo\u00eetier de commande.\n\n[Image]\nAvec le faisceau d'adaptation pour tracteurs non ISOBUS, vous pouvez \u00e9quiper n'importe quel tracteur d'un syst\u00e8me de communication ISOBUS performant.",
+        "model_answer": "[Image]\nTerminal IsoMatch Tellus sur un tracteur non ISOBUS\nSignal GPS pour le GEOCONTROL\n Raccordez l'extrémité du câble où est fixé 1 connecteur au raccord CAN du tracteur.\n Branchez le câble du côté des 2 connecteurs sur les deux raccords du boîtier de commande.\n\n[Image]\nAvec le faisceau d'adaptation pour tracteurs non ISOBUS, vous pouvez équiper n'importe quel tracteur d'un système de communication ISOBUS performant.",
         "target_page": 32,
         "context_type": "token",
         "noise_level": 20000,
@@ -847,7 +795,7 @@
     {
         "question": "How should one proceed to stop spreading the fertilizer?",
         "expected_answer": "Not found in context",
-        "model_answer": "Fermez les unit\u00e9s de dosage en appuyant sur la touche \"STOP\".",
+        "model_answer": "Fermez les unités de dosage en appuyant sur la touche \"STOP\".",
         "target_page": 100,
         "context_type": "token",
         "noise_level": 20000,
@@ -886,7 +834,7 @@
     {
         "question": "Which appropriate measures for road transport should be taken when stopping work?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Refer to the paragraph on page 93]\n\n- Fixer la jupe.\n- prendre toutes les mesures n\u00e9cessaires au transport sur route.",
+        "model_answer": "[Refer to the paragraph on page 93]\n\n- Fixer la jupe.\n- prendre toutes les mesures nécessaires au transport sur route.",
         "target_page": 112,
         "context_type": "token",
         "noise_level": 20000,
@@ -938,7 +886,7 @@
     {
         "question": "What happens if the machine grease nipples are never lubricated?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Image]\nDe la graisse se trouve dans les bo\u00eetiers sous les disques d'\u00e9pandage. Le niveau de graisse doit se trouver \u00e0 35 mm sous l'orifice de remplissage (v\u00e9rifiez le niveau lorsque la machine est \u00e0 l'arr\u00eat depuis un certain temps).",
+        "model_answer": "[Image]\nDe la graisse se trouve dans les boîtiers sous les disques d'épandage. Le niveau de graisse doit se trouver à 35 mm sous l'orifice de remplissage (vérifiez le niveau lorsque la machine est à l'arrêt depuis un certain temps).",
         "target_page": 118,
         "context_type": "token",
         "noise_level": 20000,
@@ -964,7 +912,7 @@
     {
         "question": "What is the curriculum of the training program agrarians need to complete to be considered competent to operate this machine?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Image]\nLe pr\u00e9sent manuel d'instructions s'adresse aux agriculteurs disposant d'une formation compl\u00e8te et aux personnes qualifi\u00e9es pour les travaux agricoles form\u00e9s \u00e0 l'utilisation de cette machine conform\u00e9ment \u00e0 la l\u00e9gislation nationale et n'ignorant rien des techniques de montage.",
+        "model_answer": "[Image]\nLe présent manuel d'instructions s'adresse aux agriculteurs disposant d'une formation complète et aux personnes qualifiées pour les travaux agricoles formés à l'utilisation de cette machine conformément à la législation nationale et n'ignorant rien des techniques de montage.",
         "target_page": 4,
         "context_type": "token",
         "noise_level": 20000,
@@ -1185,7 +1133,7 @@
     {
         "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Image: CONSEIL : indiquez dans le GEOCONTROL si la limite de parcelle se trouve \u00e0 droite de la machine pendant l'\u00e9pandage en bout de champ!]\n\nUnknown\n\nThe context does not provide a specific numerical distance tolerance for the first path when driving for border spreading. It only mentions indicating the field edge position in the GEOCONTROL system.",
+        "model_answer": "[Image: CONSEIL : indiquez dans le GEOCONTROL si la limite de parcelle se trouve à droite de la machine pendant l'épandage en bout de champ!]\n\nUnknown\n\nThe context does not provide a specific numerical distance tolerance for the first path when driving for border spreading. It only mentions indicating the field edge position in the GEOCONTROL system.",
         "target_page": 109,
         "context_type": "token",
         "noise_level": 20000,
@@ -1402,5 +1350,187 @@
         "dataset": "question_datasets/question_answers_unanswerable.json",
         "file_extension": "txt",
         "duration": 0.2
+    },
+    {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "expected_answer": "06.00.00.0257",
+        "model_answer": "From the version 06.00.00.0257 of the GreenSeeker, the logiciel takes in charge the reception of the external signal.",
+        "target_page": 27,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 6.9
+    },
+    {
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "expected_answer": "150mm.",
+        "model_answer": "[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[Image]\n[",
+        "target_page": 51,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 18.6
+    },
+    {
+        "question": "How many parts does the distribution meter have?",
+        "expected_answer": "Seven.",
+        "model_answer": "Unknown",
+        "target_page": 59,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 6.9
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "model_answer": "[Use the lever of the fine dose adjustment to close 2 out of 3 dosage orifices, leaving the remaining one more open.]",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.3
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "expected_answer": "1 open hole and 2 thick holes",
+        "model_answer": "Unknown or Not found in context",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.2
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "expected_answer": "At the back of the control box.",
+        "model_answer": "The RS 232 connector is located on the back of the IsoMatch Tellus command box.",
+        "target_page": 72,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.2
+    },
+    {
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "expected_answer": "Every year",
+        "model_answer": "Once per year.",
+        "target_page": 78,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.0
+    },
+    {
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+        "expected_answer": "10% of the quantity in the middle trough",
+        "model_answer": "10%",
+        "target_page": 91,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 6.6
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "expected_answer": "Measured from the bottom of the vanes.",
+        "model_answer": "From the bottom of the blades, the distance to the ground or the vegetation is 75 cm.",
+        "target_page": 95,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 6.7
+    },
+    {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "expected_answer": "spreading chart or online spreading chart",
+        "model_answer": "Unknown",
+        "target_page": 111,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 6.7
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "expected_answer": "Place the spreader on a firm, stable ramp",
+        "model_answer": "Unknown or not found in context. The provided instructions and context do not contain specific guidance on how to handle the situation where the power lift cannot be lowered far enough to release the catch hooks during machine storage preparation.",
+        "target_page": 120,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.2
+    },
+    {
+        "question": "What type of grease is the central gearbox filled with?",
+        "expected_answer": "EP 00/000 gear grease.",
+        "model_answer": "Graisse pour pignons EP00/000",
+        "target_page": 127,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 6.9
+    },
+    {
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+        "expected_answer": "The required distance is 1.0 mm.",
+        "model_answer": "109 mm",
+        "target_page": 138,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 6.7
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "expected_answer": "Yes, using the Sensor input IM Tellus.",
+        "model_answer": "[Yes, with an appropriate connector. The other connections are identical to those for the standard IsoMatch Tellus harness.]\n\nYou can connect the tractor's speed sensor or radar to the IsoMatch control box using the available input capter, which is optional.",
+        "target_page": 144,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.6
     }
 ]

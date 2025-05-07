@@ -9,24 +9,23 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.3425925925925926,
-        "precision": 0.36065573770491804,
-        "recall": 0.4074074074074074,
+        "accuracy": 0.3305084745762712,
+        "precision": 0.38095238095238093,
+        "recall": 0.375,
         "specificity": 0.2777777777777778,
-        "f1_score": 0.3826086956521739,
-        "true_positives": 22,
+        "f1_score": 0.3779527559055118,
+        "true_positives": 24,
         "true_negatives": 15,
         "false_positives": 39,
-        "false_negatives": 32,
-        "total_questions": 108,
+        "false_negatives": 40,
+        "total_questions": 118,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.4772727272727273,
-            "unanswerable_questions": 0.2777777777777778,
-            "table_questions": 0.1
+            "general_questions": 0.42592592592592593,
+            "unanswerable_questions": 0.2777777777777778
         }
     },
     "timing": {
-        "duration_qa_phase_seconds": 187.99999999999997
+        "duration_qa_phase_seconds": 213.10000000000002
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,14 +135,6 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "<think>\nAlright, I need to figure out the maximum operating angle of the coupling shaft both when it's lifted and when it's lowered. Let me start by looking through the provided context.\n\nFirst, I'll scan each page for any mention of the coupling shaft. On Page 50, there's a section titled \"Connecting to the tractor.\" It says that the maximum operating angle is 30 degrees both when the power lift is lifted and when it's lowered. That seems consistent across all pages related to the coupling shaft.\n\nI should make sure I'm not missing anything else. Pages 49 onwards discuss various aspects of the coupling shaft, but none mention angles beyond what's stated in Page 50. So, I can confidently say that the maximum operating angle is 30 degrees on both ends.\n</think>\n\nThe maximum operating angle of the coupling shaft when lifted and when lowered is **30 degrees**.\n\n[Answer: The maximum operating angle of the coupling shaft is 30 degrees both when it's lifted and when it's lowered.]",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "<think>\nAlright, let's tackle this query. The user is asking whether the tractor should engage its parking brake before connecting the machine. I need to look through the provided context to find relevant information.\n\nLooking at the context, there are several sections discussing connection points and safety aspects. Specifically, in pages 50-53, there's a section about connecting the machine to the tractor. It mentions that the tractor must be connected on a firm, dry surface, which suggests proper alignment is crucial before connection.\n\nIn page 52, under \"Connecting to the tractor,\" it states: \"Always mount the check chains of the protection sleeves.\" This implies that the tractor's safety mechanisms are protected, and mounting them correctly is essential. However, there's no direct mention of the parking brake being engaged here.\n\nThe context also mentions that during lifting and lowering, the coupling shaft requires adequate space for movement without accidental disconnection. It suggests engaging the power lift when connecting to avoid damage. But this doesn't directly address the parking brake engagement before connection.\n\nSince the question is about the parking brake, I should focus on pages 50-53 where it's stated that the tractor must be connected on a firm surface and that the machine is protected. The mention of engaging the power lift during connection supports the idea that proper alignment is necessary, but it doesn't explicitly say whether the brake needs to be engaged before connecting.\n\nGiven this, I should conclude that while proper mounting is important, there's no explicit instruction in the context about engaging the parking brake before connection. Therefore, the answer should state that the tractor must be connected on a firm surface and protected, but not necessarily engage the brake.\n</think>\n\nThe tractor must be connected to the machine on a firm, dry surface and protected by check chains and protection sleeves. However, there is no explicit instruction in the context about engaging the parking brake before connection.\n\nAnswer: The tractor must be connected to the machine on a firm, dry surface and protected by check chains and protection sleeves.",
@@ -232,26 +223,10 @@
                     "self_evaluation": "yes"
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "<think>\nAlright, let's tackle this question: \"What is the required height of the spreading disc above the troughs for one-sided boundary spreading?\" \n\nFirst, I'll look through the provided context to find any relevant information. Scanning each page, I notice that in several sections about spreading patterns and techniques, there are mentions related to the spreader's operation.\n\nLooking at pages 79-81, specifically around \"To be done before spreading\" section on Page 79, it says: \"Set the spreader as per the details given in the spreading chart for the selected working width (X metre) that most closely matches the fertiliser, seeds or granules (height of the spreading disc = 75 cm above the troughs).\" \n\nThis clearly states that the height is set to 75 cm. There's no mention of any variation or adjustment needed for boundary spreading in this context.\n\nI also check other pages but don't find any additional information about the required height. The question seems straightforward, and the context directly provides the answer without needing further analysis.\n</think>\n\nThe required height of the spreading disc above the troughs is 75 cm.",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "<think>\nAlright, let's tackle this question. The user is asking about the specific height in cm that the spreading disc should be set to above the troughs before testing the ExactLine spreading pattern.\n\nLooking through the context provided, I need to find where the instructions for setting the ExactLine are given. Scanning each page, I see a section titled \"To be done before spreading\" on several pages. Specifically, on Page 95, there's an indication about adjusting the machine and spreading height.\n\nThe paragraph mentions that the spreader should be set to 75 cm above the crop or troughs. It also notes that this is done using the power lift to adjust the height. So, the exact height required is 75 cm.\n</think>\n\nBefore testing the ExactLine spreading pattern, the spreading disc should be set to a height of **75 cm** above the troughs.\n\nAnswer: 75 cm",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "<think>\nAlright, I need to figure out the answer to the question: \"What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?\" \n\nLooking through the provided context, I see that there are several sections discussing the application of fertilizers using different spreading methods. The key information here is about the boundary track spreading method and the exact line.\n\nIn the section titled \"To be done before spreading\" under the \"Boundary Track Spreading with ExactLine\" subsection (page 90), it mentions that the maximum acceptable loss in the ditch is determined by environmental standards. Specifically, it states that the middle trough must not exceed 10% of the quantity collected in the trough in the middle of the track.\n\nSo, the answer should be \"The maximum acceptable fertilizer loss in the middle trough is 10%.\"\n</think>\n\nThe maximum acceptable fertilizer loss in the middle trough is 10%.",
-                    "page": 91,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
                 },
@@ -368,18 +343,122 @@
                     "self_evaluation": "yes"
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-                    "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "<think>\nAlright, I need to figure out the exact distance between the discharge bushing and the spreading disc based on the provided context. Let me go through each relevant section step by step.\n\nFirst, looking at Page 137, there's a maintenance instruction about checking and setting the discharge point. It mentions that if the distance is not equal on both sides, they need to adjust it. The specific measurement mentioned is crucial here: \"If the distance between the inside of the rope and the opening of the discharge bushing must be 109 mm.\" \n\nI should make sure I'm extracting this information accurately without any additional context or explanations. It seems clear that the required distance is 109 millimeters.\n\nSo, putting it all together, the exact answer is 109 mm.\n</think>\n\nThe required distance between the discharge bushing and spreading disc must be **109 mm**.",
-                    "page": 138,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
                     "question": "How often should the agitator axle seal be replaced?",
                     "expected_answer": "Every season and after every 100 operational hours.",
                     "model_answer": "<think>\nAlright, I need to figure out how often the agitator axle seal should be replaced based on the provided context. Let me go through each page carefully.\n\nLooking at Page 133, there's a section about maintenance steps for the agitator axle. It mentions that the distance between the inside of the rope and the opening of the discharge bushing must be 109 mm. If it's not equal on all sides, they suggest loosening the actuator attachment points until this condition is met.\n\nThen, in Page 137, there are instructions for checking the agitator seal ring. It says that if the distance between the discharge bushing and the opening of the disc is more than 3%, it's due to a misalignment. They recommend loosening the actuator plate slightly, sliding it until the distance is correct, then re-fitting.\n\nIn Page 140, there are maintenance steps for replacing the agitator seal ring. It says that after setting the discharge point Q on the terminal, you need to adjust the seal ring so the distance between the discharge bushing and the disc opening is 1.0 mm. They also mention checking the agitator axle alignment.\n\nSo, putting it all together: The agitator seal should be replaced when there's a misalignment in the distance from the discharge bushing to the opening of the disc. This can happen during cleaning or testing. The specific steps involve loosening the actuator plate, sliding until correct, then re-fitting.\n\nI think the key point is that the agitator seal ring needs to be replaced when there's a misalignment in the distance from the discharge bushing to the opening of the disc. This ensures proper flow and efficiency.\n</think>\n\nThe agitator seal should be replaced when there's a misalignment in the distance from the discharge bushing to the opening of the disc, ensuring proper flow and efficiency.\n\n**Answer:** The agitator seal should be replaced when there's a misalignment in the distance from the discharge bushing to the opening of the disc.",
                     "page": 140,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "<think>\nAlright, I need to figure out from which version of the ISOBUS the Greenseeker sensor is received. Let me go through the context provided.\n\nLooking at the context, there are several sections discussing different sensors. The first section mentions \"Greeseeker\" on page 76. Then later in another part, it says \"Greenskerk\" on page 29. Wait, that's a typo because Greeseeker and Greenskerk are different Dutch words for the same sensor.\n\nIn the context, I see that the Greeseeker is mentioned on page 76 with an example of a tray test. Then later in another part, it refers to \"Greenskerk\" (Greenseeker) on page 29. Since these are two different terms, but both refer to the same sensor, I should check which version uses Greeseeker.\n\nThe first mention is on page 76 with an example of a tray test, and then again in another part where it's referred to as \"Greenskerk.\" However, the context doesn't specify the exact version number. The main sections discussing the Greenseeker are:\n\n- On page 76: \"Greeseeker\"\n- Later on page 29: \"Greenskerk\"\n\nSince both terms refer to the same sensor, but they're used in different contexts, I need to determine which one is more likely to be associated with a specific version. The Greeseeker example is given as part of the tray test, which might indicate an earlier version.\n\nLooking at the context, the Greeseeker is mentioned on page 76 and again later on page 29. Since both are about the same sensor but in different contexts, I need to see if there's a specific version number associated with each mention.\n\nIn the initial answer, it was stated that the Greeseeker is from version 06.00.00.0257 onwards. The example on page 76 uses \"Greeseeker,\" which aligns with this version. Later in another part, \"Greenskerk\" is mentioned, but without a specific version number.\n\nTherefore, the Greeseeker sensor is supported from version 06.00.00.0257 onwards.\n</think>\n\nThe Greeseeker sensor is supported from version 06.00.00.0257 onwards.\n\n<answer>\nThe Greeseeker sensor is supported from version 06.00.00.0257 onwards.\n</answer>",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "<think>\nAlright, I need to figure out how to answer the question: \"When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?\" \n\nFirst, I'll look through the provided context. The context has several pages related to machinery settings, including sections on shortening coupling shafts and connecting to the tractor.\n\nLooking at page 50, there's a section titled \"Shortening the coupling shaft.\" It mentions that profiled tubes must overlap as far as possible with a minimum of 150 mm. The text also states that the overlap must be at least 25 mm free clearance when the PTO shaft and machine drive axle are level.\n\nSo, the key points here are:\n- Profiled tubes must overlap by at least 150 mm.\n- This ensures sufficient clearance for the tractor's drive axle when the PTO is engaged.\n\nI should extract this information precisely. The answer should state that profiled tubes must overlap at least 150 mm to ensure proper spacing and prevent damage during operation.\n</think>\n\nThe profiled tubes must overlap at least 150 mm to ensure sufficient clearance for the tractor's drive axle when the PTO is engaged.\n\n[Answer]\nThe profiled tubes must overlap at least 150 mm.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "<think>\nAlright, I need to figure out how many parts the distribution meter has based on the provided context. Let me go through each section step by step.\n\nFirst, I'll look at the table of contents in the context. The sections are about different aspects of spreading machinery, including the spreader and its components. \n\nLooking at the \"To be done before spreading\" section, there's a paragraph that mentions the distribution meter. It says: \"The distribution is the ratio of granules with different diameters. A distribution meter has 4 sections...\" So each section corresponds to a part of the meter.\n\nThen, in another section titled \"Distribution of granules,\" it explains how the distribution meter works and lists the parts under each slot. The user needs to fill these slots correctly for an accurate reading.\n\nThe \"Determining distribution\" section also mentions that the distribution meter has 4 sections, which aligns with what I found earlier.\n\nSo putting this together, the distribution meter has four distinct sections or slots.\n</think>\n\nThe distribution meter has **four sections**.",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "<think>\nOkay, so I need to figure out how to enable the fine application kit for dosing at a low application rate. Let me start by looking through the context provided.\n\nFirst, I see that in page 65, there's a section about setting the discharge point and fine application. The user wants to use the fine application when the application rate is low. \n\nLooking at pages 67-70, it seems like the fine application kit is used for lower rates. There are specific symbols and settings mentioned. For example, on page 68, under \"Fine application handle Normal opening,\" they mention using a fine application kit with certain symbols.\n\nIn page 69, there's an example where setting the discharge point to D (which I think is fine) gives the correct flowrate for low rates. The flowrate required was calculated as 3.7 kg/min, which matches the fine application kit's settings.\n\nSo, the steps would be: set the discharge point to D, use the fine application kit, and adjust accordingly based on the spreading chart. I should make sure to follow these steps precisely.\n</think>\n\nTo enable fine application for dosing at a low application rate:\n\n1. Set the discharge point to D (fine).\n2. Use the fine application kit.\n3. Adjust flowrate using the spreading chart.\n\nAnswer:  \nSet the discharge point to D, use the fine application kit, and adjust flowrate based on the chart.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "<think>\nOkay, so I need to figure out what the symbol on top of the fine application handle indicates when using the fine application kit. Let me start by looking through the provided context.\n\nFirst, I'll scan each page in the context to find any mention of the fine application handle or its settings. On Page 65, there's a section about setting the discharge point and fine application handling. It mentions that the symbol on top of the fine application handle is used for this purpose. \n\nLooking at other pages, I don't see any direct information about the fine application handle's symbol. However, in the context provided, it's clear from Page 65 that the fine application handle has a specific symbol indicating its use. So, the answer should be that the symbol on top of the fine application handle is used to indicate that the kit is enabled for fine applications.\n\nI don't see any other references or mentions of this symbol elsewhere in the context, so I can confidently conclude that the correct symbol is as described.\n</think>\n\nThe symbol on top of the fine application handle indicates that the Fine application kit is enabled. \n\nAnswer: The symbol on top of the fine application handle is used to indicate that the kit is enabled for fine applications.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "<think>\nAlright, I need to figure out where the RS 232 connector is located based on the provided context. Let me go through each page carefully.\n\nLooking at Page 71, there's a section titled \"Manual calibration test.\" Inside that, it mentions that support for the calibration container is needed and provides images of various connectors. The text says, \"S Lock nut\" and then lists several connectors like \"RS 232 connection.\" \n\nSo, the RS 232 connector is mentioned in this manual under the context of a calibration test. It's part of the support for the calibration container. Therefore, it's located on the left spreading disc as per the instructions.\n\nI should make sure that I'm extracting the exact information without any extra details. The key point is that the RS 232 connector is mentioned in the manual under the calibration test section.\n</think>\n\nThe RS 232 connector is located on the left spreading disc, specifically within the context of a manual calibration test where it is referenced as part of the support for the calibration container.\n\n[Image: Support for the calibration container]",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "<think>\nAlright, I need to figure out how often the left and right spreading discs should be checked if they spread the same volumes of fertiliser for good distribution. Let me go through the context provided step by step.\n\nFirst, I'll look at the sections where the question is addressed. The context includes several pages related to the spreader's operation, including pages 72-84, which discuss various aspects like filling, spreading patterns, and calibration tests.\n\nLooking at page 76, there's a section titled \"To be done before spreading\" that mentions checking the left and right spreading disc. It says: \"Avoid contact with the fertiliser and other material; Always wear protective clothing... Never spread while it is on the ground or in an open cabin.\"\n\nThen, in pages 80-81, there's a section titled \"Assessment.\" It states that if the spreader spreads correctly, you should assess the values from the measuring tubes. The assessment mentions comparing the left and right spreading discs' measurements.\n\nThe question is about how often to check them for good distribution. From page 76, it seems like they should be checked regularly, but I don't see a specific frequency mentioned there. However, in pages 80-81, under \"Assessment,\" it says: \"Record the values you find in the graduated tubes for the left and right spreading discs. Compare the values, calculate the percentage differences between the measuring tubes on the left and the right.\"\n\nThis suggests that they should be checked every time before spreading to ensure consistent distribution. But I don't see a specific frequency mentioned there either.\n\nLooking back at page 76, it says: \"Avoid contact with the fertiliser and other material; Never spread while it is on the ground or in an open cabin.\" It doesn't mention checking for distribution.\n\nIn pages 80-81, under \"Assessment,\" they check after spreading. So maybe they should be checked every time before spreading to ensure consistent results. But I don't see a specific frequency mentioned there either.\n\nWait, perhaps the answer is that they should be checked regularly, but without a specific number. However, in page 76, it's about avoiding contact and not spreading while on the ground, which might relate to checking after spreading.\n\nAlternatively, maybe the answer is that they should be checked every time before spreading to ensure consistent distribution. But I'm not sure if there's a standard frequency specified elsewhere.\n\nI think the key points are from page 76: avoid contact with fertiliser and other materials while spreading. So perhaps the answer is that they should be checked regularly, but without a specific number. However, in pages 80-81, under \"Assessment,\" it's mentioned to record values after spreading, so maybe every time before spreading.\n\nBut I'm not sure if there's an exact frequency specified elsewhere. The question is about how often they should be checked for good distribution, and the context doesn't provide a specific number beyond avoiding contact during spreading.\n</think>\n\nThe left and right spreading discs should be checked regularly to ensure consistent distribution of fertiliser. However, no specific frequency is provided in the context.\n\nAnswer: They should be checked every time before spreading to ensure consistent distribution.",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "<think>\nAlright, I need to figure out the answer to the question: \"What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?\" \n\nLooking through the provided context, I see several sections discussing field spreading patterns. The key information here is about the maximum acceptable loss in the ditch. \n\nIn the section titled \"To be done before spreading,\" there's an instruction that mentions: \"The maximum acceptable loss in the ditch is determined by environmental standards. In order to comply with the standards the quantity of fertiliser in the 1st trough, standing in the imaginative ditch, must be a maximum of 10% of the quantity collected in the trough in the middle of the track (= 100%).\"\n\nSo, the exact number mentioned is 10%. That's the percentage allowed for fertilizer loss in the middle trough before spreading. \n\nI should make sure there are no other mentions of percentages related to this question and that I'm not missing any specific details from the context.\n</think>\n\nThe maximum acceptable fertilizer loss in the middle trough is 10% of the quantity collected in the middle of the track.\n\nAnswer: The maximum acceptable fertilizer loss is 10%.",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "<think>\nAlright, I need to figure out from which machine point the spreading height is measured to the ground or crops. Let me go through the context provided step by step.\n\nFirst, I'll look for any mentions of \"spreading height\" in the text. Scanning each paragraph:\n\n- Page 95: It talks about using spreading height and setting it under the lift rod adjustment. The instruction says to set the spreader horizontally with the lift rod adjustment and top link. This is part of preparing the machine, not directly about measuring spreading height.\n\n- Pages 81-93: These are about preparing the machine for transport, including adjusting settings before spreading. Again, no mention of measuring spreading height here.\n\nLooking further down to page 97: It discusses using the GEOCONTROL application and mentions setting the spreader in a working position. This is part of configuring the system but not directly related to measuring spreading height.\n\nI don't see any direct information about where the spreading height is measured on the machine. The context focuses more on preparing the equipment, adjusting settings, and controlling the spreader rather than measuring its height relative to the ground or crops.\n\nTherefore, based on the provided text, there's no specific mention of a machine point where spreading height is measured. It seems the question might be referencing an image or additional information not included in the context.\n</think>\n\nThe spreading height is not directly measured at any specific machine point within the provided context. The text discusses preparing the equipment and adjusting settings but does not specify a particular measurement location.\n\n<answer>\nThere is no specific mention of a machine point where spreading height is measured to the ground or crops in the provided context.\n</answer>",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "<think>\nAlright, let's tackle this query. The user is asking about setting the correct PTO shaft and spreading disc RPM. I need to find specific information from the provided context.\n\nLooking through the pages, I see several sections discussing control systems and spreaders. On page 109, there's a detailed operation for using the hydraulic border spreading plate. It mentions that the PTO shaft RPM should be set based on the spreading chart or online instructions. Also, in another section (page 114), it says to disconnect the PTO shaft immediately if failure occurs.\n\nSo, the key points are:\n- The PTO shaft RPM is determined by the spreading chart.\n- Online tools can provide the correct RPM setting.\n- If a failure occurs during spreading, stop work and disconnect the PTO shaft.\n\nI should extract these details clearly for the answer.\n</think>\n\nThe correct PTO shaft RPM is set based on the spreading chart or online instructions provided in the context.",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "<think>\nAlright, let's tackle this question. The user is asking what I should do if they can't lower the power lift far enough to release the catch hooks when preparing the machine for storage. \n\nFirst, I need to look through the provided context to find relevant information. Scanning each page, I see that in Page 120, there's a section about Preparing the machine for winter storage. It mentions that at the end of the season, the machine must be prepared for winter storage.\n\nLooking further into that section, it says: \"Furthermore, do not set up electrical components. Water can cause electrical failures.\" But I don't see any direct information on lowering the power lift. However, in Page 120, under \"Maintenance,\" there's a note about disconnecting the electric plugs and hanging them in the container. It also mentions that grease should be applied to all parts before storage.\n\nWait, but the question is specifically about lowering the power lift. I don't see any instructions on this. Maybe it's implied from the context? Or perhaps the user is referring to a general maintenance step?\n\nLooking back at Page 120, under \"Maintenance,\" there's an instruction: \"Grease all grease nipples.\" But that doesn't mention lowering the power lift.\n\nIn Page 125, under \"Maintenance intervals,\" it says about coupling shaft profiled tubes. It mentions opening the coupling shaft by removing the cap from the filler opening and adding grease until a certain level is reached. That's about adding grease, not lowering the power lift.\n\nSo, perhaps the answer is that if you can't lower the power lift, you should apply or add grease to ensure it's sufficient. But I'm not sure if this directly answers the question about lowering the lift.\n\nWait, maybe in Page 120, under \"Preparation for winter storage,\" there's a note: \"Always use original parts when replacing.\" So, perhaps applying or adding grease is part of that process.\n\nBut the user's question is specifically about lowering the power lift. Since I don't have an explicit instruction on this, maybe the answer is to apply or add grease as it's necessary for storage preparation.\n\nAlternatively, looking at Page 120 again, under \"Maintenance,\" there's a note: \"Grease all grease nipples.\" But that doesn't mention lowering the power lift. So perhaps the correct answer is that you should apply or add grease to ensure the lift can be lowered properly.\n\nBut I'm not entirely sure if this is the exact step needed for lowering the power lift. Maybe it's better to suggest applying or adding grease as part of storage preparation, even though it doesn't directly address lowering the lift.\n</think>\n\nTo prepare the machine for storage and ensure proper functioning, you should apply or add grease to all relevant parts, including those related to lowering the power lift. This ensures that the lift can be adjusted properly during storage.\n\nAnswer: Apply or add grease to all relevant parts, including those related to lowering the power lift.",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "<think>\nAlright, let's tackle this question: \"What type of grease is the central gearbox filled with?\" \n\nFirst, I'll look through the provided context to find any relevant information about grease types in relation to the central gearbox. Scanning each page:\n\n- On Page 124, there's a section titled \"Maintenance\" that mentions grease nipples on the central gearbox. It says, \"The grease nipples are filled with new grease until it almost comes out of the opening.\" This indicates that the grease used is new or fresh.\n\nI don't see any other mentions of grease types in this context. The question seems straightforward once I realize that the grease is being filled specifically on Page 124. \n\nSo, based on the information provided, the central gearbox is filled with new grease.\n</think>\n\nThe central gearbox is filled with new grease.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "<think>\nAlright, I need to figure out the exact distance between the discharge bushing and the spreading disc based on the provided context. Let me go through each relevant section step by step.\n\nFirst, looking at the maintenance sections, especially pages 137-140, there's a detailed process for adjusting the dosing mechanism. On page 138, it mentions that if the distance is too great, the fertilizer doesn't flow onto the spreading disc but onto another point below the bushing. If it's too short, the hopper rests partly on the disc, causing damage.\n\nOn page 140, there's a step where the agitator seal must be replaced every season and after every 100 hours. The instructions mention that only work on an empty machine with an empty hopper is recommended to prevent loss of fertilizer granules along the axies.\n\nLooking at the maintenance section for dosing mechanism adjustment (pages 137-140), there's a step where you need to measure the distance between the discharge bushing and the spreading disc. The user is instructed to use a feeler gauge accurately, especially if it's more than 1 mm apart.\n\nSo, from this information, I can see that the required distance is specified as 1.0 mm. If the measured distance is too great or too small, adjustments are made by moving the bushing upwards or downwards until the correct distance is achieved.\n</think>\n\nThe required distance between the discharge bushing and spreading disc must be **1.0 mm**.",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "<think>\nAlright, I need to figure out if the tractor's speed sensor or radar can be connected to the IsoMatch control box. Looking through the context provided, I see a section about the IsoMatch Tellus GO control box which mentions that the machine is already ISOBUS ready and can connect via IM Tellus 9-point in cab cable. However, there's no mention of connecting the speed sensor or radar directly to the control box. The connection details are only for the input IM Tellus sensor. So, I don't see any information about connecting the tractor's speed sensor or radar to the IsoMatch control box.\n</think>\n\nNo direct information is provided in the context about connecting the tractor's speed sensor or radar to the IsoMatch control box. However, it mentions that the machine can be connected via IM Tellus 9-point in cab cable for the input sensor.\n\nAnswer: No",
+                    "page": 144,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 }

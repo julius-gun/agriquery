@@ -197,16 +197,31 @@ def reformat_zeroshot_file(filepath: str):
             continue
 
         # --- Updated dataset mapping logic ---
-        original_dataset_value = item.get("dataset")
-        # Add strip() to handle potential leading/trailing whitespace
-        original_dataset_key = original_dataset_value.strip() if original_dataset_value else None
-
-        mapped_dataset = DATASET_MAP.get(original_dataset_key) # Use stripped key for lookup
-        if not mapped_dataset:
-            # Print the key we tried to look up for better debugging
-            print(f"Warning: No mapping found for dataset key '{original_dataset_key}' (from value '{original_dataset_value}') in {filename}. Skipping item.")
+        original_dataset_value = item.get("dataset") # This is the value as it appears in the JSON file
+        
+        if not original_dataset_value: # Handles None or empty string from .get()
+            print(f"Warning: Skipping item due to missing or empty 'dataset' field in {filename}: {item}")
             continue
-        item["dataset"] = mapped_dataset # Update item with mapped name
+
+        # Ensure it's a string and strip whitespace
+        dataset_str_value = str(original_dataset_value).strip()
+        if not dataset_str_value: # Handles cases where original value was whitespace only
+             print(f"Warning: Skipping item due to 'dataset' field being whitespace only in {filename}: {item}")
+             continue
+        
+        # Normalize the dataset key to its basename to handle optional "question_datasets/" prefix
+        # e.g., "question_datasets/foo.json" -> "foo.json"
+        # e.g., "foo.json" -> "foo.json"
+        normalized_dataset_lookup_key = os.path.basename(dataset_str_value)
+        
+        mapped_dataset = DATASET_MAP.get(normalized_dataset_lookup_key)
+        
+        if not mapped_dataset:
+            # This warning now refers to the key AFTER normalization, which is what was actually looked up.
+            print(f"Warning: No mapping found for dataset key '{normalized_dataset_lookup_key}' (derived from original value '{original_dataset_value}') in {filename}. Skipping item.")
+            continue
+        
+        item["dataset"] = mapped_dataset # Update item with mapped name (e.g., "general_questions")
 
         # Sum duration
         duration = item.get("duration")

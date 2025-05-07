@@ -106,7 +106,7 @@
     {
         "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
         "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
-        "model_answer": "[Image: Schwei\u00dfen Sie eine Fu\u00dfplatte vor der Montage auf einer ausgew\u00e4hlten Fl\u00e4che in der Kabine.\n\uf034 Bohren Sie ein Lochmuster in die Fu\u00dfplatte und die Kabinendecke.\n\uf034 Montieren Sie den Fu\u00df an die Konsole.\n\uf034 Platzieren Sie das Bedienpult auf dem Fu\u00dfrohr.\n\uf034 Binden Sie die \u00fcberfl\u00fcssige L\u00e4nge an Kabel mit Kabelbindern zusammen.]",
+        "model_answer": "[Image: Schweißen Sie eine Fußplatte vor der Montage auf einer ausgewählten Fläche in der Kabine.\n Bohren Sie ein Lochmuster in die Fußplatte und die Kabinendecke.\n Montieren Sie den Fuß an die Konsole.\n Platzieren Sie das Bedienpult auf dem Fußrohr.\n Binden Sie die überflüssige Länge an Kabel mit Kabelbindern zusammen.]",
         "target_page": 40,
         "context_type": "token",
         "noise_level": 59000,
@@ -169,19 +169,6 @@
         "duration": 148.1
     },
     {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-        "model_answer": "The maximum working angles for the coupling shaft are 30 degrees upwards and 30 degrees downwards.",
-        "target_page": 51,
-        "context_type": "token",
-        "noise_level": 59000,
-        "model_name": "phi3_14B_q4_medium-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 141.2
-    },
-    {
         "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
         "expected_answer": "Yes.",
         "model_answer": "[Image: Engage parking brake of the tractor]\nYes, before connecting the machine, engage the tractor's parking brake.",
@@ -236,7 +223,7 @@
     {
         "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
         "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-        "model_answer": "The required flowrate (kg/min) is calculated using the formula: Ben\u00f6tigte Auslaufgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha).",
+        "model_answer": "The required flowrate (kg/min) is calculated using the formula: Benötigte Auslaufgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha).",
         "target_page": 68,
         "context_type": "token",
         "noise_level": 59000,
@@ -301,7 +288,7 @@
     {
         "question": "What materials are required to perform the tray test?",
         "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-        "model_answer": "Materials needed for the tray test:\n- Band measure or measuring rod\n- Water level\n- 7 Trays (Auffangbeh\u00e4lter)\n- 7 Measurement pipes\n- Trough\n- Notebook, pen and calculator",
+        "model_answer": "Materials needed for the tray test:\n- Band measure or measuring rod\n- Water level\n- 7 Trays (Auffangbehälter)\n- 7 Measurement pipes\n- Trough\n- Notebook, pen and calculator",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 59000,
@@ -314,7 +301,7 @@
     {
         "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
         "expected_answer": "3 m/s)",
-        "model_answer": "The maximum wind speed permitted for both the tray test and actual spreading is 3 m/s (Windst\u00e4rke 2).",
+        "model_answer": "The maximum wind speed permitted for both the tray test and actual spreading is 3 m/s (Windstärke 2).",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 59000,
@@ -323,19 +310,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 144.5
-    },
-    {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "expected_answer": "75 cm above the troughs.",
-        "model_answer": "The required height of the spreading disc above the troughs for one-sided boundary spreading is 75 cm.",
-        "target_page": 84,
-        "context_type": "token",
-        "noise_level": 59000,
-        "model_name": "phi3_14B_q4_medium-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 143.8
     },
     {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
@@ -349,19 +323,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 144.6
-    },
-    {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-        "expected_answer": "10% of the quantity in the middle trough",
-        "model_answer": "The maximum fertilizer loss over the middle trough is allowed to be up to 10% of the quantity in the center.",
-        "target_page": 91,
-        "context_type": "token",
-        "noise_level": 59000,
-        "model_name": "phi3_14B_q4_medium-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 142.9
     },
     {
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
@@ -431,7 +392,7 @@
     {
         "question": "What should you do if a spreading disc spreads irregularly?",
         "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-        "model_answer": "If a spreading disc spreads irregularly:\n- Check if the machine is horizontal/vertical.\n- Ensure correct working height (75 cm over crop or ground).\n- Verify that the Dosiermechanism and Auslauf\u00f6ffnung are properly set.",
+        "model_answer": "If a spreading disc spreads irregularly:\n- Check if the machine is horizontal/vertical.\n- Ensure correct working height (75 cm over crop or ground).\n- Verify that the Dosiermechanism and Auslauföffnung are properly set.",
         "target_page": 113,
         "context_type": "token",
         "noise_level": 59000,
@@ -444,7 +405,7 @@
     {
         "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
         "expected_answer": "40 degrees Celsius",
-        "model_answer": "The maximum allowable temperature for cleaning the machine is not explicitly mentioned in the provided context. However, when using a high-pressure cleaner (Hochdruckreiniger), the text advises to use only low pressure at temperatures of up to 40\u00b0C and avoid direct contact with electrical components or hot surfaces.",
+        "model_answer": "The maximum allowable temperature for cleaning the machine is not explicitly mentioned in the provided context. However, when using a high-pressure cleaner (Hochdruckreiniger), the text advises to use only low pressure at temperatures of up to 40°C and avoid direct contact with electrical components or hot surfaces.",
         "target_page": 117,
         "context_type": "token",
         "noise_level": 59000,
@@ -546,19 +507,6 @@
         "duration": 145.0
     },
     {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-        "expected_answer": "The required distance is 1.0 mm.",
-        "model_answer": "The required distance between the discharge bushing and spreading disc is 109 mm.",
-        "target_page": 138,
-        "context_type": "token",
-        "noise_level": 59000,
-        "model_name": "phi3_14B_q4_medium-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 146.1
-    },
-    {
         "question": "How often should the agitator axle seal be replaced?",
         "expected_answer": "Every season and after every 100 operational hours.",
         "model_answer": "The agitator axle seal should be replaced every season or after each 100 operating hours.",
@@ -574,7 +522,7 @@
     {
         "question": "What is the pattern of the type 'mineral'?",
         "expected_answer": "angular, with sharp angles and edges",
-        "model_answer": "The pattern for the type 'mineral' is eckig (eckig), mit scharfen Kanten und R\u00e4ndern.",
+        "model_answer": "The pattern for the type 'mineral' is eckig (eckig), mit scharfen Kanten und Rändern.",
         "target_page": 58,
         "context_type": "token",
         "noise_level": 59000,
@@ -613,7 +561,7 @@
     {
         "question": "What is the sound level in dB of a Tractor + spreading spreader (Kali 60) with its rear window opened?",
         "expected_answer": "84.6 dB",
-        "model_answer": "The sound level of a Tractor + spreading spreader (Kali 60) with its rear window opened is 84.6 dB.\n\n<context>\n    [Image]\n[Image]\nSCHLEPPER + streuender Streuer (Kali 60) mit Heckfenster ge\u00f6ffnet\nSchlepper + streuender Streuer (Kali 60) Schlepper + streuender Streuer (Kali 60) Schlepper + streuender Streuer (Kali 60) Schlepper + streuender Streuer (Kali 60)\n[Image]\n84.6 dB\n</context>",
+        "model_answer": "The sound level of a Tractor + spreading spreader (Kali 60) with its rear window opened is 84.6 dB.\n\n<context>\n    [Image]\n[Image]\nSCHLEPPER + streuender Streuer (Kali 60) mit Heckfenster geöffnet\nSchlepper + streuender Streuer (Kali 60) Schlepper + streuender Streuer (Kali 60) Schlepper + streuender Streuer (Kali 60) Schlepper + streuender Streuer (Kali 60)\n[Image]\n84.6 dB\n</context>",
         "target_page": 37,
         "context_type": "token",
         "noise_level": 59000,
@@ -665,7 +613,7 @@
     {
         "question": "With what torque in Nm must a M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened?",
         "expected_answer": "420 Nm",
-        "model_answer": "Anzugsmomente f\u00fcr M18-Schrauben und -muttern mit einer Qualit\u00e4t von A2 und einem Reibungskoeffizienten von 0.30 betragen: Anzugsmomente.10,9 Nm.\n\n<context>\n     ... (The rest of the context is omitted for brevity)\n</context>",
+        "model_answer": "Anzugsmomente für M18-Schrauben und -muttern mit einer Qualität von A2 und einem Reibungskoeffizienten von 0.30 betragen: Anzugsmomente.10,9 Nm.\n\n<context>\n     ... (The rest of the context is omitted for brevity)\n</context>",
         "target_page": 129,
         "context_type": "token",
         "noise_level": 59000,
@@ -691,7 +639,7 @@
     {
         "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
         "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
-        "model_answer": "152\nBeseitigung von St\u00f6rungen\n                                Problem                                                                                                                              M\u00f6gliche Ursache                                                                                                                        L\u00f6sung         Seite\n0   Viel Staub w\u00e4h- rend des Streu- ens                                          M\u00e4\u00dfige Qualit\u00e4t Kunstd\u00fcnger (zu weich, ge- brochen, Mix verschiedener Sorten) oder  falsche Lagerung    Kontaktieren Sie Ihren Lieferanten. Passen Sie den Lagerort an. Streuen Sie so weit wie m\u00f6glich mit kleiner  Arbeitsbreite  57,  59,  64\n1   Viel Staub w\u00e4h- rend des Streu- ens                                                     Zu hohe Drehzahl der Streuscheiben                                                 \u00dcberpr\u00fcfen Sie die Zapfwellendrehzahl und  den Anschlusspunkt der Gelenkwelle           46,\n2   Viel Staub w\u00e4h- rend des Streu- ens                                                    Mahlen durch R\u00fchrer. Dosiereinheiten zu  lang bei eingeschalteter Zapfwelle ge- schlossen         Schalten Sie die Zapfwelle direkt nach dem  Schlie\u00dfen der Dosiereinheiten aus. Pr\u00fcfen Sie den R\u00fchrer auf Besch\u00e4digung              \n3   Viel Staub w\u00e4h- rend des Streu- ens                                                    Mahlen beim rechten R\u00fchrer                                          Streuscheibe nicht w\u00e4hrend des Grenz- streuens mit dem Grenzstreublech entkop- peln.           107\n4   Streubahnen  sichtbar im Ern- tegut                                         M\u00e4\u00dfige Qualit\u00e4t Kunstd\u00fcnger. 80 % m\u00fcssen  einen Durchmesser von 2,0 - eine Seite des Feldes verkehrt eingestellt                                          Markieren Sie vor dem Fahren immer Fahr- spuren            97\n5   Streubahnen  sichtbar im Ern- tegut                                                     Neue Partie Kunstd\u00fcnger mit denselben  Einstellungen verteilt wie vorherige Partie.  Die Qualit\u00e4t wechselt stark pro Partie  Bestimmen Sie die Eigenschaften des  Kunstd\u00fcngers, suchen Sie die passende  Streutabelle und stellen den Streuer erneut  ein       57,  62\n6   Streubahnen  sichtbar im Ern- tegut                                                    Verkehrte Streutabelle verwandt                                   Bestimmen Sie die Eigenschaften des  Kunstd\u00fcngers und w\u00e4hlen Sie die richtige  Streutabelle       57,  60\n7   Streubahnen  sichtbar im Ern- tegut                                                     Arbeit unter schlechten Wetterverh\u00e4ltnis- sen: hohe Luftfeuchtigkeit, Regen, W\u00e4rme  oder hohe Windgeschwindigkeiten (> 5 m/ sec)                                                                                             Arbeiten Sie nur bei gutem Wetter              \n8   Streubahnen  sichtbar im Ern- tegut                                                    Falsche \u00dcberlappung der Streubilder                                                                               Markieren Sie vor dem Fahren immer Fahr- spuren            97\n9   Streubahnen  sichtbar im Ern- tegut                                                     Arbeitsbreite verkehrt eingestellt                                         Pr\u00fcfen Sie den Buchstabenwert f\u00fcr die Aus- lauf\u00f6ffnung und die Drehzahl der Zapfwelle           65,\n10  Streubahnen  sichtbar im Ern- tegut                                                    Der Einstellmechanismus der Auslass\u00f6ff- nung ist nicht gut eingestellt                                            F\u00fchren Sie die \u00bbKontrolle und Einstellung  Einstellmechanismus Auslauf\u00f6ffnung\u00ab aus           136\n11  Streubahnen  sichtbar im Ern- tegut                                                    Der Dosiermechanismus ist nicht gut einge- stellt                                             F\u00fchren Sie die \u00bbKontrolle und Einstellung  Dosiermechanismus\u00ab aus           136\n12  Streubahnen  sichtbar im Ern- tegut                                                    Verschlissene oder fehlende Schaufeln                                                                                      Festh\u00e4ngenden Kunstd\u00fcnger beseitigen. Nach jedem Gebrauch die Maschine gr\u00fcnd- lich reinigen.        118\n13  Streubahnen  sichtbar im Ern- tegut                                ",
+        "model_answer": "152\nBeseitigung von Störungen\n                                Problem                                                                                                                              Mögliche Ursache                                                                                                                        Lösung         Seite\n0   Viel Staub wäh- rend des Streu- ens                                          Mäßige Qualität Kunstdünger (zu weich, ge- brochen, Mix verschiedener Sorten) oder  falsche Lagerung    Kontaktieren Sie Ihren Lieferanten. Passen Sie den Lagerort an. Streuen Sie so weit wie möglich mit kleiner  Arbeitsbreite  57,  59,  64\n1   Viel Staub wäh- rend des Streu- ens                                                     Zu hohe Drehzahl der Streuscheiben                                                 Überprüfen Sie die Zapfwellendrehzahl und  den Anschlusspunkt der Gelenkwelle           46,\n2   Viel Staub wäh- rend des Streu- ens                                                    Mahlen durch Rührer. Dosiereinheiten zu  lang bei eingeschalteter Zapfwelle ge- schlossen         Schalten Sie die Zapfwelle direkt nach dem  Schließen der Dosiereinheiten aus. Prüfen Sie den Rührer auf Beschädigung              \n3   Viel Staub wäh- rend des Streu- ens                                                    Mahlen beim rechten Rührer                                          Streuscheibe nicht während des Grenz- streuens mit dem Grenzstreublech entkop- peln.           107\n4   Streubahnen  sichtbar im Ern- tegut                                         Mäßige Qualität Kunstdünger. 80 % müssen  einen Durchmesser von 2,0 - eine Seite des Feldes verkehrt eingestellt                                          Markieren Sie vor dem Fahren immer Fahr- spuren            97\n5   Streubahnen  sichtbar im Ern- tegut                                                     Neue Partie Kunstdünger mit denselben  Einstellungen verteilt wie vorherige Partie.  Die Qualität wechselt stark pro Partie  Bestimmen Sie die Eigenschaften des  Kunstdüngers, suchen Sie die passende  Streutabelle und stellen den Streuer erneut  ein       57,  62\n6   Streubahnen  sichtbar im Ern- tegut                                                    Verkehrte Streutabelle verwandt                                   Bestimmen Sie die Eigenschaften des  Kunstdüngers und wählen Sie die richtige  Streutabelle       57,  60\n7   Streubahnen  sichtbar im Ern- tegut                                                     Arbeit unter schlechten Wetterverhältnis- sen: hohe Luftfeuchtigkeit, Regen, Wärme  oder hohe Windgeschwindigkeiten (> 5 m/ sec)                                                                                             Arbeiten Sie nur bei gutem Wetter              \n8   Streubahnen  sichtbar im Ern- tegut                                                    Falsche Überlappung der Streubilder                                                                               Markieren Sie vor dem Fahren immer Fahr- spuren            97\n9   Streubahnen  sichtbar im Ern- tegut                                                     Arbeitsbreite verkehrt eingestellt                                         Prüfen Sie den Buchstabenwert für die Aus- lauföffnung und die Drehzahl der Zapfwelle           65,\n10  Streubahnen  sichtbar im Ern- tegut                                                    Der Einstellmechanismus der Auslassöff- nung ist nicht gut eingestellt                                            Führen Sie die »Kontrolle und Einstellung  Einstellmechanismus Auslauföffnung« aus           136\n11  Streubahnen  sichtbar im Ern- tegut                                                    Der Dosiermechanismus ist nicht gut einge- stellt                                             Führen Sie die »Kontrolle und Einstellung  Dosiermechanismus« aus           136\n12  Streubahnen  sichtbar im Ern- tegut                                                    Verschlissene oder fehlende Schaufeln                                                                                      Festhängenden Kunstdünger beseitigen. Nach jedem Gebrauch die Maschine gründ- lich reinigen.        118\n13  Streubahnen  sichtbar im Ern- tegut                                ",
         "target_page": 152,
         "context_type": "token",
         "noise_level": 59000,
@@ -795,7 +743,7 @@
     {
         "question": "Can the linkage pin for the tractor be made out of aluminium?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Image: Anschlusspunkt langsam/Schildkr\u00f6te]\nThe linkage pin for the tractor can be made out of aluminium.",
+        "model_answer": "[Image: Anschlusspunkt langsam/Schildkröte]\nThe linkage pin for the tractor can be made out of aluminium.",
         "target_page": 53,
         "context_type": "token",
         "noise_level": 59000,
@@ -1146,7 +1094,7 @@
     {
         "question": "What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?",
         "expected_answer": "Not found in context",
-        "model_answer": "The typical 'wind speed' limit is not more than 3 m/s (Windst\u00e4rke 2) before spreading quality becomes unacceptable.",
+        "model_answer": "The typical 'wind speed' limit is not more than 3 m/s (Windstärke 2) before spreading quality becomes unacceptable.",
         "target_page": 96,
         "context_type": "token",
         "noise_level": 59000,
@@ -1211,7 +1159,7 @@
     {
         "question": "What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?",
         "expected_answer": "Not found in context",
-        "model_answer": "Before starting spring season work, besides cleaning and lubricating, you should:\n- Schmieren Sie die Nippel.\n- Kontrollieren Sie regelm\u00e4\u00dfig den Stand.\n- Nehmen Sie g\u00e4ngiges Schmier\u00f6l auf die Antriebswellen und Kupplungsst\u00fccke auf.",
+        "model_answer": "Before starting spring season work, besides cleaning and lubricating, you should:\n- Schmieren Sie die Nippel.\n- Kontrollieren Sie regelmäßig den Stand.\n- Nehmen Sie gängiges Schmieröl auf die Antriebswellen und Kupplungsstücke auf.",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 59000,
@@ -1341,7 +1289,7 @@
     {
         "question": "What specific 'extension cable' length in meters is optimal for ISO 11786 in cab tractor connection?",
         "expected_answer": "Not found in context",
-        "model_answer": "The context does not specify an exact length for the 'extension cable' for ISO 11786 in cab tractor connection. It only mentions that a \"verl\u00e4ngertes ISO-Kabel\" (extended ISO cable) is available, but no specific measurement is provided.",
+        "model_answer": "The context does not specify an exact length for the 'extension cable' for ISO 11786 in cab tractor connection. It only mentions that a \"verlängertes ISO-Kabel\" (extended ISO cable) is available, but no specific measurement is provided.",
         "target_page": 144,
         "context_type": "token",
         "noise_level": 59000,
@@ -1402,5 +1350,187 @@
         "dataset": "question_datasets/question_answers_unanswerable.json",
         "file_extension": "txt",
         "duration": 147.5
+    },
+    {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "expected_answer": "06.00.00.0257",
+        "model_answer": "The ISOBUS supports the reception of the GreenSeeker sensor signal from version 06.00.00.00.0257 onwards.\n<|end_of_text|>\n",
+        "target_page": 27,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 141.0
+    },
+    {
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "expected_answer": "150mm.",
+        "model_answer": "The profiled tubes of a coupling shaft must have an overlap of at least 150 mm.",
+        "target_page": 51,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 2.4
+    },
+    {
+        "question": "How many parts does the distribution meter have?",
+        "expected_answer": "Seven.",
+        "model_answer": "The distribution meter has four parts.",
+        "target_page": 59,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 137.9
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "model_answer": "To enable fine application for a low application rate, use the Feindosier-Set. This is achieved by closing two of the three dosing openings on each side using the Feindosierung Hebel. The remaining opening must be further opened to maintain the same throughput as when all three are open.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 141.5
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "expected_answer": "1 open hole and 2 thick holes",
+        "model_answer": "The symbol on top of the fine application handle indicating that the Fine application kit is enabled is \"F\".",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 2.3
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "expected_answer": "At the back of the control box.",
+        "model_answer": "The RS 232 connector is located on the back of the IsoMatch Bedienpult.",
+        "target_page": 72,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 140.5
+    },
+    {
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "expected_answer": "Every year",
+        "model_answer": "The left and right spreading discs should be checked after every 10 operating hours to ensure good distribution.",
+        "target_page": 78,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 140.8
+    },
+    {
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+        "expected_answer": "10% of the quantity in the middle trough",
+        "model_answer": "The maximum fertilizer loss over the field edge is not specified for the middle trough in percent. The document only mentions a maximum of 10% allowed when streaking along water bodies or ditches.",
+        "target_page": 91,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 142.2
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "expected_answer": "Measured from the bottom of the vanes.",
+        "model_answer": "The spreading height is measured from the center of the spreader to the ground or crop.",
+        "target_page": 95,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 140.1
+    },
+    {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "expected_answer": "spreading chart or online spreading chart",
+        "model_answer": "To set the correct PTO shaft and spreading disc RPM:\n- Refer to the Streutabellenbuch or online service for the recommended settings based on your specific düngemittel.\n- Use the provided formulas in the manuals to calculate the required Zapfwellendrehzahl (RPM) considering factors like Dosierstellung, Arbeitsbreite, and Fahrgeschwindigkeit.\n- Adjust the PTO shaft speed accordingly to achieve the desired RPM for your spreading disc.",
+        "target_page": 111,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 150.0
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "expected_answer": "Place the spreader on a firm, stable ramp",
+        "model_answer": "Place the machine on a stable platform like a pallet.\n165\n",
+        "target_page": 120,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 143.3
+    },
+    {
+        "question": "What type of grease is the central gearbox filled with?",
+        "expected_answer": "EP 00/000 gear grease.",
+        "model_answer": "The central gearbox is filled with Getriebefett EP00/000.\n",
+        "target_page": 127,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 2.3
+    },
+    {
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+        "expected_answer": "The required distance is 1.0 mm.",
+        "model_answer": "The required distance between the discharge bushing and spreading disc is 1.0 mm.",
+        "target_page": 138,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 2.2
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "expected_answer": "Yes, using the Sensor input IM Tellus.",
+        "model_answer": "Yes, you can connect the tractor's speed sensor or radar to the IsoMatch control box using a cable with steckers for ISO 11786 'In Cab' Anschluss. The standard kit includes an 'Input IM Tellus' Kabelset that allows this connection.",
+        "target_page": 144,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 5.6
     }
 ]

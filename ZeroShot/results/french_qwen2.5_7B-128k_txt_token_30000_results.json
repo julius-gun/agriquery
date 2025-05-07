@@ -28,7 +28,7 @@
     {
         "question": "What system continuously measures fertilizer quantity being spread?",
         "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
-        "model_answer": "The system of continuous measurement is the \"pes\u00e9e automatique\" (automatic weighing) system. It uses sensors to continuously measure the quantity of fertilizer being spread.",
+        "model_answer": "The system of continuous measurement is the \"pesée automatique\" (automatic weighing) system. It uses sensors to continuously measure the quantity of fertilizer being spread.",
         "target_page": 30,
         "context_type": "token",
         "noise_level": 30000,
@@ -93,7 +93,7 @@
     {
         "question": "After initial setup of the machine and after any maintenance or repairs, how long should the machine be operated before re-checking all nuts and bolts?",
         "expected_answer": "1 hour",
-        "model_answer": "V\u00e9rifiez r\u00e9guli\u00e8rement tous les boulons et \u00e9crous et resserrez-les au bout de la premi\u00e8re heure d'utilisation, apr\u00e8s\n\u00b7 la livraison et\n\u00b7 la r\u00e9alisation des op\u00e9rations de maintenance ou de r\u00e9paration.",
+        "model_answer": "Vérifiez régulièrement tous les boulons et écrous et resserrez-les au bout de la première heure d'utilisation, après\n· la livraison et\n· la réalisation des opérations de maintenance ou de réparation.",
         "target_page": 38,
         "context_type": "token",
         "noise_level": 30000,
@@ -169,19 +169,6 @@
         "duration": 14.8
     },
     {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-        "model_answer": "Unknown",
-        "target_page": 51,
-        "context_type": "token",
-        "noise_level": 30000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 14.0
-    },
-    {
         "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
         "expected_answer": "Yes.",
         "model_answer": "No, but you should secure the machine on robust supports after mounting.",
@@ -236,7 +223,7 @@
     {
         "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
         "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-        "model_answer": "\\[ \\text{Vitesse d'\u00e9coulement requise (kg/min)} = \\frac{\\text{Largeur de travail (m) } \\times \\text{ vitesse d'avancement (km/h)}}{600} \\]",
+        "model_answer": "\\[ \\text{Vitesse d'écoulement requise (kg/min)} = \\frac{\\text{Largeur de travail (m) } \\times \\text{ vitesse d'avancement (km/h)}}{600} \\]",
         "target_page": 68,
         "context_type": "token",
         "noise_level": 30000,
@@ -288,7 +275,7 @@
     {
         "question": "What does a tray test check on a fertilizer spreader?",
         "expected_answer": "Fertilizer distribution pattern of the spreader.",
-        "model_answer": "[Image]\nEvitez tout contact avec l'engrais et d'autres produits\nLorsque vous remplissez, r\u00e9glez et testez l'\u00e9pandeur, il se peut que vous entriez en contact avec l'engrais ou d'autres produits d'\u00e9pandage. Portez des v\u00eatements de protection et des gants protecteurs, lisez les instructions de s\u00e9curit\u00e9 du fournisseur et suivez les indications suppl\u00e9mentaires. Le contact avec des produits peut \u00eatre \u00e0 l'origine de blessures corporelles.\nLa prise de force s'arr\u00eate apr\u00e8s qu'elle ait \u00e9t\u00e9 d\u00e9bray\u00e9e\nApr\u00e8s avoir d\u00e9bray\u00e9 la prise de force, certains dangers peuvent survenir du fait de la coupure de la machine \u00e0 cause de l'inertie de masse. Ne restez pas \u00e0 proximit\u00e9 de la machine avant que toutes les pi\u00e8ces en mouvement se soient totalement arr\u00eat\u00e9es. Si vous vous approchez d'une machine en rotation, vous risquez de vous blesser gravement voire mortellement.\nTravail avec la cabine ferm\u00e9e\nLorsque les vitres, les portes ou d'autres ouvertures sont ouvertes, de la poussi\u00e8re d'engrais peut entrer dans la cabine. Dans une cabine ouverte, le niveau sonore est de surcro\u00eet plus \u00e9lev\u00e9. Pour cette raison, travaillez avec la cabine du tracteur ferm\u00e9e et pourvue de filtres de carbone actif au niveau des arriv\u00e9es d'air. La poussi\u00e8re provenant de l'engrais et les nuisances sonores prolong\u00e9es peuvent entra\u00eener des blessures corporelles.\nEn effectuant un test sur bacs, vous contr\u00f4lez la r\u00e9partition de l'engrais ainsi que le distributeur d'engrais qui effectue cette r\u00e9partition. Une fois les r\u00e9sultats du test obtenus, vous \u00eates en mesure de mieux r\u00e9gler l'\u00e9pandeur et ainsi d'am\u00e9liorer la r\u00e9partition de l'engrais et de limiter les pertes.\n[Image]\nEvaluation\nLa perte maximale autoris\u00e9e dans le foss\u00e9 est d\u00e9finie dans une norme environnementale. Pour satisfaire \u00e0 celle-ci, la quantit\u00e9 d'engrais dans le premier bac de collecte situ\u00e9 dans le foss\u00e9 fictive peut repr\u00e9senter au maximum 10 % de la quantit\u00e9 contenue dans le bac de collecte au centre de l'orni\u00e8re (= 100 %).\nLe bac de collecte sur le champ le long de la bordure de tranch\u00e9e fictive fournit une dose compl\u00e9mentaire pour la nappe d'\u00e9pandage. La dose compl\u00e9mentaire ne doit jamais \u00eatre de 100 %.",
+        "model_answer": "[Image]\nEvitez tout contact avec l'engrais et d'autres produits\nLorsque vous remplissez, réglez et testez l'épandeur, il se peut que vous entriez en contact avec l'engrais ou d'autres produits d'épandage. Portez des vêtements de protection et des gants protecteurs, lisez les instructions de sécurité du fournisseur et suivez les indications supplémentaires. Le contact avec des produits peut être à l'origine de blessures corporelles.\nLa prise de force s'arrête après qu'elle ait été débrayée\nAprès avoir débrayé la prise de force, certains dangers peuvent survenir du fait de la coupure de la machine à cause de l'inertie de masse. Ne restez pas à proximité de la machine avant que toutes les pièces en mouvement se soient totalement arrêtées. Si vous vous approchez d'une machine en rotation, vous risquez de vous blesser gravement voire mortellement.\nTravail avec la cabine fermée\nLorsque les vitres, les portes ou d'autres ouvertures sont ouvertes, de la poussière d'engrais peut entrer dans la cabine. Dans une cabine ouverte, le niveau sonore est de surcroît plus élevé. Pour cette raison, travaillez avec la cabine du tracteur fermée et pourvue de filtres de carbone actif au niveau des arrivées d'air. La poussière provenant de l'engrais et les nuisances sonores prolongées peuvent entraîner des blessures corporelles.\nEn effectuant un test sur bacs, vous contrôlez la répartition de l'engrais ainsi que le distributeur d'engrais qui effectue cette répartition. Une fois les résultats du test obtenus, vous êtes en mesure de mieux régler l'épandeur et ainsi d'améliorer la répartition de l'engrais et de limiter les pertes.\n[Image]\nEvaluation\nLa perte maximale autorisée dans le fossé est définie dans une norme environnementale. Pour satisfaire à celle-ci, la quantité d'engrais dans le premier bac de collecte situé dans le fossé fictive peut représenter au maximum 10 % de la quantité contenue dans le bac de collecte au centre de l'ornière (= 100 %).\nLe bac de collecte sur le champ le long de la bordure de tranchée fictive fournit une dose complémentaire pour la nappe d'épandage. La dose complémentaire ne doit jamais être de 100 %.",
         "target_page": 76,
         "context_type": "token",
         "noise_level": 30000,
@@ -325,19 +312,6 @@
         "duration": 0.3
     },
     {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "expected_answer": "75 cm above the troughs.",
-        "model_answer": "75 cm",
-        "target_page": 84,
-        "context_type": "token",
-        "noise_level": 30000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 13.9
-    },
-    {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
         "expected_answer": "75 cm",
         "model_answer": "75 cm",
@@ -349,19 +323,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 13.9
-    },
-    {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-        "expected_answer": "10% of the quantity in the middle trough",
-        "model_answer": "10%",
-        "target_page": 91,
-        "context_type": "token",
-        "noise_level": 30000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 13.6
     },
     {
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
@@ -405,7 +366,7 @@
     {
         "question": "What are the two functions for border spreading?",
         "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-        "model_answer": "The two functions for border spreading are:\n1. Epandage unilat\u00e9ral en bordure \u00e0 l'aide du d\u00e9flecteur de bordure hydraulique.\n2. \u00c9pandage des bordures avec ExactLine.",
+        "model_answer": "The two functions for border spreading are:\n1. Epandage unilatéral en bordure à l'aide du déflecteur de bordure hydraulique.\n2. Épandage des bordures avec ExactLine.",
         "target_page": 106,
         "context_type": "token",
         "noise_level": 30000,
@@ -418,7 +379,7 @@
     {
         "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
         "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-        "model_answer": "Arr\u00eatez imm\u00e9diatement d'\u00e9pandre! D\u00e9brayez imm\u00e9diatement la prise de force!",
+        "model_answer": "Arrêtez immédiatement d'épandre! Débrayez immédiatement la prise de force!",
         "target_page": 108,
         "context_type": "token",
         "noise_level": 30000,
@@ -457,7 +418,7 @@
     {
         "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
         "expected_answer": "80 bar",
-        "model_answer": "[Image] 80<|begin_of_text|>\n===Page 127===\n\nMaintenance\nApport ou appoint en graisse\nTubes profil\u00e9s d'arbres de transmission\n[Image]\nBo\u00eetier central\n[Image]\nDisques d'\u00e9pandage du bo\u00eetier\n[Image]\nMaintenance\nLes tubes profil\u00e9s de l'arbre de transmission doivent \u00eatre r\u00e9guli\u00e8rement graiss\u00e9s. Enduisez de graisse les surfaces de contact des deux tubes profil\u00e9s d\u00e8s que vous remarquez une r\u00e9sistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du d\u00e9telage, et au moins une fois par saison.\n[Image] 80 bar\n\nThe maximum allowable pressure when cleaning the machine with water or steam is 80 bar.",
+        "model_answer": "[Image] 80<|begin_of_text|>\n===Page 127===\n\nMaintenance\nApport ou appoint en graisse\nTubes profilés d'arbres de transmission\n[Image]\nBoîtier central\n[Image]\nDisques d'épandage du boîtier\n[Image]\nMaintenance\nLes tubes profilés de l'arbre de transmission doivent être régulièrement graissés. Enduisez de graisse les surfaces de contact des deux tubes profilés dès que vous remarquez une résistance au niveau des parties de l'arbre de transmission lors de l'attelage ou du dételage, et au moins une fois par saison.\n[Image] 80 bar\n\nThe maximum allowable pressure when cleaning the machine with water or steam is 80 bar.",
         "target_page": 117,
         "context_type": "token",
         "noise_level": 30000,
@@ -544,19 +505,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 14.2
-    },
-    {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-        "expected_answer": "The required distance is 1.0 mm.",
-        "model_answer": "1.0 mm",
-        "target_page": 138,
-        "context_type": "token",
-        "noise_level": 30000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 14.3
     },
     {
         "question": "How often should the agitator axle seal be replaced?",
@@ -847,7 +795,7 @@
     {
         "question": "How should one proceed to stop spreading the fertilizer?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Answer: Stop spreading the fertilizer by following these steps:\n1. Close the dosage units of the machine just before turning.\n2. Keep the cutting blades running, do not disengage the power take-off.\n3. Open the dosage units again after having turned a distance equivalent to half the width of the field since the end of the field.\n4. Spread at the edge of the field with the hydraulic side shield.]\n\nThis answer is derived from the context provided, specifically:\n\"Arr\u00eatez l'\u00e9pandage en fermant les unit\u00e9s de dosage de la machine lorsqu'il vous reste encore une moiti\u00e9 de largeur de travail \u00e0 parcourir avant la fin de la parcelle.\"",
+        "model_answer": "[Answer: Stop spreading the fertilizer by following these steps:\n1. Close the dosage units of the machine just before turning.\n2. Keep the cutting blades running, do not disengage the power take-off.\n3. Open the dosage units again after having turned a distance equivalent to half the width of the field since the end of the field.\n4. Spread at the edge of the field with the hydraulic side shield.]\n\nThis answer is derived from the context provided, specifically:\n\"Arrêtez l'épandage en fermant les unités de dosage de la machine lorsqu'il vous reste encore une moitié de largeur de travail à parcourir avant la fin de la parcelle.\"",
         "target_page": 100,
         "context_type": "token",
         "noise_level": 30000,
@@ -886,7 +834,7 @@
     {
         "question": "Which appropriate measures for road transport should be taken when stopping work?",
         "expected_answer": "Not found in context",
-        "model_answer": "Fermez les unit\u00e9s de dosage.\nD\u00e9brayez la prise de force.\nArr\u00eatez le syst\u00e8me de commande \u00e9lectronique.\nCoupez le moteur du tracteur et retirez la cl\u00e9 du contact.\nSerrez le frein \u00e0 main sur le tracteur.",
+        "model_answer": "Fermez les unités de dosage.\nDébrayez la prise de force.\nArrêtez le système de commande électronique.\nCoupez le moteur du tracteur et retirez la clé du contact.\nSerrez le frein à main sur le tracteur.",
         "target_page": 112,
         "context_type": "token",
         "noise_level": 30000,
@@ -1211,7 +1159,7 @@
     {
         "question": "What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?",
         "expected_answer": "Not found in context",
-        "model_answer": "Contr\u00f4lez et r\u00e9gglez le m\u00e9canisme de dosage.",
+        "model_answer": "Contrôlez et régglez le mécanisme de dosage.",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 30000,
@@ -1402,5 +1350,187 @@
         "dataset": "question_datasets/question_answers_unanswerable.json",
         "file_extension": "txt",
         "duration": 0.4
+    },
+    {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "expected_answer": "06.00.00.0257",
+        "model_answer": "From the version 06.00.00.0257 of the GreenSeeker sensor, the system supports the reception of the external signal.",
+        "target_page": 27,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 13.7
+    },
+    {
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "expected_answer": "150mm.",
+        "model_answer": "Unknown",
+        "target_page": 51,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 14.0
+    },
+    {
+        "question": "How many parts does the distribution meter have?",
+        "expected_answer": "Seven.",
+        "model_answer": "Unknown",
+        "target_page": 59,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 14.0
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "model_answer": "Use the kit of fine dosing for low application rates (< 40 kg/min).",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 14.1
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "expected_answer": "1 open hole and 2 thick holes",
+        "model_answer": "Unknown",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.2
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "expected_answer": "At the back of the control box.",
+        "model_answer": "The RS 232 connector is located on the back of the IsoMatch Tellus command box.",
+        "target_page": 72,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 14.1
+    },
+    {
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "expected_answer": "Every year",
+        "model_answer": "Once per year.",
+        "target_page": 78,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 13.9
+    },
+    {
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+        "expected_answer": "10% of the quantity in the middle trough",
+        "model_answer": "10%",
+        "target_page": 91,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 13.6
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "expected_answer": "Measured from the bottom of the vanes.",
+        "model_answer": "From the bottom of the blades, the distance to the ground or the crop is 75 cm.",
+        "target_page": 95,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 13.9
+    },
+    {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "expected_answer": "spreading chart or online spreading chart",
+        "model_answer": "[Indication from the context] La vitesse de rotation des disques d'épandage correspond à la valeur indiquée dans le tableau d'épandage correspondant.",
+        "target_page": 111,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 14.0
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "expected_answer": "Place the spreader on a firm, stable ramp",
+        "model_answer": "Unknown or not found in context. The provided context does not contain instructions on how to handle situations where the power lift cannot be lowered far enough to release catch hooks during machine storage preparation.",
+        "target_page": 120,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 14.0
+    },
+    {
+        "question": "What type of grease is the central gearbox filled with?",
+        "expected_answer": "EP 00/000 gear grease.",
+        "model_answer": "Graisse pour pignons EP00/000",
+        "target_page": 127,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 13.7
+    },
+    {
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+        "expected_answer": "The required distance is 1.0 mm.",
+        "model_answer": "109 mm",
+        "target_page": 138,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 14.3
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "expected_answer": "Yes, using the Sensor input IM Tellus.",
+        "model_answer": "Yes, with the optional IsoMatch Tellus Capteur entry available, you can connect the tractor's speed sensor or radar to the IsoMatch control box.",
+        "target_page": 144,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 14.7
     }
 ]

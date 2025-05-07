@@ -9,24 +9,23 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.19444444444444445,
-        "precision": 0.24615384615384617,
-        "recall": 0.2962962962962963,
+        "accuracy": 0.1864406779661017,
+        "precision": 0.25757575757575757,
+        "recall": 0.265625,
         "specificity": 0.09259259259259259,
-        "f1_score": 0.2689075630252101,
-        "true_positives": 16,
+        "f1_score": 0.26153846153846155,
+        "true_positives": 17,
         "true_negatives": 5,
         "false_positives": 49,
-        "false_negatives": 38,
-        "total_questions": 108,
+        "false_negatives": 47,
+        "total_questions": 118,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.3409090909090909,
-            "unanswerable_questions": 0.09259259259259259,
-            "table_questions": 0.1
+            "general_questions": 0.2962962962962963,
+            "unanswerable_questions": 0.09259259259259259
         }
     },
     "timing": {
-        "duration_qa_phase_seconds": 2667.000000000001
+        "duration_qa_phase_seconds": 3135.2000000000007
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,14 +135,6 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "The maximum operating angle of the coupling shaft when lifted and when lowered is 30 degrees.",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "The parking brake of the tractor should not be engaged when connecting the machine.",
@@ -232,26 +223,10 @@
                     "self_evaluation": "yes"
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "The height of the spreading disc above the troughs for one-sided boundary spreading is 1.0 mm.",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "The exact height of the spreading disc is 75 cm.",
                     "page": 89,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "The maximum fertilizer loss of the quantity in the middle trough is 10% of the total quantity.",
-                    "page": 91,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
                 },
@@ -368,20 +343,124 @@
                     "self_evaluation": "yes"
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-                    "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "The required distance in meters between the discharge bushing and spreading disc is 109 mm.",
-                    "page": 138,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
-                },
-                {
                     "question": "How often should the agitator axle seal be replaced?",
                     "expected_answer": "Every season and after every 100 operational hours.",
                     "model_answer": "The agitator axle seal should be replaced every 10 years.",
                     "page": 140,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "The ISO-Bediensystem supports the reception of the signal of the GreenSeeker sensor through an RS 232-connection. The connection is made on the backside of the Bedienpult. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISOBUS system and the Bedienpult communicate with each other over a serial connection (RS 232). This connection is located on the backside of the Bedieneinheit. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISO-Bediensystem supports the reception of the signal of the GreenSeeker sensor through an RS 232-connection. The connection is made on the backside of the Bedienpult. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISOBUS system and the Bedienpult communicate with each other over a serial connection (RS 232). This connection is located on the backside of the Bedieneinheit. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISO-Bediensystem supports the reception of the signal of the GreenSeeker sensor through an RS 232-connection. The connection is made on the backside of the Bedienpult. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISOBUS system and the Bedienpult communicate with each other over a serial connection (RS 232). This connection is located on the backside of the Bedieneinheit. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISO-Bediensystem supports the reception of the signal of the GreenSeeker sensor through an RS 232-connection. The connection is made on the backside of the Bedienpult. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISOBUS system and the Bedienpult communicate with each other over a serial connection (RS 232). This connection is located on the backside of the Bedieneinheit. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISO-Bediensystem supports the reception of the signal of the GreenSeeker sensor through an RS 232-connection. The connection is made on the backside of the Bedienpult. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISOBUS system and the Bedienpult communicate with each other over a serial connection (RS 232). This connection is located on the backside of the Bedieneinheit. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISO-Bediensystem supports the reception of the signal of the GreenSeeker sensor through an RS 232-connection. The connection is made on the backside of the Bedienpult. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISOBUS system and the Bedienpult communicate with each other over a serial connection (RS 232). This connection is located on the backside of the Bedieneinheit. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISO-Bediensystem supports the reception of the signal of the GreenSeeker sensor through an RS 232-connection. The connection is made on the backside of the Bedienpult. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISOBUS system and the Bedienpult communicate with each other over a serial connection (RS 232). This connection is located on the backside of the Bedieneinheit. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISO-Bediensystem supports the reception of the signal of the GreenSeeker sensor through an RS 232-connection. The connection is made on the backside of the Bedienpult. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISOBUS system and the Bedienpult communicate with each other over a serial connection (RS 232). This connection is located on the backside of the Bedieneinheit. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISO-Bediensystem supports the reception of the signal of the GreenSeeker sensor through an RS 232-connection. The connection is made on the backside of the Bedienpult. The terminal is connected to the Schlepper, which has a GPS for GEOCONTROL functions.\n\nThe ISOBUS system and the Bedienpult communicate with each other over a serial connection (",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "The exact length of overlap between two tubes is 25mm.",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "The distribution meter has 2 parts.",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "Die Frage ist nicht klar und präzise. Die Antwort lautet:\nVerwenden Sie ein Fett, das nicht austrocknet und hart wird.\n[Image]\n122\n===Page 123===\n\nArbeiten vor dem Streuen\nFüllen\n[Image]\nBeim Gebrauch des hydraulischen Grenzstreublechs testen\nBeim Einscheiben-Grenzstreuen mit dem hydraulischen Grenzstreublech fahren Sie in der ersten Streuspur oder einer halben Arbeitsbreite (1/2 X Meter) vom Parzellenrand entfernt.\n[Image]\nEinsatz auf dem Feld\n Beginnen Sie die Parzellengrenze fest, indem Sie so dicht wie möglich linksherum oder rechtsherum entlang der Parzellengrenze fahren und dabei mit dem Grenzstreublech Einscheiben-Grenzstreuen.\n Füllen Sie das Vorgewende auf, indem Sie mit halber Arbeitsbreite ohne Grenzstreublech mit geschlossener rechter/linker Dosierung einen zusätzlichen Arbeitsgang fahren.\nGEOCONTROL bestimmt automatisch die korrekten Start- und Stoppzeitpunkte bei der Annäherung an das und beim Herausfahren aus dem gestreuten Vorgewende.\nVorgewende streuen ohne GEOCONTROL:\n Stoppen Sie das Streuen, indem Sie die Dosiereinheiten der Maschine schließen, wenn Sie noch eine halbe Arbeitsbreite vom Parzellenende entfernt sind.\n Lassen Sie die Streuscheiben drehen, schalten Sie die Zapfwelle nicht aus.\n Öffnen Sie nach dem Drehen bei einem Abstand zum Parzellenende von einer Arbeitsbreite die Dosiereinheiten wieder.\n Streuen Sie bis zum Ende der Parzellenränder mit der ExactLine.\n Siehe Kapitel »Grenzstreuen« ab Seite 106. Beim Grenzaufstreuen (Situation B)\n[Image]\n123\n===Page 124===\n\nArbeiten vor dem Streuen\nFahrmuster\nEinsatz auf dem Feld\nBeim Grenzaufstreuen mit der ExactLine (Zubehör) fahren Sie auf einer halben Arbeitsbreite (1/2 X Meter) (= erste Spritzgasse) ab Parzellenrand. Der Strom der Düngemittelkörner, Samen oder sonstiger Körner wird mithilfe der ExactLine geregelt.\nDie Arbeitsbreite am Parzellenrand stellen Sie ein, indem Sie die Position der ExactLine ändern.\nDer maximal zulässige Verlust über dem Feldrand ist in der Umweltnorm festgelegt. Um der Norm zu entsprechen, darf die Menge Düngemittel, die über den Feldrand gestreut wird, maximal 10 % der Menge betragen, die in der Mitte hinter dem Streuer verteilt wird (= 100 %). Testen Sie die Funktion der ExactLine, daher immer den Test ausführen wie er beschrieben ist in\n Absatz »Streubild ExactLine testen« auf Seite 89.\nIn den (Online-)Streutabellen ist die richtige Einstellung der ExactLine und die dazugehörigen Drehzahlen der Zapfwelle und Streuscheiben angegeben.\nWenn die Einstellung der ExactLine nicht in der entsprechenden Streutabelle angegeben ist, können Sie diese:\n· mit dem Online-Streutabellenservice auf der Website oder über die kostenlose App für Mobiltelefone mit einem iOs und/oder Android Betriebssystem finden.\n siehe Absatz »Online-Streutabellenservice« auf Seite 61.\nÜberprüfen Sie daher stets die Einstellung der ExactLine, indem Sie den Test ausführen, wie beschrieben in\n Absatz »Streubild ExactLine testen« auf Seite 89.\nDen Typ Kunstdünger haben Sie bereits bei der Einstellung des Streuers bestimmt, wie beschrieben ist in\n Absatz »Typ und Form des Korns feststellen« auf Seite 57.\nIn der Tabelle können Sie aus drei Stellungen wählen:\n· YIELD.\n· ECO,\nIn der Ertragsstellung (YIELD) ist der Verlust über den Feldrand hinaus größer als die Umweltnorm gestattet. Verwenden Sie diesen Stand daher nie entlang Gewässern. Die Auffüllung zum Rand hin ist bei diese Stand gut.\nIn der Umweltstellung (ECO) ist der Verlust über den Feldrand hinaus gleich oder kleiner als dies die Umweltnorm",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "The symbol on top of the fine application handle indicates that the Fine application kit is enabled.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "The RS-232 connector is located on the back of the Bedienpult.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "The correct answer is: \nCheck the left and right spreading disc if they spread the same volumes of fertiliser to ensure good distribution.",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "The maximum fertilizer loss of the quantity in the middle trench is 10% of the total.",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "The exact height of the machine from the ground or the crop is 1.0 mm.\n[Image]\n152\n===Page 153===\n\nArbeiten vor dem Streuen\nVermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln\nBeim Füllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstdünger und anderen Mitteln, die Sie ausstreuen möchten. Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie diese zusätzliche Hinweise. Der Kontakt kann Körperverletzungen verursachen.\nAchtung Quetschgefahr\nBei der Überprüfung und Justierung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher während der Überprüfung und Einstellung, indem Sie:\n· das elektronische Steuersystem ausschalten,\n· den Schlepper ausschalten und den Zündschlüssel vom Zündschloss abziehen,\n· die Feststellbremse des Schleppers anziehen,\n· warten, bis alle Teile der Maschine still stehen, bevor Sie mit der Wartung beginnen.\n· schützende Kleidung, wie z. B. Sicherheitshandschuhe und Sicherheitsschuhe tragen,\n· die beschriebenen Handlungen alleine und vorsichtig ausführen.\nEinklemmen kann Körperverletzungen verursachen.\nDer Abstand zwischen dem Auslaufrohr und der Streuscheibe muss 1,0 mm betragen.\nBei einem großen Abstand strömt der Kunstdünger nicht durch die Öffnung im Auslaufrohr auf die Streuscheibe, sondern auf einen willkürlichen Punkt unter dem Auslaufrohr durch. Die Folge ist ein gestörtes Streubild.\nBei einem zu kleinem Abstand kann ein voller Behälter teilweise auf der Streuscheibe aufliegen, wodurch die Maschine ernsthaft beschädigt werden kann.\n Kuppeln Sie die leere Maschine an und heben diese auf Arbeitshöhe (75 cm).\n Schalten Sie den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss und betätigen Sie die Feststellbremse des Schleppers.\n Platzieren Sie feste, stabile Stützen unter die Enden der Hubarme.\n Lassen Sie die Hubarme auf die Stützen ab. Die Maschine kann sich jetzt nicht mehr unbeabsichtigt absenken.\n Schalten Sie den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss und betätigen Sie die Feststellbremse des Schleppers.\n Messen Sie den Abstand zwischen der Streuscheibe und dem Auslaufrohr.",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "The exact information to answer your question about setting the correct PTO shaft and spreading disc RPM is not explicitly stated in the text. However, based on the context of the conversation, I can provide a general guideline for you.\n\nTo set the correct PTO shaft and spreading disc RPM, follow these steps:\n\n1. Check the manual or technical documentation of your machine to see if it has any information about setting the PTO shaft.\n2. Look for the \"PTO\" or \"PTO\" label on the machine, which indicates the position of the PTO shaft.\n3. If you find the PTO shaft, check its position and make sure it is in line with the manufacturer's specifications.\n4. Check if the PTO shaft is marked as a redundant part that can be removed or replaced if needed.\n5. Set the PTO shaft to the correct position by following the manufacturer's instructions for setting the PTO shaft.\n\nAs for the spreading disc RPM, you will need to:\n\n1. Check your machine's manual or technical documentation to see if it has any information about setting the spreading disc RPM.\n2. Look for the \"SPD\" or \"SDP\" label on the machine, which indicates the position of the spreading disc.\n3. If you find the spreading disc, check its position and make sure it is in line with the manufacturer's specifications.\n4. Check if the spreading disc is marked as a redundant part that can be removed or replaced if needed.\n5. Set the spreading disc to the correct position by following the manufacturer's instructions for setting the spreading disc.\n\nNote: The PTO shaft and spreading disc are usually located on the back of the machine, but may vary depending on the specific model and make of your machine.",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "If you are unable to lower the power lift far enough to release the catch hooks when preparing the machine for storage, you should:\n1. Check if the power lift is set to a position where the catch hooks can be released.\n2. Make sure that the power lift is not stuck in the up position and cannot be moved down.\n3. If the power lift is stuck, try to move it back to its original position by hand or with a tool.\n4. Check if the power lift is functioning properly and can be moved freely.\n5. If the power lift is still stuck, check for any blockages in the mechanism that may be preventing it from moving.\n6. If you are unable to release the catch hooks, try to use a tool to help you move them out of the way.\n7. Check if the machine has been properly secured and locked before storage.\n8. Make sure the power lift is not stuck in the up position due to any mechanical issues or blockages.\n9. If the power lift is still stuck, check for any mechanical issues that may be preventing it from moving.\n10. If you are unable to release the catch hooks, try to use a tool to help you move them out of the way.\n\nNote: These steps should be done in this order and with caution to avoid any potential damage to the machine or injury to yourself.",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "The central gearbox is filled with gear oil.",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "The required distance is 109mm.",
+                    "page": 138,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "The exact answer is: Yes, you can connect the tractor's speed sensor or radar to the IsoMatch control box.",
+                    "page": 144,
+                    "dataset": "general_questions",
+                    "self_evaluation": "yes"
                 }
             ]
         },

@@ -28,7 +28,7 @@
     {
         "question": "What system continuously measures fertilizer quantity being spread?",
         "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
-        "model_answer": "I can be connected to the tractor with the control of the machine\n 1. Check the cable on the coupling.\n\ufe49 Connect the couplings\n   \u2022 Connect the cable in the spreader.\n    \u2022 Connect the connection\b\n 1. Connect the cable to the coupling.\n  \u2022 Connect the coupler\n \uf020\n\nThe correct answer\b\n 1. Connect the cable with the control of the tractor.\n  \u2022 Connect the cable on the coupling.\n\n**ANSWER ANSWER**\n\nTo determine the control system\n 1. Connect the coupler\n  \u2022 Connect the cable in the coupling.\n  \u2022 Connect the cable to the coupling.\n  \u2022 Connect the coupler",
+        "model_answer": "I can be connected to the tractor with the control of the machine\n 1. Check the cable on the coupling.\n﹉ Connect the couplings\n   • Connect the cable in the spreader.\n    • Connect the connection\b\n 1. Connect the cable to the coupling.\n  • Connect the coupler\n \n\nThe correct answer\b\n 1. Connect the cable with the control of the tractor.\n  • Connect the cable on the coupling.\n\n**ANSWER ANSWER**\n\nTo determine the control system\n 1. Connect the coupler\n  • Connect the cable in the coupling.\n  • Connect the cable to the coupling.\n  • Connect the coupler",
         "target_page": 30,
         "context_type": "token",
         "noise_level": 20000,
@@ -119,7 +119,7 @@
     {
         "question": "What torque (in NM) should be applied to the vane lock nuts?",
         "expected_answer": "50NM",
-        "model_answer": "## Step 1\nTo determine the spreader\n[Image]\n[Image]\nThe correct answer\n**. The control system is to be done with the selected application rate of the spreading chart in the ISO application.\n\ufe49 the flowrate by means of a manual calibration test, as described in the following paragraph.\n\n## Step 2\nTo determine the dosing setting\n[Image]\n[Image]\nThe correct answer\b\n**. The control system is to be done with the selected application rate of the spreading chart in the ISO application.\n\ufe49 the flowrate by means of a manual calibration test, as described in the following paragraph.\n\n## Step 3\nTo determine the dosing setting\n[Image]\n[Image]\nThe correct answer\b\n**. The control system is to be done with the selected application rate of the spreading chart in the ISO application.\n\ufe49 the flowrate by means of a manual calibration test, as described in the following paragraph.\n\n## Step 4\nTo determine the dosing setting\n[Image]\n[Image]\nThe correct answer\b\n**. The control system is to be done with the selected application rate of the spreading chart in the ISO application.\n\ufe49 the flowrate by means of a manual",
+        "model_answer": "## Step 1\nTo determine the spreader\n[Image]\n[Image]\nThe correct answer\n**. The control system is to be done with the selected application rate of the spreading chart in the ISO application.\n﹉ the flowrate by means of a manual calibration test, as described in the following paragraph.\n\n## Step 2\nTo determine the dosing setting\n[Image]\n[Image]\nThe correct answer\b\n**. The control system is to be done with the selected application rate of the spreading chart in the ISO application.\n﹉ the flowrate by means of a manual calibration test, as described in the following paragraph.\n\n## Step 3\nTo determine the dosing setting\n[Image]\n[Image]\nThe correct answer\b\n**. The control system is to be done with the selected application rate of the spreading chart in the ISO application.\n﹉ the flowrate by means of a manual calibration test, as described in the following paragraph.\n\n## Step 4\nTo determine the dosing setting\n[Image]\n[Image]\nThe correct answer\b\n**. The control system is to be done with the selected application rate of the spreading chart in the ISO application.\n﹉ the flowrate by means of a manual",
         "target_page": 43,
         "context_type": "token",
         "noise_level": 20000,
@@ -132,7 +132,7 @@
     {
         "question": "What determines the machine's working width?",
         "expected_answer": "Spreading disc RPM",
-        "model_answer": "## Step 1: To determine the correct answer\b\nTo determine the spreader in the ISO chart on this page\n**. The control system is to be used for the flow rate of 3 kg/min.\n**. This is a **flowrate** with the dosing setting, as described in the spreading pattern.\n**. See also** <\u200b\n**. Setting the spreader** on the application**\n**. To set** for the flow rate of 1/10 km/h.\n**. The control system** has to be used for the **dose** in the flow rate of 25 kg/min.\n**. This is a **flowrate** with the dosing setting, as described in the spreading pattern.\n**. See also** <\u200b\n**. Setting the spreader** on the application**\n**. To determine the required flow rate of 12 km/h.\n\n## Step 1: Determine the correct answer    **dose** in the flow rate of 10 kg/min.\n**. This is a **flowrate** with the dosing setting, as described in the spreading pattern.\n**. See also** <\u200b\n**. Setting the spreader** on the application**\n**. To determine the required flow rate",
+        "model_answer": "## Step 1: To determine the correct answer\b\nTo determine the spreader in the ISO chart on this page\n**. The control system is to be used for the flow rate of 3 kg/min.\n**. This is a **flowrate** with the dosing setting, as described in the spreading pattern.\n**. See also** <​\n**. Setting the spreader** on the application**\n**. To set** for the flow rate of 1/10 km/h.\n**. The control system** has to be used for the **dose** in the flow rate of 25 kg/min.\n**. This is a **flowrate** with the dosing setting, as described in the spreading pattern.\n**. See also** <​\n**. Setting the spreader** on the application**\n**. To determine the required flow rate of 12 km/h.\n\n## Step 1: Determine the correct answer    **dose** in the flow rate of 10 kg/min.\n**. This is a **flowrate** with the dosing setting, as described in the spreading pattern.\n**. See also** <​\n**. Setting the spreader** on the application**\n**. To determine the required flow rate",
         "target_page": 46,
         "context_type": "token",
         "noise_level": 20000,
@@ -158,7 +158,7 @@
     {
         "question": "What specific precaution should be taken before working between the tractor and machine to check the coupling shaft length?",
         "expected_answer": "Place the machine on a supporting beam.",
-        "model_answer": "## Step 75===\n\nTo do this\nControl system\n[Image]\nThe control system\n\u200b\n**Spreading pattern\n[Image]\n**ISO\n**Spreading**\n**Spreading**",
+        "model_answer": "## Step 75===\n\nTo do this\nControl system\n[Image]\nThe control system\n​\n**Spreading pattern\n[Image]\n**ISO\n**Spreading**\n**Spreading**",
         "target_page": 50,
         "context_type": "token",
         "noise_level": 20000,
@@ -167,19 +167,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 3.2
-    },
-    {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-        "model_answer": "## Step 76===\n\nTo be done before spreading\nControl system\n[Image]\nThe control system\n\u200b\n1. To do this\n   \u2022 The control system\n    \u2022 Do not\n   \u2022 Filling the hopper\n   \u2022 With a hopper\n   \u2022 When it is\n\u2022 Keep\n   \u2022 In order to\n  \u2022 Is\n   \u2022 As\n   \u2022 It\n   \u2022 as\n   \u2022 and\n   \u2022 with\n   \u2022 The control system\n    \u2022 Do not\n   \u2022 Filling the hopper\n   \u2022 With\n   \u2022 in\n   \u2022 When\n   \u2022 is\n   \u2022 As\n   \u2022 and\n   \u2022 to\n   \u2022 Is\n   \u2022 as\n   \u2022 and\n   \u2022 with\n   \u2022 the\n   \u2022 In\n   \u2022 as\n   \u2022 and\n   \u2022 with\n   \u2022 The control system\n    \u2022 Do not\n   \u2022 Filling the hopper\n   \u2022 With\n   \u2022 in\n   \u2022 As\n   \u2022 and\n   \u2022 to\n   \u2022 is\n   \u2022 and\n   \u2022 with\n   \u2022 the\n   \u2022 as\n   \u2022 and\n   \u2022 it\n   \u2022 and\n   \u2022 with\n   \u2022 The",
-        "target_page": 51,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "llama3.2_1B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 4.2
     },
     {
         "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
@@ -197,7 +184,7 @@
     {
         "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
         "expected_answer": "30 degrees",
-        "model_answer": "I can be done before spreading\nTo perform the spreader on the control system to disengage in the spread.\n\u2039\n 1.5 kg/min\n\u200b\n   2.0 m\n    3.0 km/h\n   4.0\n   5.",
+        "model_answer": "I can be done before spreading\nTo perform the spreader on the control system to disengage in the spread.\n‹\n 1.5 kg/min\n​\n   2.0 m\n    3.0 km/h\n   4.0\n   5.",
         "target_page": 54,
         "context_type": "token",
         "noise_level": 20000,
@@ -210,7 +197,7 @@
     {
         "question": "What must be ensured with decoupling ropes during power lift connection?",
         "expected_answer": "Decoupling ropes must never be tense.",
-        "model_answer": "## Step 80===\n\nTo do this\n[Image]\nTo perform the spreader on the tractor.\n\ufe5d To ensure that you can be done with the spreading pattern.\n\uf6dc The control system to disengage in the tractor, which is not required by the tractor. It is also necessary for the spreader.\n\uf6dc 1/2 km/h as the troughs.\n \uf034 Place the troughs on the right of the tractor tracks.\n\ufe5d Place the couplings on the ground.\n\uf6dc 4 m/s to the drive and the position of the spreading disc.\n\uf6dc 3.5 mm to the troughs.\n\uf034 The control system to ensure that it is done with the spreader.\n\nThe correct answer\b\nTo do this\n[Image]\nTo perform the spreader on the tractor.\n \ufe5d To ensure that you can be done with the spreading pattern.\n\uf6dc 1/2 km/h as the troughs.\n\uf034 Place the couplings on the ground.\n\uf6dc 4 mm to the troughs.\n\uf034 The control system to disengage\n\uf6dc 3.5 mm to the troughs.\n\uf034 To ensure that",
+        "model_answer": "## Step 80===\n\nTo do this\n[Image]\nTo perform the spreader on the tractor.\n﹝ To ensure that you can be done with the spreading pattern.\n The control system to disengage in the tractor, which is not required by the tractor. It is also necessary for the spreader.\n 1/2 km/h as the troughs.\n  Place the troughs on the right of the tractor tracks.\n﹝ Place the couplings on the ground.\n 4 m/s to the drive and the position of the spreading disc.\n 3.5 mm to the troughs.\n The control system to ensure that it is done with the spreader.\n\nThe correct answer\b\nTo do this\n[Image]\nTo perform the spreader on the tractor.\n ﹝ To ensure that you can be done with the spreading pattern.\n 1/2 km/h as the troughs.\n Place the couplings on the ground.\n 4 mm to the troughs.\n The control system to disengage\n 3.5 mm to the troughs.\n To ensure that",
         "target_page": 56,
         "context_type": "token",
         "noise_level": 20000,
@@ -223,7 +210,7 @@
     {
         "question": "Below which application rate in kg/min is it advised to use the fine application?",
         "expected_answer": "Below 40 kg/min.",
-        "model_answer": "## Step 91===\n\nTo be done before spreading\nTo be done before spreading\n\ufe5d To perform the spreader in the direction of the tractor.\n\ufe5f The control system to ensure that you are not the same as setting the PTO shaft rpm or driving speed as these is less than 25% of the flow rate and the desired distance. It is also less than 1000 mm, which is the correct as the spreader in the troughs for a good comparison.\n\ufe5f The tractor to be adjusted as the direction\n\u2039\n\nTo be done before spreading\n\ufe5d To perform the spreader in the direction of the tractor.\n \ufe5d Do not use the PTO shaft rpm or driving speed as these is less than 25% of the flow rate and the desired distance. It is also less than 1000 mm, which is the correct as the spreader in the troughs for a good comparison.\n\n## Step 92===\n\nTo be done before spreading\nTo perform the spreader in the direction of the tractor.\n\ufe5d To ensure that you are not the same as setting the PTO shaft rpm or driving speed as these is less than 25% of the flow rate and desired distance.",
+        "model_answer": "## Step 91===\n\nTo be done before spreading\nTo be done before spreading\n﹝ To perform the spreader in the direction of the tractor.\n﹟ The control system to ensure that you are not the same as setting the PTO shaft rpm or driving speed as these is less than 25% of the flow rate and the desired distance. It is also less than 1000 mm, which is the correct as the spreader in the troughs for a good comparison.\n﹟ The tractor to be adjusted as the direction\n‹\n\nTo be done before spreading\n﹝ To perform the spreader in the direction of the tractor.\n ﹝ Do not use the PTO shaft rpm or driving speed as these is less than 25% of the flow rate and the desired distance. It is also less than 1000 mm, which is the correct as the spreader in the troughs for a good comparison.\n\n## Step 92===\n\nTo be done before spreading\nTo perform the spreader in the direction of the tractor.\n﹝ To ensure that you are not the same as setting the PTO shaft rpm or driving speed as these is less than 25% of the flow rate and desired distance.",
         "target_page": 66,
         "context_type": "token",
         "noise_level": 20000,
@@ -236,7 +223,7 @@
     {
         "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
         "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-        "model_answer": "## Step 93===\n\nTo be done before spreading\nThe correct answer\b\n[Image]\nTo be done before spreading\n\ufe49 Place the spreader in the land next to the fictive ditch.\n\uf034 The direction of the tractor is not less than 25% of the troughs that are more than 10 cm. \uf034 Adjusting the PTO shaft rpm as the driving speed and the flow rate, which is greater than 3.\n\ufe49 Perform the spreader in the road to the traction on the drive\b\n\u2039\nTo be done before spreading\n\ufe49 Place the dosing unit of the tractor in the land next to the fictive ditch.\n \uf034 The direction of the tractor and the flow rate as less than 25% of the troughs that are more than 4.0 mm, which is greater than 2.0 m/s.\n\ufe49 Adjust the PTO shaft rpm as the driving speed and the flow rate\n\ufe49 Set the spreader in the road to the traction on the tractor.\n \uf034 The direction of the tractor is less than 100% of the troughs that are more than 10 cm.",
+        "model_answer": "## Step 93===\n\nTo be done before spreading\nThe correct answer\b\n[Image]\nTo be done before spreading\n﹉ Place the spreader in the land next to the fictive ditch.\n The direction of the tractor is not less than 25% of the troughs that are more than 10 cm.  Adjusting the PTO shaft rpm as the driving speed and the flow rate, which is greater than 3.\n﹉ Perform the spreader in the road to the traction on the drive\b\n‹\nTo be done before spreading\n﹉ Place the dosing unit of the tractor in the land next to the fictive ditch.\n  The direction of the tractor and the flow rate as less than 25% of the troughs that are more than 4.0 mm, which is greater than 2.0 m/s.\n﹉ Adjust the PTO shaft rpm as the driving speed and the flow rate\n﹉ Set the spreader in the road to the traction on the tractor.\n  The direction of the tractor is less than 100% of the troughs that are more than 10 cm.",
         "target_page": 68,
         "context_type": "token",
         "noise_level": 20000,
@@ -249,7 +236,7 @@
     {
         "question": "What type of serial connection does the IsoMatch control box use for communication?",
         "expected_answer": "RS 232",
-        "model_answer": "## Step 96===\n\nTo be done before spreading\nTo ensure that you do not have to perform the spreader.\n\ufe5d\nThe correct answer\u200b\n1. To be in the direction of the tractor is the same as the distance from each other, and the PTO shaft.\n\u2039\n   \u2022 Use the power drive on the control system,\n\u2022  \u2022 Do not use the ignition switch with the traction to the machine.\n\ufe5d\n    \u2022 Switch the tractor off, the speed of the engine in the road.",
+        "model_answer": "## Step 96===\n\nTo be done before spreading\nTo ensure that you do not have to perform the spreader.\n﹝\nThe correct answer​\n1. To be in the direction of the tractor is the same as the distance from each other, and the PTO shaft.\n‹\n   • Use the power drive on the control system,\n•  • Do not use the ignition switch with the traction to the machine.\n﹝\n    • Switch the tractor off, the speed of the engine in the road.",
         "target_page": 72,
         "context_type": "token",
         "noise_level": 20000,
@@ -262,7 +249,7 @@
     {
         "question": "When loading manually, what's the maximum distance in mm between the hopper rim and the ground before a platform is mandatory?",
         "expected_answer": "1250 mm",
-        "model_answer": "## Step 98===\n\nTo be done before spreading\n[Image\nThe correct answer\b\nTo be done before spreading\n\ufe5f\n1. The spreader is to be set\n    a tractor in the direction of the track.\n   \u2022 Use the control system that is not\n    a tractor in the direction of the drive and\n 1. To ensure that you do it as the correct way?\n    the PTO shaft is to the ground or the crop\n    a tractor in the direction of the spreader\n   \u2022 The spreader has been adjusted for the loaders.\n    a tractor in the direction of the track.\n \uf034\n 1. To be done before spreading\n    a tractor in the direction of the track\n    is the correct way?\n    to the ground or the crop\n 1. When you do it as the spreader\n    a tractor in the direction of the track\n   \u2022 The PTO shaftshaft is to the loaders.\n    a tractor in the direction of the track\u200b",
+        "model_answer": "## Step 98===\n\nTo be done before spreading\n[Image\nThe correct answer\b\nTo be done before spreading\n﹟\n1. The spreader is to be set\n    a tractor in the direction of the track.\n   • Use the control system that is not\n    a tractor in the direction of the drive and\n 1. To ensure that you do it as the correct way?\n    the PTO shaft is to the ground or the crop\n    a tractor in the direction of the spreader\n   • The spreader has been adjusted for the loaders.\n    a tractor in the direction of the track.\n \n 1. To be done before spreading\n    a tractor in the direction of the track\n    is the correct way?\n    to the ground or the crop\n 1. When you do it as the spreader\n    a tractor in the direction of the track\n   • The PTO shaftshaft is to the loaders.\n    a tractor in the direction of the track​",
         "target_page": 74,
         "context_type": "token",
         "noise_level": 20000,
@@ -275,7 +262,7 @@
     {
         "question": "What is the maximum distance in mm between spreader and loading platform?",
         "expected_answer": "200 mm maximum distance between them.",
-        "model_answer": "## Step 98===\n\nTo be done before spreading\n[Image\nThe correct answer\b\nTo be done before spreading\n\ufe5f\n1. Check the spreader in the direction of the tractor.\n \uf034\n   \u2022 The PTO shaft is not to the ground level of the tractor, as it has been set by the control system,\n\u2022 Do you have a good quality that the spreader works properly?\n\u2022 Is the correct flow rate of the spreader and the desired speed in the direction of the machine.\n\ufe5f\n   \u2022 The PTO shaft is not to the ground level of the tractor, as it has been set by the control system,\n\u2022 Do you have a good quality that the spreader does not allow?\n    \u2022 Is the correct flow rate of the spreader and the desired speed in the direction of the machine.\n\ufe5f\n   \u2022 The PTO shaft is to the ground level of the tractor, as it has been set by the control system,\n\u2022 Do you have a good quality that the spreader does not allow?\n    \u2022 Is the correct flow rate of the spreader and the desired speed in the direction of the machine.\n\ufe5f\n   \u2022 The PTO shaft is to the ground level",
+        "model_answer": "## Step 98===\n\nTo be done before spreading\n[Image\nThe correct answer\b\nTo be done before spreading\n﹟\n1. Check the spreader in the direction of the tractor.\n \n   • The PTO shaft is not to the ground level of the tractor, as it has been set by the control system,\n• Do you have a good quality that the spreader works properly?\n• Is the correct flow rate of the spreader and the desired speed in the direction of the machine.\n﹟\n   • The PTO shaft is not to the ground level of the tractor, as it has been set by the control system,\n• Do you have a good quality that the spreader does not allow?\n    • Is the correct flow rate of the spreader and the desired speed in the direction of the machine.\n﹟\n   • The PTO shaft is to the ground level of the tractor, as it has been set by the control system,\n• Do you have a good quality that the spreader does not allow?\n    • Is the correct flow rate of the spreader and the desired speed in the direction of the machine.\n﹟\n   • The PTO shaft is to the ground level",
         "target_page": 74,
         "context_type": "token",
         "noise_level": 20000,
@@ -288,7 +275,7 @@
     {
         "question": "What does a tray test check on a fertilizer spreader?",
         "expected_answer": "Fertilizer distribution pattern of the spreader.",
-        "model_answer": "## Step 101===\n\nTo be done before spreading\nIndicate the control system with the tractor in the headland.\n\ufe5f\nUse the spreader on the headland\n\u2039\nTo begin with the tramline, which is not to the headland as follows the spreader\n\u200b\nThe correct answer\b\nSpreading pattern of the headland and the spread\nIndicate that the spreader\n\u200b\nTo be done before spreading\n\u200b\nUse in the tractor\n\u200b\nIndicate the control system with the tractor\n\u2039\nTo begin with the tramline, which is not to the headland as follows the spreader\n\u200b\nThe correct answer\b\nSpreading pattern of the headland and the spread\nIndicate that the spreader\n\u200b\nTo be done before spreading\n\u200b\nUse in the tractor\n\u200b\nIndicate the control system with the tractor\n\u2039\nTo begin with the tramline, which is not to the headland as follows the spreader\n\u200b\nThe correct answer\b\nSpreading pattern of the headland and the spread\nIndicate that the spreader\n\u200b\nTo be done before spreading\n\u200b\nUse in the tractor\n\u200b\nIndicate the control system",
+        "model_answer": "## Step 101===\n\nTo be done before spreading\nIndicate the control system with the tractor in the headland.\n﹟\nUse the spreader on the headland\n‹\nTo begin with the tramline, which is not to the headland as follows the spreader\n​\nThe correct answer\b\nSpreading pattern of the headland and the spread\nIndicate that the spreader\n​\nTo be done before spreading\n​\nUse in the tractor\n​\nIndicate the control system with the tractor\n‹\nTo begin with the tramline, which is not to the headland as follows the spreader\n​\nThe correct answer\b\nSpreading pattern of the headland and the spread\nIndicate that the spreader\n​\nTo be done before spreading\n​\nUse in the tractor\n​\nIndicate the control system with the tractor\n‹\nTo begin with the tramline, which is not to the headland as follows the spreader\n​\nThe correct answer\b\nSpreading pattern of the headland and the spread\nIndicate that the spreader\n​\nTo be done before spreading\n​\nUse in the tractor\n​\nIndicate the control system",
         "target_page": 76,
         "context_type": "token",
         "noise_level": 20000,
@@ -314,7 +301,7 @@
     {
         "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
         "expected_answer": "3 m/s)",
-        "model_answer": "## Step 102===\n\nTo be done before\nSpreading on the headland with the control in the spreader.\n\u2039\nIndicate the direction of the spreader\n<<>>\r\n\r\nThe correct answer\b\nSpreading on the headland\n\u200b\nIndication\nINDICATION\nIndication\n\u200b\nSpinding\nIndication\n\u200b\nTo be done before spreading\n\u200b\nSpreading\nIndication\n\u200b\n\u200b\nSpreading\nIndication\n\u200b\nSpinding\nIndication",
+        "model_answer": "## Step 102===\n\nTo be done before\nSpreading on the headland with the control in the spreader.\n‹\nIndicate the direction of the spreader\n<<>>\r\n\r\nThe correct answer\b\nSpreading on the headland\n​\nIndication\nINDICATION\nIndication\n​\nSpinding\nIndication\n​\nTo be done before spreading\n​\nSpreading\nIndication\n​\n​\nSpreading\nIndication\n​\nSpinding\nIndication",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 20000,
@@ -325,22 +312,9 @@
         "duration": 0.6
     },
     {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "expected_answer": "75 cm above the troughs.",
-        "model_answer": "## Step\nTo be done before doing the spreader on the edge of the tractor.\n### 1. to the first side of the border\n<|> 2 metres in the middle of the tractor about 2 meters\n###  Stop the PTO\n###  Remove the border\n###  \u2022 Use the dosing\n###  \u2022   <a\n###  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022",
-        "target_page": 84,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "llama3.2_1B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 4.2
-    },
-    {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
         "expected_answer": "75 cm",
-        "model_answer": "I can\u2019t\n 1. Stop the tractor off the drive and disconnection\b\n 1. Stop the tractor on the transport of the tractor.\n 1. Stop the dosing in the tractor. \u2022 Allow the spreader to stoppage is not allowed\n 1. Stop the tractor as a load on the hopper, allowing it to allow\n 1. Stop the tractor off the hopper and disallowing\n 1. Stop the tractor on the transport of the tractor.\n 1. Stop the dosing in the tractor.",
+        "model_answer": "I can’t\n 1. Stop the tractor off the drive and disconnection\b\n 1. Stop the tractor on the transport of the tractor.\n 1. Stop the dosing in the tractor. • Allow the spreader to stoppage is not allowed\n 1. Stop the tractor as a load on the hopper, allowing it to allow\n 1. Stop the tractor off the hopper and disallowing\n 1. Stop the tractor on the transport of the tractor.\n 1. Stop the dosing in the tractor.",
         "target_page": 89,
         "context_type": "token",
         "noise_level": 20000,
@@ -351,22 +325,9 @@
         "duration": 3.6
     },
     {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-        "expected_answer": "10% of the quantity in the middle trough",
-        "model_answer": "I can be done with a low pressure on the machine.\n 1. Keep\n  \u2022 Clean the hopper in the drive and keep as needed for the spreader to allow it is not allowed in the drain\b\n  \u2022 Allowable to prevent it from entering the machine.\n  \u2022 Allowable and allow in the machine.\n  \u2022 Allowable to enable the lubricate on the machine, allowing.",
-        "target_page": 91,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "llama3.2_1B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 3.4
-    },
-    {
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
         "expected_answer": "Inertia causes continued rotation.",
-        "model_answer": "I can be adjusted to allow\n 1. Ensure that is allowed in the machine.\n\ufe45 on the hydraulic system,\n\u00b7 less than a pump and the brake on the piston grease.\n \uf034 Allow the pressure from the hydraulic hose.\n\uf030 Stop the power off the hydraulic hoses.\n123\nIndicate the machine\n123\n[Image\nIndication\n1231\nTo be able to allow it is allowed in the machine.\n  \u2022 Ensure that you can prevent damage and maintain.",
+        "model_answer": "I can be adjusted to allow\n 1. Ensure that is allowed in the machine.\n﹅ on the hydraulic system,\n· less than a pump and the brake on the piston grease.\n  Allow the pressure from the hydraulic hose.\n Stop the power off the hydraulic hoses.\n123\nIndicate the machine\n123\n[Image\nIndication\n1231\nTo be able to allow it is allowed in the machine.\n  • Ensure that you can prevent damage and maintain.",
         "target_page": 94,
         "context_type": "token",
         "noise_level": 20000,
@@ -379,7 +340,7 @@
     {
         "question": "According to the last setting check, what is the recommended height in centimeter of the spreader over the ground or crops?",
         "expected_answer": "75 cm",
-        "model_answer": "123. 1. Ensure that are not allowed to allow\n  \u00a0. on the machine with no load of the tractor.\n\u2039. Allow grease and parts in the pump and gear\n\uf9f5 No. 0.1. 1.2 litres of fuel is not allowed for fuelled by fueling as fueling with fueling, fueling and fueling and fueling and fueling and fueling and fueling and fuel.\n\u2039. on fuel the fuel system to fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling",
+        "model_answer": "123. 1. Ensure that are not allowed to allow\n   . on the machine with no load of the tractor.\n‹. Allow grease and parts in the pump and gear\n淋 No. 0.1. 1.2 litres of fuel is not allowed for fuelled by fueling as fueling with fueling, fueling and fueling and fueling and fueling and fueling and fueling and fuel.\n‹. on fuel the fuel system to fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling and fueling",
         "target_page": 96,
         "context_type": "token",
         "noise_level": 20000,
@@ -392,7 +353,7 @@
     {
         "question": "What happens when hopper content falls below 100 kg?",
         "expected_answer": "Automatic calibration switches off.",
-        "model_answer": "## Step-bye\n**Answer**\nTo determine the spreader\n**ANSWER ANSWER**\n\nThe correct answer 1/2. Lubricating\n**ANSWER**\n\nI can be applied to **ACTOR**\n\n\n*   * \n*   \u2022 Lubricate with **ACTOR**",
+        "model_answer": "## Step-bye\n**Answer**\nTo determine the spreader\n**ANSWER ANSWER**\n\nThe correct answer 1/2. Lubricating\n**ANSWER**\n\nI can be applied to **ACTOR**\n\n\n*   * \n*   • Lubricate with **ACTOR**",
         "target_page": 101,
         "context_type": "token",
         "noise_level": 20000,
@@ -418,7 +379,7 @@
     {
         "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
         "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-        "model_answer": "I can\u2019t\n 1. \u2022 Check the dosing mechanism.\n\u2022 Set the disconnection on the spreader to actuator\n\u2039\n**ANSWER ANSWER**\n \nThe correct answer\n**ANSWER**\n\n## Step-by-step guide for the tractor\n**ANSWER**\n\n### Step 1: **Check the dosing mechanism\n**ANSWER**\n\n## Step 2: **Check the discharging of the spreader to actuator\n\n## Step 3: **Check the discharge point**\n**ANSWER**\n\n## Step 4: **Check the driving shaft\n**ANSWER**\n\n## Step 5: **Check the drive\b\n\n### Step 6: **Check the dosing mechanism\n**ANSWER**\n\n## Step 7: **Check the discharging of the spreader to actuator",
+        "model_answer": "I can’t\n 1. • Check the dosing mechanism.\n• Set the disconnection on the spreader to actuator\n‹\n**ANSWER ANSWER**\n \nThe correct answer\n**ANSWER**\n\n## Step-by-step guide for the tractor\n**ANSWER**\n\n### Step 1: **Check the dosing mechanism\n**ANSWER**\n\n## Step 2: **Check the discharging of the spreader to actuator\n\n## Step 3: **Check the discharge point**\n**ANSWER**\n\n## Step 4: **Check the driving shaft\n**ANSWER**\n\n## Step 5: **Check the drive\b\n\n### Step 6: **Check the dosing mechanism\n**ANSWER**\n\n## Step 7: **Check the discharging of the spreader to actuator",
         "target_page": 108,
         "context_type": "token",
         "noise_level": 20000,
@@ -431,7 +392,7 @@
     {
         "question": "What should you do if a spreading disc spreads irregularly?",
         "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-        "model_answer": "I can be done with ISO 11786 In cab connection\nIs IsoMatch control box is sufficient to ISO 11786 in cab cable with ISOBUS power.\n\u200b\n**ANSWER**\nISO\nIso-Main\n**ANSWER**\n\nThe correct answer\b\n**ANSWER**\nISO\nISOB\n**ANSWER**\nISO\n**ANSWER**\n\nI can be done with ISO 11786 In cab connection\n**ANSWER**\nISO\n**ANSWER**\nISO\n**ANSWER**\n\n1. IsoMatch control box is sufficient to ISO 11786 in cab cable with ISOBUS power.\n**ANSWER**\nISO\n**ANSWER**\nIso-Main\n**ANSWER**\nISO\n**ANSWER**\n\nI can be done with ISO 11786 In cab connection\n**ANSWER**\nISO\n**ANSWER**\nISO\n**ANSWER**\n\n1. IsoMatch control box is sufficient to ISO 11786 in cab cable with ISOBUS power.\n**ANSWER**\nISO\n**ANSWER**\nIso-Main\n**ANSWER**\n\nI can be done with ISO 11786 In cab connection\n**ANSWER**\nISO\n**ANSWER**\nISO\n**ANSWER**\n\n1. IsoMatch control box is sufficient to",
+        "model_answer": "I can be done with ISO 11786 In cab connection\nIs IsoMatch control box is sufficient to ISO 11786 in cab cable with ISOBUS power.\n​\n**ANSWER**\nISO\nIso-Main\n**ANSWER**\n\nThe correct answer\b\n**ANSWER**\nISO\nISOB\n**ANSWER**\nISO\n**ANSWER**\n\nI can be done with ISO 11786 In cab connection\n**ANSWER**\nISO\n**ANSWER**\nISO\n**ANSWER**\n\n1. IsoMatch control box is sufficient to ISO 11786 in cab cable with ISOBUS power.\n**ANSWER**\nISO\n**ANSWER**\nIso-Main\n**ANSWER**\nISO\n**ANSWER**\n\nI can be done with ISO 11786 In cab connection\n**ANSWER**\nISO\n**ANSWER**\nISO\n**ANSWER**\n\n1. IsoMatch control box is sufficient to ISO 11786 in cab cable with ISOBUS power.\n**ANSWER**\nISO\n**ANSWER**\nIso-Main\n**ANSWER**\n\nI can be done with ISO 11786 In cab connection\n**ANSWER**\nISO\n**ANSWER**\nISO\n**ANSWER**\n\n1. IsoMatch control box is sufficient to",
         "target_page": 113,
         "context_type": "token",
         "noise_level": 20000,
@@ -444,7 +405,7 @@
     {
         "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
         "expected_answer": "40 degrees Celsius",
-        "model_answer": "I can be connected to the ISO control box\n[Image IsoMatch ISO 11786 in IsoMatch Go cable with ISO the tractor which is enabled by the ISO Tachometer on the steering system.\n\u200b\nIsoMatch Tachometer\n[Image\nAccess the ISO Tachometer and tachometer on the engine of the tractor which can be connected to the ISO control box with the throttle on the drive and the throttle in the engine.\n\n### Page 148===\n\nISO IsoMatch Gearbox\n[Image\nIsotronic\nIsoMatch gear\n[Image\nISOB Iso\nIso Tachometer\n[Image\nIsoTachometer\n[Image\nIso Tachometer\n[Image\nIso Tachometer\nIso Tachometer\nIso Tachometer\n[ Iso Tachometer\nIso Tachometer\nIso Tachometer\nIso Tachometer\nIso Tachometer\nIso Tachometer\nIso Tachometer\nIso Tachometer\nIso Tachometer",
+        "model_answer": "I can be connected to the ISO control box\n[Image IsoMatch ISO 11786 in IsoMatch Go cable with ISO the tractor which is enabled by the ISO Tachometer on the steering system.\n​\nIsoMatch Tachometer\n[Image\nAccess the ISO Tachometer and tachometer on the engine of the tractor which can be connected to the ISO control box with the throttle on the drive and the throttle in the engine.\n\n### Page 148===\n\nISO IsoMatch Gearbox\n[Image\nIsotronic\nIsoMatch gear\n[Image\nISOB Iso\nIso Tachometer\n[Image\nIsoTachometer\n[Image\nIso Tachometer\n[Image\nIso Tachometer\nIso Tachometer\nIso Tachometer\n[ Iso Tachometer\nIso Tachometer\nIso Tachometer\nIso Tachometer\nIso Tachometer\nIso Tachometer\nIso Tachometer\nIso Tachometer\nIso Tachometer",
         "target_page": 117,
         "context_type": "token",
         "noise_level": 20000,
@@ -457,7 +418,7 @@
     {
         "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
         "expected_answer": "80 bar",
-        "model_answer": "I can be connected to the ISO control box\n[Image IsoMatch ISO 11786 in IsoMatch Go cable with ISO which is enabled by the ISO Tellus on the ISO connection.\n\ufe5d\nIsoMatch GPS\n[ISO which are available for the ISO TELMS\nAccess IsoMatch ISO and ISO which is enable the ISO control system to the ISO Match the \"ISO\" on page 147.",
+        "model_answer": "I can be connected to the ISO control box\n[Image IsoMatch ISO 11786 in IsoMatch Go cable with ISO which is enabled by the ISO Tellus on the ISO connection.\n﹝\nIsoMatch GPS\n[ISO which are available for the ISO TELMS\nAccess IsoMatch ISO and ISO which is enable the ISO control system to the ISO Match the \"ISO\" on page 147.",
         "target_page": 117,
         "context_type": "token",
         "noise_level": 20000,
@@ -470,7 +431,7 @@
     {
         "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
         "expected_answer": "Preservative grease or preserving liquid.",
-        "model_answer": "I can\u2019t\n 1.",
+        "model_answer": "I can’t\n 1.",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 20000,
@@ -483,7 +444,7 @@
     {
         "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
         "expected_answer": "Remove all fertilizer remnants.",
-        "model_answer": "I can\u2019t\n 1.  \u2022   Spreading with the dosing mechanism is not in the hopper on the agitator     \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022",
+        "model_answer": "I can’t\n 1.  •   Spreading with the dosing mechanism is not in the hopper on the agitator     •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •",
         "target_page": 123,
         "context_type": "token",
         "noise_level": 20000,
@@ -496,7 +457,7 @@
     {
         "question": "How many grease nipples do the discharge bushings have?",
         "expected_answer": "Two grease nipples per discharge bushing.",
-        "model_answer": "## Step 156===\n\nAccessing\nFalling into disuse\n   \u2022 Fitting out of the machine's control system\n\u2022 Electronic devices are not connected to the spreader\n    \u2022 The control system is not connected to the agitator\n**. \n*   \u2022 The control system is not connected to the hopper\n 1\n**.  \u2022 Machine does not connected to the dosing\n 1.",
+        "model_answer": "## Step 156===\n\nAccessing\nFalling into disuse\n   • Fitting out of the machine's control system\n• Electronic devices are not connected to the spreader\n    • The control system is not connected to the agitator\n**. \n*   • The control system is not connected to the hopper\n 1\n**.  • Machine does not connected to the dosing\n 1.",
         "target_page": 126,
         "context_type": "token",
         "noise_level": 20000,
@@ -546,19 +507,6 @@
         "duration": 3.6
     },
     {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-        "expected_answer": "The required distance is 1.0 mm.",
-        "model_answer": "I can't find\b\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n ",
-        "target_page": 138,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "llama3.2_1B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 4.2
-    },
-    {
         "question": "How often should the agitator axle seal be replaced?",
         "expected_answer": "Every season and after every 100 operational hours.",
         "model_answer": "I can't find 1\n**ANSWER ANSWER**\nTo perform a spreader is not in the ISO 11786\n**ANSWER**\n\nThe correct answer\b\n**ANSWER ANSWER**\n\nA. **ANSWER ANSWER**\n\nThe best answer    1\n**ANSWER ANSWER**\n\n## Step-by-step\n\nTo perform a spreader is not in the ISO 11786\nANSWER ANSWER\n\nTo perform a spreader is not in the ISO 11786\nANSWER ANSWER\n\nTo perform a spreader is not in the ISO 11786\nANSWER ANSWER\n\nThe correct answer\b\nANSWER ANSWER\n\n## Step-by-step\n\n1. To perform a spreader is not in the ISO 11786\nANSWER ANSWER\n\nTo perform a spreader is not in the ISO 11786\nANSWER ANSWER\n\nA. **ANSWER ANSWER**\n\nTo perform a spreader is not in the ISO 11786\nANSWER ANSWER\n\nThe correct answer\b\nANSWER ANSWER\n\n## Step-by-step\n\n1. To perform a spreader is not in the ISO 11786\nANSWER ANSWER",
@@ -574,7 +522,7 @@
     {
         "question": "What is the pattern of the type 'mineral'?",
         "expected_answer": "angular, with sharp angles and edges",
-        "model_answer": "## Step 82===\n\nTo be done before spreading\n   To perform the spreader on the control box.\n\ufe5d Check the tractor off, with a coupling to the correct attachment of the tractor. This is not only in the spread pattern of the spreaders that are equal to the desired level of the tractor and the spreader.\n    1/2 meters as the troughs.\n   \u2022 Fit the couplings on the control box.\n\ufe5d Check the tractor off, with a coupling to the correct attachment of the tractor. This is not only in the spreading pattern of the spreaders that are equal to the desired level of the tractor and the spreader.\n\n## Step 83===\n\nTo perform the spreader as per the details given\n   \u2022 Perform the control box on.\n\ufe5d Check the tractor off, with a coupling to the correct attachment of the tractor. This is not only in the spreading pattern of the spreaders that are equal to the desired level of the tractor and the spreader.\n\n## Step 84===\n\nTo perform the spreader as per the details given\n   \u2022 Perform the control box on.\n\ufe5d Check the tractor off, with a coupling to the correct attachment of the tractor. This is not only",
+        "model_answer": "## Step 82===\n\nTo be done before spreading\n   To perform the spreader on the control box.\n﹝ Check the tractor off, with a coupling to the correct attachment of the tractor. This is not only in the spread pattern of the spreaders that are equal to the desired level of the tractor and the spreader.\n    1/2 meters as the troughs.\n   • Fit the couplings on the control box.\n﹝ Check the tractor off, with a coupling to the correct attachment of the tractor. This is not only in the spreading pattern of the spreaders that are equal to the desired level of the tractor and the spreader.\n\n## Step 83===\n\nTo perform the spreader as per the details given\n   • Perform the control box on.\n﹝ Check the tractor off, with a coupling to the correct attachment of the tractor. This is not only in the spreading pattern of the spreaders that are equal to the desired level of the tractor and the spreader.\n\n## Step 84===\n\nTo perform the spreader as per the details given\n   • Perform the control box on.\n﹝ Check the tractor off, with a coupling to the correct attachment of the tractor. This is not only",
         "target_page": 58,
         "context_type": "token",
         "noise_level": 20000,
@@ -600,7 +548,7 @@
     {
         "question": "What is the weight in kg of the Exacta-TLX GEOSPREAD 3900?",
         "expected_answer": "795 kg",
-        "model_answer": "## Step-by-step\nTo determine the correct answer\b\nThe machine is to be used in the ISO 1.5 kg\n\u2022 The spreader shaft for the tractor.\n\u2022 To ensure that you do not use the ISO 1.5 kg\n\u2022 In this question, which is the correct setting of the ISO 1.5 kg\n\u2022 When using the ISO 1.5 kg\n\u2022 In the ISO 1.5 kg\n\u2022 The ISO 1.5 kg\n\u2022 To determine that you do not use the ISO 1.5 kg\n\n## Step-by-step\nTo ensure that you do not use the ISO 1.5 kg\n\u2022 In this question, which is the correct setting of the ISO 1.5 kg\n\u2022 When using the ISO 1.5 kg\n\u2022 To determine that you do not use the ISO 1.5 kg\n\n## Step-by-step\nTo ensure that you do not use the ISO 1.5 kg\n\u2022 In this question, which is the correct setting of the ISO 1.5 kg\n\u2022 When using the ISO 1.5 kg\n\u2022 To determine that you do not use the ISO 1.5 kg\n\n## Step-by-step\nTo ensure",
+        "model_answer": "## Step-by-step\nTo determine the correct answer\b\nThe machine is to be used in the ISO 1.5 kg\n• The spreader shaft for the tractor.\n• To ensure that you do not use the ISO 1.5 kg\n• In this question, which is the correct setting of the ISO 1.5 kg\n• When using the ISO 1.5 kg\n• In the ISO 1.5 kg\n• The ISO 1.5 kg\n• To determine that you do not use the ISO 1.5 kg\n\n## Step-by-step\nTo ensure that you do not use the ISO 1.5 kg\n• In this question, which is the correct setting of the ISO 1.5 kg\n• When using the ISO 1.5 kg\n• To determine that you do not use the ISO 1.5 kg\n\n## Step-by-step\nTo ensure that you do not use the ISO 1.5 kg\n• In this question, which is the correct setting of the ISO 1.5 kg\n• When using the ISO 1.5 kg\n• To determine that you do not use the ISO 1.5 kg\n\n## Step-by-step\nTo ensure",
         "target_page": 36,
         "context_type": "token",
         "noise_level": 20000,
@@ -717,7 +665,7 @@
     {
         "question": "Is fine application more expensive than normal dosing?",
         "expected_answer": "Not found in context",
-        "model_answer": "I can be connected to the tractor with the control system\n 1. Connect the coupling of the spreader.\n   2.5 mm, with 3.5 kg/millim\n    4.5 mm, with 6.5 mm, and 7.5 mm, which is less than 6.5 mm, 7.5 mm, as less than optimal to 8.5 mm, 8.5 mm, for the spreader of the coupling.\n**Note: The following\n*   \u2022 Connect the couplings of the spreader.\n    9.1 mm, with 10.1 mm, which is greater than 11.",
+        "model_answer": "I can be connected to the tractor with the control system\n 1. Connect the coupling of the spreader.\n   2.5 mm, with 3.5 kg/millim\n    4.5 mm, with 6.5 mm, and 7.5 mm, which is less than 6.5 mm, 7.5 mm, as less than optimal to 8.5 mm, 8.5 mm, for the spreader of the coupling.\n**Note: The following\n*   • Connect the couplings of the spreader.\n    9.1 mm, with 10.1 mm, which is greater than 11.",
         "target_page": 24,
         "context_type": "token",
         "noise_level": 20000,
@@ -821,7 +769,7 @@
     {
         "question": "Can the hydraulic border spreading plate be actuated pneumatically?",
         "expected_answer": "Not found in context",
-        "model_answer": "I can\u2019t\n### 1. to the correct direction\u2019s\n[ ]<==\n\nTo be done before the spreader on the edge of the tractor.\n## 1. To do this with the ExactLine in the first tramline\n## 1. To perform as described in the side of the tractor about 2 metres\n### 1. To set and by using the exacting\n### 1. To be done before the spreader on the edge of the tractor.\n## 1. On the second tramline\n### 1. To do this with the ExactLine as described in the side of the tractor about 3 metres\n## 1. To perform as described in the first tramline\n### 1. To be done by the exacting\n### 1. To set and using the exacting\n### 1. On the second tramline\n### 1. To do this with the side of the tractor about 4 metres\n## 1. To perform as described in the first tramline\n### 1. To perform as described in the edge of the tractor about 5 metres",
+        "model_answer": "I can’t\n### 1. to the correct direction’s\n[ ]<==\n\nTo be done before the spreader on the edge of the tractor.\n## 1. To do this with the ExactLine in the first tramline\n## 1. To perform as described in the side of the tractor about 2 metres\n### 1. To set and by using the exacting\n### 1. To be done before the spreader on the edge of the tractor.\n## 1. On the second tramline\n### 1. To do this with the ExactLine as described in the side of the tractor about 3 metres\n## 1. To perform as described in the first tramline\n### 1. To be done by the exacting\n### 1. To set and using the exacting\n### 1. On the second tramline\n### 1. To do this with the side of the tractor about 4 metres\n## 1. To perform as described in the first tramline\n### 1. To perform as described in the edge of the tractor about 5 metres",
         "target_page": 85,
         "context_type": "token",
         "noise_level": 20000,
@@ -834,7 +782,7 @@
     {
         "question": "By which environmental standards is the maximum acceptable loss in the ditch is determined?",
         "expected_answer": "Not found in context",
-        "model_answer": "I can be done by the tractor off the pump on the main\n\ufe5f 1. Stop\n   \u2022 Use the control system to stoppage.\n \uf034 The exacting is not in the transport mode of the tractor.\n\u2022 switch the power drive-off and the pump valve for a few seconds.\n\ufe61 the pump on the hopper.\n\ufe49 Stop\n\n### Page 114===\n\nUse in the spreader\nStop the pto\n\u2039\nSwitch the tractor off and remove the control\u200b\n \uf034 The exacting is not in the transport mode of the tractor.",
+        "model_answer": "I can be done by the tractor off the pump on the main\n﹟ 1. Stop\n   • Use the control system to stoppage.\n  The exacting is not in the transport mode of the tractor.\n• switch the power drive-off and the pump valve for a few seconds.\n﹡ the pump on the hopper.\n﹉ Stop\n\n### Page 114===\n\nUse in the spreader\nStop the pto\n‹\nSwitch the tractor off and remove the control​\n  The exacting is not in the transport mode of the tractor.",
         "target_page": 87,
         "context_type": "token",
         "noise_level": 20000,
@@ -860,7 +808,7 @@
     {
         "question": "What is the maximum height the fertilizer flies when spreading without GEOCONTROL headland",
         "expected_answer": "Not found in context",
-        "model_answer": "I can be used to the tractor.\n 1. Lubricate with the hydraulic pressure on the system from the pump or the hoses\n   \u2022 Check the pressure in the hydraulic system,\n    \u2022 Disregard to the hydraulic system, not using the control valve and the pipes that are removed from the pump.\n\u2022 switch off the electronic control valves as needed for leakage of the tractor.",
+        "model_answer": "I can be used to the tractor.\n 1. Lubricate with the hydraulic pressure on the system from the pump or the hoses\n   • Check the pressure in the hydraulic system,\n    • Disregard to the hydraulic system, not using the control valve and the pipes that are removed from the pump.\n• switch off the electronic control valves as needed for leakage of the tractor.",
         "target_page": 103,
         "context_type": "token",
         "noise_level": 20000,
@@ -886,7 +834,7 @@
     {
         "question": "Which appropriate measures for road transport should be taken when stopping work?",
         "expected_answer": "Not found in context",
-        "model_answer": "I can\u2019t\n 1. Check the dosing mechanism is not in the agitator axle.\n\ufe49 Remove the dosing mechanism from the tractor.\n \uf034 Put on the agitator axle.\n\uf92f Attach the dosing plate to the agitator axle.\n\ufe69 Stop the dosing mechanism and the position of the tractor\n 1. Check the dosing mechanism is not in the agitator axle.\n\u2039\n\nMaintenance\n 1. Check the dosing mechanism on page.\n \uf034 Switch the dosing mechanism from the tractor.\n 1. Check the dosing mechanism to the agitator axle.\n\uf92f Attach the dosing plate to the agitator axle.\n 1. Check the dosing mechanism is not in the agitator axle.\n\u2039 Put the dosing mechanism on page.\n \uf034 Switch the dosing mechanism from the tractor.\n 1. Check the dosing mechanism is not in the agitator axle.\n\uf92f Attach the dosing plate to the agitator axle.\n 1. Check the dosing mechanism on page.\n \ufe69 Remove the dosing mechanism from the tractor.\n 1. Check the dosing mechanism is not in the ag",
+        "model_answer": "I can’t\n 1. Check the dosing mechanism is not in the agitator axle.\n﹉ Remove the dosing mechanism from the tractor.\n  Put on the agitator axle.\n勞 Attach the dosing plate to the agitator axle.\n﹩ Stop the dosing mechanism and the position of the tractor\n 1. Check the dosing mechanism is not in the agitator axle.\n‹\n\nMaintenance\n 1. Check the dosing mechanism on page.\n  Switch the dosing mechanism from the tractor.\n 1. Check the dosing mechanism to the agitator axle.\n勞 Attach the dosing plate to the agitator axle.\n 1. Check the dosing mechanism is not in the agitator axle.\n‹ Put the dosing mechanism on page.\n  Switch the dosing mechanism from the tractor.\n 1. Check the dosing mechanism is not in the agitator axle.\n勞 Attach the dosing plate to the agitator axle.\n 1. Check the dosing mechanism on page.\n ﹩ Remove the dosing mechanism from the tractor.\n 1. Check the dosing mechanism is not in the ag",
         "target_page": 112,
         "context_type": "token",
         "noise_level": 20000,
@@ -951,7 +899,7 @@
     {
         "question": "What specific paint should be used to paint any damaged paintwork at the end of the season the machine in preparation for winter storage?",
         "expected_answer": "Not found in context",
-        "model_answer": "I can\u2019t\n 1.",
+        "model_answer": "I can’t\n 1.",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 20000,
@@ -1042,7 +990,7 @@
     {
         "question": "What specific 'grease' type is recommended for 'profiled tubes' of the  coupling shaft?",
         "expected_answer": "Not found in context",
-        "model_answer": "## Step 76===\n\nTo be done before spreading\nControl system\n[Image]\nThe control system\n\u200b\n1. To do this\n   \u2022 The control system\n    \u2022 Do not\n   \u2022 Filling the hopper\n   \u2022 With a hopper\n   \u2022 When it is\n\u2022 Keep\n   \u2022 In the hopper\n   \u2022 As\n   \u2022 Is\n   \u2022 It\n   \u2022 As\n   \u2022 and\n   \u2022 as\n   \u2022 The control system\n    \u2022 Do not\n   \u2022 Filling the hopper\n   \u2022 With\n   \u2022 in\n   \u2022 When\n   \u2022 is\n   \u2022 As\n   \u2022 and\n   \u2022 As\n\nTo be done before spreading\n 1. To do this\n   \u2022 Control\n   \u2022 with\n   \u2022 In\n   \u2022 as\n   \u2022 Is\n   \u2022 and\n   \u2022 the\n   \u2022 As\n   \u2022 it\n   \u2022 and\n   \u2022 is",
+        "model_answer": "## Step 76===\n\nTo be done before spreading\nControl system\n[Image]\nThe control system\n​\n1. To do this\n   • The control system\n    • Do not\n   • Filling the hopper\n   • With a hopper\n   • When it is\n• Keep\n   • In the hopper\n   • As\n   • Is\n   • It\n   • As\n   • and\n   • as\n   • The control system\n    • Do not\n   • Filling the hopper\n   • With\n   • in\n   • When\n   • is\n   • As\n   • and\n   • As\n\nTo be done before spreading\n 1. To do this\n   • Control\n   • with\n   • In\n   • as\n   • Is\n   • and\n   • the\n   • As\n   • it\n   • and\n   • is",
         "target_page": 51,
         "context_type": "token",
         "noise_level": 20000,
@@ -1055,7 +1003,7 @@
     {
         "question": "What is the 'hose coupling support' made of?",
         "expected_answer": "Not found in context",
-        "model_answer": "## Step 79===\n\nTo be done before spreading\nThe control system to disengage in the spreader with a tractor on the machine.\n\u2022 When using the fertiliser type of which is not in the spreading chart book,\n    \u2022 Check the spread pattern, and the flow rate that is less than 10 cm / km/h. This is also better than 2 m/s (wind force of 1/3.\n\ufe52\n   \u2022 Test the tractor off, with a filler on the machine to be switched off. It is therefore not in the spreading disc.\n\u2022 When using fertiliser type of which is not in the spreader connector to he drive\b\n    \u2022 Check the tractor brake of the tractor,\n  \u2022 Discharge the hopper and flow rate that is more than 3 m/s (wind force of 2.\n\ufe52\n   \u2022 Fit the coupling with a filler on the machine to be adjusted.",
+        "model_answer": "## Step 79===\n\nTo be done before spreading\nThe control system to disengage in the spreader with a tractor on the machine.\n• When using the fertiliser type of which is not in the spreading chart book,\n    • Check the spread pattern, and the flow rate that is less than 10 cm / km/h. This is also better than 2 m/s (wind force of 1/3.\n﹒\n   • Test the tractor off, with a filler on the machine to be switched off. It is therefore not in the spreading disc.\n• When using fertiliser type of which is not in the spreader connector to he drive\b\n    • Check the tractor brake of the tractor,\n  • Discharge the hopper and flow rate that is more than 3 m/s (wind force of 2.\n﹒\n   • Fit the coupling with a filler on the machine to be adjusted.",
         "target_page": 55,
         "context_type": "token",
         "noise_level": 20000,
@@ -1068,7 +1016,7 @@
     {
         "question": "What specific type of 'Delicia Schnecken Linsen' slug pellets were used for the spreading chart example?",
         "expected_answer": "Not found in context",
-        "model_answer": "## Step 94===\n\nTo be done before spreading\nThe correct answer\b\n[Image]\nTo be done before spreading\n\ufe49 Place the spreader in the direction of the tractor tracks.\n\uf034 The control system to transport the road, and the traction on the wheels,\n\u2022 Check that the traction is not allowed for the drive. \u2022 Adjusting the traction as the power steering wheel.\n \uf034 Set the traction on the steering wheel\n\ufe49 Engaging the traction in the steering of the tractor.\n\ufe49 Stop the traction on the road, and the suspension system to the wheels,\n\u2022 Check that the traction is allowed for the drive\b the driving shaft rpm of the transmission.\n\ufe49 Adjusting the traction as the power steering wheel.\n\n## Step 95===\n\nTo be done before spreading\nThe correct type of the tractor in the direction of the road, and the traction on the wheels,\n\u2039\n\u2022 Check that the traction is allowed for the traction to the drive\b the driving shaft rpm of the transmission.\n\ufe49 Set the traction as the power steering wheel.\n \uf034 Stop the traction on the steering wheel,\n\ufe49 Engaging the traction in the steering of the tractor.\n\ufe49 Adjusting",
+        "model_answer": "## Step 94===\n\nTo be done before spreading\nThe correct answer\b\n[Image]\nTo be done before spreading\n﹉ Place the spreader in the direction of the tractor tracks.\n The control system to transport the road, and the traction on the wheels,\n• Check that the traction is not allowed for the drive. • Adjusting the traction as the power steering wheel.\n  Set the traction on the steering wheel\n﹉ Engaging the traction in the steering of the tractor.\n﹉ Stop the traction on the road, and the suspension system to the wheels,\n• Check that the traction is allowed for the drive\b the driving shaft rpm of the transmission.\n﹉ Adjusting the traction as the power steering wheel.\n\n## Step 95===\n\nTo be done before spreading\nThe correct type of the tractor in the direction of the road, and the traction on the wheels,\n‹\n• Check that the traction is allowed for the traction to the drive\b the driving shaft rpm of the transmission.\n﹉ Set the traction as the power steering wheel.\n  Stop the traction on the steering wheel,\n﹉ Engaging the traction in the steering of the tractor.\n﹉ Adjusting",
         "target_page": 69,
         "context_type": "token",
         "noise_level": 20000,
@@ -1081,7 +1029,7 @@
     {
         "question": "What is the minimum 'baud rate' for 'RS 232 connection'?",
         "expected_answer": "Not found in context",
-        "model_answer": "## Step 96===\n\nTo be done before spreading\nThe correct answer\b\n[Image]\nTo be done before spreading\n\ufe49 The spreader is to ensure that the PTO shaft rpm of the tractor.\n\uf034 The control system has been adjusted for the traction, and the drive and the driving speed as the flow rate. It is not allowed in the direction of the tractor.\n\n## Step 97===\n\nTo be done before spreading\nThe correct setting of the spreader to ensure that the PTO shaft shaft rpm of the tractor.\n\uf034 The control system has been adjusted for the traction, and the driving speed as the flow rate. It is not allowed in the direction of the tractor.\n\n## Step 98===\n\nTo be done before spreading\nThe correct setting of the spreader to ensure that the PTO shaft rpm of the tractor.\n\uf034 The control system has been adjusted for the traction, and the drive and the driving speed as the flow rate. It is not allowed in the direction of the tractor.\n\n## Step 99===\n\nTo be done before spreading\nThe correct setting of the spreader to ensure that the PTO shaft rpm of the tractor.\n\uf034 The control system has been adjusted for the traction",
+        "model_answer": "## Step 96===\n\nTo be done before spreading\nThe correct answer\b\n[Image]\nTo be done before spreading\n﹉ The spreader is to ensure that the PTO shaft rpm of the tractor.\n The control system has been adjusted for the traction, and the drive and the driving speed as the flow rate. It is not allowed in the direction of the tractor.\n\n## Step 97===\n\nTo be done before spreading\nThe correct setting of the spreader to ensure that the PTO shaft shaft rpm of the tractor.\n The control system has been adjusted for the traction, and the driving speed as the flow rate. It is not allowed in the direction of the tractor.\n\n## Step 98===\n\nTo be done before spreading\nThe correct setting of the spreader to ensure that the PTO shaft rpm of the tractor.\n The control system has been adjusted for the traction, and the drive and the driving speed as the flow rate. It is not allowed in the direction of the tractor.\n\n## Step 99===\n\nTo be done before spreading\nThe correct setting of the spreader to ensure that the PTO shaft rpm of the tractor.\n The control system has been adjusted for the traction",
         "target_page": 72,
         "context_type": "token",
         "noise_level": 20000,
@@ -1094,7 +1042,7 @@
     {
         "question": "What is the maximum acceptable 'chunk' size of fertilizer in mm to prevent blockage?",
         "expected_answer": "Not found in context",
-        "model_answer": "## Step 98===\n\nTo be done before spreading\n[Image\nThe correct answer\b\nTo be in the spreader\nSpreading pattern of the tractor\n\ufe5d\nTo ensure that the PTO shaft is not only on the ground level of the trackside.\n\uf034\nA set\n\ufe5f\n1.  The spreader as the desired flow rate of the spreading chart\n \ufe5d\nIs it correct that the spreader in the direction of the tractor\n \ufe5d\nTo be done before the PTO shaft is not only on the ground level of the track\n \ufe5d\nA set\b\n1.  The spreader as the desired flow rate of the spreading chart\n\ufe5d\nIs it correct that the spreader in the direction of the tractor\n \ufe5d\nTo be done before the PTO shaft\nSpreading pattern of the tractor\n\ufe5d\nTo ensure that the PTO shaft\n\u200b",
+        "model_answer": "## Step 98===\n\nTo be done before spreading\n[Image\nThe correct answer\b\nTo be in the spreader\nSpreading pattern of the tractor\n﹝\nTo ensure that the PTO shaft is not only on the ground level of the trackside.\n\nA set\n﹟\n1.  The spreader as the desired flow rate of the spreading chart\n ﹝\nIs it correct that the spreader in the direction of the tractor\n ﹝\nTo be done before the PTO shaft is not only on the ground level of the track\n ﹝\nA set\b\n1.  The spreader as the desired flow rate of the spreading chart\n﹝\nIs it correct that the spreader in the direction of the tractor\n ﹝\nTo be done before the PTO shaft\nSpreading pattern of the tractor\n﹝\nTo ensure that the PTO shaft\n​",
         "target_page": 74,
         "context_type": "token",
         "noise_level": 20000,
@@ -1107,7 +1055,7 @@
     {
         "question": "What is the 'tap' material used for hydraulic border spreading plate tap?",
         "expected_answer": "Not found in context",
-        "model_answer": "I can be adjusted by the exacting\n===Page 110===\n\nTo be done before the spreader on the edge of the tractor.\n\u2039<==> <\u200b\n 1. to > 1000. <==<== On the first tramline with the ExactLine as described in the side of the tractor about the edge, and the desired is less than the exacting\n  \u2022 The correct answer\b\n  \u2022 the spreader on the leftside of the tractor about the edge.\n\u2039<==> <\u200b\n  \u2022 the PTO to 1000. <== On the first tramline with the ExactLine as described in the side of the tractor about the edge, and the desired is less than the exacting\n  \u2022 the spreader on the left\n  \u2022 the dosing on the edge of the tractor about the edge.\n\u2039<==> <\u200b\n  \u2022 the spreader on the first tramline with the ExactLine as described in the side of the tractor about the edge, and the desired is less than the exacting",
+        "model_answer": "I can be adjusted by the exacting\n===Page 110===\n\nTo be done before the spreader on the edge of the tractor.\n‹<==> <​\n 1. to > 1000. <==<== On the first tramline with the ExactLine as described in the side of the tractor about the edge, and the desired is less than the exacting\n  • The correct answer\b\n  • the spreader on the leftside of the tractor about the edge.\n‹<==> <​\n  • the PTO to 1000. <== On the first tramline with the ExactLine as described in the side of the tractor about the edge, and the desired is less than the exacting\n  • the spreader on the left\n  • the dosing on the edge of the tractor about the edge.\n‹<==> <​\n  • the spreader on the first tramline with the ExactLine as described in the side of the tractor about the edge, and the desired is less than the exacting",
         "target_page": 85,
         "context_type": "token",
         "noise_level": 20000,
@@ -1120,7 +1068,7 @@
     {
         "question": "What type of 'active carbon filters' are recommended for closed tractor cabin to filter fertilizer dust?",
         "expected_answer": "Not found in context",
-        "model_answer": "I can be adjusted to allow\nIndicate the machine in a drive and allowed grease on the hydraulic system.\n\ufe45 the pump lubricate. Allow the pressure off the hydraulic hoses from the power steering wheel,\n\u2039<|> 1/allowing the piston is not seal or leaky pipes.\n\u200b",
+        "model_answer": "I can be adjusted to allow\nIndicate the machine in a drive and allowed grease on the hydraulic system.\n﹅ the pump lubricate. Allow the pressure off the hydraulic hoses from the power steering wheel,\n‹<|> 1/allowing the piston is not seal or leaky pipes.\n​",
         "target_page": 94,
         "context_type": "token",
         "noise_level": 20000,
@@ -1133,7 +1081,7 @@
     {
         "question": "What is the tolerance for 'measured distance from the bottom of the vanes, the distance to the ground or the crop' in cm?",
         "expected_answer": "Not found in context",
-        "model_answer": "### 1. Ensure that is allowed\n> on the machine.\n## Step-by\n**To be done before\n**  \u2022 Allowable to allow for **in** (e.g. in the tractor with no-**\n\u2022 allow the traction of the tractor, and the drive and the transport of the pump.\n####  \u2022 Allow the traction of the pump and the power off the pump on the machine.\n###  \u2022 Allow the traction of the pump\n##  \u2022 Allow the traction to the pump's **in**. Allow the traction in the pump handle.\n###  \u2022 Allow the traction of the tractor, and the drive and the transport of the pump.\n\n###  \u2022 Allow the traction off the pump on the pump.\n#### Page 124===\n\nAllowing the traction\n**Allow the traction**\n**1. Allow the traction **in**. Allow the traction to the pump handle.\n##  \u2022 Allow the traction of the tractor, and the drive and the transport of the pump.\n\n###  \u2022 Allow the traction off the pump on the pump.\n#### Page125===\n\nAllowing the traction\n**Allow the traction**\n**1. Allow the traction **in**. Allow the traction to the pump handle.\n##  \u2022 Allow the traction of the",
+        "model_answer": "### 1. Ensure that is allowed\n> on the machine.\n## Step-by\n**To be done before\n**  • Allowable to allow for **in** (e.g. in the tractor with no-**\n• allow the traction of the tractor, and the drive and the transport of the pump.\n####  • Allow the traction of the pump and the power off the pump on the machine.\n###  • Allow the traction of the pump\n##  • Allow the traction to the pump's **in**. Allow the traction in the pump handle.\n###  • Allow the traction of the tractor, and the drive and the transport of the pump.\n\n###  • Allow the traction off the pump on the pump.\n#### Page 124===\n\nAllowing the traction\n**Allow the traction**\n**1. Allow the traction **in**. Allow the traction to the pump handle.\n##  • Allow the traction of the tractor, and the drive and the transport of the pump.\n\n###  • Allow the traction off the pump on the pump.\n#### Page125===\n\nAllowing the traction\n**Allow the traction**\n**1. Allow the traction **in**. Allow the traction to the pump handle.\n##  • Allow the traction of the",
         "target_page": 95,
         "context_type": "token",
         "noise_level": 20000,
@@ -1159,7 +1107,7 @@
     {
         "question": "What is the recommended tire pressure 'range' for transport mode?",
         "expected_answer": "Not found in context",
-        "model_answer": "I can be adjusted to allow\n\u2039tire on the steering wheel.\n\uf6e1 the tractor with power drive of the tractor. Stop the pump in the steering system,\n\u2022 stop the pump off, not allowed is necessary for a push-off from the steering wheel.\n\uf034 the pump and pull the pressure off the pump's pivot on the steering\n\u2039tire on the steering wheel.\n<|>",
+        "model_answer": "I can be adjusted to allow\n‹tire on the steering wheel.\n the tractor with power drive of the tractor. Stop the pump in the steering system,\n• stop the pump off, not allowed is necessary for a push-off from the steering wheel.\n the pump and pull the pressure off the pump's pivot on the steering\n‹tire on the steering wheel.\n<|>",
         "target_page": 93,
         "context_type": "token",
         "noise_level": 20000,
@@ -1185,7 +1133,7 @@
     {
         "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
         "expected_answer": "Not found in context",
-        "model_answer": "## Step 140===\n\nI can be adjusted to the dosing mechanism\nCheck the disconnection point on the agitator axle.\n\u2022 Check the dosing mechanism is now higher than the spreading disc and discharge bushing. \u2022 Turn the dosing mechanism upwards until you have good access to the drive and testing the spreader.\n\n## Step 141===\n\nChecking the dosing mechanism\n[Image]\nCheck the disconnection point on the agitator axle.\n\u2022 Check the dosing mechanism is now lower than the spreading disc and opening onto the discharge bushing. \u2022 Turn the dosing mechanism upwards, which are not in the agitator axle.\n\n## Step 142===\n\nChecking the dosing mechanism\n[Image]\nCheck the disconnection point on the agitator axle.\n\u2022 Check the dosing mechanism is now higher than the spreading disc and opening onto the discharge bushing. \u2022 Turn the dosing mechanism upwards, which are not in the agitator axle.\n\n## Step 143===\n\nChecking the dosing mechanism\n[Image]\nCheck the disconnection point on the agitator axle.\n\u2022 Check the dosing mechanism is now lower than the spreading disc and opening onto the discharge bushing. \u2022 Turn the dosing mechanism upwards, which",
+        "model_answer": "## Step 140===\n\nI can be adjusted to the dosing mechanism\nCheck the disconnection point on the agitator axle.\n• Check the dosing mechanism is now higher than the spreading disc and discharge bushing. • Turn the dosing mechanism upwards until you have good access to the drive and testing the spreader.\n\n## Step 141===\n\nChecking the dosing mechanism\n[Image]\nCheck the disconnection point on the agitator axle.\n• Check the dosing mechanism is now lower than the spreading disc and opening onto the discharge bushing. • Turn the dosing mechanism upwards, which are not in the agitator axle.\n\n## Step 142===\n\nChecking the dosing mechanism\n[Image]\nCheck the disconnection point on the agitator axle.\n• Check the dosing mechanism is now higher than the spreading disc and opening onto the discharge bushing. • Turn the dosing mechanism upwards, which are not in the agitator axle.\n\n## Step 143===\n\nChecking the dosing mechanism\n[Image]\nCheck the disconnection point on the agitator axle.\n• Check the dosing mechanism is now lower than the spreading disc and opening onto the discharge bushing. • Turn the dosing mechanism upwards, which",
         "target_page": 109,
         "context_type": "token",
         "noise_level": 20000,
@@ -1198,7 +1146,7 @@
     {
         "question": "Can the parking support withstand storage on a slope of 10 degrees?",
         "expected_answer": "Not found in context",
-        "model_answer": "I can be connected to the ISO control system with the IsoMatch switcher\n[Image\nAccess is necessary for the tractor which are in the steering system.\n\u2039ISO 11786 In cab connection\n\u00c2<|> IsoMatch GPS\n[]",
+        "model_answer": "I can be connected to the ISO control system with the IsoMatch switcher\n[Image\nAccess is necessary for the tractor which are in the steering system.\n‹ISO 11786 In cab connection\nÂ<|> IsoMatch GPS\n[]",
         "target_page": 119,
         "context_type": "token",
         "noise_level": 20000,
@@ -1211,7 +1159,7 @@
     {
         "question": "What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?",
         "expected_answer": "Not found in context",
-        "model_answer": "I can be connected with the tractor control system\n 1.  \u2022   on the hopper to the steering which is not in the hopper \n  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022  \u2022 ",
+        "model_answer": "I can be connected with the tractor control system\n 1.  •   on the hopper to the steering which is not in the hopper \n  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  • ",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 20000,
@@ -1237,7 +1185,7 @@
     {
         "question": "What type of 'universal grease' is recommended for all 'lubricating nipples'?",
         "expected_answer": "Not found in context",
-        "model_answer": "## Step 156===\n\nIndications\n   Iso\n     Isolator\n       on the control system is not in use of the spreader\n      with the agitator\n    \u2022 The machine has been used for the  to the dis- \n 1.  \u2022 The machine is now being used as the  to the  to the  to the   2.0     \u2022 The machine makes a noise  while running\n       on the spreader\n      \u2022 Spreader does not be put in the  with the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the\n   1.0     \u2022 The machine is now being used as the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the\n   1.0     \u2022 The machine is now being",
+        "model_answer": "## Step 156===\n\nIndications\n   Iso\n     Isolator\n       on the control system is not in use of the spreader\n      with the agitator\n    • The machine has been used for the  to the dis- \n 1.  • The machine is now being used as the  to the  to the  to the   2.0     • The machine makes a noise  while running\n       on the spreader\n      • Spreader does not be put in the  with the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the\n   1.0     • The machine is now being used as the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the  to the\n   1.0     • The machine is now being",
         "target_page": 126,
         "context_type": "token",
         "noise_level": 20000,
@@ -1402,5 +1350,187 @@
         "dataset": "question_datasets/question_answers_unanswerable.json",
         "file_extension": "txt",
         "duration": 1.3
+    },
+    {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "expected_answer": "06.00.00.0257",
+        "model_answer": "I can be connected to the tractor\n 1.",
+        "target_page": 27,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 9.0
+    },
+    {
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "expected_answer": "150mm.",
+        "model_answer": "## Step 76===\n\nTo be done before spreading\nControl system\n[Image\nThe control system\n​\n1. To do this\n   • The control system\n    • Do not\n   • Filling the spreader\n   • With a hopper\n   • When it is\n   • As with \n  • Keep\n   • In\n   • Is\n   • It\n   • as\n   • and\n   • To\n   • in\n   • as\n   • The control system\n    • Do not\n   • Filling the spreader\n   • With\n   • a\n   • is\n   • As\n   • In\n   • with\n   • Is",
+        "target_page": 51,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 5.2
+    },
+    {
+        "question": "How many parts does the distribution meter have?",
+        "expected_answer": "Seven.",
+        "model_answer": "I can be done before spreading\nTo do the spreader on the correct attachment of the tractor.\n﹝ Check the control box on. • 1/ha is in the spreader with the desired distance from the tractor to the side.\n  Keep the same speed and the dosing point as described on the spread pattern, which are not\n‹<|> 24 metres / 4 km/min = <==\n\nTo do the spreading disc on the correct attachment of the tractor. • 1/ha is in the troughs that have.\n  Keep to the same distance from each other and the dosing point as described on the spread pattern, which are not\n‹<|> 24 metres / 3 km/min = <==\n\nTo do the spreading disc on the correct attachment of the tractor. • 1/ha is in the troughs that have.\n  Keep to the same distance from each other and the dosing point as described on the spread pattern, which are not\n‹<|> 24 metres / 2 km/min = <==\n\nTo do the spreading disc on the correct attachment of the tractor. • 1/ha is in the troughs that have.\n  Keep to the same distance from each other and the dosing point as described on the spread pattern, which are not\n‹<|> 24 metres / 3 km/min = <==\n\nTo do the spreading disc on the correct attachment of the tractor. • 1/ha is in the troughs that have.\n  Keep to the same distance from each other and the dosing point as described on the spread pattern, which are not\n‹<|> 24 metres / 4 km/min = <==\n\nTo do the spreading disc on the correct attachment of the tractor. • 1/ha is in the troughs that have.\n  Keep to the same distance from each other and the dosing point as described on the spread pattern, which are not\n‹<|> 24 metres / 3 km/min = <==\n\nTo do the spreading disc on the correct attachment of the tractor. • 1/ha is in the troughs that have.\n  Keep to the same distance from each other and the dosing point as described on the spread pattern, which are not\n‹<|> 24 metres / 2 km/min = <==\n\nTo do the spreading disc on the correct attachment of the tractor. • 1/ha is in the troughs that have.\n  Keep to the same distance from each other and the dosing point as described on the spread pattern, which are not\n‹<|> 24 metres / 3 km/min = <==\n\nTo do the spreading disc on the correct attachment of the tractor. • 1/ha is in the troughs that have.\n  Keep to the same distance from each other and the dosing point as described on the spread pattern, which are not\n‹<|> 24 metres / 4 km/min = <==\n\nTo do the spreading disc on the correct attachment of the tractor. • 1/ha is in the troughs that have.\n  Keep to the same distance from each other and the dosing point as described on the spread pattern, which are not\n‹<|> 24 metres / 3 km/min = <==\n\nTo do the spreading disc on the correct attachment of the tractor. • 1/ha is in the troughs that have.\n  Keep to the same distance from each other and the dosing point as described on the spread pattern, which are not\n‹<|> 24 metres / 4 km/min = <==",
+        "target_page": 59,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.1
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "model_answer": "## Step 92===\n\nTo be done before spreading\nThe control system is adjusted to the setting of the spreader in the ditch.\n﹝ To perform the dosing on the direction of the troughs that are not less than 10% of the quantity collected in the trough in the middle of the track. The trough on the land next to the fictive ditch provides a good quality and to put the top in the direction (1) = 1000 mm.\n Adjust this setting of the spreader as per the details given in the spreading chart for the desired width that most closely matches\n‹\nTo be done before spreading\nThe control system is adjusted to the setting of the spreader in the ditch. The troughs horizontally with a spirit level!\n  Place 1 trough in the middle of the tractor tracks.\n Start the dosing on the direction of the troughs that are less than 10 mm of the quantity collected in the trough in the side\n‹\n\n## Step 93===\n\nTo be done before spreading\nThe control system is adjusted to the setting of the spreader in the ditch. The troughs horizontally with a spirit level!\n  Place 1 trough in the middle of the tractor tracks.\n Start the dosing on the direction of the troughs that are less than 10 mm of the quantity collected in the trough in the side\n‹\n\n## Step 94===\n\nTo be done before spreading\nThe control system is adjusted to the setting of the spreader in the ditch. The troughs horizontally with a spirit level!\n  Place 1 trough in the middle of the tractor tracks.\n Start the dosing on the direction of the troughs that are less than 10 mm of the quantity collected in the trough in the side\n‹\n\n## Step 95===\n\nTo be done before spreading\nThe control system is adjusted to the setting of the spreader in the ditch. The troughs horizontally with a spirit level!\n  Place 1 trough in the middle of the tractor tracks.\n Start the dosing on the direction of the troughs that are less than 10 mm of the quantity collected in the trough in the side\n‹\n\n## Step 96===\n\nTo be done before spreading\nThe control system is adjusted to the setting of the spreader in the ditch. The troughs horizontally with a spirit level!\n  Place 1 trough in the middle of the tractor tracks.\n Start the dosing on the direction of the troughs that are less than 10 mm of the quantity collected in the trough in the side\n‹\n\n## Step 97===\n\nTo be done before spreading\nThe control system is adjusted to the setting of the spreader in the ditch. The troughs horizontally with a spirit level!\n  Place 1 trough in the middle of the tractor tracks.\n Start the dosing on the direction of the troughs that are less than 10 mm of the quantity collected in the trough in the side\n‹\n\n## Step 98===\n\nTo be done before spreading\nThe control system is adjusted to the setting of the spreader in the ditch. The troughs horizontally with a spirit level!\n  Place 1 trough in the middle of the tractor tracks.\n Start the dosing on the direction of the troughs that are less than 10 mm of the quantity collected in the trough in the side\n‹\n\n## Step 99===\n\nTo be done before spreading\nThe control system is adjusted to the setting of the spreader in the ditch. The troughs horizontally with a spirit level!\n  Place 1 trough in the middle of the tractor tracks.\n Start the dosing on the direction of the troughs that are less than 10 mm of the quantity collected in the trough in the side\n‹\n\n## Step 100===\n\nTo be done before spreading\nThe control system is adjusted to the setting of the spreader in the ditch. The troughs horizontally with a spirit level!\n  Place 1 trough in the middle of the tractor tracks.\n Start the dosing on the direction of the troughs that are less than 10 mm of the quantity collected in the trough in the side\n‹\n\n## Step 101===\n\nTo be done before spreading\nThe control system is adjusted to the setting of the spreader in the ditch. The troughs horizontally with a spirit level!\n  Place 1 trough in the middle of the tractor tracks.\n Start the dosing on the direction of the troughs that are less than 10 mm of the quantity collected in the trough in the side\n‹\n\n## Step 102===\n\nTo be done before spreading\nThe control system is adjusted to the setting of the spreader in the ditch. The troughs horizontally",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 8.3
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "expected_answer": "1 open hole and 2 thick holes",
+        "model_answer": "## Step 92===\n\nTo be done before spreading\nThe control system to the spreader in the direction of the troughs.\n﹉ Place the dosing on the side of the troughs. The exact setting of the PTO shaft is not less than 25% of the quantity collected in the trough in the middle of the track.\n  Adjust this setting of the PTO shaft rpm or the driving speed as these are not greater than 250 kg/ha, and\n﹉ Close the dosing unit a few metres to bring the ExactLine to good pressure in the accumulator.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.7
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "expected_answer": "At the back of the control box.",
+        "model_answer": "## Step 96===\n\nTo be done before spreading\nThe correct answer\b\n[Image]\nTo be done before spreading\n﹉\n1. To ensure that you do not start with the tractor in the direction of the spreader.\n\n   • The PTO shaft is on the right side of the tractor, and the drive\b\n 1 2 3+0\n  4 5+0\n  6 7+0\n  8 10 + 25\n  9 30 + 50\n 11 35 + 100\n  12 60 + 150\n  13 70 + 200\n  14 180 + 250\n  15 280 + 300\n  16 350   400\n 17 420\n  21 500\n  22 550\n  23 700\n  24 750\n  25 900\n  28 1000\n  29 1100\n 31 1400\n  32 1500\n  33 1800\n  35 2000\n  40 2200\n  45 2500\n  46 3000\n  50 3500\n 57 4000\n  57 4500\n  63 5000\n  70 5500\n  80 700\n  85 9000\n  90 1000\n  95 1100\n 1020\n  1150\n  1200",
+        "target_page": 72,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 5.1
+    },
+    {
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "expected_answer": "Every year",
+        "model_answer": "I can’t\nTo be done before spreading\n 1. To be in the headland with the ExactLine on the tramline.\n   • The PTO system to the hopper by switching off the spreader\n    • Do not allow the dosing\n 1. To be used as the spreader\n 1. To be in the headland and the ExactLine with the spreader\n 1. Use the control point on the sprayer tramline.\n   • The PTO system to the hopper by switching off the spreader",
+        "target_page": 78,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 3.6
+    },
+    {
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+        "expected_answer": "10% of the quantity in the middle trough",
+        "model_answer": "I can be done with the machine on the drive and allow for the spreader. Ensure that you are not allowed in the spreader.\n 1\nTo ensure that is better than a good to stoppage as needed for the discharge of the fuelled by using only the lubricate on the machine, allowing it to prevent it from the drain​\n 1. Stoppage\n 1. Ensure that you can do it with the machine on the drive and allow.\n 1. Ensure that is allowed in the spreader.",
+        "target_page": 91,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 3.5
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "expected_answer": "Measured from the bottom of the vanes.",
+        "model_answer": "### 1. Ensure that are not allowed in the machine\n**To ensure that is necessary for maintenance.\n• allow to enable the machine on a drive and maintain that can be enabled by enabling the machine.\n####<|> No, allowing the tractor with no-actuated in the pump and power off the pump of the pump and machine. • Allow the pump lubricate as required by not allowed it is forced to prevent damage\n**and allow the pump on the pump.\n### 1. Ensure that are necessary for maintenance.\n####<|> No, allowing the tractor with no-actuated in the pump.\n\nI can be adjusted to enable the machine on a drive and maintain that is enabled by enabling the pump brake of the pump.\n## 1. Ensure that is allowed in the pump\n**and allow the pump to enable the pump.\n### 1. Ensure that are not allowed in the pump.\n####<|> No, allowing the tractor with no-actuated in the pump.\n\nI can be adjusted to enable the machine on a pump.\n## 1. Ensure that is necessary for maintenance.\n#### < |> Allowable\n**and allow the pump to enable the pump.\n### 1. Ensure that are not allowed in the pump.\n####<|> No, allowing the pump to enable the pump.\n\nI can be adjusted to enable the pump.\n### 1. Ensure that is necessary for maintenance.\n## 1. Ensure that is necessary for maintenance.\n**and allow the pump\n### 1. Ensure that is allowed in the pump.\n#### < |> Allowable and enable the pump.\n### 1. Ensure that are not allowed in the pump.\n\nI can be adjusted to enable the pump.\n### 1. Ensure that is necessary for maintenance.\n## 1. Ensure that is necessary for maintenance.\n**and allow the pump\n### 1. Ensure that is necessary for maintenance.\n#### < |> Allowable and enable the pump.\n### 1. Ensure that is allowed in the pump.\n\nI can be adjusted to enable the pump.\n### 1. Ensure that is necessary for maintenance.\n## 1. Ensure that is necessary for maintenance.\n**and allow the pump\n### 1. Ensure that is necessary for maintenance.\n#### < |> Allowable and enable the pump.\n### 1. Ensure that is allowed in the pump.\n\nI can be adjusted to enable the pump.\n### 1. Ensure that is necessary for maintenance.\n## 1. Ensure that is necessary for maintenance.\n**and allow the pump\n### 1. Ensure that is necessary for maintenance.\n#### < |> Allowable and enable the pump.\n### 1. Ensure that is necessary for maintenance.\n\nI can be adjusted to enable the pump.\n### 1. Ensure that is necessary for maintenance.\n## 1. Ensure that is necessary for maintenance.\n**and allow the pump\n### 1. Ensure that is necessary for maintenance.\n#### < |> Allowable and enable the pump.\n### 1. Ensure that is necessary for maintenance.\n\nI can be adjusted to enable the pump.\n### 1. Ensure that is necessary for maintenance.\n## 1. Ensure that is necessary for maintenance.\n**and allow the pump\n### 1. Ensure that is necessary for maintenance.\n#### < |> Allowable and enable the pump.\n### 1. Ensure that is necessary for maintenance.\n\nI can be adjusted to enable the pump.\n### 1. Ensure that is necessary for maintenance.\n## 1. Ensure that is necessary for maintenance.\n**and allow the pump\n### 1. Ensure that is necessary for maintenance.\n#### < |> Allowable and enable the pump.\n### 1. Ensure that is necessary for maintenance.\n\nI can be adjusted to enable the pump.\n### 1. Ensure that is necessary for maintenance.\n## 1. Ensure that is necessary for maintenance.\n**and allow the pump\n### 1. Ensure that is necessary for maintenance.\n#### < |> Allowable and enable the pump.\n### 1. Ensure that is necessary for maintenance.\n\nI can be adjusted to enable the pump.\n### 1. Ensure that is necessary for maintenance.\n## 1. Ensure that is necessary for maintenance.\n**and allow the pump\n### 1. Ensure that is necessary for maintenance.\n#### < |> Allowable and enable the pump.\n### 1. Ensure that is necessary for maintenance.\n\nI can be adjusted to enable the pump.\n### 1. Ensure that is necessary for maintenance.\n## 1. Ensure that is necessary for maintenance.\n**and allow the pump\n### 1. Ensure that is necessary for maintenance.\n#### < |> Allowable and enable the pump.\n### 1. Ensure that is necessary for maintenance.\n\nI can be adjusted to enable the pump.\n### 1. Ensure that is necessary for maintenance.\n## 1. Ensure that is necessary for maintenance.\n**and allow the pump\n### 1. Ensure that is necessary for maintenance.\n",
+        "target_page": 95,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 8.1
+    },
+    {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "expected_answer": "spreading chart or online spreading chart",
+        "model_answer": "## Step 142===\n\nI can be adjusted to the dosing mechanism\n​\nCheck the dosing mechanism is not in the agitator axle.\n﹉\n   • Check the dosing mechanism with the tractor drive by using a seal ring on the agitator axle. The distance of the agitator axle and the sealing ring.\n• Set the dosing mechanism to the tractor drive, as the plug in the agitator axle.\n​\nCheck the dosing mechanism is not in the agitator axle.\n﹉ • Check the dosing mechanism with the tractor drive by using a seal ring on the agitator axle. The distance of the agitator axle and the sealing ring.\n\n## Step 143===\n\nMaintenance\nCheck the dosing mechanism is not in the agitator axle.\n• Set the dosing mechanism to the tractor drive, as the plug in the agitator axle.\n﹉ • Check the dosing mechanism with the tractor drive by using a seal ring on the agitator axle. The distance of the agitator axle and the sealing ring.\n\n## Step 144===\n\nMaintenance\nCheck the dosing mechanism is not in the agitator axle.\n• Set the dosing mechanism to the tractor drive, as the plug in the agitator axle.\n﹉ Check the dosing mechanism with the tractor drive by using a seal ring on the agitator axle. The distance of the agitator axle and the sealing ring.\n\n## Step 145===\n\nMaintenance\nCheck the dosing mechanism is not in the agitator axle.\n• Set the dosing mechanism to the tractor drive, as the plug in the agitator axle.\n﹉ Check the dosing mechanism with the tractor drive by using a seal ring on the agitator axle. The distance of the agitator axle and the sealing ring.\n\n## Step 146===\n\nMaintenance\nCheck the dosing mechanism is not in the agitator axle.\n• Set the dosing mechanism to the tractor drive, as the plug in the agitator axle.\n﹉ Check the dosing mechanism with the tractor drive by using a seal ring on the agitator axle. The distance of the agitator axle and the sealing ring.\n\n## Step 147===\n\nMaintenance\nCheck the dosing mechanism is not in the agitator axle.\n• Set the dosing mechanism to the tractor drive, as the plug in the agitator axle.\n﹉ Check the dosing mechanism with the tractor drive by using a seal ring on the agitator axle. The distance of the agitator axle and the sealing ring.\n\n## Step 148===\n\nMaintenance\nCheck the dosing mechanism is not in the agitator axle.\n• Set the dosing mechanism to the tractor drive, as the plug in the agitator axle.\n﹉ Check the dosing mechanism with the tractor drive by using a seal ring on the agitator axle. The distance of the agitator axle and the sealing ring.\n\n## Step 149===\n\nMaintenance\nCheck the dosing mechanism is not in the agitator axle.\n• Set the dosing mechanism to the tractor drive, as the plug in the agitator axle.\n﹉ Check the dosing mechanism with the tractor drive by using a seal ring on the agitator axle. The distance of the agitator axle and the sealing ring.\n\n## Step 150===\n\nMaintenance\nCheck the dosing mechanism is not in the agitator axle.\n• Set the dosing mechanism to the tractor drive, as the plug in the agitator axle.\n﹉ Check the dosing mechanism with the tractor drive by using a seal ring on the agitator axle. The distance of the agitator axle and the sealing ring.\n\n## Step 151===\n\nMaintenance\nCheck the dosing mechanism is not in the agitator axle.\n• Set the dosing mechanism to the tractor drive, as the plug in the agitator axle.\n﹉ Check the dosing mechanism with the tractor drive by using a seal ring on the agitator axle. The distance of the agitator axle and the sealing ring.\n\n## Step 152===\n\nMaintenance\nCheck the dosing mechanism is not in the agitator axle.\n• Set the dosing mechanism to the tractor drive, as the plug in the agitator axle.\n﹉ Check the dosing mechanism with the tractor drive by using a seal ring on the agitator axle. The distance of the agitator axle and the sealing ring.\n\n## Step 153===\n\nMaintenance\nCheck the dosing mechanism is not in the agitator axle.\n• Set the dosing mechanism to the tractor drive, as the plug in the agitator axle.\n﹉ Check the dosing mechanism with the tractor drive by using a seal ring on the agitator axle. The distance of the agitator axle and",
+        "target_page": 111,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 8.2
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "expected_answer": "Place the spreader on a firm, stable ramp",
+        "model_answer": "I can be connected with the tractor control system on the hopper in the steering\n**. 1/2\nAccessories\n[Image\n**ISO\n**ISO**\n**ISO\n**Iso**",
+        "target_page": 120,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 3.2
+    },
+    {
+        "question": "What type of grease is the central gearbox filled with?",
+        "expected_answer": "EP 00/000 gear grease.",
+        "model_answer": "I can be used\n**. 1. The control system is not in use of the machine.\n   **. 2. The control system is not responsible for damage to the machine.\n**. 3. The control system is not responsible for damage to the machine.\n**. 4. The control system is not responsible for damage to the machine.\n**. 5. The control system is not responsible for damage to the machine.\n**. 6. The control system is not responsible for damage to the machine.\n**. 7. The control system is not responsible for damage to the machine.\n\nI can be done with the machine\n**. 8. The control system is not responsible for damage to the machine.\n**. 9. The control system is not responsible for damage to the machine.\n**. 10. The control system is not responsible for damage to the machine.\n**. 11. The control system is not responsible for damage to the machine.\n\nI can be done with the machine\n**. 12. The control system is not responsible for damage to the machine.\n**. 13. The control system is not responsible for damage to the machine.\n**. 14. The control system is not responsible for damage to the machine.\n**. 15. The control system is not responsible for damage to the machine.\n\nI can be done with the machine\n**. 16. The control system is not responsible for damage to the machine.\n**. 17. The control system is not responsible for damage to the machine.\n**. 18. The control system is not responsible for damage to the machine.\n**. 19. The control system is not responsible for damage to the machine.\n\nI can be done with the machine\n**. 20. The control system is not responsible for damage to the machine.\n**. 21. The control system is not responsible for damage to the machine.\n**. 22. The control system is not responsible for damage to the machine.\n**. 23. The control system is not responsible for damage to the machine.\n\nI can be done with the machine\n**. 24. The control system is not responsible for damage to the machine.\n**. 25. The control system is not responsible for damage to the machine.\n**. 26. The control system is not responsible for damage to the machine.\n**. 27. The control system is not responsible for damage to the machine.\n\nI can be done with the machine\n**. 28. The control system is not responsible for damage to the machine.\n**. 29. The control system is not responsible for damage to the machine.\n**. 30. The control system is not responsible for damage to the machine.\n**. 31. The control system is not responsible for damage to the machine.\n\nI can be done with the machine\n**. 32. The control system is not responsible for damage to the machine.\n**. 33. The control system is not responsible for damage to the machine.\n**. 34. The control system is not responsible for damage to the machine.\n**. 35. The control system is not responsible for damage to the machine.\n\nI can be done with the machine\n**. 36. The control system is not responsible for damage to the machine.\n**. 37. The control system is not responsible for damage to the machine.\n**. 38. The control system is not responsible for damage to the machine.\n**. 39. The control system is not responsible for damage to the machine.\n\nI can be done with the machine\n**. 40. The control system is not responsible for damage to the machine.\n**. 41. The control system is not responsible for damage to the machine.\n**. 42. The control system is not responsible for damage to the machine.\n**. 43. The control system is not responsible for damage to the machine.\n\nI can be done with the machine\n**. 44. The control system is not responsible for damage to the machine.\n**. 45. The control system is not responsible for damage to the machine.\n**. 46. The control system is not responsible for damage to the machine.\n**. 47. The control system is not responsible for damage to the machine.\n\nI can be done with the machine\n**. 48. The control system is not responsible for damage to the machine.\n**. 49. The control system is not responsible for damage to the machine.\n**. 50. The control system is not responsible for damage to the machine.\n**. 51. The control system is not responsible for damage to the machine.\n\nI can be done with the machine\n**. 52. The control system is not responsible for damage to the machine.\n**. 53. The control system is not responsible for damage to the machine.\n**. 54. The control system is not responsible for damage to the machine.\n**. 55.",
+        "target_page": 127,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 8.0
+    },
+    {
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+        "expected_answer": "The required distance is 1.0 mm.",
+        "model_answer": "I can't find\b\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n ",
+        "target_page": 138,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 8.1
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "expected_answer": "Yes, using the Sensor input IM Tellus.",
+        "model_answer": "I can't find\b\n1\n**ANSWER ANSWER**\nTo perform a spreader on  **spreading pattern**\n\n\nThe correct answer\b\n1\n**ANSWER ANSWER**\n\nA tractor is not only in the ISO  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading**  **pattern**  **spreading",
+        "target_page": 144,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "llama3.2_1B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 8.1
     }
 ]

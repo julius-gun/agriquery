@@ -9,24 +9,23 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.07407407407407407,
-        "precision": 0.12903225806451613,
-        "recall": 0.14814814814814814,
+        "accuracy": 0.05084745762711865,
+        "precision": 0.1,
+        "recall": 0.09375,
         "specificity": 0.0,
-        "f1_score": 0.13793103448275862,
-        "true_positives": 8,
+        "f1_score": 0.09677419354838711,
+        "true_positives": 6,
         "true_negatives": 0,
         "false_positives": 54,
-        "false_negatives": 46,
-        "total_questions": 108,
+        "false_negatives": 58,
+        "total_questions": 118,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.18181818181818182,
-            "unanswerable_questions": 0.0,
-            "table_questions": 0.0
+            "general_questions": 0.1111111111111111,
+            "unanswerable_questions": 0.0
         }
     },
     "timing": {
-        "duration_qa_phase_seconds": 274.40000000000015
+        "duration_qa_phase_seconds": 302.70000000000016
     },
     "per_dataset_details": {
         "general_questions": {
@@ -136,14 +135,6 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-                    "expected_answer": "The maximum operating angle of the coupling shaft is 30° when lifted and 30° when lowered.",
-                    "model_answer": "<think>\nPour répondre à la question \"What is the maximum operating angle of the coupling shaft when lifted and when lowered?\", je dois analyser le contenu de l' redirection du tableau d'épandage. \n\nJe vois que dans le sommaire, il est mentionné que les angles maximaux sont des 30° et 30° vers le haut et le bas respectively. Cela signifie que le coupleur de trésors a un angle maximum de 30° lorsque lifté et de 30° lorsque ground à ground.\n\nJe dois donc identifier ces angles dans l'opérations avant l'épandage, où il est mentionné que les angles maximaux sont 30° et 30°. \n\nEn résumant, le coupleur de trésors a un angle maximum de 30° lorsque lifté et de 30° lorsque ground à ground.\n</think>\n\nThe maximum operating angle of the coupling shaft when lifted is 30 degrees and when lowered is also 30 degrees.\n\n\\boxed{30^\\circ}",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "<think>\nPour répondre à la question \"Should the parking brake of the tractor be engaged before connecting the machine?\", je dois analyser les informations fournies dans le manuel des tableaux d'épandage et le sommaire du manuel de tableaux d'épandage.\n\nJe vois que le document inclut une section sur \"Opérations avant l'épandage\", où est mentionnée la détermination du type d'engrais. Dans cette section, il est indiqué que les grains de granulés sont classés par leur surface et their shape, avec des tables d'épandage adaptées.\n\nEn plus de cela, le document mentionne une instruction sur le réglage du distributeur d'engrais, où la granulométrie doit être comprise. Cela indique que les grains doivent être épandus de manière appropriée, ce qui est essentiel pour éviter des dommages.\n\nEnfin, il est mentionné que le distributeur d'engrais doit être réglé à l'aide du tableau d'épandage adéquat, ce qui suggère une adaptation adaptée au type de traux.\n\nAinsi, en combinant ces informations, je peux affirmer que le parking brake doit être engageué avant la connection du machine pour éviter les dommages et une epandeur optimale.\n</think>\n\nOui, il faut le parking brake du tractor avant de connecter la machine. Cela permet de prévenir les grains de granulés et d'épandurer de manière appropriée, ce qui est essentiel pour éviter des dommages et une epandeur optimale.\n\n**Answer:**  \nOui, il faut le parking brake du tractor avant de connecter la machine.",
@@ -232,28 +223,12 @@
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-                    "expected_answer": "75 cm above the troughs.",
-                    "model_answer": "<think>\nPour déterminer la hauteur minimale de la balise de disques d'engrais au-dessus des tranchées, je dois suivre les étapes du procédé décrit dans le document. Laissez un énoncée à l'aide de la page 65, où il est déclaré que la hauteur du disque d'engrais doit être inférieure à 75 cm au-dessus des bacs de collecte. Cela signifie que la hauteur minimale de la balise est de 75 cm.\n\nEn résumant les informations, la hauteur minimale de la balise de disques d'engrais au-dessus des tranchées est de 75 cm.\n</think>\n\nLa hauteur minimale de la balise de disques d'engrais au-dessus des tranchées est de **75 cm**.",
-                    "page": 84,
-                    "dataset": "general_questions",
-                    "self_evaluation": "yes"
-                },
-                {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
                     "model_answer": "<think>\nPour répondre à la question de l'utilisateur, il faut identifier le height en cm qui doit être placée au-dessus des végétations dans le contexte fourni. D'après le contexte, le spreading disc doit être positionné à 75 cm au-dessus des végétations pour gérer l'épandage approprié.\n\nANSWER: 75 cm\n</think>\n\nPour répondre à la question \"Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?\", il faut identifier le height en cm qui doit être placé au-dessus des végétations. D'après le contexte fourni, le spreading disc doit être positionné à 75 cm au-dessus des végétations pour gérer l'épandage approprié.\n\nANSWER: 75 cm",
                     "page": 89,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "<think>\nPour répondre à la question \"What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?\", je dois analyser les informations fournies dans le contexte fourni.\n\nJe regarde d'abord la page 81 du rapport, où est mentionnée la procédure d'épandage sur la parcelle. La page 81 indique que le maximum de froid potentiel à l'intérieur du middle trough est de 25 %.\n\nEnsuite, je vérifie si cette information est consistente avec les autres pages et les autres informations fournies dans le rapport. Par exemple, la page 97 mentionne que le maximum de froid potentiel est de 25 %, ce qui correspond à la info trouvée sur la page 81.\n\nEnfin, je retrace les détails pertinent pour écrire la réponse precise et concise.\n</think>\n\nThe maximum fertilizer loss of the quantity in the middle trough is **25% allowed**.",
-                    "page": 91,
-                    "dataset": "general_questions",
-                    "self_evaluation": "no"
                 },
                 {
                     "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
@@ -368,18 +343,122 @@
                     "self_evaluation": "yes"
                 },
                 {
-                    "question": "What is the required distance in m between the discharge bushing and spreading disc?",
+                    "question": "How often should the agitator axle seal be replaced?",
+                    "expected_answer": "Every season and after every 100 operational hours.",
+                    "model_answer": "<think>\nPour répondre à la question \"How often should the agitator axle seal be replaced?\", je dois identifier le contenu pertinent de la page 13. Analyser les informations fournies, il semble que l'agiterse axial est connecté au système d'épandage des étoiles et doit être remonté après un certain temps. D'après le texte, il semble que doit être raccordé au minimum une fois par la maintenance ordinaire du système ISOBUS.\n\nJe dois donc identifier le nom de l'agiterse axial dans le contenu et le décrire en suivant les directives de maintenance du Page 13.\n</think>\n\nThe agiterse axial seal should be replaced at least once per maintenance cycle of the system, typically after a routine check or inspection.",
+                    "page": 140,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "<think>\nOkay, I need to figure out from which version the ISOBUS supports the reception of the Greenseeker sensor. Let me start by looking through the provided pages.\n\nFirst, I see a page about the ISOBUS machine. It mentions that the Greenseeker sensor is used for detecting gaseux en arrière d'une arte à pente. The description says it's used in various applications like road repair and construction. \n\nLooking further down, there's a section titled \"Réc reception du signal deGreekler\" which explains how the Greenseeker works by emitting a signal to detect gaseux. It also mentions that this sensor is part of the ISOBUS system.\n\nI notice that in another page about the machine, it refers to the Greenseeker as being used for road repair and construction. This reinforces the idea that the Greenseeker is supported by ISOBUS from a certain version onwards.\n\nAdditionally, there's a mention of the Greenseekler sensor being part of the ISOBUS system in another context. The page about the Greenseekler specifically states that it's used for road repair and construction, which aligns with the ISOBUS capabilities.\n\nPutting this all together, I can conclude that the Greenseeker sensor is supported by the ISOBUS from version 18.75 onwards.\n</think>\n\nThe Greenseeker sensor is supported by the ISOBUS system from version 18.75 onwards.\n\n<answer>\nThe Greenseeker sensor is supported by the ISOBUS system from version 18.75 onwards.\n</answer>",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "<think>\nPour répondre à la question \"When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?\", je dois analyser les informations fournies dans le contexte fourni.\n\nJe regarde le tableau d'épandage du distributeur d'engrais. La colonne \"Poids spécifique\" contient la valeur exprimée en kg/litres ou tonne/m3, qui correspond au poids de 1 litre d'engrais. \n\nPour déterminer le tableau d'épandage adéquat, je dois identifier les propriétés physiques des grains du type d'engrais souhaité. Les grains doivent être à l'intérieur de la trémie et se distinguer par leur diamètre.\n\nJe vérifie que le tableau d'épandage correspondant aux grains spécifiques inclut une table à 100 % pour les grains minimaux et une table à 0 % pour les grains maximaux. \n\nEnfin, je conclure que le poids spécifique est essentialier pour déterminer le tableau d'épandage approprié.\n</think>\n\nPour déterminer le tableau d'épandage adéquat, il suffit de connaitre le poids spécifique des grains du type d'engrais souhaité. Le tableau d'épandage doit inclure une table à 100 % pour les grains minimaux et une table à 0 % pour les grains maximaux.\n\n**ANSWER**\nPour déterminer le tableau d'épandage adéquat, il suffit de connaitre le poids spécifique des grains du type d'engrais souhaité. Le tableau d'épandage doit inclure une table à 100 % pour les grains minimaux et une table à 0 % pour les grains maximaux.\n</ANSWER>",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "<think>\nPour déterminer le nombre de parties du distributeur d'engrais, je dois analyser les éléments clairs de la page 65. Le distributeur d'engrais est representé par un arbre de transmission sur le bon point de jonction. Cela signifie que il y a une seule partie au niveau du distributeur d'engrais. Ensuite, en regardant le tableau d'épandage correspondant, on voit que la largeur de travail et l'angle d'inclinaison sont utilisées pour définir le profil d'épandage. Ainsi, le distributeur d'engrais est structuré avec un arbre de transmission unique sur un point fixe, ce qui signifie qu'il y a une seule partie au niveau du distributeur d'engrais.\n</think>\n\nIl y a une seule partie au niveau du distributeur d'engrais.\n\nANSWER\n1",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "<think>\nOkay, I need to figure out how to enable a fine application for dosing at a low application rate. Let me start by looking through the provided context.\n\nFirst, I see that there's a section about configuring the application for dosing. It mentions extracting specific information related to fine application and low application rates. The key points are under \"Configurations du point d'échelonnage\" where it refers to the application settings for fine dosages.\n\nLooking at the text, it says: \"Extrait de la page 63, le configuration du point d'échelonnage pour le dosage fin. Le tableau d'épandage affiche les préférences des disques d'épandage. Le système de commande peut ruleter correctement l'épandeur en fonction des vitesse d'avancement souhaitée et la vitesse d'écoulement souhaitée.\"\n\nSo, the application for dosing fine is enabled when you select \"Dosage fin\" in the configuration of the point of contact. The fine application allows precise control over dosages at low rates.\n\nTherefore, to enable a fine application for dosage at a low rate, you need to configure the application under the \"Dosage fin\" option within the point of contact settings.\n</think>\n\nTo enable a fine application for dosing at a low application rate, you must configure it under the \"Dosage fin\" option within the point of contact settings.\n\n**Answer:**  \nPour configurer l'application de dosage fined à une vitesse d'échelonnage faible, il suffit de sélectionner la option \"Dosage fined\" dans les paramètres du point de contact.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "<think>\nOkay, I need to figure out what the symbol is on top of the fine application handle that indicates the Fine application kit is enabled. Let me go through the provided context step by step.\n\nFirst, I see a table of contents at the top, which lists various topics under \"Page 61\". The first few pages describe the structure and features of the application, including the manual instructions for using the fine application. \n\nLooking further down, there's a page titled \"Opérations avant l'épandage\" where it explains how to use the fine application. On this page, I notice that under the section about configuring the fine application, there are several pages with titles like \"Configuration du Configureateur de tableaux d'épandage\", which seems related but not directly relevant.\n\nI also see a page titled \"Opérations avant l'épandage\" that lists various operations for epandage. Within this, there's a section about configuring the fine application, specifically mentioning the option to configure the fine application kit. The text here states: \"Le système de commande du module fine indique le point de jonction de l'arbre de transmission et vous convient de la position de dosage fin.\"\n\nLooking at the structure of the fine application handle, I see that there's a logo or symbol indicating the configuration. In the manual for the fine application, it mentions that the fine application kit is enabled by selecting the appropriate option in the table d'épandage.\n\nSo, the key information here is that the fine application kit is enabled by choosing the correct option from the table of epandage. The handle itself has a logo or symbol indicating this configuration.\n</think>\n\nThe fine application handle indicates that the Fine application kit is enabled by selecting the appropriate option in the table d'épandage.\n\n**Answer:**  \nLe handle du module fined indique que le point de jonction de l'arbre de transmission est configuré et vous convient de la position de dosage fin.",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "<think>\nOkay, I need to figure out where the RS 232 connector is located. Let me start by looking through the provided context.\n\nFirst, I see a list of pages from 66 to 78. Each page describes different operations related to an EPANDAGE system. The key term here is \"RS 232 connector,\" which seems to be part of the tableaux d'épandage section on page 65.\n\nLooking at that page, it mentions that the RS 232 connector is located in the center of the transmission. So, I can infer that the connector is positioned there based on the description.\n\nI should also check if there are any other references to the RS 232 connector elsewhere in the context. Scanning through the pages, I don't find additional mentions of this connector's location beyond page 65.\n\nTherefore, the answer should be that the RS 232 connector is located at the center of the transmission.\n</think>\n\nThe RS 232 connector is located at the center of the transmission.",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "<think>\nPour répondre à la question de l'utilisateur sur le répartition du sol en fonction des disques d'engrais gauche et droit, je dois analyser les informations fournies dans les fichiers de base de données. Laissez me démarquer les sections où sont traités les distributions homogénes et les distributions stratégiques.\n\nJe vois que dans le fichier opérations avant l'épandage, il y est mentionné un test sur la nappe d'épandage à gauche et à droite. Cela indique que la distribution homogène est traitée dans cette section.\n\nEnsuite, je dois identifier où se trouve le contenu de ce fichier pour déterminer les réponses appropriées. Laissez me extracted only the relevant information and structure it in a clear and concise manner.\n</think>\n\nThe test for homogeneous distribution of the slope is found in the \"Opérations avant l'épandage\" section, specifically under the \"Test de la nappe d'épandage à gauche et à droite\". This test ensures that the distribution of the engrais is uniform across both sides.",
+                    "page": 78,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "<think>\nPour répondre à la question \"What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?\", je dois analyser les informations fournies dans le contexte fourni.\n\nJe regarde d'abord la page 81 du rapport, où est mentionnée la restriction de l'engrais au maximum de 75 cm au niveau de la bordure. Cela signifie que le quantity en le middle trough (à l'aide du trancheur) ne peut être trop grand pour éviter un loss de fertilizer sur le fond.\n\nEnsuite, je vérifie les autres pages pour s'assurer que ce maximum de 75 cm est bien mentionné et que il est appliqué à la bordure correspondante. Enfin, je retrace les informations pour obtenir l'exactitude du maximum de fertilizer loss autorisé au middle trough.\n</think>\n\nThe maximum fertilizer loss of the quantity in the middle trough is allowed to be up to 75 cm at the level of the boundary.\n\nANSWER: 75%",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "<think>\nPour déterminer où se trouve le répertoire de la pression sur la végétation, je dois analyser les informations fournies dans les fichiers du contexte. D'abord, je vais examiner les fichiers pour les colonnes correspondantes.\n\nJe vois que dans le fichier \"Opérations avant l'épandage\", il est mentionné que la pression sur la végétation se measure à 25 % plus bas. Cela signifie que c'est la colonne \"Pressions de base de la végétation\" qui correspond au répertoire de la pression.\n\nEnsuite, je vérifie si d'autres fichiers contient des informations similaires ou différentes. Par exemple, dans le fichier \"Opérations avant l'épandage\", il est mentionné que la pression sur la végétation est 25 % plus bas, ce qui correspond à la colonne \"Pressions de base de la végétation\".\n\nEnfin, je vérifie si d'autres fichiers contient des informations distinctes ou différentes. Par exemple, dans le fichier \"Opérations avant l'épandage\", il est mentionné que la pression sur la végétation est 25 % plus bas, ce qui reste incherter à la colonne \"Pressions de base de la végétation\".\n\nAinsi, en conclusion, la colonne \"Pressions de base de la végétation\" correspond au répertoire de la pression sur la végétation ou la pressedure d'arrière.\n</think>\n\nThe spreadsheet contains information about the spreading height of the crop or the base pressure on the ground. The relevant column for this measurement is labeled \"Pressions de base de la végétation\" (Pressures of the field).\n\nANSWER: Pressions de base de la végétation",
+                    "page": 95,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "<think>\nOkay, let me try to figure out how to answer this question. The user is asking what information is available so they can set the correct PTO shaft and spreading disc RPM. \n\nLooking at the provided context, I see several sections discussing various aspects of the epandage system. Each section has specific details about different components like the PTO shaft, spreading discs, etc.\n\nI need to find the exact information related to setting the PTO shaft and spreading disc RPM. Scanning through each section, I notice that in Section 102, there's a detailed explanation of how the PTO shaft is set up. It mentions that the PTO shaft must be set at a specific RPM for optimal performance.\n\nSo, the key information here is the RPM setting for the PTO shaft. The user can find this by reading Section 102, which provides precise instructions on configuring the PTO system.\n</think>\n\nThe correct PTO shaft and spreading disc RPM can be configured based on the following information:\n\n- **PTO Shaft Configuration**:  \n  - The PTO shaft must be set at a specific RPM for optimal performance.  \n  - Refer to Section 102 for precise instructions on how to configure the PTO system.\n\nThis information is available in Section 102 of the context provided.",
+                    "page": 111,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "<think>\nD'accord, je dois répondre à la question \"Quels que je dois faire si je ne peux pas lower the power lift far enough to release the catch hooks when preparing le machine pour stockage.\"\n\nJe commence par regarder le contexte fourni. Le contexte inclut une section \"Maintenance\" qui mentionne des instructions concernant le nettoyage et la maintenance du système d'épandure.\n\nEnsuite, je vérifie les pages correspondantes. La page 126 mentionne que les tubes profilés de l'arbre d'accouplement doivent être régulièrement graissés pour release les catches. Cela semble directly responder la question car il concerne une étape importante du nettoyage.\n\nJe identify les instructions pertinentes: \"Tubes profilés d'arbres de transmission\" et \"Boîtier central avec 2 compartiments remplis de graisse\". Ces informations montrent que le nettoyage nécessite une attention aux surfaces de contact des tubes, ce qui correspond à la question.\n\nEnfin, je mets en page 126 pour indiquer l'exacte information nécessaire pour répondre à la question.\n</think>\n\n[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]\n\nLa maintenance du système d'épandure nécessite le nettoyage des tubes profilés de l'arbre d'accouplement. Les boîtier central comporte 2 compartiments remplis de graisse pour engrenages EP 00/000, ce qui correspond à la question.\n\n**Réponse :**\n\nLa maintenance du système d'épandure nécessite le nettoyage des tubes profilés de l'arbre d'accouplement. Les boîtier central comporte 2 compartiments remplis de graisse pour engrenages EP 00/000, ce qui correspond à la question.\n\n**Réponse finale :**\n\n\\boxed{\\text{Le nettoyage du système d'épandure nécessite le nettoyage des tubes profilés de l'arbre d'accouplement. Les boîtier central comporte 2 compartiments remplis de graisse pour engrenages EP 00/000, ce qui correspond à la question.}}",
+                    "page": 120,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "<think>\nPour déterminer le type de grene qui est dans le gearbox central, je dois analyser les informations fournies dans la page 134 du contexte. L'information indique que le gearbox central est fillé avec unegreneure et que la position doit être correcte pour éviter des contacts inutiles. Cela signifie que le gearbox central est rempli de greneure, ce qui correspond à un type de greneure standardized or standard. Ensuite, en regardant les autres informations sur le gearbox, comme son utilisation et la position, on peut affirmer que le gearbox central est indeed rempli de greneure.\n</think>\n\nThe gearbox is filled with grease.\n\n\\boxed{Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible}",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "self_evaluation": "no"
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
                     "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "<think>\nOkay, I need to figure out the required distance between the discharge bushing and the spreading disc. Let me look through the provided context.\n\nFirst, I see a list of pages with various technical details about maintenance instructions for machinery. The question is asking specifically about the distance between the discharge bushing and the spreading disc. \n\nLooking at the pages, there's a section titled \"Maintenance\" which includes several paragraphs. In one of these paragraphs, it mentions that the distance should be no less than 10 mm. That seems to be the exact information needed.\n\nI don't see any other mention of this specific distance in the context. So, I can confidently say that the required distance is at least 10 millimeters.\n</think>\n\nThe required distance between the discharge bushing and spreading disc is no less than 10 mm.",
+                    "model_answer": "<think>\nOkay, I need to figure out the required distance between the discharge bushing and the spreading disc. Let me look through the provided context.\n\nFirst, I see a list of pages with various technical details about maintenance instructions for machinery. The question is asking specifically about the distance between the discharge bushing and the spreading disc. \n\nLooking at the pages, there's a section titled \"Maintenance\" which includes several paragraphs. In one of these paragraphs, it mentions that the distance should be no less than 10 mm. That seems to be the key information needed for this question.\n\nI also notice that in other maintenance sections, they talk about distances between various components like cables and brackets, but none specifically mention the discharge bushing or spreading disc. So, I can confidently rely on the paragraph from the \"Maintenance\" section where it states the minimum distance is 10 mm.\n\nTherefore, the required distance is at least 10 millimeters.\n</think>\n\nThe required distance between the discharge bushing and spreading disc is no less than 10 mm.",
                     "page": 138,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 },
                 {
-                    "question": "How often should the agitator axle seal be replaced?",
-                    "expected_answer": "Every season and after every 100 operational hours.",
-                    "model_answer": "<think>\nPour répondre à la question \"How often should the agitator axle seal be replaced?\", je dois identifier le contenu pertinent de la page 13. Analyser les informations fournies, il semble que l'agiterse axial est connecté au système d'épandage des étoiles et doit être remonté après un certain temps. D'après le texte, il semble que doit être raccordé au minimum une fois par la maintenance ordinaire du système ISOBUS.\n\nJe dois donc identifier le nom de l'agiterse axial dans le contenu et le décrire en suivant les directives de maintenance du Page 13.\n</think>\n\nThe agiterse axial seal should be replaced at least once per maintenance cycle of the system, typically after a routine check or inspection.",
-                    "page": 140,
+                    "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+                    "expected_answer": "Yes, using the Sensor input IM Tellus.",
+                    "model_answer": "<think>\nOkay, I need to figure out how to connect the tractor's speed sensor or radar to the IsoMatch control box. Let me start by looking through the provided context.\n\nFirst, I see a list of pages from different sections of the document. The question is about connecting the speed sensor or radar to the IsoMatch control box. Scanning through the pages, I find that in Page 135, there's an instruction about connecting the tractor's speed sensor and tracer to the IsoMatch control system.\n\nLooking at that page, it mentions that the speed sensor must be connected directly to the computer, and the tracer is attached to the match machine. The connection details are provided on pages 134-135. \n\nSo, the key steps are:\n1. Connect the tractor's speed sensor to the IsoMatch control box.\n2. Attach the tracer to the match machine.\n\nI should make sure that both components are correctly connected according to the instructions given in those pages.\n</think>\n\nThe tractor's speed sensor and radar must be connected directly to the IsoMatch control box, as detailed on Page 135 of the document.",
+                    "page": 144,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
                 }

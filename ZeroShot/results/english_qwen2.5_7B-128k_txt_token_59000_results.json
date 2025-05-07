@@ -132,7 +132,7 @@
     {
         "question": "What determines the machine's working width?",
         "expected_answer": "Spreading disc RPM",
-        "model_answer": "The working width is adjusted with:\n\u00b7 the correct connection point for the coupling shaft with the central gearbox as indicated in the spreading chart.\n\u00b7 the PTO shaft rpm set according to the relevant spreading chart or table.",
+        "model_answer": "The working width is adjusted with:\n· the correct connection point for the coupling shaft with the central gearbox as indicated in the spreading chart.\n· the PTO shaft rpm set according to the relevant spreading chart or table.",
         "target_page": 46,
         "context_type": "token",
         "noise_level": 59000,
@@ -169,19 +169,6 @@
         "duration": 1.5
     },
     {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-        "model_answer": "The working angle out of working reach is 30\u00ba when the coupling shaft is lowered. When raised, the working angle should be limited to a maximum of 30\u00ba.\nTherefore, the maximum operating angle of the coupling shaft is 30\u00ba when lowered and also 30\u00ba when raised.",
-        "target_page": 51,
-        "context_type": "token",
-        "noise_level": 59000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 1.8
-    },
-    {
         "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
         "expected_answer": "Yes.",
         "model_answer": "Yes. The instructions state: \"Switch the tractor off, remove the key from the ignition and engage the parking brake of the tractor.\"",
@@ -210,7 +197,7 @@
     {
         "question": "What must be ensured with decoupling ropes during power lift connection?",
         "expected_answer": "Decoupling ropes must never be tense.",
-        "model_answer": "[Image: INDICATION Position the troughs horizontally with a spirit level!]\n\nBe careful of moving parts making contact with each other while working. Work safely with the machine:\n\u00b7 releasing the pressure from the hydraulic system,\n\u00b7 switching off the electronic control system,\n\u00b7 switch the tractor off and remove the key from the ignition,\n\u00b7 engage the parking brake of the tractor,\n\u00b7 wait for all machine parts to come to a standstill before you approach it,\n\u00b7 wear protective clothing, such as safety gloves and shoes,\n\u00b7 carefully follow the instructions given.\nFriction with these materials could cause physical injury.\n\nCheck the immediate vicinity\nPosition the troughs horizontally with a spirit level!\n\n[Image: INDICATION Position the troughs horizontally with a spirit level!]\n\nDo not change the settings of the ExactLine by performing the test as described in\n\u00b7 paragraph \u00bbTesting ExactLine spreading pattern\u00ab on page 89.\nThe type of fertiliser is determined when adjusting the spreader, as described in\n\u00b7 paragraph \u00bbDetermine the type and pattern of the granules\u00ab on page 57.\n\nYou can choose from 3 settings from the chart:\n\u00b7 YIELD.\n\u00b7 ECO,\nIn the yield setting (YIELD), the loss over the field edge is higher than what is allowed by the environmental standard. Therefore, never use this setting next to surface water. Cover to the border is very good with this option.\n\nThe loss over the field edge will be equal to or less than the environment standard in the environment setting (ECO). Always use this setting when working next to a surface water! The result is that the cover at the border of the property is not optimum.\n\u00b7 See the software instruction manual.\n\nIf you open the filters, you should block them to prevent unwanted closing. \n\n[Image: Close the sieveLocking the opened sieve]\n\nSieve clip locked\n\n[Image: Sieve clip locked]\n\nIf you have not managed to reduce the lump or encrusted layer because it is out of reach or there is no tool at your disposal:\n\u00b7 Close the hopper cover.\n\u00b7 Follow the working method as described in the previous paragraph \u00bbDamage\u00ab until emptying the hopper.\n\n[Image: INDICATION]\n[Image]\n\nThe content of the separate tubes can differ 15% at most from the average. If the correction seems to be 2 characters too strong after repeating the test, set the discharge opening 2 letters in the direction of A \uf034 Adjust the discharge point as needed for easier access.\n\nIf you still cannot see the cause, carefully remove the vanes to see better into the discharge opening of the discharge bushing. \n\nPass an object such as a screwdriver through the discharge opening and carefully feel if you can find an object in or damage to the dosing openings or agitator.\n\nIf you see damage to the vanes, spreading disc or discharge bushing, the failure is most likely caused by a hard object. The agitator is probably damaged too. You must first repair the damage or have it repaired before continuing with spreading.\n\u00b7 Place an object, for example a cloth or bag, in the discharge opening of the discharge bushing on the damaged side.. This will prevent you from wasting fertiliser during transport.\n\n\u00b7 Start the tractor and engage the control box. The dosing units will now close.\n\u00b7 Switch off the control box.\n\u00b7 Take all appropriate measures for road transport.\n\uf0ae See paragraph \u00bbPreparing the machine to be transported\u00ab on page 93.\n\nOn the site of a lockable storage depot:\n\u00b7 Empty the hopper without positioning the machine on the ground.\n\u00b7 Open the sieve closure with an attachment, standard supplied with the machine.\nLock the sieve in the open position\n\nIf you open the filters, you should block them to prevent unwanted closing. \n\n[Image: Close the sieveLocking the opened sieve]\n\nSieve clip locked\n\n[Image: Sieve clip locked]\n\nIf you have not found any damage, the failure is probably due to stoppage from an encrusted layer of fertiliser.\n\u00b7 Try to reduce the size of the lump or encrusted layer with an object such as a stick, screwdriver or vane.\n\nIf you open the filters to reduce the lump or encrusted layer from the top side, you should block them to prevent unwanted closing. \n\n[Image: Close the sieveLocking the opened sieve]\n\nSieve clip locked\n\n[Image: Sieve clip locked]\n\nIf you can reduce the lump or encrusted layer in this way:\n\u00b7 Inspect the hopper contents for other lumps and reduce them.\n\u00b7 Fit the vanes and secure them with the lock nut.\n\u00b7 Check the discharge point setting.\n\u00b7 Close the hopper cover.\n\n[Image: INDICATION]\n[Image]\n\nIf you have not managed to reduce the lump or encrusted layer because it is out of reach or there is no tool at your disposal:\n\u00b7 Close the hopper cover.\n\u00b7 Follow the working method as described in the previous paragraph \u00bbDamage\u00ab until",
+        "model_answer": "[Image: INDICATION Position the troughs horizontally with a spirit level!]\n\nBe careful of moving parts making contact with each other while working. Work safely with the machine:\n· releasing the pressure from the hydraulic system,\n· switching off the electronic control system,\n· switch the tractor off and remove the key from the ignition,\n· engage the parking brake of the tractor,\n· wait for all machine parts to come to a standstill before you approach it,\n· wear protective clothing, such as safety gloves and shoes,\n· carefully follow the instructions given.\nFriction with these materials could cause physical injury.\n\nCheck the immediate vicinity\nPosition the troughs horizontally with a spirit level!\n\n[Image: INDICATION Position the troughs horizontally with a spirit level!]\n\nDo not change the settings of the ExactLine by performing the test as described in\n· paragraph »Testing ExactLine spreading pattern« on page 89.\nThe type of fertiliser is determined when adjusting the spreader, as described in\n· paragraph »Determine the type and pattern of the granules« on page 57.\n\nYou can choose from 3 settings from the chart:\n· YIELD.\n· ECO,\nIn the yield setting (YIELD), the loss over the field edge is higher than what is allowed by the environmental standard. Therefore, never use this setting next to surface water. Cover to the border is very good with this option.\n\nThe loss over the field edge will be equal to or less than the environment standard in the environment setting (ECO). Always use this setting when working next to a surface water! The result is that the cover at the border of the property is not optimum.\n· See the software instruction manual.\n\nIf you open the filters, you should block them to prevent unwanted closing. \n\n[Image: Close the sieveLocking the opened sieve]\n\nSieve clip locked\n\n[Image: Sieve clip locked]\n\nIf you have not managed to reduce the lump or encrusted layer because it is out of reach or there is no tool at your disposal:\n· Close the hopper cover.\n· Follow the working method as described in the previous paragraph »Damage« until emptying the hopper.\n\n[Image: INDICATION]\n[Image]\n\nThe content of the separate tubes can differ 15% at most from the average. If the correction seems to be 2 characters too strong after repeating the test, set the discharge opening 2 letters in the direction of A  Adjust the discharge point as needed for easier access.\n\nIf you still cannot see the cause, carefully remove the vanes to see better into the discharge opening of the discharge bushing. \n\nPass an object such as a screwdriver through the discharge opening and carefully feel if you can find an object in or damage to the dosing openings or agitator.\n\nIf you see damage to the vanes, spreading disc or discharge bushing, the failure is most likely caused by a hard object. The agitator is probably damaged too. You must first repair the damage or have it repaired before continuing with spreading.\n· Place an object, for example a cloth or bag, in the discharge opening of the discharge bushing on the damaged side.. This will prevent you from wasting fertiliser during transport.\n\n· Start the tractor and engage the control box. The dosing units will now close.\n· Switch off the control box.\n· Take all appropriate measures for road transport.\n See paragraph »Preparing the machine to be transported« on page 93.\n\nOn the site of a lockable storage depot:\n· Empty the hopper without positioning the machine on the ground.\n· Open the sieve closure with an attachment, standard supplied with the machine.\nLock the sieve in the open position\n\nIf you open the filters, you should block them to prevent unwanted closing. \n\n[Image: Close the sieveLocking the opened sieve]\n\nSieve clip locked\n\n[Image: Sieve clip locked]\n\nIf you have not found any damage, the failure is probably due to stoppage from an encrusted layer of fertiliser.\n· Try to reduce the size of the lump or encrusted layer with an object such as a stick, screwdriver or vane.\n\nIf you open the filters to reduce the lump or encrusted layer from the top side, you should block them to prevent unwanted closing. \n\n[Image: Close the sieveLocking the opened sieve]\n\nSieve clip locked\n\n[Image: Sieve clip locked]\n\nIf you can reduce the lump or encrusted layer in this way:\n· Inspect the hopper contents for other lumps and reduce them.\n· Fit the vanes and secure them with the lock nut.\n· Check the discharge point setting.\n· Close the hopper cover.\n\n[Image: INDICATION]\n[Image]\n\nIf you have not managed to reduce the lump or encrusted layer because it is out of reach or there is no tool at your disposal:\n· Close the hopper cover.\n· Follow the working method as described in the previous paragraph »Damage« until",
         "target_page": 56,
         "context_type": "token",
         "noise_level": 59000,
@@ -288,7 +275,7 @@
     {
         "question": "What does a tray test check on a fertilizer spreader?",
         "expected_answer": "Fertilizer distribution pattern of the spreader.",
-        "model_answer": "[Image]\nReview and adaptation\nThe content of the separate tubes can differ 15% at most from the average.\nIf the correction seems to be 2 characters too strong after repeating the test, set the discharge point back by one character.\n   A                                                                                                 Good spreading pattern, the spreader has been adjusted well\n0  B                                 The spreader is not spreading wide enough. \uf034 Adjust the discharge opening 2 letters in the direction of A \uf034 Repeat the test\n1  C                                                          The spreader is spreading too wide: \uf034 Adjust the discharge opening 2 letters in the direction of U\n164",
+        "model_answer": "[Image]\nReview and adaptation\nThe content of the separate tubes can differ 15% at most from the average.\nIf the correction seems to be 2 characters too strong after repeating the test, set the discharge point back by one character.\n   A                                                                                                 Good spreading pattern, the spreader has been adjusted well\n0  B                                 The spreader is not spreading wide enough.  Adjust the discharge opening 2 letters in the direction of A  Repeat the test\n1  C                                                          The spreader is spreading too wide:  Adjust the discharge opening 2 letters in the direction of U\n164",
         "target_page": 76,
         "context_type": "token",
         "noise_level": 59000,
@@ -325,19 +312,6 @@
         "duration": 0.7
     },
     {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "expected_answer": "75 cm above the troughs.",
-        "model_answer": "The distance between the discharge bushing and the spreading disc must be 1.0 mm.",
-        "target_page": 84,
-        "context_type": "token",
-        "noise_level": 59000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 50.9
-    },
-    {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
         "expected_answer": "75 cm",
         "model_answer": "The spreading disc must be set to 75 cm above the troughs.",
@@ -349,19 +323,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 51.1
-    },
-    {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-        "expected_answer": "10% of the quantity in the middle trough",
-        "model_answer": "10%",
-        "target_page": 91,
-        "context_type": "token",
-        "noise_level": 59000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 0.7
     },
     {
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
@@ -444,7 +405,7 @@
     {
         "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
         "expected_answer": "40 degrees Celsius",
-        "model_answer": "40\u00b0C",
+        "model_answer": "40°C",
         "target_page": 117,
         "context_type": "token",
         "noise_level": 59000,
@@ -544,19 +505,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 0.7
-    },
-    {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-        "expected_answer": "The required distance is 1.0 mm.",
-        "model_answer": "The distance between the discharge bushing and the spreading disc must be 1.0 mm.",
-        "target_page": 138,
-        "context_type": "token",
-        "noise_level": 59000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 1.0
     },
     {
         "question": "How often should the agitator axle seal be replaced?",
@@ -808,7 +756,7 @@
     {
         "question": "Can the tray test be performed at 40 degrees Celsius?",
         "expected_answer": "Not found in context",
-        "model_answer": "[No specific mention of testing at 40\u00b0C is found in the context provided. The closest relevant information is about avoiding high temperatures for certain operations, but not specifying a exact temperature like 40\u00b0C.]\n\nThe context does not provide explicit information on performing the tray test at 40 degrees Celsius. However, it mentions to avoid working under moist conditions and high wind speeds (> 5 m/sec), implying caution with temperature as well.",
+        "model_answer": "[No specific mention of testing at 40°C is found in the context provided. The closest relevant information is about avoiding high temperatures for certain operations, but not specifying a exact temperature like 40°C.]\n\nThe context does not provide explicit information on performing the tray test at 40 degrees Celsius. However, it mentions to avoid working under moist conditions and high wind speeds (> 5 m/sec), implying caution with temperature as well.",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 59000,
@@ -886,7 +834,7 @@
     {
         "question": "Which appropriate measures for road transport should be taken when stopping work?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Take all appropriate measures for road transport.\n\uf0ae See paragraph \u00bbPreparing the machine to be transported\u00ab on page 93.]",
+        "model_answer": "[Take all appropriate measures for road transport.\n See paragraph »Preparing the machine to be transported« on page 93.]",
         "target_page": 112,
         "context_type": "token",
         "noise_level": 59000,
@@ -1016,7 +964,7 @@
     {
         "question": "What are the detailed technical specifications and bandwidth capabilities of different ISOBUS communication protocol versions compatible with the IsoMatch Tellus system?",
         "expected_answer": "Not found in context",
-        "model_answer": "The following harmonised standards have been applied:\n\u00b7 EN ISO 4254-1 :2015\n\u00b7 EN ISO 4254-8 :2018\n\nThe ISOBUS communication protocol versions compatible with the IsoMatch Tellus system are based on the harmonised standards EN ISO 4254-1 :2015 and EN ISO 4254-8 :2018. However, specific bandwidth capabilities are not detailed in the provided context.\nNote: The exact bandwidth capabilities were not specified in the given text.",
+        "model_answer": "The following harmonised standards have been applied:\n· EN ISO 4254-1 :2015\n· EN ISO 4254-8 :2018\n\nThe ISOBUS communication protocol versions compatible with the IsoMatch Tellus system are based on the harmonised standards EN ISO 4254-1 :2015 and EN ISO 4254-8 :2018. However, specific bandwidth capabilities are not detailed in the provided context.\nNote: The exact bandwidth capabilities were not specified in the given text.",
         "target_page": 32,
         "context_type": "token",
         "noise_level": 59000,
@@ -1402,5 +1350,187 @@
         "dataset": "question_datasets/question_answers_unanswerable.json",
         "file_extension": "txt",
         "duration": 2.5
+    },
+    {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "expected_answer": "06.00.00.0257",
+        "model_answer": "[Image] Tractor radar or wheel sensor\nThe tractor's speed sensor or radar can be connected to the IsoMatch control box with the optional \"Sensor input IM Tellus\". This is needed if your tractor does not have the ISO 11786 in cab connection. Other connections are the same as the \"Input IM Tellus\" cable set, supplied as a standard item.\nFrom the information provided, it can be inferred that ISOBUS support for receiving signals from the Greenseeker sensor (which is similar to a tractor radar or wheel sensor) would require an optional \"Sensor input IM Tellus\" connection. However, there's no explicit mention of the specific version of ISOBUS supporting this feature.\nGiven the context and the lack of specific version information, we cannot precisely state which version of ISOBUS supports Greenseeker sensor signals reception based solely on the provided text.",
+        "target_page": 27,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 54.3
+    },
+    {
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "expected_answer": "150mm.",
+        "model_answer": "The maximum acceptable overlap is 30 mm. However, the exact minimum overlap distance is not specified in the provided context. Based on general engineering practices and the context, a safe overlap of at least 25-30 mm is recommended to prevent mechanical issues. But for precise information, refer to the technical specifications or manual.",
+        "target_page": 51,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.7
+    },
+    {
+        "question": "How many parts does the distribution meter have?",
+        "expected_answer": "Seven.",
+        "model_answer": "Unknown\n\nThe provided context does not contain specific information about how many parts the distribution meter has.",
+        "target_page": 59,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.7
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "model_answer": "[To set the spreader for fine application with an application rate less than 40 kg/min, follow these steps according to the manual:]\n\n1. Switch the tractor off, remove the key from the ignition, and engage the parking brake.\n2. Set the dosing setting on the control box to \"fine application\" as per the instructions provided.\n\nThis ensures that only one of the three dosing openings is open for low flow rates.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 2.2
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "expected_answer": "1 open hole and 2 thick holes",
+        "model_answer": "The arrow on the hand-grip indicates the desired position for the fine application setting.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.7
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "expected_answer": "At the back of the control box.",
+        "model_answer": "The RS232 cable is used to connect the signal from an external system to the Tellus control box. The plug pin occupation can be found in the Tellus control box operating manual.",
+        "target_page": 72,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.2
+    },
+    {
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "expected_answer": "Every year",
+        "model_answer": "The left and right spreading discs must be checked regularly if they are not spreading the same volumes of fertiliser to ensure good distribution. Specifically, this should be done:\n- After the first 10 running hours \n- For each season\n- After every 100 operational hours\n- If the difference in application rate between left and right sides is more than 3%\nThis can be performed by testing the spreading pattern as described on page 76.",
+        "target_page": 78,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 2.3
+    },
+    {
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+        "expected_answer": "10% of the quantity in the middle trough",
+        "model_answer": "10%",
+        "target_page": 91,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 50.7
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "expected_answer": "Measured from the bottom of the vanes.",
+        "model_answer": "From the bottom of the vanes, the distance to the ground or the crop must be 75 cm.",
+        "target_page": 95,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.8
+    },
+    {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "expected_answer": "spreading chart or online spreading chart",
+        "model_answer": "The control system will drive the dosing units in such a way that the actual application rate is equal to the set application rate through the lower PTO shaft RPM. The correct PTO shaft and spreading discs RPM can be set based on the spreading chart, online spreading chart or by referring to the chart on the previous page.\n[Note: This information comes from the paragraph describing how to set the PTO shaft and spreading disc RPM for boundary track spreading with ExactLine.]",
+        "target_page": 111,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 2.3
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "expected_answer": "Place the spreader on a firm, stable ramp",
+        "model_answer": "If you cannot lower the power lift far enough to release the catch hooks, we advise you to place the spreader on a firm, stable ramp, for example a pawl.",
+        "target_page": 120,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.1
+    },
+    {
+        "question": "What type of grease is the central gearbox filled with?",
+        "expected_answer": "EP 00/000 gear grease.",
+        "model_answer": "EP00/000 gear grease EP00/000 gear grease",
+        "target_page": 127,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.7
+    },
+    {
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+        "expected_answer": "The required distance is 1.0 mm.",
+        "model_answer": "The distance between the discharge bushing and the spreading disc must be 1.0 mm.",
+        "target_page": 138,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.8
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "expected_answer": "Yes, using the Sensor input IM Tellus.",
+        "model_answer": "Yes, you can connect the tractor's speed sensor or radar to the IsoMatch control box with the optional \"Sensor input IM Tellus\".",
+        "target_page": 144,
+        "context_type": "token",
+        "noise_level": 59000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.9
     }
 ]

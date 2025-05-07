@@ -15,7 +15,7 @@
     {
         "question": "What is the overlap percentage for the full field spreading pattern?",
         "expected_answer": "100% overlap",
-        "model_answer": "[Image]\nDas Streubild bei Fl\u00e4chend\u00fcngung wird zu 100 % \u00fcberlappt",
+        "model_answer": "[Image]\nDas Streubild bei Flächendüngung wird zu 100 % überlappt",
         "target_page": 28,
         "context_type": "token",
         "noise_level": 20000,
@@ -106,7 +106,7 @@
     {
         "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
         "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
-        "model_answer": "[Image]\nDa vorab nicht bekannt ist, wo in der Kabine ein geeigneter Ort ist, m\u00fcssen Sie selbst f\u00fcr eine Fu\u00dfplatte sorgen, an die das Rohr geschwei\u00dft wird.",
+        "model_answer": "[Image]\nDa vorab nicht bekannt ist, wo in der Kabine ein geeigneter Ort ist, müssen Sie selbst für eine Fußplatte sorgen, an die das Rohr geschweißt wird.",
         "target_page": 40,
         "context_type": "token",
         "noise_level": 20000,
@@ -158,7 +158,7 @@
     {
         "question": "What specific precaution should be taken before working between the tractor and machine to check the coupling shaft length?",
         "expected_answer": "Place the machine on a supporting beam.",
-        "model_answer": "[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]\n\nMaschine nur an der Fronthubvorrichtung ankoppeln, wenn diese:\n\u00b7 ausreichendes Hubverm\u00f6gen hat,\n\u00b7 von derselben Befestigungskategorie ist wie die Maschine,\n\u00b7 mit Zwischenbock (Zubeh\u00f6r) f\u00fcr Schlepper mit Kraftheber der Kat. 3 / 4,\n\u00b7 die Mindest- und Maximallast der Vorder- und Hinterachse und das Gesamtgewicht nicht \u00fcberschritten wird,\n\u00b7 der Schlepper eine geschlossene Kabine hat und \u00fcber geeignete Luftfilter ( Aktivkohlefilter) verf\u00fcgt.\n\nAuch bei D\u00fcngung in einem hohen Gew\u00e4chs, dem so genannten \u00dcberd\u00fcngen, verwenden Sie die niedrigen Anspannpunkte.\nF\u00fcr weitere Anpassungen bei Sp\u00e4td\u00fcngung siehe\n\uf0ae Absatz \u00bbStreuh\u00f6he\u00ab auf Seite 95.\n\nDer Raum zwischen Streuer und Schlepper ist gering wie m\u00f6glich gemacht, um den Schwerpunkt so nahe wie m\u00f6glich hinter den Schlepper zu halten. Dies f\u00f6rdert die Stabilit\u00e4t und das Stra\u00dfenverhalten des Schleppers.\nAnschlie\u00dfend m\u00fcssen Sie zuerst die Gelenkwelle, die Hydraulikschl\u00e4uche und die elektrischen Stecker anschlie\u00dfen und anschlie\u00dfend den Kraftheber.\n\n[...]\n\nDen Schleppermotor anlassen.\nFahren Sie vorsichtig nach hinten, so dass die Fangtaschen der Unterlenkeranschl\u00fcsse sich genau unter den Kugeln befinden.\n\u00d6ffnen Sie die Schnellkupplung der Fangtaschen mit den Entkupplungsseilen.\nBedienen Sie den Kraftheber, bis sich die Kugeln korrekt in den Fangtaschen befinden und lassen Sie die Schnellkupplungen schlie\u00dfen.\n\n[...]\n\nBeachten Sie vor dem Ankoppeln:\n\u00b7 die Feststellbremse des Schleppers anziehen,\n\u00b7 eine fahrbare Maschine w\u00e4hrend des Ankoppelns gegen Wegrollen sichern,\n\u00b7 die Maschine lediglich auf einem festen, trockenen und ebenen Untergrund am Schlepper An- oder abkoppeln, so dass die Maschine nicht kippen und/oder im Untergrund wegsacken kann.\n\nImmer die Sicherungsketten der Schutzrohre anbringen\nDie Sicherungsketten verhindern, dass die Schutzrohre der Gelenkwelle mitlaufen. An mitlaufenden Schutzrohren k\u00f6nnen Erntegut oder Kleidungsst\u00fccke aufgewickelt werden, was zu Besch\u00e4digungen und m\u00f6glicherweise zu schweren Verletzungen f\u00fchren kann.\nDie Sicherungsketten an beiden Enden der Schutzrohre der Gelenkwelle befestigen.\nDie Ketten mit dem anderen Ende an einem festen Punkt des Schleppers beziehungsweise der Maschine anbringen.\n\nUnknown",
+        "model_answer": "[Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]\n\nMaschine nur an der Fronthubvorrichtung ankoppeln, wenn diese:\n· ausreichendes Hubvermögen hat,\n· von derselben Befestigungskategorie ist wie die Maschine,\n· mit Zwischenbock (Zubehör) für Schlepper mit Kraftheber der Kat. 3 / 4,\n· die Mindest- und Maximallast der Vorder- und Hinterachse und das Gesamtgewicht nicht überschritten wird,\n· der Schlepper eine geschlossene Kabine hat und über geeignete Luftfilter ( Aktivkohlefilter) verfügt.\n\nAuch bei Düngung in einem hohen Gewächs, dem so genannten Überdüngen, verwenden Sie die niedrigen Anspannpunkte.\nFür weitere Anpassungen bei Spätdüngung siehe\n Absatz »Streuhöhe« auf Seite 95.\n\nDer Raum zwischen Streuer und Schlepper ist gering wie möglich gemacht, um den Schwerpunkt so nahe wie möglich hinter den Schlepper zu halten. Dies fördert die Stabilität und das Straßenverhalten des Schleppers.\nAnschließend müssen Sie zuerst die Gelenkwelle, die Hydraulikschläuche und die elektrischen Stecker anschließen und anschließend den Kraftheber.\n\n[...]\n\nDen Schleppermotor anlassen.\nFahren Sie vorsichtig nach hinten, so dass die Fangtaschen der Unterlenkeranschlüsse sich genau unter den Kugeln befinden.\nÖffnen Sie die Schnellkupplung der Fangtaschen mit den Entkupplungsseilen.\nBedienen Sie den Kraftheber, bis sich die Kugeln korrekt in den Fangtaschen befinden und lassen Sie die Schnellkupplungen schließen.\n\n[...]\n\nBeachten Sie vor dem Ankoppeln:\n· die Feststellbremse des Schleppers anziehen,\n· eine fahrbare Maschine während des Ankoppelns gegen Wegrollen sichern,\n· die Maschine lediglich auf einem festen, trockenen und ebenen Untergrund am Schlepper An- oder abkoppeln, so dass die Maschine nicht kippen und/oder im Untergrund wegsacken kann.\n\nImmer die Sicherungsketten der Schutzrohre anbringen\nDie Sicherungsketten verhindern, dass die Schutzrohre der Gelenkwelle mitlaufen. An mitlaufenden Schutzrohren können Erntegut oder Kleidungsstücke aufgewickelt werden, was zu Beschädigungen und möglicherweise zu schweren Verletzungen führen kann.\nDie Sicherungsketten an beiden Enden der Schutzrohre der Gelenkwelle befestigen.\nDie Ketten mit dem anderen Ende an einem festen Punkt des Schleppers beziehungsweise der Maschine anbringen.\n\nUnknown",
         "target_page": 50,
         "context_type": "token",
         "noise_level": 20000,
@@ -167,19 +167,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 15.3
-    },
-    {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-        "model_answer": "Unknown",
-        "target_page": 51,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 6.9
     },
     {
         "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
@@ -236,7 +223,7 @@
     {
         "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
         "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-        "model_answer": "\\[ \\text{Ben\u00f6tigte Auslassgeschwindigkeit (kg/min) = } \\frac{\\text{Arbeitsbreite (m)} \\times \\text{Fahrgeschwindigkeit (km/h) } \\times \\text{Ausbringmenge (kg/ha)}}{600} \\]",
+        "model_answer": "\\[ \\text{Benötigte Auslassgeschwindigkeit (kg/min) = } \\frac{\\text{Arbeitsbreite (m)} \\times \\text{Fahrgeschwindigkeit (km/h) } \\times \\text{Ausbringmenge (kg/ha)}}{600} \\]",
         "target_page": 68,
         "context_type": "token",
         "noise_level": 20000,
@@ -301,7 +288,7 @@
     {
         "question": "What materials are required to perform the tray test?",
         "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-        "model_answer": "The required materials for the tray test include:\n- 7 Auffangbeh\u00e4lter (catch trays)\n- 7 Messrohre (measuring tubes)\n- 1 Trichter (funnel)",
+        "model_answer": "The required materials for the tray test include:\n- 7 Auffangbehälter (catch trays)\n- 7 Messrohre (measuring tubes)\n- 1 Trichter (funnel)",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 20000,
@@ -325,19 +312,6 @@
         "duration": 0.3
     },
     {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "expected_answer": "75 cm above the troughs.",
-        "model_answer": "Niveau Boden oder oberes Ende Erntegut",
-        "target_page": 84,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 7.0
-    },
-    {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
         "expected_answer": "75 cm",
         "model_answer": "75 cm",
@@ -351,22 +325,9 @@
         "duration": 6.9
     },
     {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-        "expected_answer": "10% of the quantity in the middle trough",
-        "model_answer": "10%",
-        "target_page": 91,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 6.7
-    },
-    {
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
         "expected_answer": "Inertia causes continued rotation.",
-        "model_answer": "The Maschine transportfertig machen\nStreuh\u00f6he\nNiveau Boden oder oberes Ende Erntegut\nHINWEIS\nEinsatz auf dem Feld\nDie Gewichtsverteilung zwischen Vorder- und Hinterachse kontrollieren.\n...\nVorgehensweise\n1. Die Zapfwelle sofort abstellen!\n2. Schalten Sie das elektronische Bediensystem aus.\n3. Schalten Sie den Schlepper aus, ziehen Sie den Schl\u00fcssel aus dem Z\u00fcndschloss und bet\u00e4tigen Sie die Feststellbremse des Schleppers.\n\nAfter disengaging the PTO shaft, the Zapfwelle (Zapfwellendrehzahl) poses a continued danger because it needs to be immediately stopped to prevent the machine from potentially moving or causing harm.",
+        "model_answer": "The Maschine transportfertig machen\nStreuhöhe\nNiveau Boden oder oberes Ende Erntegut\nHINWEIS\nEinsatz auf dem Feld\nDie Gewichtsverteilung zwischen Vorder- und Hinterachse kontrollieren.\n...\nVorgehensweise\n1. Die Zapfwelle sofort abstellen!\n2. Schalten Sie das elektronische Bediensystem aus.\n3. Schalten Sie den Schlepper aus, ziehen Sie den Schlüssel aus dem Zündschloss und betätigen Sie die Feststellbremse des Schleppers.\n\nAfter disengaging the PTO shaft, the Zapfwelle (Zapfwellendrehzahl) poses a continued danger because it needs to be immediately stopped to prevent the machine from potentially moving or causing harm.",
         "target_page": 94,
         "context_type": "token",
         "noise_level": 20000,
@@ -470,7 +431,7 @@
     {
         "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
         "expected_answer": "Preservative grease or preserving liquid.",
-        "model_answer": "Eventuelle Lacksch\u00e4den ausbessern. Schmieren und \u00f6len Sie alle Punkte nochmals zur Konservierung. Versehen Sie blanke Teile, wie Kolbenstangen der Hydraulikzylinder mit konservierendem Fett oder spr\u00fchen (blanke) Metallteile der Maschine mit Konservierungsmittel (mitgeliefert) zum Schutz vor Korrosion der Maschine ein.",
+        "model_answer": "Eventuelle Lackschäden ausbessern. Schmieren und ölen Sie alle Punkte nochmals zur Konservierung. Versehen Sie blanke Teile, wie Kolbenstangen der Hydraulikzylinder mit konservierendem Fett oder sprühen (blanke) Metallteile der Maschine mit Konservierungsmittel (mitgeliefert) zum Schutz vor Korrosion der Maschine ein.",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 20000,
@@ -546,19 +507,6 @@
         "duration": 6.9
     },
     {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-        "expected_answer": "The required distance is 1.0 mm.",
-        "model_answer": "1.0 mm",
-        "target_page": 138,
-        "context_type": "token",
-        "noise_level": 20000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 6.9
-    },
-    {
         "question": "How often should the agitator axle seal be replaced?",
         "expected_answer": "Every season and after every 100 operational hours.",
         "model_answer": "Unknown",
@@ -574,7 +522,7 @@
     {
         "question": "What is the pattern of the type 'mineral'?",
         "expected_answer": "angular, with sharp angles and edges",
-        "model_answer": "[Image]\nMineralisch\n[Image: Mineralisch]\nEckig, mit scharfen Kanten und R\u00e4ndern\nVery rough",
+        "model_answer": "[Image]\nMineralisch\n[Image: Mineralisch]\nEckig, mit scharfen Kanten und Rändern\nVery rough",
         "target_page": 58,
         "context_type": "token",
         "noise_level": 20000,
@@ -639,7 +587,7 @@
     {
         "question": "How often (in what interval) must the bushing height be checked and the discharge be set?",
         "expected_answer": "after the first 10 hours and every 100 hours, but a minimum of once per year",
-        "model_answer": "[Image]\nKontrolle und Einstellung H\u00f6he Auslaufrohr\nFeststellkn\u00f6pfe\nArmaturenbrett\nHINWEIS\nMit einer F\u00fchlerlehre k\u00f6nnen Sie kleine Abst\u00e4nde genau messen.\n138\n\nDer Abstand zwischen dem Auslaufrohr und der Streuscheibe muss 1,0 mm betragen.\n\nWenn der gemessene Abstand gr\u00f6\u00dfer oder kleiner als 1,0 mm ist, gehen Sie wie folgt vor:\n- Messen Sie den Abstand zwischen der Streuscheibe und dem Auslaufrohrgenau.\n- Passen Sie die H\u00f6he an, bis der Abstand 1,0 mm betr\u00e4gt.\n\nKontrolle und Einstellung Dosiermechanismus\nDosierplatten einstellen\nBefestigungspunkt\nHINWEIS\nSollten Sie die Siebe \u00f6ffnen, m\u00fcssen Sie diese feststellen, um eine unbeabsichtigtes Zufallen zu vermeiden.\n135\n\nDie Dosierplatten m\u00fcssen im Hinblick aufeinander in die richtige Position gestellt werden. Wenn der kleine Spalt zwischen den Dosierplatten nicht sichtbar ist, versetzen Sie den Befestigungspunkt des Stellglieds an den Dosiermechanismus, bis ein kleiner Spalt sichtbar ist.\n\nKontrolle und Einstellung Dosiermechanismus\nDosierplatten einstellen\nBefestigungspunkt\n\n135",
+        "model_answer": "[Image]\nKontrolle und Einstellung Höhe Auslaufrohr\nFeststellknöpfe\nArmaturenbrett\nHINWEIS\nMit einer Fühlerlehre können Sie kleine Abstände genau messen.\n138\n\nDer Abstand zwischen dem Auslaufrohr und der Streuscheibe muss 1,0 mm betragen.\n\nWenn der gemessene Abstand größer oder kleiner als 1,0 mm ist, gehen Sie wie folgt vor:\n- Messen Sie den Abstand zwischen der Streuscheibe und dem Auslaufrohrgenau.\n- Passen Sie die Höhe an, bis der Abstand 1,0 mm beträgt.\n\nKontrolle und Einstellung Dosiermechanismus\nDosierplatten einstellen\nBefestigungspunkt\nHINWEIS\nSollten Sie die Siebe öffnen, müssen Sie diese feststellen, um eine unbeabsichtigtes Zufallen zu vermeiden.\n135\n\nDie Dosierplatten müssen im Hinblick aufeinander in die richtige Position gestellt werden. Wenn der kleine Spalt zwischen den Dosierplatten nicht sichtbar ist, versetzen Sie den Befestigungspunkt des Stellglieds an den Dosiermechanismus, bis ein kleiner Spalt sichtbar ist.\n\nKontrolle und Einstellung Dosiermechanismus\nDosierplatten einstellen\nBefestigungspunkt\n\n135",
         "target_page": 125,
         "context_type": "token",
         "noise_level": 20000,
@@ -665,7 +613,7 @@
     {
         "question": "With what torque in Nm must a M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened?",
         "expected_answer": "420 Nm",
-        "model_answer": "[Image]\nAnzugsmomente Edelstahl\nRichtlinien f\u00fcr Anzugsmomente (in Nm) f\u00fcr selbstsichernde Muttern, Sechskantschrauben und -muttern.\n.\n   Qualit\u00e4t.Reibung *.Gewinde Anzugsmomente.70 (A2).0.10. Anzugsmomente.70 (A2).0.20. Anzugsmomente.70 (A2).0.30. Anzugsmomente.80 (A4).0.10. Anzugsmomente.80 (A4).0.20. Anzugsmomente.80 (A4).0.30.\n0                          M5                         3.6                         5.7                           7                         4.8                         7.6                         9.4\n1                          M6                         6.3                         9.9                        12.2                         8.4                        13.2                        16.3\n2                          M8                        15.2                        24.1                        29.9                        20.3                        32.1                        39.9\n3                         M10                        29.9                        47.7                        59.3                          39                          63                          79\n4                         M12                          51                          82                         102                          68                         109                         136\n5                         M14                          82                         131                         163                         109                         175                         217\n6                         M16                         126                         204                         255                         168                         272                         340\n7                         M18                         176                         282                         352                         235                         376                         469\n\n* Der Reibungskoeffizient von 0,13 gilt f\u00fcr trockenes Blech.\n\nThe torque for a M18 hexagon steel bolt with a 10.9 quality and a friction coefficient of 0.13 is 469 Nm.",
+        "model_answer": "[Image]\nAnzugsmomente Edelstahl\nRichtlinien für Anzugsmomente (in Nm) für selbstsichernde Muttern, Sechskantschrauben und -muttern.\n.\n   Qualität.Reibung *.Gewinde Anzugsmomente.70 (A2).0.10. Anzugsmomente.70 (A2).0.20. Anzugsmomente.70 (A2).0.30. Anzugsmomente.80 (A4).0.10. Anzugsmomente.80 (A4).0.20. Anzugsmomente.80 (A4).0.30.\n0                          M5                         3.6                         5.7                           7                         4.8                         7.6                         9.4\n1                          M6                         6.3                         9.9                        12.2                         8.4                        13.2                        16.3\n2                          M8                        15.2                        24.1                        29.9                        20.3                        32.1                        39.9\n3                         M10                        29.9                        47.7                        59.3                          39                          63                          79\n4                         M12                          51                          82                         102                          68                         109                         136\n5                         M14                          82                         131                         163                         109                         175                         217\n6                         M16                         126                         204                         255                         168                         272                         340\n7                         M18                         176                         282                         352                         235                         376                         469\n\n* Der Reibungskoeffizient von 0,13 gilt für trockenes Blech.\n\nThe torque for a M18 hexagon steel bolt with a 10.9 quality and a friction coefficient of 0.13 is 469 Nm.",
         "target_page": 129,
         "context_type": "token",
         "noise_level": 20000,
@@ -691,7 +639,7 @@
     {
         "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
         "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
-        "model_answer": "[43] St\u00f6rung/Verstopfung 113, 114",
+        "model_answer": "[43] Störung/Verstopfung 113, 114",
         "target_page": 152,
         "context_type": "token",
         "noise_level": 20000,
@@ -834,7 +782,7 @@
     {
         "question": "By which environmental standards is the maximum acceptable loss in the ditch is determined?",
         "expected_answer": "Not found in context",
-        "model_answer": "The maximal zul\u00e4ssige Verlust im Graben ist in der Umweltnorm festgelegt. Um der Norm zu entsprechen, darf die Menge D\u00fcngemittel im 1. Auffangbeh\u00e4lter, der in dem fiktiven Graben steht, maximal 10 % der Menge des Auffangbeh\u00e4lters betragen, der in der Mitte der Fahrspur ist (= 100 %).",
+        "model_answer": "The maximal zulässige Verlust im Graben ist in der Umweltnorm festgelegt. Um der Norm zu entsprechen, darf die Menge Düngemittel im 1. Auffangbehälter, der in dem fiktiven Graben steht, maximal 10 % der Menge des Auffangbehälters betragen, der in der Mitte der Fahrspur ist (= 100 %).",
         "target_page": 87,
         "context_type": "token",
         "noise_level": 20000,
@@ -886,7 +834,7 @@
     {
         "question": "Which appropriate measures for road transport should be taken when stopping work?",
         "expected_answer": "Not found in context",
-        "model_answer": "Ergreifen Sie s\u00e4mtliche diesbez\u00fcglich geltenden Ma\u00dfnahmen f\u00fcr den Stra\u00dfentransport.",
+        "model_answer": "Ergreifen Sie sämtliche diesbezüglich geltenden Maßnahmen für den Straßentransport.",
         "target_page": 112,
         "context_type": "token",
         "noise_level": 20000,
@@ -964,7 +912,7 @@
     {
         "question": "What is the curriculum of the training program agrarians need to complete to be considered competent to operate this machine?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Image]\nDiese Betriebsanleitung ist f\u00fcr ausgebildete Landwirte und andere Personen bestimmt, die f\u00fcr die Arbeit in der Landwirtschaft geschult wurden, die gem\u00e4\u00df der nationalen Gesetzgebung f\u00fcr den Gebrauch dieser Maschine befugt sind und \u00fcber Kenntnisse bei Montagearbeiten verf\u00fcgen.",
+        "model_answer": "[Image]\nDiese Betriebsanleitung ist für ausgebildete Landwirte und andere Personen bestimmt, die für die Arbeit in der Landwirtschaft geschult wurden, die gemäß der nationalen Gesetzgebung für den Gebrauch dieser Maschine befugt sind und über Kenntnisse bei Montagearbeiten verfügen.",
         "target_page": 4,
         "context_type": "token",
         "noise_level": 20000,
@@ -1146,7 +1094,7 @@
     {
         "question": "What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?",
         "expected_answer": "Not found in context",
-        "model_answer": "3 m/s (Windst\u00e4rke 2)",
+        "model_answer": "3 m/s (Windstärke 2)",
         "target_page": 96,
         "context_type": "token",
         "noise_level": 20000,
@@ -1185,7 +1133,7 @@
     {
         "question": "What is the distance tolerance in meters from field edge when driving 'first path' for border spreading?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Image]\nFahren Sie im ersten Gang, wobei die Mitte des Schleppers einen Abstand von ungef\u00e4hr 2 Metern zum Feldrand aufweist.",
+        "model_answer": "[Image]\nFahren Sie im ersten Gang, wobei die Mitte des Schleppers einen Abstand von ungefähr 2 Metern zum Feldrand aufweist.",
         "target_page": 109,
         "context_type": "token",
         "noise_level": 20000,
@@ -1402,5 +1350,187 @@
         "dataset": "question_datasets/question_answers_unanswerable.json",
         "file_extension": "txt",
         "duration": 0.3
+    },
+    {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "expected_answer": "06.00.00.0257",
+        "model_answer": "From version 06.00.00.00.0257 of the GreenSeeker sensor.",
+        "target_page": 27,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 6.8
+    },
+    {
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "expected_answer": "150mm.",
+        "model_answer": "[Image]\n[Image]\n[Image]\n[Image]\nDie beiden Profilrohre sollen einander so weit wie möglich überlappen; es ist eine Überlappung von mindestens 150 mm erforderlich.\n\n150 mm",
+        "target_page": 51,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.5
+    },
+    {
+        "question": "How many parts does the distribution meter have?",
+        "expected_answer": "Seven.",
+        "model_answer": "Unknown",
+        "target_page": 59,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.0
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "model_answer": "Use the Feindosierhebel to close 2 out of the 3 dosing openings when the discharge speed is less than 40 kg/min.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.4
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "expected_answer": "1 open hole and 2 thick holes",
+        "model_answer": "Unknown or Not found in context",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.2
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "expected_answer": "At the back of the control box.",
+        "model_answer": "On the back of the Bedieneinheit.",
+        "target_page": 72,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.1
+    },
+    {
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "expected_answer": "Every year",
+        "model_answer": "The left and right spreading discs should be tested annually to ensure they spread the same volumes of fertilizer.",
+        "target_page": 78,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.3
+    },
+    {
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+        "expected_answer": "10% of the quantity in the middle trough",
+        "model_answer": "10%",
+        "target_page": 91,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 6.6
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "expected_answer": "Measured from the bottom of the vanes.",
+        "model_answer": "The spreading height is measured from the bottom of the spreader to the ground or the crop, with a maximum of 1250 mm.",
+        "target_page": 95,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 6.9
+    },
+    {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "expected_answer": "spreading chart or online spreading chart",
+        "model_answer": "Unknown",
+        "target_page": 111,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 6.8
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "expected_answer": "Place the spreader on a firm, stable ramp",
+        "model_answer": "If the power lift does not lower far enough to release the catch hooks, place the sprayer on a stable elevation, such as a pallet.",
+        "target_page": 120,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.1
+    },
+    {
+        "question": "What type of grease is the central gearbox filled with?",
+        "expected_answer": "EP 00/000 gear grease.",
+        "model_answer": "Getriebefett EP00/000",
+        "target_page": 127,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 6.9
+    },
+    {
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+        "expected_answer": "The required distance is 1.0 mm.",
+        "model_answer": "1,0 mm",
+        "target_page": 138,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 6.8
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "expected_answer": "Yes, using the Sensor input IM Tellus.",
+        "model_answer": "Yes, you can connect the tractor's speed sensor or radar to the IsoMatch control box using the optional 'Sensor Input IM Tellus'.",
+        "target_page": 144,
+        "context_type": "token",
+        "noise_level": 20000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 7.4
     }
 ]

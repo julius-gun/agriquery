@@ -2,7 +2,7 @@
     {
         "question": "How many dosing openings are closed during fine application?",
         "expected_answer": "Two of three dosing openings are closed.",
-        "model_answer": "2 of the 3 dosing openings are closed during fine application.\n\nExplanation: The context specifies that in the Feindosierung (fine application) mode, two out of three dosing openings are closed to ensure a more precise and controlled distribution of smaller quantities of Kunstd\u00fcnger.",
+        "model_answer": "2 of the 3 dosing openings are closed during fine application.\n\nExplanation: The context specifies that in the Feindosierung (fine application) mode, two out of three dosing openings are closed to ensure a more precise and controlled distribution of smaller quantities of Kunstdünger.",
         "target_page": 24,
         "context_type": "token",
         "noise_level": 30000,
@@ -169,19 +169,6 @@
         "duration": 47.9
     },
     {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-        "model_answer": "The maximum working angle for the coupling shaft is 30\u00b0 upwards and 30\u00b0 downwards.",
-        "target_page": 51,
-        "context_type": "token",
-        "noise_level": 30000,
-        "model_name": "phi3_14B_q4_medium-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 47.0
-    },
-    {
         "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
         "expected_answer": "Yes.",
         "model_answer": "Yes, engage the parking brake of the tractor before connecting the machine.",
@@ -236,7 +223,7 @@
     {
         "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
         "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-        "model_answer": "Ben\u00f6tigte Auslassgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha).",
+        "model_answer": "Benötigte Auslassgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha).",
         "target_page": 68,
         "context_type": "token",
         "noise_level": 30000,
@@ -314,7 +301,7 @@
     {
         "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
         "expected_answer": "3 m/s)",
-        "model_answer": "The maximum wind speed permitted for both the tray test and actual spreading is 3 m/s (Windst\u00e4rke 2).",
+        "model_answer": "The maximum wind speed permitted for both the tray test and actual spreading is 3 m/s (Windstärke 2).",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 30000,
@@ -323,19 +310,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 46.2
-    },
-    {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "expected_answer": "75 cm above the troughs.",
-        "model_answer": "The required height of the spreading disc above the troughs for one-sided boundary spreading is not explicitly mentioned in the provided context. The instructions suggest setting the height to 75 cm over the ground or crop, but do not specify a different requirement for one-sided boundary spreading specifically.",
-        "target_page": 84,
-        "context_type": "token",
-        "noise_level": 30000,
-        "model_name": "phi3_14B_q4_medium-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 48.4
     },
     {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
@@ -349,19 +323,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 46.7
-    },
-    {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-        "expected_answer": "10% of the quantity in the middle trough",
-        "model_answer": "The maximum fertilizer loss over the field edge is allowed to be up to 10% of the quantity in the middle trough.",
-        "target_page": 91,
-        "context_type": "token",
-        "noise_level": 30000,
-        "model_name": "phi3_14B_q4_medium-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 46.6
     },
     {
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
@@ -431,7 +392,7 @@
     {
         "question": "What should you do if a spreading disc spreads irregularly?",
         "expected_answer": "Stop spreading and disconnect the PTO shaft immediately.",
-        "model_answer": "[Image: Dosiermechanismus einstellen]\n136\nVermeiden Sie den Kontakt mit Kunstd\u00fcnger und anderen Mitteln.\nBeim F\u00fcllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstd\u00fcnger und anderen Mitteln, die Sie ausstreuen m\u00f6chten. Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie die zus\u00e4tzliche Hinweise. Der Kontakt kann K\u00f6rperverletzungen verursachen.\nAchtung Quetschgefahr.\nBei der \u00dcberpr\u00fcfung und Justierung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher w\u00e4hrend der \u00dcberpr\u00fcfung und Einstellung, indem Sie:\n\u00b7 das elektronische Steuersystem ausschalten,\n\u00b7 den Schlepper ausschalten und den Z\u00fcndschl\u00fcssel vom Z\u00fcndschloss abziehen,\n\u00b7 die Feststellbremse des Schleppers anziehen,\n\u00b7 warten, bis alle Teile der Maschine still stehen, bevor Sie mit der Wartung beginnen.\n\u00b7 sch\u00fctzende Kleidung, wie z. B. Sicherheitshandschuhe und Sicherheitsschuhe tragen,\n\u00b7 die beschriebenen Handlungen alleine und vorsichtig ausf\u00fchren.\nEinklemmen kann K\u00f6rperverletzungen verursachen.\nKontrollieren Sie die Einstellung des Dosiermechanismus:\n\u00b7 nach den ersten 10 Betriebsstunden,\n\u00b7 f\u00fcr jede Saison,\n\u00b7 nach allen 100 Betriebsstunden,\n\u00b7 f\u00fcr den Fall, dass das Streubild der linken und rechten Streuscheibe mehr als 3 % abweicht.\n[Image: Kontrolle und Einstellung Dosiermechanismus]\n</answer>",
+        "model_answer": "[Image: Dosiermechanismus einstellen]\n136\nVermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln.\nBeim Füllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstdünger und anderen Mitteln, die Sie ausstreuen möchten. Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie die zusätzliche Hinweise. Der Kontakt kann Körperverletzungen verursachen.\nAchtung Quetschgefahr.\nBei der Überprüfung und Justierung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher während der Überprüfung und Einstellung, indem Sie:\n· das elektronische Steuersystem ausschalten,\n· den Schlepper ausschalten und den Zündschlüssel vom Zündschloss abziehen,\n· die Feststellbremse des Schleppers anziehen,\n· warten, bis alle Teile der Maschine still stehen, bevor Sie mit der Wartung beginnen.\n· schützende Kleidung, wie z. B. Sicherheitshandschuhe und Sicherheitsschuhe tragen,\n· die beschriebenen Handlungen alleine und vorsichtig ausführen.\nEinklemmen kann Körperverletzungen verursachen.\nKontrollieren Sie die Einstellung des Dosiermechanismus:\n· nach den ersten 10 Betriebsstunden,\n· für jede Saison,\n· nach allen 100 Betriebsstunden,\n· für den Fall, dass das Streubild der linken und rechten Streuscheibe mehr als 3 % abweicht.\n[Image: Kontrolle und Einstellung Dosiermechanismus]\n</answer>",
         "target_page": 113,
         "context_type": "token",
         "noise_level": 30000,
@@ -470,7 +431,7 @@
     {
         "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
         "expected_answer": "Preservative grease or preserving liquid.",
-        "model_answer": "[Image: Fett anbringen/beif\u00fcllen]\nFetten Sie die blanke Teile der Maschine mit konservierendem Fett oder spr\u00fchen (blanke) Metallteile mit Konservierungsmittel ein.\n</answer>",
+        "model_answer": "[Image: Fett anbringen/beifüllen]\nFetten Sie die blanke Teile der Maschine mit konservierendem Fett oder sprühen (blanke) Metallteile mit Konservierungsmittel ein.\n</answer>",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 30000,
@@ -546,22 +507,9 @@
         "duration": 48.5
     },
     {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-        "expected_answer": "The required distance is 1.0 mm.",
-        "model_answer": "The required distance between the discharge bushing and spreading disc is not explicitly mentioned in the provided context. Therefore, the answer to this specific question cannot be found within the given text. The correct response based on the instructions would be \"Not found in context.\"",
-        "target_page": 138,
-        "context_type": "token",
-        "noise_level": 30000,
-        "model_name": "phi3_14B_q4_medium-128k",
-        "self_evaluation": "no",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 50.6
-    },
-    {
         "question": "How often should the agitator axle seal be replaced?",
         "expected_answer": "Every season and after every 100 operational hours.",
-        "model_answer": "The agitator axle seal should be replaced every season and after each 100 operating hours.\n\n<context>\n    Dichtung Agitatorwelle austauschen\n[Image]\n140\nVermeiden Sie den Kontakt mit Kunstd\u00fcnger und anderen Mitteln\nBeim F\u00fcllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstd\u00fcnger und anderen Mitteln, die Sie ausstreuen m\u00f6chten. Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie die zus\u00e4tzliche Hinweise. Der Kontakt kann K\u00f6rperverletzungen verursachen.\nAchtung Quetschgefahr\nBei der \u00dcberpr\u00fcfung und Justierung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher w\u00e4hrend der \u00dcberpr\u00fcfung und Einstellung, indem Sie:\n\u00b7 das elektronische Steuersystem ausschalten,\n\u00b7 den Schlepper auszuschalten und den Z\u00fcndschl\u00fcssel vom Z\u00fcndschloss abziehen,\n\u00b7 die Feststellbremse des Schleppers anziehen,\n\u00b7 warten, bis alle Teile der Maschine still stehen, bevor Sie mit der Wartung beginnen.\n\u00b7 sch\u00fctzende Kleidung, wie z. B. Sicherheitshandschuhe und Sicherheitsschuhe tragen,\n\u00b7 die beschriebenen Handlungen alleine und vorsichtig ausf\u00fchren.\nEinklemmen kann K\u00f6rperverletzungen verursachen.\nDie R\u00fchrerwelle ist mit einer Kunststoffdichtung versehen, um zu vermeiden, dass Sie Kunstd\u00fcngerk\u00f6rner entlang der R\u00fchrerwelle verlieren. Die Dichtung muss jede Saison und nach jeweils 100 Betriebsstunden der Maschine ausgetauscht werden. Arbeiten Sie nur an einer sauberen Maschine mit geleertem K\u00fcbel.\n[Image]\nWarten Sie, bis die beiden Stellglieder vollkommen herausgeschoben und die Dosiereinheiten ganz ge\u00f6ffnet sind.\n[Image]\nStellen Sie den Feindosierhebel auf die Stellung f\u00fcr Normaldosierung.\nAktivieren Sie die Funktion zur Beh\u00e4lterleerung.\n[Image: Input IM Tellus mit ISO11786 'In Cab']\nWarten Sie, bis der Abstand zwischen dem Auslaufrohr und der Streuscheibe 1,0 mm betr\u00e4gt.\n[Image]\nF\u00fchren Sie diese Kontrolle auch auf der anderen Seite aus.\n[Image: Armaturenbrett]\nHINWEIS\nNach jedem Gebrauch die Maschine gr\u00fcndlich reinigen. R\u00fchrer ersetzen, wenn dieser verschlissen ist.\nTIPP Nach dem Anziehen der ersten Befestigungsschraube k\u00f6nnen Sie den Kunststofflagerring wieder loslassen.\n[Image]\nMontieren Sie wieder den R\u00fchrer an der R\u00fchrerwelle.\nF\u00fchren sie anschlie\u00dfend die Kontrolle aus, wie beschrieben ist in \uf0ae Absatz \u00bbKontrolle und Einstellung Dosiermechanismus\u00ab auf Seite 133.\n</context>",
+        "model_answer": "The agitator axle seal should be replaced every season and after each 100 operating hours.\n\n<context>\n    Dichtung Agitatorwelle austauschen\n[Image]\n140\nVermeiden Sie den Kontakt mit Kunstdünger und anderen Mitteln\nBeim Füllen, Justieren und Testen des Streuers kommen Sie wahrscheinlich in Kontakt mit Kunstdünger und anderen Mitteln, die Sie ausstreuen möchten. Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie die zusätzliche Hinweise. Der Kontakt kann Körperverletzungen verursachen.\nAchtung Quetschgefahr\nBei der Überprüfung und Justierung des Streuers besteht Quetschgefahr.\nArbeiten Sie sicher während der Überprüfung und Einstellung, indem Sie:\n· das elektronische Steuersystem ausschalten,\n· den Schlepper auszuschalten und den Zündschlüssel vom Zündschloss abziehen,\n· die Feststellbremse des Schleppers anziehen,\n· warten, bis alle Teile der Maschine still stehen, bevor Sie mit der Wartung beginnen.\n· schützende Kleidung, wie z. B. Sicherheitshandschuhe und Sicherheitsschuhe tragen,\n· die beschriebenen Handlungen alleine und vorsichtig ausführen.\nEinklemmen kann Körperverletzungen verursachen.\nDie Rührerwelle ist mit einer Kunststoffdichtung versehen, um zu vermeiden, dass Sie Kunstdüngerkörner entlang der Rührerwelle verlieren. Die Dichtung muss jede Saison und nach jeweils 100 Betriebsstunden der Maschine ausgetauscht werden. Arbeiten Sie nur an einer sauberen Maschine mit geleertem Kübel.\n[Image]\nWarten Sie, bis die beiden Stellglieder vollkommen herausgeschoben und die Dosiereinheiten ganz geöffnet sind.\n[Image]\nStellen Sie den Feindosierhebel auf die Stellung für Normaldosierung.\nAktivieren Sie die Funktion zur Behälterleerung.\n[Image: Input IM Tellus mit ISO11786 'In Cab']\nWarten Sie, bis der Abstand zwischen dem Auslaufrohr und der Streuscheibe 1,0 mm beträgt.\n[Image]\nFühren Sie diese Kontrolle auch auf der anderen Seite aus.\n[Image: Armaturenbrett]\nHINWEIS\nNach jedem Gebrauch die Maschine gründlich reinigen. Rührer ersetzen, wenn dieser verschlissen ist.\nTIPP Nach dem Anziehen der ersten Befestigungsschraube können Sie den Kunststofflagerring wieder loslassen.\n[Image]\nMontieren Sie wieder den Rührer an der Rührerwelle.\nFühren sie anschließend die Kontrolle aus, wie beschrieben ist in  Absatz »Kontrolle und Einstellung Dosiermechanismus« auf Seite 133.\n</context>",
         "target_page": 140,
         "context_type": "token",
         "noise_level": 30000,
@@ -899,7 +847,7 @@
     {
         "question": "Why do most types of fertiliser attract water?",
         "expected_answer": "Not found in context",
-        "model_answer": "The context does not provide a direct answer to why most types of fertilizer attract water. The closest related information is about preventing issues when working with fertilizers: \"Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie die zus\u00e4tzliche Hinweise.\" However, this does not answer the question. Therefore, the answer is \"Not found in context\".",
+        "model_answer": "The context does not provide a direct answer to why most types of fertilizer attract water. The closest related information is about preventing issues when working with fertilizers: \"Tragen Sie Schutzkleidung und Sicherheitshandschuhe, lesen Sie die Sicherheitsanweisungen des Lieferanten und befolgen Sie die zusätzliche Hinweise.\" However, this does not answer the question. Therefore, the answer is \"Not found in context\".",
         "target_page": 114,
         "context_type": "token",
         "noise_level": 30000,
@@ -938,7 +886,7 @@
     {
         "question": "What happens if the machine grease nipples are never lubricated?",
         "expected_answer": "Not found in context",
-        "model_answer": "[Image: Schmiernippel]\nSchmieren Sie die Nippel.\n\uf034 Kontrollieren Sie auch den Zustand der Schutzrohre und der Sicherungsketten.\n\uf034 Ersetzen Sie diese, wenn diese besch\u00e4digt sind.\n</answer>",
+        "model_answer": "[Image: Schmiernippel]\nSchmieren Sie die Nippel.\n Kontrollieren Sie auch den Zustand der Schutzrohre und der Sicherungsketten.\n Ersetzen Sie diese, wenn diese beschädigt sind.\n</answer>",
         "target_page": 118,
         "context_type": "token",
         "noise_level": 30000,
@@ -1211,7 +1159,7 @@
     {
         "question": "What should be done at the start of the spring season, specifically to 'prepare it for the work', beyond cleaning and lubrication?",
         "expected_answer": "Not found in context",
-        "model_answer": "1. Schmieren Sie die Nippel der Maschine mit einer Universalfettsorte.\n2. Kontrollieren und schmieren Sie alle vier Stellglieder des Streuers.\n3. Fetten Sie das Profilrohr der Gelenkwelle ein, wenn es nicht mehr reibungslos rein- oder rausschiebbar ist.\n4. \u00d6l anbringen auf die Antriebswellen und Kupplungsst\u00fccke zwischen dem Zentralgetriebe und den Getrieben der Streuscheiben.",
+        "model_answer": "1. Schmieren Sie die Nippel der Maschine mit einer Universalfettsorte.\n2. Kontrollieren und schmieren Sie alle vier Stellglieder des Streuers.\n3. Fetten Sie das Profilrohr der Gelenkwelle ein, wenn es nicht mehr reibungslos rein- oder rausschiebbar ist.\n4. Öl anbringen auf die Antriebswellen und Kupplungsstücke zwischen dem Zentralgetriebe und den Getrieben der Streuscheiben.",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 30000,
@@ -1402,5 +1350,187 @@
         "dataset": "question_datasets/question_answers_unanswerable.json",
         "file_extension": "txt",
         "duration": 49.8
+    },
+    {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "expected_answer": "06.00.00.0257",
+        "model_answer": "The ISOBUS supports the reception of the GreenSeeker sensor signal starting from version 06.00.00.00.0257.",
+        "target_page": 27,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 44.6
+    },
+    {
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "expected_answer": "150mm.",
+        "model_answer": "The context does not provide a specific measurement for how far profiled tubes must overlap when shortening a coupling shaft. The answer is \"Not found in context\".",
+        "target_page": 51,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 44.5
+    },
+    {
+        "question": "How many parts does the distribution meter have?",
+        "expected_answer": "Seven.",
+        "model_answer": "The context provided does not specify the number of parts in the distribution meter. Therefore, the answer is \"Not found in context\".",
+        "target_page": 59,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 44.2
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "model_answer": "To enable fine application for a low application rate:\n- Use the Feindosier-Set.\n- Set the Dosierstellung to 'C' in the Streutabellenbuch or online service.\n- The corresponding Durchsatz is indicated as '0' in the fourth column of the Streutabelle.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 45.4
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "expected_answer": "1 open hole and 2 thick holes",
+        "model_answer": "The symbol on top of the fine application handle indicating that the Fine application kit is enabled is \"F\".",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.5
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "expected_answer": "At the back of the control box.",
+        "model_answer": "The RS 232 connector is located on the back of the control panel.",
+        "target_page": 72,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 42.8
+    },
+    {
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "expected_answer": "Every year",
+        "model_answer": "[Image: Links-Rechts-Test ausführen]\nAnnually.",
+        "target_page": 78,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 43.4
+    },
+    {
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+        "expected_answer": "10% of the quantity in the middle trough",
+        "model_answer": "The maximum fertilizer loss over the field edge is not more than 10% of the quantity in the middle trough.",
+        "target_page": 91,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 43.4
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "expected_answer": "Measured from the bottom of the vanes.",
+        "model_answer": "The spreading height is measured from the top of the discharge opening to the ground or crop.",
+        "target_page": 95,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 43.1
+    },
+    {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "expected_answer": "spreading chart or online spreading chart",
+        "model_answer": "The context does not provide specific information on setting the correct PTO shaft and spreading disc RPM. It is recommended to refer to the respective Streutabelle for this data.",
+        "target_page": 111,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 45.4
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "expected_answer": "Place the spreader on a firm, stable ramp",
+        "model_answer": "Place the power lift on a stable platform like a pallet. Drive the machine approximately 200 mm forward (the maximum distance depends on the length of the Zapfwelle; the halves must overlap). Turn off the engine, remove the key from the ignition switch and engage the parking brake.",
+        "target_page": 120,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 47.0
+    },
+    {
+        "question": "What type of grease is the central gearbox filled with?",
+        "expected_answer": "EP 00/000 gear grease.",
+        "model_answer": "The central gearbox is filled with Getriebefett EP00/000.",
+        "target_page": 127,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 44.9
+    },
+    {
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+        "expected_answer": "The required distance is 1.0 mm.",
+        "model_answer": "The required distance between the discharge bushing and spreading disc is 1.0 mm.",
+        "target_page": 138,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 46.0
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "expected_answer": "Yes, using the Sensor input IM Tellus.",
+        "model_answer": "Yes, you can connect the tractor's speed sensor or radar to the IsoMatch control box using a 9-polite 'In Cab' Kabel.",
+        "target_page": 144,
+        "context_type": "token",
+        "noise_level": 30000,
+        "model_name": "phi3_14B_q4_medium-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 2.3
     }
 ]

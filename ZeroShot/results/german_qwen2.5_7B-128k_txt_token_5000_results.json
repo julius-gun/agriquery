@@ -169,19 +169,6 @@
         "duration": 1.1
     },
     {
-        "question": "What is the maximum operating angle of the coupling shaft when lifted and when lowered?",
-        "expected_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 when lifted and 30\u00b0 when lowered.",
-        "model_answer": "The maximum operating angle of the coupling shaft is 30\u00b0 both upwards and downwards.",
-        "target_page": 51,
-        "context_type": "token",
-        "noise_level": 5000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 1.0
-    },
-    {
         "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
         "expected_answer": "Yes.",
         "model_answer": "Yes.",
@@ -197,7 +184,7 @@
     {
         "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
         "expected_answer": "30 degrees",
-        "model_answer": "30 \u00b0",
+        "model_answer": "30 °",
         "target_page": 54,
         "context_type": "token",
         "noise_level": 5000,
@@ -236,7 +223,7 @@
     {
         "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
         "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-        "model_answer": "Ben\u00f6tigte Auslassgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha) / 600",
+        "model_answer": "Benötigte Auslassgeschwindigkeit (kg/min) = Arbeitsbreite (m) x Fahrgeschwindigkeit (km/h) x Ausbringmenge (kg/ha) / 600",
         "target_page": 68,
         "context_type": "token",
         "noise_level": 5000,
@@ -301,7 +288,7 @@
     {
         "question": "What materials are required to perform the tray test?",
         "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-        "model_answer": "[Bandma\u00df oder Messlatte, Wasserwaage, 7 Auffangbeh\u00e4lter, 7 Messrohre, 1 Trichter]",
+        "model_answer": "[Bandmaß oder Messlatte, Wasserwaage, 7 Auffangbehälter, 7 Messrohre, 1 Trichter]",
         "target_page": 77,
         "context_type": "token",
         "noise_level": 5000,
@@ -325,19 +312,6 @@
         "duration": 0.1
     },
     {
-        "question": "What is the required height of the spreading disc above the troughs for one-sided boundary spreading?",
-        "expected_answer": "75 cm above the troughs.",
-        "model_answer": "75 cm",
-        "target_page": 84,
-        "context_type": "token",
-        "noise_level": 5000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 0.9
-    },
-    {
         "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
         "expected_answer": "75 cm",
         "model_answer": "75 cm",
@@ -349,19 +323,6 @@
         "dataset": "question_datasets/question_answers_pairs.json",
         "file_extension": "txt",
         "duration": 0.9
-    },
-    {
-        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in an imaginative ditch?",
-        "expected_answer": "10% of the quantity in the middle trough",
-        "model_answer": "The maximum allowable fertilizer loss of the quantity in the middle trough in percent allowed in an imaginary ditch is 10%.",
-        "target_page": 91,
-        "context_type": "token",
-        "noise_level": 5000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 1.1
     },
     {
         "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
@@ -418,7 +379,7 @@
     {
         "question": "What two actions must be done in the event of spreader failure or stoppage while using the spreader in the field?",
         "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
-        "model_answer": "[Unverz\u00fcglich das Streuen einstellen! Die Zapfwelle sofort abstellen!]",
+        "model_answer": "[Unverzüglich das Streuen einstellen! Die Zapfwelle sofort abstellen!]",
         "target_page": 108,
         "context_type": "token",
         "noise_level": 5000,
@@ -470,7 +431,7 @@
     {
         "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
         "expected_answer": "Preservative grease or preserving liquid.",
-        "model_answer": "[Blanke] Metallteile der Maschine nach der Reinigung mit der mitgelieferten Dose Konservierungsmittel zum Schutz gegen Korrosion der Maschine einspr\u00fchen.",
+        "model_answer": "[Blanke] Metallteile der Maschine nach der Reinigung mit der mitgelieferten Dose Konservierungsmittel zum Schutz gegen Korrosion der Maschine einsprühen.",
         "target_page": 121,
         "context_type": "token",
         "noise_level": 5000,
@@ -546,19 +507,6 @@
         "duration": 0.9
     },
     {
-        "question": "What is the required distance in m between the discharge bushing and spreading disc?",
-        "expected_answer": "The required distance is 1.0 mm.",
-        "model_answer": "1.0 mm",
-        "target_page": 138,
-        "context_type": "token",
-        "noise_level": 5000,
-        "model_name": "qwen2.5_7B-128k",
-        "self_evaluation": "yes",
-        "dataset": "question_datasets/question_answers_pairs.json",
-        "file_extension": "txt",
-        "duration": 0.9
-    },
-    {
         "question": "How often should the agitator axle seal be replaced?",
         "expected_answer": "Every season and after every 100 operational hours.",
         "model_answer": "Unknown",
@@ -574,7 +522,7 @@
     {
         "question": "What is the pattern of the type 'mineral'?",
         "expected_answer": "angular, with sharp angles and edges",
-        "model_answer": "[Image: Mineralisch]  \nEckig, mit scharfen Kanten und R\u00e4ndern.",
+        "model_answer": "[Image: Mineralisch]  \nEckig, mit scharfen Kanten und Rändern.",
         "target_page": 58,
         "context_type": "token",
         "noise_level": 5000,
@@ -834,7 +782,7 @@
     {
         "question": "By which environmental standards is the maximum acceptable loss in the ditch is determined?",
         "expected_answer": "Not found in context",
-        "model_answer": "The maximal zul\u00e4ssige Verlust im Graben ist in der Umweltnorm festgelegt. Um der Norm zu entsprechen, darf die Menge D\u00fcngemittel im 1. Auffangbeh\u00e4lter, der in dem fiktiven Graben steht, maximal 10 % der Menge des Auffangbeh\u00e4lters betragen, der in der Mitte der Fahrspur ist (= 100 %).",
+        "model_answer": "The maximal zulässige Verlust im Graben ist in der Umweltnorm festgelegt. Um der Norm zu entsprechen, darf die Menge Düngemittel im 1. Auffangbehälter, der in dem fiktiven Graben steht, maximal 10 % der Menge des Auffangbehälters betragen, der in der Mitte der Fahrspur ist (= 100 %).",
         "target_page": 87,
         "context_type": "token",
         "noise_level": 5000,
@@ -886,7 +834,7 @@
     {
         "question": "Which appropriate measures for road transport should be taken when stopping work?",
         "expected_answer": "Not found in context",
-        "model_answer": "Ergreifen Sie s\u00e4mtliche diesbez\u00fcglich geltenden Ma\u00dfnahmen f\u00fcr den Stra\u00dfentransport.",
+        "model_answer": "Ergreifen Sie sämtliche diesbezüglich geltenden Maßnahmen für den Straßentransport.",
         "target_page": 112,
         "context_type": "token",
         "noise_level": 5000,
@@ -1402,5 +1350,187 @@
         "dataset": "question_datasets/question_answers_unanswerable.json",
         "file_extension": "txt",
         "duration": 1.0
+    },
+    {
+        "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+        "expected_answer": "06.00.00.0257",
+        "model_answer": "From the GreenSeeker-Version 06.00.00.00.0257.",
+        "target_page": 27,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.1
+    },
+    {
+        "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+        "expected_answer": "150mm.",
+        "model_answer": "150 mm",
+        "target_page": 51,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.9
+    },
+    {
+        "question": "How many parts does the distribution meter have?",
+        "expected_answer": "Seven.",
+        "model_answer": "Unknown",
+        "target_page": 59,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.9
+    },
+    {
+        "question": "How to enable fine application for dosing low application rate?",
+        "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+        "model_answer": "Use the Feindosier-Set when the Auslassgeschwindigkeit is lower than 40 kg/min.",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.1
+    },
+    {
+        "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+        "expected_answer": "1 open hole and 2 thick holes",
+        "model_answer": "Unknown or Not found in context",
+        "target_page": 67,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.1
+    },
+    {
+        "question": "Where is the RS 232 connector located?",
+        "expected_answer": "At the back of the control box.",
+        "model_answer": "The RS 232 connector is located on the backside of the control unit.",
+        "target_page": 72,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.1
+    },
+    {
+        "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+        "expected_answer": "Every year",
+        "model_answer": "Every year.",
+        "target_page": 78,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.9
+    },
+    {
+        "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+        "expected_answer": "10% of the quantity in the middle trough",
+        "model_answer": "The maximum allowable fertilizer loss of the quantity in the middle trough in a ditch is 10%.",
+        "target_page": 91,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.1
+    },
+    {
+        "question": "From which machine point is the spreading height measured to the ground or the crop?",
+        "expected_answer": "Measured from the bottom of the vanes.",
+        "model_answer": "From the ground or the top of the harvested crop.",
+        "target_page": 95,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.0
+    },
+    {
+        "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+        "expected_answer": "spreading chart or online spreading chart",
+        "model_answer": "The Zapfwellendrehzahl (PTO shaft speed) should be set according to the value in the corresponding spreading table. Adjust the Spreading disc RPM as indicated in the (Online-)Spreading tables or the table on the previous page.",
+        "target_page": 111,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.3
+    },
+    {
+        "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+        "expected_answer": "Place the spreader on a firm, stable ramp",
+        "model_answer": "[Place the loader on a stable elevation, e.g., a pallet.]",
+        "target_page": 120,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "no",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.0
+    },
+    {
+        "question": "What type of grease is the central gearbox filled with?",
+        "expected_answer": "EP 00/000 gear grease.",
+        "model_answer": "Getriebefett EP00/000",
+        "target_page": 127,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.0
+    },
+    {
+        "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+        "expected_answer": "The required distance is 1.0 mm.",
+        "model_answer": "1.0 mm",
+        "target_page": 138,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 0.9
+    },
+    {
+        "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
+        "expected_answer": "Yes, using the Sensor input IM Tellus.",
+        "model_answer": "Yes. With the optional 'Sensor Input IM Tellus', you can connect the tractor's speed sensor or radar to the IsoMatch control box.",
+        "target_page": 144,
+        "context_type": "token",
+        "noise_level": 5000,
+        "model_name": "qwen2.5_7B-128k",
+        "self_evaluation": "yes",
+        "dataset": "question_answers_pairs.json",
+        "file_extension": "txt",
+        "duration": 1.1
     }
 ]
