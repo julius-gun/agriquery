@@ -1,12 +1,10 @@
 # RAG Testing Framework
-![Dataset Distribution)](visualization/plots/question_dataset_distribution.png)
+![Dataset Success Heatmap: General Questions (Lang/Algo vs Model)](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_general_questions.png)
+![Dataset Success Heatmap: Unanswerable Questions (Lang/Algo vs Model)](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_unanswerable_questions.png)
+
 ![F1 Score Heatmap: Language vs Model (Hybrid, CS:200 OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_hybrid_cs_200.0_os_100.0.png)
 ![F1 Score Heatmap: Language vs Model (Embedding, CS:200 OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_embedding_cs_200.0_os_100.0.png)
 ![F1 Score Heatmap: Language vs Model (Keyword, CS:200 OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_keyword_cs_200.0_os_100.0.png)
-
-![Dataset Success Heatmap: General Questions (Lang/Algo vs Model)](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_general_questions.png)
-![Dataset Success Heatmap: Unanswerable Questions (Lang/Algo vs Model)](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_unanswerable_questions.png)
-![Dataset Success Heatmap: Table Questions (Lang/Algo vs Model)](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_table_questions.png)
 
 ![Dataset Success Boxplot: Hybrid (English, CS:200 OS:100)](visualization/plots/dataset_success_boxplot_model_vs_dataset_hybrid_lang_english_cs_200_os_100.png)
 ![Dataset Success Boxplot: Embedding (English, CS:200 OS:100)](visualization/plots/dataset_success_boxplot_model_vs_dataset_embedding_lang_english_cs_200_os_100.png)
