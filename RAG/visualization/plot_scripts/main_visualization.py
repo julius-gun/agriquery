@@ -216,14 +216,15 @@ def main():
         print(f"\n--- Generating {plot_type.replace('_', ' ').title()} ---")
 
         if plot_type == "boxplot":
-            # Call the F1 Boxplot Generator
-            generate_f1_boxplot(
-                df_data=df_data,
-                group_by=args.group_by,
-                output_dir=args.output_dir,
-                output_filename_prefix=args.output_filename_prefix,
-                all_languages_list=all_languages_list,
-            )
+            ...
+            # Call the F1 Boxplot Generator for distribution by question model and language
+            # generate_f1_boxplot(
+            #     df_data=df_data,
+            #     group_by=args.group_by,
+            #     output_dir=args.output_dir,
+            #     output_filename_prefix=args.output_filename_prefix,
+            #     all_languages_list=all_languages_list,
+            # )
 
         elif plot_type == "heatmap":
             # --- Call the F1 Score Heatmap Generators ---
