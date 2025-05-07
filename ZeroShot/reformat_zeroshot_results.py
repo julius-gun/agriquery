@@ -163,7 +163,7 @@ def parse_filename(filename: str) -> Optional[Dict[str, Any]]:
 
 def reformat_zeroshot_file(filepath: str):
     """Loads, processes, and reformats a single ZeroShot result file."""
-    print(f"Processing file: {filepath}")
+    # print(f"Processing file: {filepath}")
     filename = os.path.basename(filepath)
 
     # 1. Parse filename
@@ -243,9 +243,9 @@ def reformat_zeroshot_file(filepath: str):
     dataset_success = calculate_dataset_success_rates(processed_data)
     overall_metrics["dataset_self_evaluation_success"] = dataset_success
 
-    if overall_metrics.get("accuracy") == 0.0 or overall_metrics.get("f1_score") == 0.0:
-        print(f"Skipping save for {filename}: Accuracy or F1 score is zero.")
-        return # Exit the function before saving
+    # if overall_metrics.get("accuracy") == 0.0 or overall_metrics.get("f1_score") == 0.0:
+    #     print(f"Skipping save for {filename}: Accuracy or F1 score is zero.")
+    #     return # Exit the function before saving
 
     # 5. Restructure Data
     # 5.1 Test Run Parameters
@@ -300,7 +300,7 @@ def reformat_zeroshot_file(filepath: str):
         os.makedirs(OUTPUT_DIR, exist_ok=True)
         with open(output_filepath, 'w', encoding='utf-8') as f:
             json.dump(final_output, f, indent=4, ensure_ascii=False)
-        print(f"Successfully reformatted and saved to: {output_filepath}")
+        # print(f"Successfully reformatted and saved to: {output_filepath}")
     except Exception as e:
         print(f"Error saving output file {output_filepath}: {e}")
 

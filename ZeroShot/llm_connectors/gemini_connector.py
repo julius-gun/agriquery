@@ -30,6 +30,8 @@ class GeminiConnector(BaseLLMConnector):
     # Define the order of API key environment variable names to try
     API_KEY_ENV_VARS: List[str] = ["GEMINI_API_KEY_DC", "GEMINI_API_KEY_LS", "GEMINI_API_KEY_SG"]
     INVOKE_TIMEOUT_SECONDS: int = 300 # 5 minutes, adjust as needed
+    KEY_SWITCH_BASE_WAIT_SECONDS: int = 40 # Base wait time after a key switch
+    KEY_SWITCH_RANDOM_WAIT_SECONDS: int = 20 # Max random seconds to add to base wait
 
     def __init__(self, model_name: str, config: Dict[str, Any]):
         """
@@ -299,9 +301,26 @@ class GeminiConnector(BaseLLMConnector):
                 # Attempt to switch to the next key (handles wrap-around)
                 logger.info("Attempting to switch API key...")
                 if self._try_next_api_key():
-                    logger.info(f"Successfully switched to API key index {self.current_api_key_index}. Retrying immediately with the new key.")
-                    # attempt = 0 # Optional reset if desired
-                    continue # Retry immediately (without sleep) with the new key
+                    logger.info(f"Successfully switched to API key index {self.current_api_key_index}.")
+                    # Introduce delay after successful key switch
+                    key_switch_wait_duration = self.KEY_SWITCH_BASE_WAIT_SECONDS + random.uniform(0, self.KEY_SWITCH_RANDOM_WAIT_SECONDS)
+                    logger.info(f"Waiting for {key_switch_wait_duration:.2f} seconds after key switch before retrying...")
+                    
+                    # Check if this wait exceeds remaining timeout
+                    current_elapsed_after_switch_attempt = time.time() - start_time
+                    if current_elapsed_after_switch_attempt + key_switch_wait_duration > self.INVOKE_TIMEOUT_SECONDS:
+                        remaining_time = self.INVOKE_TIMEOUT_SECONDS - current_elapsed_after_switch_attempt
+                        if remaining_time > 0:
+                            logger.warning(f"Key switch wait time ({key_switch_wait_duration:.2f}s) exceeds remaining timeout. Waiting for remaining {remaining_time:.2f}s.")
+                            time.sleep(remaining_time)
+                        # The timeout check at the start of the next loop iteration will catch this.
+                        continue 
+                    else:
+                        time.sleep(key_switch_wait_duration)
+
+                    # attempt = 0 # Optional: Reset attempt counter if you want fresh backoff for the new key
+                                # Keeping attempts cumulative for overall timeout and general backoff progression
+                    continue # Retry with the new key after the delay
                 else:
                     # _try_next_api_key returned False - no *other* key could be configured.
                     # Stay with the current key index and apply exponential backoff.
