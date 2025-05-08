@@ -1,6 +1,7 @@
 # visualization/plot_scripts/main_visualization.py
 
 # python visualization\plot_scripts\main_visualization.py --plot-type=heatmap
+# python visualization\plot_scripts\main_visualization.py --plot-type=all
 
 import os
 import sys
@@ -14,19 +15,24 @@ try:
     # This import will also execute the path setup code in plot_utils
     # because it runs at the module level there.
     from plot_utils import add_project_paths, sanitize_filename
-    PROJECT_ROOT = add_project_paths() # Ensure paths are set and get the root
+
+    PROJECT_ROOT = add_project_paths()  # Ensure paths are set and get the root
 except ImportError as e:
-     print("Failed to import 'add_project_paths' or 'sanitize_filename' from 'plot_utils.py'.")
-     print(f"Make sure 'plot_utils.py' exists in the same directory as this script ({os.path.dirname(__file__)}) and is correctly structured.")
-     print(f"Original error: {e}")
-     # Attempt to provide more context on where it's looking
-     print(f"Current sys.path: {sys.path}")
-     # Try calculating expected path for plot_utils
-     expected_plot_utils_path = os.path.join(os.path.dirname(__file__), 'plot_utils.py')
-     print(f"Checking for plot_utils at: {expected_plot_utils_path}")
-     if not os.path.exists(expected_plot_utils_path):
-         print("Error: plot_utils.py not found at the expected location.")
-     sys.exit(1)
+    print(
+        "Failed to import 'add_project_paths' or 'sanitize_filename' from 'plot_utils.py'."
+    )
+    print(
+        f"Make sure 'plot_utils.py' exists in the same directory as this script ({os.path.dirname(__file__)}) and is correctly structured."
+    )
+    print(f"Original error: {e}")
+    # Attempt to provide more context on where it's looking
+    print(f"Current sys.path: {sys.path}")
+    # Try calculating expected path for plot_utils
+    expected_plot_utils_path = os.path.join(os.path.dirname(__file__), "plot_utils.py")
+    print(f"Checking for plot_utils at: {expected_plot_utils_path}")
+    if not os.path.exists(expected_plot_utils_path):
+        print("Error: plot_utils.py not found at the expected location.")
+    sys.exit(1)
 
 
 # --- Imports ---
@@ -48,14 +54,19 @@ try:
         generate_dataset_success_heatmaps,
         generate_algo_vs_model_f1_heatmap,
         generate_algo_vs_model_dataset_success_heatmap,
+        generate_multilang_f1_score_report_heatmap,  # Import the new function
     )
 
     # Removed direct imports from heatmaps.py
 
 except ImportError as e:
     print("Error importing required modules after attempting path setup.")
-    print("This might indicate an issue with the project structure or missing files within 'utils' or 'visualization'.")
-    print(f"Project root added to sys.path: {PROJECT_ROOT if 'PROJECT_ROOT' in locals() else 'Unknown'}")
+    print(
+        "This might indicate an issue with the project structure or missing files within 'utils' or 'visualization'."
+    )
+    print(
+        f"Project root added to sys.path: {PROJECT_ROOT if 'PROJECT_ROOT' in locals() else 'Unknown'}"
+    )
     print(f"Current sys.path: {sys.path}")
     print(f"Original Error: {e}")
     sys.exit(1)
@@ -65,8 +76,8 @@ except ImportError as e:
 
 def main():
     # Get project root and visualization dir using the established PROJECT_ROOT
-    visualization_dir = os.path.join(PROJECT_ROOT, "visualization") # Derived from root
-    project_root_dir = PROJECT_ROOT # Use the established root
+    visualization_dir = os.path.join(PROJECT_ROOT, "visualization")  # Derived from root
+    project_root_dir = PROJECT_ROOT  # Use the established root
 
     # [...] rest of the main function (paths should now use project_root_dir)
 
@@ -102,13 +113,14 @@ def main():
         default="all",
         # --- MODIFICATION START: Added new choices ---
         choices=[
-            "boxplot",              # F1 Boxplot (grouped)
-            "heatmap",              # Original set of detailed heatmaps
-            "dataset_boxplot",      # Dataset Success Boxplot (specific params)
-            "algo_vs_model_f1",     # NEW: Algo vs Model F1 Heatmap
-            "algo_vs_model_success",# NEW: Algo vs Model Mean Success Heatmap
-            "all"                   # Generate all plot types
-            ],
+            "boxplot",  # F1 Boxplot (grouped)
+            "heatmap",  # Original set of detailed heatmaps
+            "dataset_boxplot",  # Dataset Success Boxplot (specific params)
+            "algo_vs_model_f1",  # NEW: Algo vs Model F1 Heatmap
+            "algo_vs_model_success",  # NEW: Algo vs Model Mean Success Heatmap
+            "multilang_f1_report",  # Add new choice
+            "all",  # Generate all plot types
+        ],
         # --- MODIFICATION END ---
         help="Type of plot(s) to generate. 'heatmap' generates detailed Lang/Chunk/Model heatmaps. 'algo_vs_model...' generate summary heatmaps. 'all' generates everything.",
     )
@@ -202,10 +214,17 @@ def main():
             "heatmap",
             "dataset_boxplot",
             "algo_vs_model_f1",
-            "algo_vs_model_success"
-            ]
+            "algo_vs_model_success",
+            "multilang_f1_report",  # Add to 'all'
+        ]
         # --- MODIFICATION END ---
-    elif args.plot_type in ["boxplot", "heatmap", "dataset_boxplot", "algo_vs_model_f1", "algo_vs_model_success"]:
+    elif args.plot_type in [
+        "boxplot",
+        "heatmap",
+        "dataset_boxplot",
+        "algo_vs_model_f1",
+        "algo_vs_model_success",
+    ]:
         plot_types_to_generate = [args.plot_type]
     else:
         print(f"Error: Invalid plot type '{args.plot_type}' specified.")
@@ -247,23 +266,35 @@ def main():
                     df_f1_heatmap["retrieval_algorithm"] != "zeroshot"
                 ].copy()
 
-                if df_f1_heatmap_rag.empty:
+                if not df_f1_heatmap_rag.empty:
+                    ...
+                    # generate_chunk_vs_overlap_heatmap(
+                    #     df_f1_heatmap=df_f1_heatmap_rag,
+                    #     output_dir=args.output_dir,
+                    #     output_filename_prefix=args.output_filename_prefix,
+                    # )
+                    # generate_model_vs_chunk_overlap_heatmap(
+                    #     df_f1_heatmap=df_f1_heatmap_rag,
+                    #     output_dir=args.output_dir,
+                    #     output_filename_prefix=args.output_filename_prefix,
+                    # )
+                else:
                     print(
-                        "Warning: No F1 score data found for non-zeroshot algorithms. Skipping Chunk/Overlap related F1 heatmaps."
+                        "Warning: No F1 score data found for non-zeroshot algorithms. Skipping Chunk/Overlap and Model vs Chunk/Overlap F1 heatmaps."
                     )
                 # else:
-                    # Call Chunk vs Overlap heatmap (excludes zeroshot)
-                    # generate_chunk_vs_overlap_heatmap(
-                    #     df_f1_heatmap=df_f1_heatmap_rag, # Use filtered data
-                    #     output_dir=args.output_dir,
-                    #     output_filename_prefix=args.output_filename_prefix,
-                    # )
-                    # Call Model vs Chunk/Overlap heatmap (excludes zeroshot)
-                    # generate_model_vs_chunk_overlap_heatmap(
-                    #     df_f1_heatmap=df_f1_heatmap_rag, # Use filtered data
-                    #     output_dir=args.output_dir,
-                    #     output_filename_prefix=args.output_filename_prefix,
-                    # )
+                # Call Chunk vs Overlap heatmap (excludes zeroshot)
+                # generate_chunk_vs_overlap_heatmap(
+                #     df_f1_heatmap=df_f1_heatmap_rag, # Use filtered data
+                #     output_dir=args.output_dir,
+                #     output_filename_prefix=args.output_filename_prefix,
+                # )
+                # Call Model vs Chunk/Overlap heatmap (excludes zeroshot)
+                # generate_model_vs_chunk_overlap_heatmap(
+                #     df_f1_heatmap=df_f1_heatmap_rag, # Use filtered data
+                #     output_dir=args.output_dir,
+                #     output_filename_prefix=args.output_filename_prefix,
+                # )
 
             # --- Call the Detailed Dataset Success Rate Heatmap Generators ---
             # This function handles its own filtering internally if needed
@@ -288,18 +319,24 @@ def main():
         # --- NEW: Add calls for the new summary heatmaps ---
         elif plot_type == "algo_vs_model_f1":
             generate_algo_vs_model_f1_heatmap(
-                df_data=df_data, # Pass the full dataframe
+                df_data=df_data,  # Pass the full dataframe
                 output_dir=args.output_dir,
-                output_filename_prefix=args.output_filename_prefix
+                output_filename_prefix=args.output_filename_prefix,
             )
 
         elif plot_type == "algo_vs_model_success":
             generate_algo_vs_model_dataset_success_heatmap(
-                df_data=df_data, # Pass the full dataframe
+                df_data=df_data,  # Pass the full dataframe
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix,
+            )
+        
+        elif plot_type == "multilang_f1_report": # Add elif for the new plot
+            generate_multilang_f1_score_report_heatmap(
+                df_data=df_data,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix
             )
-        # --- END NEW ---
 
 
     print("\n--- Visualization Generation Finished ---")
