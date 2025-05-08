@@ -50,7 +50,7 @@ logging.getLogger().setLevel(logging.WARNING)
 # ---------------------------------------------------
 
 models_to_test = [
-    "gemini-2.5-pro-exp-03-25"
+    "gemini-2.5-flash-preview-04-17"
 ]
 
 documents_to_test = [
@@ -110,8 +110,8 @@ def main():
         "--noise_levels",
         type=int,
         nargs="+",
-        default=[59000],
-        # default=[1000, 2000, 5000, 10000, 20000, 30000, 59000],
+        # default=[59000],
+        default=[1000, 2000, 5000, 10000, 20000, 30000],
         # default=[30000],
         # default=[1000],
         # pages

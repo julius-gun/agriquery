@@ -76,6 +76,15 @@
         "context_window": null,
         "top_p": 0.0,
         "top_k": 64
+            },
+        
+      "gemini-2.5-flash-preview-04-17": {
+        "name": "gemini-2.5-flash-preview-04-17",
+                "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": null,
+        "top_p": 0.0,
+        "top_k": 64
             }
         }
     },
