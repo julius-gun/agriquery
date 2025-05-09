@@ -28,7 +28,7 @@ class GeminiConnector(BaseLLMConnector):
     """
 
     # Define the order of API key environment variable names to try
-    API_KEY_ENV_VARS: List[str] = ["GEMINI_API_KEY_DC", "GEMINI_API_KEY_LS", "GEMINI_API_KEY_SG"]
+    API_KEY_ENV_VARS: List[str] = ["GEMINI_API_KEY_DC", "GEMINI_API_KEY_FRIEDM", "GEMINI_API_KEY_SG", "GEMINI_API_KEY_SG2"]
     INVOKE_TIMEOUT_SECONDS: int = 3600 # 60 minutes, adjust as needed
     KEY_SWITCH_BASE_WAIT_SECONDS: int = 40 # Base wait time after a key switch
     KEY_SWITCH_RANDOM_WAIT_SECONDS: int = 20 # Max random seconds to add to base wait
@@ -212,6 +212,7 @@ class GeminiConnector(BaseLLMConnector):
         Includes an initial delay, retries indefinitely on ResourceExhausted errors
         by cycling API keys and using exponential backoff, until an overall timeout
         is reached or another error occurs.
+        Each invoke call uses a fresh chat session to prevent history accumulation.
 
         Args:
             prompt (str): The prompt to send to Gemini.
@@ -246,29 +247,45 @@ class GeminiConnector(BaseLLMConnector):
                 logger.error(f"GeminiConnector: {timeout_msg}")
                 return timeout_msg
 
-            # --- Ensure Model/Session are Available ---
-            if not self.gemini_model or not self.chat_session:
-                 logger.error(f"Invoke failed (Attempt {attempt + 1}): Gemini model or chat session is not available.")
-                 current_idx_for_reconfig = self.current_api_key_index if self.current_api_key_index != -1 else 0
-                 logger.warning(f"Attempting to re-initialize model/session using key index {current_idx_for_reconfig}...")
-                 if not self._configure_api_key(startIndex=current_idx_for_reconfig, stopIndex=current_idx_for_reconfig + 1):
-                      # If even re-config fails with the supposed current key, try cycling once
-                      logger.warning(f"Re-initialization with index {current_idx_for_reconfig} failed. Trying to find any other usable key...")
-                      if not self._try_next_api_key():
-                           logger.error("Could not re-initialize model/session with current key or find any other usable key.")
-                           return "Error: Gemini model/session unavailable and could not be re-initialized."
-                      # If _try_next_api_key succeeded, a different key is now active
-                      logger.info(f"Re-initialized model/session successfully with new key index {self.current_api_key_index}.")
-                      # Continue the attempt loop with the new key
-                 else:
-                     # If re-config worked with the current index, log it and continue the attempt loop
-                     logger.info(f"Re-initialized model/session successfully with key index {self.current_api_key_index}.")
-                 # Continue to the next iteration to try sending the message
-                 attempt += 1 # Increment attempt counter even if reconfig happened
-                 continue
+            # --- Step 1: Ensure Gemini Model is available and configured ---
+            if not self.gemini_model:
+                logger.info(f"Invoke (Attempt {attempt + 1}): Gemini model is not initialized. Attempting to configure.")
+                current_idx_for_reconfig = self.current_api_key_index if self.current_api_key_index != -1 else 0
+                if not self._configure_api_key(startIndex=current_idx_for_reconfig, stopIndex=current_idx_for_reconfig + 1):
+                    logger.warning(f"Model configuration with key index {current_idx_for_reconfig} failed. Attempting to cycle to the next key.")
+                    if not self._try_next_api_key(): # _try_next_api_key also calls _configure_api_key
+                        error_msg = "Error: Gemini model could not be initialized after attempting all API keys."
+                        logger.error(f"Invoke: {error_msg}")
+                        return error_msg
+                    logger.info(f"Invoke: Successfully configured model using new key index {self.current_api_key_index}.")
+                else:
+                    logger.info(f"Invoke: Successfully configured model using key index {self.current_api_key_index}.")
+                # If model configuration succeeded, self.gemini_model is valid and self.chat_session was freshly created.
+                # Increment attempt as model configuration is a significant action.
+                attempt += 1
+                # Continue to Step 2 to ensure chat session is fresh for this specific call,
+                # even if _configure_api_key already created one. This makes Step 2 the single source of truth.
 
+            # --- Step 2: Create a fresh Chat Session for this specific invoke call ---
+            # This ensures that history from previous, unrelated invoke calls is cleared.
+            try:
+                if not self.gemini_model:
+                    logger.warning(f"Invoke (Attempt {attempt + 1}): gemini_model is None before creating chat session. Retrying model configuration.")
+                    attempt += 1 # Count this as part of the ongoing attempt cycle
+                    time.sleep(0.5) # Brief pause before retrying the loop to re-trigger Step 1
+                    continue
 
-            # --- Try Sending Message ---
+                # logger.debug(f"Invoke (Attempt {attempt + 1}): Creating fresh chat session.")
+                self.chat_session = self._create_chat_session() # Ensures statelessness for each invoke
+            except RuntimeError as e:
+                logger.error(f"Invoke (Attempt {attempt + 1}): Failed to create chat session: {e}. Model might be invalid. Forcing model re-check.")
+                self.gemini_model = None # Mark to trigger re-config in Step 1 on next iteration.
+                self.chat_session = None
+                attempt += 1 # Count this as part of the ongoing attempt cycle
+                time.sleep(1) # Small delay before retrying the loop
+                continue
+
+            # --- Step 3: Try Sending Message ---
             try:
                 current_key_name = "N/A"
                 current_key_index = self.current_api_key_index # Cache index for this attempt
@@ -276,12 +293,13 @@ class GeminiConnector(BaseLLMConnector):
                      current_key_name = self.API_KEY_ENV_VARS[current_key_index]
                 logger.debug(f"GeminiConnector: Sending message (Attempt {attempt + 1}) using key '{current_key_name}' (index {current_key_index})...")
 
-                # Ensure chat session is valid *after* potential re-configuration
-                if not self.chat_session:
-                     logger.error("Invoke failed: Chat session became unavailable unexpectedly after potential reconfig.")
-                     # This indicates a deeper issue, maybe return error directly
-                     return "Error: Chat session lost during execution after reconfiguration attempt."
-
+                if not self.chat_session: # Should be extremely rare now due to Step 2
+                     logger.error(f"Invoke (Attempt {attempt + 1}): Chat session is unexpectedly None right before send_message. Forcing model re-check.")
+                     self.gemini_model = None # Mark model as needing re-init
+                     self.chat_session = None
+                     attempt += 1 # Count this as part of the ongoing attempt cycle
+                     time.sleep(1) # Small delay
+                     continue
 
                 response = self.chat_session.send_message(prompt)
                 logger.debug(f"GeminiConnector: Received response successfully on attempt {attempt + 1}.")
