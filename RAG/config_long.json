@@ -104,16 +104,16 @@
     }
   },
   "question_models_to_test": [
-    "deepseek-r1_8B-128k",
-    "deepseek-r1_1.5B-128k",
-    "qwen3_8B-128k",
+    "gemini-2.5-flash-preview-04-17",
     "qwen2.5_7B-128k",
+    "qwen3_8B-128k",
     "phi3_14B_q4_medium-128k",
-    "phi3_8B_q4_mini-128k",
     "llama3.1_8B-128k",
+    "deepseek-r1_8B-128k",
+    "phi3_8B_q4_mini-128k",
     "llama3.2_3B-128k",
-    "llama3.2_1B-128k",
-    "gemini-2.5-flash-preview-04-17"
+    "deepseek-r1_1.5B-128k",
+    "llama3.2_1B-128k"
   ],
   "evaluator_model_name": "gemma3_12B-128k",
   "enable_reevaluation": true,

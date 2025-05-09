@@ -30,7 +30,7 @@ class GeminiConnector(BaseLLMConnector):
     # Define the order of API key environment variable names to try
     API_KEY_ENV_VARS: List[str] = ["GEMINI_API_KEY_DC", "GEMINI_API_KEY_FRIEDM", "GEMINI_API_KEY_SG", "GEMINI_API_KEY_SG2"]
     INVOKE_TIMEOUT_SECONDS: int = 3600 # 60 minutes, adjust as needed
-    KEY_SWITCH_BASE_WAIT_SECONDS: int = 40 # Base wait time after a key switch
+    KEY_SWITCH_BASE_WAIT_SECONDS: int = 15 # Base wait time after a key switch
     KEY_SWITCH_RANDOM_WAIT_SECONDS: int = 20 # Max random seconds to add to base wait
 
     def __init__(self, model_name: str, config: Dict[str, Any]):
@@ -224,7 +224,7 @@ class GeminiConnector(BaseLLMConnector):
              logger.error("GeminiConnector invoke failed: No API Keys configured.")
              return "Error: Gemini connector has no API keys configured."
 
-        DELAY_SECONDS = 11 # Mandatory delay before each *initial* API call attempt
+        DELAY_SECONDS = 8 # Mandatory delay before each *initial* API call attempt
         base_delay = 1     # Base delay in seconds for exponential backoff
         max_backoff_exponent = 10 # Cap backoff exponent (2^10 = 1024s ~ 17 mins)
 

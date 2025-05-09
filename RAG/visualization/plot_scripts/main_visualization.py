@@ -46,18 +46,20 @@ try:
         generate_dataset_success_boxplot,
     )
 
-    # Import the new heatmap generator functions
+    # Import the heatmap generator functions
     from visualization.plot_scripts.heatmap_generators import (
         generate_language_vs_model_heatmap,
         generate_chunk_vs_overlap_heatmap,
         generate_model_vs_chunk_overlap_heatmap,
-        generate_dataset_success_heatmaps,
-        generate_algo_vs_model_f1_heatmap,
-        generate_algo_vs_model_dataset_success_heatmap,
-        generate_multilang_f1_score_report_heatmap,  # Import the new function
+        generate_dataset_success_heatmaps,  # The detailed one: Model vs Chunk/Overlap for Dataset Success
+        generate_algo_vs_model_f1_heatmap,  # English only, mean F1
+        generate_algo_vs_model_dataset_success_heatmap,  # Multi-lang, algo-sorted, per-dataset success
+        generate_multilang_f1_score_report_heatmap,
+        generate_multilang_accuracy_report_heatmap,  # NEW
+        generate_multilang_precision_report_heatmap,  # NEW
+        generate_multilang_recall_report_heatmap,  # NEW
+        generate_multilang_specificity_report_heatmap,  # NEW
     )
-
-    # Removed direct imports from heatmaps.py
 
 except ImportError as e:
     print("Error importing required modules after attempting path setup.")
@@ -72,6 +74,21 @@ except ImportError as e:
     sys.exit(1)
 
 # sanitize_filename function is now imported from plot_utils
+
+# --- Global Plotting Configuration ---
+# Define the desired sorting order for models in specific reports
+REPORT_MODEL_SORT_ORDER = [
+    "gemini-2.5-flash-preview-04-17",
+    "qwen2.5_7B-128k",
+    "qwen3_8B-128k",
+    "phi3_14B_q4_medium-128k",
+    "llama3.1_8B-128k",
+    "deepseek-r1_8B-128k",
+    "phi3_8B_q4_mini-128k",
+    "llama3.2_3B-128k",
+    "deepseek-r1_1.5B-128k",
+    "llama3.2_1B-128k"
+]
 
 
 def main():
@@ -113,19 +130,22 @@ def main():
         default="all",
         # --- MODIFICATION START: Added new choices ---
         choices=[
-            "boxplot",  # F1 Boxplot (grouped)
-            "heatmap",  # Original set of detailed heatmaps
-            "dataset_boxplot",  # Dataset Success Boxplot (specific params)
-            "algo_vs_model_f1",  # NEW: Algo vs Model F1 Heatmap
-            "algo_vs_model_success",  # NEW: Algo vs Model Mean Success Heatmap
-            "multilang_f1_report",  # Add new choice
-            "all",  # Generate all plot types
+            "boxplot",
+            "heatmap",  # Original set of detailed heatmaps (lang_vs_model, chunk_vs_overlap etc.)
+            "dataset_boxplot",
+            "algo_vs_model_f1",  # English only, mean F1
+            "algo_vs_model_success",  # Multi-lang, algo-sorted, per-dataset success
+            "multilang_f1_report",
+            "multilang_accuracy_report",  # NEW
+            "multilang_precision_report",  # NEW
+            "multilang_recall_report",  # NEW
+            "multilang_specificity_report",  # NEW
+            "all",
         ],
-        # --- MODIFICATION END ---
-        help="Type of plot(s) to generate. 'heatmap' generates detailed Lang/Chunk/Model heatmaps. 'algo_vs_model...' generate summary heatmaps. 'all' generates everything.",
+        help="Type of plot(s) to generate.",
     )
     parser.add_argument(
-        "--group-by",  # Only used by F1 boxplot now
+        "--group-by",
         type=str,
         default="question_model",
         choices=[
@@ -213,17 +233,25 @@ def main():
             "boxplot",
             "heatmap",
             "dataset_boxplot",
-            "algo_vs_model_f1",
-            "algo_vs_model_success",
-            "multilang_f1_report",  # Add to 'all'
+            "algo_vs_model_f1",  # English-only, mean F1
+            "algo_vs_model_success",  # Multi-lang, per-dataset success
+            "multilang_f1_report",
+            "multilang_accuracy_report",
+            "multilang_precision_report",
+            "multilang_recall_report",
+            "multilang_specificity_report",
         ]
-        # --- MODIFICATION END ---
-    elif args.plot_type in [
+    elif args.plot_type in [  # Add new types to this list
         "boxplot",
         "heatmap",
         "dataset_boxplot",
         "algo_vs_model_f1",
         "algo_vs_model_success",
+        "multilang_f1_report",
+        "multilang_accuracy_report",
+        "multilang_precision_report",
+        "multilang_recall_report",
+        "multilang_specificity_report",
     ]:
         plot_types_to_generate = [args.plot_type]
     else:
@@ -245,13 +273,12 @@ def main():
             #     all_languages_list=all_languages_list,
             # )
 
-        elif plot_type == "heatmap":
-            # --- Call the F1 Score Heatmap Generators ---
-            print("\nGenerating Detailed F1 Score Heatmaps (Lang/Chunk/Model)")
+        elif plot_type == "heatmap": # This is for the set of original detailed heatmaps
+            print("\nGenerating Detailed F1 Score & Dataset Success Heatmaps (Original Set)")
             # Filter data specifically for F1 scores for these heatmaps
             df_f1_heatmap = df_data[df_data["metric_type"] == "f1_score"].copy()
             if df_f1_heatmap.empty:
-                print("Warning: No F1 score data found. Skipping detailed F1 heatmaps.")
+                print("Warning: No F1 score data found. Skipping detailed F1 heatmaps for 'heatmap' type.")
             else:
                 # Call Language vs Model heatmap (includes zeroshot)
                 generate_language_vs_model_heatmap(
@@ -330,14 +357,41 @@ def main():
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
             )
-        
-        elif plot_type == "multilang_f1_report": # Add elif for the new plot
+
+        elif plot_type == "multilang_f1_report":  # Add elif for the new plot
             generate_multilang_f1_score_report_heatmap(
                 df_data=df_data,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix
             )
+        
+        elif plot_type == "multilang_accuracy_report":
+            generate_multilang_accuracy_report_heatmap(
+                df_data=df_data,
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix
+            )
 
+        elif plot_type == "multilang_precision_report":
+            generate_multilang_precision_report_heatmap(
+                df_data=df_data,
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix
+            )
+
+        elif plot_type == "multilang_recall_report":
+            generate_multilang_recall_report_heatmap(
+                df_data=df_data,
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix
+            )
+
+        elif plot_type == "multilang_specificity_report":
+            generate_multilang_specificity_report_heatmap(
+                df_data=df_data,
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix
+            )
 
     print("\n--- Visualization Generation Finished ---")
 

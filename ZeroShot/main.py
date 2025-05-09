@@ -110,9 +110,9 @@ def main():
         "--noise_levels",
         type=int,
         nargs="+",
-        default=[59000, 1000, 2000, 5000, 10000, 20000, 30000],
+        # default=[59000, 1000, 2000, 5000, 10000, 20000, 30000],
         # default=[1000, 2000, 5000, 10000],
-        # default=[30000],
+        default=[59000],
         # default=[1000],
         # pages
         # default=[0, 10],

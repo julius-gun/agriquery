@@ -185,19 +185,22 @@ def extract_detailed_visualization_data(results_dir: str) -> Optional[pd.DataFra
                      # Decide if you want to skip the file entirely or just metrics
                      # continue # Option: skip file if no metrics
 
-                # 1. Extract F1 Score
-                f1_score = overall_metrics.get('f1_score')
-                if f1_score is not None:
-                    f1_record = params.copy() # Start with parameters from filename
-                    f1_record.update({
-                        'metric_type': 'f1_score',
-                        'metric_value': float(f1_score),
-                        'dataset_type': None # Not applicable for overall F1
-                    })
-                    extracted_data.append(f1_record)
-                    print(f"  Extracted F1 score: {f1_score:.4f}")
-                elif overall_metrics: # Only warn if overall_metrics existed
-                    print(f"  Warning: 'f1_score' not found or is null in overall_metrics.")
+                # 1. Extract Overall Metrics (F1, Accuracy, Precision, Recall, Specificity)
+                overall_metric_keys = ['f1_score', 'accuracy', 'precision', 'recall', 'specificity']
+                for metric_key in overall_metric_keys:
+                    metric_value = overall_metrics.get(metric_key)
+                    if metric_value is not None:
+                        metric_record = params.copy() # Start with parameters from filename
+                        metric_record.update({
+                            'metric_type': metric_key, # Use the key as metric_type
+                            'metric_value': float(metric_value),
+                            'dataset_type': None # Not applicable for these overall metrics
+                        })
+                        extracted_data.append(metric_record)
+                        print(f"  Extracted {metric_key}: {metric_value:.4f}")
+                    elif overall_metrics: # Only warn if overall_metrics existed but the specific key was missing
+                        print(f"  Warning: '{metric_key}' not found or is null in overall_metrics.")
+
 
                 # 2. Extract Dataset Success Rates
                 dataset_success = overall_metrics.get('dataset_self_evaluation_success', {})

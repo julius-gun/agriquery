@@ -23,6 +23,20 @@ from utils.config_loader import (
     ConfigLoader,
 )  # Needed for language list in standalone mode
 
+# --- Constants for Multi-Language Algorithmic Reports ---
+# These settings are specific to the "multilang algo vs model" report types
+REPORT_LANGUAGES = ["english", "german", "french"]
+REPORT_TARGET_CHUNK = 200
+REPORT_TARGET_OVERLAP = 100
+REPORT_TARGET_NOISE_LEVELS = [1000, 10000, 30000, 59000]
+REPORT_RAG_ALGORITHMS_ORDERED = ["hybrid", "embedding", "keyword"]
+REPORT_ZEROSHOT_IDENTIFIERS_ORDERED = [
+    f"zeroshot_noise_{n}" for n in sorted(REPORT_TARGET_NOISE_LEVELS)
+]
+REPORT_ALGORITHM_SORT_ORDER = REPORT_RAG_ALGORITHMS_ORDERED + REPORT_ZEROSHOT_IDENTIFIERS_ORDERED
+REPORT_LANGUAGE_SORT_ORDER = REPORT_LANGUAGES
+
+
 # --- Core Generator Functions ---
 
 
@@ -779,6 +793,167 @@ def generate_algo_vs_model_dataset_success_heatmap(
             # figsize=(14, max(8, len(sorted_plot_indices) * 0.4)) # Dynamically adjust height?
         )
 
+# --- Refactored Internal Function for Multi-Language Algorithmic Reports ---
+def _generate_multilang_algorithmic_report_heatmap(
+    df_data: pd.DataFrame,
+    metric_to_plot: str,
+    value_label: str, # For colorbar and part of title
+    base_plot_title_metric_name: str, # E.g., "F1 Score", "Accuracy"
+    output_dir: str,
+    output_filename_prefix: str,
+    output_file_metric_slug: str, # E.g., "f1_score", "accuracy" for filename
+    dataset_type_filter: Optional[str] = None, # For dataset-specific reports
+):
+    """
+    Internal helper to generate a multi-language, algorithm-sorted heatmap
+    comparing Algorithm/Language (Rows) vs LLM Models (Columns).
+    Filters RAG algorithms by specific chunk/overlap and ZeroShot by specific noise levels.
+    """
+    print(
+        f"\nGenerating Internal Heatmap for: Metric='{metric_to_plot}', Dataset='{dataset_type_filter if dataset_type_filter else 'Overall'}'"
+    )
+    print(f"  Languages: {REPORT_LANGUAGES}, Algo Sort: {REPORT_ALGORITHM_SORT_ORDER}")
+    print(f"  RAG Params: C={REPORT_TARGET_CHUNK}/O={REPORT_TARGET_OVERLAP}, ZeroShot Noise: {REPORT_TARGET_NOISE_LEVELS}")
+
+    required_cols = [
+        "retrieval_algorithm", "question_model", "metric_type", "metric_value",
+        "language", "chunk_size", "overlap_size", "noise_level",
+    ]
+    if dataset_type_filter:
+        required_cols.append("dataset_type")
+
+    missing_cols = [col for col in required_cols if col not in df_data.columns]
+    if missing_cols:
+        print(f"Warning: Input DataFrame is missing required columns: {missing_cols}. Skipping this heatmap.")
+        return
+
+    df_processed = df_data.copy()
+    numeric_cols = ["chunk_size", "overlap_size", "noise_level"]
+    for col in numeric_cols:
+        if col in df_processed.columns:
+            df_processed[col] = pd.to_numeric(df_processed[col], errors="coerce")
+
+    # Filter by metric, language, and optionally dataset_type
+    df_metric_filtered = df_processed[
+        (df_processed["language"].isin(REPORT_LANGUAGES)) &
+        (df_processed["metric_type"] == metric_to_plot)
+    ].copy()
+
+    if dataset_type_filter:
+        df_metric_filtered = df_metric_filtered[
+            df_metric_filtered["dataset_type"] == dataset_type_filter
+        ].copy()
+
+    if df_metric_filtered.empty:
+        print(f"  No data found for metric '{metric_to_plot}'" +
+              (f" and dataset '{dataset_type_filter}'" if dataset_type_filter else "") +
+              f" with languages '{REPORT_LANGUAGES}'. Skipping.")
+        return
+
+    # Filter RAG Data
+    is_rag = df_metric_filtered["retrieval_algorithm"] != "zeroshot"
+    df_rag_filtered = df_metric_filtered[
+        is_rag &
+        (df_metric_filtered["chunk_size"] == REPORT_TARGET_CHUNK) &
+        (df_metric_filtered["overlap_size"] == REPORT_TARGET_OVERLAP)
+    ].copy()
+
+    if not df_rag_filtered.empty:
+        df_rag_filtered["plot_index"] = df_rag_filtered["language"] + "_" + df_rag_filtered["retrieval_algorithm"]
+        df_rag_filtered["_sort_key_algo"] = df_rag_filtered["retrieval_algorithm"]
+        df_rag_filtered["_sort_key_lang"] = df_rag_filtered["language"]
+    print(f"    Found {len(df_rag_filtered)} RAG points for {metric_to_plot}" + (f" ({dataset_type_filter})" if dataset_type_filter else "") + ".")
+
+    # Filter ZeroShot Data
+    df_zeroshot_filtered = df_metric_filtered[
+        (df_metric_filtered["retrieval_algorithm"] == "zeroshot") &
+        (df_metric_filtered["noise_level"].isin(REPORT_TARGET_NOISE_LEVELS))
+    ].copy()
+
+    if not df_zeroshot_filtered.empty:
+        df_zeroshot_filtered["noise_level_int"] = df_zeroshot_filtered["noise_level"].fillna(0).astype(int)
+        df_zeroshot_filtered["_sort_key_algo"] = "zeroshot_noise_" + df_zeroshot_filtered["noise_level_int"].astype(str)
+        df_zeroshot_filtered["plot_index"] = df_zeroshot_filtered["language"] + "_" + df_zeroshot_filtered["_sort_key_algo"]
+        df_zeroshot_filtered["_sort_key_lang"] = df_zeroshot_filtered["language"]
+        df_zeroshot_filtered = df_zeroshot_filtered.drop(columns=["noise_level_int"])
+    print(f"    Found {len(df_zeroshot_filtered)} ZeroShot points for {metric_to_plot}" + (f" ({dataset_type_filter})" if dataset_type_filter else "") + ".")
+
+    dfs_to_concat = [df for df in [df_rag_filtered, df_zeroshot_filtered] if not df.empty]
+    if not dfs_to_concat:
+        print(f"    No data remaining for '{metric_to_plot}'" + (f" ({dataset_type_filter})" if dataset_type_filter else "") + " after RAG/ZeroShot filters. Skipping.")
+        return
+    df_combined = pd.concat(dfs_to_concat, ignore_index=True)
+
+    essential_plot_cols = ["plot_index", "question_model", "metric_value", "_sort_key_algo", "_sort_key_lang"]
+    if not all(col in df_combined.columns for col in essential_plot_cols):
+        print(f"    Error: Missing essential columns after concat for '{metric_to_plot}'. Skipping.")
+        return
+    print(f"    Total points for heatmap: {len(df_combined)}")
+
+    # Apply Custom Sorting
+    try:
+        df_combined["_sort_key_algo"] = pd.Categorical(df_combined["_sort_key_algo"], categories=REPORT_ALGORITHM_SORT_ORDER, ordered=True)
+        df_combined["_sort_key_lang"] = pd.Categorical(df_combined["_sort_key_lang"], categories=REPORT_LANGUAGE_SORT_ORDER, ordered=True)
+        df_combined_sorted = df_combined.sort_values(by=["_sort_key_algo", "_sort_key_lang"])
+        sorted_plot_indices = df_combined_sorted["plot_index"].unique().tolist()
+        df_plot_data = df_combined_sorted.drop(columns=["_sort_key_algo", "_sort_key_lang"])
+    except Exception as e:
+        print(f"    Error during custom sorting for '{metric_to_plot}': {e}. Falling back to default sort.")
+        df_plot_data = df_combined.sort_values(by="plot_index")
+        sorted_plot_indices = df_plot_data["plot_index"].unique().tolist()
+        df_plot_data = df_plot_data.drop(columns=["_sort_key_algo", "_sort_key_lang"], errors="ignore")
+
+    # Filename and Title
+    filename_dataset_suffix = f"_{sanitize_filename(dataset_type_filter)}" if dataset_type_filter else ""
+    output_filename = f"{output_filename_prefix}{output_file_metric_slug}_heatmap_multilang_algo_vs_model{filename_dataset_suffix}.png"
+    output_filepath = os.path.join(output_dir, output_filename)
+
+    title_dataset_part = f"{dataset_type_filter.replace('_', ' ').title()}, " if dataset_type_filter else "Multi-Language, "
+    plot_title = (
+        f"{base_plot_title_metric_name} ({title_dataset_part}Sorted by Algo):\n"
+        f"Algorithm/Language vs LLM Model (RAG: C={REPORT_TARGET_CHUNK}/O={REPORT_TARGET_OVERLAP}, ZeroShot: Noise {REPORT_TARGET_NOISE_LEVELS})"
+    )
+
+    create_f1_heatmap( # Using create_f1_heatmap as the generic plotting function
+        data=df_plot_data,
+        output_path=output_filepath,
+        index_col="plot_index",
+        columns_col="question_model",
+        values_col="metric_value",
+        value_label=value_label, # Pass the specific label for the colorbar/title component
+        all_indices=sorted_plot_indices,
+        title=plot_title,
+        sort_columns_by_value=True,
+    )
+
+
+# --- Public Facing Generator Functions ---
+
+def generate_algo_vs_model_dataset_success_heatmap(
+    df_data: pd.DataFrame,
+    output_dir: str,
+    output_filename_prefix: str,
+):
+    """
+    Generates ONE heatmap for EACH specified dataset type (general, table, unanswerable),
+    combining results across specified languages.
+    Compares Algorithms/Languages (Rows) vs LLM Models (Columns) based on Dataset Success Rate.
+    """
+    target_datasets = ["general_questions", "table_questions", "unanswerable_questions"]
+    print(f"\nGenerating Dataset Success Heatmaps (Multi-Language, Algo-Sorted) for datasets: {target_datasets}")
+
+    for dataset_type in target_datasets:
+        _generate_multilang_algorithmic_report_heatmap(
+            df_data=df_data,
+            metric_to_plot="dataset_success",
+            value_label="Success Rate",
+            base_plot_title_metric_name=f"{dataset_type.replace('_', ' ').title()} Success Rate",
+            output_dir=output_dir,
+            output_filename_prefix=output_filename_prefix,
+            output_file_metric_slug=f"{sanitize_filename(dataset_type)}_success", # e.g. general_questions_success
+            dataset_type_filter=dataset_type
+        )
+
 
 def generate_multilang_f1_score_report_heatmap(
     df_data: pd.DataFrame,
@@ -786,211 +961,100 @@ def generate_multilang_f1_score_report_heatmap(
     output_filename_prefix: str,
 ):
     """
-    Generates a single F1 score heatmap combining results across specified languages.
-    Compares Algorithms/Languages (Rows) vs LLM Models (Columns) based on overall F1 Score.
-    Rows are sorted by Algorithm/Noise Level first, then by Language.
-    Filters RAG algorithms by specific chunk/overlap and ZeroShot by specific noise levels.
-    This plot is NOT dataset-bound; it uses the overall F1 score.
+    Generates a single F1 score heatmap combining results across specified languages,
+    sorted by algorithm/language. Not dataset-bound.
     """
-    # Define target languages and parameters
-    languages_to_include = [
-        "english",
-        "german",
-        "french",
-    ]  # TARGET LANGUAGES TO INCLUDE
-    metric_to_plot = "f1_score"  # TARGET METRIC
-    target_chunk = 200
-    target_overlap = 100
-    target_noise_levels = [1000, 10000, 30000, 59000]
-    rag_algorithms_ordered = ["hybrid", "embedding", "keyword"]  # Desired RAG order
-    # Create ordered list for zeroshot identifiers
-    zeroshot_identifiers_ordered = [
-        f"zeroshot_noise_{n}" for n in sorted(target_noise_levels)
-    ]
-    # Combine into the final algorithm order for sorting
-    algorithm_sort_order = rag_algorithms_ordered + zeroshot_identifiers_ordered
-    language_sort_order = languages_to_include  # Use the include list for order
-
-    print(
-        f"\nGenerating F1 Score Heatmap: Algorithm/Language vs Model (Multi-Language, Custom Sort)"
-    )
-    print(
-        f"  Including Languages: {languages_to_include} (Order: {language_sort_order})"
-    )
-    print(f"  Target Metric: {metric_to_plot}")
-    print(f"  Algorithm Sort Order: {algorithm_sort_order}")
-    print(f"  RAG Params (fixed): C={target_chunk}/O={target_overlap}")
-    print(f"  ZeroShot Noise Levels (included): {target_noise_levels}")
-
-    required_cols = [
-        "retrieval_algorithm",
-        "question_model",
-        "metric_type",
-        "metric_value",
-        "language",
-        "chunk_size",
-        "overlap_size",
-        "noise_level",
-        # "dataset_type" is NOT strictly required here as f1_score has dataset_type=None,
-        # but it's good to have it in the df_data_processed for consistency if it comes from extract_detailed_visualization_data
-    ]
-    # Check if all required columns are present
-    missing_cols = [col for col in required_cols if col not in df_data.columns]
-    if missing_cols:
-        print(
-            f"Warning: Input DataFrame is missing one or more required columns for F1 Score heatmap: {missing_cols}. Skipping this heatmap."
-        )
-        return
-
-    # Convert relevant columns to numeric ONCE for the whole dataframe, coercing errors
-    df_data_processed = df_data.copy()  # Work on a copy
-    numeric_cols = ["chunk_size", "overlap_size", "noise_level"]
-    for col in numeric_cols:
-        if col in df_data_processed.columns:
-            df_data_processed[col] = pd.to_numeric(
-                df_data_processed[col], errors="coerce"
-            )
-
-    # --- Filter ONCE for relevant languages and metric type ---
-    df_metric_filtered = df_data_processed[
-        (df_data_processed["language"].isin(languages_to_include))
-        & (df_data_processed["metric_type"] == metric_to_plot)
-    ].copy()
-
-    if df_metric_filtered.empty:
-        print(
-            f"  No data found for metric '{metric_to_plot}' and included languages '{languages_to_include}'. Skipping F1 Score heatmap."
-        )
-        return
-
-    # --- Filter RAG Data ---
-    is_rag = df_metric_filtered["retrieval_algorithm"] != "zeroshot"
-    df_rag_filtered = df_metric_filtered[
-        is_rag
-        & (df_metric_filtered["chunk_size"] == target_chunk)
-        & (df_metric_filtered["overlap_size"] == target_overlap)
-    ].copy()
-
-    # Add combined plot index for RAG ('language_algorithm')
-    if not df_rag_filtered.empty:
-        df_rag_filtered["plot_index"] = (
-            df_rag_filtered["language"] + "_" + df_rag_filtered["retrieval_algorithm"]
-        )
-        df_rag_filtered["_sort_key_algo"] = df_rag_filtered["retrieval_algorithm"]
-        df_rag_filtered["_sort_key_lang"] = df_rag_filtered["language"]
-        print(f"    Found {len(df_rag_filtered)} RAG F1 score points.")
-    else:
-        print(
-            f"    No RAG F1 score data points found matching criteria across languages."
-        )
-
-    # --- Filter ZeroShot Data ---
-    df_zeroshot_filtered = df_metric_filtered[
-        (df_metric_filtered["retrieval_algorithm"] == "zeroshot")
-        & (df_metric_filtered["noise_level"].isin(target_noise_levels))
-    ].copy()
-
-    # Add combined plot index and sorting keys for ZeroShot
-    if not df_zeroshot_filtered.empty:
-        df_zeroshot_filtered["noise_level_int"] = (
-            df_zeroshot_filtered["noise_level"].fillna(0).astype(int)
-        )
-        df_zeroshot_filtered["_sort_key_algo"] = (
-            "zeroshot_noise_" + df_zeroshot_filtered["noise_level_int"].astype(str)
-        )
-        df_zeroshot_filtered["plot_index"] = (
-            df_zeroshot_filtered["language"]
-            + "_"
-            + df_zeroshot_filtered["_sort_key_algo"]
-        )
-        df_zeroshot_filtered["_sort_key_lang"] = df_zeroshot_filtered["language"]
-        df_zeroshot_filtered = df_zeroshot_filtered.drop(columns=["noise_level_int"])
-        print(f"    Found {len(df_zeroshot_filtered)} ZeroShot F1 score points.")
-    else:
-        print(
-            f"    No ZeroShot F1 score data points found matching criteria across languages."
-        )
-
-    # --- Combine and Prepare for Plotting ---
-    dfs_to_concat = [
-        df for df in [df_rag_filtered, df_zeroshot_filtered] if not df.empty
-    ]
-
-    if not dfs_to_concat:
-        print(
-            f"    No F1 score data remaining after applying RAG/ZeroShot filters across languages. Skipping heatmap."
-        )
-        return
-
-    df_combined = pd.concat(dfs_to_concat, ignore_index=True)
-
-    if not all(
-        col in df_combined.columns
-        for col in [
-            "plot_index",
-            "question_model",
-            "metric_value",
-            "_sort_key_algo",
-            "_sort_key_lang",
-        ]
-    ):
-        print(
-            f"    Error: Missing essential columns after concat for F1 score heatmap. Skipping heatmap."
-        )
-        return
-
-    print(f"    Total F1 score points for heatmap: {len(df_combined)}")
-
-    # --- Apply Custom Sorting ---
-    try:
-        df_combined["_sort_key_algo"] = pd.Categorical(
-            df_combined["_sort_key_algo"], categories=algorithm_sort_order, ordered=True
-        )
-        df_combined["_sort_key_lang"] = pd.Categorical(
-            df_combined["_sort_key_lang"], categories=language_sort_order, ordered=True
-        )
-        df_combined_sorted = df_combined.sort_values(
-            by=["_sort_key_algo", "_sort_key_lang"]
-        )
-        sorted_plot_indices = df_combined_sorted["plot_index"].unique().tolist()
-        print(
-            f"    Applied custom sort for F1 score heatmap. Sorted indices (examples): {sorted_plot_indices[:10]}..."
-        )
-        df_plot_data = df_combined_sorted.drop(
-            columns=["_sort_key_algo", "_sort_key_lang"]
-        )
-    except Exception as e:
-        print(
-            f"    Error during custom sorting for F1 score heatmap: {e}. Falling back to default sort."
-        )
-        df_combined_sorted = df_combined.sort_values(by="plot_index")
-        sorted_plot_indices = df_combined_sorted["plot_index"].unique().tolist()
-        df_plot_data = df_combined_sorted.drop(
-            columns=["_sort_key_algo", "_sort_key_lang"], errors="ignore"
-        )
-
-    # --- Plotting ---
-    output_filename = (
-        f"{output_filename_prefix}f1_score_heatmap_multilang_algo_vs_model.png"
-    )
-    output_filepath = os.path.join(output_dir, output_filename)
-    plot_title = (
-        f"F1 Score (Multi-Language, Sorted by Algo):\n"
-        f"Algorithm/Language vs LLM Model (RAG: C={target_chunk}/O={target_overlap}, ZeroShot: Noise)"
+    _generate_multilang_algorithmic_report_heatmap(
+        df_data=df_data,
+        metric_to_plot="f1_score",
+        value_label="F1 Score",
+        base_plot_title_metric_name="F1 Score",
+        output_dir=output_dir,
+        output_filename_prefix=output_filename_prefix,
+        output_file_metric_slug="f1_score",
+        dataset_type_filter=None
     )
 
-    create_f1_heatmap(
-        data=df_plot_data,
-        output_path=output_filepath,
-        index_col="plot_index",
-        columns_col="question_model",
-        values_col="metric_value",
-        value_label="F1 Score",  # Specific label for F1
-        all_indices=sorted_plot_indices,
-        current_params=None,
-        title=plot_title,
-        sort_columns_by_value=True,
-        # figsize=(14, max(8, len(sorted_plot_indices) * 0.4)) # Optional dynamic figsize
+# --- NEW Public Facing Generator Functions for Accuracy, Precision, Recall, Specificity ---
+
+def generate_multilang_accuracy_report_heatmap(
+    df_data: pd.DataFrame,
+    output_dir: str,
+    output_filename_prefix: str,
+):
+    """
+    Generates a single Accuracy score heatmap combining results across specified languages,
+    sorted by algorithm/language. Not dataset-bound.
+    """
+    _generate_multilang_algorithmic_report_heatmap(
+        df_data=df_data,
+        metric_to_plot="accuracy",
+        value_label="Accuracy Score",
+        base_plot_title_metric_name="Accuracy Score",
+        output_dir=output_dir,
+        output_filename_prefix=output_filename_prefix,
+        output_file_metric_slug="accuracy_score",
+        dataset_type_filter=None
+    )
+
+def generate_multilang_precision_report_heatmap(
+    df_data: pd.DataFrame,
+    output_dir: str,
+    output_filename_prefix: str,
+):
+    """
+    Generates a single Precision score heatmap combining results across specified languages,
+    sorted by algorithm/language. Not dataset-bound.
+    """
+    _generate_multilang_algorithmic_report_heatmap(
+        df_data=df_data,
+        metric_to_plot="precision",
+        value_label="Precision Score",
+        base_plot_title_metric_name="Precision Score",
+        output_dir=output_dir,
+        output_filename_prefix=output_filename_prefix,
+        output_file_metric_slug="precision_score",
+        dataset_type_filter=None
+    )
+
+def generate_multilang_recall_report_heatmap(
+    df_data: pd.DataFrame,
+    output_dir: str,
+    output_filename_prefix: str,
+):
+    """
+    Generates a single Recall score heatmap combining results across specified languages,
+    sorted by algorithm/language. Not dataset-bound.
+    """
+    _generate_multilang_algorithmic_report_heatmap(
+        df_data=df_data,
+        metric_to_plot="recall",
+        value_label="Recall Score",
+        base_plot_title_metric_name="Recall Score",
+        output_dir=output_dir,
+        output_filename_prefix=output_filename_prefix,
+        output_file_metric_slug="recall_score",
+        dataset_type_filter=None
+    )
+
+def generate_multilang_specificity_report_heatmap(
+    df_data: pd.DataFrame,
+    output_dir: str,
+    output_filename_prefix: str,
+):
+    """
+    Generates a single Specificity score heatmap combining results across specified languages,
+    sorted by algorithm/language. Not dataset-bound.
+    """
+    _generate_multilang_algorithmic_report_heatmap(
+        df_data=df_data,
+        metric_to_plot="specificity",
+        value_label="Specificity Score",
+        base_plot_title_metric_name="Specificity Score",
+        output_dir=output_dir,
+        output_filename_prefix=output_filename_prefix,
+        output_file_metric_slug="specificity_score",
+        dataset_type_filter=None
     )
 
 
@@ -1038,9 +1102,13 @@ if __name__ == "__main__":
             "chunk_vs_overlap",
             "model_vs_chunk_overlap",
             "dataset_success",  # This is the Model vs Chunk/Overlap for Dataset Success
-            "algo_vs_model_f1",  # New choice for F1 Algo vs Model
-            "algo_vs_model_success",  # New choice for Mean Success Algo vs Model (now per dataset)
-            "multilang_f1_report",  # New choice for the F1 score multi-language report
+            "algo_vs_model_f1",  # F1 Algo vs Model (English only, mean)
+            "algo_vs_model_success",  # Dataset Success (Multi-lang, algo-sorted, per dataset)
+            "multilang_f1_report",  # F1 Score (Multi-lang, algo-sorted, overall)
+            "multilang_accuracy_report", # NEW
+            "multilang_precision_report", # NEW
+            "multilang_recall_report", # NEW
+            "multilang_specificity_report", # NEW
             "all",
         ],
         # --- MODIFICATION END ---
@@ -1104,9 +1172,13 @@ if __name__ == "__main__":
             "chunk_vs_overlap",
             "model_vs_chunk_overlap",
             "dataset_success",
-            "algo_vs_model_f1",
-            "algo_vs_model_success",
-            "multilang_f1_report", # Add new type to 'all'
+            "algo_vs_model_f1", # This is the English-only, averaged one
+            "algo_vs_model_success", # This is the multi-lang, algo-sorted, per-dataset success
+            "multilang_f1_report",
+            "multilang_accuracy_report",
+            "multilang_precision_report",
+            "multilang_recall_report",
+            "multilang_specificity_report",
         ]
     else:
         subtypes_to_generate = [args.plot_subtype]
@@ -1176,6 +1248,30 @@ if __name__ == "__main__":
             )
         elif subtype == "multilang_f1_report": # Call the new F1 report generator
             generate_multilang_f1_score_report_heatmap(
+                df_data=df_data,
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix,
+            )
+        elif subtype == "multilang_accuracy_report":
+            generate_multilang_accuracy_report_heatmap(
+                df_data=df_data,
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix,
+            )
+        elif subtype == "multilang_precision_report":
+            generate_multilang_precision_report_heatmap(
+                df_data=df_data,
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix,
+            )
+        elif subtype == "multilang_recall_report":
+            generate_multilang_recall_report_heatmap(
+                df_data=df_data,
+                output_dir=args.output_dir,
+                output_filename_prefix=args.output_filename_prefix,
+            )
+        elif subtype == "multilang_specificity_report":
+            generate_multilang_specificity_report_heatmap(
                 df_data=df_data,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
