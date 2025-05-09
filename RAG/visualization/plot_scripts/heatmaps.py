@@ -26,7 +26,8 @@ def create_f1_heatmap(
     cmap: str = "viridis",
     annot_fmt: str = ".3f",
     figsize: Tuple[int, int] = (14, 8),
-    sort_columns_by_value: bool = True,  # New parameter
+    sort_columns_by_value: bool = True,  # Sorts by value if columns_order is not given
+    columns_order: Optional[List[str]] = None, # New parameter for explicit column order
 ):
     """
     Creates a heatmap of F1 scores, typically with languages as rows and models as columns,
@@ -56,8 +57,10 @@ def create_f1_heatmap(
         cmap: Colormap to use for the heatmap (e.g., "viridis", "coolwarm", "YlGnBu").
         annot_fmt: String format for annotations within the heatmap cells. Default: ".3f".
         figsize: Tuple specifying the figure size (width, height) in inches.
-        sort_columns_by_value: If True (default), sort the columns (e.g., models)
+        sort_columns_by_value: If True (and columns_order is None), sort the columns (e.g., models)
                                in ascending order based on their mean value_col score.
+        columns_order: Optional list of column names in the desired order. If provided,
+                       this order is used for the columns, overriding sort_columns_by_value.
     """
     if data is None or data.empty:
         # This case should ideally be handled by the calling script before calling this function
@@ -124,8 +127,23 @@ def create_f1_heatmap(
                 + "-" * 30
             )
 
-    # --- Sort Columns by Mean Value (Optional) ---
-    if sort_columns_by_value and not pivot_df.empty:
+    # --- Sort Columns by explicit order or by Mean Value (Optional) ---
+    if columns_order:  # Explicit order takes precedence
+        if DEBUG_HEATMAP:
+            print(
+                f"--- Heatmap Debug (create_f1_heatmap): Applying explicit column order: {columns_order} ---"
+            )
+        # Reindex columns. This will:
+        # - Order existing columns according to columns_order.
+        # - Add columns present in columns_order but not in pivot_df (filled with NaN).
+        # - Drop columns present in pivot_df but not in columns_order.
+        pivot_df = pivot_df.reindex(columns=columns_order) # REMOVED axis=1
+        if DEBUG_HEATMAP:
+            print(
+                f"--- Heatmap Debug (create_f1_heatmap): Pivot table AFTER explicit column ordering ---\n{pivot_df.to_string()}\n"
+                + "-" * 30
+            )
+    elif sort_columns_by_value and not pivot_df.empty:  # Fallback to sorting by value
         try:
             if DEBUG_HEATMAP:
                 print(
@@ -133,12 +151,12 @@ def create_f1_heatmap(
                 )
             column_means = pivot_df.mean(axis=0)  # Calculate mean for each column
             sorted_columns = column_means.sort_values(
-                ascending=True
+                ascending=True  # Default behavior: lower scores first
             ).index  # Get column names sorted by mean
             pivot_df = pivot_df[sorted_columns]  # Reorder columns
             if DEBUG_HEATMAP:
                 print(
-                    f"--- Heatmap Debug (create_f1_heatmap): Pivot table AFTER column sorting ---\n{pivot_df.to_string()}\n"
+                    f"--- Heatmap Debug (create_f1_heatmap): Pivot table AFTER column sorting by value ---\n{pivot_df.to_string()}\n"
                     + "-" * 30
                 )
         except Exception as e:
@@ -380,23 +398,6 @@ def create_chunk_overlap_heatmap(
     plt.close()
 
 
-# visualization/plot_scripts/heatmaps.py
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import os
-import sys
-from typing import Optional, Tuple, List, Dict, Any  # Added Dict, Any
-
-# --- DEBUG FLAG ---
-# Set to True to enable detailed printing, False to disable
-DEBUG_HEATMAP = True
-
-[...]  # Keep create_f1_heatmap as is
-
-[...]  # Keep create_chunk_overlap_heatmap as is
-
-
 # --- NEW FUNCTION ---
 def create_model_vs_chunk_overlap_heatmap(
     data: pd.DataFrame,
@@ -415,7 +416,8 @@ def create_model_vs_chunk_overlap_heatmap(
     cmap: str = "viridis",
     annot_fmt: str = ".3f",
     figsize: Tuple[int, int] = (14, 10),  # Adjusted default size
-    sort_columns_by_value: bool = True,  # New parameter
+    sort_columns_by_value: bool = True,
+    columns_order: Optional[List[str]] = None, # New parameter for explicit column order
 ):
     """
     Creates a heatmap showing a metric (e.g., F1 score) against combinations of
@@ -429,6 +431,8 @@ def create_model_vs_chunk_overlap_heatmap(
               columns_col, and values_col.
         output_path: The full path where the plot image will be saved.
         values_col: The column name containing the scores for the heatmap cells. Default: 'f1_score'.
+        value_label: Optional string to use as the metric name in the plot title (e.g., "F1 Score").
+                     If None, the title will be derived from `values_col`.
         index_col_chunk: Column name for chunk size (part of the MultiIndex). Default: 'chunk_size'.
         index_col_overlap: Column name for overlap size (part of the MultiIndex). Default: 'overlap_size'.
         columns_col: The column name to use for the heatmap columns. Default: 'question_model'.
@@ -441,8 +445,11 @@ def create_model_vs_chunk_overlap_heatmap(
         cmap: Colormap to use for the heatmap (e.g., "viridis", "coolwarm", "YlGnBu").
         annot_fmt: String format for annotations within the heatmap cells. Default: ".3f".
         figsize: Tuple specifying the figure size (width, height) in inches.
-        sort_columns_by_value: If True (default), sort the columns (e.g., models)
-                               in ascending order based on their mean value_col score across all chunk/overlap combinations.
+        sort_columns_by_value: If True (and columns_order is None), sort the columns (e.g., models)
+                        in ascending order based on their mean value_col score.
+        columns_order: Optional list of column names in the desired order. If provided,
+                       this order is used for the columns, overriding sort_columns_by_value.
+                               
     """
     if data is None or data.empty:
         print(
@@ -499,8 +506,19 @@ def create_model_vs_chunk_overlap_heatmap(
         print(f"Error creating pivot table for {output_path}: {e}")
         return
 
-    # --- Sort Columns by Mean Value (Optional) ---
-    if sort_columns_by_value and not pivot_df.empty:
+    # --- Sort Columns by explicit order or by Mean Value (Optional) ---
+    if columns_order: # Explicit order takes precedence
+        if DEBUG_HEATMAP:
+            print(
+                f"--- Heatmap Debug (create_model_vs_chunk_overlap_heatmap): Applying explicit column order: {columns_order} ---"
+            )
+        pivot_df = pivot_df.reindex(columns=columns_order) # REMOVED axis=1
+        if DEBUG_HEATMAP:
+            print(
+                f"--- Heatmap Debug (create_model_vs_chunk_overlap_heatmap): Pivot table AFTER explicit column ordering ---\n{pivot_df.to_string()}\n"
+                + "-" * 30
+            )
+    elif sort_columns_by_value and not pivot_df.empty: # Fallback to sorting by value
         try:
             if DEBUG_HEATMAP:
                 print(
@@ -510,12 +528,12 @@ def create_model_vs_chunk_overlap_heatmap(
                 axis=0
             )  # Calculate mean for each column across all index levels
             sorted_columns = column_means.sort_values(
-                ascending=True
+                ascending=True # Default behavior
             ).index  # Get column names sorted by mean
             pivot_df = pivot_df[sorted_columns]  # Reorder columns
             if DEBUG_HEATMAP:
                 print(
-                    f"--- Heatmap Debug (create_model_vs_chunk_overlap_heatmap): Pivot table AFTER column sorting ---\n{pivot_df.to_string()}\n"
+                    f"--- Heatmap Debug (create_model_vs_chunk_overlap_heatmap): Pivot table AFTER column sorting by value ---\n{pivot_df.to_string()}\n"
                     + "-" * 30
                 )
         except Exception as e:
@@ -566,7 +584,7 @@ def create_model_vs_chunk_overlap_heatmap(
     if fixed_params:
         param_parts = []
         # Define preferred order or filter specific keys if needed
-        preferred_order = ["language", "retrieval_algorithm"]  # Example order
+        preferred_order = ["language", "retrieval_algorithm", "dataset_type"]  # Example order
         sorted_keys = [k for k in preferred_order if k in fixed_params] + [
             k for k in fixed_params if k not in preferred_order
         ]
@@ -617,7 +635,7 @@ if __name__ == "__main__":
         # Need ConfigLoader to get languages for the example
         from utils.config_loader import ConfigLoader
         from visualization.visualization_data_extractor import (
-            extract_visualization_data,
+            extract_detailed_visualization_data, # Changed from extract_visualization_data
         )
 
         # Load config to get languages
@@ -642,7 +660,7 @@ if __name__ == "__main__":
 
         results_dir = os.path.join(project_root_dir, "results")
         print(f"Attempting to load data from: {results_dir}")
-        example_df = extract_visualization_data(results_dir)
+        example_df = extract_detailed_visualization_data(results_dir) # Changed function name
 
         if example_df is not None and not example_df.empty:
             # Define output path for the test
@@ -653,42 +671,48 @@ if __name__ == "__main__":
 
             # --- Simulate the filtering and calling process for create_f1_heatmap ---
             print("\n--- Testing create_f1_heatmap ---")
+            # Filter for F1 scores first for this specific test
+            df_f1_test_data = example_df[example_df["metric_type"] == "f1_score"].copy()
+
             test_params_f1 = {
                 "retrieval_algorithm": "embedding",  # Adjust if needed based on your results files
-                "chunk_size": 2000,  # Adjust if needed
+                "chunk_size": 200,  # Adjust if needed
                 "overlap_size": 100,  # Adjust if needed
             }
             print(f"Simulating heatmap generation for parameters: {test_params_f1}")
             print(f"Using language list for reindexing: {all_languages_list}")
 
-            # 2. Filter the DataFrame based on these parameters
-            filtered_df_for_f1_test = example_df[
+            # Filter the DataFrame based on these parameters
+            filtered_df_for_f1_test = df_f1_test_data[
                 (
-                    example_df["retrieval_algorithm"]
+                    df_f1_test_data["retrieval_algorithm"]
                     == test_params_f1["retrieval_algorithm"]
                 )
-                & (example_df["chunk_size"] == test_params_f1["chunk_size"])
-                & (example_df["overlap_size"] == test_params_f1["overlap_size"])
+                & (df_f1_test_data["chunk_size"] == test_params_f1["chunk_size"])
+                & (df_f1_test_data["overlap_size"] == test_params_f1["overlap_size"])
             ]
 
             if not filtered_df_for_f1_test.empty:
-                # 3. Define the output path including parameters
+                # Define the output path including parameters
                 param_str_filename_f1 = f"algo_{test_params_f1['retrieval_algorithm']}_cs_{test_params_f1['chunk_size']}_os_{test_params_f1['overlap_size']}"
                 test_output_path_f1 = os.path.join(
                     test_output_dir, f"test_f1_heatmap_{param_str_filename_f1}.png"
                 )
 
-                # 4. Call the heatmap function with the filtered data and parameters
+                # Call the heatmap function with the filtered data and parameters
                 create_f1_heatmap(
                     data=filtered_df_for_f1_test,  # Pass the filtered data
                     output_path=test_output_path_f1,
                     all_indices=all_languages_list,  # Pass the language list
                     current_params=test_params_f1,  # Pass the specific params for the title
+                    values_col="metric_value", # Use the generic metric_value column
+                    value_label="F1 Score",
                     # title="Example Heatmap (Filtered Data)" # Optional: override default title
+                    # columns_order=["model_a", "model_c", "model_b"] # Example explicit order
                 )
             else:
                 print(
-                    f"No data found for create_f1_heatmap test matching parameters: {test_params_f1}."
+                    f"No data found for create_f1_heatmap test matching parameters: {test_params_f1} and metric_type 'f1_score'."
                 )
                 print(
                     "Check if your 'results' directory contains files matching these parameters."
@@ -696,6 +720,7 @@ if __name__ == "__main__":
 
             # --- Simulate the filtering and calling process for create_chunk_overlap_heatmap ---
             print("\n--- Testing create_chunk_overlap_heatmap ---")
+            df_f1_chunk_test_data = example_df[example_df["metric_type"] == "f1_score"].copy()
             # Define the fixed parameters for this specific heatmap
             fixed_params_chunk = {
                 "language": "english",  # Fixed language
@@ -708,11 +733,11 @@ if __name__ == "__main__":
 
             # Filter the main DataFrame for these fixed parameters
             # This subset should contain rows with varying chunk_size and overlap_size
-            filtered_df_for_chunk_test = example_df[
-                (example_df["language"] == fixed_params_chunk["language"])
-                & (example_df["question_model"] == fixed_params_chunk["question_model"])
+            filtered_df_for_chunk_test = df_f1_chunk_test_data[
+                (df_f1_chunk_test_data["language"] == fixed_params_chunk["language"])
+                & (df_f1_chunk_test_data["question_model"] == fixed_params_chunk["question_model"])
                 & (
-                    example_df["retrieval_algorithm"]
+                    df_f1_chunk_test_data["retrieval_algorithm"]
                     == fixed_params_chunk["retrieval_algorithm"]
                 )
             ]
@@ -730,13 +755,14 @@ if __name__ == "__main__":
                     data=filtered_df_for_chunk_test,  # Pass the filtered data
                     output_path=test_output_path_chunk,
                     fixed_params=fixed_params_chunk,  # Pass the fixed params for the title
-                    values_col="f1_score",  # Explicitly state the value to plot
+                    values_col="metric_value",  # Explicitly state the value to plot
+                    value_label="F1 Score",
                     index_col="chunk_size",  # Rows = chunk size
                     columns_col="overlap_size",  # Columns = overlap size
                 )
             else:
                 print(
-                    f"No data found for create_chunk_overlap_heatmap test matching fixed parameters: {fixed_params_chunk}."
+                    f"No data found for create_chunk_overlap_heatmap test matching fixed parameters: {fixed_params_chunk} and metric_type 'f1_score'."
                 )
                 print(
                     "Ensure your 'results' directory contains files matching these fixed parameters with varying chunk/overlap sizes."
@@ -744,6 +770,7 @@ if __name__ == "__main__":
 
             # --- NEW: Simulate filtering and calling for create_model_vs_chunk_overlap_heatmap ---
             print("\n--- Testing create_model_vs_chunk_overlap_heatmap ---")
+            df_f1_model_chunk_test_data = example_df[example_df["metric_type"] == "f1_score"].copy()
             # Define the fixed parameters for this heatmap (e.g., English language, specific algorithm)
             fixed_params_model_chunk = {
                 "language": "english",  # Fixed language (as requested)
@@ -755,10 +782,10 @@ if __name__ == "__main__":
 
             # Filter the main DataFrame for these fixed parameters
             # This subset should contain rows with varying chunk_size, overlap_size, and question_model
-            filtered_df_for_model_chunk_test = example_df[
-                (example_df["language"] == fixed_params_model_chunk["language"])
+            filtered_df_for_model_chunk_test = df_f1_model_chunk_test_data[
+                (df_f1_model_chunk_test_data["language"] == fixed_params_model_chunk["language"])
                 & (
-                    example_df["retrieval_algorithm"]
+                    df_f1_model_chunk_test_data["retrieval_algorithm"]
                     == fixed_params_model_chunk["retrieval_algorithm"]
                 )
             ]
@@ -776,7 +803,8 @@ if __name__ == "__main__":
                     data=filtered_df_for_model_chunk_test,  # Pass the filtered data
                     output_path=test_output_path_model_chunk,
                     fixed_params=fixed_params_model_chunk,  # Pass the fixed params for the title
-                    values_col="f1_score",  # Explicitly state the value to plot
+                    values_col="metric_value",  # Explicitly state the value to plot
+                    value_label="F1 Score",
                     index_col_chunk="chunk_size",  # Rows = chunk size (part 1)
                     index_col_overlap="overlap_size",  # Rows = overlap size (part 2)
                     columns_col="question_model",  # Columns = model
@@ -797,7 +825,7 @@ if __name__ == "__main__":
 
     except ImportError as e:
         print(
-            f"Could not import necessary modules (extract_visualization_data, ConfigLoader). Run 'main_visualization.py' for full functionality. Error: {e}"
+            f"Could not import necessary modules (extract_detailed_visualization_data, ConfigLoader). Run 'main_visualization.py' for full functionality. Error: {e}"
         )
     except Exception as e:
         print(f"An error occurred during the test run: {e}")

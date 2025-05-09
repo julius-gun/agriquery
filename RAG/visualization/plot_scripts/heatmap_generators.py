@@ -803,6 +803,7 @@ def _generate_multilang_algorithmic_report_heatmap(
     output_filename_prefix: str,
     output_file_metric_slug: str, # E.g., "f1_score", "accuracy" for filename
     dataset_type_filter: Optional[str] = None, # For dataset-specific reports
+    model_sort_order: Optional[List[str]] = None, # New parameter for model sorting
 ):
     """
     Internal helper to generate a multi-language, algorithm-sorted heatmap
@@ -814,6 +815,11 @@ def _generate_multilang_algorithmic_report_heatmap(
     )
     print(f"  Languages: {REPORT_LANGUAGES}, Algo Sort: {REPORT_ALGORITHM_SORT_ORDER}")
     print(f"  RAG Params: C={REPORT_TARGET_CHUNK}/O={REPORT_TARGET_OVERLAP}, ZeroShot Noise: {REPORT_TARGET_NOISE_LEVELS}")
+    if model_sort_order:
+        print(f"  Model Sort Order (X-axis): {model_sort_order}")
+    else:
+        print("  Model Sort Order (X-axis): Default (by mean performance or alphabetical)")
+
 
     required_cols = [
         "retrieval_algorithm", "question_model", "metric_type", "metric_value",
@@ -923,7 +929,8 @@ def _generate_multilang_algorithmic_report_heatmap(
         value_label=value_label, # Pass the specific label for the colorbar/title component
         all_indices=sorted_plot_indices,
         title=plot_title,
-        sort_columns_by_value=True,
+        sort_columns_by_value=not bool(model_sort_order), # Only sort by value if no explicit order is given
+        columns_order=model_sort_order, # Pass the model sort order
     )
 
 
@@ -933,6 +940,7 @@ def generate_algo_vs_model_dataset_success_heatmap(
     df_data: pd.DataFrame,
     output_dir: str,
     output_filename_prefix: str,
+    model_sort_order: Optional[List[str]] = None, # New parameter
 ):
     """
     Generates ONE heatmap for EACH specified dataset type (general, table, unanswerable),
@@ -951,7 +959,8 @@ def generate_algo_vs_model_dataset_success_heatmap(
             output_dir=output_dir,
             output_filename_prefix=output_filename_prefix,
             output_file_metric_slug=f"{sanitize_filename(dataset_type)}_success", # e.g. general_questions_success
-            dataset_type_filter=dataset_type
+            dataset_type_filter=dataset_type,
+            model_sort_order=model_sort_order, # Pass down
         )
 
 
@@ -959,6 +968,7 @@ def generate_multilang_f1_score_report_heatmap(
     df_data: pd.DataFrame,
     output_dir: str,
     output_filename_prefix: str,
+    model_sort_order: Optional[List[str]] = None, # New parameter
 ):
     """
     Generates a single F1 score heatmap combining results across specified languages,
@@ -972,7 +982,8 @@ def generate_multilang_f1_score_report_heatmap(
         output_dir=output_dir,
         output_filename_prefix=output_filename_prefix,
         output_file_metric_slug="f1_score",
-        dataset_type_filter=None
+        dataset_type_filter=None,
+        model_sort_order=model_sort_order, # Pass down
     )
 
 # --- NEW Public Facing Generator Functions for Accuracy, Precision, Recall, Specificity ---
@@ -981,6 +992,7 @@ def generate_multilang_accuracy_report_heatmap(
     df_data: pd.DataFrame,
     output_dir: str,
     output_filename_prefix: str,
+    model_sort_order: Optional[List[str]] = None, # New parameter
 ):
     """
     Generates a single Accuracy score heatmap combining results across specified languages,
@@ -994,13 +1006,15 @@ def generate_multilang_accuracy_report_heatmap(
         output_dir=output_dir,
         output_filename_prefix=output_filename_prefix,
         output_file_metric_slug="accuracy_score",
-        dataset_type_filter=None
+        dataset_type_filter=None,
+        model_sort_order=model_sort_order, # Pass down
     )
 
 def generate_multilang_precision_report_heatmap(
     df_data: pd.DataFrame,
     output_dir: str,
     output_filename_prefix: str,
+    model_sort_order: Optional[List[str]] = None, # New parameter
 ):
     """
     Generates a single Precision score heatmap combining results across specified languages,
@@ -1014,13 +1028,15 @@ def generate_multilang_precision_report_heatmap(
         output_dir=output_dir,
         output_filename_prefix=output_filename_prefix,
         output_file_metric_slug="precision_score",
-        dataset_type_filter=None
+        dataset_type_filter=None,
+        model_sort_order=model_sort_order, # Pass down
     )
 
 def generate_multilang_recall_report_heatmap(
     df_data: pd.DataFrame,
     output_dir: str,
     output_filename_prefix: str,
+    model_sort_order: Optional[List[str]] = None, # New parameter
 ):
     """
     Generates a single Recall score heatmap combining results across specified languages,
@@ -1034,13 +1050,15 @@ def generate_multilang_recall_report_heatmap(
         output_dir=output_dir,
         output_filename_prefix=output_filename_prefix,
         output_file_metric_slug="recall_score",
-        dataset_type_filter=None
+        dataset_type_filter=None,
+        model_sort_order=model_sort_order, # Pass down
     )
 
 def generate_multilang_specificity_report_heatmap(
     df_data: pd.DataFrame,
     output_dir: str,
     output_filename_prefix: str,
+    model_sort_order: Optional[List[str]] = None, # New parameter
 ):
     """
     Generates a single Specificity score heatmap combining results across specified languages,
@@ -1054,7 +1072,8 @@ def generate_multilang_specificity_report_heatmap(
         output_dir=output_dir,
         output_filename_prefix=output_filename_prefix,
         output_file_metric_slug="specificity_score",
-        dataset_type_filter=None
+        dataset_type_filter=None,
+        model_sort_order=model_sort_order, # Pass down
     )
 
 
@@ -1183,6 +1202,22 @@ if __name__ == "__main__":
     else:
         subtypes_to_generate = [args.plot_subtype]
 
+    # Define the model sort order for standalone execution if needed,
+    # or load from a config if this script were more complex.
+    # For now, using a placeholder or assuming it's not needed for standalone direct calls
+    # unless specifically passed or defined globally in main_visualization.py
+    # For the purpose of this script's standalone execution, we'll assume
+    # the functions are tested with their default behavior (model_sort_order=None)
+    # or one would need to modify this main block to pass a specific order.
+    # The primary use case is via main_visualization.py which WILL pass the order.
+    standalone_model_sort_order = [ # Example, could be None
+        "gemini-2.5-flash-preview-04-17", "qwen2.5_7B-128k", "qwen3_8B-128k",
+        "phi3_14B_q4_medium-128k", "llama3.1_8B-128k", "deepseek-r1_8B-128k",
+        "phi3_8B_q4_mini-128k", "llama3.2_3B-128k", "deepseek-r1_1.5B-128k",
+        "llama3.2_1B-128k"
+    ]
+
+
     for subtype in subtypes_to_generate:
         if subtype == "lang_vs_model":
             # This one specifically needs F1 data
@@ -1245,36 +1280,42 @@ if __name__ == "__main__":
                 df_data=df_data,  # Pass the full dataframe
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
+                model_sort_order=standalone_model_sort_order, # Pass for standalone test
             )
         elif subtype == "multilang_f1_report": # Call the new F1 report generator
             generate_multilang_f1_score_report_heatmap(
                 df_data=df_data,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
+                model_sort_order=standalone_model_sort_order, # Pass for standalone test
             )
         elif subtype == "multilang_accuracy_report":
             generate_multilang_accuracy_report_heatmap(
                 df_data=df_data,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
+                model_sort_order=standalone_model_sort_order, # Pass for standalone test
             )
         elif subtype == "multilang_precision_report":
             generate_multilang_precision_report_heatmap(
                 df_data=df_data,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
+                model_sort_order=standalone_model_sort_order, # Pass for standalone test
             )
         elif subtype == "multilang_recall_report":
             generate_multilang_recall_report_heatmap(
                 df_data=df_data,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
+                model_sort_order=standalone_model_sort_order, # Pass for standalone test
             )
         elif subtype == "multilang_specificity_report":
             generate_multilang_specificity_report_heatmap(
                 df_data=df_data,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
+                model_sort_order=standalone_model_sort_order, # Pass for standalone test
             )
 
     print("\n--- Standalone Heatmap Generation Finished ---")

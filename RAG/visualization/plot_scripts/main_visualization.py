@@ -84,7 +84,6 @@ REPORT_MODEL_SORT_ORDER = [
     "phi3_14B_q4_medium-128k",
     "llama3.1_8B-128k",
     "deepseek-r1_8B-128k",
-    "phi3_8B_q4_mini-128k",
     "llama3.2_3B-128k",
     "deepseek-r1_1.5B-128k",
     "llama3.2_1B-128k"
@@ -183,6 +182,8 @@ def main():
         )
     if args.output_filename_prefix:
         print(f"Filename prefix: {args.output_filename_prefix}")
+    print(f"Using model sort order for reports: {REPORT_MODEL_SORT_ORDER}")
+
 
     # 0. Load Config to get languages
     all_languages_list = None
@@ -272,6 +273,7 @@ def main():
             #     output_filename_prefix=args.output_filename_prefix,
             #     all_languages_list=all_languages_list,
             # )
+            pass # Placeholder for brevity, no change requested here yet
 
         elif plot_type == "heatmap": # This is for the set of original detailed heatmaps
             print("\nGenerating Detailed F1 Score & Dataset Success Heatmaps (Original Set)")
@@ -286,6 +288,7 @@ def main():
                     output_dir=args.output_dir,
                     output_filename_prefix=args.output_filename_prefix,
                     all_languages_list=all_languages_list,  # Pass language list
+                    # If this heatmap needs model sorting, pass REPORT_MODEL_SORT_ORDER
                 )
 
                 # Filter out 'zeroshot' for heatmaps requiring chunk/overlap
@@ -294,7 +297,6 @@ def main():
                 ].copy()
 
                 if not df_f1_heatmap_rag.empty:
-                    ...
                     # generate_chunk_vs_overlap_heatmap(
                     #     df_f1_heatmap=df_f1_heatmap_rag,
                     #     output_dir=args.output_dir,
@@ -305,6 +307,7 @@ def main():
                     #     output_dir=args.output_dir,
                     #     output_filename_prefix=args.output_filename_prefix,
                     # )
+                    pass # Placeholder for brevity
                 else:
                     print(
                         "Warning: No F1 score data found for non-zeroshot algorithms. Skipping Chunk/Overlap and Model vs Chunk/Overlap F1 heatmaps."
@@ -331,6 +334,8 @@ def main():
             #     output_dir=args.output_dir,
             #     output_filename_prefix=args.output_filename_prefix,
             # )
+            pass # Placeholder for brevity
+
 
         elif plot_type == "dataset_boxplot":
             # Call the Dataset Success Boxplot Generator
@@ -356,41 +361,47 @@ def main():
                 df_data=df_data,  # Pass the full dataframe
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
+                model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
             )
 
         elif plot_type == "multilang_f1_report":  # Add elif for the new plot
             generate_multilang_f1_score_report_heatmap(
                 df_data=df_data,
                 output_dir=args.output_dir,
-                output_filename_prefix=args.output_filename_prefix
+                output_filename_prefix=args.output_filename_prefix,
+                model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
             )
         
         elif plot_type == "multilang_accuracy_report":
             generate_multilang_accuracy_report_heatmap(
                 df_data=df_data,
                 output_dir=args.output_dir,
-                output_filename_prefix=args.output_filename_prefix
+                output_filename_prefix=args.output_filename_prefix,
+                model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
             )
 
         elif plot_type == "multilang_precision_report":
             generate_multilang_precision_report_heatmap(
                 df_data=df_data,
                 output_dir=args.output_dir,
-                output_filename_prefix=args.output_filename_prefix
+                output_filename_prefix=args.output_filename_prefix,
+                model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
             )
 
         elif plot_type == "multilang_recall_report":
             generate_multilang_recall_report_heatmap(
                 df_data=df_data,
                 output_dir=args.output_dir,
-                output_filename_prefix=args.output_filename_prefix
+                output_filename_prefix=args.output_filename_prefix,
+                model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
             )
 
         elif plot_type == "multilang_specificity_report":
             generate_multilang_specificity_report_heatmap(
                 df_data=df_data,
                 output_dir=args.output_dir,
-                output_filename_prefix=args.output_filename_prefix
+                output_filename_prefix=args.output_filename_prefix,
+                model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
             )
 
     print("\n--- Visualization Generation Finished ---")
