@@ -79,10 +79,7 @@ except ImportError as e:
 # from visualization.plot_scripts.barchart_generators import generate_some_barcharts
 
 # Define constants for plot types to generate
-PLOT_TYPE_HEATMAPS = "heatmaps"
-PLOT_TYPE_ZEROSHOT_LINECHARTS = "zeroshot_linecharts"
 # PLOT_TYPE_BARCHARTS = "barcharts" # If you add barcharts
-PLOT_TYPE_ALL = "all"
 
 
 # sanitize_filename function is now imported from plot_utils
@@ -143,7 +140,7 @@ def main():
         choices=[
             "boxplot",
             "heatmap",  # Original set of detailed heatmaps (lang_vs_model, chunk_vs_overlap etc.)
-            PLOT_TYPE_ZEROSHOT_LINECHARTS, # Added new plot type
+            "zeroshot_linecharts", # Added new plot type
             "dataset_boxplot",
             "algo_vs_model_f1",  # English only, mean F1
             "algo_vs_model_success",  # Multi-lang, algo-sorted, per-dataset success
@@ -268,7 +265,7 @@ def main():
         plot_types_to_generate = [
             "boxplot",
             "heatmap",
-            PLOT_TYPE_ZEROSHOT_LINECHARTS, # Added new plot type
+            "zeroshot_linecharts", # Added new plot type
             "dataset_boxplot",
             "algo_vs_model_f1",  # English-only, mean F1
             "algo_vs_model_success",  # Multi-lang, per-dataset success
@@ -281,7 +278,7 @@ def main():
     elif args.plot_type in [  # Add new types to this list
         "boxplot",
         "heatmap",
-        PLOT_TYPE_ZEROSHOT_LINECHARTS, # Added new plot type
+        "zeroshot_linecharts", # Added new plot type
         "dataset_boxplot",
         "algo_vs_model_f1",
         "algo_vs_model_success",
@@ -442,7 +439,7 @@ def main():
                 output_filename_prefix=args.output_filename_prefix,
                 model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
             )
-        elif plot_type == PLOT_TYPE_ZEROSHOT_LINECHARTS:
+        elif plot_type == "zeroshot_linecharts":
             if df_data is not None and not df_data.empty:
                 generate_zeroshot_performance_linecharts(
                     df_data=df_data,
