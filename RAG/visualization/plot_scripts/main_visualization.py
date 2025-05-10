@@ -14,7 +14,7 @@ import pandas as pd
 try:
     # This import will also execute the path setup code in plot_utils
     # because it runs at the module level there.
-    from plot_utils import add_project_paths, sanitize_filename
+    from plot_utils import add_project_paths, sanitize_filename, get_model_colors
 
     PROJECT_ROOT = add_project_paths()  # Ensure paths are set and get the root
 except ImportError as e:
@@ -60,6 +60,9 @@ try:
         generate_multilang_recall_report_heatmap,  # NEW
         generate_multilang_specificity_report_heatmap,  # NEW
     )
+    # --- MODIFICATION START: Import line chart generator ---
+    from visualization.plot_scripts.linechart_generators import generate_zeroshot_performance_linecharts
+    # --- MODIFICATION END ---
 
 except ImportError as e:
     print("Error importing required modules after attempting path setup.")
@@ -72,6 +75,15 @@ except ImportError as e:
     print(f"Current sys.path: {sys.path}")
     print(f"Original Error: {e}")
     sys.exit(1)
+# ... (potentially barchart_generators if you have them)
+# from visualization.plot_scripts.barchart_generators import generate_some_barcharts
+
+# Define constants for plot types to generate
+PLOT_TYPE_HEATMAPS = "heatmaps"
+PLOT_TYPE_ZEROSHOT_LINECHARTS = "zeroshot_linecharts"
+# PLOT_TYPE_BARCHARTS = "barcharts" # If you add barcharts
+PLOT_TYPE_ALL = "all"
+
 
 # sanitize_filename function is now imported from plot_utils
 
@@ -131,14 +143,15 @@ def main():
         choices=[
             "boxplot",
             "heatmap",  # Original set of detailed heatmaps (lang_vs_model, chunk_vs_overlap etc.)
+            PLOT_TYPE_ZEROSHOT_LINECHARTS, # Added new plot type
             "dataset_boxplot",
             "algo_vs_model_f1",  # English only, mean F1
             "algo_vs_model_success",  # Multi-lang, algo-sorted, per-dataset success
             "multilang_f1_report",
-            "multilang_accuracy_report",  # NEW
-            "multilang_precision_report",  # NEW
-            "multilang_recall_report",  # NEW
-            "multilang_specificity_report",  # NEW
+            "multilang_accuracy_report",
+            "multilang_precision_report",
+            "multilang_recall_report",
+            "multilang_specificity_report",
             "all",
         ],
         help="Type of plot(s) to generate.",
@@ -187,28 +200,35 @@ def main():
 
     # 0. Load Config to get languages
     all_languages_list = None
+    config_loader = None # Initialize config_loader
     try:
-        config_loader = ConfigLoader(args.config_path)
-        language_configs = config_loader.config.get("language_configs", [])
-        loaded_languages = [
-            lc.get("language") for lc in language_configs if lc.get("language")
-        ]
-        if loaded_languages:
-            all_languages_list = loaded_languages
-            print(
-                f"Found languages in config for consistent plot elements: {all_languages_list}"
-            )
+        if os.path.exists(args.config_path):
+            config_loader = ConfigLoader(args.config_path)
+            language_configs = config_loader.config.get("language_configs", [])
+            loaded_languages = [
+                lc.get("language") for lc in language_configs if lc.get("language")
+            ]
+            if loaded_languages:
+                all_languages_list = loaded_languages
+                print(
+                    f"Found languages in config for consistent plot elements: {all_languages_list}"
+                )
+            else:
+                print(
+                    f"Warning: No languages found in 'language_configs' in {args.config_path}. Plot elements order may vary."
+                )
         else:
             print(
-                f"Warning: No languages found in 'language_configs' in {args.config_path}. Plot elements order may vary."
+                f"Warning: Config file not found at '{args.config_path}'. Cannot determine full language list for consistent plot elements or model colors from config."
             )
-    except FileNotFoundError:
+
+    except FileNotFoundError: # Should be caught by os.path.exists, but good to have
         print(
-            f"Warning: Config file not found at '{args.config_path}'. Cannot determine full language list for consistent plot elements."
+            f"Warning: Config file not found at '{args.config_path}'. Cannot determine full language list for consistent plot elements or model colors from config."
         )
     except Exception as e:
         print(
-            f"Warning: Error loading config file '{args.config_path}': {e}. Proceeding without full language list."
+            f"Warning: Error loading config file '{args.config_path}': {e}. Proceeding without full language list or model colors from config."
         )
 
     # 1. Extract Data
@@ -226,6 +246,21 @@ def main():
     # 2. Prepare for Plotting
     os.makedirs(args.output_dir, exist_ok=True)
 
+    # --- MODIFICATION START: Generate master model palette ---
+    master_model_palette = None
+    if df_data is not None and not df_data.empty and "question_model" in df_data.columns:
+        all_models_in_data = df_data["question_model"].unique().tolist()
+        current_config = config_loader.config if config_loader and hasattr(config_loader, 'config') else None
+        master_model_palette = get_model_colors(all_models_in_data, current_config)
+        
+        if master_model_palette:
+            print(f"Generated master model color palette for {len(master_model_palette)} models.")
+        else:
+            print("Warning: Could not generate master model color palette. Seaborn defaults will be used by plots requiring it.")
+    else:
+        print("Warning: Cannot generate master model palette due to missing data or 'question_model' column.")
+    # --- MODIFICATION END ---
+
     # 3. Determine which plots to generate
     plot_types_to_generate = []
     if args.plot_type == "all":
@@ -233,6 +268,7 @@ def main():
         plot_types_to_generate = [
             "boxplot",
             "heatmap",
+            PLOT_TYPE_ZEROSHOT_LINECHARTS, # Added new plot type
             "dataset_boxplot",
             "algo_vs_model_f1",  # English-only, mean F1
             "algo_vs_model_success",  # Multi-lang, per-dataset success
@@ -245,6 +281,7 @@ def main():
     elif args.plot_type in [  # Add new types to this list
         "boxplot",
         "heatmap",
+        PLOT_TYPE_ZEROSHOT_LINECHARTS, # Added new plot type
         "dataset_boxplot",
         "algo_vs_model_f1",
         "algo_vs_model_success",
@@ -283,14 +320,14 @@ def main():
                 print("Warning: No F1 score data found. Skipping detailed F1 heatmaps for 'heatmap' type.")
             else:
                 # Call Language vs Model heatmap (includes zeroshot)
-                generate_language_vs_model_heatmap(
-                    df_f1_heatmap=df_f1_heatmap,
-                    output_dir=args.output_dir,
-                    output_filename_prefix=args.output_filename_prefix,
-                    all_languages_list=all_languages_list,  # Pass language list
-                    # If this heatmap needs model sorting, pass REPORT_MODEL_SORT_ORDER
-                )
-
+                # generate_language_vs_model_heatmap(
+                #     df_f1_heatmap=df_f1_heatmap,
+                #     output_dir=args.output_dir,
+                #     output_filename_prefix=args.output_filename_prefix,
+                #     all_languages_list=all_languages_list,  # Pass language list
+                #     # If this heatmap needs model sorting, pass REPORT_MODEL_SORT_ORDER
+                # )
+                pass
                 # Filter out 'zeroshot' for heatmaps requiring chunk/overlap
                 df_f1_heatmap_rag = df_f1_heatmap[
                     df_f1_heatmap["retrieval_algorithm"] != "zeroshot"
@@ -339,22 +376,24 @@ def main():
 
         elif plot_type == "dataset_boxplot":
             # Call the Dataset Success Boxplot Generator
-            generate_dataset_success_boxplot(
-                df_data=df_data,
-                output_dir=args.output_dir,
-                output_filename_prefix=args.output_filename_prefix,
-                lang=DATASET_BOXPLOT_LANG,
-                chunk=DATASET_BOXPLOT_CHUNK,
-                overlap=DATASET_BOXPLOT_OVERLAP,
-            )
+            # generate_dataset_success_boxplot(
+            #     df_data=df_data,
+            #     output_dir=args.output_dir,
+            #     output_filename_prefix=args.output_filename_prefix,
+            #     lang=DATASET_BOXPLOT_LANG,
+            #     chunk=DATASET_BOXPLOT_CHUNK,
+            #     overlap=DATASET_BOXPLOT_OVERLAP,
+            # )
+            pass
 
         # --- NEW: Add calls for the new summary heatmaps ---
         elif plot_type == "algo_vs_model_f1":
-            generate_algo_vs_model_f1_heatmap(
-                df_data=df_data,  # Pass the full dataframe
-                output_dir=args.output_dir,
-                output_filename_prefix=args.output_filename_prefix,
-            )
+            # generate_algo_vs_model_f1_heatmap(
+            #     df_data=df_data,  # Pass the full dataframe
+            #     output_dir=args.output_dir,
+            #     output_filename_prefix=args.output_filename_prefix,
+            # )
+            pass
 
         elif plot_type == "algo_vs_model_success":
             generate_algo_vs_model_dataset_success_heatmap(
@@ -403,6 +442,19 @@ def main():
                 output_filename_prefix=args.output_filename_prefix,
                 model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
             )
+        elif plot_type == PLOT_TYPE_ZEROSHOT_LINECHARTS:
+            if df_data is not None and not df_data.empty:
+                generate_zeroshot_performance_linecharts(
+                    df_data=df_data,
+                    output_dir=args.output_dir,
+                    output_filename_prefix=args.output_filename_prefix,
+                    model_sort_order=REPORT_MODEL_SORT_ORDER,
+                    model_palette=master_model_palette, # Use the generated master palette
+                    languages_to_plot=all_languages_list # Pass the list of languages from config
+                    # figsize is left to default in the generator function
+                )
+            else:
+                print("Skipping zero-shot line charts as no data is available.")
 
     print("\n--- Visualization Generation Finished ---")
 

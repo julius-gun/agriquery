@@ -3,7 +3,7 @@ import os
 import sys
 import json
 import matplotlib.pyplot as plt
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Optional
 
 # --- Path Setup ---
 # Calculate necessary paths relative to this script's location
@@ -39,6 +39,15 @@ except ImportError as e:
     sys.exit(1)
 # --- End Imports ---
 
+# In plot_utils.py (example sketch)
+def get_model_colors(model_names: List[str], config: Optional[Dict] = None) -> Optional[Dict[str, str]]:
+    if config:
+        model_color_map_from_config = config.get("visualization_settings", {}).get("MODEL_COLOR_MAP")
+        if model_color_map_from_config:
+            # Return colors only for models present in model_names
+            return {m: c for m, c in model_color_map_from_config.items() if m in model_names}
+    # Fallback or more sophisticated color generation can be added here if no map in config
+    return None # Or generate a default palette using seaborn for the given model_names
 
 def sanitize_filename(filename: str) -> str:
     """Removes or replaces characters that are problematic in filenames."""
