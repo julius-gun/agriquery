@@ -9,18 +9,18 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.7037037037037037,
-        "precision": 0.6447368421052632,
-        "recall": 0.9074074074074074,
+        "accuracy": 0.6944444444444444,
+        "precision": 0.64,
+        "recall": 0.8888888888888888,
         "specificity": 0.5,
-        "f1_score": 0.7538461538461537,
-        "true_positives": 49,
+        "f1_score": 0.7441860465116279,
+        "true_positives": 48,
         "true_negatives": 27,
         "false_positives": 27,
-        "false_negatives": 5,
+        "false_negatives": 6,
         "total_questions": 108,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.9074074074074074,
+            "general_questions": 0.8888888888888888,
             "unanswerable_questions": 0.5
         }
     },
@@ -43,7 +43,7 @@
                 {
                     "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
                     "expected_answer": "06.00.00.0257",
-                    "model_answer": "From Greenseeker version 06.00.00.0257 onwards",
+                    "model_answer": "From Greenseeker version 06.00.00.0257 onwards.",
                     "page": 27,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -51,7 +51,7 @@
                 {
                     "question": "What is the overlap percentage for the full field spreading pattern?",
                     "expected_answer": "100% overlap",
-                    "model_answer": "100%",
+                    "model_answer": "The full field spreading pattern overlaps 100%.",
                     "page": 28,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -59,7 +59,7 @@
                 {
                     "question": "What system continuously measures fertilizer quantity being spread?",
                     "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
-                    "model_answer": "The automatic weighing system.",
+                    "model_answer": "The automatic weighing system",
                     "page": 30,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -67,7 +67,7 @@
                 {
                     "question": "How often does the spreader carry out automatic calibration tests?",
                     "expected_answer": "Every 75 kg or every minute.",
-                    "model_answer": "The spreader carries out automatic calibration tests every 75 kg or every minute.",
+                    "model_answer": "every 75 kg or every minute",
                     "page": 31,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -83,7 +83,7 @@
                 {
                     "question": "Where is the main switch button to turn the control box on or off located?",
                     "expected_answer": "The main switch button is located on the upper left in the red extension.",
-                    "model_answer": "The main switch is located on the upper left in the red extension.",
+                    "model_answer": "The main switch button to turn the control box on and off is located on the upper left in the red extension.",
                     "page": 34,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -131,7 +131,7 @@
                 {
                     "question": "Where should the position sensor for the hydraulic border spreading plate be connected?",
                     "expected_answer": "In the electronic box on the spreader.",
-                    "model_answer": "The position sensor should be connected in the electronic box on the spreader.",
+                    "model_answer": "in the electronic box on the spreader",
                     "page": 47,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -139,7 +139,7 @@
                 {
                     "question": "What specific precaution should be taken before working between the tractor and machine to check the coupling shaft length?",
                     "expected_answer": "Place the machine on a supporting beam.",
-                    "model_answer": "Put the machine on a supporting beam",
+                    "model_answer": "Put the machine on a supporting beam before moving in between the tractor and machine.",
                     "page": 50,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -163,7 +163,7 @@
                 {
                     "question": "What is the maximum permissible operating angle in degrees for the coupling shaft, both when lifted and lowered?",
                     "expected_answer": "30 degrees",
-                    "model_answer": "The maximum operating angle of the coupling shaft is 30 ° when lifted and 30 ° when lowered.",
+                    "model_answer": "30 degrees",
                     "page": 54,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -179,10 +179,10 @@
                 {
                     "question": "How many parts does the distribution meter have?",
                     "expected_answer": "Seven.",
-                    "model_answer": "seven",
+                    "model_answer": "",
                     "page": 59,
                     "dataset": "general_questions",
-                    "self_evaluation": "yes"
+                    "self_evaluation": "no"
                 },
                 {
                     "question": "Below which application rate in kg/min is it advised to use the fine application?",
@@ -259,7 +259,7 @@
                 {
                     "question": "What materials are required to perform the tray test?",
                     "expected_answer": "A measuring tape or ruler, a spirit level, 7 troughs, 7 graduated tubes, a funnel, a notebook, pen, calculator, this manual, and the software's instruction manual.",
-                    "model_answer": "The materials required are:\n· measuring tape or ruler,\n· spirit level to set the troughs horizontal,\n· 7 troughs,\n· 7 graduated tubes,\n· 1 funnel,\n· notebook, pen and calculator,\n· this manual.\n· the instruction manual of the software.",
+                    "model_answer": "measuring tape or ruler, spirit level to set the troughs horizontal, 7 troughs, 7 graduated tubes, 1 funnel, notebook, pen and calculator, this manual, the instruction manual of the software.",
                     "page": 77,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -283,7 +283,7 @@
                 {
                     "question": "Before testing the ExactLine spreading pattern, what specific height in cm should the spreading disc be set to above the troughs?",
                     "expected_answer": "75 cm",
-                    "model_answer": "75 cm above the troughs",
+                    "model_answer": "75 cm",
                     "page": 89,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -299,7 +299,7 @@
                 {
                     "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
                     "expected_answer": "Inertia causes continued rotation.",
-                    "model_answer": "The machine will continue running because of inertia.",
+                    "model_answer": "",
                     "page": 94,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -307,7 +307,7 @@
                 {
                     "question": "From which machine point is the spreading height measured to the ground or the crop?",
                     "expected_answer": "Measured from the bottom of the vanes.",
-                    "model_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "the bottom of the vanes",
                     "page": 95,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -323,7 +323,7 @@
                 {
                     "question": "What happens when hopper content falls below 100 kg?",
                     "expected_answer": "Automatic calibration switches off.",
-                    "model_answer": "the control system switches off the automatic calibration",
+                    "model_answer": "The control system switches off the automatic calibration.",
                     "page": 101,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -379,7 +379,7 @@
                 {
                     "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
                     "expected_answer": "Place the spreader on a firm, stable ramp",
-                    "model_answer": "Place the spreader on a firm, stable ramp, for example a pawl.",
+                    "model_answer": "place the spreader on a firm, stable ramp, for example a pawl.",
                     "page": 120,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -543,7 +543,7 @@
                 {
                     "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
                     "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
-                    "model_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. Page 118.",
+                    "model_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. Page: 118",
                     "page": 152,
                     "dataset": "table_questions",
                     "self_evaluation": "yes"
@@ -579,7 +579,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The \"Input IM Tellus\" cable, supplied as a standard item, can be used for ISO 11786 In cab, lights and ignition, Tractor CAN (optional plug specific to the tractor required), and Video input connections.",
+                    "model_answer": "The \"Input IM Tellus\" cable, supplied as a standard item, can be used for: ISO 11786 In cab, lights and ignition, Tractor CAN (optional plug specific to the tractor required), Video input.",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "self_evaluation": "no"
@@ -667,7 +667,7 @@
                 {
                     "question": "Which appropriate measures for road transport should be taken when stopping work?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The appropriate measures for road transport to be taken when stopping work are:\n*   Check whether tractor and machine are roadworthy.\n*   Check that the lights, warning indicators, protectors and brakes are attached properly and are working.\n*   Check the run of the quick coupling ropes of the power lift.\n*   Fit extra lighting and warning signs, if necessary.\n*   Check all folding parts and their locking devices: hopper cover, ExactLine, hydraulic border spreading plate.\n*   Set all parts of the machine and the tractor, especially the PTO shaft, the hydraulics, the wheels and the electric system, to transport mode.\n*   Check the weight distribution between front and rear axles.\n*   Mount front weights, if necessary.\n*   Check the headroom of the combination.\n*   Lower the power lift, if necessary.\n*   Lock the control lever of the power lift while moving so that the machine is not lowered by accident.\n*   Check if the lights are in good working order.\n*   Check whether the dosing units are closed.\n*   Switch off the control box.\n*   Remove dirt that could fall off while on the road.\n*   Control devices, e.g.",
+                    "model_answer": "Take all appropriate measures for road transport.",
                     "page": 112,
                     "dataset": "unanswerable_questions",
                     "self_evaluation": "no"
@@ -683,7 +683,7 @@
                 {
                     "question": "Why is damage to the vanes, spreading disc or discharge bushing, most likely caused by a hard object?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "If you see damage to the vanes, spreading disc or discharge bushing, the failure is most likely caused by a hard object.",
+                    "model_answer": "",
                     "page": 115,
                     "dataset": "unanswerable_questions",
                     "self_evaluation": "no"
@@ -739,7 +739,7 @@
                 {
                     "question": "What kind of protective safety gloves are needed for cleaning fertiliser remnants from the Exacta-TLX GEOSPREAD before welding?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "safety gloves",
+                    "model_answer": "Not found in context",
                     "page": 22,
                     "dataset": "unanswerable_questions",
                     "self_evaluation": "no"
@@ -827,7 +827,7 @@
                 {
                     "question": "What is the typical 'wind speed' limit in m/sec before spreading quality becomes unacceptable?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "> 5 m/sec",
+                    "model_answer": "5 m/sec",
                     "page": 96,
                     "dataset": "unanswerable_questions",
                     "self_evaluation": "no"

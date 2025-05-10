@@ -9,19 +9,19 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.7222222222222222,
-        "precision": 0.6621621621621622,
+        "accuracy": 0.7037037037037037,
+        "precision": 0.6447368421052632,
         "recall": 0.9074074074074074,
-        "specificity": 0.5370370370370371,
-        "f1_score": 0.765625,
+        "specificity": 0.5,
+        "f1_score": 0.7538461538461537,
         "true_positives": 49,
-        "true_negatives": 29,
-        "false_positives": 25,
+        "true_negatives": 27,
+        "false_positives": 27,
         "false_negatives": 5,
         "total_questions": 108,
         "dataset_self_evaluation_success": {
             "general_questions": 0.9074074074074074,
-            "unanswerable_questions": 0.5370370370370371
+            "unanswerable_questions": 0.5
         }
     },
     "timing": {
@@ -35,7 +35,7 @@
                 {
                     "question": "How many dosing openings are closed during fine application?",
                     "expected_answer": "Two of three dosing openings are closed.",
-                    "model_answer": "2 of the 3 dosing openings are closed.",
+                    "model_answer": "2",
                     "page": 24,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -43,7 +43,7 @@
                 {
                     "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
                     "expected_answer": "06.00.00.0257",
-                    "model_answer": "From Greenseeker version 06.00.00.0257 onwards.",
+                    "model_answer": "06.00.00.0257",
                     "page": 27,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -59,7 +59,7 @@
                 {
                     "question": "What system continuously measures fertilizer quantity being spread?",
                     "expected_answer": "Weighcells continuously measure fertilizer quantity being spread.",
-                    "model_answer": "Système de pesée automatique",
+                    "model_answer": "The automatic weighing system",
                     "page": 30,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -83,7 +83,7 @@
                 {
                     "question": "Where is the main switch button to turn the control box on or off located?",
                     "expected_answer": "The main switch button is located on the upper left in the red extension.",
-                    "model_answer": "The main switch is located at the top left in the red border.",
+                    "model_answer": "The main switch button is located at the top left in the red border.",
                     "page": 34,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -99,7 +99,7 @@
                 {
                     "question": "After initial setup of the machine and after any maintenance or repairs, how long should the machine be operated before re-checking all nuts and bolts?",
                     "expected_answer": "1 hour",
-                    "model_answer": "after the first hour of use",
+                    "model_answer": "the first hour of use",
                     "page": 38,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -131,7 +131,7 @@
                 {
                     "question": "Where should the position sensor for the hydraulic border spreading plate be connected?",
                     "expected_answer": "In the electronic box on the spreader.",
-                    "model_answer": "The position sensor should be connected to the box containing the electronics on the spreader.",
+                    "model_answer": "au boîtier comportant l'électronique sur l'épandeur",
                     "page": 47,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -139,7 +139,7 @@
                 {
                     "question": "What specific precaution should be taken before working between the tractor and machine to check the coupling shaft length?",
                     "expected_answer": "Place the machine on a supporting beam.",
-                    "model_answer": "Place the machine on a support before getting between the tractor and the machine.",
+                    "model_answer": "Place the machine on a support before placing yourself between the tractor and it.",
                     "page": 50,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -155,7 +155,7 @@
                 {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
-                    "model_answer": "Yes, the parking brake on the tractor should be engaged before connecting the machine.",
+                    "model_answer": "",
                     "page": 52,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -203,7 +203,7 @@
                 {
                     "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
                     "expected_answer": "1 open hole and 2 thick holes",
-                    "model_answer": "1 single open round orifice and 2 closed round orifices",
+                    "model_answer": "1 seul orifice rond ouvert et 2 orifices ronds fermés",
                     "page": 67,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -211,7 +211,7 @@
                 {
                     "question": "What is the general formula for calculating the required flowrate of fertilizer in kg/min?",
                     "expected_answer": "Working width (m) x Driving speed (km/h) x Application rate (kg/ha) / 600",
-                    "model_answer": "Required flowrate (kg/min) = (Working width (m) x Forward speed (km/h) x Application rate (kg/ha)) / 600",
+                    "model_answer": "Largeur de travail (m) x vitesse d'avancement (km/h) x débit (kg/ha) / 600",
                     "page": 68,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -291,15 +291,15 @@
                 {
                     "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
                     "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "",
+                    "model_answer": "10 %",
                     "page": 91,
                     "dataset": "general_questions",
-                    "self_evaluation": "yes"
+                    "self_evaluation": "no"
                 },
                 {
                     "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
                     "expected_answer": "Inertia causes continued rotation.",
-                    "model_answer": "The machine continues to turn for a while due to inertia.",
+                    "model_answer": "Dangers can arise due to the machine cutting off because of mass inertia.",
                     "page": 94,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -331,7 +331,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "The two functions for border spreading are:\n- Unilateral border spreading using the hydraulic border deflector\n- Border spreading with ExactLine",
+                    "model_answer": "Épandage unilatéral en bordure à l'aide du déflecteur de bordure hydraulique, Épandage des bordures avec ExactLine",
                     "page": 106,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -347,7 +347,7 @@
                 {
                     "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
                     "expected_answer": "spreading chart or online spreading chart",
-                    "model_answer": "Le tableau d'épandage (en ligne) indique à la fois le régime des disques d'épandage requis et le régime de la prise de force.",
+                    "model_answer": "The spreading table (online) indicates both the required spreading disc RPM and the PTO shaft RPM.",
                     "page": 111,
                     "dataset": "general_questions",
                     "self_evaluation": "no"
@@ -363,7 +363,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40 °C",
+                    "model_answer": "40 o C",
                     "page": 117,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -371,7 +371,7 @@
                 {
                     "question": "What is the maximum allowable pressure in bar when cleaning the machine with water or steam?",
                     "expected_answer": "80 bar",
-                    "model_answer": "max. 80 bar",
+                    "model_answer": "80 bar",
                     "page": 117,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -387,15 +387,15 @@
                 {
                     "question": "What specific precaution should be taken regarding white metal parts to prevent corrosion during winter storage?",
                     "expected_answer": "Preservative grease or preserving liquid.",
-                    "model_answer": "Not found in context",
+                    "model_answer": "Apply protective grease or conservation liquid (supplied) to bare metal parts.",
                     "page": 121,
                     "dataset": "general_questions",
-                    "self_evaluation": "no"
+                    "self_evaluation": "yes"
                 },
                 {
                     "question": "What specific precaution should be taken before welding on the machine after using nitrate-containing fertilizer?",
                     "expected_answer": "Remove all fertilizer remnants.",
-                    "model_answer": "Remove all fertilizer residues from the orifices, corners, sleeves, and hoses.",
+                    "model_answer": "Remove all fertilizer residues from orifices, angles, sleeves, and hoses before welding, cutting, or trimming on the machine.",
                     "page": 123,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -451,7 +451,7 @@
                 {
                     "question": "How often should the agitator axle seal be replaced?",
                     "expected_answer": "Every season and after every 100 operational hours.",
-                    "model_answer": "The sealing ring must be replaced at the beginning of each season and after every 100 hours of machine use.",
+                    "model_answer": "The seal ring must be replaced at the beginning of each season and after every 100 hours of machine use.",
                     "page": 140,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -459,7 +459,7 @@
                 {
                     "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
                     "expected_answer": "Yes, using the Sensor input IM Tellus.",
-                    "model_answer": "Yes, with the optional IsoMatch Tellus sensor input, you can connect the tractor's speed sensor or radar to the IsoMatch Tellus control box.",
+                    "model_answer": "Yes, you can connect the tractor's speed sensor or radar to the IsoMatch Tellus control box using the optional IsoMatch Tellus sensor input.",
                     "page": 144,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -511,10 +511,10 @@
                 {
                     "question": "How often (in what interval) must the bushing height be checked and the discharge be set?",
                     "expected_answer": "after the first 10 hours and every 100 hours, but a minimum of once per year",
-                    "model_answer": "",
+                    "model_answer": "Every week and as recommended.",
                     "page": 125,
                     "dataset": "table_questions",
-                    "self_evaluation": "yes"
+                    "self_evaluation": "no"
                 },
                 {
                     "question": "How often (in what interval) must the agitator seal be replaced?",
@@ -527,7 +527,7 @@
                 {
                     "question": "With what torque in Nm must a M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened?",
                     "expected_answer": "420 Nm",
-                    "model_answer": "420",
+                    "model_answer": "420 Nm",
                     "page": 129,
                     "dataset": "table_questions",
                     "self_evaluation": "yes"
@@ -535,7 +535,7 @@
                 {
                     "question": "With what torque in Nm must a M6 hexagon stainless steel bolt with a 70 (A2) quality and with a 0.2 friction be fastened?",
                     "expected_answer": "9.9 Nm",
-                    "model_answer": "9.9",
+                    "model_answer": "9.9 Nm",
                     "page": 129,
                     "dataset": "table_questions",
                     "self_evaluation": "yes"
@@ -627,7 +627,7 @@
                 {
                     "question": "Can the hydraulic border spreading plate be actuated pneumatically?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Not found in context",
+                    "model_answer": "No, the hydraulic border spreading plate is actuated hydraulically.",
                     "page": 85,
                     "dataset": "unanswerable_questions",
                     "self_evaluation": "no"
@@ -643,7 +643,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Fermez les unités de dosage. Débrayez la prise de force.",
+                    "model_answer": "",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "self_evaluation": "no"
@@ -683,7 +683,7 @@
                 {
                     "question": "Why is damage to the vanes, spreading disc or discharge bushing, most likely caused by a hard object?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "The text states that if the vanes, spreading disc or discharge bushings are damaged, the defect was very probably caused by a hard foreign object.",
+                    "model_answer": "If the vanes, spreading disc or discharge bushings are damaged, the defect was very probably caused by a hard foreign object.",
                     "page": 115,
                     "dataset": "unanswerable_questions",
                     "self_evaluation": "no"
@@ -763,10 +763,10 @@
                 {
                     "question": "What specific 'grease' type is recommended for 'profiled tubes' of the  coupling shaft?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Not found in context",
+                    "model_answer": "Graisse à base de lithium",
                     "page": 51,
                     "dataset": "unanswerable_questions",
-                    "self_evaluation": "yes"
+                    "self_evaluation": "no"
                 },
                 {
                     "question": "What is the 'hose coupling support' made of?",
@@ -779,10 +779,10 @@
                 {
                     "question": "What specific type of 'Delicia Schnecken Linsen' slug pellets were used for the spreading chart example?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Not found in context",
+                    "model_answer": "0,72 kg/L",
                     "page": 69,
                     "dataset": "unanswerable_questions",
-                    "self_evaluation": "yes"
+                    "self_evaluation": "no"
                 },
                 {
                     "question": "What is the minimum 'baud rate' for 'RS 232 connection'?",
@@ -883,7 +883,7 @@
                 {
                     "question": "What type of 'universal grease' is recommended for all 'lubricating nipples'?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Shell Rodina 2, Castrol GS2 or equivalent.",
+                    "model_answer": "Shell Rodina 2, Castrol GS2 or equivalent",
                     "page": 126,
                     "dataset": "unanswerable_questions",
                     "self_evaluation": "no"

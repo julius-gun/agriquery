@@ -9,19 +9,19 @@
         "file_extension_tested": "txt"
     },
     "overall_metrics": {
-        "accuracy": 0.6944444444444444,
-        "precision": 0.64,
+        "accuracy": 0.6851851851851852,
+        "precision": 0.631578947368421,
         "recall": 0.8888888888888888,
-        "specificity": 0.5,
-        "f1_score": 0.7441860465116279,
+        "specificity": 0.48148148148148145,
+        "f1_score": 0.7384615384615385,
         "true_positives": 48,
-        "true_negatives": 27,
-        "false_positives": 27,
+        "true_negatives": 26,
+        "false_positives": 28,
         "false_negatives": 6,
         "total_questions": 108,
         "dataset_self_evaluation_success": {
             "general_questions": 0.8888888888888888,
-            "unanswerable_questions": 0.5
+            "unanswerable_questions": 0.48148148148148145
         }
     },
     "timing": {
@@ -35,7 +35,7 @@
                 {
                     "question": "How many dosing openings are closed during fine application?",
                     "expected_answer": "Two of three dosing openings are closed.",
-                    "model_answer": "2 of the 3 dosing openings are closed.",
+                    "model_answer": "2",
                     "page": 24,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -67,7 +67,7 @@
                 {
                     "question": "How often does the spreader carry out automatic calibration tests?",
                     "expected_answer": "Every 75 kg or every minute.",
-                    "model_answer": "every 75 kg or every minute",
+                    "model_answer": "Every 75 kg or every minute",
                     "page": 31,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -99,7 +99,7 @@
                 {
                     "question": "After initial setup of the machine and after any maintenance or repairs, how long should the machine be operated before re-checking all nuts and bolts?",
                     "expected_answer": "1 hour",
-                    "model_answer": "after the first operating hour",
+                    "model_answer": "after the first hour of operation",
                     "page": 38,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -107,7 +107,7 @@
                 {
                     "question": "How could the console assembly foot be mounted if no suitable mounting location exists in the cabin?",
                     "expected_answer": "A footplate could be made and welded to the pipe for the console foot.",
-                    "model_answer": "provide a footplate yourself to which the tube is welded",
+                    "model_answer": "You must provide a footplate yourself, to which the tube is welded, and weld a footplate onto a selected surface in the cabin before mounting.",
                     "page": 40,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -155,7 +155,7 @@
                 {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
-                    "model_answer": "Yes.",
+                    "model_answer": "Yes, the parking brake of the tractor should be engaged before connecting the machine.",
                     "page": 52,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -171,7 +171,7 @@
                 {
                     "question": "What must be ensured with decoupling ropes during power lift connection?",
                     "expected_answer": "Decoupling ropes must never be tense.",
-                    "model_answer": "The decoupling ropes must never be taut and must have sufficient freedom of movement, even with the power lift in the lowest position, so that the quick couplings cannot unintentionally decouple.",
+                    "model_answer": "The decoupling ropes must never be taut and must have sufficient freedom of movement, even with the power lift in the lowest position.",
                     "page": 56,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -251,7 +251,7 @@
                 {
                     "question": "What does a tray test check on a fertilizer spreader?",
                     "expected_answer": "Fertilizer distribution pattern of the spreader.",
-                    "model_answer": "the distribution of the fertilizer",
+                    "model_answer": "the distribution of the fertilizer as the spreader distributes it",
                     "page": 76,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -299,7 +299,7 @@
                 {
                     "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
                     "expected_answer": "Inertia causes continued rotation.",
-                    "model_answer": "The machine continuing to rotate due to its inertia.",
+                    "model_answer": "Machine spinning down due to its inertia.",
                     "page": 94,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -331,7 +331,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "The spreader has 2 different working methods for border spreading:\n- Einscheiben-Grenzstreuen mit dem hydraulischen Grenzstreublech\n- Zweischeiben-Grenzstreuen mit ExactLine",
+                    "model_answer": "Einscheiben-Grenzstreuen mit dem hydraulischen Grenzstreublech, Zweischeiben-Grenzstreuen mit ExactLine.",
                     "page": 106,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -347,7 +347,7 @@
                 {
                     "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
                     "expected_answer": "spreading chart or online spreading chart",
-                    "model_answer": "In the (Online-)Streutabelle.",
+                    "model_answer": "The (Online-)Streutabelle provides the required speed for both the spreading discs and the PTO shaft.",
                     "page": 111,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -363,7 +363,7 @@
                 {
                     "question": "What is the maximum allowable temperature in degrees celsius when cleaning the machine with water or steam?",
                     "expected_answer": "40 degrees Celsius",
-                    "model_answer": "40 o C",
+                    "model_answer": "40 °C",
                     "page": 117,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -379,7 +379,7 @@
                 {
                     "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
                     "expected_answer": "Place the spreader on a firm, stable ramp",
-                    "model_answer": "Place the spreader on a solid, stable elevation, e.g., a pallet.",
+                    "model_answer": "Place the spreader on a firm, stable elevation, such as a pallet.",
                     "page": 120,
                     "dataset": "general_questions",
                     "self_evaluation": "yes"
@@ -471,7 +471,7 @@
                 {
                     "question": "What is the pattern of the type 'mineral'?",
                     "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "angular, with sharp edges and borders",
+                    "model_answer": "eckig, mit scharfen Kanten und Rändern",
                     "page": 58,
                     "dataset": "table_questions",
                     "self_evaluation": "yes"
@@ -495,7 +495,7 @@
                 {
                     "question": "What is the sound level in dB of a Tractor + spreading spreader (Kali 60) with its rear window opened?",
                     "expected_answer": "84.6 dB",
-                    "model_answer": "84.6 dB",
+                    "model_answer": "84.6",
                     "page": 37,
                     "dataset": "table_questions",
                     "self_evaluation": "yes"
@@ -503,7 +503,7 @@
                 {
                     "question": "How often (in what interval) must the condition of the vanes be inspected?",
                     "expected_answer": "daily",
-                    "model_answer": "daily",
+                    "model_answer": "täglich",
                     "page": 125,
                     "dataset": "table_questions",
                     "self_evaluation": "yes"
@@ -519,7 +519,7 @@
                 {
                     "question": "How often (in what interval) must the agitator seal be replaced?",
                     "expected_answer": "every 100 hours or if worn",
-                    "model_answer": "The seal must be replaced every season and after every 100 operating hours of the machine.",
+                    "model_answer": "jede Saison und nach jeweils 100 Betriebsstunden",
                     "page": 125,
                     "dataset": "table_questions",
                     "self_evaluation": "yes"
@@ -535,7 +535,7 @@
                 {
                     "question": "With what torque in Nm must a M6 hexagon stainless steel bolt with a 70 (A2) quality and with a 0.2 friction be fastened?",
                     "expected_answer": "9.9 Nm",
-                    "model_answer": "9.9",
+                    "model_answer": "9.9 Nm",
                     "page": 129,
                     "dataset": "table_questions",
                     "self_evaluation": "yes"
@@ -543,7 +543,7 @@
                 {
                     "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
                     "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
-                    "model_answer": "114",
+                    "model_answer": "What to do: Stop spreading immediately and stop the PTO immediately.\nPage: 113",
                     "page": 152,
                     "dataset": "table_questions",
                     "self_evaluation": "no"
@@ -579,7 +579,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "",
+                    "model_answer": "Geschwindigkeits-, Drehzahl- und GPS-Signal",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "self_evaluation": "no"
@@ -643,7 +643,7 @@
                 {
                     "question": "How should one proceed to stop spreading the fertilizer?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Schließen Sie die Dosiereinheiten.",
+                    "model_answer": "Close the dosing units by pressing the Stop button.",
                     "page": 100,
                     "dataset": "unanswerable_questions",
                     "self_evaluation": "no"
@@ -699,7 +699,7 @@
                 {
                     "question": "What happens if the machine grease nipples are never lubricated?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Not found in context",
+                    "model_answer": "",
                     "page": 118,
                     "dataset": "unanswerable_questions",
                     "self_evaluation": "no"
@@ -787,10 +787,10 @@
                 {
                     "question": "What is the minimum 'baud rate' for 'RS 232 connection'?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "Not found in context",
+                    "model_answer": "Error: An unexpected error occurred. Timeout of 600.0s exceeded, last exception: 503 WSAGetOverlappedResult: Connection aborted (An established connection was aborted by the software in your host machine.\r\n -- 10053)",
                     "page": 72,
                     "dataset": "unanswerable_questions",
-                    "self_evaluation": "yes"
+                    "self_evaluation": "no"
                 },
                 {
                     "question": "What is the maximum acceptable 'chunk' size of fertilizer in mm to prevent blockage?",
@@ -907,7 +907,7 @@
                 {
                     "question": "What is the typical agitator 'seal ring' lifespan in operational hours before requiring replacement?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "100 operating hours",
+                    "model_answer": "100 operational hours",
                     "page": 134,
                     "dataset": "unanswerable_questions",
                     "self_evaluation": "no"

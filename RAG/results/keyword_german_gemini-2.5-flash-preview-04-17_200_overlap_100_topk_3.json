@@ -7,29 +7,28 @@
         "chunk_size": 200,
         "overlap_size": 100,
         "num_retrieved_docs": 3,
-        "chroma_collection_used": "german_manual_cs200_os100",
-        "reevaluation_run_type": "metrics_only"
+        "chroma_collection_used": "german_manual_cs200_os100"
     },
     "overall_metrics": {
-        "accuracy": 0.5462962962962963,
-        "precision": 0.7777777777777778,
-        "recall": 0.12962962962962962,
-        "specificity": 0.9629629629629629,
-        "f1_score": 0.2222222222222222,
-        "true_positives": 7,
-        "true_negatives": 52,
-        "false_positives": 2,
-        "false_negatives": 47,
+        "accuracy": 0.5277777777777778,
+        "precision": 0.6666666666666666,
+        "recall": 0.1111111111111111,
+        "specificity": 0.9444444444444444,
+        "f1_score": 0.1904761904761905,
+        "true_positives": 6,
+        "true_negatives": 51,
+        "false_positives": 3,
+        "false_negatives": 48,
         "total_questions": 108,
         "dataset_self_evaluation_success": {
-            "general_questions": 0.12962962962962962,
-            "unanswerable_questions": 0.9629629629629629
+            "general_questions": 0.1111111111111111,
+            "unanswerable_questions": 0.9444444444444444
         }
     },
     "timing": {
-        "overall_duration_seconds": 1537.5725769996643,
-        "duration_qa_phase_seconds": 1445.357570886612,
-        "duration_eval_phase_seconds": 92.21500611305237
+        "overall_duration_seconds": 1180.5641481876373,
+        "duration_qa_phase_seconds": 1078.049438238144,
+        "duration_eval_phase_seconds": 102.51470994949341
     },
     "per_dataset_details": {
         "general_questions": {
@@ -42,6 +41,16 @@
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
+                    "expected_answer": "06.00.00.0257",
+                    "model_answer": "06.00.00.00.0257",
+                    "page": 27,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
                     "eval_error": false
                 },
                 {
@@ -77,7 +86,7 @@
                 {
                     "question": "How can the tractor's driving speed be transmitted to the IsoMatch if the tractor lacks ISOBUS communication?",
                     "expected_answer": "By adding the IsoMatch power cable set to the tractor.",
-                    "model_answer": "Not found in context",
+                    "model_answer": "",
                     "page": 32,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -107,7 +116,7 @@
                 {
                     "question": "After initial setup of the machine and after any maintenance or repairs, how long should the machine be operated before re-checking all nuts and bolts?",
                     "expected_answer": "1 hour",
-                    "model_answer": "after the first 10 operating hours",
+                    "model_answer": "Not found in context",
                     "page": 38,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -165,6 +174,16 @@
                     "eval_error": false
                 },
                 {
+                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
+                    "expected_answer": "150mm.",
+                    "model_answer": "Not found in context",
+                    "page": 51,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
                     "question": "Should the parking brake of the tractor be engaged before connecting the machine?",
                     "expected_answer": "Yes.",
                     "model_answer": "Not found in context",
@@ -195,10 +214,40 @@
                     "eval_error": false
                 },
                 {
+                    "question": "How many parts does the distribution meter have?",
+                    "expected_answer": "Seven.",
+                    "model_answer": "Not found in context",
+                    "page": 59,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
                     "question": "Below which application rate in kg/min is it advised to use the fine application?",
                     "expected_answer": "Below 40 kg/min.",
                     "model_answer": "Not found in context",
                     "page": 66,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How to enable fine application for dosing low application rate?",
+                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
+                    "model_answer": "Not found in context",
+                    "page": 67,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
+                    "expected_answer": "1 open hole and 2 thick holes",
+                    "model_answer": "Not found in context",
+                    "page": 67,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",
@@ -217,7 +266,17 @@
                 {
                     "question": "What type of serial connection does the IsoMatch control box use for communication?",
                     "expected_answer": "RS 232",
-                    "model_answer": "RS 232",
+                    "model_answer": "RS-232",
+                    "page": 72,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "yes",
+                    "eval_error": false
+                },
+                {
+                    "question": "Where is the RS 232 connector located?",
+                    "expected_answer": "At the back of the control box.",
+                    "model_answer": "on the back of the control unit",
                     "page": 72,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -247,11 +306,11 @@
                 {
                     "question": "What does a tray test check on a fertilizer spreader?",
                     "expected_answer": "Fertilizer distribution pattern of the spreader.",
-                    "model_answer": "Not found in context",
+                    "model_answer": "",
                     "page": 76,
                     "dataset": "general_questions",
                     "qa_error": false,
-                    "self_evaluation": "no",
+                    "self_evaluation": "yes",
                     "eval_error": false
                 },
                 {
@@ -266,9 +325,19 @@
                 },
                 {
                     "question": "What maximum wind speed in m/s is permissible for both the tray test and actual spreading?",
-                    "expected_answer": "3 m/s)",
+                    "expected_answer": "3 m/s",
                     "model_answer": "Not found in context",
                     "page": 77,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
+                    "expected_answer": "Every year",
+                    "model_answer": "Not found in context",
+                    "page": 78,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",
@@ -285,10 +354,30 @@
                     "eval_error": false
                 },
                 {
+                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
+                    "expected_answer": "10% of the quantity in the middle trough",
+                    "model_answer": "Not found in context",
+                    "page": 91,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
                     "question": "After disengaging the PTO shaft, what poses a continued danger and why?",
                     "expected_answer": "Inertia causes continued rotation.",
                     "model_answer": "Not found in context",
                     "page": 94,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
+                    "expected_answer": "Measured from the bottom of the vanes.",
+                    "model_answer": "Not found in context",
+                    "page": 95,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",
@@ -317,7 +406,7 @@
                 {
                     "question": "What are the two functions for border spreading?",
                     "expected_answer": "Hydraulic border spreading plate and ExactLine.",
-                    "model_answer": "both single-disc border spreading and border spreading from the spreading track",
+                    "model_answer": "Not found in context",
                     "page": 106,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -329,6 +418,16 @@
                     "expected_answer": " Stop spreading immediately and disconnect the PTO shaft immediately.",
                     "model_answer": "Not found in context",
                     "page": 108,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
+                    "expected_answer": "spreading chart or online spreading chart",
+                    "model_answer": "Not found in context",
+                    "page": 111,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",
@@ -359,6 +458,16 @@
                     "expected_answer": "80 bar",
                     "model_answer": "Not found in context",
                     "page": 117,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
+                    "expected_answer": "Place the spreader on a firm, stable ramp",
+                    "model_answer": "Not found in context",
+                    "page": 120,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",
@@ -405,13 +514,23 @@
                     "eval_error": false
                 },
                 {
+                    "question": "What type of grease is the central gearbox filled with?",
+                    "expected_answer": "EP 00/000 gear grease.",
+                    "model_answer": "Not found in context",
+                    "page": 127,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
                     "question": "What is the maximum hydraulic pressure allowed for the hydaulic system in bars?",
                     "expected_answer": "210 bars.",
-                    "model_answer": "210 bar",
+                    "model_answer": "Not found in context",
                     "page": 131,
                     "dataset": "general_questions",
                     "qa_error": false,
-                    "self_evaluation": "yes",
+                    "self_evaluation": "no",
                     "eval_error": false
                 },
                 {
@@ -419,6 +538,16 @@
                     "expected_answer": "109 mm.",
                     "model_answer": "Not found in context",
                     "page": 136,
+                    "dataset": "general_questions",
+                    "qa_error": false,
+                    "self_evaluation": "no",
+                    "eval_error": false
+                },
+                {
+                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
+                    "expected_answer": "The required distance is 1.0 mm.",
+                    "model_answer": "Not found in context",
+                    "page": 138,
                     "dataset": "general_questions",
                     "qa_error": false,
                     "self_evaluation": "no",
@@ -435,139 +564,9 @@
                     "eval_error": false
                 },
                 {
-                    "question": "From which version does the ISOBUS support the reception of the signal of the Greenseeker sensor?",
-                    "expected_answer": "06.00.00.0257",
-                    "model_answer": "Ab der GreenSeeker-Version 06.00.00.00.0257",
-                    "page": 27,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "When shortening a coupling shaft, how far must profiled tubes at least overlap in mm?",
-                    "expected_answer": "150mm.",
-                    "model_answer": "Unknown",
-                    "page": 51,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "How many parts does the distribution meter have?",
-                    "expected_answer": "Seven.",
-                    "model_answer": "Unknown",
-                    "page": 59,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "How to enable fine application for dosing low application rate?",
-                    "expected_answer": "Move the fine application handle to the fine dosing position on both sides.",
-                    "model_answer": "Unknown",
-                    "page": 67,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the symbol on top of the fine application handle indicating that the Fine application kit is enabled?",
-                    "expected_answer": "1 open hole and 2 thick holes",
-                    "model_answer": "Unknown",
-                    "page": 67,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "Where is the RS 232 connector located?",
-                    "expected_answer": "At the back of the control box.",
-                    "model_answer": "auf der Rückseite der Bedieneinheit",
-                    "page": 72,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "How often should the left and right spreading disc be checked if they spread the same volumes of fertiliser to ensure good distribution?",
-                    "expected_answer": "Every year",
-                    "model_answer": "min. 1x pro Jahr",
-                    "page": 78,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the maximum fertilizer loss of the quantity in the middle trough in percent allowed in a ditch?",
-                    "expected_answer": "10% of the quantity in the middle trough",
-                    "model_answer": "Unknown",
-                    "page": 91,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "From which machine point is the spreading height measured to the ground or the crop?",
-                    "expected_answer": "Measured from the bottom of the vanes.",
-                    "model_answer": "Unknown",
-                    "page": 95,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "What information is available so that I  can set the correct PTO shaft and spreading disc RPM?",
-                    "expected_answer": "spreading chart or online spreading chart",
-                    "model_answer": "Unknown",
-                    "page": 111,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "What should I do if I cannot lower the power lift far enough to release the catch hooks when preparing the machine for storage?",
-                    "expected_answer": "Place the spreader on a firm, stable ramp",
-                    "model_answer": "Unknown",
-                    "page": 120,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "What type of grease is the central gearbox filled with?",
-                    "expected_answer": "EP 00/000 gear grease.",
-                    "model_answer": "Unknown",
-                    "page": 127,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the required distance in mm between the discharge bushing and spreading disc?",
-                    "expected_answer": "The required distance is 1.0 mm.",
-                    "model_answer": "Unknown",
-                    "page": 138,
-                    "dataset": "general_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
                     "question": "Can you connect the tractor's speed sensor  or radar to the IsoMatch control box?",
                     "expected_answer": "Yes, using the Sensor input IM Tellus.",
-                    "model_answer": "Ja, mit dem optional erhältlichen Sensor Input IM Tellus können Sie den Geschwindigkeitssensor oder den Radar des Schleppers an das IsoMatch Tellus Bedienpult anschließen.",
+                    "model_answer": "",
                     "page": 144,
                     "dataset": "general_questions",
                     "qa_error": false,
@@ -575,116 +574,9 @@
                     "eval_error": false
                 }
             ],
-            "duration_qa_seconds": 567.3994204998016,
-            "total_questions_processed": 44,
-            "duration_eval_seconds": 42.04193687438965
-        },
-        "table_questions": {
-            "results": [
-                {
-                    "question": "What is the pattern of the type 'mineral'?",
-                    "expected_answer": "angular, with sharp angles and edges",
-                    "model_answer": "Not found in context",
-                    "page": 58,
-                    "dataset": "table_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the hopper weight without hopper cover in kg of the Exacta-TLX GEOSPREAD 3225?",
-                    "expected_answer": "337.5 kg",
-                    "model_answer": "Not found in context",
-                    "page": 36,
-                    "dataset": "table_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the weight in kg of the Exacta-TLX GEOSPREAD 3900?",
-                    "expected_answer": "795 kg",
-                    "model_answer": "Not found in context",
-                    "page": 36,
-                    "dataset": "table_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "What is the sound level in dB of a Tractor + spreading spreader (Kali 60) with its rear window opened?",
-                    "expected_answer": "84.6 dB",
-                    "model_answer": "84.6 dB",
-                    "page": 37,
-                    "dataset": "table_questions",
-                    "qa_error": false,
-                    "self_evaluation": "yes",
-                    "eval_error": false
-                },
-                {
-                    "question": "How often (in what interval) must the condition of the vanes be inspected?",
-                    "expected_answer": "daily",
-                    "model_answer": "Not found in context",
-                    "page": 125,
-                    "dataset": "table_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "How often (in what interval) must the bushing height be checked and the discharge be set?",
-                    "expected_answer": "after the first 10 hours and every 100 hours, but a minimum of once per year",
-                    "model_answer": "Not found in context",
-                    "page": 125,
-                    "dataset": "table_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "How often (in what interval) must the agitator seal be replaced?",
-                    "expected_answer": "every 100 hours or if worn",
-                    "model_answer": "Not found in context",
-                    "page": 125,
-                    "dataset": "table_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "With what torque in Nm must a M18 hexagon steel bolt with a 10.9 quality and with a 0.13 friction be fastened?",
-                    "expected_answer": "420 Nm",
-                    "model_answer": "Not found in context",
-                    "page": 129,
-                    "dataset": "table_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "With what torque in Nm must a M6 hexagon stainless steel bolt with a 70 (A2) quality and with a 0.2 friction be fastened?",
-                    "expected_answer": "9.9 Nm",
-                    "model_answer": "Not found in context",
-                    "page": 129,
-                    "dataset": "table_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                },
-                {
-                    "question": "What should I do if the flow of the fertiliser is blocked, at what page should I look?",
-                    "expected_answer": "Clean the machine well after each use. Replace the agitator if it is worn out. The page is 118",
-                    "model_answer": "Not found in context",
-                    "page": 152,
-                    "dataset": "table_questions",
-                    "qa_error": false,
-                    "self_evaluation": "no",
-                    "eval_error": false
-                }
-            ],
-            "duration_qa_seconds": 134.74671506881714,
-            "total_questions_processed": 10,
-            "duration_eval_seconds": 8.729708671569824
+            "duration_qa_seconds": 547.4817459583282,
+            "total_questions_processed": 54,
+            "duration_eval_seconds": 50.431711196899414
         },
         "unanswerable_questions": {
             "results": [
@@ -721,7 +613,7 @@
                 {
                     "question": "For what other kind of connections can the IM Tellus Input cable be used?",
                     "expected_answer": "Not found in context",
-                    "model_answer": "",
+                    "model_answer": "Lighting and ignition switch, Tractor CAN, Video input",
                     "page": 32,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
@@ -1085,7 +977,7 @@
                     "page": 121,
                     "dataset": "unanswerable_questions",
                     "qa_error": false,
-                    "self_evaluation": "yes",
+                    "self_evaluation": "no",
                     "eval_error": false
                 },
                 {
@@ -1229,9 +1121,9 @@
                     "eval_error": false
                 }
             ],
-            "duration_qa_seconds": 877.9581503868103,
+            "duration_qa_seconds": 530.5666954517365,
             "total_questions_processed": 54,
-            "duration_eval_seconds": 50.17306923866272
+            "duration_eval_seconds": 52.082483768463135
         }
     }
 }
