@@ -27,8 +27,8 @@ TARGET_METRICS_FOR_BARCHART = ["f1_score", "accuracy", "precision", "recall", "s
 # Display names can be customized if needed.
 RAG_ALGORITHMS_TO_PLOT = {
     "hybrid": "Hybrid RAG",
-    "keyword": "Keyword RAG",
-    "embedding": "Embedding RAG",
+    # "keyword": "Keyword RAG",
+    # "embedding": "Embedding RAG",
     # Add other RAG algorithms here if they exist and should be plotted
 }
 
