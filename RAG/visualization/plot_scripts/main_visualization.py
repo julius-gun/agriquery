@@ -2,6 +2,7 @@
 
 # python visualization\plot_scripts\main_visualization.py --plot-type=heatmap
 # python visualization\plot_scripts\main_visualization.py --plot-type=all
+# python visualization\plot_scripts\main_visualization.py --plot-type=model_performance_barcharts
 
 import os
 import sys
@@ -60,8 +61,15 @@ try:
         generate_multilang_recall_report_heatmap,  # NEW
         generate_multilang_specificity_report_heatmap,  # NEW
     )
+
     # --- MODIFICATION START: Import line chart generator ---
-    from visualization.plot_scripts.linechart_generators import generate_zeroshot_performance_linecharts
+    from visualization.plot_scripts.linechart_generators import (
+        generate_zeroshot_performance_linecharts,
+    )
+    from visualization.plot_scripts.barchart_generators import (
+        generate_model_performance_barcharts,
+    )
+
     # --- MODIFICATION END ---
 
 except ImportError as e:
@@ -95,7 +103,7 @@ REPORT_MODEL_SORT_ORDER = [
     "deepseek-r1_8B-128k",
     "llama3.2_3B-128k",
     "deepseek-r1_1.5B-128k",
-    "llama3.2_1B-128k"
+    "llama3.2_1B-128k",
 ]
 
 
@@ -140,7 +148,7 @@ def main():
         choices=[
             "boxplot",
             "heatmap",  # Original set of detailed heatmaps (lang_vs_model, chunk_vs_overlap etc.)
-            "zeroshot_linecharts", # Added new plot type
+            "zeroshot_linecharts",  # Added new plot type
             "dataset_boxplot",
             "algo_vs_model_f1",  # English only, mean F1
             "algo_vs_model_success",  # Multi-lang, algo-sorted, per-dataset success
@@ -149,6 +157,7 @@ def main():
             "multilang_precision_report",
             "multilang_recall_report",
             "multilang_specificity_report",
+            "model_performance_barcharts",
             "all",
         ],
         help="Type of plot(s) to generate.",
@@ -194,10 +203,9 @@ def main():
         print(f"Filename prefix: {args.output_filename_prefix}")
     print(f"Using model sort order for reports: {REPORT_MODEL_SORT_ORDER}")
 
-
     # 0. Load Config to get languages
     all_languages_list = None
-    config_loader = None # Initialize config_loader
+    config_loader = None  # Initialize config_loader
     try:
         if os.path.exists(args.config_path):
             config_loader = ConfigLoader(args.config_path)
@@ -219,7 +227,7 @@ def main():
                 f"Warning: Config file not found at '{args.config_path}'. Cannot determine full language list for consistent plot elements or model colors from config."
             )
 
-    except FileNotFoundError: # Should be caught by os.path.exists, but good to have
+    except FileNotFoundError:  # Should be caught by os.path.exists, but good to have
         print(
             f"Warning: Config file not found at '{args.config_path}'. Cannot determine full language list for consistent plot elements or model colors from config."
         )
@@ -245,17 +253,31 @@ def main():
 
     # --- MODIFICATION START: Generate master model palette ---
     master_model_palette = None
-    if df_data is not None and not df_data.empty and "question_model" in df_data.columns:
+    if (
+        df_data is not None
+        and not df_data.empty
+        and "question_model" in df_data.columns
+    ):
         all_models_in_data = df_data["question_model"].unique().tolist()
-        current_config = config_loader.config if config_loader and hasattr(config_loader, 'config') else None
+        current_config = (
+            config_loader.config
+            if config_loader and hasattr(config_loader, "config")
+            else None
+        )
         master_model_palette = get_model_colors(all_models_in_data, current_config)
-        
+
         if master_model_palette:
-            print(f"Generated master model color palette for {len(master_model_palette)} models.")
+            print(
+                f"Generated master model color palette for {len(master_model_palette)} models."
+            )
         else:
-            print("Warning: Could not generate master model color palette. Seaborn defaults will be used by plots requiring it.")
+            print(
+                "Warning: Could not generate master model color palette. Seaborn defaults will be used by plots requiring it."
+            )
     else:
-        print("Warning: Cannot generate master model palette due to missing data or 'question_model' column.")
+        print(
+            "Warning: Cannot generate master model palette due to missing data or 'question_model' column."
+        )
     # --- MODIFICATION END ---
 
     # 3. Determine which plots to generate
@@ -265,7 +287,7 @@ def main():
         plot_types_to_generate = [
             "boxplot",
             "heatmap",
-            "zeroshot_linecharts", # Added new plot type
+            "zeroshot_linecharts",  # Added new plot type
             "dataset_boxplot",
             "algo_vs_model_f1",  # English-only, mean F1
             "algo_vs_model_success",  # Multi-lang, per-dataset success
@@ -274,11 +296,12 @@ def main():
             "multilang_precision_report",
             "multilang_recall_report",
             "multilang_specificity_report",
+            "model_performance_barcharts",
         ]
     elif args.plot_type in [  # Add new types to this list
         "boxplot",
         "heatmap",
-        "zeroshot_linecharts", # Added new plot type
+        "zeroshot_linecharts",  # Added new plot type
         "dataset_boxplot",
         "algo_vs_model_f1",
         "algo_vs_model_success",
@@ -287,6 +310,7 @@ def main():
         "multilang_precision_report",
         "multilang_recall_report",
         "multilang_specificity_report",
+        "model_performance_barcharts",
     ]:
         plot_types_to_generate = [args.plot_type]
     else:
@@ -307,14 +331,20 @@ def main():
             #     output_filename_prefix=args.output_filename_prefix,
             #     all_languages_list=all_languages_list,
             # )
-            pass # Placeholder for brevity, no change requested here yet
+            pass  # Placeholder for brevity, no change requested here yet
 
-        elif plot_type == "heatmap": # This is for the set of original detailed heatmaps
-            print("\nGenerating Detailed F1 Score & Dataset Success Heatmaps (Original Set)")
+        elif (
+            plot_type == "heatmap"
+        ):  # This is for the set of original detailed heatmaps
+            print(
+                "\nGenerating Detailed F1 Score & Dataset Success Heatmaps (Original Set)"
+            )
             # Filter data specifically for F1 scores for these heatmaps
             df_f1_heatmap = df_data[df_data["metric_type"] == "f1_score"].copy()
             if df_f1_heatmap.empty:
-                print("Warning: No F1 score data found. Skipping detailed F1 heatmaps for 'heatmap' type.")
+                print(
+                    "Warning: No F1 score data found. Skipping detailed F1 heatmaps for 'heatmap' type."
+                )
             else:
                 # Call Language vs Model heatmap (includes zeroshot)
                 # generate_language_vs_model_heatmap(
@@ -341,7 +371,7 @@ def main():
                     #     output_dir=args.output_dir,
                     #     output_filename_prefix=args.output_filename_prefix,
                     # )
-                    pass # Placeholder for brevity
+                    pass  # Placeholder for brevity
                 else:
                     print(
                         "Warning: No F1 score data found for non-zeroshot algorithms. Skipping Chunk/Overlap and Model vs Chunk/Overlap F1 heatmaps."
@@ -368,8 +398,7 @@ def main():
             #     output_dir=args.output_dir,
             #     output_filename_prefix=args.output_filename_prefix,
             # )
-            pass # Placeholder for brevity
-
+            pass  # Placeholder for brevity
 
         elif plot_type == "dataset_boxplot":
             # Call the Dataset Success Boxplot Generator
@@ -397,7 +426,7 @@ def main():
                 df_data=df_data,  # Pass the full dataframe
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
-                model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
+                model_sort_order=REPORT_MODEL_SORT_ORDER,  # Pass the sort order
             )
 
         elif plot_type == "multilang_f1_report":  # Add elif for the new plot
@@ -405,15 +434,15 @@ def main():
                 df_data=df_data,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
-                model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
+                model_sort_order=REPORT_MODEL_SORT_ORDER,  # Pass the sort order
             )
-        
+
         elif plot_type == "multilang_accuracy_report":
             generate_multilang_accuracy_report_heatmap(
                 df_data=df_data,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
-                model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
+                model_sort_order=REPORT_MODEL_SORT_ORDER,  # Pass the sort order
             )
 
         elif plot_type == "multilang_precision_report":
@@ -421,7 +450,7 @@ def main():
                 df_data=df_data,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
-                model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
+                model_sort_order=REPORT_MODEL_SORT_ORDER,  # Pass the sort order
             )
 
         elif plot_type == "multilang_recall_report":
@@ -429,7 +458,7 @@ def main():
                 df_data=df_data,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
-                model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
+                model_sort_order=REPORT_MODEL_SORT_ORDER,  # Pass the sort order
             )
 
         elif plot_type == "multilang_specificity_report":
@@ -437,21 +466,37 @@ def main():
                 df_data=df_data,
                 output_dir=args.output_dir,
                 output_filename_prefix=args.output_filename_prefix,
-                model_sort_order=REPORT_MODEL_SORT_ORDER # Pass the sort order
+                model_sort_order=REPORT_MODEL_SORT_ORDER,  # Pass the sort order
             )
         elif plot_type == "zeroshot_linecharts":
             if df_data is not None and not df_data.empty:
+                pass
                 generate_zeroshot_performance_linecharts(
                     df_data=df_data,
                     output_dir=args.output_dir,
                     output_filename_prefix=args.output_filename_prefix,
                     model_sort_order=REPORT_MODEL_SORT_ORDER,
-                    model_palette=master_model_palette, # Use the generated master palette
-                    languages_to_plot=all_languages_list # Pass the list of languages from config
+                    model_palette=master_model_palette,  # Use the generated master palette
+                    languages_to_plot=all_languages_list,  # Pass the list of languages from config
                     # figsize is left to default in the generator function
                 )
             else:
                 print("Skipping zero-shot line charts as no data is available.")
+        elif plot_type == "model_performance_barcharts":
+            if df_data is not None and not df_data.empty:
+                # Define the output subdirectory for these specific charts
+                barchart_output_dir = os.path.join(args.output_dir, "model_performance_barcharts")
+                os.makedirs(barchart_output_dir, exist_ok=True)
+                
+                generate_model_performance_barcharts(
+                    df_data=df_data,
+                    output_dir=barchart_output_dir, # Use the specific subdirectory
+                    output_filename_prefix=args.output_filename_prefix,
+                    model_sort_order=REPORT_MODEL_SORT_ORDER
+                    # figsize_per_facet can be overridden here if needed
+                )
+            else:
+                print("Skipping model performance bar charts as no data is available.")
 
     print("\n--- Visualization Generation Finished ---")
 
