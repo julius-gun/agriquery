@@ -8,11 +8,11 @@ from typing import List, Optional, Dict, Tuple
 # Assuming plot_utils.py and barcharts.py are in the same directory or accessible
 try:
     from .plot_utils import add_project_paths, sanitize_filename, get_model_colors
-    from .barcharts import create_model_performance_barchart, LANGUAGE_ORDER, LANGUAGE_PALETTE
+    from .barcharts import create_model_performance_barchart, METRIC_DISPLAY_NAMES, LANGUAGE_ORDER, LANGUAGE_PALETTE
 except ImportError:
     sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     from plot_utils import add_project_paths, sanitize_filename, get_model_colors
-    from barcharts import create_model_performance_barchart, LANGUAGE_ORDER, LANGUAGE_PALETTE
+    from barcharts import create_model_performance_barchart, METRIC_DISPLAY_NAMES, LANGUAGE_ORDER, LANGUAGE_PALETTE
 
 add_project_paths()
 
@@ -46,6 +46,8 @@ def generate_model_performance_barcharts(
     output_dir: str,
     output_filename_prefix: str = "",
     model_sort_order: Optional[List[str]] = None,
+    
+    
     # language_order and palette are taken from barcharts.py defaults for now
     # but could be passed if customization is needed at this level.
     # languages_to_plot: Optional[List[str]] = None, # If specific languages are needed
@@ -177,7 +179,7 @@ def generate_model_performance_barcharts(
             algorithm_display_order=final_algorithm_display_order,
             language_order=current_lang_order, # Use filtered and ordered list
             language_palette=LANGUAGE_PALETTE, # From barcharts.py
-            figsize_per_facet=figsize_per_facet
+            figsize=figsize_per_facet
         )
     print("\n--- Model Performance Bar Chart Generation Finished ---")
 

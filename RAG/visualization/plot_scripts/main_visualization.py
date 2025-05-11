@@ -493,7 +493,9 @@ def main():
                     output_dir=barchart_output_dir, # Use the specific subdirectory
                     output_filename_prefix=args.output_filename_prefix,
                     model_sort_order=REPORT_MODEL_SORT_ORDER
-                    # figsize_per_facet can be overridden here if needed
+                    # figsize (for the whole plot) can be passed to 
+                    # generate_model_performance_barcharts if that function is updated
+                    # to accept it and pass it along, or it can be set within that generator.
                 )
             else:
                 print("Skipping model performance bar charts as no data is available.")
