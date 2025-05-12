@@ -422,12 +422,13 @@ def main():
             pass
 
         elif plot_type == "algo_vs_model_success":
-            generate_algo_vs_model_dataset_success_heatmap(
-                df_data=df_data,  # Pass the full dataframe
-                output_dir=args.output_dir,
-                output_filename_prefix=args.output_filename_prefix,
-                model_sort_order=REPORT_MODEL_SORT_ORDER,  # Pass the sort order
-            )
+            pass
+            # generate_algo_vs_model_dataset_success_heatmap(
+            #     df_data=df_data,  # Pass the full dataframe
+            #     output_dir=args.output_dir,
+            #     output_filename_prefix=args.output_filename_prefix,
+            #     model_sort_order=REPORT_MODEL_SORT_ORDER,  # Pass the sort order
+            # )
 
         elif plot_type == "multilang_f1_report":  # Add elif for the new plot
             generate_multilang_f1_score_report_heatmap(

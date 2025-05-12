@@ -40,7 +40,35 @@ FULL_MANUAL_NOISE_LEVEL = 59000 # zeroshot at this noise level
 # The generator will try to match these from RAG_ALGORITHMS_TO_PLOT values and FULL_MANUAL_ALIAS
 DEFAULT_ALGORITHM_DISPLAY_ORDER = ["Hybrid", "Embedding", "Keyword", FULL_MANUAL_ALIAS]
 
+# Specific model name mappings for beautification
+MODEL_NAME_MAPPINGS = {
+    "gemini-2.5-flash-preview-04-17": "gemini-2.5-flash",
+    "phi3_14B_q4_medium-128k": "phi3 14B",
+    # Add other specific mappings here if needed in the future
+}
 
+def clean_model_name(model_name: str) -> str:
+    """
+    Applies specific cleaning rules to a model name:
+    1. Applies specific mappings first.
+    2. If no specific mapping, removes '-128k' suffix.
+    3. Replaces underscores '_' with spaces ' '.
+    """
+    # 1. Apply specific mapping
+    cleaned_name = MODEL_NAME_MAPPINGS.get(model_name, model_name)
+
+    # 2. If no specific mapping applied, apply general cleaning rules
+    # Check if the specific mapping *changed* the name. If not, apply general rules.
+    if cleaned_name == model_name: # This condition ensures general rules don't override specific maps
+        # Remove '-128k' suffix
+        if cleaned_name.endswith("-128k"):
+            cleaned_name = cleaned_name.removesuffix("-128k")
+        # Replace underscores with spaces
+        cleaned_name = cleaned_name.replace("_", " ")
+
+    return cleaned_name
+
+# ... rest of generate_model_performance_barcharts function ...
 def generate_model_performance_barcharts(
     df_data: pd.DataFrame,
     output_dir: str,
@@ -74,6 +102,8 @@ def generate_model_performance_barcharts(
         return
 
     df_plot_base = df_data.copy()
+    df_plot_base['question_model'] = df_plot_base['question_model'].apply(clean_model_name)
+    print("Applied model name cleaning to DataFrame.")
 
     # 1. Prepare "Full Manual" data
     df_full_manual = df_plot_base[
@@ -134,8 +164,19 @@ def generate_model_performance_barcharts(
     if df_combined.empty:
         print("Combined data is empty. Skipping bar chart generation.")
         return
-    
-    print(f"Models to plot: {model_sort_order if model_sort_order else 'Default (alphabetical)'}")
+
+    # --- Apply model name cleaning to model_sort_order list ---
+    cleaned_model_sort_order = None
+    if model_sort_order is not None:
+         cleaned_model_sort_order = [clean_model_name(model) for model in model_sort_order]
+         # Filter out any models from the sort order that are not present in the *cleaned* data
+         models_in_cleaned_data = df_combined['question_model'].unique().tolist()
+         cleaned_model_sort_order = [model for model in cleaned_model_sort_order if model in models_in_cleaned_data]
+         print(f"Applied model name cleaning to model_sort_order.")
+    # --- End model name cleaning for sort order ---
+
+    # print(f"Models to plot: {model_sort_order if model_sort_order else 'Default (alphabetical)'}") # Original print
+    print(f"Models to plot: {cleaned_model_sort_order if cleaned_model_sort_order is not None else 'Default (alphabetical)'}") # Updated print
     print(f"Algorithm facets to plot (in order): {final_algorithm_display_order}")
     print(f"Languages to plot (hue order): {LANGUAGE_ORDER}")
 
@@ -173,7 +214,7 @@ def generate_model_performance_barcharts(
             data=plot_data_for_metric,
             output_path=output_filepath,
             metric_name=metric_name,
-            model_sort_order=model_sort_order,
+            model_sort_order=cleaned_model_sort_order, # Use the cleaned sort order
             algorithm_display_order=final_algorithm_display_order,
             language_order=current_lang_order, # Use filtered and ordered list
             language_palette=LANGUAGE_PALETTE, # From barcharts.py
@@ -239,9 +280,16 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Warning: Error loading config file '{args.config_path}': {e}.")
 
+    # Before using the sort order, clean it if it was loaded
+    # The cleaning logic will happen inside generate_model_performance_barcharts now.
+    # If no sort order was loaded, determine a default *before* calling the generator
+    # so the cleaning logic inside can apply to it.
     if not standalone_model_sort_order and 'question_model' in df_all_data.columns:
+        # Get unique models *before* cleaning to create initial alphabetical order
+        # The cleaning inside the generator will then apply to this list.
         standalone_model_sort_order = sorted(df_all_data['question_model'].unique().tolist())
-        print(f"Using fallback alphabetical model sort order: {standalone_model_sort_order[:5]}...")
+        # print(f"Using fallback alphabetical model sort order: {[clean_model_name(m) for m in standalone_model_sort_order][:5]}...") # This print is now done inside the function
+        print(f"Using fallback alphabetical model sort order (before cleaning).")
 
 
     # 3. Generate plots
