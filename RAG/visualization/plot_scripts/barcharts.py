@@ -358,16 +358,17 @@ def create_model_performance_barchart(
                  handles.append(plt.matplotlib.patches.Patch(color=current_palette[lang], label=lang))
                  labels.append(lang)
 
-        if handles and labels:
-            # Position legend carefully, e.g., to the right of the plot area
-            g.fig.legend(
-                handles, labels,
-                title="Language",
-                loc='center right', # Position outside plot
-                bbox_to_anchor=(1.02, 0.5), # Adjust x to move further right, y for vertical center
-                fontsize=axis_label_fontsize-1,
-                title_fontsize=axis_label_fontsize
-            )
+        # uncomment this if you want to add a legend
+        # if handles and labels:
+        #     # Position legend carefully, e.g., to the right of the plot area
+        #     g.fig.legend(
+        #         handles, labels,
+        #         title="Language",
+        #         loc='center right', # Position outside plot
+        #         bbox_to_anchor=(1.02, 0.5), # Adjust x to move further right, y for vertical center
+        #         fontsize=axis_label_fontsize-1,
+        #         title_fontsize=axis_label_fontsize
+        #     )
 
 
         # Adjust layout to make space for suptitle, legend, and rotated x-labels
