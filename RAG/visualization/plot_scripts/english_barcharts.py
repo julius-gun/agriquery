@@ -19,7 +19,7 @@ RETRIEVAL_METHOD_PALETTE = {
     "Hybrid": "#1f77b4",
     "Embedding": "#ff7f0e",
     "Keyword": "#2ca02c",
-    "Full Manual 59k tokens": "#d62728",
+    "Full Manual": "#d62728",
 }
 
 def create_english_retrieval_barchart(
@@ -30,11 +30,10 @@ def create_english_retrieval_barchart(
     retrieval_method_order: Optional[List[str]] = None,
     figsize: Tuple[float, float] = (16, 8),
     bar_label_fontsize: int = 7,
-    text_inside_bar_fontsize: int = 12,
+    text_inside_bar_fontsize: int = 14,
     title_fontsize: int = 18,
     axis_label_fontsize: int = 14,
-    tick_label_fontsize: int = 12
-) -> None:
+    tick_label_fontsize: int = 13) -> None:
     """
     Creates a grouped bar chart for English results for a specific metric,
     showing models on the x-axis and retrieval methods as grouped bars.
@@ -134,7 +133,7 @@ def create_english_retrieval_barchart(
                     width = patch.get_width()
                     x_center = patch.get_x() + width / 2.0
 
-                    if pd.notna(height) and height > 0: 
+                    if pd.notna(height): 
                         ax.text(
                             x_center,
                             height + label_offset,
@@ -145,7 +144,7 @@ def create_english_retrieval_barchart(
                             color="black"
                         )
 
-                        if height > 0.01: 
+                        if height > 0.25: 
                             ax.text(
                                 x_center,
                                 height / 2.0, 

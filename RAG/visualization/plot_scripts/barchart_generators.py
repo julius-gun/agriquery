@@ -33,7 +33,7 @@ RAG_ALGORITHMS_TO_PLOT = {
 }
 
 # Configuration for the "Full Manual" data point
-FULL_MANUAL_ALIAS = "Full Manual 59k tokens"
+FULL_MANUAL_ALIAS = "Full Manual"
 FULL_MANUAL_NOISE_LEVEL = 59000 # zeroshot at this noise level
 
 # Order in which algorithm facets should appear

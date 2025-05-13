@@ -33,7 +33,7 @@ RETRIEVAL_METHODS_TO_PLOT = {
 }
 
 # Configuration for the "Full Manual" data point (zeroshot at specific noise level)
-FULL_MANUAL_ALIAS = "Full Manual 59k tokens"
+FULL_MANUAL_ALIAS = "Full Manual"
 FULL_MANUAL_NOISE_LEVEL = 59000 # Corresponds to zeroshot at this noise level
 
 # Desired order of retrieval methods on the plot
