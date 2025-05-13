@@ -3,6 +3,7 @@
 # python visualization\plot_scripts\main_visualization.py --plot-type=heatmap
 # python visualization\plot_scripts\main_visualization.py --plot-type=all
 # python visualization\plot_scripts\main_visualization.py --plot-type=model_performance_barcharts
+# python visualization\plot_scripts\main_visualization.py --plot-type=english_retrieval_barcharts
 
 import os
 import sys
@@ -68,6 +69,9 @@ try:
     )
     from visualization.plot_scripts.barchart_generators import (
         generate_model_performance_barcharts,
+    )
+    from visualization.plot_scripts.english_barchart_generator import (
+        generate_english_retrieval_comparison_barcharts,
     )
 
     # --- MODIFICATION END ---
@@ -158,6 +162,7 @@ def main():
             "multilang_recall_report",
             "multilang_specificity_report",
             "model_performance_barcharts",
+            "english_retrieval_barcharts", # New plot type
             "all",
         ],
         help="Type of plot(s) to generate.",
@@ -297,6 +302,7 @@ def main():
             "multilang_recall_report",
             "multilang_specificity_report",
             "model_performance_barcharts",
+            "english_retrieval_barcharts", # Added to 'all'
         ]
     elif args.plot_type in [  # Add new types to this list
         "boxplot",
@@ -311,6 +317,7 @@ def main():
         "multilang_recall_report",
         "multilang_specificity_report",
         "model_performance_barcharts",
+        "english_retrieval_barcharts", # Added to individual choices
     ]:
         plot_types_to_generate = [args.plot_type]
     else:
@@ -498,6 +505,23 @@ def main():
                 )
             else:
                 print("Skipping model performance bar charts as no data is available.")
+        
+        elif plot_type == "english_retrieval_barcharts": # New elif block
+            if df_data is not None and not df_data.empty:
+                # Define the output subdirectory for these specific charts
+                english_barchart_output_dir = os.path.join(args.output_dir, "english_retrieval_barcharts")
+                os.makedirs(english_barchart_output_dir, exist_ok=True)
+                
+                generate_english_retrieval_comparison_barcharts(
+                    df_data=df_data,
+                    output_dir=english_barchart_output_dir, # Use the specific subdirectory
+                    output_filename_prefix=args.output_filename_prefix,
+                    model_sort_order=REPORT_MODEL_SORT_ORDER
+                    # figsize can be passed from args if added to main parser, or uses default from generator
+                )
+            else:
+                print("Skipping English retrieval comparison bar charts as no data is available.")
+
 
     print("\n--- Visualization Generation Finished ---")
 
