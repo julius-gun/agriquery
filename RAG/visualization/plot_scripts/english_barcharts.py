@@ -30,10 +30,10 @@ def create_english_retrieval_barchart(
     retrieval_method_order: Optional[List[str]] = None,
     figsize: Tuple[float, float] = (16, 8),
     bar_label_fontsize: int = 7,
-    text_inside_bar_fontsize: int = 7,
+    text_inside_bar_fontsize: int = 12,
     title_fontsize: int = 18,
     axis_label_fontsize: int = 14,
-    tick_label_fontsize: int = 10
+    tick_label_fontsize: int = 12
 ) -> None:
     """
     Creates a grouped bar chart for English results for a specific metric,
