@@ -31,7 +31,7 @@ REPORT_TARGET_OVERLAP = 100
 REPORT_TARGET_NOISE_LEVELS = [1000, 10000, 30000, 59000]
 REPORT_RAG_ALGORITHMS_ORDERED = ["hybrid", "embedding", "keyword"]
 REPORT_ZEROSHOT_IDENTIFIERS_ORDERED = [
-    f"zeroshot_noise_{n}" for n in sorted(REPORT_TARGET_NOISE_LEVELS)
+    f"in-Context_{n}" for n in sorted(REPORT_TARGET_NOISE_LEVELS)
 ]
 REPORT_ALGORITHM_SORT_ORDER = REPORT_RAG_ALGORITHMS_ORDERED + REPORT_ZEROSHOT_IDENTIFIERS_ORDERED
 REPORT_LANGUAGE_SORT_ORDER = REPORT_LANGUAGES
@@ -552,9 +552,9 @@ def generate_algo_vs_model_dataset_success_heatmap(
     target_overlap = 100
     target_noise_levels = [1000, 10000, 30000, 59000]
     rag_algorithms_ordered = ["hybrid", "embedding", "keyword"]  # Desired RAG order
-    # Create ordered list for zeroshot identifiers
+    # Create ordered list for zeroshot identifiers - now called "in-Context"
     zeroshot_identifiers_ordered = [
-        f"zeroshot_noise_{n}" for n in sorted(target_noise_levels)
+        f"in-Context_{n}" for n in sorted(target_noise_levels)
     ]
     # Combine into the final algorithm order for sorting
     algorithm_sort_order = rag_algorithms_ordered + zeroshot_identifiers_ordered
@@ -670,7 +670,7 @@ def generate_algo_vs_model_dataset_success_heatmap(
             )
             # Base identifier for sorting (e.g., 'zeroshot_noise_1000')
             df_zeroshot_filtered["_sort_key_algo"] = (
-                "zeroshot_noise_" + df_zeroshot_filtered["noise_level_int"].astype(str)
+                "in-Context_" + df_zeroshot_filtered["noise_level_int"].astype(str)
             )
             # Combined index for display
             df_zeroshot_filtered["plot_index"] = (
@@ -878,7 +878,7 @@ def _generate_multilang_algorithmic_report_heatmap(
 
     if not df_zeroshot_filtered.empty:
         df_zeroshot_filtered["noise_level_int"] = df_zeroshot_filtered["noise_level"].fillna(0).astype(int)
-        df_zeroshot_filtered["_sort_key_algo"] = "zeroshot_noise_" + df_zeroshot_filtered["noise_level_int"].astype(str)
+        df_zeroshot_filtered["_sort_key_algo"] = "in-Context_" + df_zeroshot_filtered["noise_level_int"].astype(str)
         df_zeroshot_filtered["plot_index"] = df_zeroshot_filtered["language"] + "_" + df_zeroshot_filtered["_sort_key_algo"]
         df_zeroshot_filtered["_sort_key_lang"] = df_zeroshot_filtered["language"]
         df_zeroshot_filtered = df_zeroshot_filtered.drop(columns=["noise_level_int"])

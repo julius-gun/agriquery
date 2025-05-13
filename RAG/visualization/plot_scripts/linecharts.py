@@ -118,10 +118,10 @@ def create_zeroshot_noise_level_linechart(
             legend=False,  # Explicitly disable legend in lineplot call
         )
 
-        ax.set_xlabel("Noise Level (Number of Tokens)", fontsize=12)
+        ax.set_xlabel("Context (Number of Tokens)", fontsize=12)
         ax.set_ylabel(metric_display_name, fontsize=12)
         ax.set_title(
-            f"Zero-shot Performance: {metric_display_name} vs. Noise Level\nLanguage: {language.title()}",
+            f"In-Context Performance: {metric_display_name} vs. Number of Tokens\nLanguage: {language.title()}",
             fontsize=14,
             pad=20,
         )
