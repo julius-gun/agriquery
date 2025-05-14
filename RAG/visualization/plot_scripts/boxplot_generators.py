@@ -130,9 +130,9 @@ def generate_dataset_success_boxplot(
              print(f"  Error: Data for algorithm '{algo}' is missing required columns: {required_cols}. Skipping plot.")
              continue
 
-        print(f"  Data points for this algorithm: {len(df_algo_specific)}")
-        print(f"  Models found: {df_algo_specific['question_model'].unique()}")
-        print(f"  Dataset types found: {df_algo_specific['dataset_type'].unique()}")
+        # print(f"  Data points for this algorithm: {len(df_algo_specific)}")
+        # print(f"  Models found: {df_algo_specific['question_model'].unique()}")
+        # print(f"  Dataset types found: {df_algo_specific['dataset_type'].unique()}")
 
         # Define output path
         sanitized_algo = sanitize_filename(algo) # Use imported/passed function
@@ -257,7 +257,7 @@ if __name__ == "__main__":
             loaded_languages = [lc.get("language") for lc in language_configs if lc.get("language")]
             if loaded_languages:
                 all_languages_list = loaded_languages
-                print(f"Loaded languages for F1 plot hue order: {all_languages_list}")
+                # print(f"Loaded languages for F1 plot hue order: {all_languages_list}")
             else:
                 print(f"Warning: No languages found in {args.config_path}. F1 plot hue order may vary.")
         except FileNotFoundError:

@@ -87,8 +87,8 @@ def create_f1_heatmap(
                 [k for k in current_params.keys() if k in data.columns]
             )
         cols_to_print = list(set(cols_to_print))  # Ensure unique columns
-        print(data[cols_to_print].to_string())
-        print("-" * 30)
+        # print(data[cols_to_print].to_string())
+        # print("-" * 30)
 
     # --- Pivot Data ---
     # Data is assumed to be pre-filtered, so we pivot directly

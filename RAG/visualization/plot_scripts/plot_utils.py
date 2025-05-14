@@ -167,7 +167,7 @@ def plot_question_distribution(config_path: str, output_dir: str):
     # Improve clarity of percentage labels
     plt.setp(autotexts, size=10, weight="bold", color="white") # Make percentages bold and white
 
-    ax.set_title('Distribution of Questions Across Datasets', fontsize=14, weight='bold')
+    # ax.set_title('Distribution of Questions Across Datasets', fontsize=14, weight='bold')
 
     # 5. Save Plot
     # Ensure output dir is absolute from project root if needed, or relative as before

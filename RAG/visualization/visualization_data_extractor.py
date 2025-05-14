@@ -145,7 +145,7 @@ def extract_detailed_visualization_data(results_dir: str) -> Optional[pd.DataFra
             zeroshot_match = zeroshot_pattern.match(filename)
             if zeroshot_match:
                 file_type = "ZeroShot"
-                print(f"\nProcessing ZeroShot file: {filename}")
+                # print(f"\nProcessing ZeroShot file: {filename}")
                 try:
                     params = {
                         'retrieval_algorithm': 'zeroshot', # Hardcoded for this pattern
@@ -161,7 +161,7 @@ def extract_detailed_visualization_data(results_dir: str) -> Optional[pd.DataFra
                         'filename': filename,
                         'file_type': file_type # Add file type identifier
                     }
-                    print(f"  Extracted ZeroShot Params: { {k: v for k, v in params.items() if k not in ['filename', 'file_type']} }")
+                    # print(f"  Extracted ZeroShot Params: { {k: v for k, v in params.items() if k not in ['filename', 'file_type']} }")
                 except ValueError:
                     print(f"  Warning: Error parsing numeric values from ZeroShot filename {filename}. Skipping.")
                     skipped_files.append(filename + " (ZeroShot value error)")
@@ -197,7 +197,7 @@ def extract_detailed_visualization_data(results_dir: str) -> Optional[pd.DataFra
                             'dataset_type': None # Not applicable for these overall metrics
                         })
                         extracted_data.append(metric_record)
-                        print(f"  Extracted {metric_key}: {metric_value:.4f}")
+                        # print(f"  Extracted {metric_key}: {metric_value:.4f}")
                     elif overall_metrics: # Only warn if overall_metrics existed but the specific key was missing
                         print(f"  Warning: '{metric_key}' not found or is null in overall_metrics.")
 

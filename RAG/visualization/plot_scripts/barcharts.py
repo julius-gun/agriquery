@@ -179,7 +179,7 @@ def create_model_performance_barchart(
             # Get the algorithm display name for the current facet
             facet_algorithm_display = ax.get_title().split('=')[-1].strip()
             # Set title using the extracted value
-            ax.set_title(facet_algorithm_display, fontsize=axis_label_fontsize + 1, weight='bold')
+            # ax.set_title(facet_algorithm_display, fontsize=axis_label_fontsize + 1, weight='bold')
 
             # Use a small percentage of the y-axis range as offset for labels above the bar
             # This makes the offset adaptive if y-axis limits change (though sharey=True here)
@@ -342,11 +342,11 @@ def create_model_performance_barchart(
 
 
         # Add main title
-        g.fig.suptitle(
-            f"Model Performance: {metric_display_name} by Language and Retrieval Method",
-            fontsize=title_fontsize,
-            y=1.03
-        )
+        # g.fig.suptitle(
+        #     f"Model Performance: {metric_display_name} by Language and Retrieval Method",
+        #     fontsize=title_fontsize,
+        #     y=1.03
+        # )
 
         # Handle legend creation based on current_lang_order and current_palette
         handles = []

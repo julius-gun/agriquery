@@ -27,7 +27,7 @@ def create_zeroshot_noise_level_linechart(
     figsize: Tuple[int, int] = (12, 7),
     palette: Optional[Dict[str, str]] = None,
     markers: bool = True,
-    label_fontsize: int = 9,
+    label_fontsize: int = 10,
     label_x_offset_factor: float = 0.015,  # Percentage of x-axis range for label offset
     label_min_y_sep_factor: float = 0.04,  # Percentage of y-axis range for min vertical separation
 ) -> None:
@@ -120,11 +120,11 @@ def create_zeroshot_noise_level_linechart(
 
         ax.set_xlabel("Context (Number of Tokens)", fontsize=12)
         ax.set_ylabel(metric_display_name, fontsize=12)
-        ax.set_title(
-            f"In-Context Performance: {metric_display_name} vs. Number of Tokens\nLanguage: {language.title()}",
-            fontsize=14,
-            pad=20,
-        )
+        # ax.set_title(
+        #     f"In-Context Performance: {metric_display_name} vs. Number of Tokens\nLanguage: {language.title()}",
+        #     fontsize=14,
+        #     pad=20,
+        # )
 
         # # Improve legend
         # handles, labels = ax.get_legend_handles_labels()

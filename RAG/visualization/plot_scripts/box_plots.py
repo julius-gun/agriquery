@@ -322,7 +322,7 @@ def create_dataset_success_boxplot(
         current_legend = ax.get_legend()
         if current_legend:
             legend_title = hue_column.replace("_", " ").title()
-            current_legend.set_title(legend_title)
+            # current_legend.set_title(legend_title)
             # Optional: Move legend outside if it overlaps
             # plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', title=legend_title)
     except AttributeError:

@@ -193,11 +193,11 @@ def create_english_retrieval_barchart(
     
     ax.set_xlabel("Model", fontsize=axis_label_fontsize)
     ax.set_ylabel(metric_display_name, fontsize=axis_label_fontsize)
-    ax.set_title(
-        f"English Language: {metric_display_name} Comparison by Retrieval Method",
-        fontsize=title_fontsize,
-        pad=20
-    )
+    # ax.set_title(
+    #     f"English Language: {metric_display_name} Comparison by Retrieval Method",
+    #     fontsize=title_fontsize,
+    #     pad=20
+    # )
 
     ax.tick_params(axis='x', labelsize=tick_label_fontsize) # Set labelsize for x-axis ticks
     # Correctly set rotation and horizontal alignment for x-tick labels
