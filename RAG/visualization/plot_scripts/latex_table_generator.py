@@ -51,7 +51,8 @@ def generate_english_hybrid_latex_table(
     label: str = "tab:english_hybrid_performance"
 ):
     """
-    Generates a LaTeX table for English hybrid results.
+    Generates a LaTeX table for English hybrid results, with bolded max values
+    and formatting suitable for two-column layouts.
 
     Args:
         df_data (pd.DataFrame): The input DataFrame from extract_detailed_visualization_data.
@@ -104,91 +105,133 @@ def generate_english_hybrid_latex_table(
             print(duplicates[['question_model', 'metric_type', 'metric_value', 'filename']])
         return
 
-    # 3. Reorder rows (models) based on model_sort_order
-    # And select only models present in the data to avoid KeyError
-    ordered_models = [model for model in model_sort_order if model in pivot_df.index]
-    missing_models = [model for model in model_sort_order if model not in pivot_df.index]
-    if missing_models:
-        print(f"Warning: The following models from sort order were not found in the data: {missing_models}")
+    # 3. Reorder rows (models) to include all from sort order, filling missing with NaN
+    #    And select/reorder columns (metrics)
     
-    pivot_df = pivot_df.reindex(ordered_models)
+    # Ensure pivot_df is reindexed with the full model_sort_order to include all models,
+    # filling those not in data with NaNs. This makes sure all desired rows appear.
+    pivot_df = pivot_df.reindex(model_sort_order) # Use the full sort order
+    
+    # Filter out models from pivot_df that were not in the original data AND not in model_sort_order
+    # (though reindex with model_sort_order should handle this correctly by keeping only those in model_sort_order)
+    # Keep only models that are in model_sort_order. If a model was in data but not sort_order, it's dropped.
+    # If a model was in sort_order but not data, it's kept (with NaNs).
+    existing_models_in_sort_order = [model for model in model_sort_order if model in pivot_df.index]
+    pivot_df = pivot_df.loc[existing_models_in_sort_order]
 
-    # 4. Select and reorder columns (metrics) based on metrics_to_include
-    # Ensure only metrics present in the pivot_df are selected
+
     final_metrics_columns = [metric for metric in metrics_to_include if metric in pivot_df.columns]
     missing_metrics_cols = [metric for metric in metrics_to_include if metric not in pivot_df.columns]
     if missing_metrics_cols:
-        print(f"Warning: The following metrics were not found in the pivoted data: {missing_metrics_cols}")
-
+        print(f"Warning: Metrics not found in pivoted data: {missing_metrics_cols}")
+    
+    # Ensure pivot_df only has the desired metric columns in the specified order
     pivot_df = pivot_df[final_metrics_columns]
 
-    # Clean up model names for display (optional, e.g., replace underscores)
-    # pivot_df.index = pivot_df.index.str.replace('_', ' ').str.title()
-    
-    # Clean up column names for display (e.g., F1 Score instead of f1_score)
-    column_rename_map = {
-        'f1_score': 'F1 Score',
-        'accuracy': 'Accuracy',
-        'precision': 'Precision',
-        'recall': 'Recall',
-        'specificity': 'Specificity'
+
+    # Create a new DataFrame for LaTeX formatting. At this point, its index and columns match pivot_df.
+    df_for_latex = pivot_df.copy()
+
+    # 4. Apply Bold Formatting to Max Values and String Format Numeric Cells
+    # This manipulation happens on df_for_latex, using pivot_df for numeric checks and max_val.
+    # df_for_latex.index is IDENTICAL to pivot_df.index at this stage.
+    for metric_col_name in final_metrics_columns: # These are original names like 'accuracy'
+        if metric_col_name in df_for_latex.columns and pd.api.types.is_numeric_dtype(pivot_df[metric_col_name]):
+            # Get max value from the original numeric pivot_df for accuracy
+            max_val = pivot_df[metric_col_name].max()
+            
+            # Create the formatted series using pivot_df's data
+            formatted_series = pivot_df[metric_col_name].apply(
+                lambda x: f"\\textbf{{{x:.3f}}}" if pd.notna(x) and x == max_val 
+                          else (f"{x:.3f}" if pd.notna(x) else "-")
+            )
+            # Assign this formatted series to df_for_latex. Indices match, so direct assignment works.
+            df_for_latex[metric_col_name] = formatted_series
+        elif metric_col_name in df_for_latex.columns: # Non-numeric column in original pivot_df
+             # Convert these to string in df_for_latex, ensuring they are not NaNs from failed previous step
+             df_for_latex[metric_col_name] = df_for_latex[metric_col_name].astype(str).fillna("-")
+
+
+    # 5. Sanitize Model Names in Index of df_for_latex for LaTeX display
+    # This is done AFTER all data cell manipulations are complete.
+    df_for_latex.index = df_for_latex.index.str.replace('_', r'\_', regex=False)
+
+    # 6. Rename Columns of df_for_latex for Display
+    short_column_rename_map = {
+        'f1_score': 'F1',
+        'accuracy': 'Acc.',
+        'precision': 'Prec.',
+        'recall': 'Rec.',
+        'specificity': 'Spec.'
+        # Add other mappings if needed, ensure all in final_metrics_columns are covered
     }
-    pivot_df.rename(columns=lambda c: column_rename_map.get(c, c.replace('_', ' ').title()), inplace=True)
+    # Create a new list of renamed column headers for to_latex,
+    # as df_for_latex.columns are still original, and we apply renaming via to_latex's header argument
+    # Or, rename df_for_latex.columns directly:
+    df_for_latex.rename(columns=lambda c: short_column_rename_map.get(c, c.replace('_', ' ').title()), inplace=True)
 
 
-    # 5. Generate LaTeX string
-    # Using a fixed number of columns (len(metrics_to_include) + 1 for model name)
-    # 'l' for model name (left-aligned), 'c' for metrics (center-aligned)
-    num_metric_cols = len(final_metrics_columns)
-    col_format = "l" + "c" * num_metric_cols
+    # 7. Generate LaTeX string
+    num_metric_cols_final = len(df_for_latex.columns) # Number of columns after processing
+    col_format = "l" + "c" * num_metric_cols_final
 
     try:
-        latex_string = pivot_df.to_latex(
+        latex_string = df_for_latex.to_latex(
             column_format=col_format,
-            float_format="%.3f",  # Format numbers to 3 decimal places
+            # float_format="%.3f", # Not needed, cells are already strings
             caption=caption,
             label=label,
-            header=True, # Keep header (metric names)
-            index=True, # Keep index (model names)
-            escape=False, # Assuming model names and headers don't need LaTeX escaping
-                          # Set to True if they contain special LaTeX characters like _
-            position='!htbp' # Suggested LaTeX float position
+            header=True,
+            index=True,
+            escape=False, # CRITICAL: We have manually inserted LaTeX commands
+            position='!htbp',
+            na_rep="-" # Explicitly set how NaNs (if any somehow remain) are represented
         )
         
-        # Add \usepackage{booktabs} if using it (to_latex does by default)
-        # and adjust table environment for better spacing if needed
-        # For example, ensure we have a complete document structure or just the table part.
-        # Pandas to_latex by default includes \begin{table}...\end{table}
-        # and often \usepackage{booktabs} comments.
+        # 8. Modify LaTeX String for Width: Inject \footnotesize
+        # Pandas to_latex adds \centering by default if caption and label are used.
+        # We want to insert \footnotesize after \centering.
+        lines = latex_string.splitlines()
+        inserted_footnotesize = False
+        # Find centering and insert after, or before tabular if no centering
+        centering_idx = -1
+        tabular_idx = -1
 
-        # A common practice is to wrap with a simple document for testing.
-        # For integration, you might just want the table content itself.
-        # The output of to_latex() is usually self-contained for a table.
-
-        # Prepend \usepackage{booktabs} if not already included by user's main .tex file
-        # to_latex() uses \toprule, \midrule, \bottomrule which require booktabs.
-        # A common approach is to assume the user's document has it.
-        # For robustness, we could add a comment suggesting it.
+        for i, line in enumerate(lines):
+            if r'\centering' in line:
+                centering_idx = i
+                break # Prioritize inserting after centering
         
-        # latex_output = "\\documentclass{article}\n"
-        # latex_output += "\\usepackage{booktabs} % Required for to_latex table rules\n"
-        # latex_output += "\\usepackage{caption} % For better caption control\n"
-        # latex_output += "\\begin{document}\n"
-        # latex_output += latex_string
-        # latex_output += "\\end{document}\n"
-        # For now, just save the direct output of to_latex()
+        if centering_idx != -1:
+            lines.insert(centering_idx + 1, r'  \footnotesize')
+            inserted_footnotesize = True
+        else: # Fallback: if no \centering, insert before \begin{tabular}
+            for i, line in enumerate(lines):
+                if r'\begin{tabular}' in line:
+                    tabular_idx = i
+                    break
+            if tabular_idx != -1:
+                lines.insert(tabular_idx, r'  \footnotesize') # Insert before \begin{tabular}
+                inserted_footnotesize = True
+        
+        if not inserted_footnotesize:
+            print("Warning: Could not automatically inject \\footnotesize. Table might be too wide.")
+
+        latex_string = '\n'.join(lines)
 
         output_path = os.path.join(output_dir, filename)
         os.makedirs(output_dir, exist_ok=True)
         with open(output_path, "w", encoding='utf-8') as f:
             f.write(latex_string)
         print(f"Successfully generated LaTeX table: {output_path}")
-        print("Remember to include '\\usepackage{booktabs}' in your main LaTeX document for optimal table rendering.")
+        print("Remember to include '\\usepackage{booktabs}' in your main LaTeX document.")
+        if inserted_footnotesize:
+            print("Added '\\footnotesize' for potentially better fit in two-column layouts.")
 
     except Exception as e:
         print(f"Error generating LaTeX string or writing file: {e}")
-        print("Pivoted DataFrame that was to be converted:")
-        print(pivot_df.head())
+        print("DataFrame that was to be converted to LaTeX (df_for_latex):")
+        print(df_for_latex.head())
 
 
 def main():
