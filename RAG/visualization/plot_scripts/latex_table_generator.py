@@ -4,6 +4,7 @@ import sys
 import argparse
 import pandas as pd
 import json # Added for loading config
+import re # Added for model name abbreviation
 
 # --- Adjust Python Path (using the helper from plot_utils) ---
 try:
@@ -42,6 +43,67 @@ except ImportError as e:
     print(f"Original Error: {e}")
     sys.exit(1)
 
+def _abbreviate_model_name(model_name: str) -> str:
+    """
+    Abbreviates model names for display in LaTeX tables.
+    e.g., 'gemini-2.5-flash-preview-04-17' -> 'gemini-2.5-flash'
+          'phi3_14B_q4_medium-128k' -> 'phi3_14B'
+          'deepseek-r1_8B-128k' -> 'deepseek-r1_8B'
+    """
+    # Remove preview dates like -preview-MM-DD or -preview-MM
+    name = re.sub(r'-preview-\d{2}-\d{2}$', '', model_name)
+    name = re.sub(r'-preview-\d{2}$', '', name) # For cases like -preview-05
+
+    # Specific handling for phi3 models to remove quantization and context window
+    if name.startswith("phi3"):
+        # Retain the core part like phi3_14B, phi3_8B
+        match = re.match(r'(phi3(?:_mini|_medium|_small)?(?:_\d+B)?)', name)
+        if match:
+            name = match.group(1)
+            # Further cleanup for phi3: if it was 'phi3_14B_q4_medium-128k' -> 'phi3_14B_q4_medium'
+            # then simplify to 'phi3_14B'
+            # If it was 'phi3_mini-128k' -> 'phi3_mini'
+            name = name.replace("_q4_medium", "").replace("_q4_mini", "").replace("_medium","").replace("_mini","")
+
+
+    # General rule: remove context window suffixes like -128k, -8k, -4k, -16k
+    # This regex tries to be specific to avoid removing parts of model names like 'qwen2.5_7B'
+    name = re.sub(r'-\d+k$', '', name)
+
+    # General rule: remove common ollama tag parts like ':latest', ':8b', etc.
+    # This is often part of the 'name' field in config but might appear in question_model if not handled upstream
+    name = re.sub(r':\w+$', '', name)
+    name = re.sub(r':\d+(\.\d+)?[bB]$', '', name) # e.g. :8b, :1.5b
+
+
+    # Further specific simplifications based on provided examples
+    if "gemini-2.5-flash" in name: # Catches gemini-2.5-flash-preview...
+        name = "Gemini 2.5 Flash"
+    if "qwen2.5_7B" in name: # Catches qwen2.5_7B-128k
+        name = "Qwen 2.5 7B"
+    if "qwen3_8B" in name: # Catches qwen3_8B-128k
+        name = "Qwen3 8B"
+    if "phi3_14B" in name and ("medium" in model_name or "128k" in model_name or "4k" in model_name): # Catches phi3_14B_q4_medium-128k or phi3_14B_medium-4k
+        name = "Phi3 14B"
+    if "llama3.1_8B" in name: # Catches llama3.1_8B-128k
+        name = "Llama3.1 8B"
+    if "deepseek-r1_8B" in name: # Catches deepseek-r1_8B-128k
+        name = "Deepseek-R1 8B"
+    if "llama3.2_3B" in name: # Catches llama3.2_3B-128k
+        name = "Llama3.2 3B"
+    if "deepseek-r1_1.5B" in name: # Catches deepseek-r1_1.5B-128k
+        name = "Deepseek-R1 1.5B"
+    if "llama3.2_1B" in name: # Catches llama3.2_1B-128k
+        name = "Llama3.2 1B"
+
+    # Replace underscores with backslash-underscore for LaTeX compatibility AFTER abbreviation
+    # This step is moved from later in the _generate_single_latex_table_string function
+    # as it should apply to the final abbreviated name.
+    # However, since we are doing a .str.replace later on the index, this might be redundant here
+    # or can be applied to the index directly. For now, let's assume the index replacement is sufficient.
+
+    return name
+
 def _generate_single_latex_table_string(
     df_data: pd.DataFrame,
     language: str,
@@ -57,6 +119,7 @@ def _generate_single_latex_table_string(
         language (str): The language to filter for (e.g., 'english').
         retrieval_algorithm (str): The retrieval algorithm to filter for (e.g., 'hybrid').
         model_sort_order (list): List of model names to define row order.
+                                 These names should be the *original, unabbreviated* names.
         metrics_to_include (list): List of metric types for columns.
 
     Returns:
@@ -84,10 +147,30 @@ def _generate_single_latex_table_string(
         print(f"Info: No data found for {language.title()} {retrieval_algorithm.title()} with the specified metrics. Skipping table generation for this combination.")
         return None
 
-    # 2. Pivot the table
+    # Abbreviate model names in the 'question_model' column
+    df_filtered['question_model'] = df_filtered['question_model'].apply(_abbreviate_model_name)
+
+    # Abbreviate model names in the sort order list
+    # Create a mapping from original to abbreviated for consistent sorting if needed,
+    # or just abbreviate the sort order directly.
+    # Let's create a new list of abbreviated sort order models.
+    # We need to preserve the order and uniqueness.
+    abbreviated_model_sort_order_map = {original_name: _abbreviate_model_name(original_name) for original_name in model_sort_order}
+    
+    # Get unique abbreviated names in the desired order
+    unique_abbreviated_model_sort_order = []
+    seen_abbreviated_names = set()
+    for original_name in model_sort_order:
+        abbreviated_name = abbreviated_model_sort_order_map[original_name]
+        if abbreviated_name not in seen_abbreviated_names:
+            unique_abbreviated_model_sort_order.append(abbreviated_name)
+            seen_abbreviated_names.add(abbreviated_name)
+
+
+    # 2. Pivot the table using the now abbreviated 'question_model' names
     try:
         pivot_df = df_filtered.pivot_table(
-            index='question_model',
+            index='question_model', # This now contains abbreviated names
             columns='metric_type',
             values='metric_value'
         )
@@ -102,12 +185,12 @@ def _generate_single_latex_table_string(
         return None
 
     # 3. Reorder rows (models) and select/reorder columns (metrics)
-    pivot_df = pivot_df.reindex(model_sort_order) 
+    pivot_df = pivot_df.reindex(unique_abbreviated_model_sort_order) 
     
     # Filter out models that are not in the reindexed pivot_df's index
-    # (i.e., models in model_sort_order but not in original data are kept as NaN rows by reindex)
+    # (i.e., models in unique_abbreviated_model_sort_order but not in original data are kept as NaN rows by reindex)
     # This step ensures we only operate on models that are supposed to be in the table.
-    existing_models_in_sort_order = [model for model in model_sort_order if model in pivot_df.index]
+    existing_models_in_sort_order = [model for model in unique_abbreviated_model_sort_order if model in pivot_df.index]
     
     if not existing_models_in_sort_order:
         print(f"Warning: No models from model_sort_order found in the pivoted data for {language.title()} {retrieval_algorithm.title()}. Skipping table.")
@@ -153,6 +236,10 @@ def _generate_single_latex_table_string(
 
     # 5. Sanitize Model Names in Index of df_for_latex for LaTeX display
     df_for_latex.index = df_for_latex.index.str.replace('_', r'\_', regex=False)
+    
+    # Crucial step: Set index name to None to prevent to_latex from printing it as a header for the index column
+    df_for_latex.index.name = None
+
 
     # 6. Rename Columns of df_for_latex for Display
     short_column_rename_map = {
@@ -168,22 +255,28 @@ def _generate_single_latex_table_string(
 
     # 7. Generate LaTeX string
     num_metric_cols_final = len(df_for_latex.columns) 
-    col_format = "l" + "c" * num_metric_cols_final # e.g. "lcc" for one model name col, two metric cols
+    col_format = "l" + "c" * num_metric_cols_final 
+
+    # Store renamed column headers for manual insertion.
+    # These are already abbreviated, e.g., 'Acc.', 'F1', due to step 6.
+    renamed_column_headers = list(df_for_latex.columns)
 
     try:
         latex_string = df_for_latex.to_latex(
             column_format=col_format,
             caption=caption,
             label=label,
-            header=True, # Keep column headers
-            index=True,  # Keep model names as index
-            escape=False, # CRITICAL: We have manually inserted LaTeX commands (e.g. \textbf, \_)
-            position='!htbp', # Suggested position for float
-            na_rep="-" # Representation for any remaining NaNs (should be handled by formatting step)
+            header=False, # Set to False: We will manually insert the desired header.
+            index=True,
+            escape=False, 
+            position='!htbp', 
+            na_rep="-" 
         )
         
-        # 8. Modify LaTeX String for Width: Inject \footnotesize
+        # 8. Modify LaTeX String
         lines = latex_string.splitlines()
+        
+        # 8a. Inject \footnotesize (existing logic, applied first)
         inserted_footnotesize = False
         centering_idx = -1
         tabular_idx = -1
@@ -205,8 +298,34 @@ def _generate_single_latex_table_string(
                 lines.insert(tabular_idx, r'  \footnotesize') 
                 inserted_footnotesize = True
         
-        if not inserted_footnotesize: # Should always find one of them if to_latex works as expected
+        if not inserted_footnotesize: 
             print(f"Warning: Could not automatically inject \\footnotesize for {language.title()} {retrieval_algorithm.title()}. Table might be too wide.")
+
+        # 8b. Inject custom two-line header
+        toprule_idx = -1
+        for i, line in enumerate(lines):
+            if r'\toprule' in line:
+                toprule_idx = i
+                break
+        
+        if toprule_idx != -1:
+            # Construct the two header lines
+            header_line1 = "Metric & " + " & ".join(renamed_column_headers) + r" \\"
+            # For the second header line, LLM in the first column, then empty cells for metrics
+            header_line2 = "LLM & " + " & ".join([""] * len(renamed_column_headers)) + r" \\"
+            
+            custom_header_block = [
+                header_line1,
+                header_line2,
+                r"\midrule" # Add \midrule after our custom header
+            ]
+            
+            # Insert custom header block after \toprule
+            lines = lines[:toprule_idx + 1] + custom_header_block + lines[toprule_idx + 1:]
+        else:
+            # This should not happen if to_latex includes \toprule, which it does by default
+            # even with header=False, if booktabs=True (which is default).
+            print(f"Warning: Could not find \\toprule to insert custom header for {caption}. Header might be missing or incorrect.")
 
         latex_string = '\n'.join(lines)
         
@@ -281,7 +400,8 @@ def generate_latex_reports_by_method(
             # Combine all table strings for this retrieval method
             # Using a LaTeX comment and double newline as a separator.
             # \clearpage or \newpage could be used if each table should start on a new page.
-            separator = f"\n\n% Table for next language using {retrieval_method} retrieval\n\n"
+            # separator = f"\n\n% Table for next language using {retrieval_method} retrieval\n\n"
+            separator = "\n\n"
             combined_latex_content = separator.join(all_tables_for_this_method_latex)
             
             output_filename = f"{retrieval_method}_all_languages_performance.tex"
