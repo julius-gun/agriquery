@@ -1,17 +1,5 @@
 # RAG Testing Framework
 ![Dataset Success Heatmap: General Questions (Lang/Algo vs Model)](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_general_questions.png)
-![Dataset Success Heatmap: Unanswerable Questions (Lang/Algo vs Model)](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_unanswerable_questions.png)
-
-![F1 Score Heatmap: Language vs Model (Hybrid, CS:200 OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_hybrid_cs_200.0_os_100.0.png)
-![F1 Score Heatmap: Language vs Model (Embedding, CS:200 OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_embedding_cs_200.0_os_100.0.png)
-![F1 Score Heatmap: Language vs Model (Keyword, CS:200 OS:100)](visualization/plots/f1_heatmap_lang_vs_model_algo_keyword_cs_200.0_os_100.0.png)
-
-![Dataset Success Boxplot: Hybrid (English, CS:200 OS:100)](visualization/plots/dataset_success_boxplot_model_vs_dataset_hybrid_lang_english_cs_200_os_100.png)
-![Dataset Success Boxplot: Embedding (English, CS:200 OS:100)](visualization/plots/dataset_success_boxplot_model_vs_dataset_embedding_lang_english_cs_200_os_100.png)
-![Dataset Success Boxplot: Keyword (English, CS:200 OS:100)](visualization/plots/dataset_success_boxplot_model_vs_dataset_keyword_lang_english_cs_200_os_100.png)
-
-![F1 Score Boxplot: Model Performance (Colored by Language)](visualization/plots/f1_boxplot_by_question_model_colored_by_language.png)
-![F1 Score Heatmap: Algorithm vs Model (English)](visualization/plots/f1_heatmap_algo_vs_model_english.png)
 
 More Information
 *   **RAG Plots:** [RAG Plots](RAG/visualization/plots/) 
