@@ -1,5 +1,8 @@
 # RAG Testing Framework
-![Dataset Success Heatmap: General Questions (Lang/Algo vs Model)](visualization/plots/dataset_success_heatmap_lang_algo_vs_model_general_questions.png)
+Please pay attention: Zeroshot means "Long Context" in all the used code examples. Inside the folder "Zeroshot" you find code to run results for the long context result. E.g. the visualizations of such results look like these:
+![Long context Accuracy comparison for English manual](visualization/plots/zeroshot_accuracy_vs_noise_english.png)
+To convert a PDF file into txt for this framework, please use the docling_page_wise_pdf_converter inside the folder zeroshot\docling_page_wise_pdf_converter
+
 
 More Information
 *   **RAG Plots:** [RAG Plots](RAG/visualization/plots/) 
@@ -104,6 +107,32 @@ For manual installation, follow these steps:
     ```bash
     pip install -r requirements.txt
     ```
+## Try it out
+
+To quickly test the RAG pipeline with a single question, use the `ask_question_demo.ipynb` Jupyter notebook located in the `RAG` directory.
+
+**`ask_question_demo.ipynb` - Interactive RAG Query:**
+
+This notebook allows you to:
+
+1.  **Input a Question:** Interactively provide a question you want to ask.
+2.  **Configure Parameters:** Easily set:
+    *   The LLM to use for answering (or skip LLM answering to only see retrieved context).
+    *   Whether to evaluate the LLM's answer against an expected answer you provide.
+    *   The `config.json` and ChromaDB directory to use (defaults are usually fine).
+3.  **Automatic Context Retrieval:** The notebook automatically identifies the relevant ChromaDB collection based on the *first* language, chunk size, and overlap size specified in your `config.json`.
+4.  **View Retrieved Context:** See the text chunks retrieved from the database that are most relevant to your question.
+5.  **Get LLM Answer (Optional):** If an LLM is specified, it generates an answer based on your question and the retrieved context.
+6.  **Evaluate Answer (Optional):** If enabled, the LLM's answer is evaluated against an "expected answer" you provide, using another LLM for the judgment.
+
+**How to Run:**
+
+*   Ensure you have followed the installation steps (Python environment, dependencies, Ollama models).
+*   Navigate to the `p_llm_manual/RAG/` directory.
+*   Open and run the `ask_question_demo.ipynb` notebook cell by cell.
+*   Modify the "User Configuration" cell as needed, especially `your_question`.
+
+This demo notebook is a great way to understand the core components of the RAG system (retrieval, LLM augmentation, evaluation) in action with minimal setup for a single query.
 
 ## Configuration
 

@@ -1,5 +1,11 @@
 # ZeroShot MultiFormatLLMTester
 
+{Long Context Testing}
+Please pay attention: Zeroshot means "Long Context" in all the used code. Inside the folder "Zeroshot" you find code to run results for the long context result. E.g. the visualizations of such results look like these:
+![Long context Accuracy comparison for English manual](visualization/plots/zeroshot_accuracy_vs_noise_english.png)
+
+We tested Large Language Models (LLMs) on their ability to answer questions with a given context. This was done without prior fine-tuning, assessing the models' inherent understanding across different context sizes. The target page containing the correct answer was always included in the context provided to the LLM in this scenario. Additional appending pages, or "noise", was added in varying amount, such as 10k tokens, to simulate different information levels. We also tested the LLMs using the entire document, approximately 59k tokens, as context. Performance is measured in standard metrics like accuracy, precision, recall and F1 score.
+
 **Evaluate LLMs on Diverse Document Formats**
 
 This project assesses the performance of Large Language Models (LLMs) in understanding and answering questions based on documents in various formats: PDF, Markdown, CSV, XML, YAML, and JSON. It utilizes **docling** for page-wise conversion of documents, ensuring accurate context extraction. The evaluation is performed in a zero-shot setting, without fine-tuning the models.
