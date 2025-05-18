@@ -6,6 +6,12 @@ import pandas as pd
 import json # Added for loading config
 import re # Added for model name abbreviation
 
+# --- Constants for "Full Manual" ---
+FULL_MANUAL_ALIAS = "Full Manual"
+FULL_MANUAL_NOISE_LEVEL = 59000
+FULL_MANUAL_INTERNAL_ID = "full_manual_report_type" # Internal identifier
+
+
 # --- Adjust Python Path (using the helper from plot_utils) ---
 try:
     # This import will also execute the path setup code in plot_utils
@@ -107,17 +113,19 @@ def _abbreviate_model_name(model_name: str) -> str:
 def _generate_single_latex_table_string(
     df_data: pd.DataFrame,
     language: str,
-    retrieval_algorithm: str,
+    retrieval_algorithm_or_report_type: str, # Renamed for clarity
     model_sort_order: list,
     metrics_to_include: list
 ) -> str | None:
     """
-    Generates a LaTeX table string for a specific language and retrieval algorithm.
+    Generates a LaTeX table string for a specific language and retrieval algorithm/report type.
 
     Args:
         df_data (pd.DataFrame): The input DataFrame.
         language (str): The language to filter for (e.g., 'english').
-        retrieval_algorithm (str): The retrieval algorithm to filter for (e.g., 'hybrid').
+        retrieval_algorithm_or_report_type (str): The retrieval algorithm (e.g., 'hybrid')
+                                                  or a special report type identifier
+                                                  (e.g., FULL_MANUAL_INTERNAL_ID).
         model_sort_order (list): List of model names to define row order.
                                  These names should be the *original, unabbreviated* names.
         metrics_to_include (list): List of metric types for columns.
@@ -125,26 +133,43 @@ def _generate_single_latex_table_string(
     Returns:
         str | None: The LaTeX table string, or None if no data is found or an error occurs.
     """
-    caption = f"Performance of {language.title()} {retrieval_algorithm.title()} Models"
-    label = f"tab:{language.lower()}_{retrieval_algorithm.lower()}_performance"
+    display_name_for_caption = ""
+    label_suffix = ""
 
-    print(f"\n--- Generating LaTeX Table Snippet: {caption} ---")
+    if retrieval_algorithm_or_report_type == FULL_MANUAL_INTERNAL_ID:
+        display_name_for_caption = FULL_MANUAL_ALIAS
+        label_suffix = "full_manual"
+        print(f"\n--- Generating LaTeX Table Snippet for: {language.title()} {FULL_MANUAL_ALIAS} ---")
+        # Specific filtering for Full Manual
+        df_filtered = df_data[
+            (df_data['language'].str.lower() == language.lower()) &
+            (df_data['retrieval_algorithm'].str.lower() == "zeroshot") &
+            (df_data['noise_level'] == FULL_MANUAL_NOISE_LEVEL) &
+            (df_data['metric_type'].isin(metrics_to_include))
+        ].copy()
+    else:
+        # Standard retrieval algorithm processing
+        display_name_for_caption = retrieval_algorithm_or_report_type.title()
+        label_suffix = retrieval_algorithm_or_report_type.lower()
+        print(f"\n--- Generating LaTeX Table Snippet: {language.title()} {display_name_for_caption} Models ---")
+        df_filtered = df_data[
+            (df_data['language'].str.lower() == language.lower()) &
+            (df_data['retrieval_algorithm'].str.lower() == retrieval_algorithm_or_report_type.lower()) &
+            (df_data['metric_type'].isin(metrics_to_include))
+        ].copy()
+
+    caption = f"Performance of {language.title()} {display_name_for_caption} Models"
+    label = f"tab:{language.lower()}_{label_suffix}_performance"
+
 
     if df_data is None or df_data.empty:
         # This case should ideally be caught before calling this function per retrieval_algo/language.
         # However, good to have a safeguard.
-        print(f"Warning: Input DataFrame is globally empty. Cannot generate table for {language} {retrieval_algorithm}.")
+        print(f"Warning: Input DataFrame is globally empty. Cannot generate table for {language} {display_name_for_caption}.")
         return None
 
-    # 1. Filter data
-    df_filtered = df_data[
-        (df_data['language'].str.lower() == language.lower()) &
-        (df_data['retrieval_algorithm'].str.lower() == retrieval_algorithm.lower()) &
-        (df_data['metric_type'].isin(metrics_to_include))
-    ].copy() # Use .copy() to avoid SettingWithCopyWarning
-
     if df_filtered.empty:
-        print(f"Info: No data found for {language.title()} {retrieval_algorithm.title()} with the specified metrics. Skipping table generation for this combination.")
+        print(f"Info: No data found for {language.title()} {display_name_for_caption} with the specified metrics. Skipping table generation for this combination.")
         return None
 
     # Abbreviate model names in the 'question_model' column
@@ -175,7 +200,7 @@ def _generate_single_latex_table_string(
             values='metric_value'
         )
     except Exception as e:
-        print(f"Error pivoting data for {language.title()} {retrieval_algorithm.title()}: {e}")
+        print(f"Error pivoting data for {language.title()} {display_name_for_caption}: {e}")
         print("Relevant data for pivot:")
         print(df_filtered[['question_model', 'metric_type', 'metric_value']].head())
         duplicates = df_filtered[df_filtered.duplicated(subset=['question_model', 'metric_type'], keep=False)]
@@ -193,24 +218,24 @@ def _generate_single_latex_table_string(
     existing_models_in_sort_order = [model for model in unique_abbreviated_model_sort_order if model in pivot_df.index]
     
     if not existing_models_in_sort_order:
-        print(f"Warning: No models from model_sort_order found in the pivoted data for {language.title()} {retrieval_algorithm.title()}. Skipping table.")
+        print(f"Warning: No models from model_sort_order found in the pivoted data for {language.title()} {display_name_for_caption}. Skipping table.")
         return None
     pivot_df = pivot_df.loc[existing_models_in_sort_order] # Ensures correct order and selection
 
     # Handle cases where all values for a model might be NaN after reindexing (e.g. model in sort order but no data)
     pivot_df.dropna(axis=0, how='all', inplace=True)
     if pivot_df.empty:
-        print(f"Info: All models for {language.title()} {retrieval_algorithm.title()} had no data after filtering and reordering. Skipping table.")
+        print(f"Info: All models for {language.title()} {display_name_for_caption} had no data after filtering and reordering. Skipping table.")
         return None
 
 
     final_metrics_columns = [metric for metric in metrics_to_include if metric in pivot_df.columns]
     missing_metrics_cols = [metric for metric in metrics_to_include if metric not in pivot_df.columns]
     if missing_metrics_cols:
-        print(f"Warning: For {language.title()} {retrieval_algorithm.title()}, metrics not found in pivoted data: {missing_metrics_cols}")
+        print(f"Warning: For {language.title()} {display_name_for_caption}, metrics not found in pivoted data: {missing_metrics_cols}")
     
     if not final_metrics_columns:
-        print(f"Warning: No metric columns to display for {language.title()} {retrieval_algorithm.title()} after filtering. Skipping table.")
+        print(f"Warning: No metric columns to display for {language.title()} {display_name_for_caption} after filtering. Skipping table.")
         return None
         
     pivot_df = pivot_df[final_metrics_columns]
@@ -299,7 +324,7 @@ def _generate_single_latex_table_string(
                 inserted_footnotesize = True
         
         if not inserted_footnotesize: 
-            print(f"Warning: Could not automatically inject \\footnotesize for {language.title()} {retrieval_algorithm.title()}. Table might be too wide.")
+            print(f"Warning: Could not automatically inject \\footnotesize for {caption}. Table might be too wide.")
 
         # 8b. Inject custom two-line header
         toprule_idx = -1
@@ -329,17 +354,17 @@ def _generate_single_latex_table_string(
 
         latex_string = '\n'.join(lines)
         
-        print(f"Successfully generated LaTeX table snippet for {language.title()} {retrieval_algorithm.title()}.")
+        print(f"Successfully generated LaTeX table snippet for {language.title()} {display_name_for_caption}.")
         return latex_string
 
     except Exception as e:
-        print(f"Error generating LaTeX string for {language.title()} {retrieval_algorithm.title()}: {e}")
+        print(f"Error generating LaTeX string for {language.title()} {display_name_for_caption}: {e}")
         print("DataFrame that was to be converted to LaTeX (df_for_latex):")
         print(df_for_latex.head())
         return None
 
 
-def generate_latex_reports_by_method(
+def generate_latex_reports_by_method( # Consider renaming this function if its scope significantly broadens
     df_data: pd.DataFrame,
     output_dir: str,
     model_sort_order: list,
@@ -347,8 +372,9 @@ def generate_latex_reports_by_method(
     config_data: dict
 ):
     """
-    Generates .tex files, one for each specified retrieval method ("hybrid", "embedding").
-    Each file contains tables for all configured languages for that method.
+    Generates .tex files, one for each specified retrieval method ("hybrid", "embedding", "keyword")
+    and one for "Full Manual" (zeroshot at specified noise level).
+    Each file contains tables for all configured languages for that method/report type.
     """
     if df_data is None or df_data.empty:
         print("Error: Input DataFrame is empty. Cannot generate any reports.")
@@ -364,47 +390,70 @@ def generate_latex_reports_by_method(
             print("Error: No languages found in config or data. Cannot generate reports.")
             return
     
-    # Retrieval methods to process, as specifically requested
-    retrieval_methods_to_process = ["hybrid", "embedding", "keyword"]
+    # Define all report types to generate
+    # Each item is a tuple: (internal_id_or_algo_name, display_name_for_file, actual_filter_id_for_function)
+    # For standard algorithms, internal_id and actual_filter_id are the same.
+    # For Full Manual, internal_id is a unique key, actual_filter_id is FULL_MANUAL_INTERNAL_ID.
     
-    # Filter this list to only those methods actually present in the data
-    available_retrieval_methods_in_data = df_data['retrieval_algorithm'].str.lower().unique()
-    actual_methods_to_process = [
-        method for method in retrieval_methods_to_process
-        if method in available_retrieval_methods_in_data
-    ]
+    report_configurations = []
 
-    if not actual_methods_to_process:
-        print(f"Warning: None of the target retrieval methods ({retrieval_methods_to_process}) found in data. "
-              f"Available methods in data: {list(available_retrieval_methods_in_data)}. No .tex files will be generated.")
+    # Standard RAG algorithms
+    standard_rag_methods = ["hybrid", "embedding", "keyword"]
+    available_retrieval_methods_in_data = df_data['retrieval_algorithm'].str.lower().unique()
+    
+    for method in standard_rag_methods:
+        if method in available_retrieval_methods_in_data:
+            report_configurations.append(
+                (method, method, method) # (id, filename_base, param_for_generate_single_table)
+            )
+        else:
+            print(f"Info: Standard retrieval method '{method}' not found in data. Skipping its .tex file generation.")
+
+    # Full Manual configuration
+    # Check if data for Full Manual exists before adding it to configurations
+    has_full_manual_data = not df_data[
+        (df_data['retrieval_algorithm'].str.lower() == "zeroshot") &
+        (df_data['noise_level'] == FULL_MANUAL_NOISE_LEVEL)
+    ].empty
+    
+    if has_full_manual_data:
+        report_configurations.append(
+            ("full_manual", "full_manual", FULL_MANUAL_INTERNAL_ID) 
+        )
+        print(f"Info: Data for '{FULL_MANUAL_ALIAS}' (zeroshot at noise {FULL_MANUAL_NOISE_LEVEL}) found. Will generate its .tex file.")
+    else:
+        print(f"Info: No data found for '{FULL_MANUAL_ALIAS}' (zeroshot at noise {FULL_MANUAL_NOISE_LEVEL}). Skipping its .tex file generation.")
+
+
+    if not report_configurations:
+        print("Warning: No data found for any of the target report types. No .tex files will be generated.")
         return
 
     os.makedirs(output_dir, exist_ok=True)
 
-    for retrieval_method in actual_methods_to_process:
-        print(f"\n--- Processing Retrieval Method: {retrieval_method.title()} ---")
-        all_tables_for_this_method_latex = []
+    for report_id, filename_base, generation_param in report_configurations:
+        
+        display_title = FULL_MANUAL_ALIAS if generation_param == FULL_MANUAL_INTERNAL_ID else report_id.title()
+        print(f"\n--- Processing Report Type: {display_title} ---")
+        
+        all_tables_for_this_report_type_latex = []
 
         for lang in languages_from_config:
             table_latex_string = _generate_single_latex_table_string(
                 df_data=df_data,
                 language=lang,
-                retrieval_algorithm=retrieval_method,
+                retrieval_algorithm_or_report_type=generation_param, # Pass the correct param here
                 model_sort_order=model_sort_order,
                 metrics_to_include=metrics_to_include
             )
             if table_latex_string:
-                all_tables_for_this_method_latex.append(table_latex_string)
+                all_tables_for_this_report_type_latex.append(table_latex_string)
         
-        if all_tables_for_this_method_latex:
-            # Combine all table strings for this retrieval method
-            # Using a LaTeX comment and double newline as a separator.
-            # \clearpage or \newpage could be used if each table should start on a new page.
-            # separator = f"\n\n% Table for next language using {retrieval_method} retrieval\n\n"
+        if all_tables_for_this_report_type_latex:
             separator = "\n\n"
-            combined_latex_content = separator.join(all_tables_for_this_method_latex)
+            combined_latex_content = separator.join(all_tables_for_this_report_type_latex)
             
-            output_filename = f"{retrieval_method}_all_languages_performance.tex"
+            output_filename = f"{filename_base}_all_languages_performance.tex"
             output_path = os.path.join(output_dir, output_filename)
             
             try:
@@ -414,7 +463,7 @@ def generate_latex_reports_by_method(
             except IOError as e:
                 print(f"Error writing file {output_path}: {e}")
         else:
-            print(f"No tables generated for retrieval method: {retrieval_method.title()}. No .tex file created for it.")
+            print(f"No tables generated for report type: {display_title}. No .tex file created for it.")
 
 
 def main():
