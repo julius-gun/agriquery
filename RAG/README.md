@@ -1,6 +1,7 @@
 # RAG Testing Framework
-Please pay attention: Zeroshot means "Long Context" in all the used code examples. Inside the folder "Zeroshot" you find code to run results for the long context result. E.g. the visualizations of such results look like these:
-![Long context Accuracy comparison for English manual](visualization/plots/zeroshot_accuracy_vs_noise_english.png)
+
+
+
 To convert a PDF file into txt for this framework, please use the docling_page_wise_pdf_converter inside the folder zeroshot\docling_page_wise_pdf_converter
 
 
