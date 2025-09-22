@@ -134,7 +134,7 @@ class PdfConverter:
 
     def convert_all(self):
         """Converts PDF to all supported formats and exports images."""
-        # self.export_images()
+        self.export_images()
         for format_name in self.format_converters:
             self._convert_and_save_format(format_name)
 
@@ -187,7 +187,8 @@ if __name__ == "__main__":
     print("\n\n\n")
     print("| Format | Content |")
     print("| --- | --- |")
-    for format_name in ["markdown", "html", "txt", "json", "yaml", "csv", "xml"]:
+    # for format_name in ["markdown", "html", "txt", "json", "yaml", "csv", "xml"]:
+    for format_name in ["markdown", "json", "xml"]:
         content = content_manager.get_page_content_plain_text(pdf_stem, format_name, 1)
         if content:
             print(f"| {format_name.upper()} | {content[:50]}... |") 
