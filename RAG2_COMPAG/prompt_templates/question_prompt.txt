@@ -1,0 +1,19 @@
+<purpose>Extract a precise, concise answer to the question from the given context. Adhere strictly to the instructions. Base your answer on the context.</purpose>
+<instructions>
+    <instruction>Read the entire context carefully</instruction>
+    <instruction>Focus ONLY on the specific information related to the question</instruction>
+    <instruction>Provide an extremely precise answer</instruction>
+    <instruction>Match the expected answer format exactly</instruction>
+    <instruction>If unsure, respond with "Unknown" or "Not found in context"</instruction>
+	<instruction>Answer in English</instruction>
+</instructions>
+
+<context>
+    {context}
+</context>
+<question>
+    {question}
+</question>
+<answer>
+    [Carefully extract the EXACT information that directly answers the question, keeping it as brief and precise as possible]
+</answer>

@@ -1,0 +1,160 @@
+{
+  "llm_models": {
+    "ollama": {
+      "deepseek-r1_8B-128k": {
+        "name": "deepseek-r1:8b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072
+      },
+      "deepseek-r1_1.5B-128k": {
+        "name": "deepseek-r1:1.5b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072
+      },
+      "deepseek-r1_14B-128k": {
+        "name": "deepseek-r1:14b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072
+      },
+      "qwen3_8B-128k": {
+        "name": "qwen3:8b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072
+      },
+      "qwen2.5_7B-128k": {
+        "name": "qwen2.5:latest",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072
+      },
+      "phi3_14B_q4_medium-128k": {
+        "name": "phi3:medium-128k",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072
+      },
+      "phi3_8B_q4_mini-128k": {
+        "name": "phi3:mini-128k",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072
+      },
+      "llama3.1_8B-128k": {
+        "name": "llama3.1:latest",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072
+      },
+      "llama3.2_3B-128k": {
+        "name": "llama3.2:latest",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072
+      },
+      "llama3.2_1B-128k": {
+        "name": "llama3.2:1b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072
+      },
+      "phi3_14B_medium-4k": {
+        "name": "phi3:medium",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 4000
+      },
+      "gemma2_9B-8k": {
+        "name": "gemma2:latest",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 8192
+      },
+      "gemma3_12B-128k": {
+        "name": "gemma3:12b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072
+      },
+      "phi4_14B-16k": {
+        "name": "phi4:latest",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 16384
+      },
+      "qwq_32B-128k": {
+        "name": "qwq",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072
+      }
+    },
+    "gemini": {
+      "gemini-2.5-flash-preview-04-17": {
+        "name": "gemini-2.5-flash-preview-04-17",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": null,
+        "top_p": 0.0,
+        "top_k": 64
+      }
+    }
+  },
+  "question_models_to_test": [
+    "gemini-2.5-flash-preview-04-17",
+    "qwen2.5_7B-128k",
+    "qwen3_8B-128k",
+    "phi3_14B_q4_medium-128k",
+    "llama3.1_8B-128k",
+    "deepseek-r1_8B-128k",
+    "phi3_8B_q4_mini-128k",
+    "llama3.2_3B-128k",
+    "deepseek-r1_1.5B-128k",
+    "llama3.2_1B-128k"
+  ],
+  "evaluator_model_name": "gemma3_12B-128k",
+  "enable_reevaluation": true,
+  "prompt_paths": {
+    "question_prompt": "prompt_templates/question_prompt.txt",
+    "evaluation_prompt": "prompt_templates/evaluation_prompt.txt"
+  },
+  "language_configs": [
+    {
+      "language": "english",
+      "manual_path": "manuals/english_manual.txt",
+      "collection_base_name": "english_manual"
+    },
+    {
+      "language": "french",
+      "manual_path": "manuals/french_manual.txt",
+      "collection_base_name": "french_manual"
+    },
+    {
+      "language": "german",
+      "manual_path": "manuals/german_manual.txt",
+      "collection_base_name": "german_manual"
+    }
+  ],
+  "question_dataset_paths": {
+    "general_questions": "question_datasets/question_answers_pairs.json",
+    "unanswerable_questions": "question_datasets/question_answers_unanswerable.json"
+  },
+  "output_dir": "results",
+  "rag_parameters": {
+    "retrieval_algorithms_to_test": [
+      "keyword",
+      "hybrid",
+      "embedding"
+    ],
+    "chunk_sizes_to_test": [
+      200
+    ],
+    "overlap_sizes_to_test": [
+      100
+    ],
+    "num_retrieved_docs": 3
+  }
+}

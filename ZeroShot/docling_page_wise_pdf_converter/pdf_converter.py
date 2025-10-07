@@ -85,13 +85,19 @@ class PdfConverter:
             converter.save_with_original_extension(page_contents, self.output_filename, self.output_dir, self.doc) # Pass self.doc here
 
     def export_images(self) -> List[Path]:
-        """Exports images from the document."""
+        """
+        Exports all images from the document, including page renderings, tables, figures,
+        and other embedded images.
+        """
         self.images_dir.mkdir(parents=True, exist_ok=True)
+        image_paths = []
         try:
-            doc_filename = self.source.stem
-            image_paths = []
+            doc_filename = self.pdf_stem  # Use the correct stem for consistent naming
+            
+            # Keep track of image IDs that have been saved to avoid duplicates.
+            saved_image_ids = set()
 
-            # Export page images
+            # 1. Export page images (full page renderings)
             for page_no, page in self.doc.pages.items():
                 try:
                     if hasattr(page, 'image') and page.image and hasattr(page.image, 'pil_image'):
@@ -101,11 +107,13 @@ class PdfConverter:
                 except Exception as e:
                     print(f"Warning: Failed to save page {page_no} image: {str(e)}")
 
-            # Export figures and tables
-            table_counter = picture_counter = 0
+            # 2. Export contextual images from document elements (Tables and Pictures)
+            table_counter = 0
+            picture_counter = 0
 
             for element, _ in self.doc.iterate_items():
                 try:
+                    # Tables are rendered as images; they don't exist in doc.images
                     if isinstance(element, TableItem) and hasattr(element, 'get_image'):
                         table_counter += 1
                         page_no = element.prov[0].page_no if element.prov else 0
@@ -115,7 +123,17 @@ class PdfConverter:
                             table_image.save(image_path, "PNG")
                             image_paths.append(image_path)
 
-                    if isinstance(element, PictureItem) and hasattr(element, 'get_image'):
+                    # Pictures are figures, often with captions.
+                    elif isinstance(element, PictureItem) and hasattr(element, 'get_image'):
+                        # Get the underlying image_id to track it
+                        image_id = None
+                        if hasattr(element, 'image_ref') and element.image_ref and hasattr(element.image_ref, 'image_id'):
+                            image_id = element.image_ref.image_id
+                        
+                        # Only save if we haven't already processed this image ID
+                        if image_id and image_id in saved_image_ids:
+                            continue
+
                         picture_counter += 1
                         page_no = element.prov[0].page_no if element.prov else 0
                         image_path = self.images_dir / f"{doc_filename}_page_{page_no}_picture_{picture_counter}.png"
@@ -123,14 +141,35 @@ class PdfConverter:
                         if picture_image:
                             picture_image.save(image_path, "PNG")
                             image_paths.append(image_path)
+                            if image_id:
+                                saved_image_ids.add(image_id)
                 except Exception as e:
-                    print(f"Warning: Failed to save element image: {str(e)}")
+                    print(f"Warning: Failed to save element image for {type(element).__name__}: {str(e)}")
+
+            # 3. Export all remaining raw images from the document's image store
+            # This catches images that are not part of a PictureItem (e.g., logos, inline diagrams).
+            if hasattr(self.doc, 'images') and self.doc.images:
+                misc_image_counter = 0
+                for image_id, image_item in self.doc.images.items():
+                    if image_id in saved_image_ids:
+                        continue  # Already saved as part of a PictureItem
+
+                    try:
+                        if hasattr(image_item, 'pil_image') and image_item.pil_image:
+                            misc_image_counter += 1
+                            # Create a stable filename from the image ID
+                            safe_image_id = image_id.replace(':', '_').replace('/', '_')
+                            image_path = self.images_dir / f"{doc_filename}_image_{safe_image_id}.png"
+                            image_item.pil_image.save(image_path, format="PNG")
+                            image_paths.append(image_path)
+                            saved_image_ids.add(image_id)
+                    except Exception as e:
+                        print(f"Warning: Failed to save raw image {image_id}: {str(e)}")
 
             return image_paths
         except Exception as e:
-            print(f"Warning: Image export partially failed: {str(e)}")
-            return []
-
+            print(f"Error: Image export failed critically: {str(e)}")
+            return image_paths  # Return whatever was successful
 
     def convert_all(self):
         """Converts PDF to all supported formats and exports images."""
@@ -166,6 +205,8 @@ def convert_pdf(source: str, output_dir: str, output_format: str = "all"):
     if output_format == "all":
         converter.convert_all()
     else:
+        # For single format conversion, we should also ensure images are exported.
+        converter.export_images()
         converter.convert_to_format(output_format)
 
 
@@ -173,25 +214,30 @@ def convert_pdf(source: str, output_dir: str, output_format: str = "all"):
 if __name__ == "__main__":
     pdf_file = "https://www.kvgportal.com/W_global/Media/lexcom/VN/A14870/A148703540-2.pdf"  # Replace with your PDF file path
     
-    output_directory = f"output/{Path(pdf_file).stem}/"
+    # Use a unique directory for each PDF to avoid file collisions
+    pdf_stem_for_output = Path(pdf_file.split('/')[-1]).stem
+    output_directory = f"output/{pdf_stem_for_output}/"
+
+    # Convert to all formats and extract all images
     convert_pdf(pdf_file, output_directory, output_format="all")
 
-    # Example of getting page content
-    pdf_stem = Path(pdf_file).stem # Use stem to match how it's saved internally
+    # Example of getting page content after conversion
     content_manager = ContentManager(Path(output_directory))
-    plain_text_content = content_manager.get_page_content_plain_text(pdf_stem, "txt", [4,10,11])
-    # plain_text_content = content_manager.get_page_content_plain_text(pdf_stem, "txt", 4)
+    plain_text_content = content_manager.get_page_content_plain_text(pdf_stem_for_output, "txt", [4,10,11])
+    print("--- Example: Text content for pages 4, 10, 11 ---")
     print(plain_text_content)
+    print("--- End Example ---")
 
-    # create a markdown table showing the content of the pdf of page 1 in all formats            
-    print("\n\n\n")
-    print("| Format | Content |")
-    print("| --- | --- |")
-    # for format_name in ["markdown", "html", "txt", "json", "yaml", "csv", "xml"]:
-    for format_name in ["markdown", "json", "xml"]:
-        content = content_manager.get_page_content_plain_text(pdf_stem, format_name, 1)
+    # Create a markdown table showing the content of page 1 in various formats
+    print("\n\n--- Content Snippets for Page 1 ---")
+    print("| Format   | Content Snippet              |")
+    print("|----------|------------------------------|")
+    for format_name in ["markdown", "html", "txt", "json", "xml"]:
+        content = content_manager.get_page_content_plain_text(pdf_stem_for_output, format_name, 1)
         if content:
-            print(f"| {format_name.upper()} | {content[:50]}... |") 
+            # Clean up content for display in the table
+            snippet = content.replace('\n', ' ').replace('|', '\\|')[:50]
+            print(f"| {format_name.upper():<8} | {snippet}... |")
         else:
-            print(f"| {format_name.upper()} | Could not retrieve content |")
-    print("\n\n\n")
+            print(f"| {format_name.upper():<8} | Could not retrieve content.  |")
+    print("--- End Snippets ---\n\n")

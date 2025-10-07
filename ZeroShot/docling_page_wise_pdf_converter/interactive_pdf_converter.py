@@ -1,4 +1,5 @@
     #  run this command from ZeroShot directory to run this script
+    # cd zeroshot
 # python -m docling_page_wise_pdf_converter.interactive_pdf_converter
 
   
