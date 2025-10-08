@@ -5,46 +5,52 @@
         "name": "deepseek-r1:8b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 128000
+        "context_window": 131072
       },
       "deepseek-r1_1.5B-128k": {
         "name": "deepseek-r1:1.5b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 128000
+        "context_window": 131072
       },
       "qwen3_8B-128k": {
         "name": "qwen3:8b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 128000
+        "context_window": 131072
       },
       "qwen2.5_7B-128k": {
         "name": "qwen2.5:latest",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 128000
+        "context_window": 131072
       },
       "llama3.1_8B-128k": {
         "name": "llama3.1:latest",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 128000
+        "context_window": 131072
       },
       "llama3.2_3B-128k": {
         "name": "llama3.2:latest",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 128000
+        "context_window": 131072
       },
       "gemma3_12B-128k": {
         "name": "gemma3:12b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 128000
+        "context_window": 131072
       },
       "gpt-oss-20b_128k": {
         "name": "gpt-oss:20b",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072
+      },
+      "gpt-oss-120b_128k": {
+        "name": "gpt-oss:120b",
         "temperature": 0.0,
         "num_predict": 1024,
         "context_window": 131072
@@ -64,7 +70,7 @@
   "question_models_to_test": [
     "gemini-2.5-pro-preview-05-06"
   ],
-  "evaluator_model_name": "gemma3_12B-128k",
+  "evaluator_model_name": "gpt-oss:120b",
   "enable_reevaluation": true,
   "prompt_paths": {
     "question_prompt": "prompt_templates/question_prompt.txt",
