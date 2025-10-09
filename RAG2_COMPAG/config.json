@@ -68,9 +68,9 @@
     }
   },
   "question_models_to_test": [
-    "gemini-2.5-pro-preview-05-06"
+    "deepseek-r1_1.5B-128k"
   ],
-  "evaluator_model_name": "gpt-oss:120b",
+  "evaluator_model_name": "deepseek-r1_1.5B-128k",
   "enable_reevaluation": true,
   "prompt_paths": {
     "question_prompt": "prompt_templates/question_prompt.txt",
@@ -93,6 +93,19 @@
       "collection_base_name": "german_manual"
     }
   ],
+  "file_extensions_to_test": [
+    "markdown",
+    "json",
+    "xml"
+  ],
+  "files_to_test": [
+    "english_manual",
+    "german_manual",
+    "french_manual",
+    "dutch_manual",
+    "spanish_manual",
+    "italian_manual"
+  ],
   "question_dataset_paths": {
     "general_questions": "question_datasets/question_answers_pairs.json",
     "unanswerable_questions": "question_datasets/question_answers_unanswerable.json"
@@ -100,9 +113,7 @@
   "output_dir": "results",
   "rag_parameters": {
     "retrieval_algorithms_to_test": [
-      "keyword",
-      "hybrid",
-      "embedding"
+      "hybrid"
     ],
     "chunk_sizes_to_test": [
       200
