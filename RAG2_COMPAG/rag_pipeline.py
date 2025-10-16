@@ -21,6 +21,7 @@ from typing import List, Dict, Any, Optional # Import Optional
 # --- Configuration ---
 persist_directory = "chroma_db"
 config_file_path = "config.json"  # Path to config file
+MANUALS_DIRECTORY = "manuals"
 
 # --- Helper Functions ---
 def generate_chunk_id(text_chunk: str) -> str:
@@ -174,30 +175,24 @@ else:
 
 # --- Load specific config sections ---
 rag_params = config.get("rag_parameters", {})
-language_configs = config.get("language_configs", []) # Load language configs
-dataset_paths = config.get("question_dataset_paths", {}) # Load English question paths
+files_to_test = config.get("files_to_test", [])
+file_extensions_to_test = config.get("file_extensions_to_test", [])
+dataset_paths = config.get("question_dataset_paths", {})
 
-if not language_configs:
-    raise ValueError("No 'language_configs' found in config.json. Please define language-specific settings.")
+if not files_to_test:
+    raise ValueError("No 'files_to_test' found in config.json.")
+if not file_extensions_to_test:
+    raise ValueError("No 'file_extensions_to_test' found in config.json.")
 if not dataset_paths:
     raise ValueError("No 'question_dataset_paths' found in config.json.")
 
 
 # Initialize retriever instance (can be imported by rag_tester)
-# Retriever choice doesn't directly affect collection name based on chunking
-# !! NOTE: This global retriever initialization might be less useful now,
-# !! as rag_tester initializes retrievers inside its loops, potentially passing client/collection.
-# !! Let's comment out the global one or ensure it's not relied upon by rag_tester.
-# retriever: BaseRetriever = initialize_retriever(rag_params.get("retrieval_algorithm", "embedding"))
-# Use Any for tokenizer if we stick with hasattr, or define getter in BaseRetriever
-# tokenizer: Any = retriever.tokenizer if hasattr(retriever, 'tokenizer') else None
-# Let's get tokenizer from a temporary EmbeddingRetriever instance if needed for splitting
 temp_embed_retriever = EmbeddingRetriever()
 tokenizer: Any = temp_embed_retriever.tokenizer if hasattr(temp_embed_retriever, 'tokenizer') else None
 
 
 # Initialize embedding function for ChromaDB (specific to embedding models)
-# This might need conditional logic if non-embedding models are primary
 embedding_model_name = "Alibaba-NLP/gte-Qwen2-7B-instruct" # TODO: Potentially make configurable if needed elsewhere
 gte_embedding_function = embedding_functions.SentenceTransformerEmbeddingFunction(model_name=embedding_model_name)
 
@@ -208,150 +203,112 @@ chroma_client = chromadb.PersistentClient(path=persist_directory)
 # This code only runs when rag_pipeline.py is executed directly
 if __name__ == "__main__":
 
-    print("\n--- Running RAG Pipeline Setup (Embedding & Evaluation) for Configured Languages ---")
+    print("\n--- Running RAG Pipeline Setup (Embedding & Evaluation) for Configured Files ---")
 
-    # --- Get common RAG parameters ---
-    # Allow overriding chunk/overlap from config if needed, otherwise use defaults
-    # These parameters are now primarily used for naming collections and splitting text.
-    chunk_sizes_to_process = rag_params.get("chunk_sizes_to_test", [2000]) # Default if not in config
-    overlap_sizes_to_process = rag_params.get("overlap_sizes_to_test", [50]) # Default if not in config
+    chunk_sizes_to_process = rag_params.get("chunk_sizes_to_test", [2000])
+    overlap_sizes_to_process = rag_params.get("overlap_sizes_to_test", [50])
 
-    # --- Loop through chunk/overlap combinations defined in config ---
-    # This script now creates DBs for all combinations specified in the config's test parameters
     for chunk_size in chunk_sizes_to_process:
         for overlap_size in overlap_sizes_to_process:
             print(f"\n{'='*10} Processing for Chunk Size: {chunk_size}, Overlap: {overlap_size} {'='*10}")
 
-            # --- Loop through each language configuration ---
-            for lang_config in language_configs:
-                language = lang_config.get("language")
-                manual_path = lang_config.get("manual_path")
-                base_collection_name = lang_config.get("collection_base_name")
+            for file_basename in files_to_test:
+                for extension in file_extensions_to_test:
+                    manual_path = os.path.join(MANUALS_DIRECTORY, f"{file_basename}.{extension}")
+                    if not os.path.isfile(manual_path):
+                        continue
 
-                if not all([language, manual_path, base_collection_name]):
-                    print(f"Warning: Skipping invalid language config entry: {lang_config}")
-                    continue
+                    print(f"\n===== Processing File: {os.path.basename(manual_path)} =====")
 
-                print(f"\n===== Processing Language: {language.upper()} =====")
-                print(f"Manual Path: {manual_path}")
+                    sanitized_ext = extension.replace('.', '_')
+                    base_collection_name = f"{file_basename}_{sanitized_ext}"
+                    dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
+                    print(f"Target collection name: '{dynamic_collection_name}'")
 
-                # --- Determine Dynamic Collection Name ---
-                dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
-                print(f"Target collection name: '{dynamic_collection_name}'")
-
-                # --- Check if Collection Exists ---
-                collection_exists = False
-                collection = None
-                try:
-                    # Use the specific embedding function when getting/creating embedding collections
-                    collection = chroma_client.get_collection(
-                        name=dynamic_collection_name,
-                        embedding_function=gte_embedding_function # Needed if collection stores embeddings
-                    )
-                    print(f"Collection '{dynamic_collection_name}' already exists.")
-                    collection_exists = True
-                except Exception as e:
-                    # Use specific exception check if possible, e.g., chromadb.errors.CollectionNotFoundError
-                    # For simplicity, catching general Exception here.
-                    # print(f"Collection '{dynamic_collection_name}' does not exist yet (Error: {e}). Will proceed with creation.")
-                    print(f"Collection '{dynamic_collection_name}' does not exist yet. Will proceed with creation.")
                     collection_exists = False
-
-                # --- Conditional Embedding/Processing ---
-                if not collection_exists:
-                    print(f"Creating new collection: '{dynamic_collection_name}'")
-            # Create the collection explicitly
-                    collection = chroma_client.create_collection(
-                        name=dynamic_collection_name,
-                        embedding_function=gte_embedding_function # Specify EF at creation
-                        # Add metadata if needed: metadata={"hnsw:space": "cosine"} # Example
-                    )
-
-                    # Ensure tokenizer is available if needed for splitting
-                    if not tokenizer:
-                         print("Warning: Tokenizer not found, required for token splitting based on HuggingFace model.")
-                         # Decide if this is fatal or if an alternative splitter can be used
-                         # Let's try to proceed but log the warning.
-
-
-                    print(f"Loading text from: {manual_path}")
+                    collection = None
                     try:
-                        with open(manual_path, 'r', encoding='utf-8') as f:
-                            text = f.read()
-                    except FileNotFoundError:
-                        print(f"!!! ERROR: Manual file not found at '{manual_path}'. Skipping processing for {language} / CS={chunk_size} / OS={overlap_size}.")
-                        continue # Skip to the next language
-
-                    # Define the splitter using current parameters
-                    # Ensure tokenizer is available for this specific splitter
-                    if tokenizer:
-                        token_splitter = RecursiveCharacterTextSplitter.from_huggingface_tokenizer(
-                            tokenizer=tokenizer,
-                            chunk_size=chunk_size,
-                            chunk_overlap=overlap_size
+                        collection = chroma_client.get_collection(
+                            name=dynamic_collection_name,
+                            embedding_function=gte_embedding_function
                         )
-                        print(f"Splitting text using token limits: chunk_size={chunk_size}, overlap={overlap_size}")
-                        document_chunks_text = token_splitter.split_text(text)
-                        print(f"Generated {len(document_chunks_text)} token-based chunks for {language}.")
+                        print(f"Collection '{dynamic_collection_name}' already exists.")
+                        collection_exists = True
+                    except Exception as e:
+                        print(f"Collection '{dynamic_collection_name}' does not exist yet. Will proceed with creation.")
+                        collection_exists = False
+
+                    if not collection_exists:
+                        print(f"Creating new collection: '{dynamic_collection_name}'")
+                        collection = chroma_client.create_collection(
+                            name=dynamic_collection_name,
+                            embedding_function=gte_embedding_function
+                        )
+
+                        if not tokenizer:
+                             print("Warning: Tokenizer not found, required for token splitting.")
+
+                        print(f"Loading text from: {manual_path}")
+                        try:
+                            with open(manual_path, 'r', encoding='utf-8') as f:
+                                text = f.read()
+                        except FileNotFoundError:
+                            print(f"!!! ERROR: Manual file not found at '{manual_path}'. Skipping.")
+                            continue
+
+                        if tokenizer:
+                            token_splitter = RecursiveCharacterTextSplitter.from_huggingface_tokenizer(
+                                tokenizer=tokenizer,
+                                chunk_size=chunk_size,
+                                chunk_overlap=overlap_size
+                            )
+                            print(f"Splitting text using token limits: chunk_size={chunk_size}, overlap={overlap_size}")
+                            document_chunks_text = token_splitter.split_text(text)
+                            print(f"Generated {len(document_chunks_text)} token-based chunks.")
+                        else:
+                            print(f"Warning: Tokenizer not available. Using basic character splitter.")
+                            char_splitter = RecursiveCharacterTextSplitter(
+                                 chunk_size=chunk_size * 4,
+                                 chunk_overlap=overlap_size * 4,
+                                 length_function=len,
+                                 is_separator_regex=False,
+                            )
+                            document_chunks_text = char_splitter.split_text(text)
+                            print(f"Generated {len(document_chunks_text)} character-based chunks.")
+
+                        db_populating_retriever = EmbeddingRetriever()
+                        embed_and_add_chunks_to_db(document_chunks_text, collection, db_populating_retriever)
                     else:
-                        # Fallback or error if tokenizer needed but not found
-                        print(f"Warning: Tokenizer not available. Using basic character splitter.")
-                        # Example fallback:
-                        char_splitter = RecursiveCharacterTextSplitter(
-                             chunk_size=chunk_size * 4, # Heuristic: multiply by avg token length
-                             chunk_overlap=overlap_size * 4, # Heuristic
-                             length_function=len,
-                             is_separator_regex=False,
-                        )
-                        document_chunks_text = char_splitter.split_text(text)
-                        print(f"Generated {len(document_chunks_text)} character-based chunks for {language}.")
+                        print(f"Skipping processing for existing collection '{dynamic_collection_name}'.")
 
+                    # --- Evaluation (Optional, run against the current collection) ---
+                    print(f"\n--- Running RAG Pipeline Evaluation (Retrieval Metrics on '{dynamic_collection_name}') ---")
 
-                    # --- Embedding/Processing and Adding Chunks ---
-                    # For populating the database, we should use an EmbeddingRetriever
-                    # to ensure embeddings are generated correctly.
-                    # The global 'retriever' is commented out, so let's instantiate one here.
-                    db_populating_retriever = EmbeddingRetriever() # Use EmbeddingRetriever for DB population
-                    embed_and_add_chunks_to_db(document_chunks_text, collection, db_populating_retriever)
-                else:
-                    print(f"Skipping processing for existing collection '{dynamic_collection_name}'.")
+                    if collection is None:
+                         try:
+                             collection = chroma_client.get_collection(name=dynamic_collection_name, embedding_function=gte_embedding_function)
+                         except Exception:
+                              print(f"Error: Collection object '{dynamic_collection_name}' not available for evaluation. Skipping.")
+                              continue
 
-                # --- Evaluation (Optional, run against the current collection) ---
-                # This evaluation likely assumes an embedding retriever/collection setup
-                print(f"\n--- Running RAG Pipeline Evaluation (Retrieval Metrics on '{dynamic_collection_name}') ---")
+                    all_evaluation_results_for_combo = {}
+                    for dataset_name, dataset_path in dataset_paths.items():
+                        dataset = load_dataset(dataset_path)
+                        if dataset:
+                            print(f"\n--- Evaluating Retrieval on {dataset_name} dataset using collection '{dynamic_collection_name}' ---")
+                            eval_retriever = EmbeddingRetriever()
+                            evaluation_results = evaluate_rag_pipeline(dataset, eval_retriever, collection, rag_params)
+                            all_evaluation_results_for_combo[dataset_name] = evaluation_results
+                            analysis_label = f"{dataset_name} ({os.path.basename(manual_path)}, CS={chunk_size}, OS={overlap_size})"
+                            analyze_evaluation_results(evaluation_results, analysis_label)
 
-                if collection is None:
-                     # Try to get the collection again if it existed but wasn't assigned
-                     try:
-                         collection = chroma_client.get_collection(name=dynamic_collection_name, embedding_function=gte_embedding_function)
-                     except Exception:
-                          print(f"Error: Collection object '{dynamic_collection_name}' not available for evaluation. Skipping evaluation.")
-                          continue # Skip evaluation
-
-                # Use the English question datasets for evaluation
-                all_evaluation_results_for_lang_combo = {}
-                for dataset_name, dataset_path in dataset_paths.items():
-                    dataset = load_dataset(dataset_path)
-                    if dataset:
-                        print(f"\n--- Evaluating Retrieval on {dataset_name} dataset using collection '{dynamic_collection_name}' ---")
-                        # For evaluation here, let's use an EmbeddingRetriever as well,
-                        # since evaluate_rag_pipeline likely expects embedding logic.
-                        # If we wanted to evaluate hybrid retrieval *metrics* here,
-                        # we'd need to initialize HybridRetriever and potentially build its index.
-                        eval_retriever = EmbeddingRetriever()
-                        evaluation_results = evaluate_rag_pipeline(dataset, eval_retriever, collection, rag_params)
-                        all_evaluation_results_for_lang_combo[dataset_name] = evaluation_results
-                        analysis_label = f"{dataset_name} ({language} manual, CS={chunk_size}, OS={overlap_size})"
-                        analyze_evaluation_results(evaluation_results, analysis_label)
-
-                print(f"\n--- Overall Retrieval Evaluation Analysis for Collection '{dynamic_collection_name}' ---")
-                for dataset_name, results in all_evaluation_results_for_lang_combo.items():
-                     # Check if 'source_hit_rate' exists before accessing
-                     hit_rate = results.get('source_hit_rate', 'N/A')
-                     if isinstance(hit_rate, float):
-                         print(f"  Dataset: {dataset_name}, Source Hit Rate: {hit_rate:.2f}%")
-                     else:
-                         print(f"  Dataset: {dataset_name}, Source Hit Rate: {hit_rate}")
+                    print(f"\n--- Overall Retrieval Evaluation Analysis for Collection '{dynamic_collection_name}' ---")
+                    for dataset_name, results in all_evaluation_results_for_combo.items():
+                         hit_rate = results.get('source_hit_rate', 'N/A')
+                         if isinstance(hit_rate, float):
+                             print(f"  Dataset: {dataset_name}, Source Hit Rate: {hit_rate:.2f}%")
+                         else:
+                             print(f"  Dataset: {dataset_name}, Source Hit Rate: {hit_rate}")
 
 
     # Analyze English datasets once after all loops

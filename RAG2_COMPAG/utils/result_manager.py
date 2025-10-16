@@ -32,7 +32,7 @@ class ResultManager:
     def _generate_filename(
         self,
         retrieval_algorithm: str,
-        language: str,
+        file_identifier: str,
         question_model_name: str,
         chunk_size: int,
         overlap_size: int,
@@ -40,9 +40,9 @@ class ResultManager:
     ) -> str:
         """Generates the filename for the results file based on test parameters."""
         sanitized_model_name = self.sanitize_filename(question_model_name)
-        # Format: {retrieval_algorithm}_{language}_{sanitized_question_model_name}_{chunk_size}_overlap_{overlap_size}_topk_{num_retrieved_docs}.json
+        # Format: {retrieval_algorithm}_{file_identifier}_{sanitized_question_model_name}_{chunk_size}_overlap_{overlap_size}_topk_{num_retrieved_docs}.json
         filename = (
-            f"{retrieval_algorithm}_{language}_{sanitized_model_name}_"
+            f"{retrieval_algorithm}_{file_identifier}_{sanitized_model_name}_"
             f"{chunk_size}_overlap_{overlap_size}_topk_{num_retrieved_docs}.json"
         )
         return filename
@@ -50,7 +50,7 @@ class ResultManager:
     def load_previous_results(
         self,
         retrieval_algorithm: str,
-        language: str,
+        file_identifier: str,
         question_model_name: str,
         chunk_size: int,
         overlap_size: int,
@@ -58,7 +58,7 @@ class ResultManager:
     ) -> Optional[Dict[str, Any]]:
         """Loads previous results from the JSON file if it exists, using generated filename."""
         filename = self._generate_filename(
-            retrieval_algorithm, language, question_model_name,
+            retrieval_algorithm, file_identifier, question_model_name,
             chunk_size, overlap_size, num_retrieved_docs
         )
         filepath = os.path.join(self.output_dir, filename)

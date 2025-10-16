@@ -76,28 +76,6 @@
     "question_prompt": "prompt_templates/question_prompt.txt",
     "evaluation_prompt": "prompt_templates/evaluation_prompt.txt"
   },
-  "language_configs": [
-    {
-      "language": "english",
-      "manual_path": "manuals/english_manual.txt",
-      "collection_base_name": "english_manual"
-    },
-    {
-      "language": "french",
-      "manual_path": "manuals/french_manual.txt",
-      "collection_base_name": "french_manual"
-    },
-    {
-      "language": "german",
-      "manual_path": "manuals/german_manual.txt",
-      "collection_base_name": "german_manual"
-    }
-  ],
-  "file_extensions_to_test": [
-    "markdown",
-    "json",
-    "xml"
-  ],
   "files_to_test": [
     "english_manual",
     "german_manual",
@@ -105,6 +83,11 @@
     "dutch_manual",
     "spanish_manual",
     "italian_manual"
+  ],
+  "file_extensions_to_test": [
+    "md",
+    "json",
+    "xml"
   ],
   "question_dataset_paths": {
     "general_questions": "question_datasets/question_answers_pairs.json",

@@ -39,15 +39,15 @@ logging.basicConfig(
 DEFAULT_LLM_TYPE = "ollama"  # Define default LLM type
 SAVE_PROMPT_FREQUENCY = 100  # Save every Nth prompt
 CHROMA_PERSIST_DIR = "chroma_db"  # Define persist directory path
+MANUALS_DIRECTORY = "manuals" # Define manuals directory path
 DATASET_METRIC_KEY = "dataset_self_evaluation_success"  # Define the key name
 
 
 class RagTester:
     """
     Orchestrates the RAG testing process by iterating through configured
-    parameters (models, algorithms, languages, chunk sizes, overlaps)
+    parameters (models, algorithms, files, extensions, chunk sizes, overlaps)
     and evaluating the performance. Uses logging for output.
-    Refactored loop order for efficiency: model -> chunk -> overlap -> algo -> lang.
     """
 
     def __init__(self, config_path: str = "config.json"):
@@ -65,7 +65,8 @@ class RagTester:
         self.retrieval_algorithms_to_test = (
             self.config_loader.get_retrieval_algorithms_to_test()
         )
-        self.language_configs = self.config.get("language_configs", [])
+        self.files_to_test = self.config_loader.get_files_to_test()
+        self.file_extensions_to_test = self.config_loader.get_file_extensions_to_test()
         self.rag_params_dict = self.config_loader.get_rag_parameters()
         self.chunk_sizes_to_test = self.rag_params_dict.get("chunk_sizes_to_test", [])
         self.overlap_sizes_to_test = self.rag_params_dict.get(
@@ -125,9 +126,12 @@ class RagTester:
             raise ValueError(
                 "Error: No retrieval algorithms specified in 'retrieval_algorithms_to_test' in config."
             )
-        if not self.language_configs:
-            logging.error("Error: No 'language_configs' found in config.json.")
-            raise ValueError("Error: No 'language_configs' found in config.json.")
+        if not self.files_to_test:
+            logging.error("Error: No 'files_to_test' found in config.json.")
+            raise ValueError("Error: No 'files_to_test' found in config.json.")
+        if not self.file_extensions_to_test:
+            logging.error("Error: No 'file_extensions_to_test' found in config.json.")
+            raise ValueError("Error: No 'file_extensions_to_test' found in config.json.")
         if not self.chunk_sizes_to_test:
             logging.warning(
                 "Warning: No 'chunk_sizes_to_test' found in rag_parameters. Chunk size iteration will be skipped."
@@ -243,7 +247,7 @@ class RagTester:
         self,
         prompt_text: str,
         count: int,
-        language: str,
+        file_identifier: str,
         model_name: str,
         algorithm: str,
         chunk_size: int,
@@ -258,7 +262,7 @@ class RagTester:
             sanitized_algo = self._sanitize_for_filename(algorithm)
 
             # Include chunk/overlap in filename for clarity
-            filename = f"prompt_{count}_{language}_{sanitized_model}_{sanitized_algo}_cs{chunk_size}_os{overlap_size}.txt"
+            filename = f"prompt_{count}_{file_identifier}_{sanitized_model}_{sanitized_algo}_cs{chunk_size}_os{overlap_size}.txt"
             filepath = os.path.join(prompts_dir, filename)
 
             with open(filepath, "w", encoding="utf-8") as f:
@@ -301,7 +305,7 @@ class RagTester:
                 f"!!! This collection is required for the current test combination (embedding, keyword, or hybrid)."
             )
             logging.error(
-                f"!!! Ensure 'create_databases.py' (or rag_pipeline.py) was run with chunk={chunk_size}, overlap={overlap_size} for base '{base_collection_name}'."
+                f"!!! Ensure 'create_databases.py' was run with chunk={chunk_size}, overlap={overlap_size} for base '{base_collection_name}'."
             )
             logging.error(f"!!! Original error: {e}")
             logging.error(
@@ -312,7 +316,7 @@ class RagTester:
     def _handle_reevaluation(
         self,
         retrieval_algorithm: str,
-        language: str,
+        file_identifier: str,
         question_model_name: str,
         chunk_size: int,
         overlap_size: int,
@@ -331,7 +335,7 @@ class RagTester:
         logging.info("--- Reevaluation Mode: Handling existing results ---")
         previous_results = self.result_manager.load_previous_results(
             retrieval_algorithm,
-            language,
+            file_identifier,
             question_model_name,
             chunk_size,
             overlap_size,
@@ -438,7 +442,7 @@ class RagTester:
     def _run_qa_phase(
         self, retriever: BaseRetriever, collection: Optional[chromadb.Collection],
         question_llm_connector: BaseLLMConnector, current_retrieval_algorithm: str,
-        current_question_model_name: str, language: str, chunk_size: int, overlap_size: int,
+        current_question_model_name: str, file_identifier: str, chunk_size: int, overlap_size: int,
         # Parameter to accept specific questions/datasets to process
         questions_to_process: Optional[List[Dict[str, Any]]] = None
     ) -> Tuple[Dict[str, Dict[str, Any]], float, int]:
@@ -690,7 +694,7 @@ class RagTester:
                             self._save_llm_input_prompt(
                                 prompt_text=prompt,
                                 count=answered_questions_count,
-                                language=language,
+                                file_identifier=file_identifier,
                                 model_name=current_question_model_name,
                                 algorithm=current_retrieval_algorithm,
                                 chunk_size=chunk_size,
@@ -944,7 +948,8 @@ class RagTester:
         self,
         retrieval_algorithm: str,
         question_model_name: str,
-        language_config: Dict[str, Any],
+        file_identifier: str,
+        base_collection_name: str,
         chunk_size: int,
         overlap_size: int,
         question_llm_connector: BaseLLMConnector,  # Accept initialized connector
@@ -953,13 +958,11 @@ class RagTester:
         """
         Processes a single test combination, handling normal runs and reevaluation mode.
         """
-        language = language_config.get("language")
-        base_collection_name = language_config.get("collection_base_name")
-        dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"  # Define dynamic name here
+        dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
 
         logging.info(
             f"\n>>> Processing Combination: "
-            f"Lang={language.upper()}, Model={question_model_name}, Algo={retrieval_algorithm}, "
+            f"File={file_identifier.upper()}, Model={question_model_name}, Algo={retrieval_algorithm}, "
             f"Chunk={chunk_size}, Overlap={overlap_size}, TopK={self.num_retrieved_docs} <<<"
         )
 
@@ -970,7 +973,7 @@ class RagTester:
 
         if self.enable_reevaluation:
             pruned_previous_results, questions_to_answer = self._handle_reevaluation(
-                retrieval_algorithm, language, question_model_name,
+                retrieval_algorithm, file_identifier, question_model_name,
                 chunk_size, overlap_size, self.num_retrieved_docs
             )
 
@@ -1005,7 +1008,7 @@ class RagTester:
                     pruned_previous_results["test_run_parameters"]["evaluator_model"] = self.config_loader.get_evaluator_model_name() # Update evaluator model potentially
 
                     self.result_manager.save_results(
-                        results=pruned_previous_results, retrieval_algorithm=retrieval_algorithm, language=language,
+                        results=pruned_previous_results, retrieval_algorithm=retrieval_algorithm, language=file_identifier,
                         question_model_name=question_model_name, chunk_size=chunk_size, overlap_size=overlap_size,
                         num_retrieved_docs=self.num_retrieved_docs
                     )
@@ -1026,7 +1029,7 @@ class RagTester:
         # --- Normal Run Check (only if not in successful reevaluation path) ---
         if run_qa_phase and not self.enable_reevaluation:
              if self.result_manager.load_previous_results(
-                 retrieval_algorithm, language, question_model_name,
+                 retrieval_algorithm, file_identifier, question_model_name,
                  chunk_size, overlap_size, self.num_retrieved_docs
              ):
                  logging.info("Skipping combination: Results file already exists (Normal Run).")
@@ -1073,7 +1076,7 @@ class RagTester:
             new_intermediate_results, qa_duration, qa_count = self._run_qa_phase(
                 retriever=retriever, collection=collection, question_llm_connector=question_llm_connector,
                 current_retrieval_algorithm=retrieval_algorithm, current_question_model_name=question_model_name,
-                language=language, chunk_size=chunk_size, overlap_size=overlap_size,
+                file_identifier=file_identifier, chunk_size=chunk_size, overlap_size=overlap_size,
                 questions_to_process=questions_to_answer # Pass the list of missing questions
             )
 
@@ -1187,7 +1190,7 @@ class RagTester:
                 # Prepare final structure for saving
                 final_results_to_save = {
                     "test_run_parameters": {
-                        "language_tested": language, "question_model": question_model_name,
+                        "file_tested": file_identifier, "question_model": question_model_name,
                         "evaluator_model": self.config_loader.get_evaluator_model_name(),
                         "retrieval_algorithm": retrieval_algorithm, "chunk_size": chunk_size,
                         "overlap_size": overlap_size, "num_retrieved_docs": self.num_retrieved_docs,
@@ -1211,7 +1214,7 @@ class RagTester:
         if final_results_to_save: # Ensure there's something to save
             logging.info(f"\n--- Saving Results ---")
             self.result_manager.save_results(
-                results=final_results_to_save, retrieval_algorithm=retrieval_algorithm, language=language,
+                results=final_results_to_save, retrieval_algorithm=retrieval_algorithm, language=file_identifier,
                 question_model_name=question_model_name, chunk_size=chunk_size, overlap_size=overlap_size,
                 num_retrieved_docs=self.num_retrieved_docs
             )
@@ -1220,7 +1223,7 @@ class RagTester:
 
 
         logging.info(
-            f"\n<<< Finished Combination: Lang={language.upper()}, Model={question_model_name}, Algo={retrieval_algorithm}, Chunk={chunk_size}, Overlap={overlap_size} <<<"
+            f"\n<<< Finished Combination: File={file_identifier.upper()}, Model={question_model_name}, Algo={retrieval_algorithm}, Chunk={chunk_size}, Overlap={overlap_size} <<<"
         )
 
 
@@ -1230,174 +1233,112 @@ class RagTester:
         iterating through all combinations.
         """
         logging.info("\n--- Starting Test Iterations ---")
-        total_combinations = (
+        # Estimate total combinations for progress tracking
+        # This is an estimation because not all file+extension combinations may exist
+        estimated_combinations = (
             len(self.question_models_to_test)
             * len(self.chunk_sizes_to_test)
             * len(self.overlap_sizes_to_test)
             * len(self.retrieval_algorithms_to_test)
-            * len(self.language_configs)
+            * len(self.files_to_test)
+            * len(self.file_extensions_to_test)
         )
         combination_count = 0
 
-        # --- Start Iteration Loops (New Order) ---
-        # Outermost loop: Question Model
+        # --- Start Iteration Loops ---
         for model_name in self.question_models_to_test:
             logging.info(
                 f"\n{'=' * 20} Testing Question Model: {model_name} {'=' * 20}"
             )
 
-            # --- Initialize Question LLM Connector (once per model) ---
             current_question_llm_connector: Optional[BaseLLMConnector] = None
             question_llm_type, _ = self.config_loader.get_llm_type_and_config(
                 model_name
-            )  # Use the new method
+            )
 
             if not question_llm_type:
                 logging.error(
-                    f"Model '{model_name}' not found in any LLM configuration ('ollama', 'gemini', etc.). Skipping this model."
+                    f"Model '{model_name}' not found in any LLM configuration. Skipping this model."
                 )
-                continue  # Skip to the next model
-
-            logging.info(
-                f"Determined LLM type for '{model_name}' as: '{question_llm_type}'"
-            )
+                continue
 
             try:
-                # Use the determined llm_type here instead of DEFAULT_LLM_TYPE
                 current_question_llm_connector = (
                     self.llm_connector_manager.get_connector(
                         question_llm_type, model_name
                     )
                 )
                 logging.info(
-                    f"Successfully initialized question connector for model: {model_name} (Type: {question_llm_type})"
+                    f"Successfully initialized question connector for model: {model_name}"
                 )
             except Exception as e:
                 logging.error(
-                    f"Error initializing question connector for model {model_name} (Type: {question_llm_type}): {e}. Skipping this model.",
+                    f"Error initializing question connector for model {model_name}: {e}. Skipping this model.",
                     exc_info=True,
                 )
-                continue  # Skip to the next model if connector fails
+                continue
 
-            # Next loops: Chunking parameters
             for chunk_size in self.chunk_sizes_to_test:
                 for overlap_size in self.overlap_sizes_to_test:
                     logging.info(
                         f"\n{'+' * 15} Testing Chunk/Overlap: CS={chunk_size}, OS={overlap_size} (Model: {model_name}) {'+' * 15}"
                     )
 
-                    # Next loop: Retrieval Algorithm
                     for algorithm in self.retrieval_algorithms_to_test:
                         logging.info(
                             f"\n{'-' * 10} Testing Retrieval Algorithm: {algorithm.upper()} (Model: {model_name}, CS={chunk_size}, OS={overlap_size}) {'-' * 10}"
                         )
 
-                        # --- Initialize Retriever (once per algorithm within chunk/overlap/model) ---
-                        # Note: Keyword/Hybrid Retrievers are initialized here but indexed later in _process_single_combination
-                        current_retriever: Optional[BaseRetriever] = (
-                            None  # Use BaseRetriever or Any
-                        )
-                        try:
-                            # Determine the dynamic collection name needed for Hybrid initialization
-                            # We need a language config to form the name, let's peek at the first one?
-                            # Or maybe initialize later inside the language loop?
-                            # Let's initialize here, but Hybrid will need client/collection passed.
-                            # If we initialize Hybrid here, it needs a collection name, but that depends on language.
-                            # --> Decision: Initialize retriever *inside* the language loop if it's hybrid.
-                            # --> Alternative: Pass client/collection name later? initialize_retriever now supports this.
+                        for file_basename in self.files_to_test:
+                            for extension in self.file_extensions_to_test:
+                                manual_filepath = os.path.join(MANUALS_DIRECTORY, f"{file_basename}.{extension}")
+                                if not os.path.isfile(manual_filepath):
+                                    logging.debug(f"Skipping, file not found: {manual_filepath}")
+                                    continue
 
-                            # Let's try initializing here, passing client. Collection name will be set in HybridRetriever later if needed?
-                            # No, HybridRetriever __init__ expects collection name now.
-                            # --> Revised Decision: Initialize non-hybrid here, initialize hybrid inside language loop.
-
-                            if algorithm != "hybrid":
-                                # Initialize embedding or keyword retriever (don't need client/collection name at init)
-                                current_retriever = initialize_retriever(algorithm)
+                                combination_count += 1
                                 logging.info(
-                                    f"Initialized retriever: {type(current_retriever).__name__} for algorithm '{algorithm}'"
+                                    f"\n--- Running Combination {combination_count}/{estimated_combinations} (est.) ---"
                                 )
-                            else:
-                                # Hybrid retriever initialization deferred to language loop below
-                                logging.info(
-                                    f"Deferring HybridRetriever initialization until language loop (needs collection name)."
-                                )
-                                pass  # Placeholder, will be initialized later
 
-                        except Exception as e:
-                            logging.error(
-                                f"Error initializing non-hybrid retriever for algorithm '{algorithm}': {e}. Skipping this algorithm for current chunk/overlap/model.",
-                                exc_info=True,
-                            )
-                            continue  # Skip to the next algorithm if non-hybrid retriever fails
+                                # Define identifiers for this specific file
+                                # Sanitize extension for use in names (e.g., 'xml.json' -> 'xml_json')
+                                sanitized_ext = extension.replace('.', '_')
+                                file_identifier = f"{file_basename}_{sanitized_ext}"
+                                base_collection_name = file_identifier
 
-                        # Innermost loop: Language (uses the collection defined by chunk/overlap)
-                        for lang_config in self.language_configs:
-                            language = lang_config.get("language")
-                            base_collection_name = lang_config.get(
-                                "collection_base_name"
-                            )
-                            if not language or not base_collection_name:
-                                logging.warning(
-                                    f"Warning: Skipping invalid language config entry: {lang_config}"
-                                )
-                                continue
-
-                            # --- Initialize Hybrid Retriever (if applicable) ---
-                            # This now happens *inside* the language loop because we need the collection name
-                            if (
-                                algorithm == "hybrid" and current_retriever is None
-                            ):  # Check if not already initialized (e.g., from previous lang in this algo loop)
+                                current_retriever: Optional[BaseRetriever] = None
                                 try:
-                                    dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
-                                    current_retriever = initialize_retriever(
-                                        algorithm,
-                                        chroma_client=self.chroma_client,
-                                        collection_name=dynamic_collection_name,
-                                    )
-                                    logging.info(
-                                        f"Initialized retriever: {type(current_retriever).__name__} for algorithm '{algorithm}' using collection '{dynamic_collection_name}'"
-                                    )
-                                except ValueError as ve:  # Catch missing client/collection name error from initialize_retriever
-                                    logging.error(
-                                        f"Configuration error for HybridRetriever: {ve}. Skipping hybrid for this combination."
-                                    )
-                                    # Break this inner language loop for hybrid if init fails? Or just skip lang? Let's skip lang.
-                                    continue  # Skip this language for hybrid
+                                    if algorithm == "hybrid":
+                                        dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
+                                        current_retriever = initialize_retriever(
+                                            algorithm,
+                                            chroma_client=self.chroma_client,
+                                            collection_name=dynamic_collection_name,
+                                        )
+                                    else:
+                                        current_retriever = initialize_retriever(algorithm)
+                                    
+                                    logging.info(f"Initialized retriever: {type(current_retriever).__name__} for algorithm '{algorithm}'")
+
                                 except Exception as e:
                                     logging.error(
-                                        f"Error initializing HybridRetriever for collection '{dynamic_collection_name}': {e}. Skipping hybrid for this language.",
+                                        f"Error initializing retriever for algorithm '{algorithm}': {e}. Skipping this combination.",
                                         exc_info=True,
                                     )
-                                    continue  # Skip this language for hybrid
+                                    continue
 
-                            # Check if retriever initialization failed in any path
-                            if current_retriever is None:
-                                logging.error(
-                                    f"Retriever for algorithm '{algorithm}' could not be initialized. Skipping combination."
+                                # Process this specific combination
+                                self._process_single_combination(
+                                    retrieval_algorithm=algorithm,
+                                    question_model_name=model_name,
+                                    file_identifier=file_identifier,
+                                    base_collection_name=base_collection_name,
+                                    chunk_size=chunk_size,
+                                    overlap_size=overlap_size,
+                                    question_llm_connector=current_question_llm_connector,
+                                    retriever=current_retriever,
                                 )
-                                # If hybrid failed for one lang, it might work for another, so only 'continue' here.
-                                continue  # Skip to next language
-
-                            combination_count += 1
-                            logging.info(
-                                f"\n--- Running Combination {combination_count}/{total_combinations} ---"
-                            )
-
-                            # Process this specific combination, passing initialized components
-                            # _process_single_combination now handles Keyword/Hybrid Retriever indexing
-                            self._process_single_combination(
-                                retrieval_algorithm=algorithm,
-                                question_model_name=model_name,
-                                language_config=lang_config,
-                                chunk_size=chunk_size,
-                                overlap_size=overlap_size,
-                                question_llm_connector=current_question_llm_connector,  # Pass instance
-                                retriever=current_retriever,  # Pass instance (will be indexed if keyword/hybrid)
-                            )
-
-                        # Reset retriever after finishing all languages for an algorithm,
-                        # especially important if hybrid was initialized inside the loop.
-                        current_retriever = None
 
         logging.info("\n--- All Test Combinations Completed ---")
 
@@ -1410,31 +1351,21 @@ def start_rag_tests(config_path: str = "config.json"):
     logging.info(
         f"--- Starting RAG tests via start_rag_tests (config: {config_path}) ---"
     )
-    # Wrap the core logic in a try/except block to report errors clearly
-    # The RagTester init and run_tests methods already have internal error handling,
-    # but this catches potential issues during the setup call itself.
     try:
         tester = RagTester(config_path=config_path)
         tester.run_tests()
         logging.info(f"--- RAG tests completed successfully via start_rag_tests ---")
-        # Optionally return a status or results summary if needed later
         return True
     except Exception as e:
-        # Error should have been logged by RagTester's internal handling or init
         logging.critical(
             f"--- RAG tests failed during execution initiated by start_rag_tests ---",
             exc_info=True,
         )
-        # Re-raise the exception so the caller (main.py) knows about the failure
         raise e
 
 
 # --- Main Execution ---
 if __name__ == "__main__":
-    # Ensure rag_pipeline.py has run at least once directly to perform embedding
-    # Or add logic here to check if embedding needs to be run.
-    # load the languages_to_test and print them
-    # config_to_test = "config_fast.json"
     config_to_test = "config.json"
 
     logging.info(f"--- RAG Tester Script Start (Direct Execution) ---")
@@ -1442,12 +1373,10 @@ if __name__ == "__main__":
 
     try:
         # --- Pre-computation Check (Informational) ---
-        # Load config just to print info before starting the main process
         try:
             temp_config_loader = ConfigLoader(config_to_test)
-            languages_to_test_main = temp_config_loader.config.get(
-                "language_configs", []
-            )
+            files_to_test_main = temp_config_loader.get_files_to_test()
+            extensions_to_test_main = temp_config_loader.get_file_extensions_to_test()
             rag_params_main = temp_config_loader.get_rag_parameters()
             chunk_sizes_main = rag_params_main.get("chunk_sizes_to_test", "N/A")
             overlap_sizes_main = rag_params_main.get("overlap_sizes_to_test", "N/A")
@@ -1455,9 +1384,8 @@ if __name__ == "__main__":
             algos_to_test_main = temp_config_loader.get_retrieval_algorithms_to_test()
 
             logging.info(f"\nStarting RAG Tester for:")
-            logging.info(
-                f"  Languages: {[lc.get('language', 'N/A') for lc in languages_to_test_main]}"
-            )
+            logging.info(f"  Files: {files_to_test_main}")
+            logging.info(f"  Extensions: {extensions_to_test_main}")
             logging.info(f"  Question Models: {models_to_test_main}")
             logging.info(f"  Retrieval Algorithms: {algos_to_test_main}")
             logging.info(f"  Chunk Sizes: {chunk_sizes_main}")
@@ -1466,13 +1394,13 @@ if __name__ == "__main__":
                 f"\nIMPORTANT: This script will attempt to load ChromaDB collections specific to"
             )
             logging.info(
-                f"           each configured language AND the chunk/overlap parameters being tested."
+                f"           each configured file AND the chunk/overlap parameters being tested."
             )
             logging.info(
-                f"           Collection name format: [base_name]_cs[chunk_size]_os[overlap_size]"
+                f"           Collection name format: [file_basename]_[ext]_cs[chunk_size]_os[overlap_size]"
             )
             logging.info(
-                f"           Ensure 'create_databases.py' or 'rag_pipeline.py' has been run with"
+                f"           Ensure 'create_databases.py' has been run with"
             )
             logging.info(
                 f"           combinations matching the 'chunk_sizes_to_test' and 'overlap_sizes_to_test'"
@@ -1480,45 +1408,28 @@ if __name__ == "__main__":
             logging.info(
                 f"           defined in '{config_to_test}' under 'rag_parameters'."
             )
-            logging.info(
-                f"           These collections are needed for embedding, keyword indexing, AND hybrid retrieval."
-            )  # Updated note
         except Exception as config_ex:
             logging.error(
                 f"Error loading configuration for pre-check: {config_ex}", exc_info=True
             )
-            # Decide if this should prevent the run or just be a warning
-            raise  # Re-raise to prevent running with potentially bad config info
+            raise
 
-        # --- End Pre-computation Check ---
-
-        # --- Initialize and Run Tester ---
-        # Although we could instantiate directly here, calling the function ensures
-        # the same entry point logic is used whether run directly or via main.py
         start_rag_tests(config_path=config_to_test)
 
     except FileNotFoundError as e:
         logging.critical(f"\nFATAL ERROR: Configuration file not found.")
         logging.critical(f"  Details: {e}")
-        logging.critical("Please ensure the config file exists at the specified path.")
     except ValueError as e:
         logging.critical(f"\nFATAL ERROR: Invalid or missing configuration.")
         logging.critical(f"  Details: {e}")
-        logging.critical("Please check the config file content.")
     except ImportError as e:
-        # Catch missing rank_bm25 here too
         if "rank_bm25" in str(e):
             logging.critical(f"\nFATAL ERROR: Missing dependency 'rank_bm25'.")
-            logging.critical(f"  Details: {e}")
-            logging.critical("Please install it using: pip install rank-bm25")
+            logging.critical(f"  Please install it using: pip install rank-bm25")
         else:
             logging.critical(f"\nFATAL ERROR: Failed to import necessary modules.")
             logging.critical(f"  Details: {e}")
-            logging.critical(
-                "Please ensure all dependencies are installed and the project structure is correct."
-            )
     except Exception as e:
-        # Catch any other unexpected errors during initialization or run
         import traceback
 
         logging.critical(f"\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
@@ -1526,7 +1437,6 @@ if __name__ == "__main__":
         logging.critical(f"Error Type: {type(e).__name__}")
         logging.critical(f"Error Message: {e}")
         logging.critical("Traceback:")
-        # Log the traceback instead of printing
         logging.critical(traceback.format_exc())
         logging.critical(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 

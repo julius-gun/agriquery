@@ -149,22 +149,18 @@ class ConfigLoader:
                 "question_prompt": "prompt_templates/question_prompt.txt",
                 "evaluation_prompt": "prompt_templates/evaluation_prompt.txt",
             },
-            "language_configs": [
-                {
-                    "language": "english",
-                    "manual_path": "manuals/english_manual.txt",
-                    "collection_base_name": "english_manual",
-                },
-                {
-                    "language": "french",
-                    "manual_path": "manuals/french_manual.txt",
-                    "collection_base_name": "french_manual",
-                },
-                {
-                    "language": "german",
-                    "manual_path": "manuals/german_manual.txt",
-                    "collection_base_name": "german_manual",
-                },
+            "files_to_test": [
+                "english_manual",
+                "german_manual",
+                "french_manual",
+                "dutch_manual",
+                "spanish_manual",
+                "italian_manual"
+            ],
+            "file_extensions_to_test": [
+                "markdown",
+                "json",
+                "xml"
             ],
             "question_dataset_paths": {
                 "general_questions": "question_datasets/question_answers_pairs.json",
@@ -227,6 +223,26 @@ class ConfigLoader:
 
     def get_evaluator_model_name(self) -> str | None:
         return self.config.get("evaluator_model_name")
+
+    def get_files_to_test(self) -> List[str]:
+        """Gets the list of file basenames to test."""
+        files = self.config.get("files_to_test", [])
+        if not isinstance(files, list):
+            print(
+                f"Warning: 'files_to_test' in config is not a list. Found: {type(files)}. Returning empty list."
+            )
+            return []
+        return files
+
+    def get_file_extensions_to_test(self) -> List[str]:
+        """Gets the list of file extensions to test."""
+        extensions = self.config.get("file_extensions_to_test", [])
+        if not isinstance(extensions, list):
+            print(
+                f"Warning: 'file_extensions_to_test' in config is not a list. Found: {type(extensions)}. Returning empty list."
+            )
+            return []
+        return extensions
 
     def get_prompt_path(self, prompt_name: str) -> str:
         prompt_paths = self.config.get("prompt_paths", {})
