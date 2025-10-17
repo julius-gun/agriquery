@@ -83,7 +83,7 @@ class ResultManager:
         self,
         results: Dict[str, Any],
         retrieval_algorithm: str,
-        language: str,
+        file_identifier: str,
         question_model_name: str,
         chunk_size: int,
         overlap_size: int,
@@ -91,7 +91,7 @@ class ResultManager:
     ):
         """Saves the results to a JSON file, using generated filename."""
         filename = self._generate_filename(
-            retrieval_algorithm, language, question_model_name,
+            retrieval_algorithm, file_identifier, question_model_name,
             chunk_size, overlap_size, num_retrieved_docs
         )
         filepath = os.path.join(self.output_dir, filename)

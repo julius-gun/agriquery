@@ -948,6 +948,8 @@ class RagTester:
         self,
         retrieval_algorithm: str,
         question_model_name: str,
+        language: str,
+        extension: str,
         file_identifier: str,
         base_collection_name: str,
         chunk_size: int,
@@ -1004,11 +1006,14 @@ class RagTester:
 
                     # Update parameters/timing notes?
                     if "test_run_parameters" not in pruned_previous_results: pruned_previous_results["test_run_parameters"] = {}
+                    pruned_previous_results["test_run_parameters"]["language"] = language
+                    pruned_previous_results["test_run_parameters"]["file_extension"] = extension
+                    pruned_previous_results["test_run_parameters"]["file_tested"] = file_identifier
                     pruned_previous_results["test_run_parameters"]["reevaluation_run_type"] = "metrics_only"
                     pruned_previous_results["test_run_parameters"]["evaluator_model"] = self.config_loader.get_evaluator_model_name() # Update evaluator model potentially
 
                     self.result_manager.save_results(
-                        results=pruned_previous_results, retrieval_algorithm=retrieval_algorithm, language=file_identifier,
+                        results=pruned_previous_results, retrieval_algorithm=retrieval_algorithm, file_identifier=file_identifier,
                         question_model_name=question_model_name, chunk_size=chunk_size, overlap_size=overlap_size,
                         num_retrieved_docs=self.num_retrieved_docs
                     )
@@ -1163,11 +1168,14 @@ class RagTester:
                      final_results_to_save["overall_metrics"] = {"error": "Combined metrics calculation failed", DATASET_METRIC_KEY: {}}
 
                 # Update timing/parameters notes for reevaluation
-                # if "test_run_parameters" not in final_results_to_save: final_results_to_save["test_run_parameters"] = {}
-                # final_results_to_save["test_run_parameters"]["reevaluation_run_type"] = "qa_and_merge"
-                # final_results_to_save["test_run_parameters"]["reevaluation_qa_duration_seconds"] = qa_duration
-                # final_results_to_save["test_run_parameters"]["reevaluation_eval_duration_seconds"] = eval_duration
-                # final_results_to_save["test_run_parameters"]["evaluator_model"] = self.config_loader.get_evaluator_model_name() # Update evaluator potentially
+                if "test_run_parameters" not in final_results_to_save: final_results_to_save["test_run_parameters"] = {}
+                final_results_to_save["test_run_parameters"]["language"] = language
+                final_results_to_save["test_run_parameters"]["file_extension"] = extension
+                final_results_to_save["test_run_parameters"]["file_tested"] = file_identifier
+                final_results_to_save["test_run_parameters"]["reevaluation_run_type"] = "qa_and_merge"
+                final_results_to_save["test_run_parameters"]["reevaluation_qa_duration_seconds"] = qa_duration
+                final_results_to_save["test_run_parameters"]["reevaluation_eval_duration_seconds"] = eval_duration
+                final_results_to_save["test_run_parameters"]["evaluator_model"] = self.config_loader.get_evaluator_model_name() # Update evaluator potentially
 
 
             else:
@@ -1190,7 +1198,10 @@ class RagTester:
                 # Prepare final structure for saving
                 final_results_to_save = {
                     "test_run_parameters": {
-                        "file_tested": file_identifier, "question_model": question_model_name,
+                        "language": language,
+                        "file_extension": extension,
+                        "file_tested": file_identifier,
+                        "question_model": question_model_name,
                         "evaluator_model": self.config_loader.get_evaluator_model_name(),
                         "retrieval_algorithm": retrieval_algorithm, "chunk_size": chunk_size,
                         "overlap_size": overlap_size, "num_retrieved_docs": self.num_retrieved_docs,
@@ -1214,7 +1225,7 @@ class RagTester:
         if final_results_to_save: # Ensure there's something to save
             logging.info(f"\n--- Saving Results ---")
             self.result_manager.save_results(
-                results=final_results_to_save, retrieval_algorithm=retrieval_algorithm, language=file_identifier,
+                results=final_results_to_save, retrieval_algorithm=retrieval_algorithm, file_identifier=file_identifier,
                 question_model_name=question_model_name, chunk_size=chunk_size, overlap_size=overlap_size,
                 num_retrieved_docs=self.num_retrieved_docs
             )
@@ -1332,6 +1343,8 @@ class RagTester:
                                 self._process_single_combination(
                                     retrieval_algorithm=algorithm,
                                     question_model_name=model_name,
+                                    language=file_basename,
+                                    extension=extension,
                                     file_identifier=file_identifier,
                                     base_collection_name=base_collection_name,
                                     chunk_size=chunk_size,
