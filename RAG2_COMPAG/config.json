@@ -95,9 +95,9 @@
         "num_predict": 1024,
         "context_window": 131072,
         "tokenizer": {
-          "name": "GPT-OSS (GPT-2)",
-          "type": "huggingface",
-          "path": "gpt2"
+          "name": "GPT-OSS (Tiktoken)",
+          "type": "tiktoken",
+          "path": "o200k_harmony"
         }
       },
       "gpt-oss-120b_128k": {
@@ -106,9 +106,9 @@
         "num_predict": 1024,
         "context_window": 131072,
         "tokenizer": {
-          "name": "GPT-OSS (GPT-2)",
-          "type": "huggingface",
-          "path": "gpt2"
+          "name": "GPT-OSS (Tiktoken)",
+          "type": "tiktoken",
+          "path": "o200k_harmony"
         }
       }
     },
