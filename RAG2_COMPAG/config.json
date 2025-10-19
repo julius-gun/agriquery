@@ -16,55 +16,100 @@
         "name": "deepseek-r1:8b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 131072
+        "context_window": 131072,
+        "tokenizer": {
+          "name": "DeepSeek",
+          "type": "huggingface",
+          "path": "deepseek-ai/deepseek-llm-7b-base"
+        }
       },
       "deepseek-r1_1.5B-128k": {
         "name": "deepseek-r1:1.5b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 131072
+        "context_window": 131072,
+        "tokenizer": {
+          "name": "DeepSeek",
+          "type": "huggingface",
+          "path": "deepseek-ai/deepseek-llm-7b-base"
+        }
       },
       "qwen3_8B-128k": {
         "name": "qwen3:8b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 131072
+        "context_window": 131072,
+        "tokenizer": {
+          "name": "QwenFamily",
+          "type": "huggingface",
+          "path": "Qwen/Qwen2-7B-Instruct"
+        }
       },
       "qwen2.5_7B-128k": {
         "name": "qwen2.5:latest",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 131072
+        "context_window": 131072,
+        "tokenizer": {
+          "name": "QwenFamily",
+          "type": "huggingface",
+          "path": "Qwen/Qwen2-7B-Instruct"
+        }
       },
       "llama3.1_8B-128k": {
         "name": "llama3.1:latest",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 131072
+        "context_window": 131072,
+        "tokenizer": {
+          "name": "Llama3",
+          "type": "huggingface",
+          "path": "unsloth/llama-3-8b-Instruct-bnb-4bit"
+        }
       },
       "llama3.2_3B-128k": {
         "name": "llama3.2:latest",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 131072
+        "context_window": 131072,
+        "tokenizer": {
+          "name": "Llama3",
+          "type": "huggingface",
+          "path": "unsloth/llama-3-8b-Instruct-bnb-4bit"
+        }
       },
       "gemma3_12B-128k": {
         "name": "gemma3:12b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 131072
+        "context_window": 131072,
+        "tokenizer": {
+          "name": "Gemma3",
+          "type": "huggingface",
+          "path": "google/gemma-3-9b-instruct"
+        }
       },
       "gpt-oss-20b_128k": {
         "name": "gpt-oss:20b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 131072
+        "context_window": 131072,
+        "tokenizer": {
+          "name": "GPT-OSS (GPT-2)",
+          "type": "huggingface",
+          "path": "gpt2"
+        }
       },
       "gpt-oss-120b_128k": {
         "name": "gpt-oss:120b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 131072
+        "context_window": 131072,
+        "tokenizer": {
+          "name": "GPT-OSS (GPT-2)",
+          "type": "huggingface",
+          "path": "gpt2"
+        }
       }
     },
     "gemini": {
