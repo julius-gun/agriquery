@@ -59,6 +59,7 @@ class RagTester:
         self.config = self.config_loader.config
         self.output_dir = self.config_loader.get_output_dir()
         self.enable_reevaluation = self.config_loader.get_enable_reevaluation()
+        self.embedding_model_config = self.config_loader.get_embedding_model_config()
 
         # Load parameters for iteration
         self.question_models_to_test = self.config_loader.get_question_models_to_test()
@@ -520,7 +521,7 @@ class RagTester:
                 try:
                     # Polymorphic call to vectorize the query text
                     # Output type depends on the retriever (List[List[float]], List[str], Dict)
-                    query_representation = retriever.vectorize_text(question)
+                    query_representation = retriever.vectorize_query(question)
 
                     # --- Branch based on algorithm for retrieval ---
                     if current_retrieval_algorithm == "embedding":
@@ -541,7 +542,7 @@ class RagTester:
                                 f"ChromaDB collection is required for embedding retrieval but was not found/loaded."
                             )
 
-                        # EmbeddingRetriever.vectorize_text returns List[List[float]]
+                        # EmbeddingRetriever.vectorize_query returns List[List[float]]
                         if not isinstance(query_representation, list) or not isinstance(
                             query_representation[0], list
                         ):
@@ -1324,11 +1325,15 @@ class RagTester:
                                         dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
                                         current_retriever = initialize_retriever(
                                             algorithm,
+                                            embedding_model_config=self.embedding_model_config,
                                             chroma_client=self.chroma_client,
                                             collection_name=dynamic_collection_name,
                                         )
                                     else:
-                                        current_retriever = initialize_retriever(algorithm)
+                                        current_retriever = initialize_retriever(
+                                            algorithm,
+                                            embedding_model_config=self.embedding_model_config
+                                        )
                                     
                                     logging.info(f"Initialized retriever: {type(current_retriever).__name__} for algorithm '{algorithm}'")
 

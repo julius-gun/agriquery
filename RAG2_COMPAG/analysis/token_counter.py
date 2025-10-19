@@ -37,7 +37,8 @@ class TokenCounter:
         print("Loading tokenizer from EmbeddingRetriever...")
         # We use EmbeddingRetriever as it contains the tokenizer used for chunking.
         # This gives a consistent token count relative to the RAG process.
-        retriever = EmbeddingRetriever()
+        embedding_model_config = self.config_loader.get_embedding_model_config()
+        retriever = EmbeddingRetriever(model_config=embedding_model_config)
         self.tokenizer = retriever.tokenizer
         print("Tokenizer loaded successfully.")
 
@@ -134,4 +135,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

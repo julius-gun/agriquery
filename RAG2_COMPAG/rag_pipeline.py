@@ -32,6 +32,7 @@ def generate_chunk_id(text_chunk: str) -> str:
 # Update signature to accept chroma_client and collection_name
 def initialize_retriever(
     retrieval_strategy_str: str,
+    embedding_model_config: Dict[str, Any], # Add embedding model config
     chroma_client: Optional[chromadb.ClientAPI] = None, # Add chroma_client
     collection_name: Optional[str] = None # Add collection_name
 ) -> BaseRetriever:
@@ -40,6 +41,7 @@ def initialize_retriever(
 
     Args:
         retrieval_strategy_str (str): The retrieval strategy ('embedding', 'keyword', 'hybrid').
+        embedding_model_config (Dict[str, Any]): Configuration for the embedding model.
         chroma_client (Optional[chromadb.ClientAPI]): The ChromaDB client instance (required for hybrid).
         collection_name (Optional[str]): The name of the ChromaDB collection (required for hybrid).
 
@@ -54,7 +56,7 @@ def initialize_retriever(
     if retrieval_strategy_str == "embedding":
         # EmbeddingRetriever doesn't strictly need client/collection at init
         # It's used externally in rag_tester for querying ChromaDB
-        return EmbeddingRetriever() # Assuming default params are okay here
+        return EmbeddingRetriever(model_config=embedding_model_config)
     elif retrieval_strategy_str == "keyword":
         # KeywordRetriever doesn't need client/collection at init
         return KeywordRetriever()
@@ -65,7 +67,11 @@ def initialize_retriever(
         # Ensure HybridRetriever is imported (already done above)
         # from retrieval_pipelines.hybrid_retriever import HybridRetriever
         # TODO: Make embedding model/max_length configurable if needed
-        return HybridRetriever(chroma_client=chroma_client, collection_name=collection_name)
+        return HybridRetriever(
+            embedding_model_config=embedding_model_config,
+            chroma_client=chroma_client,
+            collection_name=collection_name
+        )
     # elif retrieval_strategy_str == "some_other_future_strategy":
     #     raise NotImplementedError("This other strategy is not yet implemented.")
     else:
@@ -130,9 +136,9 @@ def embed_and_add_chunks_to_db(
                 # print(f"Chunk {i} (ID {chunk_id[:10]}...) exists. Skipping.")
                 skipped_count += 1
             else:
-                # Use the appropriate embedder's vectorize_text method
+                # Use the appropriate embedder's vectorize_document method
                 # Assuming it returns List[List[float]]
-                chunk_embedding = embedder_to_use.vectorize_text(chunk_text)
+                chunk_embedding = embedder_to_use.vectorize_document(chunk_text)
 
                 if isinstance(chunk_embedding, list) and isinstance(chunk_embedding[0], list) and isinstance(chunk_embedding[0][0], float):
                      # Standard embedding format
@@ -174,6 +180,9 @@ else:
     raise FileNotFoundError(f"Configuration file not found at: {config_file_path}")
 
 # --- Load specific config sections ---
+embedding_model_config = config.get("embedding_model")
+if not embedding_model_config:
+    raise ValueError("'embedding_model' configuration not found in config.json")
 rag_params = config.get("rag_parameters", {})
 files_to_test = config.get("files_to_test", [])
 file_extensions_to_test = config.get("file_extensions_to_test", [])
@@ -188,12 +197,12 @@ if not dataset_paths:
 
 
 # Initialize retriever instance (can be imported by rag_tester)
-temp_embed_retriever = EmbeddingRetriever()
+temp_embed_retriever = EmbeddingRetriever(model_config=embedding_model_config)
 tokenizer: Any = temp_embed_retriever.tokenizer if hasattr(temp_embed_retriever, 'tokenizer') else None
 
 
 # Initialize embedding function for ChromaDB (specific to embedding models)
-embedding_model_name = "Alibaba-NLP/gte-Qwen2-7B-instruct" # TODO: Potentially make configurable if needed elsewhere
+embedding_model_name = embedding_model_config.get("name")
 gte_embedding_function = embedding_functions.SentenceTransformerEmbeddingFunction(model_name=embedding_model_name)
 
 # Initialize ChromaDB client (can be imported by rag_tester)
@@ -276,7 +285,7 @@ if __name__ == "__main__":
                             document_chunks_text = char_splitter.split_text(text)
                             print(f"Generated {len(document_chunks_text)} character-based chunks.")
 
-                        db_populating_retriever = EmbeddingRetriever()
+                        db_populating_retriever = EmbeddingRetriever(model_config=embedding_model_config)
                         embed_and_add_chunks_to_db(document_chunks_text, collection, db_populating_retriever)
                     else:
                         print(f"Skipping processing for existing collection '{dynamic_collection_name}'.")
@@ -296,7 +305,7 @@ if __name__ == "__main__":
                         dataset = load_dataset(dataset_path)
                         if dataset:
                             print(f"\n--- Evaluating Retrieval on {dataset_name} dataset using collection '{dynamic_collection_name}' ---")
-                            eval_retriever = EmbeddingRetriever()
+                            eval_retriever = EmbeddingRetriever(model_config=embedding_model_config)
                             evaluation_results = evaluate_rag_pipeline(dataset, eval_retriever, collection, rag_params)
                             all_evaluation_results_for_combo[dataset_name] = evaluation_results
                             analysis_label = f"{dataset_name} ({os.path.basename(manual_path)}, CS={chunk_size}, OS={overlap_size})"

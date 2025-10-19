@@ -62,7 +62,7 @@ def embed_and_add_chunks_to_db(document_chunks_text, collection, retriever):
         else:
             try:
                 # Vectorize only if not skipped
-                chunk_embedding = retriever.vectorize_text(chunk_text)
+                chunk_embedding = retriever.vectorize_document(chunk_text)
                 # Ensure chunk_embedding is a flat list of floats, not a list of lists
                 if isinstance(chunk_embedding, list) and len(chunk_embedding) == 1 and isinstance(chunk_embedding[0], list):
                     embedding_vector = chunk_embedding[0]
@@ -145,6 +145,7 @@ def main(config_path: str = "config.json"):
     # --- Load Configuration ---
     try:
         config_loader = ConfigLoader(str(absolute_config_path))
+        embedding_model_config = config_loader.get_embedding_model_config()
         files_to_test = config_loader.get_files_to_test()
         file_extensions_to_test = config_loader.get_file_extensions_to_test()
         rag_params = config_loader.get_rag_parameters()
@@ -180,13 +181,15 @@ def main(config_path: str = "config.json"):
         print(f"ChromaDB client initialized. Persistence directory: '{absolute_persist_dir}'")
 
         print("Initializing Embedding Retriever (for tokenizer and vectorization)...")
-        retriever = EmbeddingRetriever()
-        if not hasattr(retriever, 'tokenizer') or not hasattr(retriever, 'vectorize_text'):
-             raise AttributeError("Retriever must have 'tokenizer' and 'vectorize_text' methods.")
+        retriever = EmbeddingRetriever(model_config=embedding_model_config)
+        if not hasattr(retriever, 'tokenizer') or not hasattr(retriever, 'vectorize_document'):
+             raise AttributeError("Retriever must have 'tokenizer' and 'vectorize_document' methods.")
         print("Embedding Retriever initialized.")
 
         print("Initializing SentenceTransformer Embedding Function for ChromaDB...")
-        embedding_model_name = config_loader.config.get("embedding_model_name", "Alibaba-NLP/gte-Qwen2-7B-instruct")
+        embedding_model_name = embedding_model_config.get("name")
+        if not embedding_model_name:
+            raise ValueError("Embedding model 'name' not found in config.")
         print(f"Using embedding model for Chroma: {embedding_model_name}")
         gte_embedding_function = embedding_functions.SentenceTransformerEmbeddingFunction(
             model_name=embedding_model_name

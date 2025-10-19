@@ -53,7 +53,7 @@ def evaluate_rag_pipeline(dataset, retriever, collection, rag_params):
 
         total_questions += 1
         try:
-            question_embedding = retriever.vectorize_text(question)
+            question_embedding = retriever.vectorize_query(question)
 
             # Fetch embeddings and documents - consider optimizing if performance is an issue
             results = collection.get(include=['embeddings', 'documents'])
