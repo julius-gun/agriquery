@@ -1,7 +1,7 @@
 import torch
 import torch.nn.functional as F
 from transformers import AutoTokenizer, AutoModel
-from typing import List, Tuple, Any # Added List, Tuple, Any for type hinting
+from typing import List, Tuple, Any, Dict # Added List, Tuple, Any, Dict for type hinting
 
 # Import the base class
 from .base_retriever import BaseRetriever
@@ -12,25 +12,51 @@ class EmbeddingRetriever(BaseRetriever):
     Retrieves relevant text chunks based on semantic similarity using sentence embeddings.
     Inherits from BaseRetriever.
     """
-    def __init__(self, model_name="Alibaba-NLP/gte-Qwen2-7B-instruct", max_length=8192):
+    def __init__(self, model_config: Dict[str, Any]):
         """
-        Initializes the EmbeddingRetriever.
+        Initializes the EmbeddingRetriever from a configuration dictionary.
 
         Args:
-            model_name (str): The name of the Hugging Face model to use for embeddings.
-            max_length (int): The maximum sequence length for the tokenizer.
+            model_config (Dict[str, Any]): Configuration dictionary for the embedding model,
+                                           typically from config.json.
         """
         super().__init__() # Call base class initializer
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-        self.model = AutoModel.from_pretrained(model_name, trust_remote_code=True)
-        self.max_length = max_length
+        model_name = model_config.get("name")
+        if not model_name:
+            raise ValueError("Embedding model 'name' not specified in model_config")
+
+        self.max_length = model_config.get("max_length", 8192)
+        self.query_instruction = model_config.get("query_instruction")
+
+        # Get model and tokenizer kwargs from config, defaulting to empty dicts
+        model_kwargs = model_config.get("model_kwargs", {})
+        tokenizer_kwargs = model_config.get("tokenizer_kwargs", {})
+
+        # Default trust_remote_code to True for backward compatibility if not specified
+        if 'trust_remote_code' not in model_kwargs:
+            model_kwargs['trust_remote_code'] = True
+        if 'trust_remote_code' not in tokenizer_kwargs:
+            tokenizer_kwargs['trust_remote_code'] = True
+
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name, **tokenizer_kwargs)
+        self.model = AutoModel.from_pretrained(model_name, **model_kwargs)
+        
         # # Consider adding device management (e.g., self.device = 'cuda' if torch.cuda.is_available() else 'cpu')
         # self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
         # self.model.to(self.device) # Move model to device
         # # and moving the model to the device: self.model.to(self.device)
 
+    def _get_detailed_instruct(self, query: str) -> str:
+        """Formats a query with the instruction prefix if it exists."""
+        if self.query_instruction:
+            return f'Instruct: {self.query_instruction}\nQuery: {query}'
+        return query
+
     def last_token_pool(self, last_hidden_states: torch.Tensor, attention_mask: torch.Tensor) -> torch.Tensor:
-        """Helper function for pooling token embeddings."""
+        """
+        Helper function for pooling token embeddings, specifically for models
+        like Qwen3-Embedding that use the last token.
+        """
         left_padding = attention_mask[:, -1].sum() == attention_mask.shape[0]
         if left_padding:
             return last_hidden_states[:, -1]
@@ -41,23 +67,12 @@ class EmbeddingRetriever(BaseRetriever):
                 torch.arange(batch_size, device=last_hidden_states.device), sequence_lengths
             ]
 
-    # Implement the abstract method from BaseRetriever
-    def vectorize_text(self, text_chunk: str) -> List[List[float]]:
-        """
-        Vectorizes a single text chunk into an embedding.
-
-        Args:
-            text_chunk (str): The text content to vectorize.
-
-        Returns:
-            List[List[float]]: The embedding vector, wrapped in a list
-                               (consistent with potential batch processing,
-                               although here it processes one chunk).
-        """
+    def _embed_text(self, text: str) -> List[List[float]]:
+        """Internal method to perform tokenization and embedding."""
         # Add device placement for batch_dict if device management is added in __init__
         # e.g., batch_dict = {k: v.to(self.device) for k, v in batch_dict.items()}
         batch_dict = self.tokenizer(
-            [text_chunk], # Process as a list containing one item
+            [text], # Process as a list containing one item
             max_length=self.max_length,
             padding=True,
             truncation=True,
@@ -71,6 +86,34 @@ class EmbeddingRetriever(BaseRetriever):
         # Normalize and convert to list
         normalized_embeddings = F.normalize(embeddings, p=2, dim=1)
         return normalized_embeddings.tolist() # Returns List[List[float]]
+
+    # Implement the abstract method from BaseRetriever
+    def vectorize_query(self, query: str) -> List[List[float]]:
+        """
+        Vectorizes a query string into an embedding, adding a specific
+        instruction prompt if configured to do so.
+
+        Args:
+            query (str): The query text to vectorize.
+
+        Returns:
+            List[List[float]]: The embedding vector for the query, wrapped in a list.
+        """
+        instructed_query = self._get_detailed_instruct(query)
+        return self._embed_text(instructed_query)
+
+    # Implement the abstract method from BaseRetriever
+    def vectorize_document(self, document: str) -> List[List[float]]:
+        """
+        Vectorizes a single document chunk into an embedding.
+
+        Args:
+            document (str): The document text to vectorize.
+
+        Returns:
+            List[List[float]]: The embedding vector for the document, wrapped in a list.
+        """
+        return self._embed_text(document)
 
     # Implement the abstract method from BaseRetriever
     def retrieve_relevant_chunks(
@@ -115,7 +158,7 @@ class EmbeddingRetriever(BaseRetriever):
         document_embeddings_tensor = torch.tensor(document_representations) # Shape: (num_docs, embed_dim)
 
         # Calculate cosine similarities (efficiently)
-        # Normalize tensors just in case they aren't already (F.normalize was used in vectorize_text)
+        # Normalize tensors just in case they aren't already (F.normalize was used in _embed_text)
         query_embedding_tensor = F.normalize(query_embedding_tensor, p=2, dim=1)
         document_embeddings_tensor = F.normalize(document_embeddings_tensor, p=2, dim=1)
 

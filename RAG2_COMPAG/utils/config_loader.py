@@ -176,6 +176,13 @@ class ConfigLoader:
         }
         return default_config
 
+    def get_embedding_model_config(self) -> Dict[str, Any]:
+        """Gets the configuration for the embedding model."""
+        config = self.config.get("embedding_model")
+        if not config or not isinstance(config, dict):
+            raise ValueError("'embedding_model' configuration is missing or invalid in config.json")
+        return config
+
     def get_llm_models_config(self, llm_type="ollama") -> Dict[str, Any]:
         llm_models = self.config.get("llm_models", {})
         models_for_type = llm_models.get(llm_type.lower(), {})

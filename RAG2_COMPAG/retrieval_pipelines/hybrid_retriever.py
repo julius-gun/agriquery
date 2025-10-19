@@ -23,8 +23,7 @@ class HybridRetriever(BaseRetriever):
 
     def __init__(
         self,
-        embedding_model_name: str = "Alibaba-NLP/gte-Qwen2-7B-instruct",
-        embedding_max_length: int = 8192,
+        embedding_model_config: Dict[str, Any],
         chroma_client: Optional[chromadb.ClientAPI] = None, # Pass client for querying
         collection_name: Optional[str] = None, # Pass collection name for querying
         verbose: bool = False
@@ -33,8 +32,7 @@ class HybridRetriever(BaseRetriever):
         Initializes the HybridRetriever.
 
         Args:
-            embedding_model_name (str): Model name for the embedding retriever.
-            embedding_max_length (int): Max sequence length for the embedding model.
+            embedding_model_config (Dict[str, Any]): Configuration for the embedding model.
             chroma_client (Optional[chromadb.ClientAPI]): Initialized ChromaDB client. Required for embedding search.
             collection_name (Optional[str]): Name of the ChromaDB collection to query. Required for embedding search.
             verbose (bool): If True, enables detailed logging during retrieval.
@@ -45,8 +43,7 @@ class HybridRetriever(BaseRetriever):
 
         # --- Embedding Component ---
         self.embedding_retriever = EmbeddingRetriever(
-            model_name=embedding_model_name,
-            max_length=embedding_max_length
+            model_config=embedding_model_config
         )
         self.chroma_client = chroma_client
         self.collection_name = collection_name
@@ -98,26 +95,26 @@ class HybridRetriever(BaseRetriever):
 
 
     # Implement the abstract method from BaseRetriever
-    def vectorize_text(self, text_chunk: str) -> Dict[str, Any]:
+    def vectorize_query(self, query: str) -> Dict[str, Any]:
         """
-        Processes a text chunk (query) into representations suitable for
+        Processes a query string into representations suitable for
         both embedding and keyword retrieval.
 
         Args:
-            text_chunk (str): The query text to process.
+            query (str): The query text to process.
 
         Returns:
             Dict[str, Any]: A dictionary containing:
                 - 'embedding': The embedding vector (List[float]).
                 - 'tokens': The tokenized query (List[str]).
         """
-        if self.verbose: logging.info(f"HybridRetriever: Vectorizing query: '{text_chunk[:50]}...'")
+        if self.verbose: logging.info(f"HybridRetriever: Vectorizing query: '{query[:50]}...'")
 
         # Get embedding (returns List[List[float]], take the first)
-        embedding_vector = self.embedding_retriever.vectorize_text(text_chunk)[0]
+        embedding_vector = self.embedding_retriever.vectorize_query(query)[0]
 
         # Get keyword tokens
-        keyword_tokens = self.keyword_retriever.vectorize_text(text_chunk)
+        keyword_tokens = self.keyword_retriever.vectorize_query(query)
 
         return {
             "embedding": embedding_vector,
@@ -125,9 +122,24 @@ class HybridRetriever(BaseRetriever):
         }
 
     # Implement the abstract method from BaseRetriever
+    def vectorize_document(self, document: str) -> List[List[float]]:
+        """
+        Processes a document string for embedding. This is a pass-through
+        to the internal embedding retriever.
+
+        Args:
+            document (str): The document text to process.
+
+        Returns:
+            List[List[float]]: The embedding of the document.
+        """
+        return self.embedding_retriever.vectorize_document(document)
+
+
+    # Implement the abstract method from BaseRetriever
     def retrieve_relevant_chunks(
         self,
-        query_representation: Dict[str, Any], # Expecting output from vectorize_text
+        query_representation: Dict[str, Any], # Expecting output from vectorize_query
         document_representations: Any = None, # Not directly used here, retrievers manage their own data
         document_chunks_text: Optional[List[str]] = None, # Keyword retriever might use its internal corpus
         top_k: int = 5 # Number of results desired *after* fusion

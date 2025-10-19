@@ -18,21 +18,39 @@ class BaseRetriever(ABC):
         pass
 
     @abstractmethod
-    def vectorize_text(self, text_chunk: str) -> Any:
+    def vectorize_query(self, query: str) -> Any:
         """
-        Processes a text chunk into a representation suitable for the specific
-        retrieval method.
+        Processes a query string into a representation suitable for retrieval.
 
-        For embedding retrievers, this typically returns a numerical vector (e.g., List[float]).
-        For keyword retrievers, this might return processed text, keywords, or another format.
+        For embedding retrievers, this typically returns a numerical vector.
+        For keyword retrievers, this might return processed tokens.
+        This method may add special instructions or prefixes to the query text.
 
         Args:
-            text_chunk (str): The text content to process.
+            query (str): The query text to process.
 
         Returns:
-            Any: The processed representation of the text chunk.
+            Any: The processed representation of the query.
         """
         pass
+
+    @abstractmethod
+    def vectorize_document(self, document: str) -> Any:
+        """
+        Processes a document string into a representation suitable for retrieval.
+
+        For embedding retrievers, this typically returns a numerical vector.
+        For keyword retrievers, this might return processed tokens.
+        This method typically processes the raw document text.
+
+        Args:
+            document (str): The document text to process.
+
+        Returns:
+            Any: The processed representation of the document.
+        """
+        pass
+
 
     @abstractmethod
     def retrieve_relevant_chunks(
@@ -48,6 +66,7 @@ class BaseRetriever(ABC):
         Note: The exact mechanism and the nature of 'document_representations'
         will vary significantly between retriever types. For example, embedding
         retrievers might compare against document embeddings, while keyword
+
         retrievers might use an inverted index or TF-IDF scores.
         The current implementation in `rag_tester.py` handles ChromaDB queries
         separately for embedding retrieval, bypassing a direct call to this method
@@ -56,7 +75,7 @@ class BaseRetriever(ABC):
 
         Args:
             query_representation (Any): The processed representation of the user query
-                                        (output of `vectorize_text` or similar).
+                                        (output of `vectorize_query` or similar).
             document_representations (Any): A structure containing the representations
                                             of the documents to search within (e.g.,
                                             a list of embeddings, a search index).

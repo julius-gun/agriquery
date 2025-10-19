@@ -83,25 +83,39 @@ class KeywordRetriever(BaseRetriever):
         logging.info("BM25 index built successfully.")
 
     # Implement the abstract method from BaseRetriever
-    def vectorize_text(self, text_chunk: str) -> List[str]:
+    def vectorize_query(self, query: str) -> List[str]:
         """
-        Processes a text chunk (query) for keyword retrieval by tokenizing it.
+        Processes a query string for keyword retrieval by tokenizing it.
 
         Args:
-            text_chunk (str): The query text to process.
+            query (str): The query text to process.
 
         Returns:
             List[str]: The tokenized query.
         """
         # For BM25, the "vectorization" of the query is just tokenization
-        tokenized_query = self._tokenize(text_chunk)
+        tokenized_query = self._tokenize(query)
         # logging.debug(f"KeywordRetriever: Tokenized query: {tokenized_query}") # Optional debug
         return tokenized_query
 
     # Implement the abstract method from BaseRetriever
+    def vectorize_document(self, document: str) -> List[str]:
+        """
+        Processes a document string for keyword retrieval by tokenizing it.
+
+        Args:
+            document (str): The document text to process.
+
+        Returns:
+            List[str]: The tokenized document.
+        """
+        # For BM25, the "vectorization" of a document is also tokenization
+        return self._tokenize(document)
+
+    # Implement the abstract method from BaseRetriever
     def retrieve_relevant_chunks(
         self,
-        query_representation: List[str], # Expecting tokenized query from vectorize_text
+        query_representation: List[str], # Expecting tokenized query from vectorize_query
         document_representations: Any = None, # Not directly used, index is internal
         document_chunks_text: Optional[List[str]] = None, # Can be used for verification or if index not built
         top_k: int = 3
@@ -142,7 +156,7 @@ class KeywordRetriever(BaseRetriever):
              corpus_to_use = self.corpus # Fallback to internal corpus
 
         # Get BM25 scores for the query against all documents in the index
-        # Note: query_representation is already the tokenized query from vectorize_text
+        # Note: query_representation is already the tokenized query from vectorize_query
         scores = self.bm25.get_scores(query_representation)
 
         # Get the indices of the top_k scores
