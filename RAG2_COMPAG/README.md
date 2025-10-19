@@ -45,7 +45,7 @@ For manual installation, follow these steps:
 
     ```bash
     git clone <repository_url>
-    cd p_llm_manual/RAG
+    cd p_llm_manual/
     ```
 
 2.  **Create a virtual environment:**
