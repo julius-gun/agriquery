@@ -10,6 +10,38 @@
       "trust_remote_code": false
     }
   },
+  "tokenizers_for_analysis": [
+    {
+      "name": "Embedding (Qwen3)",
+      "type": "huggingface",
+      "path": "Qwen/Qwen3-Embedding-8B"
+    },
+    {
+      "name": "DeepSeek",
+      "type": "huggingface",
+      "path": "deepseek-ai/deepseek-llm-7b-base"
+    },
+    {
+      "name": "Qwen2",
+      "type": "huggingface",
+      "path": "Qwen/Qwen2-7B-Instruct"
+    },
+    {
+      "name": "Llama 3",
+      "type": "huggingface",
+      "path": "unsloth/llama-3-8b-Instruct-bnb-4bit"
+    },
+    {
+      "name": "Gemma 2",
+      "type": "huggingface",
+      "path": "google/gemma-2-9b-instruct"
+    },
+    {
+      "name": "GPT-OSS (Tiktoken)",
+      "type": "tiktoken",
+      "path": "o200k_harmony"
+    }
+  ],
   "llm_models": {
     "ollama": {
       "deepseek-r1_8B-128k": {
