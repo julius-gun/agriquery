@@ -32,9 +32,10 @@
       "path": "unsloth/llama-3-8b-Instruct-bnb-4bit"
     },
     {
-      "name": "Gemma 2",
+      "name": "Gemma 3",
       "type": "huggingface",
-      "path": "google/gemma-2-9b-instruct"
+      "path": "google/gemma-3n-E4B-it-litert-lm"
+
     },
     {
       "name": "GPT-OSS (Tiktoken)",

@@ -1,4 +1,3 @@
-import os
 import sys
 import pathlib
 from typing import List, Dict, Any
@@ -13,7 +12,7 @@ try:
     from utils.config_loader import ConfigLoader
     from retrieval_pipelines.embedding_retriever import EmbeddingRetriever
 except ImportError as e:
-    print(f"Error: Failed to import necessary modules. Ensure the script is run from a correct location.")
+    print("Error: Failed to import necessary modules. Ensure the script is run from a correct location.")
     print(f"Project Root: {project_root}")
     print(f"Details: {e}")
     sys.exit(1)

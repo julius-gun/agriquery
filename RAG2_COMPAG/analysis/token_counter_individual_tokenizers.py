@@ -1,5 +1,7 @@
+# RAG2_COMPAG/analysis/token_counter_individual_tokenizers.py
 import sys
 import pathlib
+import os
 from typing import List, Dict, Any, Tuple
 
 # --- Path Setup ---
@@ -62,7 +64,14 @@ class TokenCounter:
         print(f"  Loading tokenizer: '{name}' ({tok_type} from '{path}')...")
         try:
             if tok_type == "huggingface":
-                return AutoTokenizer.from_pretrained(path)
+                hf_token = os.getenv("HUGGING_FACE_HUB_TOKEN")
+                if hf_token:
+                    print("  Hugging Face token found in environment.")
+                    return AutoTokenizer.from_pretrained(path, token=hf_token)
+                else:
+                    print("  WARNING: HUGGING_FACE_HUB_TOKEN environment variable not found.")
+                    # Attempt to load without a token as a fallback, though likely to fail for gated models.
+                    return AutoTokenizer.from_pretrained(path)
             elif tok_type == "tiktoken":
                 return tiktoken.get_encoding(path)
             else:
