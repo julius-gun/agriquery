@@ -5,6 +5,7 @@ import time
 import hashlib
 import re
 import chromadb
+from chromadb.config import Settings # Import Settings
 import logging  # Import logging
 from typing import List, Dict, Any, Optional, Tuple
 
@@ -176,7 +177,10 @@ class RagTester:
     def _initialize_chromadb_client(self) -> chromadb.ClientAPI:
         """Initializes and returns the ChromaDB client."""
         try:
-            client = chromadb.PersistentClient(path=CHROMA_PERSIST_DIR)
+            client = chromadb.PersistentClient(
+                path=CHROMA_PERSIST_DIR,
+                settings=Settings(anonymized_telemetry=False)
+            )
             logging.info(
                 f"ChromaDB client initialized. Persistence directory: '{CHROMA_PERSIST_DIR}'"
             )
