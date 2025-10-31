@@ -28,6 +28,8 @@ from retrieval_pipelines.hybrid_retriever import (
 )  # Import HybridRetriever
 from utils.config_loader import ConfigLoader
 from utils.result_manager import ResultManager
+# Import the new custom embedding function
+from utils.chroma_embedding_function import HuggingFaceEmbeddingFunction
 
 # --- Configure Logging ---
 # Basic configuration, adjust level and format as needed
@@ -50,9 +52,14 @@ class RagTester:
     and evaluating the performance. Uses logging for output.
     """
 
-    def __init__(self, config_path: str = "config.json"):
+    def __init__(self, config_path: str = "config.json", embedding_retriever: Optional[EmbeddingRetriever] = None):
         """
         Initializes the RagTester by loading configuration and shared components.
+        
+        Args:
+            config_path (str): The path to the configuration file.
+            embedding_retriever (Optional[EmbeddingRetriever]): A pre-initialized
+                EmbeddingRetriever instance to be shared.
         """
         logging.info("--- Initializing RagTester ---")
         self.config_loader = ConfigLoader(config_path)
@@ -60,6 +67,23 @@ class RagTester:
         self.output_dir = self.config_loader.get_output_dir()
         self.enable_reevaluation = self.config_loader.get_enable_reevaluation()
         self.embedding_model_config = self.config_loader.get_embedding_model_config()
+
+        # Store the shared retriever instance passed from the entry point
+        self.shared_embedding_retriever = embedding_retriever
+        self.chroma_embedding_function = None
+
+        if self.shared_embedding_retriever:
+            logging.info("RagTester initialized with a shared Embedding Retriever.")
+            # Initialize the custom ChromaDB embedding function that wraps the shared model
+            self.chroma_embedding_function = HuggingFaceEmbeddingFunction(
+                embedding_retriever=self.shared_embedding_retriever
+            )
+        else:
+            # This case occurs if the script is run in a way that doesn't provide the model.
+            # We raise an error because the new design requires the model to be provided at initialization.
+            logging.error("FATAL: RagTester must be initialized with an EmbeddingRetriever instance.")
+            raise ValueError("RagTester requires a shared_embedding_retriever to be provided during initialization.")
+
 
         # Load parameters for iteration
         self.question_models_to_test = self.config_loader.get_question_models_to_test()
@@ -286,10 +310,11 @@ class RagTester:
             f"Attempting to get ChromaDB collection: '{dynamic_collection_name}'"
         )
         try:
-            # Note: Keyword retrieval might not strictly need a Chroma collection for querying,
-            # but we need it here to *fetch the documents* for indexing.
-            # Hybrid retrieval also needs it for indexing and embedding search.
-            collection = self.chroma_client.get_collection(name=dynamic_collection_name)
+            # Pass the custom embedding function to ensure Chroma uses the shared model
+            collection = self.chroma_client.get_collection(
+                name=dynamic_collection_name,
+                embedding_function=self.chroma_embedding_function
+            )
             logging.info(
                 f"Successfully connected to collection '{dynamic_collection_name}'."
             )
@@ -1318,23 +1343,21 @@ class RagTester:
                                 sanitized_ext = extension.replace('.', '_')
                                 file_identifier = f"{file_basename}_{sanitized_ext}"
                                 base_collection_name = file_identifier
+                                # Calculate dynamic name here for retriever initialization
+                                dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
 
                                 current_retriever: Optional[BaseRetriever] = None
                                 try:
-                                    if algorithm == "hybrid":
-                                        dynamic_collection_name = f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
-                                        current_retriever = initialize_retriever(
-                                            algorithm,
-                                            embedding_model_config=self.embedding_model_config,
-                                            chroma_client=self.chroma_client,
-                                            collection_name=dynamic_collection_name,
-                                        )
-                                    else:
-                                        current_retriever = initialize_retriever(
-                                            algorithm,
-                                            embedding_model_config=self.embedding_model_config
-                                        )
-                                    
+                                    # The 'initialize_retriever' function (to be refactored in the next step)
+                                    # will now use the shared retriever for 'embedding' and 'hybrid' algorithms.
+                                    current_retriever = initialize_retriever(
+                                        retrieval_strategy_str=algorithm,
+                                        embedding_model_config=self.embedding_model_config,
+                                        chroma_client=self.chroma_client,
+                                        collection_name=dynamic_collection_name,
+                                        # Pass the shared instance to the initializer
+                                        shared_embedding_retriever=self.shared_embedding_retriever
+                                    )
                                     logging.info(f"Initialized retriever: {type(current_retriever).__name__} for algorithm '{algorithm}'")
 
                                 except Exception as e:
@@ -1361,16 +1384,21 @@ class RagTester:
         logging.info("\n--- All Test Combinations Completed ---")
 
 
-def start_rag_tests(config_path: str = "config.json"):
+def start_rag_tests(config_path: str = "config_fast.json", embedding_retriever: Optional[EmbeddingRetriever] = None):
     """
     Initializes and runs the RagTester.
     This function serves as the main entry point for external scripts like main.py.
+
+    Args:
+        config_path (str): The path to the configuration file.
+        embedding_retriever (Optional[EmbeddingRetriever]): A pre-initialized and
+            shared instance of the EmbeddingRetriever.
     """
     logging.info(
         f"--- Starting RAG tests via start_rag_tests (config: {config_path}) ---"
     )
     try:
-        tester = RagTester(config_path=config_path)
+        tester = RagTester(config_path=config_path, embedding_retriever=embedding_retriever)
         tester.run_tests()
         logging.info(f"--- RAG tests completed successfully via start_rag_tests ---")
         return True
@@ -1384,13 +1412,16 @@ def start_rag_tests(config_path: str = "config.json"):
 
 # --- Main Execution ---
 if __name__ == "__main__":
-    config_to_test = "config.json"
+    config_to_test = "config_fast.json"
 
     logging.info(f"--- RAG Tester Script Start (Direct Execution) ---")
     logging.info(f"Using configuration file: {config_to_test}")
 
+    # For standalone execution, we must create our own embedding model instance
+    # This mirrors the behavior of main.py
+    shared_embedding_retriever = None
     try:
-        # --- Pre-computation Check (Informational) ---
+        # --- Pre-computation Check & Standalone Model Initialization ---
         try:
             temp_config_loader = ConfigLoader(config_to_test)
             files_to_test_main = temp_config_loader.get_files_to_test()
@@ -1408,6 +1439,12 @@ if __name__ == "__main__":
             logging.info(f"  Retrieval Algorithms: {algos_to_test_main}")
             logging.info(f"  Chunk Sizes: {chunk_sizes_main}")
             logging.info(f"  Overlap Sizes: {overlap_sizes_main}")
+            
+            logging.info("\n--- Standalone Mode: Initializing Shared Embedding Model ---")
+            embedding_model_config = temp_config_loader.get_embedding_model_config()
+            shared_embedding_retriever = EmbeddingRetriever(model_config=embedding_model_config)
+            logging.info("--- Shared Embedding Model Initialized for Standalone Run ---")
+
             logging.info(
                 f"\nIMPORTANT: This script will attempt to load ChromaDB collections specific to"
             )
@@ -1428,11 +1465,15 @@ if __name__ == "__main__":
             )
         except Exception as config_ex:
             logging.error(
-                f"Error loading configuration for pre-check: {config_ex}", exc_info=True
+                f"Error loading configuration or initializing model for pre-check: {config_ex}", exc_info=True
             )
             raise
 
-        start_rag_tests(config_path=config_to_test)
+        # Pass the newly created model instance to the test runner
+        start_rag_tests(
+            config_path=config_to_test,
+            embedding_retriever=shared_embedding_retriever
+        )
 
     except FileNotFoundError as e:
         logging.critical(f"\nFATAL ERROR: Configuration file not found.")

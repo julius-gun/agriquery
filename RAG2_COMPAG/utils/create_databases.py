@@ -1,6 +1,6 @@
+# RAG2_COMPAG/utils/create_databases.py
 # create_databases.py
 import chromadb
-from chromadb.utils import embedding_functions
 import hashlib
 import os
 import json
@@ -8,6 +8,7 @@ import time
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import sys # Added for path adjustment
 import pathlib # Added for robust path handling
+from typing import Optional, Any # For type hinting
 
 # --- Adjust Python Path ---
 # Add the project root directory (p_llm_manual/RAG) to the Python path
@@ -20,6 +21,9 @@ sys.path.insert(0, str(project_root))
 # Assuming these modules are accessible from the project root
 from retrieval_pipelines.embedding_retriever import EmbeddingRetriever
 from utils.config_loader import ConfigLoader
+# Import the new custom embedding function
+from utils.chroma_embedding_function import HuggingFaceEmbeddingFunction
+
 
 # --- Configuration ---
 PERSIST_DIRECTORY = "chroma_db"
@@ -129,12 +133,18 @@ def embed_and_add_chunks_to_db(document_chunks_text, collection, retriever):
 
 
 # --- Main Script Logic ---
-# def main(config_path: str = "config_fast.json"):
-
-def main(config_path: str = "config.json"):
+def main(
+    config_path: str = "config_fast.json",
+    embedding_retriever: Optional[Any] = None
+):
     """
     Main function to create ChromaDB collections for specified files and extensions,
     using parameters from the provided config file path.
+
+    Args:
+        config_path (str): Path to the configuration file.
+        embedding_retriever (Optional[Any]): An optional pre-initialized
+                                             EmbeddingRetriever instance.
     """
     print("--- Starting Batch ChromaDB Collection Creation Script ---")
     # Resolve the config path relative to the project root for consistency
@@ -180,21 +190,22 @@ def main(config_path: str = "config.json"):
         chroma_client = chromadb.PersistentClient(path=str(absolute_persist_dir))
         print(f"ChromaDB client initialized. Persistence directory: '{absolute_persist_dir}'")
 
-        print("Initializing Embedding Retriever (for tokenizer and vectorization)...")
-        retriever = EmbeddingRetriever(model_config=embedding_model_config)
+        # Step 1: Determine which retriever instance to use.
+        # Use the shared retriever if provided, otherwise create a new one for standalone execution.
+        if embedding_retriever:
+            print("Using shared Embedding Retriever instance.")
+            retriever = embedding_retriever
+        else:
+            print("No shared retriever provided. Initializing a new Embedding Retriever instance...")
+            retriever = EmbeddingRetriever(model_config=embedding_model_config)
+
+        # Step 2: Initialize the custom embedding function with the chosen retriever instance.
+        print("Initializing custom ChromaDB embedding function...")
+        chroma_embedding_function = HuggingFaceEmbeddingFunction(embedding_retriever=retriever)
+
         if not hasattr(retriever, 'tokenizer') or not hasattr(retriever, 'vectorize_document'):
              raise AttributeError("Retriever must have 'tokenizer' and 'vectorize_document' methods.")
-        print("Embedding Retriever initialized.")
-
-        print("Initializing SentenceTransformer Embedding Function for ChromaDB...")
-        embedding_model_name = embedding_model_config.get("name")
-        if not embedding_model_name:
-            raise ValueError("Embedding model 'name' not found in config.")
-        print(f"Using embedding model for Chroma: {embedding_model_name}")
-        gte_embedding_function = embedding_functions.SentenceTransformerEmbeddingFunction(
-            model_name=embedding_model_name
-        )
-        print("SentenceTransformer Embedding Function initialized.")
+        print("Retriever and Chroma embedding function are ready.")
 
     except Exception as e:
         print(f"Error during initialization of ChromaDB/Retriever/Embedding Function: {e}. Exiting.")
@@ -251,9 +262,10 @@ def main(config_path: str = "config.json"):
                     collection_exists = False
                     collection = None
                     try:
+                        # Use the selected embedding function
                         collection = chroma_client.get_collection(
                             name=dynamic_collection_name,
-                            embedding_function=gte_embedding_function
+                            embedding_function=chroma_embedding_function
                         )
                         print(f"  Collection '{dynamic_collection_name}' already exists. Skipping creation.")
                         collection_exists = True
@@ -265,9 +277,10 @@ def main(config_path: str = "config.json"):
                     if not collection_exists:
                         try:
                             print(f"  Creating new collection: '{dynamic_collection_name}'")
+                            # Use the selected embedding function
                             collection = chroma_client.create_collection(
                                 name=dynamic_collection_name,
-                                embedding_function=gte_embedding_function
+                                embedding_function=chroma_embedding_function
                             )
 
                             print(f"  Splitting text using token limits: chunk_size={chunk_size}, overlap={overlap_size}")
@@ -314,4 +327,6 @@ def main(config_path: str = "config.json"):
 
 
 if __name__ == "__main__":
+    # When running this script directly, it will create its own retriever instance
+    # as `embedding_retriever` is None by default.
     main()

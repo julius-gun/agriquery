@@ -1,3 +1,4 @@
+# RAG2_COMPAG/main.py
 # main.py
 import time
 import sys
@@ -14,13 +15,16 @@ try:
     # Ensure the current directory is in the Python path if needed
     # sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
-    # run main() of utils.create_databases.py 
+    # run main() of utils.create_databases.py
     from utils import create_databases
     # Import the NEW entry point function from rag_tester
     from rag_tester import start_rag_tests
-    print("Successfully imported 'start_rag_tests' and 'utils.create_databases'")
+    # Import components needed for central model initialization
+    from utils.config_loader import ConfigLoader
+    from retrieval_pipelines.embedding_retriever import EmbeddingRetriever
+    print("Successfully imported 'start_rag_tests', 'utils.create_databases', and model components.")
 except ImportError as e:
-    print(f"Error: Could not import required modules ('start_rag_tests', 'utils.create_databases').")
+    print(f"Error: Could not import required modules.")
     print(f"Ensure 'main.py' is in the correct directory relative to 'rag_tester.py' and the 'utils' folder.")
     print(f"and that the project structure allows the imports.")
     print(f"Original error: {e}")
@@ -29,7 +33,8 @@ except ImportError as e:
 # --- Main Execution ---
 def main():
     """
-    Main entry point to potentially create databases and then start the RAG testing process.
+    Main entry point to initialize a shared embedding model, potentially create
+    databases, and then start the RAG testing process.
     """
     print("\n=============================================")
     print(" main.py: Starting Execution")
@@ -38,20 +43,40 @@ def main():
     overall_start_time = time.time()
 
     try:
-        # --- Step 1: Create/Update Databases (Optional - uncomment if needed) ---
+        # --- Step 1: Centralized Model Initialization ---
+        print("\n--- Initializing Shared Embedding Model ---")
+        model_init_start_time = time.time()
+
+        # Load config to get model details
+        config_loader = ConfigLoader(config_path=CONFIG_FILE)
+        embedding_model_config = config_loader.get_embedding_model_config()
+
+        # Create the single, shared instance of the embedding retriever
+        shared_embedding_retriever = EmbeddingRetriever(model_config=embedding_model_config)
+
+        model_init_end_time = time.time()
+        print(f"--- Shared Embedding Model Initialized (Duration: {model_init_end_time - model_init_start_time:.2f} seconds) ---")
+
+
+        # --- Step 2: Create/Update Databases ---
         print("\n--- Running Database Creation/Update ---")
         db_start_time = time.time()
-        # Call the main function from create_databases.py
-        # Ensure create_databases.main() also uses the correct config if needed
-        create_databases.main(config_path=CONFIG_FILE) # Pass config if needed by create_databases
+        # Pass the config path AND the shared model instance
+        create_databases.main(
+            config_path=CONFIG_FILE,
+            embedding_retriever=shared_embedding_retriever
+        )
         db_end_time = time.time()
         print(f"--- Database Creation/Update Finished (Duration: {db_end_time - db_start_time:.2f} seconds) ---")
 
-        # --- Step 2: Run RAG Tests ---
+        # --- Step 3: Run RAG Tests ---
         print("\n--- Initiating RAG Testing Process ---")
         test_start_time = time.time()
-        # Call the NEW entry point function, passing the config path
-        start_rag_tests(config_path=CONFIG_FILE)
+        # Pass the config path AND the shared model instance
+        start_rag_tests(
+            config_path=CONFIG_FILE,
+            embedding_retriever=shared_embedding_retriever
+        )
         test_end_time = time.time()
         # Note: Duration calculation here might be slightly less accurate if start_rag_tests
         # includes significant setup time before its internal timing starts.
@@ -65,7 +90,7 @@ def main():
         print("=============================================")
 
     except Exception as e:
-        # Catch potential exceptions during database creation or test run
+        # Catch potential exceptions during model init, database creation, or test run
         # (Errors from start_rag_tests will be re-raised and caught here)
         overall_end_time = time.time()
         duration = overall_end_time - overall_start_time
