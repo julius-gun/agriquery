@@ -143,6 +143,17 @@
           "type": "tiktoken",
           "path": "o200k_harmony"
         }
+      },
+      "gpt-oss-120b-cloud_128k": {
+        "name": "gpt-oss:120b-cloud",
+        "temperature": 0.0,
+        "num_predict": 1024,
+        "context_window": 131072,
+        "tokenizer": {
+          "name": "GPT-OSS (Tiktoken)",
+          "type": "tiktoken",
+          "path": "o200k_harmony"
+        }
       }
     },
     "gemini": {
@@ -157,9 +168,9 @@
     }
   },
   "question_models_to_test": [
-    "deepseek-r1_1.5B-128k"
+    "gpt-oss-120b-cloud_128k"
   ],
-  "evaluator_model_name": "deepseek-r1_1.5B-128k",
+  "evaluator_model_name": "gpt-oss-120b-cloud_128k",
   "enable_reevaluation": true,
   "prompt_paths": {
     "question_prompt": "prompt_templates/question_prompt.txt",
@@ -172,8 +183,8 @@
     "md"
   ],
   "question_dataset_paths": {
-    "general_questions": "question_datasets/question_answers_pairs.json",
-    "unanswerable_questions": "question_datasets/question_answers_unanswerable.json"
+    "general_questions": "question_datasets/question_answers_pairs_short.json",
+    "unanswerable_questions": "question_datasets/question_answers_unanswerable_short.json"
   },
   "output_dir": "results",
   "rag_parameters": {
