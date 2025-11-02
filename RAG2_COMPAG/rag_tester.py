@@ -484,6 +484,7 @@ class RagTester:
         intermediate_results_by_dataset = {}
         overall_qa_start_time = time.time()
         answered_questions_count = 0
+        llm_invocation_failed = False # Flag to stop on first fatal LLM error
 
         # Determine which questions to process
         if questions_to_process is not None:
@@ -507,6 +508,10 @@ class RagTester:
             return {}, 0.0, 0
 
         for dataset_name, dataset_questions in datasets_to_iterate.items():
+            if llm_invocation_failed:
+                logging.warning(f"  Skipping QA for Dataset: {dataset_name} due to previous LLM invocation failure.")
+                continue
+
             if not dataset_questions: continue # Skip empty datasets
 
             logging.info(f"\n  Processing QA for Dataset: {dataset_name} ({len(dataset_questions)} questions)")
@@ -743,6 +748,7 @@ class RagTester:
                             f"Error: Failed during QA generation. Details: {e}"
                         )
                         qa_error = True
+                        llm_invocation_failed = True # Set flag to stop processing other datasets
                         break  # Break out of the question loop on LLM error
 
                 # --- Store Intermediate Result ---

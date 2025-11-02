@@ -1,4 +1,3 @@
-# RAG/retrieval_pipelines/hybrid_retriever.py
 import logging
 from typing import List, Dict, Any, Tuple, Optional
 
@@ -23,28 +22,41 @@ class HybridRetriever(BaseRetriever):
 
     def __init__(
         self,
-        embedding_model_config: Dict[str, Any],
-        chroma_client: Optional[chromadb.ClientAPI] = None, # Pass client for querying
-        collection_name: Optional[str] = None, # Pass collection name for querying
+        embedding_retriever: Optional[EmbeddingRetriever] = None, # Accepts pre-initialized retriever
+        embedding_model_config: Optional[Dict[str, Any]] = None, # Fallback to create a new one
+        chroma_client: Optional[chromadb.ClientAPI] = None,
+        collection_name: Optional[str] = None,
         verbose: bool = False
     ):
         """
         Initializes the HybridRetriever.
 
+        Prioritizes using a pre-initialized embedding_retriever if provided.
+        Otherwise, it creates a new one using embedding_model_config.
+
         Args:
-            embedding_model_config (Dict[str, Any]): Configuration for the embedding model.
+            embedding_retriever (Optional[EmbeddingRetriever]): A pre-initialized instance of EmbeddingRetriever.
+            embedding_model_config (Optional[Dict[str, Any]]): Configuration for the embedding model (used as fallback).
             chroma_client (Optional[chromadb.ClientAPI]): Initialized ChromaDB client. Required for embedding search.
             collection_name (Optional[str]): Name of the ChromaDB collection to query. Required for embedding search.
             verbose (bool): If True, enables detailed logging during retrieval.
         """
-        super().__init__() # Call base class initializer (currently does nothing)
+        super().__init__()
         self.verbose = verbose
         logging.info(f"Initializing HybridRetriever...")
 
         # --- Embedding Component ---
-        self.embedding_retriever = EmbeddingRetriever(
-            model_config=embedding_model_config
-        )
+        if embedding_retriever:
+            logging.info("  Using shared embedding retriever instance for HybridRetriever.")
+            self.embedding_retriever = embedding_retriever
+        elif embedding_model_config:
+            logging.info("  Creating new embedding retriever instance for HybridRetriever (fallback).")
+            self.embedding_retriever = EmbeddingRetriever(
+                model_config=embedding_model_config
+            )
+        else:
+            raise ValueError("HybridRetriever requires either an 'embedding_retriever' instance or an 'embedding_model_config'.")
+
         self.chroma_client = chroma_client
         self.collection_name = collection_name
         self.collection: Optional[chromadb.Collection] = None # Will be fetched later
