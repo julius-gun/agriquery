@@ -1,4 +1,3 @@
-from typing import Dict, Any
 from llm_connectors.base_llm_connector import BaseLLMConnector
 from utils.config_loader import ConfigLoader
 
@@ -42,7 +41,14 @@ if __name__ == '__main__':
     # Example usage (requires a config and an LLM connector - using Ollama example):
     config_loader = ConfigLoader()
     evaluator_model_name = config_loader.get_evaluator_model_name() # e.g., "gemma2:latest"
-    ollama_config = config_loader.get_llm_models_config("ollama").get(evaluator_model_name, {"name": evaluator_model_name}) # Get config for evaluator model or default
+    if not evaluator_model_name:
+        raise ValueError("Evaluator model name not found in config. Cannot run example.")
+
+    # Safely get the ollama config, defaulting to an empty dict if the 'ollama' section is missing
+    ollama_models_config = config_loader.get_llm_models_config("ollama") or {}
+    # Get config for the specific evaluator model, or provide a default
+    ollama_config = ollama_models_config.get(evaluator_model_name, {"name": evaluator_model_name})
+
     if "name" not in ollama_config:
         ollama_config["name"] = evaluator_model_name # Ensure name is set
 
@@ -62,7 +68,6 @@ if __name__ == '__main__':
     print(f"Expected Answer: {expected_answer_example}")
     print(f"Evaluation Result: {evaluation_result}") # Expected: yes (or similar)
 
-    # Example of creating a fresh evaluator
-    fresh_evaluator = evaluator.create_fresh_evaluator()
-    fresh_evaluation_result = fresh_evaluator.evaluate_answer(question_example, "London", expected_answer_example)
-    print(f"\nFresh Evaluator - Evaluation Result for wrong answer: {fresh_evaluation_result}") # Expected: no (or similar)
+    # Example with a wrong answer
+    wrong_answer_result = evaluator.evaluate_answer(question_example, "London", expected_answer_example)
+    print(f"\nEvaluation Result for wrong answer: {wrong_answer_result}") # Expected: no (or similar)
