@@ -1,9 +1,10 @@
-# RAG/rag_tester.py
 import os
 import time
 import re
 import chromadb
 from chromadb.config import Settings  # Import Settings
+from chromadb.api import ClientAPI
+
 import logging  # Import logging
 from typing import List, Dict, Any, Optional, Tuple
 
@@ -187,7 +188,7 @@ class RagTester:
                 "Reevaluation requires 'question_dataset_paths' in config."
             )
 
-    def _initialize_chromadb_client(self) -> chromadb.ClientAPI:
+    def _initialize_chromadb_client(self) -> ClientAPI:
         """Initializes and returns the ChromaDB client."""
         try:
             client = chromadb.PersistentClient(
@@ -643,11 +644,6 @@ class RagTester:
 
                 # --- RAG Retrieval ---
                 try:
-                    # Polymorphic call to vectorize the query text
-                    # Output type depends on the retriever (List[List[float]], List[str], Dict)
-                    query_representation = retriever.vectorize_query(question)
-
-                    # --- Branch based on algorithm for retrieval ---
                     if current_retrieval_algorithm == "embedding":
                         if not isinstance(retriever, EmbeddingRetriever):
                             # Log error and raise for clarity, although type hint helps
@@ -660,26 +656,16 @@ class RagTester:
                         if collection is None:
                             # This check might be redundant if collection fetch failure already skipped the combo
                             logging.error(
-                                f"ChromaDB collection is required for embedding retrieval but was not found/loaded."
+                                "ChromaDB collection is required for embedding retrieval but was not found/loaded."
                             )
                             raise ValueError(
-                                f"ChromaDB collection is required for embedding retrieval but was not found/loaded."
+                                "ChromaDB collection is required for embedding retrieval but was not found/loaded."
                             )
 
-                        # EmbeddingRetriever.vectorize_query returns List[List[float]]
-                        if not isinstance(query_representation, list) or not isinstance(
-                            query_representation[0], list
-                        ):
-                            logging.error(
-                                f"Unexpected query representation format for embedding: {type(query_representation)}"
-                            )
-                            raise TypeError(
-                                "Unexpected query representation format for embedding."
-                            )
+                        query_representation = retriever.vectorize_query(question)
 
-                        # Perform retrieval using ChromaDB directly
                         query_results = collection.query(
-                            query_embeddings=query_representation,  # Pass the embedding List[List[float]]
+                            query_embeddings=query_representation,  # Pass the embedding List[List[float]] # type: ignore
                             n_results=self.num_retrieved_docs,
                             include=["documents"],  # Only need documents for context
                         )
@@ -711,18 +697,9 @@ class RagTester:
                             raise TypeError(
                                 "Retriever is not a KeywordRetriever for keyword algorithm."
                             )
-                        if not isinstance(
-                            query_representation, list
-                        ):  # KeywordRetriever returns List[str]
-                            logging.error(
-                                f"Unexpected query representation format for keyword: {type(query_representation)}"
-                            )
-                            raise TypeError(
-                                "Unexpected query representation format for keyword."
-                            )
 
-                        # KeywordRetriever should have been indexed in _process_single_combination
-                        # Retrieve relevant chunks using the internal BM25 index
+                        query_representation = retriever.vectorize_query(question)
+
                         retrieved_chunks_text, scores = (
                             retriever.retrieve_relevant_chunks(
                                 query_representation=query_representation,  # Pass tokenized query
@@ -749,21 +726,10 @@ class RagTester:
                             raise TypeError(
                                 "Retriever is not a HybridRetriever for hybrid algorithm."
                             )
-                        if not isinstance(
-                            query_representation, dict
-                        ):  # HybridRetriever returns Dict
-                            logging.error(
-                                f"Unexpected query representation format for hybrid: {type(query_representation)}"
-                            )
-                            raise TypeError(
-                                "Unexpected query representation format for hybrid."
-                            )
 
-                        # HybridRetriever should have had its keyword index built in _process_single_combination
-                        # and its Chroma collection set during initialization.
-                        # Retrieve relevant chunks using the internal combined logic (RRF)
-                        # *** Modify this line to capture scores ***
-                        retrieved_chunks_text, scores = (  # Changed _ to scores
+                        query_representation = retriever.vectorize_query(question)
+
+                        retrieved_chunks_text, scores = (
                             retriever.retrieve_relevant_chunks(
                                 query_representation=query_representation,  # Pass dict with embedding and tokens
                                 top_k=self.num_retrieved_docs,
@@ -1726,11 +1692,11 @@ def start_rag_tests(
             config_path=config_path, embedding_retriever=embedding_retriever
         )
         tester.run_tests()
-        logging.info(f"--- RAG tests completed successfully via start_rag_tests ---")
+        logging.info("--- RAG tests completed successfully via start_rag_tests ---")
         return True
     except Exception as e:
         logging.critical(
-            f"--- RAG tests failed during execution initiated by start_rag_tests ---",
+            "--- RAG tests failed during execution initiated by start_rag_tests ---",
             exc_info=True,
         )
         raise e
@@ -1740,7 +1706,7 @@ def start_rag_tests(
 if __name__ == "__main__":
     config_to_test = "config_fast.json"
 
-    logging.info(f"--- RAG Tester Script Start (Direct Execution) ---")
+    logging.info("--- RAG Tester Script Start (Direct Execution) ---")
     logging.info(f"Using configuration file: {config_to_test}")
 
     # For standalone execution, we must create our own embedding model instance
@@ -1758,7 +1724,7 @@ if __name__ == "__main__":
             models_to_test_main = temp_config_loader.get_question_models_to_test()
             algos_to_test_main = temp_config_loader.get_retrieval_algorithms_to_test()
 
-            logging.info(f"\nStarting RAG Tester for:")
+            logging.info("\nStarting RAG Tester for:")
             logging.info(f"  Files: {files_to_test_main}")
             logging.info(f"  Extensions: {extensions_to_test_main}")
             logging.info(f"  Question Models: {models_to_test_main}")
@@ -1778,17 +1744,17 @@ if __name__ == "__main__":
             )
 
             logging.info(
-                f"\nIMPORTANT: This script will attempt to load ChromaDB collections specific to"
+                "\nIMPORTANT: This script will attempt to load ChromaDB collections specific to"
             )
             logging.info(
-                f"           each configured file AND the chunk/overlap parameters being tested."
+                "           each configured file AND the chunk/overlap parameters being tested."
             )
             logging.info(
-                f"           Collection name format: [file_basename]_[ext]_cs[chunk_size]_os[overlap_size]"
+                "           Collection name format: [file_basename]_[ext]_cs[chunk_size]_os[overlap_size]"
             )
-            logging.info(f"           Ensure 'create_databases.py' has been run with")
+            logging.info("           Ensure 'create_databases.py' has been run with")
             logging.info(
-                f"           combinations matching the 'chunk_sizes_to_test' and 'overlap_sizes_to_test'"
+                "           combinations matching the 'chunk_sizes_to_test' and 'overlap_sizes_to_test'"
             )
             logging.info(
                 f"           defined in '{config_to_test}' under 'rag_parameters'."
@@ -1806,28 +1772,28 @@ if __name__ == "__main__":
         )
 
     except FileNotFoundError as e:
-        logging.critical(f"\nFATAL ERROR: Configuration file not found.")
+        logging.critical("\nFATAL ERROR: Configuration file not found.")
         logging.critical(f"  Details: {e}")
     except ValueError as e:
-        logging.critical(f"\nFATAL ERROR: Invalid or missing configuration.")
+        logging.critical("\nFATAL ERROR: Invalid or missing configuration.")
         logging.critical(f"  Details: {e}")
     except ImportError as e:
         if "rank_bm25" in str(e):
-            logging.critical(f"\nFATAL ERROR: Missing dependency 'rank_bm25'.")
-            logging.critical(f"  Please install it using: pip install rank-bm25")
+            logging.critical("\nFATAL ERROR: Missing dependency 'rank_bm25'.")
+            logging.critical("  Please install it using: pip install rank-bm25")
         else:
-            logging.critical(f"\nFATAL ERROR: Failed to import necessary modules.")
+            logging.critical("\nFATAL ERROR: Failed to import necessary modules.")
             logging.critical(f"  Details: {e}")
     except Exception as e:
         import traceback
 
-        logging.critical(f"\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        logging.critical(f"FATAL ERROR: An unexpected error occurred during execution!")
+        logging.critical("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        logging.critical("FATAL ERROR: An unexpected error occurred during execution!")
         logging.critical(f"Error Type: {type(e).__name__}")
         logging.critical(f"Error Message: {e}")
         logging.critical("Traceback:")
         logging.critical(traceback.format_exc())
-        logging.critical(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        logging.critical("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
     finally:
         logging.info("--- RAG Tester Script End (Direct Execution) ---")

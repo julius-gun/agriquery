@@ -1,5 +1,5 @@
 import chromadb
-from chromadb.utils import embedding_functions
+from chromadb.api import ClientAPI
 import hashlib
 # Import specific retrievers
 from retrieval_pipelines.embedding_retriever import EmbeddingRetriever
@@ -13,7 +13,6 @@ from analysis.analysis_tools import (
     load_dataset,
     analyze_dataset_across_types,
 )
-import json
 import os
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from typing import List, Dict, Any, Optional # Import Optional
@@ -34,7 +33,7 @@ def generate_chunk_id(text_chunk: str) -> str:
 def initialize_retriever(
     retrieval_strategy_str: str,
     embedding_model_config: Dict[str, Any],
-    chroma_client: Optional[chromadb.ClientAPI] = None,
+    chroma_client: Optional[ClientAPI] = None,
     collection_name: Optional[str] = None,
     shared_embedding_retriever: Optional[EmbeddingRetriever] = None
 ) -> BaseRetriever:
@@ -45,7 +44,7 @@ def initialize_retriever(
     Args:
         retrieval_strategy_str (str): The retrieval strategy ('embedding', 'keyword', 'hybrid').
         embedding_model_config (Dict[str, Any]): Configuration for the embedding model (used as fallback).
-        chroma_client (Optional[chromadb.ClientAPI]): The ChromaDB client instance.
+        chroma_client (Optional[ClientAPI]): The ChromaDB client instance.
         collection_name (Optional[str]): The name of the ChromaDB collection.
         shared_embedding_retriever (Optional[EmbeddingRetriever]): A pre-initialized
             EmbeddingRetriever instance.
@@ -88,7 +87,7 @@ def initialize_retriever(
         raise ValueError(f"Unknown retrieval strategy: {retrieval_strategy_str}")
 
 
-# This function's logic remains sound and does not need changes.
+# This function's logic is refactored for clarity and to resolve static analysis errors.
 def embed_and_add_chunks_to_db(
     document_chunks_text: List[str],
     collection: chromadb.Collection,
@@ -102,11 +101,56 @@ def embed_and_add_chunks_to_db(
     collection_name = collection.name # Get name for logging
     print(f"Starting embedding process for {total_chunks} chunks into collection '{collection_name}'...")
 
-    is_embedding_retriever = isinstance(retriever, EmbeddingRetriever)
-    internal_embedding_retriever = getattr(retriever, 'embedding_retriever', None) if isinstance(retriever, HybridRetriever) else None
+    # Determine if the retriever has embedding capabilities
+    embedder_to_use: Optional[EmbeddingRetriever] = None
+    if isinstance(retriever, EmbeddingRetriever):
+        embedder_to_use = retriever
+    elif isinstance(retriever, HybridRetriever):
+        # The HybridRetriever holds an instance of an EmbeddingRetriever
+        embedder_to_use = getattr(retriever, 'embedding_retriever', None)
 
-    if not is_embedding_retriever and not internal_embedding_retriever:
-        print(f"Warning: The provided retriever ({type(retriever).__name__}) may not be suitable for generating embeddings required by ChromaDB 'add'. Proceeding by adding documents only.")
+    # --- Path 1: Retriever can create embeddings ---
+    if embedder_to_use:
+        print(f"  Using retriever '{type(retriever).__name__}' to generate embeddings.")
+        for i, chunk_text in enumerate(document_chunks_text):
+            chunk_id = generate_chunk_id(chunk_text)
+            try:
+                # Check if the chunk ID already exists in the collection
+                existing = collection.get(ids=[chunk_id], include=[])
+                if existing["ids"]:
+                    skipped_count += 1
+                    continue
+
+                # Vectorize and add the new chunk
+                chunk_embedding = embedder_to_use.vectorize_document(chunk_text)
+                
+                # Check if the embedding has the expected format (list of lists of floats)
+                if isinstance(chunk_embedding, list) and chunk_embedding and isinstance(chunk_embedding[0], list):
+                     collection.add(
+                         embeddings=chunk_embedding, # type: ignore
+                         documents=[chunk_text],
+                         ids=[chunk_id]
+                     )
+                     added_count += 1
+                else:
+                     # Fallback if embedding format is not as expected
+                     print(f"Warning: Chunk {i} embedding format unexpected ({type(chunk_embedding)}). Adding document only.")
+                     collection.add(documents=[chunk_text], ids=[chunk_id])
+                     added_count += 1
+                
+                if (i + 1) % 50 == 0 or (i + 1) == total_chunks:
+                    print(f"  Collection '{collection_name}': Processed {i + 1}/{total_chunks} chunks (Added w/ Embeddings: {added_count}, Skipped: {skipped_count}, Errors: {error_count})")
+            
+            except Exception as e:
+                print(f"!!! ERROR processing chunk {i} for collection '{collection_name}' (ID: {chunk_id[:10]}...): {e}")
+                error_count += 1
+        
+        print(f"Embedding finished for collection '{collection_name}'. Added: {added_count}, Skipped (already exist): {skipped_count}, Errors: {error_count}")
+        return
+
+    # --- Path 2: Retriever cannot create embeddings (e.g., KeywordRetriever) ---
+    else:
+        print(f"Warning: The provided retriever ({type(retriever).__name__}) does not have embedding capabilities. Proceeding by adding documents only.")
         for i, chunk_text in enumerate(document_chunks_text):
             chunk_id = generate_chunk_id(chunk_text)
             try:
@@ -116,49 +160,15 @@ def embed_and_add_chunks_to_db(
                 else:
                     collection.add(documents=[chunk_text], ids=[chunk_id])
                     added_count += 1
+                
                 if (i + 1) % 50 == 0 or (i + 1) == total_chunks:
                     print(f"  Collection '{collection_name}': Processed {i + 1}/{total_chunks} chunks (Added Docs Only: {added_count}, Skipped: {skipped_count}, Errors: {error_count})")
+            
             except Exception as e:
                 print(f"!!! ERROR processing chunk {i} (doc only) for collection '{collection_name}' (ID: {chunk_id[:10]}...): {e}")
                 error_count += 1
+
         print(f"Document-only adding finished for collection '{collection_name}'. Added: {added_count}, Skipped: {skipped_count}, Errors: {error_count}")
-        return
-
-    embedder_to_use = retriever if is_embedding_retriever else internal_embedding_retriever
-
-    for i, chunk_text in enumerate(document_chunks_text):
-        chunk_id = generate_chunk_id(chunk_text)
-        try:
-            existing = collection.get(
-                ids=[chunk_id], include=[]
-            )
-            if existing["ids"]:
-                skipped_count += 1
-            else:
-                chunk_embedding = embedder_to_use.vectorize_document(chunk_text)
-                if isinstance(chunk_embedding, list) and isinstance(chunk_embedding[0], list) and isinstance(chunk_embedding[0][0], float):
-                     collection.add(
-                         embeddings=chunk_embedding,
-                         documents=[chunk_text],
-                         ids=[chunk_id]
-                     )
-                     added_count += 1
-                else:
-                     print(f"Warning: Chunk {i} embedding format unexpected ({type(chunk_embedding)}). Adding document only.")
-                     collection.add(
-                         documents=[chunk_text],
-                         ids=[chunk_id]
-                     )
-                     added_count += 1
-
-            if (i + 1) % 50 == 0 or (i + 1) == total_chunks:
-                 print(f"  Collection '{collection_name}': Processed {i + 1}/{total_chunks} chunks (Added w/ Embeddings: {added_count}, Skipped: {skipped_count}, Errors: {error_count})")
-        except Exception as e:
-            print(f"!!! ERROR processing chunk {i} for collection '{collection_name}' (ID: {chunk_id[:10]}...): {e}")
-            error_count += 1
-    print(
-        f"Embedding finished for collection '{collection_name}'. Added: {added_count}, Skipped (already exist): {skipped_count}, Errors: {error_count}"
-    )
 
 
 # --- Main Execution Block ---
@@ -232,7 +242,7 @@ if __name__ == "__main__":
                         )
                         print(f"Collection '{dynamic_collection_name}' already exists.")
                         collection_exists = True
-                    except Exception as e:
+                    except Exception:
                         print(f"Collection '{dynamic_collection_name}' does not exist yet. Will proceed with creation.")
                         collection_exists = False
 
@@ -264,7 +274,7 @@ if __name__ == "__main__":
                             document_chunks_text = token_splitter.split_text(text)
                             print(f"Generated {len(document_chunks_text)} token-based chunks.")
                         else:
-                            print(f"Warning: Tokenizer not available. Using basic character splitter.")
+                            print("Warning: Tokenizer not available. Using basic character splitter.")
                             char_splitter = RecursiveCharacterTextSplitter(
                                  chunk_size=chunk_size * 4,
                                  chunk_overlap=overlap_size * 4,

@@ -2,7 +2,6 @@
 # main.py
 import time
 import sys
-import os
 
 # --- Configuration ---
 # Define the config file path (could be made dynamic later)
@@ -24,9 +23,9 @@ try:
     from retrieval_pipelines.embedding_retriever import EmbeddingRetriever
     print("Successfully imported 'start_rag_tests', 'utils.create_databases', and model components.")
 except ImportError as e:
-    print(f"Error: Could not import required modules.")
-    print(f"Ensure 'main.py' is in the correct directory relative to 'rag_tester.py' and the 'utils' folder.")
-    print(f"and that the project structure allows the imports.")
+    print("Error: Could not import required modules.")
+    print("Ensure 'main.py' is in the correct directory relative to 'rag_tester.py' and the 'utils' folder.")
+    print("and that the project structure allows the imports.")
     print(f"Original error: {e}")
     sys.exit(1) # Exit if core functions/modules cannot be imported
 
@@ -85,7 +84,7 @@ def main():
         overall_end_time = time.time()
         duration = overall_end_time - overall_start_time
         print("-" * 45)
-        print(f"main.py: All steps completed successfully.")
+        print("main.py: All steps completed successfully.")
         print(f"Total execution time recorded by main.py: {duration:.2f} seconds.")
         print("=============================================")
 
@@ -95,8 +94,8 @@ def main():
         overall_end_time = time.time()
         duration = overall_end_time - overall_start_time
         print("-" * 45)
-        print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print(f"main.py: An error occurred during execution!")
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print("main.py: An error occurred during execution!")
         # Log the exception details
         import traceback
         print("\n--- Error Details (Caught by main.py) ---")
@@ -106,7 +105,7 @@ def main():
         traceback.print_exc()
         print("---------------------\n")
         print(f"Execution halted after {duration:.2f} seconds due to the error.")
-        print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         sys.exit(1) # Exit with a non-zero code to indicate failure
 
 if __name__ == "__main__":
