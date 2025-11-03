@@ -175,9 +175,9 @@
     "llama3.1_8B-128k",
     "llama3.2_3B-128k",
     "gemma3_12B-128k",
-    "gpt-oss-20b_128k"
+    "gpt-oss-120b_128k"
   ],
-  "evaluator_model_name": "gpt-oss-120b_128k",
+  "evaluator_model_name": "gpt-oss-20b_128k",
   "enable_reevaluation": true,
   "prompt_paths": {
     "question_prompt": "prompt_templates/question_prompt.txt",

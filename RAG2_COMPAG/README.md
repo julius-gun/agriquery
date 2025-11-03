@@ -30,8 +30,8 @@ This project provides a framework for building, testing, and evaluating Retrieva
 *   Docker (Recommended for managing Ollama and dependencies)
 *   Git
 *   Ollama installed and running (either locally or via the provided Docker setup).
-*   **Required Ollama Models:** Ensure the LLMs specified in `config.json` (`question_model_name`, `evaluator_model_name`) are pulled in your Ollama instance (e.g., `ollama pull llama3.2:3b`, `ollama pull gemma3:12b`). The Dockerfile attempts to pull several models during the build process.
-*   **Embedding Model:** The system relies on the `Alibaba-NLP/gte-Qwen2-7B-instruct` sentence transformer model for embeddings. `pip install -r requirements.txt` handles installing the necessary library (`sentence-transformers`).
+*   **Required Ollama Models:** Ensure the LLMs specified in `config.json` (`question_models_to_test`, `evaluator_model_name`) are pulled in your Ollama instance (e.g., `ollama pull llama3.2:3b`, `ollama pull gemma3:12b`). The Dockerfile attempts to pull several models during the build process.
+*   **Embedding Model:** The system relies on the embedding model specified in `config.json` (e.g., `Qwen/Qwen3-Embedding-8B`). `pip install -r requirements.txt` handles installing the necessary libraries.
 
 ## Docker Installation
 
@@ -45,7 +45,7 @@ For manual installation, follow these steps:
 
     ```bash
     git clone <repository_url>
-    cd p_llm_manual/
+    cd RAG2_COMPAG/
     ```
 
 2.  **Create a virtual environment:**
@@ -74,7 +74,7 @@ For manual installation, follow these steps:
 
     Visual Studio Code (VS Code) can automatically detect and use virtual environments. Here’s how to ensure your virtual environment is correctly set up in VS Code:
 
-    1.  **Open the Project in VS Code:** Open the project folder (e.g., `RAG-Framework`) in VS Code.
+    1.  **Open the Project in VS Code:** Open the `RAG2_COMPAG` folder in VS Code.
 
     2.  **VS Code should detect the virtual environment:** When you open the project, VS Code should automatically detect the `.venv` virtual environment in your project directory. You might see a notification in the bottom right corner of VS Code suggesting that it has found a virtual environment.
 
@@ -95,7 +95,7 @@ For manual installation, follow these steps:
 
     *   **Restart VS Code:** If you are having trouble getting VS Code to recognize your virtual environment, try restarting VS Code after creating and activating the `.venv`.
 
-    *   **Check `.venv` Location:** Verify that the `.venv` folder is created in the root directory of your RAG project. VS Code usually looks for `.venv` in the project root.
+    *   **Check `.venv` Location:** Verify that the `.venv` folder is created in the root directory of your project. VS Code usually looks for `.venv` in the project root.
 
     *   **Using the VS Code Terminal:** When you open the terminal in VS Code (using `Ctrl+\`` or `Cmd+\``), it should automatically activate the selected virtual environment for you. If it doesn't, you might need to manually activate it once in the terminal using the `source .venv/bin/activate` or `.venv\Scripts\activate` commands as mentioned in step 3 above.
 
@@ -108,9 +108,61 @@ For manual installation, follow these steps:
     ```bash
     pip install -r requirements.txt
     ```
+## Configuration
+
+1.  **Review and modify `config.json`:** This is the central configuration file.
+    *   Set `llm_models` with your desired Ollama models and their parameters (ensure the `name` matches your `ollama list` output).
+    *   Update `question_models_to_test` and `evaluator_model_name` to point to keys within `llm_models.ollama`.
+    *   Configure `files_to_test` and `file_extensions_to_test` with the manuals you want to process.
+    *   Verify `question_dataset_paths` point to your JSON QA datasets (e.g., general, unanswerable).
+    *   Adjust `rag_parameters` (`chunk_sizes_to_test`, `overlap_sizes_to_test`, `num_retrieved_docs`).
+    *   Set the `output_dir` for saving results.
+2.  **Prepare Data:**
+    *   Place manuals in the `manuals/` directory.
+    *   Place question/answer JSON datasets in the `question_datasets/` directory.
+    *   Ensure prompt template files exist at the paths specified in `prompt_paths` (e.g., `prompt_templates/question_prompt.txt`).
+
+## Usage Workflow
+
+The entire testing pipeline is orchestrated by `main.py`. This single script handles creating the vector databases and then running the tests according to the settings in `config.json`.
+
+1.  **Activate the Virtual Environment:** Before running, ensure your virtual environment is active.
+    *   **On Windows:**
+        ```bash
+        .venv\Scripts\activate
+        ```
+    *   **On macOS and Linux:**
+        ```bash
+        source .venv/bin/activate
+        ```
+
+2.  **Run the Main Script:** From the `RAG2_COMPAG` directory, execute `main.py`. The script will perform all necessary steps:
+    *   Initialize the embedding model.
+    *   Create or update the ChromaDB vector databases for all file and parameter combinations specified in `config.json`.
+    *   Run the full Question-Answering and Evaluation pipeline.
+    
+    ```bash
+    python main.py
+    ```
+    The script will log its progress to the console.
+
+## Output
+
+Test results are saved as JSON files in the directory specified by `output_dir` in `config.json` (default: `results/`).
+
+Filenames follow the pattern:
+`{retrieval_algorithm}_{file_identifier}_{sanitized_question_model_name}_{chunk_size}_overlap_{overlap_size}_topk_{num_retrieved_docs}.json`
+
+Each file contains:
+*   `test_run_parameters`: Configuration used for that specific test run (file, models, RAG params, collection name).
+*   `overall_metrics`: Calculated performance metrics (Accuracy, Precision, Recall, Specificity, F1-Score, TP/TN/FP/FN counts).
+*   `timing`: Duration of the QA and Evaluation phases, and the overall duration.
+*   `per_dataset_details`: Raw results broken down by the input question dataset type. Includes the original question, expected answer, model's generated answer, evaluation judgment ("yes"/"no"/"error"), and timing for that dataset.
+
+
 ## Try it out
 
-To quickly test the RAG pipeline with a single question, use the `ask_question_demo.ipynb` Jupyter notebook located in the `RAG` directory.
+To quickly test the RAG pipeline with a single question, use the `ask_question_demo.ipynb` Jupyter notebook located in the root directory.
 
 **`ask_question_demo.ipynb` - Interactive RAG Query:**
 
@@ -121,62 +173,18 @@ This notebook allows you to:
     *   The LLM to use for answering (or skip LLM answering to only see retrieved context).
     *   Whether to evaluate the LLM's answer against an expected answer you provide.
     *   The `config.json` and ChromaDB directory to use (defaults are usually fine).
-3.  **Automatic Context Retrieval:** The notebook automatically identifies the relevant ChromaDB collection based on the *first* language, chunk size, and overlap size specified in your `config.json`.
+3.  **Automatic Context Retrieval:** The notebook automatically identifies the relevant ChromaDB collection based on the *first* file, chunk size, and overlap size specified in your `config.json`.
 4.  **View Retrieved Context:** See the text chunks retrieved from the database that are most relevant to your question.
 5.  **Get LLM Answer (Optional):** If an LLM is specified, it generates an answer based on your question and the retrieved context.
 6.  **Evaluate Answer (Optional):** If enabled, the LLM's answer is evaluated against an "expected answer" you provide, using another LLM for the judgment.
 
+
 **How to Run:**
 
 *   Ensure you have followed the installation steps (Python environment, dependencies, Ollama models).
-*   Navigate to the `p_llm_manual/RAG/` directory.
+*   Navigate to the `RAG2_COMPAG/` directory.
 *   Open and run the `ask_question_demo.ipynb` notebook cell by cell.
 *   Modify the "User Configuration" cell as needed, especially `your_question`.
 
 This demo notebook is a great way to understand the core components of the RAG system (retrieval, LLM augmentation, evaluation) in action with minimal setup for a single query.
 
-## Configuration
-
-1.  **Review and modify `config.json`:** This is the central configuration file.
-    *   Set `llm_models` with your desired Ollama models and their parameters (ensure the `name` matches your `ollama list` output).
-    *   Update `question_model_name` and `evaluator_model_name` to point to keys within `llm_models.ollama`.
-    *   Configure `language_configs` with paths to your language-specific manuals and desired base collection names.
-    *   Verify `question_dataset_paths` point to your JSON QA datasets (e.g., general, table-based, unanswerable).
-    *   Adjust `rag_parameters` (`chunk_size`, `overlap_size`, `num_retrieved_docs`). The `chunk_size` and `overlap_size` here determine *which* pre-existing database `rag_tester.py` will use.
-    *   Set the `output_dir` for saving results.
-2.  **Prepare Data:**
-    *   Place language manuals in the paths specified in `config.json` (e.g., create a `manuals/` directory and place `english_manual.txt`, `french_manual.txt` etc. inside).
-    *   Place question/answer JSON datasets in the paths specified (e.g., create `question_datasets/` and place `question_answers_pairs.json`, etc. inside).
-    *   Ensure prompt template files exist at the paths specified in `prompt_paths` (e.g., `prompt_templates/question_prompt.txt`).
-
-## Usage Workflow
-
-1.  **Create Vector Databases:** You *must* create the ChromaDB vector collections before running the main test. These collections store the embedded document chunks. Choose one method:
-
-    *   **Method A (Batch Creation):** Create databases for *multiple* chunk/overlap combinations defined *within the script* (`CHUNK_SIZES_TO_CREATE`, `OVERLAP_SIZES_TO_CREATE`). This is useful for preparing databases for various parameter tests upfront.
-        ```bash
-        python utils/create_databases.py
-        ```
-    *   **Method B (Specific Creation):** Create or update the database specifically for the *single* `chunk_size` and `overlap_size` combination currently specified in `config.json`. This script also runs a basic retrieval evaluation (source hit rate) on the created/updated database.
-        ```bash
-        python rag_pipeline.py
-        ```
-    *   **Important:** The database name includes the chunk and overlap size (e.g., `english_manual_cs2000_os50`). `rag_tester.py` will look for a database matching the parameters currently set in `config.json`. Ensure the database you intend to test exists.
-
-2.  **Run the RAG Test:** Executes the full Question-Answering and Evaluation pipeline. It uses the ChromaDB collection corresponding to the `chunk_size` and `overlap_size` currently set in `config.json`. It tests all languages configured in `language_configs` against the English question sets.
-    ```bash
-    python rag_tester.py
-    ```
-
-## Output
-
-Test results are saved as JSON files in the directory specified by `output_dir` in `config.json` (default: `results/`).
-
-Filenames follow the pattern:
-`{retrieval_algorithm}_{language}_{sanitized_question_model_name}_{chunk_size}_overlap_{overlap_size}_topk_{num_retrieved_docs}.json`
-
-Each file contains:
-*   `test_run_parameters`: Configuration used for that specific test run (language, models, RAG params, collection name).
-*   `overall_metrics`: Calculated performance metrics (Accuracy, Precision, Recall, Specificity, F1-Score, TP/TN/FP/FN counts).
-*   `timing`: Duration of the QA and Evaluation phases, and the overall duration.
-*   `per_dataset_details`: Raw results broken down by the input English question dataset type. Includes the original question, expected answer, model's generated answer, evaluation judgment ("yes"/"no"/"error"), and timing for that dataset.
