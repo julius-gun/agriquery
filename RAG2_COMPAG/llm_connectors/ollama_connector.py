@@ -1,4 +1,3 @@
-# llm_connectors/ollama_connector.py
 import time
 from typing import Dict, Any
 from langchain_ollama.llms import OllamaLLM
@@ -17,25 +16,26 @@ class OllamaConnector(BaseLLMConnector):
             model_name (str): The *key* of the model in the config (can be a user-defined alias).
             config (Dict[str, Any]): Configuration parameters for the Ollama model.
                                     Should include 'name' (the *actual* Ollama model name),
-                                    and optionally 'temperature', 'num_predict', and 'context_window'.
+                                    and optionally 'temperature', 'num_predict', 'context_window',
+                                    and 'num_gpu_layers'.
         """
         super().__init__(model_name, config)  # model_name is the *key*
-        # config["name"] is the *actual* Ollama model name.
         if "name" not in config:
             raise ValueError("Ollama config must include a 'name' key with the actual model name.")
 
         self.ollama_model_name = config["name"]  # Store the *actual* model name
+        self.num_gpu_layers = config.get("num_gpu_layers") # Get the new parameter
         self.model_configs = config
         self.llm_model = self._create_ollama_model()
 
     def _create_ollama_model(self) -> OllamaLLM:
         """Creates and returns an OllamaLLM instance based on the configuration."""
-        # Use self.config['name'] to get the *actual* Ollama model name.
         return OllamaLLM(
-            model=self.ollama_model_name,  # Use the actual Ollama model name.
+            model=self.ollama_model_name,
             temperature=self.temperature,
             num_ctx=self.context_window,
             num_predict=self.num_predict,
+            num_gpu=self.num_gpu_layers, # Pass the parameter to the LLM
         )
 
     def invoke(self, prompt: str) -> str:
@@ -49,9 +49,6 @@ class OllamaConnector(BaseLLMConnector):
         Returns:
             str: The Ollama model's response.
         """
-        # retries = 5
-        # wait_times = [5, 25, 125, 625, 3125]  # Exponential backoff in seconds
-
         retries = 2
         wait_times = [5, 25]  # Exponential backoff in seconds
 
@@ -59,8 +56,8 @@ class OllamaConnector(BaseLLMConnector):
             try:
                 return self.llm_model.invoke(prompt)
             except ResponseError as e:
-                if attempt < retries - 1:  # Only retry if not the last attempt
-                    wait_time = wait_time = wait_times[min(attempt, len(wait_times) - 1)] # prevent index out of range
+                if attempt < retries - 1:
+                    wait_time = wait_times[min(attempt, len(wait_times) - 1)]
                     print(
                         f"Ollama ResponseError: {e}. Retry attempt {attempt + 1}/{retries}. Waiting {wait_time} seconds..."
                     )
@@ -79,6 +76,7 @@ if __name__ == "__main__":
         "temperature": 0.0,
         "num_predict": 256,
         "context_window": 131072,
+        "num_gpu_layers": -1, # Example with the new parameter
     }
     # Use a key that might be different from the actual model name
     ollama_connector = OllamaConnector("llama3.2:1B-128k", ollama_config)
@@ -87,4 +85,3 @@ if __name__ == "__main__":
     response = ollama_connector.invoke(prompt_text)
     print(f"Prompt: {prompt_text}")
     print(f"Response from Ollama: {response}")
-
