@@ -32,6 +32,9 @@ from utils.result_manager import ResultManager
 # Import the new custom embedding function
 from utils.chroma_embedding_function import HuggingFaceEmbeddingFunction
 
+# Disable Hugging Face telemetry
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
+
 # --- Configure Logging ---
 # Basic configuration, adjust level and format as needed
 logging.basicConfig(

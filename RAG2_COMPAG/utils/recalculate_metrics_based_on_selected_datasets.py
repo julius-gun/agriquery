@@ -5,6 +5,9 @@ import logging
 import sys
 from typing import List, Dict, Any, Tuple, Optional
 
+# Disable Hugging Face telemetry
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
+
 # Adjust path to import from parent directory (RAG)
 # This assumes the script is run from the 'utils' directory or the project root has been added to PYTHONPATH
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__)))

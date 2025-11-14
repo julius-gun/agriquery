@@ -1,14 +1,19 @@
-# RAG2_COMPAG/utils/create_databases.py
 # create_databases.py
 import chromadb
 import hashlib
 import os
 import json
 import time
+from chromadb.config import Settings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import sys # Added for path adjustment
 import pathlib # Added for robust path handling
 from typing import Optional, Any # For type hinting
+
+# Disable Hugging Face telemetry
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
+# Disable LangChain telemetry
+os.environ["LANGCHAIN_TELEMETRY"] = "false"
 
 # --- Adjust Python Path ---
 # Add the project root directory (p_llm_manual/RAG) to the Python path
@@ -187,7 +192,7 @@ def main(
     try:
         print("Initializing ChromaDB client...")
         absolute_persist_dir = project_root / PERSIST_DIRECTORY
-        chroma_client = chromadb.PersistentClient(path=str(absolute_persist_dir))
+        chroma_client = chromadb.PersistentClient(path=str(absolute_persist_dir), settings=Settings(anonymized_telemetry=False))
         print(f"ChromaDB client initialized. Persistence directory: '{absolute_persist_dir}'")
 
         # Step 1: Determine which retriever instance to use.

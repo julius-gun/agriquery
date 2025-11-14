@@ -5,6 +5,9 @@ import logging
 import sys
 from typing import Dict, List, Optional
 
+# Disable Hugging Face telemetry
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
+
 # --- Path Setup ---
 # Ensure the project root is in sys.path to allow importing ConfigLoader
 current_script_dir = os.path.dirname(os.path.abspath(__file__))

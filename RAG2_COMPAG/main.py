@@ -1,7 +1,10 @@
-# RAG2_COMPAG/main.py
 # main.py
 import time
 import sys
+import os
+
+# Disable Hugging Face telemetry
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
 
 # --- Configuration ---
 # Define the config file path (could be made dynamic later)

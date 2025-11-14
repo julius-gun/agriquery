@@ -5,6 +5,9 @@ import sys
 import argparse
 from typing import List, Dict, Any, Optional, Tuple
 
+# Disable Hugging Face telemetry
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
+
 # Adjust path to import ConfigLoader from the parent directory's utils
 current_script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root_dir = os.path.dirname(current_script_dir)  # Assumes RAG is the parent of scripts

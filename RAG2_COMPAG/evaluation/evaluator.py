@@ -1,5 +1,9 @@
+import os
 from llm_connectors.base_llm_connector import BaseLLMConnector
 from utils.config_loader import ConfigLoader
+
+# Disable Hugging Face telemetry
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
 
 class Evaluator:
     """Evaluates model answers using another LLM."""

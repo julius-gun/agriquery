@@ -1,5 +1,9 @@
 import chromadb
 import os
+from chromadb.config import Settings
+
+# Disable Hugging Face telemetry
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
 
 CHROMA_PERSIST_DIR = "chroma_db" # Make sure this matches your script
 
@@ -9,7 +13,7 @@ else:
     try:
         print(f"Attempting to connect to ChromaDB at: {os.path.abspath(CHROMA_PERSIST_DIR)}")
         # Ensure you are using the correct client type if not default
-        client = chromadb.PersistentClient(path=CHROMA_PERSIST_DIR)
+        client = chromadb.PersistentClient(path=CHROMA_PERSIST_DIR, settings=Settings(anonymized_telemetry=False))
         print("Client initialized.")
         collections = client.list_collections()
         print("\nCollections found in the database (inside chroma.sqlite3):")

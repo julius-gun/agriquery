@@ -11,6 +11,9 @@ import google.generativeai as genai
 from google.api_core import exceptions as google_exceptions
 from llm_connectors.base_llm_connector import BaseLLMConnector
 
+# Disable Hugging Face telemetry
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
+
 # Basic logging configuration (can be adjusted or handled globally)
 # Consider moving configuration outside the class if used globally
 # logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')

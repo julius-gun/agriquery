@@ -4,6 +4,9 @@ import logging
 import sys
 from typing import Dict, Any, Optional, List, Tuple
 
+# Disable Hugging Face telemetry
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
+
 # --- Path Setup ---
 # This script is inside the 'utils' directory.
 current_script_dir = os.path.dirname(os.path.abspath(__file__))

@@ -1,9 +1,14 @@
 import time
+import os
 from typing import Dict, Any
 from langchain_ollama.llms import OllamaLLM
 from llm_connectors.base_llm_connector import BaseLLMConnector
 from ollama._types import ResponseError
 
+# Disable Hugging Face telemetry
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
+# Disable LangChain telemetry
+os.environ["LANGCHAIN_TELEMETRY"] = "false"
 
 class OllamaConnector(BaseLLMConnector):
     """Connector for Ollama LLMs."""

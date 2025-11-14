@@ -1,3 +1,5 @@
+import os
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
 import torch
 import torch.nn.functional as F
 from transformers import AutoTokenizer, AutoModel

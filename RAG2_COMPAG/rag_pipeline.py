@@ -1,6 +1,7 @@
 import chromadb
 from chromadb.api import ClientAPI
 import hashlib
+import os
 # Import specific retrievers
 from retrieval_pipelines.embedding_retriever import EmbeddingRetriever
 from retrieval_pipelines.keyword_retrieval import KeywordRetriever
@@ -13,12 +14,15 @@ from analysis.analysis_tools import (
     load_dataset,
     analyze_dataset_across_types,
 )
-import os
+from chromadb.config import Settings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from typing import List, Dict, Any, Optional # Import Optional
 # Import for standalone execution
 from utils.config_loader import ConfigLoader
 from utils.chroma_embedding_function import HuggingFaceEmbeddingFunction
+
+# Disable Hugging Face telemetry
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
 
 # --- Configuration Constants ---
 persist_directory = "chroma_db"
@@ -202,7 +206,7 @@ if __name__ == "__main__":
         
         # Initialize ChromaDB client
         print("Initializing ChromaDB client...")
-        chroma_client = chromadb.PersistentClient(path=persist_directory)
+        chroma_client = chromadb.PersistentClient(path=persist_directory, settings=Settings(anonymized_telemetry=False))
         
         print("--- Standalone Initialization Complete ---\n")
     
