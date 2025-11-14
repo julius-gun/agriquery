@@ -49,8 +49,8 @@
         "name": "deepseek-r1:8b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 131072,
-        "num_gpu_layers": -1,
+        "context_window": 8192,
+        "num_gpu_layers": 25,
         "tokenizer": {
           "name": "DeepSeek",
           "type": "huggingface",
@@ -94,8 +94,8 @@
         "name": "llama3.1:8b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 131072,
-        "num_gpu_layers": -1,
+        "context_window": 8192,
+        "num_gpu_layers": 25,
         "tokenizer": {
           "name": "Llama3",
           "type": "huggingface",
@@ -106,8 +106,8 @@
         "name": "llama3.2:3b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 131072,
-        "num_gpu_layers": -1,
+        "context_window": 8192,
+        "num_gpu_layers": 30,
         "tokenizer": {
           "name": "Llama3",
           "type": "huggingface",
@@ -140,8 +140,8 @@
         "name": "gpt-oss:120b",
         "temperature": 0.0,
         "num_predict": 1024,
-        "context_window": 131072,
-        "num_gpu_layers": -1,
+        "context_window": 8192,
+        "num_gpu_layers": 8,
         "tokenizer": {
           "name": "GPT-OSS (Tiktoken)",
           "type": "tiktoken",
