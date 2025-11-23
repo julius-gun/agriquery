@@ -195,29 +195,36 @@ class HybridRetriever(BaseRetriever):
         embedding_scores = [] # ChromaDB query returns distances/similarities
         if self.collection:
             try:
-                if self.verbose: logging.info(f"HybridRetriever: Performing embedding search (fetch_k={fetch_k})...")
-                query_embedding = [query_representation['embedding']] # Needs to be List[List[float]]
-                results = self.collection.query(
-                    query_embeddings=query_embedding,
-                    n_results=fetch_k,
-                    include=['documents', 'distances'] # Or 'similarities' depending on space
-                )
-                # Process results (handle potential Nones or empty lists)
-                if results and results.get('ids') and results['ids'][0]:
-                    embedding_results_ids = results['ids'][0]
-                    embedding_results_docs = results['documents'][0] if results.get('documents') else [""] * len(embedding_results_ids) # Fetch docs if available
-                    # Chroma returns distances by default (lower is better). We need ranks.
-                    # If using cosine space, it might return similarities (higher is better).
-                    # For RRF, only the rank matters.
-                    # Let's assume lower distance = better rank for now.
-                    # embedding_scores = results['distances'][0] if results.get('distances') else [0.0] * len(embedding_results_ids)
-                    if self.verbose: logging.info(f"HybridRetriever: Embedding search found {len(embedding_results_ids)} results.")
+                # Check if collection is empty to avoid "Nothing found on disk" HNSW errors
+                collection_count = self.collection.count()
+                
+                if collection_count == 0:
+                     if self.verbose: logging.warning(f"HybridRetriever: Collection '{self.collection_name}' is empty. Skipping embedding search.")
                 else:
-                     if self.verbose: logging.info("HybridRetriever: Embedding search returned no results.")
+                    if self.verbose: logging.info(f"HybridRetriever: Performing embedding search (fetch_k={fetch_k})...")
+                    query_embedding = [query_representation['embedding']] # Needs to be List[List[float]]
+                    
+                    # Ensure we don't ask for more results than exist, though Chroma usually handles it, 
+                    # explicitly setting it prevents edge cases.
+                    effective_k = min(fetch_k, collection_count)
+                    
+                    results = self.collection.query(
+                        query_embeddings=query_embedding,
+                        n_results=effective_k,
+                        include=['documents', 'distances'] # Or 'similarities' depending on space
+                    )
+                    # Process results (handle potential Nones or empty lists)
+                    if results and results.get('ids') and results['ids'][0]:
+                        embedding_results_ids = results['ids'][0]
+                        embedding_results_docs = results['documents'][0] if results.get('documents') else [""] * len(embedding_results_ids) # Fetch docs if available
+                        # Chroma returns distances by default (lower is better). We need ranks.
+                        if self.verbose: logging.info(f"HybridRetriever: Embedding search found {len(embedding_results_ids)} results.")
+                    else:
+                        if self.verbose: logging.info("HybridRetriever: Embedding search returned no results.")
 
             except Exception as e:
                 logging.error(f"HybridRetriever: Error during embedding search: {e}", exc_info=True)
-                # Continue without embedding results? Or raise? Let's continue for now.
+                # Continue without embedding results.
         else:
             logging.warning("HybridRetriever: Skipping embedding search (Chroma collection not available).")
 
