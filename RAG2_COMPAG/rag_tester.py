@@ -1088,6 +1088,27 @@ class RagTester:
 
         return dataset_metrics
 
+    def _has_valid_results(self, results_dict: Optional[Dict[str, Any]]) -> bool:
+        """
+        Checks if the results dictionary contains actual processed results
+        in 'per_dataset_details'.
+        """
+        if not results_dict:
+            return False
+
+        per_dataset = results_dict.get("per_dataset_details", {})
+        if not per_dataset:
+            return False
+
+        # Check if there is at least one dataset with a non-empty 'results' list
+        for ds_data in per_dataset.values():
+            if isinstance(ds_data, dict):
+                results_list = ds_data.get("results")
+                if isinstance(results_list, list) and len(results_list) > 0:
+                    return True
+
+        return False
+
     def _process_single_combination(
         self,
         retrieval_algorithm: str,
@@ -1195,16 +1216,24 @@ class RagTester:
                         "evaluator_model"
                     ] = self.config_loader.get_evaluator_model_name()  # Update evaluator model potentially
 
-                    self.result_manager.save_results(
-                        results=pruned_previous_results,
-                        retrieval_algorithm=retrieval_algorithm,
-                        file_identifier=file_identifier,
-                        question_model_name=question_model_name,
-                        chunk_size=chunk_size,
-                        overlap_size=overlap_size,
-                        num_retrieved_docs=self.num_retrieved_docs,
-                    )
-                    logging.info("Reevaluation complete (metrics only). Results saved.")
+                    if self._has_valid_results(pruned_previous_results):
+                        self.result_manager.save_results(
+                            results=pruned_previous_results,
+                            retrieval_algorithm=retrieval_algorithm,
+                            file_identifier=file_identifier,
+                            question_model_name=question_model_name,
+                            chunk_size=chunk_size,
+                            overlap_size=overlap_size,
+                            num_retrieved_docs=self.num_retrieved_docs,
+                        )
+                        logging.info(
+                            "Reevaluation complete (metrics only). Results saved."
+                        )
+                    else:
+                        logging.warning(
+                            "Reevaluation (Metrics Only): Result set appears empty. Not saving/updating file."
+                        )
+
                     return  # End processing for this combination
 
                 # If we reach here, reevaluation is needed, questions_to_answer is not empty
@@ -1223,18 +1252,24 @@ class RagTester:
 
         # --- Normal Run Check (only if not in successful reevaluation path) ---
         if run_qa_phase and not self.enable_reevaluation:
-            if self.result_manager.load_previous_results(
+            existing_results = self.result_manager.load_previous_results(
                 retrieval_algorithm,
                 file_identifier,
                 question_model_name,
                 chunk_size,
                 overlap_size,
                 self.num_retrieved_docs,
-            ):
-                logging.info(
-                    "Skipping combination: Results file already exists (Normal Run)."
-                )
-                return
+            )
+            if existing_results:
+                if self._has_valid_results(existing_results):
+                    logging.info(
+                        "Skipping combination: Valid results file already exists (Normal Run)."
+                    )
+                    return
+                else:
+                    logging.warning(
+                        "Found existing result file, but it contains invalid/empty data. Proceeding to re-run and overwrite."
+                    )
 
         # --- Proceed with QA/Eval if needed ---
         final_results_to_save = {}
@@ -1528,7 +1563,8 @@ class RagTester:
             pass
 
         # --- Save Results ---
-        if final_results_to_save:  # Ensure there's something to save
+        # Only save if there are valid results (prevent saving empty files on error)
+        if self._has_valid_results(final_results_to_save):
             logging.info("\n--- Saving Results ---")
             self.result_manager.save_results(
                 results=final_results_to_save,
@@ -1541,7 +1577,7 @@ class RagTester:
             )
         else:
             logging.warning(
-                "No results generated or processed for saving in this combination."
+                "No valid results generated (dataset details empty or no questions answered). Skipping file save."
             )
 
         logging.info(
