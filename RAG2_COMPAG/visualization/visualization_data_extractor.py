@@ -1,10 +1,10 @@
-# visualization_data_extractor.py
+
 import os
 import json
 import re
 import pandas as pd
-from typing import List, Dict, Optional, Any
-import sys # Import sys
+from typing import List, Dict, Optional, Any, Tuple
+import sys
 
 # Add project root to path to allow importing ConfigLoader
 current_script_dir = os.path.dirname(__file__)
@@ -15,306 +15,255 @@ if project_root_dir not in sys.path:
 
 try:
     from utils.config_loader import ConfigLoader
+    from utils.result_manager import ResultManager # Import to use sanitization logic if needed
 except ImportError:
-    print("Error: Could not import ConfigLoader. Make sure it's accessible.")
-    # Define a default list if ConfigLoader fails, or raise an error
-    DEFAULT_LANGUAGES = ['english', 'french', 'german'] # Fallback
+    print("Error: Could not import ConfigLoader or ResultManager. Make sure they are accessible.")
     ConfigLoader = None
 
+# Defaults in case config is missing
+DEFAULT_LANGUAGES = ['english', 'french', 'german', 'dutch', 'spanish', 'italian']
+DEFAULT_EXTENSIONS = ['md', 'json', 'xml', 'txt', 'html']
+# Default basenames might be hard to guess, but we can try generic ones if config fails
+DEFAULT_BASENAMES = [f"{lang}_manual" for lang in DEFAULT_LANGUAGES]
 
-def get_known_languages(config_path: str = 'config.json') -> List[str]:
-    """Loads known languages from the config file."""
+def get_config_data(config_path: str = 'config.json') -> Dict[str, List[str]]:
+    """
+    Loads configuration data relevant for parsing filenames:
+    languages, files_to_test (basenames), and file_extensions.
+    """
+    data = {
+        'languages': DEFAULT_LANGUAGES,
+        'basenames': DEFAULT_BASENAMES,
+        'extensions': DEFAULT_EXTENSIONS
+    }
+    
     if ConfigLoader:
         try:
-            # Construct the absolute path to config.json relative to the project root
             abs_config_path = os.path.join(project_root_dir, config_path)
             if not os.path.exists(abs_config_path):
-                 print(f"Warning: Config file not found at '{abs_config_path}'. Using default languages.")
-                 return DEFAULT_LANGUAGES
+                 print(f"Warning: Config file not found at '{abs_config_path}'. Using defaults.")
+                 return data
 
             config_loader = ConfigLoader(abs_config_path)
+            
+            # 1. Languages
             language_configs = config_loader.config.get("language_configs", [])
-            languages = [lc.get("language") for lc in language_configs if lc.get("language")]
-            if languages:
-                print(f"Loaded known languages from config: {languages}")
-                return languages
-            else:
-                print("Warning: No languages found in config file. Using default languages.")
-                return DEFAULT_LANGUAGES
+            # Also try to infer languages from files_to_test if language_configs is missing
+            loaded_langs = [lc.get("language") for lc in language_configs if lc.get("language")]
+            if not loaded_langs:
+                 # Fallback: check files_to_test and split by '_'
+                 files = config_loader.get_files_to_test()
+                 loaded_langs = list(set([f.split('_')[0] for f in files if '_' in f]))
+            
+            if loaded_langs:
+                data['languages'] = loaded_langs
+
+            # 2. Basenames (files_to_test)
+            files_to_test = config_loader.get_files_to_test()
+            if files_to_test:
+                data['basenames'] = files_to_test
+            
+            # 3. Extensions
+            extensions = config_loader.get_file_extensions_to_test()
+            if extensions:
+                # Sanitize extensions as they appear in filenames (replace . with _)
+                sanitized_exts = [ext.replace('.', '_') for ext in extensions]
+                data['extensions'] = sanitized_exts
+
+            print(f"Loaded config data - Languages: {len(data['languages'])}, Basenames: {len(data['basenames'])}, Extensions: {len(data['extensions'])}")
+            
         except Exception as e:
-            print(f"Error loading languages from config: {e}. Using default languages.")
-            return DEFAULT_LANGUAGES
-    else:
-        print("Warning: ConfigLoader not available. Using default languages.")
-        return DEFAULT_LANGUAGES
+            print(f"Error loading data from config: {e}. Using defaults.")
+            
+    return data
 
 
-# Rename function and modify logic
 def extract_detailed_visualization_data(results_dir: str) -> Optional[pd.DataFrame]:
     """
     Scans a directory for RAG and ZeroShot result JSON files, parses filenames
-    and content to extract test parameters, F1 scores, and detailed dataset
-    success rates into a unified DataFrame.
-
-    Args:
-        results_dir: The path to the directory containing the result JSON files.
-
-    Returns:
-        A pandas DataFrame containing the extracted data. Each row represents
-        either an overall F1 score or a specific dataset's success rate for a run.
-        Includes columns for parameters from both RAG and ZeroShot formats
-        (using None/NaN where a parameter doesn't apply), 'metric_type',
-        'metric_value', and 'dataset_type'.
-        Returns None if the directory doesn't exist or no valid files are found.
+    using configuration-aware regex, and extracts metrics into a DataFrame.
     """
     if not os.path.isdir(results_dir):
         print(f"Error: Results directory not found at '{results_dir}'")
         return None
 
-    # Get the list of known languages for validation AND for the regex
-    known_languages = get_known_languages()
-    if not known_languages:
-        print("Error: Could not determine known languages. Aborting extraction.")
-        return None
+    # Load config data to build robust regex
+    config_data = get_config_data()
+    
+    # Sort by length descending to ensure regex matches longest options first (e.g. 'english_manual' before 'english')
+    languages = sorted(config_data['languages'], key=len, reverse=True)
+    basenames = sorted(config_data['basenames'], key=len, reverse=True)
+    extensions = sorted(config_data['extensions'], key=len, reverse=True)
 
-    escaped_languages = [re.escape(lang) for lang in known_languages]
-    # IMPORTANT: Remove the outer parentheses from language_pattern_part itself,
-    # as the named group syntax (?P<name>...) provides the grouping.
-    language_choices_part = '|'.join(escaped_languages) # e.g., english|french|german
+    # Escape for regex
+    lang_pattern = '|'.join(map(re.escape, languages))
+    basename_pattern = '|'.join(map(re.escape, basenames))
+    ext_pattern = '|'.join(map(re.escape, extensions))
 
-    # --- Define Corrected Regex Patterns ---
-    # RAG Pattern
-    # Added ?P<lang> around the language choices part
-    rag_pattern_str = rf"^(?P<algo>\w+)_(?P<lang>{language_choices_part})_(?P<model>.+?)_(?P<chunk>\d+)_overlap_(?P<overlap>\d+)_topk_(?P<topk>\d+)\.json$"
+    # --- Define Regex Patterns ---
+    
+    # RAG Pattern (Updated for new format)
+    # Format: {algo}_{basename}_{ext}_{model}_{chunk}_overlap_{overlap}_topk_{topk}.json
+    # We use the specific lists of basenames and extensions to reliably split the string.
+    # If basenames are empty (config fail), we might fail to match, so we include a fallback group logic or ensure defaults exist.
+    rag_pattern_str = (
+        rf"^(?P<algo>[^_]+)_"               # Algo (hybrid, embedding, etc) - assumes no underscores
+        rf"(?P<basename>{basename_pattern})_" # File Basename (e.g., dutch_manual)
+        rf"(?P<ext>{ext_pattern})_"         # Extension (e.g., md, xml)
+        rf"(?P<model>.+?)_"                 # Model Name (non-greedy, captures rest)
+        rf"(?P<chunk>\d+)_overlap_"         # Chunk Size
+        rf"(?P<overlap>\d+)_topk_"          # Overlap Size
+        rf"(?P<topk>\d+)\.json$"            # TopK
+    )
     rag_pattern = re.compile(rag_pattern_str)
-    print(f"Using RAG Regex: {rag_pattern_str}") # Will now show (?P<lang>english|french|german)
+    print(f"Using RAG Regex with {len(basenames)} known files and {len(extensions)} extensions.")
 
-    # ZeroShot Pattern
-    # Added ?P<lang> around the language choices part
-    zeroshot_pattern_str = rf"^zeroshot_(?P<lang>{language_choices_part})_(?P<model>.+?)_(?P<ext>[a-zA-Z0-9]+)_(?P<context>\w+)_(?P<noise>\d+)_results\.json$"
+    # ZeroShot Pattern (Kept mostly similar, but using updated languages)
+    # Assumes format: zeroshot_{lang}_{model}_{ext}_{context}_{noise}_results.json
+    zeroshot_pattern_str = (
+        rf"^zeroshot_"
+        rf"(?P<lang>{lang_pattern})_"
+        rf"(?P<model>.+?)_"
+        rf"(?P<ext>[a-zA-Z0-9]+)_"
+        rf"(?P<context>\w+)_"
+        rf"(?P<noise>\d+)_results\.json$"
+    )
     zeroshot_pattern = re.compile(zeroshot_pattern_str)
-    print(f"Using ZeroShot Regex: {zeroshot_pattern_str}") # Will now show (?P<lang>english|french|german)
-    # --- End Regex Definitions ---
-
-
+    
     extracted_data = []
     skipped_files = []
 
     print(f"\nScanning directory: {results_dir}")
-    print(f"Using known languages for validation: {known_languages}")
 
     for filename in os.listdir(results_dir):
         if not filename.endswith(".json"):
-            continue # Quickly skip non-JSON files
+            continue 
 
         filepath = os.path.join(results_dir, filename)
         params = None
-        file_type = None # To track which pattern matched
-
-        # --- Try Matching Patterns ---
+        
+        # --- Match RAG ---
         rag_match = rag_pattern.match(filename)
-        zeroshot_match = None # Initialize zeroshot_match
         if rag_match:
-            file_type = "RAG"
-            print(f"\nProcessing RAG file: {filename}")
             try:
+                # Infer language from basename (assuming basename starts with language)
+                matched_basename = rag_match.group('basename')
+                inferred_lang = "unknown"
+                for lang in languages:
+                    if matched_basename.startswith(lang):
+                        inferred_lang = lang
+                        break
+                
                 params = {
+                    'filename': filename,
+                    'file_type': "RAG",
                     'retrieval_algorithm': rag_match.group('algo'),
-                    'language': rag_match.group('lang'),
+                    'language': inferred_lang, 
+                    'file_basename': matched_basename,
+                    'file_extension': rag_match.group('ext'),
                     'question_model': rag_match.group('model'),
                     'chunk_size': int(rag_match.group('chunk')),
                     'overlap_size': int(rag_match.group('overlap')),
                     'num_retrieved_docs': int(rag_match.group('topk')),
-                    # ZeroShot specific params set to None
-                    'file_extension': None,
+                    # ZeroShot specific
                     'context_type': None,
                     'noise_level': None,
-                    'filename': filename,
-                    'file_type': file_type # Add file type identifier
                 }
-                print(f"  Extracted RAG Params: { {k: v for k, v in params.items() if k not in ['filename', 'file_type']} }")
-            except ValueError:
-                print(f"  Warning: Error parsing numeric values from RAG filename {filename}. Skipping.")
-                skipped_files.append(filename + " (RAG value error)")
+                print(f"  Parsed RAG: {filename}")
+            except Exception as e:
+                print(f"  Error parsing RAG filename {filename}: {e}")
+                skipped_files.append(filename)
                 continue
-            except IndexError as e: # Catch potential group access errors during development/debugging
-                 print(f"  Error accessing regex group for RAG file {filename}: {e}. This shouldn't happen with corrected regex. Skipping.")
-                 skipped_files.append(filename + " (RAG regex group error)")
-                 continue
+        
+        # --- Match ZeroShot ---
         else:
             zeroshot_match = zeroshot_pattern.match(filename)
             if zeroshot_match:
-                file_type = "ZeroShot"
-                # print(f"\nProcessing ZeroShot file: {filename}")
                 try:
                     params = {
-                        'retrieval_algorithm': 'zeroshot', # Hardcoded for this pattern
+                        'filename': filename,
+                        'file_type': "ZeroShot",
+                        'retrieval_algorithm': 'zeroshot',
                         'language': zeroshot_match.group('lang'),
-                        'question_model': zeroshot_match.group('model'),
+                        'file_basename': None, # Concept doesn't perfectly map, or is implicit
                         'file_extension': zeroshot_match.group('ext'),
+                        'question_model': zeroshot_match.group('model'),
                         'context_type': zeroshot_match.group('context'),
                         'noise_level': int(zeroshot_match.group('noise')),
-                        # RAG specific params set to None
+                        # RAG specific
                         'chunk_size': None,
                         'overlap_size': None,
                         'num_retrieved_docs': None,
-                        'filename': filename,
-                        'file_type': file_type # Add file type identifier
                     }
-                    # print(f"  Extracted ZeroShot Params: { {k: v for k, v in params.items() if k not in ['filename', 'file_type']} }")
-                except ValueError:
-                    print(f"  Warning: Error parsing numeric values from ZeroShot filename {filename}. Skipping.")
-                    skipped_files.append(filename + " (ZeroShot value error)")
-                    continue
-                except IndexError as e: # Catch potential group access errors
-                    print(f"  Error accessing regex group for ZeroShot file {filename}: {e}. This shouldn't happen with corrected regex. Skipping.")
-                    skipped_files.append(filename + " (ZeroShot regex group error)")
+                    print(f"  Parsed ZeroShot: {filename}")
+                except Exception as e:
+                    print(f"  Error parsing ZeroShot filename {filename}: {e}")
+                    skipped_files.append(filename)
                     continue
 
-        # --- Process if a pattern matched ---
-        if params and file_type: # Check if params were successfully extracted
+        if params:
             try:
                 with open(filepath, 'r', encoding='utf-8') as f:
                     data = json.load(f)
-                print(f"  JSON loaded successfully.")
 
-                # --- Extract Metrics (Common Logic) ---
                 overall_metrics = data.get('overall_metrics', {})
-                if not overall_metrics:
-                     print(f"  Warning: 'overall_metrics' key missing or empty in {filename}. Cannot extract metrics.")
-                     # Decide if you want to skip the file entirely or just metrics
-                     # continue # Option: skip file if no metrics
-
-                # 1. Extract Overall Metrics (F1, Accuracy, Precision, Recall, Specificity)
-                overall_metric_keys = ['f1_score', 'accuracy', 'precision', 'recall', 'specificity']
-                for metric_key in overall_metric_keys:
-                    metric_value = overall_metrics.get(metric_key)
-                    if metric_value is not None:
-                        metric_record = params.copy() # Start with parameters from filename
-                        metric_record.update({
-                            'metric_type': metric_key, # Use the key as metric_type
-                            'metric_value': float(metric_value),
-                            'dataset_type': None # Not applicable for these overall metrics
-                        })
-                        extracted_data.append(metric_record)
-                        # print(f"  Extracted {metric_key}: {metric_value:.4f}")
-                    elif overall_metrics: # Only warn if overall_metrics existed but the specific key was missing
-                        print(f"  Warning: '{metric_key}' not found or is null in overall_metrics.")
-
+                
+                # 1. Extract Overall Metrics
+                for key in ['f1_score', 'accuracy', 'precision', 'recall', 'specificity']:
+                    val = overall_metrics.get(key)
+                    if val is not None:
+                        record = params.copy()
+                        record.update({'metric_type': key, 'metric_value': float(val), 'dataset_type': None})
+                        extracted_data.append(record)
 
                 # 2. Extract Dataset Success Rates
                 dataset_success = overall_metrics.get('dataset_self_evaluation_success', {})
-                if isinstance(dataset_success, dict) and dataset_success:
-                    print(f"  Found dataset success rates: {list(dataset_success.keys())}")
-                    for dataset_name, success_rate in dataset_success.items():
-                        if success_rate is not None:
-                            dataset_record = params.copy() # Start with parameters from filename
-                            dataset_record.update({
-                                'metric_type': 'dataset_success',
-                                'metric_value': float(success_rate),
-                                'dataset_type': dataset_name # Store the dataset name
-                            })
-                            extracted_data.append(dataset_record)
-                            print(f"    Extracted '{dataset_name}': {success_rate:.4f}")
-                        else:
-                            print(f"    Warning: Success rate for '{dataset_name}' is null. Skipping this dataset.")
-                elif overall_metrics and not dataset_success: # Only info if overall_metrics existed
-                     print(f"  Info: 'dataset_self_evaluation_success' dictionary is empty or missing.")
-                elif overall_metrics and not isinstance(dataset_success, dict):
-                     print(f"  Warning: 'dataset_self_evaluation_success' is not a dictionary. Skipping dataset rates.")
-                # No message if overall_metrics itself was missing
+                if isinstance(dataset_success, dict):
+                    for ds_name, rate in dataset_success.items():
+                        if rate is not None:
+                            record = params.copy()
+                            record.update({'metric_type': 'dataset_success', 'metric_value': float(rate), 'dataset_type': ds_name})
+                            extracted_data.append(record)
 
             except json.JSONDecodeError:
-                print(f"Warning: Could not decode JSON from {filename}. Skipping.")
-                skipped_files.append(filename + " (JSON error)")
-            except ValueError as e:
-                 # Catch potential float conversion errors for metrics
-                 print(f"Warning: Error converting metric value in {filename} to float: {e}. Skipping metric/file.")
-                 skipped_files.append(filename + " (metric value error)")
+                print(f"Warning: JSON decode error in {filename}. Skipping.")
+                skipped_files.append(filename)
             except Exception as e:
-                print(f"Warning: An unexpected error occurred processing {filename}: {e}. Skipping.")
-                skipped_files.append(filename + f" (unexpected error: {type(e).__name__})")
-
-        elif filename.endswith(".json"): # If it's JSON but didn't match known patterns
-             # Avoid printing for every non-matching file, only those ending in .json
-             # that didn't match either RAG or ZeroShot patterns.
-             if not rag_match and not zeroshot_match: # Explicitly check if both failed
-                 print(f"Info: Skipping file {filename} (doesn't match known RAG or ZeroShot patterns).")
-                 skipped_files.append(filename + " (pattern mismatch)")
-             # else: # Optionally log files that don't even look like results files
-             #    print(f"Debug: Skipping non-result JSON file {filename}")
-
+                print(f"Warning: Unexpected error processing {filename}: {e}")
+                skipped_files.append(filename)
+        else:
+            if filename.endswith(".json"):
+                # print(f"  Skipping unmatched file: {filename}")
+                skipped_files.append(filename + " (no regex match)")
 
     if skipped_files:
-        print(f"\nSkipped {len(skipped_files)} files due to errors or pattern mismatch.")
-        # Optionally print the list for debugging:
-        for skipped in skipped_files: print(f"  - {skipped}")
-
+        print(f"\nSkipped {len(skipped_files)} files (errors or no match).")
 
     if not extracted_data:
-        print("No valid result data found to create a DataFrame.")
+        print("No valid result data extracted.")
         return None
 
-    # --- Create DataFrame ---
     df = pd.DataFrame(extracted_data)
-
-    # --- Optional: Define column order for consistency ---
-    # Gather all unique parameter keys plus metric keys
-    all_param_keys = [
-        'filename', 'file_type', # Add file_type if you want it in the df
-        'retrieval_algorithm', 'language', 'question_model',
-        'chunk_size', 'overlap_size', 'num_retrieved_docs', # RAG specific
-        'file_extension', 'context_type', 'noise_level', # ZeroShot specific
-    ]
-    metric_keys = ['metric_type', 'metric_value', 'dataset_type']
-    # Ensure all columns exist, adding missing ones with None/NaN
-    for col in all_param_keys + metric_keys:
-        if col not in df.columns:
-            df[col] = None # Add missing columns
-
-    # Reorder columns (optional but good practice)
-    # Put identifying params first, then specific params, then metrics
-    desired_order = [
-        'filename', #'file_type', # Uncomment if added above
-        'retrieval_algorithm', 'language', 'question_model',
-        'chunk_size', 'overlap_size', 'num_retrieved_docs',
-        'file_extension', 'context_type', 'noise_level',
+    
+    # Organize columns
+    cols = [
+        'filename', 'file_type', 'retrieval_algorithm', 'language', 'file_basename', 
+        'file_extension', 'question_model', 'chunk_size', 'overlap_size', 
+        'num_retrieved_docs', 'context_type', 'noise_level', 
         'metric_type', 'metric_value', 'dataset_type'
     ]
-    # Filter desired_order to only include columns actually present in the df
-    final_columns = [col for col in desired_order if col in df.columns]
-    df = df[final_columns]
+    # Filter to cols that exist
+    final_cols = [c for c in cols if c in df.columns]
+    df = df[final_cols]
 
-
-    print(f"\nSuccessfully extracted {len(extracted_data)} data points into DataFrame with {len(df.columns)} columns.")
-    print(f"DataFrame columns: {df.columns.tolist()}")
+    print(f"\nSuccessfully extracted {len(extracted_data)} rows.")
     return df
 
 if __name__ == '__main__':
-    # Example usage: Assuming this script is in 'visualization' and 'results' is in the parent directory ('RAG')
     default_results_dir = os.path.join(project_root_dir, 'results')
-
     print(f"\n--- Testing Detailed Data Extractor ---")
-    print(f"Looking for results in: {default_results_dir}")
-    # Call the renamed function
     df_results = extract_detailed_visualization_data(default_results_dir)
-
     if df_results is not None:
-        print("\n--- Extracted DataFrame Head ---")
         print(df_results.head())
-        print("\n--- Unique Languages Found ---")
-        print(df_results['language'].unique()) # Verify only expected languages are present
-        print("\n--- Unique Question Models Found ---")
-        print(df_results['question_model'].unique()) # Verify model names look correct
-        print("\n--- DataFrame Info ---")
-        df_results.info()
-        print("\n--- Value Counts for 'metric_type' ---")
-        print(df_results['metric_type'].value_counts())
-        print("\n--- Value Counts for 'dataset_type' (where metric_type is dataset_success) ---")
-        print(df_results[df_results['metric_type'] == 'dataset_success']['dataset_type'].value_counts())
-        print("\n--- Example rows for dataset_success ---")
-        print(df_results[df_results['metric_type'] == 'dataset_success'].head())
-
-    else:
-        print("\nNo DataFrame generated.")
-    print(f"--- Detailed Data Extractor Test Finished ---")
+        print("\nColumn Types:")
+        print(df_results.dtypes)
