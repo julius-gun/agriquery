@@ -350,7 +350,10 @@ class RagTester:
     def _get_chroma_collection(
         self, base_collection_name: str, chunk_size: int, overlap_size: int
     ) -> Optional[chromadb.Collection]:
-        """Gets the specific ChromaDB collection for the given parameters."""
+        """
+        Gets the specific ChromaDB collection for the given parameters.
+        Checks if the collection exists and is not empty.
+        """
         dynamic_collection_name = (
             f"{base_collection_name}_cs{chunk_size}_os{overlap_size}"
         )
@@ -363,8 +366,25 @@ class RagTester:
                 name=dynamic_collection_name,
                 embedding_function=self.chroma_embedding_function,
             )
+            
+            # Check if the collection is empty
+            if collection.count() == 0:
+                 logging.error(
+                    "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                )
+                 logging.error(
+                    f"!!! ERROR: Collection '{dynamic_collection_name}' is empty (0 documents)."
+                )
+                 logging.error(
+                    "!!! RAG cannot run on an empty database. Please check 'create_databases.py'."
+                )
+                 logging.error(
+                    "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                )
+                 return None
+
             logging.info(
-                f"Successfully connected to collection '{dynamic_collection_name}'."
+                f"Successfully connected to collection '{dynamic_collection_name}' (Count: {collection.count()})."
             )
             return collection
         except Exception as e:
@@ -667,6 +687,7 @@ class RagTester:
 
                         query_representation = retriever.vectorize_query(question)
 
+                        # collection.count() check was done in _get_chroma_collection
                         query_results = collection.query(
                             query_embeddings=query_representation,  # Pass the embedding List[List[float]] # type: ignore
                             n_results=self.num_retrieved_docs,
