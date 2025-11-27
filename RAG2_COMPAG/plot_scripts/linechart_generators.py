@@ -18,6 +18,7 @@ except ImportError:
 
 add_project_paths() # Ensure project paths are set for other imports
 
+# These imports assume the project root has been added to sys.path by add_project_paths()
 from visualization.visualization_data_extractor import extract_detailed_visualization_data
 from visualization.plot_scripts.linecharts import create_zeroshot_noise_level_linechart
 from utils.config_loader import ConfigLoader # For loading sort order / colors in standalone
@@ -128,9 +129,10 @@ def generate_zeroshot_performance_linecharts(
 
 
 if __name__ == "__main__":
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    visualization_dir = os.path.dirname(current_dir) # ../
-    project_root_dir = os.path.dirname(visualization_dir) # ../../
+    # Correctly determine project root for standalone execution
+    current_dir = os.path.dirname(os.path.abspath(__file__)) # e.g., .../project_root/visualization/plot_scripts
+    visualization_dir = os.path.dirname(current_dir)         # e.g., .../project_root/visualization
+    project_root_dir = os.path.dirname(visualization_dir)    # e.g., .../project_root
 
     default_config_path = os.path.join(project_root_dir, "config.json")
     default_results_path = os.path.join(project_root_dir, "results")
@@ -187,20 +189,13 @@ if __name__ == "__main__":
     try:
         if os.path.exists(args.config_path):
             config_loader = ConfigLoader(args.config_path)
-            # Assuming REPORT_MODEL_SORT_ORDER is a key in config.json or a sub-object
-            # For this example, let's assume it's under a "visualization_settings" key
+            # Assuming REPORT_MODEL_SORT_ORDER is under "visualization_settings" in config.json
             viz_settings = config_loader.config.get("visualization_settings", {})
             standalone_model_sort_order = viz_settings.get("REPORT_MODEL_SORT_ORDER")
             
-            # For model colors, use the get_model_colors utility if available,
-            # or try to load a map from config.
-            # This assumes get_model_colors can take a ConfigLoader object or path.
-            # For simplicity, let's try to get a direct map or use the utility.
-            # standalone_model_palette = viz_settings.get("MODEL_COLOR_MAP")
-            # if not standalone_model_palette:
-            # Use the utility with all known models from the data
+            # Use the utility to get model colors, passing all known models and the full config
             all_models_in_data = df_all_data["question_model"].unique().tolist()
-            standalone_model_palette = get_model_colors(all_models_in_data, config_loader.config) # Pass full config
+            standalone_model_palette = get_model_colors(all_models_in_data, config_loader.config)
 
             if standalone_model_sort_order:
                 print(f"Loaded model sort order from config: {standalone_model_sort_order}")

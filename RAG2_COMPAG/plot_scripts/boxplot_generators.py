@@ -1,7 +1,7 @@
 # visualization/plot_scripts/boxplot_generators.py
 import os
 import sys
-import argparse # Added argparse
+import argparse
 import pandas as pd
 from typing import List, Optional, Dict, Any
 
@@ -10,8 +10,8 @@ from plot_utils import add_project_paths, sanitize_filename
 add_project_paths() # Ensure project paths are set
 
 # Now import other modules
-from visualization.visualization_data_extractor import extract_detailed_visualization_data
-from visualization.plot_scripts.box_plots import create_f1_boxplot, create_dataset_success_boxplot
+from visualization_data_extractor import extract_detailed_visualization_data
+from plot_scripts.box_plots import create_f1_boxplot, create_dataset_success_boxplot
 from utils.config_loader import ConfigLoader # Needed for language list in standalone mode
 
 
@@ -152,10 +152,11 @@ def generate_dataset_success_boxplot(
 # --- Standalone Execution ---
 
 if __name__ == "__main__":
-    # Get project root and visualization dir for default paths
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    visualization_dir = os.path.dirname(current_dir)
-    project_root_dir = os.path.dirname(visualization_dir)
+    # Determine project root and visualization directory based on script location
+    # This script is expected to be in project_root/visualization/plot_scripts/
+    current_script_dir = os.path.dirname(os.path.abspath(__file__)) # e.g., .../RAG2_COMPAG/visualization/plot_scripts
+    visualization_dir = os.path.dirname(current_script_dir)         # e.g., .../RAG2_COMPAG/visualization
+    project_root_dir = os.path.dirname(visualization_dir)           # e.g., .../RAG2_COMPAG
 
     # Define default paths relative to the project structure
     default_config_path = os.path.join(project_root_dir, "config.json")
@@ -264,14 +265,15 @@ if __name__ == "__main__":
             print(f"Warning: Config file not found at '{args.config_path}'. Cannot determine language list.")
         except Exception as e:
             print(f"Warning: Error loading config file '{args.config_path}': {e}.")
-        # generate f1 boxplot with different languages, chunk sizes, etc.
-        # generate_f1_boxplot(
-        #     df_data=df_data,
-        #     group_by=args.group_by,
-        #     output_dir=args.output_dir,
-        #     output_filename_prefix=args.output_filename_prefix,
-        #     all_languages_list=all_languages_list # Pass loaded languages
-        # )
+        
+        # Generate F1 boxplot
+        generate_f1_boxplot(
+            df_data=df_data,
+            group_by=args.group_by,
+            output_dir=args.output_dir,
+            output_filename_prefix=args.output_filename_prefix,
+            all_languages_list=all_languages_list # Pass loaded languages
+        )
     elif args.plot_subtype == "dataset_success":
         generate_dataset_success_boxplot(
             df_data=df_data,

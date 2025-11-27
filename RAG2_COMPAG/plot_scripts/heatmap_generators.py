@@ -1,7 +1,7 @@
 import os
 import pandas as pd
-from visualization.plot_scripts.heatmaps import create_heatmap
-from visualization.plot_scripts.plot_utils import sanitize_filename
+from plot_scripts.heatmaps import create_heatmap
+from plot_scripts.plot_utils import sanitize_filename
 
 def generate_global_overview_heatmaps(df: pd.DataFrame, output_dir: str):
     """

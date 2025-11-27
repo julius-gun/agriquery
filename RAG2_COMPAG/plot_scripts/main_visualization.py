@@ -11,8 +11,8 @@ except ImportError as e:
     sys.exit(1)
 
 try:
-    from visualization.visualization_data_extractor import extract_detailed_visualization_data
-    from visualization.plot_scripts.heatmap_generators import (
+    from visualization_data_extractor import extract_detailed_visualization_data
+    from heatmap_generators import ( # Changed import path: removed 'plot_scripts.'
         generate_global_overview_heatmaps,
         generate_english_format_heatmaps,
         generate_markdown_overview_heatmaps
@@ -23,9 +23,10 @@ except ImportError as e:
 
 def main():
     # Setup paths
-    visualization_dir = os.path.join(PROJECT_ROOT, "visualization")
+    # Output now goes to visualization/plots inside project root
     default_results_path = os.path.join(PROJECT_ROOT, "results")
-    default_output_path = os.path.join(visualization_dir, "plots")
+    # Simplified default_output_path calculation and removed visualization_dir variable
+    default_output_path = os.path.join(PROJECT_ROOT, "visualization", "plots")
 
     parser = argparse.ArgumentParser(description="Generate RAG Heatmaps.")
     parser.add_argument(

@@ -10,13 +10,14 @@ try:
     from .plot_utils import add_project_paths, sanitize_filename, get_model_colors
     from .barcharts import create_model_performance_barchart, LANGUAGE_ORDER, LANGUAGE_PALETTE
 except ImportError:
+    # Fallback for standalone execution or when run from a different directory
     sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     from plot_utils import add_project_paths, sanitize_filename, get_model_colors
     from barcharts import create_model_performance_barchart, LANGUAGE_ORDER, LANGUAGE_PALETTE
 
 add_project_paths()
 
-from visualization.visualization_data_extractor import extract_detailed_visualization_data
+from visualization_data_extractor import extract_detailed_visualization_data
 from utils.config_loader import ConfigLoader
 
 # Metrics to generate bar charts for
@@ -50,16 +51,16 @@ MODEL_NAME_MAPPINGS = {
 def clean_model_name(model_name: str) -> str:
     """
     Applies specific cleaning rules to a model name:
-    1. Applies specific mappings first.
-    2. If no specific mapping, removes '-128k' suffix.
-    3. Replaces underscores '_' with spaces ' '.
+    1. Applies specific mappings first (e.g., "gemini-2.5-flash-preview-04-17" -> "gemini-2.5-flash").
+    2. If no specific mapping was applied, then applies general cleaning rules:
+       a. Removes '-128k' suffix.
+       b. Replaces underscores '_' with spaces ' '.
     """
     # 1. Apply specific mapping
     cleaned_name = MODEL_NAME_MAPPINGS.get(model_name, model_name)
 
-    # 2. If no specific mapping applied, apply general cleaning rules
-    # Check if the specific mapping *changed* the name. If not, apply general rules.
-    if cleaned_name == model_name: # This condition ensures general rules don't override specific maps
+    # 2. If no specific mapping changed the name, apply general cleaning rules
+    if cleaned_name == model_name:
         # Remove '-128k' suffix
         if cleaned_name.endswith("-128k"):
             cleaned_name = cleaned_name.removesuffix("-128k")
@@ -68,15 +69,11 @@ def clean_model_name(model_name: str) -> str:
 
     return cleaned_name
 
-# ... rest of generate_model_performance_barcharts function ...
 def generate_model_performance_barcharts(
     df_data: pd.DataFrame,
     output_dir: str,
     output_filename_prefix: str = "",
     model_sort_order: Optional[List[str]] = None,
-    # language_order and palette are taken from barcharts.py defaults for now
-    # but could be passed if customization is needed at this level.
-    # languages_to_plot: Optional[List[str]] = None, # If specific languages are needed
     figsize_per_facet: Tuple[float, float] = (7, 5.5)
 ) -> None:
     """
@@ -88,6 +85,8 @@ def generate_model_performance_barcharts(
         output_dir: Directory to save the generated plots.
         output_filename_prefix: Optional prefix for plot filenames.
         model_sort_order: List of model names for x-axis order.
+                          These names will be cleaned internally before use,
+                          and filtered to include only models present in the data.
         figsize_per_facet: Size of each facet in the plot.
     """
     print("\n--- Generating Model Performance Bar Charts ---")
@@ -105,7 +104,7 @@ def generate_model_performance_barcharts(
     df_plot_base['question_model'] = df_plot_base['question_model'].apply(clean_model_name)
     print("Applied model name cleaning to DataFrame.")
 
-    # 1. Prepare "Full Manual" data
+    # --- 1. Prepare "Full Manual" data ---
     df_full_manual = df_plot_base[
         (df_plot_base["retrieval_algorithm"] == "zeroshot") &
         (df_plot_base["noise_level"] == FULL_MANUAL_NOISE_LEVEL)
@@ -113,12 +112,11 @@ def generate_model_performance_barcharts(
 
     if df_full_manual.empty:
         print(f"Warning: No data found for 'zeroshot' at noise level {FULL_MANUAL_NOISE_LEVEL}. '{FULL_MANUAL_ALIAS}' will be missing from plots.")
-        # df_full_manual will remain empty, subsequent concatenation won't add it.
     else:
         df_full_manual["retrieval_algorithm_display"] = FULL_MANUAL_ALIAS
         print(f"Found {len(df_full_manual['question_model'].unique())} models for '{FULL_MANUAL_ALIAS}' data across {len(df_full_manual['language'].unique())} languages.")
 
-    # 2. Prepare RAG data
+    # --- 2. Prepare RAG data ---
     rag_data_frames = []
     present_rag_algorithms_for_plot = []
     for algo_internal_name, algo_display_name in RAG_ALGORITHMS_TO_PLOT.items():
@@ -131,26 +129,28 @@ def generate_model_performance_barcharts(
         else:
             print(f"Warning: No data found for RAG algorithm '{algo_internal_name}'. It will be missing from plots.")
     
-    # Determine the actual order of algorithm facets based on available data and desired order
-    final_algorithm_display_order = [
-        algo for algo in DEFAULT_ALGORITHM_DISPLAY_ORDER 
-        if algo == FULL_MANUAL_ALIAS or algo in present_rag_algorithms_for_plot
-    ]
-    # Add any other found RAG algorithms not in default order, alphabetically
-    for algo_disp_name in sorted(present_rag_algorithms_for_plot):
-        if algo_disp_name not in final_algorithm_display_order:
-            final_algorithm_display_order.append(algo_disp_name)
-    
-    # Add Full Manual if it exists and not already included by some chance
-    if not df_full_manual.empty and FULL_MANUAL_ALIAS not in final_algorithm_display_order:
-        # This case might be rare if FULL_MANUAL_ALIAS is in DEFAULT_ALGORITHM_DISPLAY_ORDER
-        final_algorithm_display_order.append(FULL_MANUAL_ALIAS)
-        
-    if not rag_data_frames and df_full_manual.empty:
+    # --- 3. Determine the actual order of algorithm facets ---
+    # Collect all unique algorithm display names that have data
+    all_present_algorithms_set = set(present_rag_algorithms_for_plot)
+    if not df_full_manual.empty:
+        all_present_algorithms_set.add(FULL_MANUAL_ALIAS)
+
+    if not all_present_algorithms_set:
         print("No RAG data or 'Full Manual' data found. Skipping bar chart generation.")
         return
 
-    # 3. Combine data
+    final_algorithm_display_order = []
+    # First, add algorithms from DEFAULT_ALGORITHM_DISPLAY_ORDER that are present
+    for algo_display_name in DEFAULT_ALGORITHM_DISPLAY_ORDER:
+        if algo_display_name in all_present_algorithms_set:
+            final_algorithm_display_order.append(algo_display_name)
+            all_present_algorithms_set.remove(algo_display_name) # Remove to track remaining
+
+    # Then, add any remaining present algorithms (not in default order) alphabetically
+    for algo_display_name in sorted(list(all_present_algorithms_set)):
+        final_algorithm_display_order.append(algo_display_name)
+        
+    # --- 4. Combine data for plotting ---
     all_plot_data_frames = rag_data_frames
     if not df_full_manual.empty:
         all_plot_data_frames.append(df_full_manual)
@@ -165,21 +165,21 @@ def generate_model_performance_barcharts(
         print("Combined data is empty. Skipping bar chart generation.")
         return
 
-    # --- Apply model name cleaning to model_sort_order list ---
+    # --- 5. Prepare model sort order ---
     cleaned_model_sort_order = None
     if model_sort_order is not None:
+         # Clean model names in the provided sort order list
          cleaned_model_sort_order = [clean_model_name(model) for model in model_sort_order]
          # Filter out any models from the sort order that are not present in the *cleaned* data
          models_in_cleaned_data = df_combined['question_model'].unique().tolist()
          cleaned_model_sort_order = [model for model in cleaned_model_sort_order if model in models_in_cleaned_data]
-         print(f"Applied model name cleaning to model_sort_order.")
-    # --- End model name cleaning for sort order ---
-
-    # print(f"Models to plot: {model_sort_order if model_sort_order else 'Default (alphabetical)'}") # Original print
-    print(f"Models to plot: {cleaned_model_sort_order if cleaned_model_sort_order is not None else 'Default (alphabetical)'}") # Updated print
+         print(f"Applied model name cleaning and filtering to model_sort_order.")
+    
+    print(f"Models to plot: {cleaned_model_sort_order if cleaned_model_sort_order is not None else 'Default (alphabetical)'}")
     print(f"Algorithm facets to plot (in order): {final_algorithm_display_order}")
     print(f"Languages to plot (hue order): {LANGUAGE_ORDER}")
 
+    # --- 6. Generate plots for each target metric ---
     for metric_name in TARGET_METRICS_FOR_BARCHART:
         print(f"\n  Generating bar chart for metric: {metric_name}")
 
@@ -190,14 +190,13 @@ def generate_model_performance_barcharts(
             continue
         
         # Ensure only languages present in the data for this metric are in language_order for the plot
-        # (though barcharts.py also handles this, good to be aware)
         actual_languages_in_metric_data = sorted(df_metric_specific['language'].unique())
         current_lang_order = [lang for lang in LANGUAGE_ORDER if lang in actual_languages_in_metric_data]
-        for lang in actual_languages_in_metric_data: # Add any new languages from data
+        for lang in actual_languages_in_metric_data: # Add any new languages from data not in default order
             if lang not in current_lang_order:
                 current_lang_order.append(lang)
 
-        # The plotting function expects 'question_model', 'metric_value', 'language', 'retrieval_algorithm_display'
+        # Select and copy only the necessary columns for plotting
         plot_data_for_metric = df_metric_specific[[
             "question_model", "metric_value", "language", "retrieval_algorithm_display"
         ]].copy()
@@ -214,19 +213,20 @@ def generate_model_performance_barcharts(
             data=plot_data_for_metric,
             output_path=output_filepath,
             metric_name=metric_name,
-            model_sort_order=cleaned_model_sort_order, # Use the cleaned sort order
+            model_sort_order=cleaned_model_sort_order,
             algorithm_display_order=final_algorithm_display_order,
-            language_order=current_lang_order, # Use filtered and ordered list
-            language_palette=LANGUAGE_PALETTE, # From barcharts.py
+            language_order=current_lang_order,
+            language_palette=LANGUAGE_PALETTE,
             figsize_per_facet=figsize_per_facet
         )
     print("\n--- Model Performance Bar Chart Generation Finished ---")
 
 
 if __name__ == "__main__":
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    visualization_dir = os.path.dirname(current_dir)
-    project_root_dir = os.path.dirname(visualization_dir)
+    # Determine paths relative to the script's location
+    current_dir = os.path.dirname(os.path.abspath(__file__)) # e.g., /path/to/project/visualization/plot_scripts
+    visualization_dir = os.path.dirname(current_dir) # e.g., /path/to/project/visualization
+    project_root_dir = os.path.dirname(visualization_dir) # e.g., /path/to/project
 
     default_config_path = os.path.join(project_root_dir, "config.json")
     default_results_path = os.path.join(project_root_dir, "results")
@@ -254,12 +254,16 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     print("--- Starting Standalone Model Performance Bar Chart Generation ---")
-    # ... (print args similar to linechart_generators.py) ...
+    print(f"Results directory: {args.results_dir}")
+    print(f"Output directory: {args.output_dir}")
+    print(f"Config path: {args.config_path}")
+    if args.output_filename_prefix:
+        print(f"Output filename prefix: '{args.output_filename_prefix}'")
 
     # 1. Load Data
     df_all_data = extract_detailed_visualization_data(args.results_dir)
     if df_all_data is None or df_all_data.empty:
-        print("Exiting: No data extracted.")
+        print("Exiting: No data extracted or data is empty.")
         sys.exit(1)
 
     os.makedirs(args.output_dir, exist_ok=True)
@@ -280,15 +284,11 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Warning: Error loading config file '{args.config_path}': {e}.")
 
-    # Before using the sort order, clean it if it was loaded
-    # The cleaning logic will happen inside generate_model_performance_barcharts now.
-    # If no sort order was loaded, determine a default *before* calling the generator
-    # so the cleaning logic inside can apply to it.
+    # If no sort order was loaded from config, determine a default alphabetical order
+    # The cleaning and filtering of this list will happen inside the generator function.
     if not standalone_model_sort_order and 'question_model' in df_all_data.columns:
         # Get unique models *before* cleaning to create initial alphabetical order
-        # The cleaning inside the generator will then apply to this list.
         standalone_model_sort_order = sorted(df_all_data['question_model'].unique().tolist())
-        # print(f"Using fallback alphabetical model sort order: {[clean_model_name(m) for m in standalone_model_sort_order][:5]}...") # This print is now done inside the function
         print(f"Using fallback alphabetical model sort order (before cleaning).")
 
 

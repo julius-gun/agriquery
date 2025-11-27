@@ -9,17 +9,17 @@ from typing import List, Dict, Tuple
 try:
     from plot_utils import add_project_paths
 
-    add_project_paths()  # Ensure project paths are set for imports below
+    PROJECT_ROOT = add_project_paths()  # Ensure project paths are set for imports below
 except ImportError:
     print(
         "Warning: plot_utils.py not found or add_project_paths failed. Imports might fail."
     )
     # Attempt to add paths manually assuming standard structure
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    visualization_dir = os.path.dirname(current_dir)
-    project_root_dir = os.path.dirname(visualization_dir)
+    current_dir = os.path.dirname(os.path.abspath(__file__)) # .../RAG2_COMPAG/plot_scripts
+    project_root_dir = os.path.dirname(current_dir) # .../RAG2_COMPAG
     if project_root_dir not in sys.path:
         sys.path.insert(0, project_root_dir)
+        PROJECT_ROOT = project_root_dir
     print(f"Attempted to add project root: {project_root_dir}")
 
 
@@ -37,10 +37,9 @@ except ImportError as e:
 
 def get_project_root() -> str:
     """Gets the absolute path to the project's root directory (RAG)."""
+    # This is now redundant given PROJECT_ROOT from plot_utils, but keeping for logic consistency
     current_script_dir = os.path.dirname(os.path.abspath(__file__))
-    plot_scripts_dir = current_script_dir
-    visualization_dir = os.path.dirname(plot_scripts_dir)
-    project_root = os.path.dirname(visualization_dir)
+    project_root = os.path.dirname(current_script_dir)
     return project_root
 
 
@@ -73,9 +72,9 @@ def plot_question_distribution(config_path: str, output_dir: str):
     and generates a pie chart showing the distribution.
     """
     print("--- Generating Question Distribution Pie Chart ---")
-    project_root = get_project_root()
+    # Use PROJECT_ROOT determined at import time
     abs_config_path = os.path.join(
-        project_root, config_path
+        PROJECT_ROOT, config_path
     )  # Ensure absolute path from root
 
     # 1. Load Config
@@ -113,7 +112,7 @@ def plot_question_distribution(config_path: str, output_dir: str):
             continue
 
         # Construct absolute path from project root
-        abs_path = os.path.normpath(os.path.join(project_root, rel_path))
+        abs_path = os.path.normpath(os.path.join(PROJECT_ROOT, rel_path))
         paths_to_check.append(abs_path)  # Keep track for reporting
         print(f"  - Processing '{label}' dataset from: {abs_path}")
 
@@ -181,10 +180,11 @@ if __name__ == "__main__":
     DEFAULT_CONFIG_REL_PATH = "config.json"
     DEFAULT_OUTPUT_REL_DIR = os.path.join("visualization", "plots")
 
-    # Get project root and construct absolute paths for defaults
-    project_root = get_project_root()
-    default_config_abs_path = os.path.join(project_root, DEFAULT_CONFIG_REL_PATH)
-    default_output_abs_dir = os.path.join(project_root, DEFAULT_OUTPUT_REL_DIR)
+    # Get project root (already calculated by import) and construct absolute paths for defaults
+    # Re-using PROJECT_ROOT global from import
+    
+    default_config_abs_path = os.path.join(PROJECT_ROOT, DEFAULT_CONFIG_REL_PATH)
+    default_output_abs_dir = os.path.join(PROJECT_ROOT, DEFAULT_OUTPUT_REL_DIR)
 
     # You could add argparse here if command-line overrides are needed
     config_to_use = default_config_abs_path
