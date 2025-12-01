@@ -55,6 +55,7 @@ def _generate_single_language_table(
     df_fmt.index.name = None # Remove index name for cleaner LaTeX
 
     # Generate LaTeX
+    # Note: Caption/Label are placeholders here; usually managed by caller or specific logic
     latex = df_fmt.to_latex(
         column_format="l" + "c" * len(df_fmt.columns),
         caption=f"Hybrid RAG Performance: {language.title()}",
@@ -71,43 +72,54 @@ def generate_latex_report(
     model_sort_order: Optional[List[str]] = None
 ):
     """
-    Generates a consolidated .tex file containing tables for all languages.
-    Filters strictly for Hybrid RAG and Markdown files.
+    Generates consolidated .tex files containing tables for all languages.
+    Generates one file per file format (md, xml, json).
     """
-    print("\n--- Generating LaTeX Tables (Hybrid/Markdown) ---")
+    print("\n--- Generating LaTeX Tables (Hybrid / per Format) ---")
     
     if df_data is None or df_data.empty:
         print("No data provided.")
         return
 
-    # Filter: Hybrid & Markdown
-    df_filtered = df_data[
-        (df_data['retrieval_algorithm'] == 'hybrid') & 
-        (df_data['file_extension'] == 'md')
-    ].copy()
+    # Filter: Hybrid
+    df_hybrid = df_data[df_data['retrieval_algorithm'] == 'hybrid'].copy()
 
-    if df_filtered.empty:
-        print("No Hybrid/Markdown data found for tables.")
+    if df_hybrid.empty:
+        print("No Hybrid data found.")
         return
-
-    # Clean Model Names
-    df_filtered['question_model'] = df_filtered['question_model'].apply(clean_model_name)
-
-    languages = sorted(df_filtered['language'].unique())
-    metrics = ['f1_score', 'accuracy', 'precision', 'recall']
-    
-    all_tables = []
-    
-    for lang in languages:
-        table_str = _generate_single_language_table(df_filtered, lang, metrics, model_sort_order)
-        if table_str:
-            all_tables.append(table_str)
-
-    if all_tables:
-        os.makedirs(output_dir, exist_ok=True)
-        output_path = os.path.join(output_dir, "hybrid_rag_tables.tex")
         
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write("\n\n".join(all_tables))
+    extensions = sorted(df_hybrid['file_extension'].dropna().unique())
+    ext_map = {'md': 'Markdown', 'json': 'JSON', 'xml': 'XML'}
+
+    for ext in extensions:
+        df_filtered = df_hybrid[df_hybrid['file_extension'] == ext].copy()
+        if df_filtered.empty: continue
+
+        # Clean Model Names
+        df_filtered['question_model'] = df_filtered['question_model'].apply(clean_model_name)
+
+        languages = sorted(df_filtered['language'].unique())
+        metrics = ['f1_score', 'accuracy', 'precision', 'recall']
+        
+        all_tables = []
+        ext_display = ext_map.get(ext, ext.upper())
+        
+        # Add file header
+        all_tables.append(f"% Tables for Format: {ext_display}")
+
+        for lang in languages:
+            table_str = _generate_single_language_table(df_filtered, lang, metrics, model_sort_order)
+            if table_str:
+                # Modify Caption and Label to include format
+                table_str = table_str.replace(f"tab:hybrid_{lang}", f"tab:hybrid_{lang}_{ext}")
+                table_str = table_str.replace(f"Performance: {lang.title()}", f"Performance: {lang.title()} ({ext_display})")
+                all_tables.append(table_str)
+
+        if all_tables:
+            os.makedirs(output_dir, exist_ok=True)
+            output_path = os.path.join(output_dir, f"tables_hybrid_{ext}.tex")
             
-        print(f"Generated LaTeX report: {output_path}")
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write("\n\n".join(all_tables))
+                
+            print(f"Generated LaTeX report: {output_path}")

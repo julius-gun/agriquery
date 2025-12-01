@@ -18,57 +18,65 @@ def generate_model_performance_barcharts(
 ) -> None:
     """
     Generates bar charts for Hybrid RAG performance: Model vs Language.
-    Filters strictly for Markdown ('md') files and Hybrid algorithm.
+    Iterates over all available file formats (md, xml, json).
     """
-    print("\n--- Generating Model Performance Bar Charts (Hybrid / Markdown) ---")
+    print("\n--- Generating Model Performance Bar Charts (Hybrid / per Format) ---")
 
-    # Filter: Hybrid Algorithm AND Markdown
-    df_plot = df_data[
-        (df_data["retrieval_algorithm"] == "hybrid") & 
-        (df_data["file_extension"] == "md")
-    ].copy()
+    # Filter: Hybrid Algorithm
+    df_hybrid = df_data[df_data["retrieval_algorithm"] == "hybrid"].copy()
     
-    if df_plot.empty:
-        print("No Hybrid/Markdown data found.")
+    if df_hybrid.empty:
+        print("No Hybrid data found.")
         return
 
-    df_plot['question_model'] = df_plot['question_model'].apply(clean_model_name)
+    # Identify available extensions
+    extensions = sorted(df_hybrid["file_extension"].dropna().unique())
+    ext_map = {'md': 'Markdown', 'json': 'JSON', 'xml': 'XML'}
+
+    for ext in extensions:
+        print(f"Processing format: {ext}")
+        
+        df_plot = df_hybrid[df_hybrid["file_extension"] == ext].copy()
+        if df_plot.empty: continue
     
-    # Determine Model Order
-    if model_sort_order:
-        cleaned_order = [clean_model_name(m) for m in model_sort_order]
-        # Filter to only models actually in data
-        present_models = df_plot['question_model'].unique()
-        final_model_order = [m for m in cleaned_order if m in present_models]
-        # Append any new models not in sort order
-        for m in sorted(present_models):
-            if m not in final_model_order:
-                final_model_order.append(m)
-    else:
-        final_model_order = sorted(df_plot['question_model'].unique())
+        df_plot['question_model'] = df_plot['question_model'].apply(clean_model_name)
+        
+        # Determine Model Order
+        if model_sort_order:
+            cleaned_order = [clean_model_name(m) for m in model_sort_order]
+            present_models = df_plot['question_model'].unique()
+            final_model_order = [m for m in cleaned_order if m in present_models]
+            for m in sorted(present_models):
+                if m not in final_model_order:
+                    final_model_order.append(m)
+        else:
+            final_model_order = sorted(df_plot['question_model'].unique())
 
-    # Generate plots for each metric
-    for metric in ["f1_score", "accuracy"]:
-        df_metric = df_plot[df_plot["metric_type"] == metric]
-        if df_metric.empty: 
-            continue
+        ext_display = ext_map.get(ext, ext.upper())
 
-        filename = f"{output_filename_prefix}hybrid_lang_perf_{sanitize_filename(metric)}.png"
-        output_path = os.path.join(output_dir, filename)
+        # Generate plots for each metric
+        for metric in ["f1_score", "accuracy"]:
+            df_metric = df_plot[df_plot["metric_type"] == metric]
+            if df_metric.empty: 
+                continue
 
-        create_grouped_barchart(
-            data=df_metric,
-            output_path=output_path,
-            metric_name=metric,
-            x_col="question_model",
-            y_col="metric_value",
-            hue_col="language",
-            x_order=final_model_order,
-            hue_order=LANGUAGE_ORDER,
-            palette=LANGUAGE_PALETTE,
-            title=f"Hybrid RAG Performance by Language ({METRIC_DISPLAY_NAMES.get(metric, metric)})",
-            xlabel="LLM Model"
-        )
+            # Include extension in filename
+            filename = f"{output_filename_prefix}hybrid_lang_perf_{sanitize_filename(metric)}_{ext}.png"
+            output_path = os.path.join(output_dir, filename)
+
+            create_grouped_barchart(
+                data=df_metric,
+                output_path=output_path,
+                metric_name=metric,
+                x_col="question_model",
+                y_col="metric_value",
+                hue_col="language",
+                x_order=final_model_order,
+                hue_order=LANGUAGE_ORDER,
+                palette=LANGUAGE_PALETTE,
+                title=f"Hybrid RAG Performance by Language ({METRIC_DISPLAY_NAMES.get(metric, metric)}) - {ext_display}",
+                xlabel="LLM Model"
+            )
 
 
 def generate_format_comparison_barcharts(
@@ -93,7 +101,7 @@ def generate_format_comparison_barcharts(
     # Map file extensions to display names
     ext_map = {'md': 'Markdown', 'json': 'JSON', 'xml': 'XML'}
     df_plot['format_display'] = df_plot['file_extension'].map(ext_map)
-    # Remove rows where format mapping failed (e.g. other extensions)
+    # Remove rows where format mapping failed
     df_plot = df_plot.dropna(subset=['format_display'])
     
     df_plot['question_model'] = df_plot['question_model'].apply(clean_model_name)

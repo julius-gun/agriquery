@@ -20,8 +20,8 @@ try:
         generate_model_performance_barcharts,
         generate_format_comparison_barcharts
     )
-    from english_barchart_generator import generate_english_retrieval_comparison_barcharts
-    from boxplot_generators import generate_f1_distribution_boxplot
+    # Replaced Boxplots with Scatter Plots
+    from scatter_plot_generators import generate_cross_lingual_scatter_plots
     from latex_table_generator import generate_latex_report
     from utils.config_loader import ConfigLoader
 except ImportError as e:
@@ -71,11 +71,11 @@ def main():
     barchart_dir = os.path.join(args.output_dir, "barcharts")
     generate_model_performance_barcharts(df_data, barchart_dir, model_sort_order=model_sort_order)
     generate_format_comparison_barcharts(df_data, barchart_dir, model_sort_order=model_sort_order)
-    generate_english_retrieval_comparison_barcharts(df_data, barchart_dir, model_sort_order=model_sort_order)
 
-    # 4. Box Plots
-    boxplot_dir = os.path.join(args.output_dir, "boxplots")
-    generate_f1_distribution_boxplot(df_data, boxplot_dir, model_sort_order=model_sort_order)
+    # 4. Scatter Plots (Cross-Lingual Capability)
+    # Replaces the previous boxplots
+    scatter_dir = os.path.join(args.output_dir, "scatterplots")
+    generate_cross_lingual_scatter_plots(df_data, scatter_dir, model_sort_order=model_sort_order)
 
     # 5. LaTeX Tables
     generate_latex_report(df_data, args.table_dir, model_sort_order)

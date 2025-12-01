@@ -31,41 +31,48 @@ def _prepare_data(df: pd.DataFrame, metric: str, model_sort_order: Optional[List
 def generate_global_overview_heatmaps(df: pd.DataFrame, output_dir: str, model_sort_order: Optional[List[str]] = None):
     """
     Language vs Model.
-    Filter: Hybrid Algorithm & Markdown only (for clean language comparison).
+    Iterates over all available file formats (md, xml, json).
     """
-    print("\n--- Generating Global Overview Heatmaps (Hybrid/Markdown) ---")
+    print("\n--- Generating Global Overview Heatmaps (Hybrid / per Format) ---")
     
-    # Filter
-    df_filtered = df[
-        (df['retrieval_algorithm'] == 'hybrid') & 
-        (df['file_extension'] == 'md')
-    ].copy()
+    # Filter: Hybrid only
+    df_hybrid = df[df['retrieval_algorithm'] == 'hybrid'].copy()
     
-    if df_filtered.empty:
-        print("No Hybrid/Markdown data found.")
+    if df_hybrid.empty:
+        print("No Hybrid data found.")
         return
 
-    for metric in ["f1_score", "accuracy"]:
-        df_metric = df_filtered[df_filtered['metric_type'] == metric]
-        if df_metric.empty: continue
+    extensions = sorted(df_hybrid["file_extension"].dropna().unique())
+    ext_map = {'md': 'Markdown', 'json': 'JSON', 'xml': 'XML'}
 
-        df_clean, final_model_order = _prepare_data(df_metric, metric, model_sort_order)
-        
-        output_path = os.path.join(output_dir, f"heatmap_language_vs_model_{metric}.png")
+    for ext in extensions:
+        df_filtered = df_hybrid[df_hybrid['file_extension'] == ext].copy()
+        if df_filtered.empty: continue
 
-        create_heatmap(
-            data=df_clean,
-            output_path=output_path,
-            index_col='question_model',
-            columns_col='language',
-            values_col='metric_value',
-            metric_name=metric,
-            title=f"Hybrid RAG Performance: Model vs Language ({METRIC_DISPLAY_NAMES.get(metric)})",
-            xlabel="Language",
-            ylabel="LLM Model",
-            index_order=final_model_order,
-            columns_order=LANGUAGE_ORDER
-        )
+        ext_display = ext_map.get(ext, ext.upper())
+
+        for metric in ["f1_score", "accuracy"]:
+            df_metric = df_filtered[df_filtered['metric_type'] == metric]
+            if df_metric.empty: continue
+
+            df_clean, final_model_order = _prepare_data(df_metric, metric, model_sort_order)
+            
+            # Filename with extension
+            output_path = os.path.join(output_dir, f"heatmap_language_vs_model_{metric}_{ext}.png")
+
+            create_heatmap(
+                data=df_clean,
+                output_path=output_path,
+                index_col='question_model',
+                columns_col='language',
+                values_col='metric_value',
+                metric_name=metric,
+                title=f"Hybrid RAG Performance: Model vs Language ({METRIC_DISPLAY_NAMES.get(metric)}) - {ext_display}",
+                xlabel="Language",
+                ylabel="LLM Model",
+                index_order=final_model_order,
+                columns_order=LANGUAGE_ORDER
+            )
 
 def generate_format_comparison_heatmaps(df: pd.DataFrame, output_dir: str, model_sort_order: Optional[List[str]] = None):
     """
