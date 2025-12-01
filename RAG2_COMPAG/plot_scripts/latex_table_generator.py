@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from typing import List, Optional
 
-from .plot_config import clean_model_name, METRIC_DISPLAY_NAMES
+from plot_config import clean_model_name, METRIC_DISPLAY_NAMES
 
 def _generate_single_language_table(
     df: pd.DataFrame,

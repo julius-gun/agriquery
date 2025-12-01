@@ -1,6 +1,6 @@
 from typing import List, Optional, Tuple, Dict
 import pandas as pd
-from .barcharts import create_grouped_barchart
+from barcharts import create_grouped_barchart
 
 def create_english_retrieval_barchart(
     data: pd.DataFrame,

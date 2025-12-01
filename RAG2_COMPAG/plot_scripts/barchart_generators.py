@@ -2,9 +2,9 @@ import os
 import pandas as pd
 from typing import List, Optional
 
-from .plot_utils import sanitize_filename
-from .barcharts import create_grouped_barchart
-from .plot_config import (
+from plot_utils import sanitize_filename
+from barcharts import create_grouped_barchart
+from plot_config import (
     LANGUAGE_PALETTE, LANGUAGE_ORDER, 
     FORMAT_PALETTE, FORMAT_ORDER,
     clean_model_name, METRIC_DISPLAY_NAMES

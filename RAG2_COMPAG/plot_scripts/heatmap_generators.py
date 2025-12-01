@@ -1,10 +1,10 @@
 import os
 import pandas as pd
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
-from .plot_utils import sanitize_filename
-from .heatmaps import create_heatmap
-from .plot_config import (
+from plot_utils import sanitize_filename
+from heatmaps import create_heatmap
+from plot_config import (
     clean_model_name, 
     LANGUAGE_ORDER, 
     FORMAT_ORDER,

@@ -2,8 +2,8 @@ import os
 import pandas as pd
 from typing import List, Optional
 
-from .box_plots import create_boxplot
-from .plot_config import (
+from box_plots import create_boxplot
+from plot_config import (
     clean_model_name, 
     LANGUAGE_PALETTE, 
     LANGUAGE_ORDER,

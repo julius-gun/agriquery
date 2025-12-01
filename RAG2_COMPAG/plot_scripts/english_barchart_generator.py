@@ -2,9 +2,9 @@ import os
 import pandas as pd
 from typing import List, Optional
 
-from .plot_utils import sanitize_filename
-from .english_barcharts import create_english_retrieval_barchart
-from .plot_config import clean_model_name
+from plot_utils import sanitize_filename
+from english_barcharts import create_english_retrieval_barchart
+from plot_config import clean_model_name
 
 def generate_english_retrieval_comparison_barcharts(
     df_data: pd.DataFrame,

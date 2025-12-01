@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from typing import Optional, Tuple, List
-from .plot_config import METRIC_DISPLAY_NAMES
+from plot_config import METRIC_DISPLAY_NAMES
 
 def create_heatmap(
     data: pd.DataFrame,
