@@ -87,7 +87,9 @@ def generate_format_comparison_barcharts(
 ) -> None:
     """
     Generates bar charts for Hybrid RAG performance: Model vs File Format.
-    Uses Hybrid algorithm. Aggregates over languages.
+    Uses Hybrid algorithm. 
+    1. Aggregates over all languages.
+    2. Generates specific plot for English.
     """
     print("\n--- Generating Format Comparison Bar Charts (Hybrid) ---")
 
@@ -121,13 +123,16 @@ def generate_format_comparison_barcharts(
         df_metric = df_plot[df_plot["metric_type"] == metric]
         if df_metric.empty:
             continue
+        
+        metric_display = METRIC_DISPLAY_NAMES.get(metric, metric)
 
-        filename = f"{output_filename_prefix}hybrid_format_perf_{sanitize_filename(metric)}.png"
-        output_path = os.path.join(output_dir, filename)
+        # --- 1. Average across all languages ---
+        filename_avg = f"{output_filename_prefix}hybrid_format_perf_{sanitize_filename(metric)}_avg_all_langs.png"
+        output_path_avg = os.path.join(output_dir, filename_avg)
 
         create_grouped_barchart(
             data=df_metric,
-            output_path=output_path,
+            output_path=output_path_avg,
             metric_name=metric,
             x_col="question_model",
             y_col="metric_value",
@@ -135,6 +140,27 @@ def generate_format_comparison_barcharts(
             x_order=final_model_order,
             hue_order=FORMAT_ORDER,
             palette=FORMAT_PALETTE,
-            title=f"Hybrid RAG Performance by Data Format ({METRIC_DISPLAY_NAMES.get(metric, metric)})",
+            title=f"Hybrid RAG Performance by Data Format ({metric_display}) - Avg across all languages",
             xlabel="LLM Model"
         )
+
+        # --- 2. English Only ---
+        df_english = df_metric[df_metric["language"] == "english"]
+        
+        if not df_english.empty:
+            filename_eng = f"{output_filename_prefix}hybrid_format_perf_{sanitize_filename(metric)}_english.png"
+            output_path_eng = os.path.join(output_dir, filename_eng)
+
+            create_grouped_barchart(
+                data=df_english,
+                output_path=output_path_eng,
+                metric_name=metric,
+                x_col="question_model",
+                y_col="metric_value",
+                hue_col="format_display",
+                x_order=final_model_order,
+                hue_order=FORMAT_ORDER,
+                palette=FORMAT_PALETTE,
+                title=f"Hybrid RAG Performance by Data Format ({metric_display}) - English",
+                xlabel="LLM Model"
+            )

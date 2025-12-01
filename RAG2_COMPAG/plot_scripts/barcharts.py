@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from typing import List, Optional, Tuple, Dict
-from plot_config import METRIC_DISPLAY_NAMES
+from plot_config import METRIC_DISPLAY_NAMES, LANGUAGE_CODES, FORMAT_CODES
 
 def create_grouped_barchart(
     data: pd.DataFrame,
@@ -22,7 +22,7 @@ def create_grouped_barchart(
     bar_label_fontsize: int = 8
 ) -> None:
     """
-    Generates a generic grouped bar chart with direct labeling.
+    Generates a generic grouped bar chart with direct labeling inside bars.
     """
     if data is None or data.empty:
         print(f"Warning: No data for {output_path}")
@@ -45,7 +45,32 @@ def create_grouped_barchart(
     )
 
     # --- Direct Labeling ---
-    # Loop through containers (groups of bars for each hue)
+    
+    # 1. Inner Labels (Series Name)
+    if hue_order:
+        for i, container in enumerate(ax.containers):
+            # Ensure we don't go out of bounds if hue_order mismatches containers
+            if i < len(hue_order):
+                series_label = hue_order[i]
+                
+                # Determine abbreviation
+                # Check Language codes first, then Format codes, then fallback to original
+                short_label = LANGUAGE_CODES.get(series_label)
+                if not short_label:
+                    short_label = FORMAT_CODES.get(series_label, series_label)
+
+                # Place label inside the bar
+                ax.bar_label(
+                    container,
+                    labels=[short_label] * len(container),
+                    label_type='center',
+                    rotation=90,
+                    fontsize=bar_label_fontsize,
+                    color='white',
+                    fontweight='bold'
+                )
+
+    # 2. Outer Labels (Values) - apply to all containers
     for container in ax.containers:
         ax.bar_label(
             container,
@@ -66,9 +91,9 @@ def create_grouped_barchart(
     # Y-axis limits (0 to 1.1 for scores)
     ax.set_ylim(0, 1.15)
     
-    # Legend handling
-    if hue_col:
-        ax.legend(title=hue_col.replace("_", " ").title(), bbox_to_anchor=(1.02, 1), loc='upper left')
+    # Legend handling: Remove legend as we have direct labels
+    if ax.get_legend():
+        ax.get_legend().remove()
 
     plt.tight_layout()
     

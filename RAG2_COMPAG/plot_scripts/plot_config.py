@@ -41,6 +41,12 @@ FORMAT_PALETTE = {
 
 FORMAT_ORDER = ["Markdown", "JSON", "XML"]
 
+FORMAT_CODES = {
+    "Markdown": "MD",
+    "JSON": "JSON",
+    "XML": "XML"
+}
+
 # --- Metric Display Names ---
 METRIC_DISPLAY_NAMES = {
     "f1_score": "F1 Score",

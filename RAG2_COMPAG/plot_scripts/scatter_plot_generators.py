@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from typing import List, Optional
 
-from scatter_plots import create_comparison_scatter
+from scatter_plots import create_combined_scatter
 from plot_config import clean_model_name, METRIC_DISPLAY_NAMES
 
 def generate_cross_lingual_scatter_plots(
@@ -12,10 +12,10 @@ def generate_cross_lingual_scatter_plots(
     model_sort_order: Optional[List[str]] = None
 ):
     """
-    Generates scatter plots: English Performance (X) vs Average Non-English Performance (Y).
-    Iterates over file formats (MD, XML, JSON).
+    Generates combined scatter plots: English Performance (X) vs Average Non-English Performance (Y).
+    Combines Markdown, JSON, and XML into one figure.
     """
-    print("\n--- Generating Cross-Lingual Scatter Plots ---")
+    print("\n--- Generating Cross-Lingual Scatter Plots (Combined) ---")
 
     # Filter: Hybrid Algorithm
     df_hybrid = df_data[df_data['retrieval_algorithm'] == 'hybrid'].copy()
@@ -24,26 +24,40 @@ def generate_cross_lingual_scatter_plots(
         print("No Hybrid data found.")
         return
 
-    # Identify formats
-    extensions = sorted(df_hybrid['file_extension'].dropna().unique())
+    # Prepare data structure: Metric -> Format -> DataFrame
+    # Actually, we iterate metrics, then collect formats.
+    
     ext_map = {'md': 'Markdown', 'json': 'JSON', 'xml': 'XML'}
 
-    for ext in extensions:
-        df_fmt = df_hybrid[df_hybrid['file_extension'] == ext].copy()
-        if df_fmt.empty: continue
-        
-        ext_display = ext_map.get(ext, ext.upper())
-        
-        # Clean Model Names
-        df_fmt['question_model'] = df_fmt['question_model'].apply(clean_model_name)
+    # Determine Model Order for consistent coloring
+    df_hybrid['question_model'] = df_hybrid['question_model'].apply(clean_model_name)
+    
+    if model_sort_order:
+        cleaned_order = [clean_model_name(m) for m in model_sort_order]
+        present_models = df_hybrid['question_model'].unique()
+        final_model_order = [m for m in cleaned_order if m in present_models]
+        # Append remaining
+        for m in sorted(present_models):
+            if m not in final_model_order:
+                final_model_order.append(m)
+    else:
+        final_model_order = sorted(df_hybrid['question_model'].unique())
 
-        # We focus on F1 Score and Accuracy
-        for metric in ['f1_score', 'accuracy']:
+    # Generate for each metric
+    for metric in ['f1_score', 'accuracy']:
+        data_map = {}
+        
+        # Collect data for each format
+        extensions = sorted(df_hybrid['file_extension'].dropna().unique())
+        
+        for ext in extensions:
+            df_fmt = df_hybrid[df_hybrid['file_extension'] == ext].copy()
+            if df_fmt.empty: continue
+            
             df_metric = df_fmt[df_fmt['metric_type'] == metric]
             if df_metric.empty: continue
 
-            # Pivot to get Language columns
-            # Index: Model, Columns: Language, Values: Metric
+            # Pivot
             pivot = df_metric.pivot_table(
                 index='question_model',
                 columns='language',
@@ -54,7 +68,6 @@ def generate_cross_lingual_scatter_plots(
             if 'english' not in pivot.columns:
                 continue
 
-            # Calculate English vs Non-English Avg
             non_english_cols = [c for c in pivot.columns if c != 'english']
             if not non_english_cols:
                 continue
@@ -64,20 +77,28 @@ def generate_cross_lingual_scatter_plots(
                 'english_score': pivot['english'],
                 'non_english_avg': pivot[non_english_cols].mean(axis=1)
             })
-
-            filename = f"{output_filename_prefix}scatter_cross_lingual_{metric}_{ext}.png"
-            output_path = os.path.join(output_dir, filename)
             
-            metric_name = METRIC_DISPLAY_NAMES.get(metric, metric)
+            # Map extension to display name
+            fmt_name = ext_map.get(ext, ext.upper())
+            data_map[fmt_name] = plot_data
 
-            create_comparison_scatter(
-                data=plot_data,
-                output_path=output_path,
-                x_col='english_score',
-                y_col='non_english_avg',
-                label_col='model',
-                metric_name=metric,
-                title=f"Cross-Lingual Capability ({metric_name}) - {ext_display}",
-                xlabel=f"English {metric_name}",
-                ylabel=f"Avg. Non-English {metric_name}"
-            )
+        if not data_map:
+            continue
+
+        # Generate Combined Plot
+        metric_name = METRIC_DISPLAY_NAMES.get(metric, metric)
+        filename = f"{output_filename_prefix}scatter_cross_lingual_{metric}_combined.png"
+        output_path = os.path.join(output_dir, filename)
+
+        create_combined_scatter(
+            data_map=data_map,
+            output_path=output_path,
+            metric_name=metric,
+            x_col='english_score',
+            y_col='non_english_avg',
+            label_col='model',
+            title=f"Cross-Lingual Capability ({metric_name})",
+            xlabel=f"English {metric_name}",
+            ylabel=f"Avg. Non-English {metric_name}",
+            hue_order=final_model_order
+        )
