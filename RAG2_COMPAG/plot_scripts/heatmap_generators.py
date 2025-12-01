@@ -1,178 +1,108 @@
 import os
 import pandas as pd
-from plot_scripts.heatmaps import create_heatmap
-from plot_scripts.plot_utils import sanitize_filename
+from typing import List, Optional
 
-def generate_global_overview_heatmaps(df: pd.DataFrame, output_dir: str):
-    """
-    Generates Global Overview heatmaps: 
-    X-Axis: Languages
-    Y-Axis: Models
-    Metrics: Accuracy and F1 Score
+from .plot_utils import sanitize_filename
+from .heatmaps import create_heatmap
+from .plot_config import (
+    clean_model_name, 
+    LANGUAGE_ORDER, 
+    FORMAT_ORDER,
+    METRIC_DISPLAY_NAMES
+)
+
+def _prepare_data(df: pd.DataFrame, metric: str, model_sort_order: Optional[List[str]]) -> Tuple[pd.DataFrame, List[str]]:
+    """Helper to clean model names and determine order."""
+    df_clean = df.copy()
+    df_clean['question_model'] = df_clean['question_model'].apply(clean_model_name)
     
-    NOTE: Filters for Markdown ('md') files to ensure consistent comparison across languages.
-    """
-    print("\n--- Generating Global Overview Heatmaps (Lang vs Model) ---")
+    present_models = df_clean['question_model'].unique()
+    final_order = sorted(present_models)
     
-    # Filter for Markdown only to avoid format bias in global average
-    if 'file_extension' in df.columns:
-        df_filtered = df[df['file_extension'] == 'md'].copy()
-        if df_filtered.empty:
-             print("Warning: No Markdown files found. Using all data for global heatmap.")
-             df_filtered = df.copy()
-        else:
-             print("Filtered data to 'md' extension for consistent global comparison.")
-    else:
-        df_filtered = df.copy()
+    if model_sort_order:
+        cleaned_order = [clean_model_name(m) for m in model_sort_order]
+        final_order = [m for m in cleaned_order if m in present_models]
+        for m in sorted(present_models):
+            if m not in final_order:
+                final_order.append(m)
+                
+    return df_clean, final_order
 
-    metrics = {
-        'f1_score': 'F1 Score',
-        'accuracy': 'Accuracy'
-    }
+def generate_global_overview_heatmaps(df: pd.DataFrame, output_dir: str, model_sort_order: Optional[List[str]] = None):
+    """
+    Language vs Model.
+    Filter: Hybrid Algorithm & Markdown only (for clean language comparison).
+    """
+    print("\n--- Generating Global Overview Heatmaps (Hybrid/Markdown) ---")
+    
+    # Filter
+    df_filtered = df[
+        (df['retrieval_algorithm'] == 'hybrid') & 
+        (df['file_extension'] == 'md')
+    ].copy()
+    
+    if df_filtered.empty:
+        print("No Hybrid/Markdown data found.")
+        return
 
-    for metric_key, metric_label in metrics.items():
-        # Filter data for the specific metric
-        df_metric = df_filtered[df_filtered['metric_type'] == metric_key].copy()
+    for metric in ["f1_score", "accuracy"]:
+        df_metric = df_filtered[df_filtered['metric_type'] == metric]
+        if df_metric.empty: continue
+
+        df_clean, final_model_order = _prepare_data(df_metric, metric, model_sort_order)
         
-        if df_metric.empty:
-            print(f"No data found for {metric_label}. Skipping.")
-            continue
-
-        output_filename = f"global_heatmap_lang_vs_model_{metric_key}.png"
-        output_path = os.path.join(output_dir, output_filename)
+        output_path = os.path.join(output_dir, f"heatmap_language_vs_model_{metric}.png")
 
         create_heatmap(
-            data=df_metric,
+            data=df_clean,
             output_path=output_path,
-            index_col='question_model',   # Y-Axis
-            columns_col='language',       # X-Axis
+            index_col='question_model',
+            columns_col='language',
             values_col='metric_value',
-            metric_label=metric_label,
-            title=f"Global Overview: {metric_label} (Model vs Language - Markdown)",
+            metric_name=metric,
+            title=f"Hybrid RAG Performance: Model vs Language ({METRIC_DISPLAY_NAMES.get(metric)})",
             xlabel="Language",
-            ylabel="LLM Model"
+            ylabel="LLM Model",
+            index_order=final_model_order,
+            columns_order=LANGUAGE_ORDER
         )
 
-def generate_format_comparison_heatmaps(df: pd.DataFrame, output_dir: str):
+def generate_format_comparison_heatmaps(df: pd.DataFrame, output_dir: str, model_sort_order: Optional[List[str]] = None):
     """
-    Generates Format Comparison heatmaps (Format vs Model).
-    Aggregates across languages/algorithms to show general format performance.
+    Format vs Model.
+    Filter: Hybrid Algorithm (Aggregated across languages).
     """
-    print("\n--- Generating Format Comparison Heatmaps (Format vs Model) ---")
+    print("\n--- Generating Format Comparison Heatmaps (Hybrid) ---")
     
-    if 'file_extension' not in df.columns:
-        print("Column 'file_extension' missing. Skipping format heatmaps.")
+    df_filtered = df[df['retrieval_algorithm'] == 'hybrid'].copy()
+    
+    if df_filtered.empty:
+        print("No Hybrid data found.")
         return
 
-    metrics = {
-        'f1_score': 'F1 Score',
-        'accuracy': 'Accuracy'
-    }
+    # Map extensions
+    ext_map = {'md': 'Markdown', 'json': 'JSON', 'xml': 'XML'}
+    df_filtered['format_display'] = df_filtered['file_extension'].map(ext_map)
+    df_filtered = df_filtered.dropna(subset=['format_display'])
 
-    for metric_key, metric_label in metrics.items():
-        df_metric = df[df['metric_type'] == metric_key].copy()
-        
-        if df_metric.empty:
-            continue
+    for metric in ["f1_score", "accuracy"]:
+        df_metric = df_filtered[df_filtered['metric_type'] == metric]
+        if df_metric.empty: continue
 
-        output_filename = f"global_heatmap_format_vs_model_{metric_key}.png"
-        output_path = os.path.join(output_dir, output_filename)
+        df_clean, final_model_order = _prepare_data(df_metric, metric, model_sort_order)
+
+        output_path = os.path.join(output_dir, f"heatmap_format_vs_model_{metric}.png")
 
         create_heatmap(
-            data=df_metric,
+            data=df_clean,
             output_path=output_path,
-            index_col='question_model',   # Y-Axis
-            columns_col='file_extension', # X-Axis
+            index_col='question_model',
+            columns_col='format_display',
             values_col='metric_value',
-            metric_label=metric_label,
-            title=f"Format Analysis: {metric_label} (Model vs File Format)",
+            metric_name=metric,
+            title=f"Hybrid RAG Performance: Model vs Format ({METRIC_DISPLAY_NAMES.get(metric)})",
             xlabel="File Format",
-            ylabel="LLM Model"
-        )
-
-def generate_english_format_heatmaps(df: pd.DataFrame, output_dir: str):
-    """
-    Generates English-only heatmaps:
-    X-Axis: File Formats (md, json, xml)
-    Y-Axis: Models
-    Metrics: Accuracy and F1 Score
-    """
-    print("\n--- Generating English Format Heatmaps (Format vs Model) ---")
-    
-    # Filter for English only
-    df_english = df[df['language'] == 'english'].copy()
-    
-    if df_english.empty:
-        print("No English data found. Skipping English Format heatmaps.")
-        return
-
-    metrics = {
-        'f1_score': 'F1 Score',
-        'accuracy': 'Accuracy'
-    }
-
-    for metric_key, metric_label in metrics.items():
-        df_metric = df_english[df_english['metric_type'] == metric_key].copy()
-        
-        if df_metric.empty:
-            print(f"No English data found for {metric_label}. Skipping.")
-            continue
-
-        output_filename = f"english_heatmap_format_vs_model_{metric_key}.png"
-        output_path = os.path.join(output_dir, output_filename)
-
-        create_heatmap(
-            data=df_metric,
-            output_path=output_path,
-            index_col='question_model',   # Y-Axis
-            columns_col='file_extension', # X-Axis (Format)
-            values_col='metric_value',
-            metric_label=metric_label,
-            title=f"English Analysis: {metric_label} (Model vs File Format)",
-            xlabel="File Format",
-            ylabel="LLM Model"
-        )
-
-def generate_markdown_overview_heatmaps(df: pd.DataFrame, output_dir: str):
-    """
-    Generates Markdown-only Overview heatmaps (Redundant with global overview if filtered, 
-    but kept for explicit requests).
-    """
-    print("\n--- Generating Markdown Overview Heatmaps (Lang vs Model) ---")
-    
-    # Filter for Markdown only
-    # Assumes file_extension is stored as 'md' (without dot)
-    if 'file_extension' in df.columns:
-        df_md = df[df['file_extension'] == 'md'].copy()
-    else:
-        df_md = pd.DataFrame() # Empty
-    
-    if df_md.empty:
-        print("No Markdown data found. Skipping Markdown Overview heatmaps.")
-        return
-
-    metrics = {
-        'f1_score': 'F1 Score',
-        'accuracy': 'Accuracy'
-    }
-
-    for metric_key, metric_label in metrics.items():
-        df_metric = df_md[df_md['metric_type'] == metric_key].copy()
-        
-        if df_metric.empty:
-            continue
-
-        output_filename = f"markdown_heatmap_lang_vs_model_{metric_key}.png"
-        output_path = os.path.join(output_dir, output_filename)
-
-        create_heatmap(
-            data=df_metric,
-            output_path=output_path,
-            index_col='question_model',   # Y-Axis
-            columns_col='language',       # X-Axis
-            values_col='metric_value',
-            metric_label=metric_label,
-            title=f"Markdown Overview: {metric_label} (Model vs Language)",
-            xlabel="Language",
-            ylabel="LLM Model"
+            ylabel="LLM Model",
+            index_order=final_model_order,
+            columns_order=FORMAT_ORDER
         )
