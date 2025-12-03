@@ -83,6 +83,23 @@ MODEL_NAME_MAPPINGS = {
     "gpt-oss-120b-cloud_128k": "GPT-OSS 120B Cloud"
 }
 
+# --- Model Parameters (Billions) ---
+# Used for size vs performance scatter plots
+# Keys should match the values in MODEL_NAME_MAPPINGS (Cleaned Names)
+MODEL_PARAMS = {
+    "DeepSeek R1 1.5B": 1.5,
+    "Llama 3.2 3B": 3.0,
+    "Qwen 2.5 7B": 7.0,
+    "DeepSeek R1 8B": 8.0,
+    "Llama 3.1 8B": 8.0,
+    "Qwen 3 8B": 8.0,
+    "Gemma 3 12B": 12.0,
+    "Phi3 14B": 14.0,
+    "GPT-OSS 20B": 20.0,
+    "GPT-OSS 120B": 120.0,
+    "GPT-OSS 120B Cloud": 120.0
+}
+
 def clean_model_name(model_name: str) -> str:
     """Standardizes model names for plots."""
     name = MODEL_NAME_MAPPINGS.get(model_name, model_name)

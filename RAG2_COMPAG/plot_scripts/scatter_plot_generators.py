@@ -2,8 +2,8 @@ import os
 import pandas as pd
 from typing import List, Optional
 
-from scatter_plots import create_combined_scatter
-from plot_config import clean_model_name, METRIC_DISPLAY_NAMES
+from scatter_plots import create_combined_scatter, create_efficiency_scatter, create_gap_line_plot
+from plot_config import clean_model_name, METRIC_DISPLAY_NAMES, MODEL_PARAMS, LANGUAGE_PALETTE
 
 def generate_cross_lingual_scatter_plots(
     df_data: pd.DataFrame,
@@ -102,3 +102,116 @@ def generate_cross_lingual_scatter_plots(
             ylabel=f"Avg. Non-English {metric_name}",
             hue_order=final_model_order
         )
+
+def generate_model_efficiency_plot(
+    df_data: pd.DataFrame,
+    output_dir: str
+):
+    """
+    Generates scatter plots: Model Size (Parameters) vs Performance.
+    Uses 'hybrid' algorithm, Markdown format, and results for English only.
+    Generates for: F1 Score and Precision.
+    """
+    print("\n--- Generating Model Efficiency Plots (Size vs Performance) ---")
+    
+    metrics_to_plot = ['f1_score', 'precision']
+
+    for metric in metrics_to_plot:
+        # Filter: Hybrid, Markdown (preferred format), Metric, English Only
+        df = df_data[
+            (df_data['retrieval_algorithm'] == 'hybrid') & 
+            (df_data['file_extension'] == 'md') &
+            (df_data['metric_type'] == metric) &
+            (df_data['language'] == 'english')
+        ].copy()
+        
+        if df.empty:
+            print(f"No English Markdown data for Efficiency Plot ({metric}).")
+            continue
+
+        # Clean Model Names
+        df['question_model'] = df['question_model'].apply(clean_model_name)
+        
+        # Group by model and take mean score (in case of duplicates)
+        df_agg = df.groupby('question_model')['metric_value'].mean().reset_index()
+        
+        # Map Parameters
+        df_agg['parameters'] = df_agg['question_model'].map(MODEL_PARAMS)
+        
+        # Drop models without known parameters
+        missing = df_agg[df_agg['parameters'].isna()]['question_model'].tolist()
+        if missing:
+            print(f"Warning: Missing parameter counts for models: {missing}. Excluded from {metric} plot.")
+        
+        df_agg = df_agg.dropna(subset=['parameters'])
+        
+        if df_agg.empty:
+            print(f"No valid models for Efficiency Plot ({metric}).")
+            continue
+            
+        metric_display = METRIC_DISPLAY_NAMES.get(metric, metric)
+        filename = f"scatter_size_vs_{metric}.png"
+        output_path = os.path.join(output_dir, filename)
+        
+        create_efficiency_scatter(
+            df=df_agg,
+            output_path=output_path,
+            x_col='parameters',
+            y_col='metric_value',
+            label_col='question_model',
+            title=f"Model Efficiency: Parameter Count vs. {metric_display} (English Markdown)",
+            ylabel=metric_display
+        )
+
+def generate_performance_gap_plot(
+    df_data: pd.DataFrame,
+    output_dir: str
+):
+    """
+    Generates a performance comparison plot across languages for Markdown.
+    Line chart: Models (X-axis, sorted by size) vs F1 Score (Y-axis) for all languages.
+    """
+    print("\n--- Generating Performance Gap Plot (All Languages) ---")
+    
+    # Use valid languages from palette to ensure consistent coloring
+    valid_langs = list(LANGUAGE_PALETTE.keys())
+    
+    # Filter: Hybrid, Markdown, F1 Score, Valid Languages
+    df = df_data[
+        (df_data['retrieval_algorithm'] == 'hybrid') & 
+        (df_data['file_extension'] == 'md') &
+        (df_data['metric_type'] == 'f1_score') &
+        (df_data['language'].isin(valid_langs))
+    ].copy()
+    
+    if df.empty:
+        print("No data for Gap Plot.")
+        return
+
+    df['question_model'] = df['question_model'].apply(clean_model_name)
+    
+    # Aggregate (in case multiple runs)
+    df_agg = df.groupby(['question_model', 'language'])['metric_value'].mean().reset_index()
+    
+    # Determine Sort Order: By Parameters
+    # We need a list of models sorted by params
+    unique_models = df_agg['question_model'].unique()
+    
+    # Sort models by params (using a large default for unknown to push to end)
+    model_order = sorted(unique_models, key=lambda m: MODEL_PARAMS.get(m, 9999))
+    
+    # Convert model column to categorical with this order for plotting
+    df_agg['question_model'] = pd.Categorical(df_agg['question_model'], categories=model_order, ordered=True)
+    df_agg = df_agg.sort_values('question_model')
+    
+    output_path = os.path.join(output_dir, "line_performance_gap_markdown.png")
+    
+    create_gap_line_plot(
+        df=df_agg,
+        output_path=output_path,
+        x_col='question_model',
+        y_col='metric_value',
+        hue_col='language',
+        title="Cross-Lingual Performance: F1 Score by Model (Markdown)",
+        model_order=model_order
+    )

@@ -18,10 +18,15 @@ try:
     )
     from barchart_generators import (
         generate_model_performance_barcharts,
-        generate_format_comparison_barcharts
+        generate_format_comparison_barcharts,
+        generate_token_efficiency_barchart
     )
-    # Replaced Boxplots with Scatter Plots
-    from scatter_plot_generators import generate_cross_lingual_scatter_plots
+    # Added new generators
+    from scatter_plot_generators import (
+        generate_cross_lingual_scatter_plots,
+        generate_model_efficiency_plot,
+        generate_performance_gap_plot
+    )
     from latex_table_generator import generate_latex_report
     from utils.config_loader import ConfigLoader
 except ImportError as e:
@@ -48,9 +53,9 @@ def main():
     # 1. Extract Data
     df_data = extract_detailed_visualization_data(args.results_dir)
     if df_data is None or df_data.empty:
-        print("Exiting: No data extracted.")
-        return
-
+        print("Warning: No results data extracted. Skipping result plots.")
+        # We continue because we might still want the token efficiency plot
+    
     os.makedirs(args.output_dir, exist_ok=True)
     os.makedirs(args.table_dir, exist_ok=True)
 
@@ -63,22 +68,49 @@ def main():
     except Exception:
         pass
 
-    # 2. Heatmaps
-    generate_global_overview_heatmaps(df_data, args.output_dir, model_sort_order)
-    generate_format_comparison_heatmaps(df_data, args.output_dir, model_sort_order)
+    if df_data is not None and not df_data.empty:
+        # 2. Heatmaps
+        generate_global_overview_heatmaps(df_data, args.output_dir, model_sort_order)
+        generate_format_comparison_heatmaps(df_data, args.output_dir, model_sort_order)
 
-    # 3. Bar Charts
-    barchart_dir = os.path.join(args.output_dir, "barcharts")
-    generate_model_performance_barcharts(df_data, barchart_dir, model_sort_order=model_sort_order)
-    generate_format_comparison_barcharts(df_data, barchart_dir, model_sort_order=model_sort_order)
+        # 3. Bar Charts (Performance)
+        barchart_dir = os.path.join(args.output_dir, "barcharts")
+        generate_model_performance_barcharts(df_data, barchart_dir, model_sort_order=model_sort_order)
+        generate_format_comparison_barcharts(df_data, barchart_dir, model_sort_order=model_sort_order)
 
-    # 4. Scatter Plots (Cross-Lingual Capability)
-    # Replaces the previous boxplots
-    scatter_dir = os.path.join(args.output_dir, "scatterplots")
-    generate_cross_lingual_scatter_plots(df_data, scatter_dir, model_sort_order=model_sort_order)
+        # 4. Scatter / Line Plots
+        # Existing Cross-Lingual Scatter
+        scatter_dir = os.path.join(args.output_dir, "scatterplots")
+        generate_cross_lingual_scatter_plots(df_data, scatter_dir, model_sort_order=model_sort_order)
+        
+        # New: Model Size vs Performance
+        generate_model_efficiency_plot(df_data, args.output_dir) # Saves to root output dir as per prompt
+        
+        # New: Performance Gap (The Cross-Lingual Tax)
+        generate_performance_gap_plot(df_data, args.output_dir)
 
-    # 5. LaTeX Tables
-    generate_latex_report(df_data, args.table_dir, model_sort_order)
+        # 5. LaTeX Tables
+        generate_latex_report(df_data, args.table_dir, model_sort_order)
+
+    # 6. Token Efficiency Chart (Format Comparison)
+    # try:
+    
+    #     print("\n--- Calculating Token Counts for Efficiency Chart ---")
+    #     # Ensure analysis module is in path (it is child of PROJECT_ROOT)
+    #     sys.path.append(str(PROJECT_ROOT))
+    #     from analysis.token_counter import TokenCounter
+        
+    #     # Initialize counter (uses configuration to find manuals)
+    #     counter = TokenCounter(config_path=args.config_path)
+    #     token_results = counter.count_tokens_for_all_manuals()
+        
+    #     # Generate Plot
+    #     generate_token_efficiency_barchart(token_results, args.output_dir)
+        
+    # except ImportError as e:
+    #     print(f"Skipping Token Efficiency Chart: Could not import TokenCounter ({e})")
+    # except Exception as e:
+    #     print(f"Skipping Token Efficiency Chart: Error ({e})")
 
     print("\n--- Visualization Generation Finished ---")
 

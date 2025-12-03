@@ -1,13 +1,14 @@
 import os
 import pandas as pd
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 
 from plot_utils import sanitize_filename
-from barcharts import create_grouped_barchart
+from barcharts import create_grouped_barchart, create_bidirectional_barchart
 from plot_config import (
     LANGUAGE_PALETTE, LANGUAGE_ORDER, 
     FORMAT_PALETTE, FORMAT_ORDER,
-    clean_model_name, METRIC_DISPLAY_NAMES
+    clean_model_name, METRIC_DISPLAY_NAMES,
+    LANGUAGE_CODES
 )
 
 def generate_model_performance_barcharts(
@@ -164,3 +165,56 @@ def generate_format_comparison_barcharts(
                 title=f"Hybrid RAG Performance by Data Format ({metric_display}) - English",
                 xlabel="LLM Model"
             )
+
+def generate_token_efficiency_barchart(
+    token_data: List[Dict[str, Any]],
+    output_dir: str
+) -> None:
+    """
+    Generates a bidirectional bar chart comparing Token Counts (Top)
+    and Character Counts (Bottom) for XML, JSON, and Markdown.
+    """
+    print("\n--- Generating Token/Char Efficiency Bar Chart ---")
+    if not token_data:
+        print("No token data available.")
+        return
+        
+    df = pd.DataFrame(token_data)
+    
+    # 1. Infer Language
+    def get_language(basename):
+        basename_lower = basename.lower()
+        for lang in LANGUAGE_CODES.keys():
+            if basename_lower.startswith(lang):
+                return lang
+        return "unknown"
+
+    df['language'] = df['file_basename'].apply(get_language)
+    df = df[df['language'] != 'unknown']
+
+    if 'tokens' not in df.columns or 'characters' not in df.columns:
+        print("Error: 'tokens' or 'characters' column missing in data.")
+        return
+
+    # 2. Map formats
+    ext_map = {'md': 'Markdown', 'json': 'JSON', 'xml': 'XML'}
+    df['format_display'] = df['format'].map(ext_map).fillna(df['format'])
+    
+    # 3. Plot Bidirectional Chart
+    output_path = os.path.join(output_dir, "bar_token_efficiency.png")
+    
+    create_bidirectional_barchart(
+        data=df,
+        output_path=output_path,
+        x_col="language",
+        y_col_top="tokens",
+        y_col_bottom="characters",
+        hue_col="format_display",
+        x_order=LANGUAGE_ORDER,
+        hue_order=FORMAT_ORDER,
+        palette=FORMAT_PALETTE,
+        top_label="Tokens (Count)",
+        bottom_label="Characters (Count)",
+        title="Efficiency Comparison: Tokens vs Characters (XML vs JSON vs Markdown)",
+        xlabel="Language"
+    )
