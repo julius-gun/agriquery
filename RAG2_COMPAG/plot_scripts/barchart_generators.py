@@ -202,7 +202,7 @@ def generate_token_efficiency_barchart(
     df['format_display'] = df['format'].map(ext_map).fillna(df['format'])
     
     # 3. Plot Bidirectional Chart (Tokens vs Characters)
-    output_path_bi = os.path.join(output_dir, "bar_token_efficiency.png")
+    output_path_bi = os.path.join(output_dir, "bar_token_and_characters_efficiency.png")
     
     create_bidirectional_barchart(
         data=df,

@@ -1,15 +1,57 @@
 # Agri-Query RAG Testing Framework
 
+**Quick Links:**
+*   📂 **RAG Results (JSON):** [results/](results/)
+*   📊 **Visualizations (Plots):** [visualization/plots/](visualization/plots/)
+*   📋 **LaTeX Tables:** [visualization/latex_tables/](visualization/latex_tables/)
 
+---
 
-To convert a PDF file into txt for this framework, please use the docling_page_wise_pdf_converter inside the folder zeroshot\docling_page_wise_pdf_converter
+## 📈 Visualizations & Results
 
+### 1. Global Overview (Model vs Language)
+Performance heatmaps combining all formats (JSON, Markdown, XML).
 
-More Information
-*   **RAG Plots:** [RAG Plots](RAG/visualization/plots/) 
-*   **RAG Results Files:** [RAG Results Folder](RAG/results/) 
+![F1 Score Overview](visualization/plots/heatmap_language_vs_model_f1_score_combined.png)
+![Accuracy Overview](visualization/plots/heatmap_language_vs_model_accuracy_combined.png)
 
+### 2. Format Comparison
+Impact of data format on RAG performance.
 
+**F1 Score:**
+![Format F1 (Avg)](visualization/plots/heatmap_format_vs_model_f1_score_avg_all_langs.png)
+![Format F1 (English)](visualization/plots/heatmap_format_vs_model_f1_score_english.png)
+
+**Accuracy:**
+![Format Accuracy (Avg)](visualization/plots/heatmap_format_vs_model_accuracy_avg_all_langs.png)
+![Format Accuracy (English)](visualization/plots/heatmap_format_vs_model_accuracy_english.png)
+
+#### Detailed Bar Charts (Format Performance)
+**Average (All Languages):**
+![Format F1 (Avg)](visualization/plots/barcharts/hybrid_format_perf_f1_score_avg_all_langs.png)
+![Format Accuracy (Avg)](visualization/plots/barcharts/hybrid_format_perf_accuracy_avg_all_langs.png)
+
+**English Only:**
+![Format F1 (English)](visualization/plots/barcharts/hybrid_format_perf_f1_score_english.png)
+![Format Accuracy (English)](visualization/plots/barcharts/hybrid_format_perf_accuracy_english.png)
+
+### 3. Cross-Lingual Capabilities
+Comparison of English performance vs. Average Non-English performance.
+
+![Cross Lingual F1](visualization/plots/scatterplots/scatter_cross_lingual_f1_score_combined.png)
+![Cross Lingual Accuracy](visualization/plots/scatterplots/scatter_cross_lingual_accuracy_combined.png)
+
+### 4. Generated Tables
+The following LaTeX tables contain detailed metrics for each format:
+*   📄 **JSON:** [tables_hybrid_json.tex](visualization/latex_tables/tables_hybrid_json.tex)
+*   📄 **Markdown:** [tables_hybrid_md.tex](visualization/latex_tables/tables_hybrid_md.tex)
+*   📄 **XML:** [tables_hybrid_xml.tex](visualization/latex_tables/tables_hybrid_xml.tex)
+
+---
+
+## Project Overview
+
+To convert a PDF file into txt for this framework, please use the docling_page_wise_pdf_converter inside the folder `zeroshot\docling_page_wise_pdf_converter`.
 
 This project provides a framework for building, testing, and evaluating Retrieval-Augmented Generation (RAG) pipelines. It allows testing different language manuals against a common set of English questions, using configurable LLMs, retrieval parameters, and evaluation metrics.
 
@@ -89,18 +131,6 @@ For manual installation, follow these steps:
         pip install -r requirements.txt
         ```
 
-    **Helpful Tips for First-Time Users:**
-
-    *   **Ensure Python Extension is Installed in VS Code:** Make sure you have the official Python extension installed in VS Code. This extension provides excellent support for Python development, including virtual environments.
-
-    *   **Restart VS Code:** If you are having trouble getting VS Code to recognize your virtual environment, try restarting VS Code after creating and activating the `.venv`.
-
-    *   **Check `.venv` Location:** Verify that the `.venv` folder is created in the root directory of your project. VS Code usually looks for `.venv` in the project root.
-
-    *   **Using the VS Code Terminal:** When you open the terminal in VS Code (using `Ctrl+\`` or `Cmd+\``), it should automatically activate the selected virtual environment for you. If it doesn't, you might need to manually activate it once in the terminal using the `source .venv/bin/activate` or `.venv\Scripts\activate` commands as mentioned in step 3 above.
-
-    *   **Verify with `pip list`:** After activating the virtual environment and installing requirements, you can verify that packages are installed in your virtual environment by running `pip list` in the VS Code terminal. This will show the packages installed in the active virtual environment.
-
 4.  **Install dependencies:**
 
     Install the required Python packages using pip:
@@ -108,6 +138,7 @@ For manual installation, follow these steps:
     ```bash
     pip install -r requirements.txt
     ```
+
 ## Configuration
 
 1.  **Review and modify `config.json`:** This is the central configuration file.
@@ -187,4 +218,3 @@ This notebook allows you to:
 *   Modify the "User Configuration" cell as needed, especially `your_question`.
 
 This demo notebook is a great way to understand the core components of the RAG system (retrieval, LLM augmentation, evaluation) in action with minimal setup for a single query.
-
