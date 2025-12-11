@@ -171,10 +171,11 @@ def generate_token_efficiency_barchart(
     output_dir: str
 ) -> None:
     """
-    Generates a bidirectional bar chart comparing Token Counts (Top)
-    and Character Counts (Bottom) for XML, JSON, and Markdown.
+    Generates:
+    1. A bidirectional bar chart comparing Tokens (Top) and Characters (Bottom).
+    2. A grouped bar chart comparing only Tokens.
     """
-    print("\n--- Generating Token/Char Efficiency Bar Chart ---")
+    print("\n--- Generating Token/Char Efficiency Bar Charts ---")
     if not token_data:
         print("No token data available.")
         return
@@ -200,12 +201,12 @@ def generate_token_efficiency_barchart(
     ext_map = {'md': 'Markdown', 'json': 'JSON', 'xml': 'XML'}
     df['format_display'] = df['format'].map(ext_map).fillna(df['format'])
     
-    # 3. Plot Bidirectional Chart
-    output_path = os.path.join(output_dir, "bar_token_efficiency.png")
+    # 3. Plot Bidirectional Chart (Tokens vs Characters)
+    output_path_bi = os.path.join(output_dir, "bar_token_efficiency.png")
     
     create_bidirectional_barchart(
         data=df,
-        output_path=output_path,
+        output_path=output_path_bi,
         x_col="language",
         y_col_top="tokens",
         y_col_bottom="characters",
@@ -217,4 +218,24 @@ def generate_token_efficiency_barchart(
         bottom_label="Characters (Count)",
         title="Efficiency Comparison: Tokens vs Characters (XML vs JSON vs Markdown)",
         xlabel="Language"
+    )
+
+    # 4. Plot Tokens Only Chart
+    output_path_tokens = os.path.join(output_dir, "bar_token_efficiency_tokens_only.png")
+
+    create_grouped_barchart(
+        data=df,
+        output_path=output_path_tokens,
+        metric_name="tokens", # Used for default Y-label if not overridden
+        x_col="language",
+        y_col="tokens",
+        hue_col="format_display",
+        x_order=LANGUAGE_ORDER,
+        hue_order=FORMAT_ORDER,
+        palette=FORMAT_PALETTE,
+        title="Token Efficiency by Format",
+        xlabel="Language",
+        ylabel="Token Count",
+        ylim=None,       # Auto-scale for counts
+        value_format='%d' # Integer format
     )
