@@ -93,24 +93,27 @@ def main():
         generate_latex_report(df_data, args.table_dir, model_sort_order)
 
     # 6. Token Efficiency Chart (Format Comparison)
-    # try:
+    try:
     
-    #     print("\n--- Calculating Token Counts for Efficiency Chart ---")
-    #     # Ensure analysis module is in path (it is child of PROJECT_ROOT)
-    #     sys.path.append(str(PROJECT_ROOT))
-    #     from analysis.token_counter import TokenCounter
+        print("\n--- Calculating Token Counts for Efficiency Chart ---")
+        # Ensure analysis module is in path (it is child of PROJECT_ROOT)
+        sys.path.append(str(PROJECT_ROOT))
+        from analysis.token_counter import TokenCounter
         
-    #     # Initialize counter (uses configuration to find manuals)
-    #     counter = TokenCounter(config_path=args.config_path)
-    #     token_results = counter.count_tokens_for_all_manuals()
+        # Initialize counter (uses configuration to find manuals)
+        counter = TokenCounter(config_path=args.config_path)
+        token_results = counter.count_tokens_for_all_manuals()
         
-    #     # Generate Plot
-    #     generate_token_efficiency_barchart(token_results, args.output_dir)
+        # # Generate Plot
+        # generate_token_efficiency_barchart(token_results, args.output_dir)
         
-    # except ImportError as e:
-    #     print(f"Skipping Token Efficiency Chart: Could not import TokenCounter ({e})")
-    # except Exception as e:
-    #     print(f"Skipping Token Efficiency Chart: Error ({e})")
+        # Generate LaTeX Table
+        counter.save_latex_table(token_results, args.table_dir)
+        
+    except ImportError as e:
+        print(f"Skipping Token Efficiency Chart: Could not import TokenCounter ({e})")
+    except Exception as e:
+        print(f"Skipping Token Efficiency Chart: Error ({e})")
 
     print("\n--- Visualization Generation Finished ---")
 
