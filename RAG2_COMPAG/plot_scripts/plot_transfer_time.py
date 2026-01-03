@@ -30,8 +30,8 @@ DATA_SIZES_BYTES = {
 
 # Image Data: 200 KB PNG
 IMAGE_SIZE_BYTES = 200 * 1024 
-ALL_IMAGES_BYTE = 12558285 
-IMAGE_SIZE_BYTES = ALL_IMAGES_BYTE
+# ALL_IMAGES_BYTE = 12558285 
+# IMAGE_SIZE_BYTES = ALL_IMAGES_BYTE
 def calculate_transfer_stats(size_bytes):
     """
     Calculates detailed transfer statistics over ISOBUS.
