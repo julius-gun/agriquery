@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISOBUS Search Navigator - Tablet Mockup</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Custom scrollbar for industrial feel */
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569; 
+            border-radius: 2px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b; 
+        }
+
+        /* Highlight animation */
+        @keyframes pulse-highlight {
+            0%, 100% { background-color: #fde047; }
+            50% { background-color: #fef08a; }
+        }
+        .highlight-pulse {
+            animation: pulse-highlight 2s infinite;
+        }
+        
+        /* Tooltip Arrow */
+        .arrow-left::after {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            right: 100%; /* To the left of the tooltip */
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent #1e293b transparent transparent;
+        }
+    </style>
+</head>
+<body class="bg-neutral-900 h-screen w-screen flex items-center justify-center overflow-hidden font-sans relative perspective-[2000px]">
+
+    <!-- Tractor Cab Environment Background -->
+    <div class="absolute inset-0 bg-[url('agriculture.jpg')] bg-cover bg-center blur-[3px] scale-105"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40"></div>
+
+    <!-- Tablet Device Wrapper -->
+    <div class="relative z-10 w-[90vw] max-w-[1280px] aspect-[16/10] bg-gray-900 rounded-[2.5rem] shadow-[0_50px_100px_-12px_rgba(0,0,0,0.8),0_0_0_1px_rgba(255,255,255,0.1)_inset] p-5 ring-1 ring-black border-b-[6px] border-r-[6px] border-black transform transition-transform duration-700 hover:scale-[1.005] hover:-translate-y-1">
+        
+        <!-- Power Button -->
+        <div class="absolute -right-[2px] top-24 h-12 w-1.5 bg-gray-700 rounded-r-md shadow-sm"></div>
+        <!-- Volume Buttons -->
+        <div class="absolute -right-[2px] top-40 h-20 w-1.5 bg-gray-700 rounded-r-md shadow-sm"></div>
+
+        <!-- Tablet Bezel & Screen Container -->
+        <div class="w-full h-full bg-black rounded-[1.8rem] border-[10px] border-black overflow-hidden relative shadow-inner ring-1 ring-gray-800 flex flex-col">
+            
+            <!-- Camera (Landscape Left) -->
+            <div class="absolute top-1/2 left-2 -translate-y-1/2 w-2 h-2 bg-gray-800 rounded-full z-50 ring-1 ring-gray-700 opacity-60">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-0.5 bg-blue-900 rounded-full opacity-60"></div>
+            </div>
+
+            <!-- Main App Content (The Tractor UI) -->
+            <div class="w-full h-full flex flex-col bg-black text-gray-100 font-sans selection:bg-green-500 selection:text-white relative z-10">
+
+                <!-- Top Status Bar (Tractor OS Shell) -->
+                <header class="h-12 bg-slate-900 border-b border-slate-700 flex items-center justify-between px-6 shrink-0 select-none">
+                    <div class="flex items-center space-x-6">
+                        <button class="text-slate-500 hover:text-slate-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex items-center space-x-6 text-slate-300 font-mono text-sm">
+                        <div class="flex items-center gap-2">
+                            <span>22°C</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <span>14:32 PM</span>
+                        <div class="flex items-center space-x-1">
+                            <div class="w-8 h-4 border border-slate-500 rounded p-0.5">
+                                <div class="bg-green-500 h-full w-3/4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Main Content Area -->
+                <div class="flex flex-1 overflow-hidden">
+                    
+                    <!-- Left Panel: Search Navigator (30%) -->
+                    <aside class="w-[30%] flex flex-col bg-slate-800 border-r border-slate-700 relative z-20 shadow-xl text-lg">
+                        <!-- Header -->
+                        <div class="p-4 bg-slate-900/50 border-b border-slate-700 backdrop-blur-sm">
+                            <div class="flex items-center justify-between">
+                                <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                    Search Navigator
+                                </h2>
+                            </div>
+                        </div>
+
+                        <!-- Chat History -->
+                        <div class="flex-1 p-4 space-y-6 overflow-y-auto bg-slate-800" id="chat-container">
+                            <!-- Timestamp -->
+                            <div class="text-center text-xs text-slate-500 mt-2">Today, 14:31</div>
+
+                            <!-- User Message -->
+                            <div class="flex flex-col items-end space-y-1">
+                                <div class="bg-slate-600 text-white px-6 py-4 rounded-2xl rounded-tr-none max-w-[90%] shadow-lg border border-slate-500">
+                                    <p class="leading-snug">What is the torque for vane lock nuts?</p>
+                                </div>
+                                <span class="text-sm text-slate-400 mr-1">Operator</span>
+                            </div>
+
+                            <!-- System Message (Search Navigator) -->
+                            <div class="flex flex-col items-start space-y-1">
+                                <div class="bg-slate-700 text-white px-6 py-4 rounded-2xl rounded-tl-none max-w-[90%] shadow-lg border-l-4 border-blue-500">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm font-bold text-blue-400 uppercase">Navigator AI</span>
+                                        <span class="text-xs text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">Conf: 98%</span>
+                                    </div>
+                                    <p class="leading-snug">The required torque is 50 Nm.</p>
+                                    <div class="mt-3 pt-3 border-t border-slate-600/50">
+                                        <p class="text-sm text-slate-300 italic">
+                                            <span class="text-yellow-500 font-bold">⚠ Verify:</span> Please check the highlighted section in the manual.
+                                        </p>
+                                    </div>
+                                    <button class="mt-4 flex items-center gap-2 bg-slate-800 hover:bg-slate-900 text-blue-400 px-4 py-3 rounded-lg text-base font-medium border border-slate-600 transition-colors w-full justify-center shadow-md active:bg-slate-950 active:scale-95 transform transition-transform cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                        Verify Source
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Input Area -->
+                        <div class="p-4 bg-slate-900 border-t border-slate-700">
+                            <div class="flex items-center gap-3">
+                                <button class="p-3 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-full transition-colors cursor-pointer border border-slate-700 shadow-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                    </svg>
+                                </button>
+                                <div class="relative flex-1">
+                                    <input type="text" placeholder="Ask manual..." disabled class="w-full bg-slate-800 border border-slate-600 rounded-full pl-6 pr-14 py-4 text-slate-300 placeholder-slate-400 focus:outline-none focus:border-blue-500 transition-colors">
+                                    <button class="absolute right-1 top-1 bottom-1 bg-blue-600 hover:bg-blue-700 text-white w-12 rounded-full transition-all flex items-center justify-center shadow-lg shadow-blue-900/30 active:scale-95 cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M8.25 4.5a3.75 3.75 0 117.5 0v8.25a3.75 3.75 0 11-7.5 0V4.5z" />
+                                            <path d="M6 10.5a.75.75 0 01.75.75v1.5a5.25 5.25 0 1010.5 0v-1.5a.75.75 0 011.5 0v1.5a6.751 6.751 0 01-6 6.709v2.291h3a.75.75 0 010 1.5h-7.5a.75.75 0 010-1.5h3v-2.291a6.751 6.751 0 01-6-6.709v-1.5A.75.75 0 016 10.5z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Right Panel: Manual Viewer (70%) -->
+                    <main class="w-[70%] bg-slate-200 text-slate-900 flex flex-col relative text-lg">
+                        
+                        <!-- Document Viewer Header -->
+                        <div class="h-14 bg-white border-b border-slate-300 flex items-center justify-between px-6 shadow-sm z-10">
+                            <div class="flex items-center gap-4">
+                                <button class="text-slate-500 hover:text-slate-700 cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                </button>
+                                <!-- Updated Header: Breadcrumb Style -->
+                                <h1 class="text-xl font-bold text-slate-800"> > Maintenance > Spreading Vanes</h1>
+                            </div>
+                            <div class="flex items-center gap-3 bg-slate-100 p-1.5 rounded-lg border border-slate-300 shadow-sm" id="rag-nav-controls">
+                                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider mr-2">Hits</span>
+                                <button id="prev-match" class="p-1 hover:bg-white rounded text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <span class="text-sm font-mono font-bold text-slate-800 min-w-[3rem] text-center" id="match-counter">1 / 4</span>
+                                <button id="next-match" class="p-1 hover:bg-white rounded text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Document Content -->
+                        <div class="flex-1 overflow-y-auto p-12 bg-slate-100 scroll-smooth">
+                            <!-- Added pr-32 to create space for the floating tooltips on the right -->
+                            <div class="max-w-4xl mx-auto bg-white min-h-[1000px] shadow-lg border border-slate-300 p-12 pr-32 relative">
+                                
+                                <!-- Page Header -->
+                                <div class="border-b-2 border-slate-800 pb-4 mb-8 flex justify-between items-end">
+                                    <div>
+                                        <h2 class="text-3xl font-bold uppercase tracking-tight text-slate-900">Maintenance / Spreading Vanes</h2>
+                                        <p class="text-slate-500 font-serif italic mt-1">Section 4.2 - Spreading Disc Assembly</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-4xl font-bold text-slate-200">86</div>
+                                    </div>
+                                </div>
+
+                                <!-- Content Text (Markdown Rendered Style) -->
+                                <div class="prose prose-slate max-w-none font-serif text-slate-800 leading-relaxed">
+                                    <h3 class="text-xl font-sans font-bold text-slate-900 mb-4 border-l-4 border-blue-600 pl-3">4.2.1 General Inspection</h3>
+                                    <p class="mb-4 text-justify">
+                                        Before commencing any maintenance on the spreading disc assembly, ensure the machine is parked on a level surface with the parking brake engaged. Disconnect the main power take-off (PTO) shaft and lock out the hydraulic system to prevent accidental actuation. Inspect all vane surfaces for signs of excessive wear, cracking, or deformation.
+                                    </p>
+                                    
+                                    <div class="bg-slate-50 border border-slate-200 p-4 mb-6 rounded flex gap-4 items-start">
+                                        <div class="text-yellow-600 mt-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                            </svg>
+                                        </div>
+                                        <p class="text-sm text-slate-600 m-0 font-sans"><strong>WARNING:</strong> Rotating parts. Ensure PTO is disengaged before opening the guard rails.</p>
+                                    </div>
+
+                                    <h3 class="text-xl font-sans font-bold text-slate-900 mb-4 border-l-4 border-blue-600 pl-3">4.2.2 Vane Replacement & Torque Settings</h3>
+                                    <p class="mb-4 text-justify">
+                                        To replace a vane, remove the retaining bolts on the mounting flange. Clean the mating surfaces thoroughly with a wire brush to remove fertilizer residue and rust. Apply a thin layer of anti-seize compound to the new bolts.
+                                    </p>
+                                    
+                                    <!-- RAG Source 1: Main Highlight (The Answer) -->
+                                    <div class="relative group rag-source" data-index="0">
+                                        <div class="absolute -left-6 top-0 bottom-0 w-1 bg-blue-500 rounded-full"></div>
+                                        <div id="target-paragraph" class="mb-4 text-justify bg-blue-50 p-6 rounded border-2 border-blue-400 shadow-md transition-all duration-300">
+                                            <p class="leading-loose text-lg text-slate-800">
+                                                Position the new vane and hand-tighten the lock nuts. Using a calibrated torque wrench, tighten the vane lock nuts in a cross pattern to ensure even pressure distribution. 
+                                                <mark class="text-4xl font-black bg-yellow-300 text-slate-900 px-3 py-1 rounded-md border-2 border-yellow-500 shadow-sm mx-1 inline-block transform -rotate-1 align-middle">
+                                                    Tighten to 50 Nm.
+                                                </mark>
+                                                Do not overtighten as this may damage the threaded studs or the vane ceramic coating.
+                                            </p>
+                                        </div>
+                                        <!-- Floating Tooltip indicator - Adjusted position -->
+                                        <div class="absolute -right-24 top-0 pl-2 hidden lg:block z-20">
+                                            <div class="bg-slate-800 text-white text-xs px-3 py-2 rounded shadow-lg whitespace-nowrap arrow-left border border-slate-600">
+                                                <span class="font-bold text-green-400">98%</span> Exact Match
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="mb-4 text-justify">
+                                        After tightening, verify the clearance between the vane tip and the housing wall. The clearance should be between 2.5mm and 4.0mm. Rotate the disc manually (ensure ignition is OFF) to check for any interference points.
+                                    </p>
+
+                                    <!-- Diagram Placeholders -->
+                                    <div class="grid grid-cols-2 gap-4 my-8">
+                                        <div class="bg-slate-100 border border-slate-300 h-48 flex items-center justify-center flex-col relative">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-slate-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <span class="text-xs text-slate-500 font-sans uppercase">Fig 4.2.a - Torque Pattern</span>
+                                            <!-- RAG Source 3: Image Reference -->
+                                            <div class="rag-source absolute bottom-2 right-2" data-index="2">
+                                                <span class="bg-blue-200 text-blue-800 text-xs px-1 rounded border border-blue-400">Fig. Match</span>
+                                            </div>
+                                            <!-- Floating Tooltip for Image -->
+                                            <div class="absolute -right-24 top-10 pl-2 hidden lg:block z-20">
+                                                <div class="bg-slate-800 text-white text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap arrow-left border border-slate-600 opacity-80">
+                                                    <span class="font-bold text-yellow-400">60%</span> Fig.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-slate-100 border border-slate-300 h-48 flex items-center justify-center flex-col">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-slate-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                            </svg>
+                                            <span class="text-xs text-slate-500 font-sans uppercase">Fig 4.2.b - Vane Clearance</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- RAG Source 2: Lubrication Spec -->
+                                    <div class="relative rag-source mb-8 p-4 bg-slate-50 border-l-4 border-blue-300" data-index="1">
+                                        <h3 class="text-xl font-sans font-bold text-slate-900 mb-2">4.2.3 Lubrication</h3>
+                                        <p class="mb-2 text-justify">
+                                            Apply Grade 2 Lithium grease to the agitator axle seal every <mark class="bg-blue-200 px-1 rounded">100 hours</mark> of operation.
+                                        </p>
+                                         <div class="text-xs text-blue-700 font-mono">Contextual match</div>
+                                         
+                                         <!-- Floating Tooltip for Lubrication -->
+                                        <div class="absolute -right-24 top-4 pl-2 hidden lg:block z-20">
+                                            <div class="bg-slate-800 text-white text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap arrow-left border border-slate-600 opacity-80">
+                                                <span class="font-bold text-yellow-400">45%</span> Context
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- RAG Source 4: Table (Re-added) -->
+                                    <div class="relative rag-source mb-8 p-4 bg-slate-50 border-l-4 border-blue-300" data-index="3">
+                                        <h3 class="text-xl font-sans font-bold text-slate-900 mb-2">4.2.4 Torque Specifications</h3>
+                                        <table class="w-full text-sm mt-2 border border-slate-300 bg-white">
+                                            <tr class="bg-slate-200">
+                                                <th class="p-2 text-left border border-slate-300">Component</th>
+                                                <th class="p-2 text-left border border-slate-300">Bolt Size</th>
+                                                <th class="p-2 text-left border border-slate-300">Torque (Nm)</th>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-2 border border-slate-300">Vane Lock Nut</td>
+                                                <td class="p-2 border border-slate-300">M10</td>
+                                                <td class="p-2 border border-slate-300 bg-yellow-100 font-bold">50</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-2 border border-slate-300">Disc Hub</td>
+                                                <td class="p-2 border border-slate-300">M12</td>
+                                                <td class="p-2 border border-slate-300">85</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-2 border border-slate-300">Agitator Shaft</td>
+                                                <td class="p-2 border border-slate-300">M8</td>
+                                                <td class="p-2 border border-slate-300">25</td>
+                                            </tr>
+                                        </table>
+                                        <div class="text-xs text-blue-700 font-mono mt-2">Table data match</div>
+
+                                        <!-- Floating Tooltip for Table -->
+                                        <div class="absolute -right-24 top-8 pl-2 hidden lg:block z-20">
+                                            <div class="bg-slate-800 text-white text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap arrow-left border border-slate-600 opacity-80">
+                                                <span class="font-bold text-yellow-400">82%</span> Table
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Footer -->
+                                <div class="mt-12 pt-6 border-t border-slate-300 flex justify-between text-xs text-slate-400 font-sans uppercase">
+                                    <span>Kverneland Group - Exacta-TLX</span>
+                                    <span>Page 86 / 165</span>
+                                </div>
+
+                            </div>
+                            <div class="h-12"></div> <!-- Spacing at bottom -->
+                        </div>
+                    </main>
+                </div>
+
+            </div>
+
+            <!-- Screen Reflection/Glare Overlay -->
+            <div class="absolute inset-0 z-50 rounded-[1.8rem] pointer-events-none bg-gradient-to-br from-white/5 to-transparent opacity-40"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Elements
+            const viewSourceBtn = document.querySelector('button.text-blue-400');
+            const manualContainer = document.querySelector('main .overflow-y-auto');
+            const ragSources = document.querySelectorAll('.rag-source');
+            const prevBtn = document.getElementById('prev-match');
+            const nextBtn = document.getElementById('next-match');
+            const counterDisplay = document.getElementById('match-counter');
+            
+            let currentIndex = 0;
+            const totalMatches = ragSources.length;
+
+            // Initial State
+            updateNavigationState();
+
+            // Event Listeners
+            if (viewSourceBtn) {
+                viewSourceBtn.addEventListener('click', () => {
+                    currentIndex = 0;
+                    scrollToMatch(currentIndex);
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        scrollToMatch(currentIndex);
+                    }
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    if (currentIndex < totalMatches - 1) {
+                        currentIndex++;
+                        scrollToMatch(currentIndex);
+                    }
+                });
+            }
+
+            // Logic
+            function scrollToMatch(index) {
+                const target = ragSources[index];
+                if (!target) return;
+
+                // 1. Scroll
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // 2. Pulse Effect (find the highlightable child or the target itself)
+                const highlightTarget = target.querySelector('.bg-blue-50') || target.querySelector('table') || target;
+                highlightTarget.classList.add('highlight-pulse');
+                
+                // Clear pulse after animation
+                setTimeout(() => {
+                    highlightTarget.classList.remove('highlight-pulse');
+                }, 2000);
+
+                // 3. Update UI
+                updateNavigationState();
+            }
+
+            function updateNavigationState() {
+                // Update Counter
+                counterDisplay.textContent = `${currentIndex + 1} / ${totalMatches}`;
+
+                // Update Buttons
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex === totalMatches - 1;
+                
+                // Visual opacity for disabled state
+                prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
+                nextBtn.style.opacity = currentIndex === totalMatches - 1 ? '0.3' : '1';
+            }
+        });
+    </script>
+</body>
+</html>
