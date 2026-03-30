@@ -1,15 +1,31 @@
       
 # *Agri-Query*: A CASE STUDY ON RAG VS. LONG-CONTEXT LLMS FOR CROSS-LINGUAL TECHNICAL QUESTION ANSWERING
 
+**📝 Paper:**[Agri-Query: A Case Study on RAG vs. Long-Context LLMs for Cross-Lingual Technical Question Answering](https://mediatum.ub.tum.de/doc/1845092/1845092.pdf)
+
 ## Contents
 
 This main README serves as a central navigation point. Please refer to the specific README files and results folders within each project directory for detailed information, setup instructions, and findings.
 
+### 1. First Paper: RAG vs. Long-Context Evaluation
+This project focuses on evaluating the fundamental retrieval and reasoning capabilities of LLMs. It compares the performance of Long-Context LLMs (processing up to 128k tokens directly) against Retrieval-Augmented Generation (RAG) strategies (Keyword, Semantic, Hybrid) in a cross-lingual agricultural setting.
 *   **RAG (Retrieval-Augmented Generation):**
     *   **Project Details:** [RAG README](RAG/README.md)
     *   **RAG Evaluation:** [RAG Evaluation](RAG)
-    *   **RAG Results:** [RAG Results Folder](RAG/results/) 
-    *(Note: Please ensure a `README.md` and a `results` folder exist within the `RAG` directory for these links to work correctly. Adjust the results folder path if it's named differently).*
+    *   **RAG Results:**[RAG Results Folder](RAG/results/) 
+*   **Long-Context Evaluation ("Zeroshot"):**
+    *   **Project Details:** [ZeroShot README](ZeroShot/README.md)
+    *   **Results:**[ZeroShot Results Folder](ZeroShot/results/)
+    *   **Visualizations:** [ZeroShot Visualization Plots](ZeroShot/results/visualization/plots/)
+
+### 2. Second Paper: Embedded ISOBUS Semantic Synchronization
+This subsequent project shifts focus toward the practical, embedded deployment of these models in agricultural machinery over the ISO 11783 (ISOBUS) network. 
+
+**Difference from the first paper:** While the first paper establishes *how* to best retrieve answers (proving Hybrid RAG is superior to Long-Context ingestion), the second paper establishes *how to deliver* the necessary data to the edge hardware given network bandwidth limits (comparing Markdown, JSON, and XML transfer efficiencies) and identifies the Minimum Viable Intelligence (MVI) for offline deployment.
+*   **Project Details & Codebase:** [RAG2_COMPAG README](RAG2_COMPAG/README.md)
+*   **Directory:** [`RAG2_COMPAG/`](RAG2_COMPAG/)
+
+---
 
 ## Long Context Evaluation (Referred to as "Zeroshot" in Codebase)
 
@@ -28,14 +44,6 @@ This evaluation assesses the capability of Large Language Models (LLMs) to answe
 
 **Example Visualization:**
 The following image illustrates how the results from long context evaluations are typically visualized, showing accuracy against varying levels of noise:
+
 ![Long context Accuracy comparison for English manual](RAG/visualization/plots/zeroshot_accuracy_vs_noise_english.png)
-Long context Accuracy comparison for English manual
-
-*   **ZeroShot Evaluation:**
-    *   **Project Details:** [ZeroShot README](ZeroShot/README.md)
-    *   **Results:** [ZeroShot Results Folder](ZeroShot/results/)
-    *   **Visualizations:** [ZeroShot Visualization Plots](ZeroShot/results/visualization/plots/)
-
----
-
-*This README provides navigation. For specific project details and outcomes, please consult the files and folders linked above.*
+*Long context Accuracy comparison for English manual*

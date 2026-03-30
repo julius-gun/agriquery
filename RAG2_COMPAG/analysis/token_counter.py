@@ -1,7 +1,7 @@
 import sys
 import pathlib
 from typing import List, Dict, Any
-
+import os
 # --- Path Setup ---
 # Add the project root (RAG2_COMPAG) to the Python path to allow importing modules
 project_root = pathlib.Path(__file__).parent.parent.resolve()
@@ -88,6 +88,64 @@ class TokenCounter:
                     })
         
         return results
+    def save_latex_table(self, results: List[Dict[str, Any]], output_dir: str, filename: str = "token_counts.tex"):
+        """
+        Generates and saves a LaTeX table of the token counts.
+        """
+        if not results:
+            print("No results to display.")
+            return
+
+        # Ensure output directory exists
+        os.makedirs(output_dir, exist_ok=True)
+        filepath = os.path.join(output_dir, filename)
+
+        # Sort results: File basename asc, Format (md, json, xml)
+        format_order = {'md': 0, 'json': 1, 'xml': 2}
+        results_sorted = sorted(results, key=lambda x: (x.get('file_basename', ''), format_order.get(x.get('format', ''), 99)))
+
+        latex_lines = []
+        latex_lines.append(r"\begin{table}[H]")
+        latex_lines.append(r"    \centering")
+        latex_lines.append(r"    \caption{Token and Character Counts per Manual}")
+        latex_lines.append(r"    \label{tab:token_counts}")
+        latex_lines.append(r"    \small")
+        latex_lines.append(r"    \begin{tabular}{llrr}")
+        latex_lines.append(r"        \toprule")
+        latex_lines.append(r"        \textbf{File} & \textbf{Format} & \textbf{Characters} & \textbf{Tokens} \\")
+        latex_lines.append(r"        \midrule")
+
+        for res in results_sorted:
+            if "error" in res:
+                continue
+            
+            basename = res['file_basename'].replace("_", r"\_")
+            fmt_raw = res['format']
+            
+            if fmt_raw == 'md':
+                fmt = 'Markdown'
+            elif fmt_raw == 'json':
+                fmt = 'JSON'
+            elif fmt_raw == 'xml':
+                fmt = 'XML'
+            else:
+                fmt = fmt_raw.upper()
+
+            chars = f"{res['characters']:,}"
+            tokens = f"{res['tokens']:,}"
+            
+            latex_lines.append(f"        {basename} & {fmt} & {chars} & {tokens} \\\\")
+
+        latex_lines.append(r"        \bottomrule")
+        latex_lines.append(r"    \end{tabular}")
+        latex_lines.append(r"\end{table}")
+
+        try:
+            with open(filepath, "w", encoding="utf-8") as f:
+                f.write("\n".join(latex_lines))
+            print(f"LaTeX table saved to: {filepath}")
+        except Exception as e:
+            print(f"Error saving LaTeX table: {e}")
 
     @staticmethod
     def print_results_table(results: List[Dict[str, Any]]):
